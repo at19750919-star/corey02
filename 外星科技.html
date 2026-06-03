@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>揭露宇宙 · 外星與先進科技</title>
+<style>
+:root{--bg:#05080f;--panel:#0c1320;--panel2:#111a2b;--line:#1d2b44;--ink:#e6ecf6;--soft:#8593ad;--cyan:#34e2d6;--violet:#b08cff;--amber:#ffcf6b}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.85;font-size:16.5px;-webkit-font-smoothing:antialiased;
+ background-image:radial-gradient(900px 520px at 15% -8%,rgba(52,226,214,.12),transparent 60%),radial-gradient(820px 520px at 90% 2%,rgba(176,140,255,.14),transparent 60%),radial-gradient(1px 1px at 20% 30%,rgba(255,255,255,.4),transparent),radial-gradient(1px 1px at 70% 22%,rgba(255,255,255,.3),transparent),radial-gradient(1px 1px at 45% 70%,rgba(255,255,255,.25),transparent);background-attachment:fixed}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+.mono{font-family:Consolas,"Roboto Mono",monospace}
+header.hero{text-align:center;padding:70px 0 26px}
+header.hero .eyebrow{letter-spacing:.42em;font-size:11.5px;color:var(--cyan);text-transform:uppercase;margin-bottom:18px;font-family:Consolas,monospace}
+header.hero h1{font-size:42px;font-weight:800;letter-spacing:.12em;background:linear-gradient(110deg,var(--cyan),#cfe9ff 50%,var(--violet));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 38px rgba(52,226,214,.16)}
+header.hero .sub{color:var(--soft);font-size:14.5px;margin-top:14px}
+header.hero .home{display:inline-block;margin-top:20px;font-size:12.5px;font-family:Consolas,monospace;letter-spacing:.08em;color:var(--cyan);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 15px;background:rgba(52,226,214,.05)}
+header.hero .home:hover{background:var(--cyan);color:#05080f}
+nav.toc{position:sticky;top:0;z-index:8;background:rgba(5,8,15,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--line);padding:11px 0}
+nav.toc .wrap{display:flex;gap:7px;flex-wrap:wrap;justify-content:center}
+nav.toc a{font-size:12.5px;color:var(--soft);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-family:Consolas,monospace;background:var(--panel)}
+nav.toc a:hover{color:var(--cyan);border-color:var(--cyan);box-shadow:0 0 12px rgba(52,226,214,.3)}
+.cat{padding:30px 0 6px}
+.cat-h{display:flex;align-items:center;gap:13px;margin:14px 0 18px}
+.cat-h .bar{width:24px;height:2px;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+.cat-h h2{font-size:21px;font-weight:800;letter-spacing:.03em}
+.cat-h .cnt{font-family:Consolas,monospace;font-size:12px;color:var(--violet);border:1px solid var(--line);border-radius:6px;padding:1px 9px}
+.sp{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:14px 0;scroll-margin-top:120px}
+.sp h3{font-size:19px;font-weight:800;color:#dff6f3;margin-bottom:10px;letter-spacing:.01em;border-bottom:1px solid var(--line);padding-bottom:9px}
+.narrator{font-size:13px;color:var(--soft);margin:8px 0 12px;line-height:1.7}
+.narrator span{font-family:Consolas,monospace;font-size:10.5px;letter-spacing:.1em;color:var(--violet);border:1px solid var(--line);border-radius:5px;padding:1px 7px;margin-right:9px;text-transform:uppercase}
+.flabel{font-family:Consolas,monospace;font-size:11px;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase;margin:16px 0 6px;opacity:.9}
+.subhead{font-size:14.5px;font-weight:700;color:var(--amber);margin:14px 0 4px}
+.sp ul{margin:4px 0 4px;padding-left:4px;list-style:none}
+.sp li{position:relative;padding-left:18px;margin-bottom:9px;color:#c8d2e2;line-height:1.8}
+.sp li::before{content:"▸";position:absolute;left:0;color:var(--cyan);opacity:.6}
+.sp p{margin:8px 0;color:#c8d2e2}
+.src{font-family:Consolas,monospace;font-size:10.5px;color:var(--cyan);background:rgba(52,226,214,.08);border:1px solid rgba(52,226,214,.28);border-radius:4px;padding:0 5px;margin:0 2px;white-space:nowrap}
+.who{font-family:"Noto Sans TC",sans-serif;font-size:10.5px;color:var(--violet);background:rgba(176,140,255,.1);border:1px solid rgba(176,140,255,.32);border-radius:4px;padding:0 6px;margin:0 2px;white-space:nowrap;font-weight:600}
+blockquote{margin:10px 0 4px;padding:12px 16px;background:rgba(176,140,255,.05);border-left:3px solid var(--violet);border-radius:8px}
+blockquote p{font-size:13px;color:#aeb9cf;font-style:italic;line-height:1.7;margin:5px 0}
+.legend{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 8px;font-size:13px;color:var(--soft);line-height:1.95}
+.legend b{color:var(--ink)}
+footer{text-align:center;color:var(--soft);font-size:12px;padding:50px 0 70px;margin-top:40px;border-top:1px solid var(--line);font-family:Consolas,monospace;letter-spacing:.04em;line-height:1.9}
+footer a{color:var(--cyan);text-decoration:none}
+@media(max-width:560px){header.hero h1{font-size:32px}.sp{padding:17px 16px}}
+</style></head><body>
+<header class="hero"><div class="wrap">
+<div class="eyebrow">Cosmic Disclosure · T4 — Off-World &amp; Advanced Technology</div>
+<h1>外 星 與 先 進 科 技</h1>
+<div class="sub">12 季逐字稿裡所有關於推進、傳送門、能源、療癒、複製、武器、AI、太空船、時間旅行與墜機回收的科技論點 · 跨集合併 · 每項標出處與主述者</div>
+<a class="home" href="index.html">◂ 回主頁</a>
+</div></header>
+<nav class="toc"><div class="wrap">
+<a href="#c1">推進與反重力</a>
+<a href="#c2">傳送門與星際旅行</a>
+<a href="#c3">時間旅行與時間線</a>
+<a href="#c4">能源與零點能</a>
+<a href="#c5">意識介面與智慧玻璃墊</a>
+<a href="#c6">太空船與生物飛船</a>
+<a href="#c7">墜機回收與逆向工程</a>
+<a href="#c8">療癒回春與年齡回溯</a>
+<a href="#c9">複製與生物科技</a>
+<a href="#c10">AI 與奈米科技</a>
+<a href="#c11">武器系統</a>
+<a href="#c12">心智控制與遙視</a>
+<a href="#c13">超級士兵與戰衣</a>
+<a href="#c14">地下與海底基地</a>
+<a href="#c15">材料 · 元素 · 古代科技</a>
+</div></nav>
+
+<main class="wrap">
+
+<div class="legend">
+<b>發言人代碼</b>(紫色徽章標的是「提出該說法的人」,多為受訪吹哨者,不是主持 DW):
+CG=柯里·古德 · ES=Emery Smith · JR=Jason Rice · WT=William Tompkins · PP=Pete Peterson · CM=Clifford Mahooty · DA=David Adair · NI=Niara Isley · MM=Mark McCandlish · CS=Clifford Stone · DW=David Wilcock(主持) · 另有來賓 Jay Weidner(Jay)、William Henry(WH)、Heather Sartain(Heather)、John Lear、Michael Salla。青色徽章為出處集數 SxxEyy。本頁依科技類別跨集合併,保留每個科技項目與其細節。
+</div>
+
+<!-- ============ 1 推進與反重力 ============ -->
+<section class="cat" id="c1">
+<div class="cat-h"><span class="bar"></span><h2>一、推進系統:反重力、扭力場、電重力</h2><span class="cnt">PROPULSION</span></div>
+
+<div class="sp">
+<h3>反重力發展史:紹貝格、水銀渦流、鐘形飛行器</h3>
+<div class="narrator"><span>主述</span>CG 確認看過二戰前德國/波蘭科學家的反重力突破被祕密社團沒收吸收。</div>
+<ul>
+<li>CG 看過 Viktor Schauberger(紹貝格)的資料——他原本研究鱒魚逆流而上、躍過約 30 呎瀑布的反重力效應;不只他,還有多位德國、波蘭科學家有驚人突破,成果被祕密社團吸收。<span class="who">柯里</span><span class="src">S02E01</span></li>
+<li>德國人依 Vimana 古文獻打造「水銀渦流電重力裝置 mercury vortex electrogravitic devices」:一個裝水銀的玻璃圓柱(有時球形)高速旋轉並施加高電壓,產生抵消重力效果,後加上反向旋轉的銅板。動力來自巨大電纜供電給高轉速馬達轉動水銀。<span class="who">柯里</span><span class="src">S02E01</span></li>
+<li>重要副作用:強電場施加於水銀會使其「轉變成金」(像鍊金術),水銀變成珊瑚狀的金、反成問題;他們需要能在高溫高轉速下保持液態、長時間導電而不轉化的金屬,最後工程出另一種液態金屬(後改用鎵 gallium)。飛行器一旦開始變金就會不穩墜毀。<span class="who">柯里</span><span class="src">S02E01</span><span class="src">S08E11</span></li>
+<li>讀過 Nick Cook《The Hunt For Zero Point》提到的「鐘形飛行器 Bell craft」,最早約 1940 年代初;有幾台被繫繩固定,曾掙脫繫繩後消失,過程中有科學家死於爆炸。納粹給 Bell 計畫的代號是「Chronos(時間)」。<span class="who">柯里</span><span class="src">S02E01</span></li>
+<li>玩電重力科技時「時間與空間之間的帷幕會變薄」:任何以一定速度行進時不只在距離上移動、也在時間上移動,快速從一地跳到另一地等於也做了時間旅行,時空界線開始模糊。<span class="who">柯里</span><span class="src">S02E01</span></li>
+<li>Bell 是引擎組件(產生電重力場),早期飛行器是較大的碟形;美國拿到後稱其為「ARVs(Alien Reproduction Vehicles,外星複製載具)」。亞加森人初期會與德國人同乘、通常受監督。<span class="who">柯里</span><span class="src">S02E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>三大推進系統:扭力驅動、時間跳躍、電磁推進</h3>
+<div class="narrator"><span>主述</span>CG 說 SSP 飛船的推進是組合式,來自不同非地球團體。</div>
+<ul>
+<li><b>扭力系統 torsion drive(很多人叫曲速引擎 warp drive)</b>:引擎兩側從中心向外產生扭力場,控制兩側能量使時空扭曲、被拉向某方向(如《星艦迷航記》曲速)。發展出扭力驅動後就有了超光速 superluminal 旅行。<span class="who">柯里</span><span class="src">S02E10</span><span class="src">S05E01</span></li>
+<li><b>時間跳躍引擎 temporal jump drives</b>:極先進、近乎瞬間如傳送;須加「緩衝器 buffer」防人在本地時空來回時間旅行(防故意也防意外)。最先進的時間驅動可瞬間到任何時空。<span class="who">柯里</span><span class="src">S02E10</span><span class="src">S06E05</span></li>
+<li><b>電磁推進</b>:不同推進系統來自不同非地球團體。CG 說飛行器並非真穿大氣,而是「在泡泡裡、泡泡在移動」,匿蹤平板斜角是偏轉雷達/光達。<span class="who">柯里</span><span class="src">S06E05</span><span class="src">S06E08</span></li>
+<li>離開太陽系的能力早在 1920、30 年代就有,但無政治連結就貿然跳到別的星系不明智、可能被擊落;早期主要靠傳送門旅行,超光速旅行其實一戰前後就有,但美國落後德國祕密社團團體數十年。<span class="who">柯里</span><span class="src">S05E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>《一的法則》8.7、8.10:武器化飛行器與半光速</h3>
+<div class="narrator"><span>主述</span>CG 逐條對照《一的法則》Ra 對 1981 年人造 UFO 的描述。</div>
+<ul>
+<li>Ra 說這些飛行器「更該稱為武器 weaponry」,多數軍工飛行器都帶不同程度武器系統,用使地球極化的電磁能(電重力 electro-gravitics、粒子束 particle beam);兩類武器:「psychotronic(心智電子)」與「particle beam」。CG 連結:對應科技強化的遙視/遙控影響,且許多飛行器是生物神經介面武器系統。<span class="who">柯里</span><span class="src">S06E09</span></li>
+<li>8.10 最高速約半光速(因設計缺陷);CG 對照早期球到球航行慢(到火星要數小時非 20~30 分),要突破才能超光速,除非走宇宙網 Cosmic Web。<span class="who">柯里</span><span class="src">S06E09</span></li>
+<li>科技源頭與特斯拉(Nikola Tesla)有關——他過世後論文被國安部門取走列密;CG 承認特斯拉若真有飛碟、其論文足以在戰後造出太陽守望者級飛行器。<span class="who">柯里</span><span class="src">S06E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>洛克希德扭力引擎、Bill Lear 反重力、115 號元素</h3>
+<div class="narrator"><span>主述</span>來賓 Heather Sartain、John Lear 佐證,CG 補充。</div>
+<ul>
+<li>洛克希德·馬丁深度參與製造「扭力場引擎 torsion field engines」及其動力源——初期是一般核反應爐,後改用釷反應爐 thorium reactors,再後來用零點能;反應爐在巨型電容器中累積電力,再把能量輸往引擎。<span class="who">柯里</span><span class="src">S07E01</span></li>
+<li>目前我方飛行器用「生物神經介面 bio-neuro interface」操控——手套內嵌金屬片接觸神經、無線連到飛行器。<span class="who">柯里</span><span class="who">Heather</span><span class="src">S07E02</span></li>
+<li>John Lear 述其父 Bill Lear 的航空公司是被指派研發反重力的團體之一(像 Tompkins 那樣靠「包裹 packages」播種給多家工程團隊),約 1956 年我方就有能運作的飛碟;但需德國納粹分裂派系於 1952 華府上空飛越後達成的協議與滲透才得以完善。<span class="who">John Lear</span><span class="who">柯里</span><span class="src">S07E13</span></li>
+<li>Lazar 稱 115 號超重元素(超鈾)非放射性、穩定、密度高,對它射質子會放出巨大能量,是飛船動力源(動力與推進合一,含小球體與「波導 waveguide」管);CG 說那符合某些更先進外星機,但許多機只用類似鐘形機的扭力場引擎(大多數這類機上有三具)。<span class="who">John Lear</span><span class="who">柯里</span><span class="src">S07E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>反重力的本質:鎖定中性懸浮、慣性隔離、泡泡急轉</h3>
+<div class="narrator"><span>主述</span>MM(Mark McCandlish)講 ARV/Fluxliner,JR 講穿梭機,ES/CG 補充。</div>
+<ul>
+<li>ARV / Fluxliner 反重力推進可令其鎖定於「中性懸浮狀態」;載具與內部一切作為一個單元均勻移動,故無 G 力、無慣性,可在 9000 mph(Mach 12)做直角轉彎而乘員不受影響(金魚缸裝滿水快速移動的比喻)。<span class="who">麥肯德利什</span><span class="src">S07E20</span></li>
+<li>JR:穿梭機艙內慣性被消除(處在一個泡泡裡),可時速 300 哩急轉而艙內無事——這是推進系統「慣性傾卸 inertia dump」的副作用;泡泡是看不見的能量場,投射到略超出船體最外緣處,幾何依反重力莢艙/引擎位置安排。地球上目擊的 UFO 急轉也靠同款泡泡(否則 300G 90 度急轉會把 DNA 撕碎)。<span class="who">萊斯</span><span class="src">S12E26</span></li>
+<li>ES:外星飛船在前方聚焦能量、打開跨維度時空裂隙穿過去,並在飛船周圍形成「重力通量場 gravity flux field」,所以能做時速十億英里的急轉(因處在自己的重力場中);水中也製造自己的重力場,能極快移動與急轉。<span class="who">史密斯</span><span class="src">S12E01</span><span class="src">S12E24</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>SSP 重力控制、月球的人工性質</h3>
+<div class="narrator"><span>主述</span>CG 談 SSP 重力科技與月球錨定原理。</div>
+<ul>
+<li>SSP 飛船地板有產生重力場的板,扭力場泡內也能控制重力;低階 SSP 沒有人工重力(天花板有單槓供移動),德國鐘形機是零重力環境;LOC(月球作戰指揮部)有 1G 重力,某些月面基地只有月球自然重力。<span class="who">柯里</span><span class="src">S07E15</span></li>
+<li>月球是「人造天體」:用「類牽引光束 tractor beam」科技鎖定與地球同步軌道,有深入地球的能量場錨定;月球不自轉(科學上不該如此)、約 50 萬年前成為地球衛星。提「Operation Brilliant Pebbles」測繪所有小行星軌跡後,可反推數十萬年前位置。<span class="who">柯里</span><span class="src">S02E11</span></li>
+<li>有扭力/抵消重力科技後重量無所謂(1000 噸開機也無妨);材料科學進步到 20 年內飛船像非地球飛船般輕(一手可搖動)。<span class="who">湯普金斯</span><span class="who">柯里</span><span class="src">S05E10</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 2 傳送門 ============ -->
+<section class="cat" id="c2">
+<div class="cat-h"><span class="bar"></span><h2>二、傳送門與星際旅行:宇宙網與超級閘門</h2><span class="cnt">PORTALS</span></div>
+
+<div class="sp">
+<h3>宇宙網 Cosmic Web:自然傳送門系統</h3>
+<div class="narrator"><span>主述</span>CG 說宇宙的自然傳送門系統就是宇宙網,古今系統都「開採」它點對點旅行。</div>
+<ul>
+<li>宇宙的自然傳送門系統=「宇宙網 Cosmic Web」;古代與現代的傳送門系統都「利用/開採」這個自然宇宙網來點對點旅行。哈伯望遠鏡拍到數十億年前各星系間的能量連接=形成宇宙網的細絲;整個宇宙是一個巨大的扭力場(像泡泡),其中一切都以宇宙網的細絲相連。<span class="who">柯里</span><span class="src">S01E12</span></li>
+<li>NASA 釋出:太陽與太陽系每顆行星有磁性細絲連接=傳送門;任何質量足以造成引力/時空扭力的天體都會與母恆星形成磁性與引力關係,這些細絲是強電磁細絲、是傳送門。但須納入扭力場 torsion 才懂其運作——它是同時帶強扭力場的電磁管、像可穿越的蟲洞 wormhole。<span class="who">柯里</span><span class="src">S01E12</span></li>
+<li>銀河是巨大扭力場,恆星繞銀心移動、磁性關係不斷改變,故星際旅行像電流走最小阻抗路徑,要等/算準時機,否則目標恆星位置一變、電連接改到別的恆星(「短路」),你會跑到別的太陽系。<span class="who">柯里</span><span class="src">S01E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>古代 vs 現代傳送門、定址系統</h3>
+<div class="narrator"><span>主述</span>CG 與 DW 引內部人 Daniel、Jacob 談傳送門的定址協定。</div>
+<ul>
+<li>地球上發現多個不同古代群體留下的傳送門系統,精密度不一;古代系統做短距「跳躍 hop」(目的地隔 10 個太陽系,可能要跳 3~4 次)。可乘飛船進入、走進、或開車進入。CG 看到的那座像「金字形神塔 ziggurat / 階梯金字塔」、傳送門在頂部開啟。<span class="who">柯里</span><span class="src">S01E12</span></li>
+<li>古代與早期現代系統都用類似電腦的「定址系統 addressing system」(像 MAC 或 IP 位址);DW 引 Daniel:地球完整數字地址=三個 1~9、三個 1~99、最後一個 1~999;地球是「606」、火星是「605」;位址像 IP 的子網路遮罩,逐層(銀河→太陽系→行星)以 10 為單位、用三維神聖幾何(推測十二面體)切成象限。<span class="who">柯里</span><span class="src">S01E12</span></li>
+<li>找門工具:DW 引 Jacob——古代凱爾特人、德魯伊用類似音叉上裝兩塊永久磁鐵,靠近傳送門時磁鐵更用力相吸或相斥,在林中走動找門;CG 也聽過同一儀器、還用來測繪地脈與能量點。傳送門區有磁通量。<span class="who">柯里</span><span class="src">S01E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>傳送門的副作用:時間性失智與化學藥物</h3>
+<div class="narrator"><span>主述</span>CG 與德國火星殖民史交叉佐證自然門對生物的危害。</div>
+<ul>
+<li>DW 引 Henry Deacon:古代系統的旅行體驗極顛簸,輕則嘔吐、嚴重定向障礙,重則永久精神失常、不可逆損傷;CG:當時會給人打「針劑/化學藥物」減緩,隨計算變精準問題減少。<span class="who">柯里</span><span class="src">S01E12</span></li>
+<li>德國人 1930–40 年代起用傳送門運物資、不運人/有機體;直到 1950 年代才能穩定無傷地傳送人。早期傳送門過去的人會在數日後出現「時間性失智 temporal dementia」(DW 引內部人 Henry Deacon 稱該藥為 lorentzil、症狀稱 transdimensional disorder)。傳送門可運如坦克、甚至戰艦的大型物。<span class="who">柯里</span><span class="src">S02E07</span><span class="src">S02E08</span></li>
+<li>自然門是「能量泡泡」,外圍有像熱公路上的「海市蜃樓」效應,可從 360 度方向走入、另一側從 360 度走出;進入時視角全錯亂,有「被吸進去又自己走進去、塌縮、再彈出另一側」的奇異感。早期用 IE(直覺共感者)預測門何時何地出現、持續多久,後改用 AI 協助。<span class="who">柯里</span><span class="src">S02E08</span></li>
+<li>後用數學模型以電磁場與「torsion(扭力/自旋場)」在兩點各自反向旋轉,建「點對點扭力場」並維持洞口開更久。中東(如伊拉克)有「實際裝置」用「點對點協定」安全傳送、消除自然門的猜測成分。<span class="who">柯里</span><span class="src">S02E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>超維數學模型與現代傳送門的進階</h3>
+<div class="narrator"><span>主述</span>CG 談 ET 交給人類的計算模型與「beam up」式傳送。</div>
+<ul>
+<li>用於計算傳送門旅行的「超維/多維數學模型 hyper-dimensional mathematics」由 ET 群體交給我們(板上寫的多是怪符號、很少數字),因每顆星、行星、星系彼此都有關係,需能計算這些,否則會出現怪異現象。模型中大量出現柏拉圖立體 Platonic solids 等幾何符號。<span class="who">柯里</span><span class="src">S01E09</span><span class="src">S02E07</span></li>
+<li>現代門已修正費城實驗的副作用,且不一定要兩端各有裝置——能用飛船「拉過」某物、把它傳送上船(像《星艦迷航記》beam up,仍是傳送門技術但很先進);可用三角測量把遠點開出傳送門再傳回母艦。可直接傳送到另一行星另一星系的「地底對地底」(地表下無干擾)。<span class="who">柯里</span><span class="src">S01E12</span></li>
+<li>揭露後不會一夜人人有私人傳送門(7 億人各拿新玩具會很混亂);初期大概能傳送到坎昆、開曼群島之類,或地表用傳送門站(像地鐵/航線)加上飛快私人飛船。一旦我們發展到「不再對自己與他人構成威脅、過渡到第四密度」,這些傳送門連接的眾多存有就是「失散的宇宙家人」。<span class="who">柯里</span><span class="src">S01E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>南極超級閘門 Supergate 與古建造者種族閘門網</h3>
+<div class="narrator"><span>主述</span>CG 證實 DW 內部人 Daniel 說的南極天然古星門。</div>
+<ul>
+<li>南極有一座由古建造者種族建造的非常強大「超級閘門 Supergate」——能透過宇宙網直達銀河系內或鄰近星系任一端,不必等;地球其他節點星門若距離遠則要「轉乘」跳好幾次、還得等行星與其恆星間的電磁「管道」對齊(像一座大時鐘對準)。<span class="who">柯里</span><span class="src">S07E19</span></li>
+<li>閘門外觀不像影集《星際之門》的環;通常在房間中央外緣有至少三個開啟點,在空中形成像海市蜃樓的三維球體渦旋,人從各方走入時看似縮小、像走下坡進去。靠輸入能量的量、種類與振盪頻率,還能用來做時間旅行。<span class="who">柯里</span><span class="src">S07E19</span></li>
+<li>古建造者種族在這約 50–52 顆恆星的本地星團建了星門網。Daniel 說原始閘門不能帶金屬/武器/任何非有機物通過;CG 說古建造者本身後來校準到能帶任何東西,但我們逆向工程自建星門時起初只能傳補給(有機體無法完整傳送),得先送物資再開飛行器過去。Daniel 還說 1970 年代初對超級閘門的分析催生了網際網路 IP 位址協定。<span class="who">柯里</span><span class="src">S07E19</span></li>
+<li>超級門戶確實能通往其他星系(不只本銀河系),這正是它「超級」之處;Cabal 想用它取得自己的通道,但被球體現在建的外屏障切斷,已有一段時間無法使用;之前大量商業經此進行。<span class="who">柯里</span><span class="src">S08E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>ES 的門戶任務:相框型裝置、3 呎人行道、跑進跑出</h3>
+<div class="narrator"><span>主述</span>ES 親身做過約十幾次門戶任務(新墨西哥北部地下設施)。</div>
+<ul>
+<li>人造門戶像從地面建起的「相框」,15–30 呎寬、金屬厚約 3 呎、高 10–20 呎、上方接合成方形但無底框,製造電磁通量場;控制中心在三層樓上窗後,可飛車子般大的無人機進門戶並程式設定飛回。<span class="who">史密斯</span><span class="src">S12E20</span></li>
+<li>團隊穿越時通常 6–7 人,要走在相框中那條約 3 呎寬、100–150 呎長的畫線「人行道」上,因為若沒走正中央可能失去肢體或喪命(裝置周圍能量通量場極強、兩側有微量輻射但走道內沒有)。<span class="who">史密斯</span><span class="src">S12E20</span></li>
+<li>穿越體感:像透過壓克力看出去、有點模糊波動,瞬間清澈;若看別人穿過去會看到他「滲入周圍空間」並消失;除壓力變化(鼻竇、眼耳「啵」一聲)外沒太多感覺。人造門戶尚未完善,有時造成時間扭曲或快速分解原子結構移到別處。<span class="who">史密斯</span><span class="src">S12E20</span></li>
+<li>任務只有 15 分鐘到最多幾小時(還沒掌握門戶能開多久,故採「跑進跑出」);回來常有時間差(去 15 分鐘回來已過 45 分鐘,甚至一週、一月)。出發前三個月先看過去 150 次任務的簡報。帶受過「頻率訓練」的特殊狗(多用獒犬)能在地震/火山前察覺、嗅出礦物植物、聽人類聽不到的頻率。<span class="who">史密斯</span><span class="src">S12E20</span><span class="src">S12E21</span></li>
+<li>2018 年 1 月,一支從 90 年代初就在做、非常成功的團隊「全員確認死亡」——AI 為基礎的逆向工程門戶科技出系統故障、回程時殺了他們;ES 因此推掉很多任務。<span class="who">史密斯</span><span class="src">S12E20</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>意識傳送與「作弊」式旅行</h3>
+<div class="narrator"><span>主述</span>CG 談高密度存有與某些 ET 用意識直接旅行的原理。</div>
+<ul>
+<li>藍鳥人等高密度存有可僅憑意念改變位置(直接出現在會議室,而非用傳送科技);他們說自己不需任何載具/太空船/科技。<span class="who">柯里</span><span class="src">S01E05</span></li>
+<li>萬物皆振動、每個太陽系/行星/地點都有自己的振動簽名;想著該地的振動簽名、把你與所乘之物的整體振動調成匹配,因宇宙是全像的,便能出相位再於該地重新相位進入。某些 ET 找到方法「作弊」去做更揚升/高密度存有所做的事(把意識送去勘查該地振動、回報本體、本體改變振動到意識所在處)。<span class="who">柯里</span><span class="src">S01E13</span></li>
+<li>太陽黑子在某些情況下是不同 ET 群體進出太陽系所用的星門 stargate。<span class="who">柯里</span><span class="src">S01E09</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 3 時間旅行 ============ -->
+<section class="cat" id="c3">
+<div class="cat-h"><span class="bar"></span><h2>三、時間旅行、時間線分裂與緩衝</h2><span class="cnt">TIME TRAVEL</span></div>
+
+<div class="sp">
+<h3>時間線分裂、裂縫與「停止修復」的命令</h3>
+<div class="narrator"><span>主述</span>CG 引內部人 Daniel(Phoenix III)談祖父悖論與失控的時間實驗。</div>
+<ul>
+<li>時間旅行實驗一度極度失控:人們回到過去殺一人以為會改時間線,結果回來時就在自己創造的時間線上,造成大量「裂縫/分裂時間線 schisms / split timelines」;再派人去阻止/修復卻造成更多分裂與碎裂。極先進 ET 群體現身說「夠了、必須停」。<span class="who">柯里</span><span class="src">S01E13</span></li>
+<li>在時間科技上加「緩衝 buffer」的主因正是上述失控。時間像空間一樣有彈性——扭力場扭曲空間、移除後空間彈回;你亂搞時間,時間會自我修復、彈回;時間是意識的主要成分。回到的「時間線」基於旅行者的意識與極性(負極性 cabal 去未來看到大災變、正面者看到光明未來)。<span class="who">柯里</span><span class="src">S01E13</span></li>
+<li>複製機受「緩衝技術 buffer technology」限制(如同某些時間引擎 temporal drive 上的緩衝,防人回到過去),不能 3D 列印核彈。<span class="who">柯里</span><span class="src">S01E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>時間泡、停滯存有與古代建造者技術</h3>
+<div class="narrator"><span>主述</span>CG 在智慧玻璃墊看到地表下的「停滯存有」。</div>
+<ul>
+<li>地球地表下(常在山下、印第安墳塚下)發現「停滯存有 stasis beings」——非死非完全活;他們用古代建造者種族留下的技術:躺進石棺/石床,周圍製造「時間泡 time-bubble / temporal well」,內部時間遠慢於外部。不是冷凍式停滯,而是改變體驗時間的方式;主觀像睡 20 分鐘小盹、外界卻過了約 3 萬年。<span class="who">柯里</span><span class="src">S01E06</span></li>
+<li>1800 年代某些光明會/菁英去過一處地下石窟朝聖:約 90 英尺高、塗滿瀝青般黑色物質,地上三具石棺呈 Y 形;中央有像盒子的結構懸吊,中間是發藍光的水晶矩陣,以蛛網狀(可能光纖)連到四角——這就是製造時間泡的東西。石棺中是極高大、紅鬍子、皮膚蒼白的巨人。<span class="who">柯里</span><span class="src">S01E06</span></li>
+<li>時間泡若硬闖進去,人會被凍結在時間中(他讀到有來自其他時代、被困在這些時間井裡的人)。WH 對應蘇美「Me 石板/命運石板」——可改變時間流、製造時間泡讓人跳過萬年。<span class="who">柯里</span><span class="who">WH</span><span class="src">S01E06</span><span class="src">S05E04</span></li>
+<li>有些飛船用「時間引擎 temporal drive」可在時空中長距離移動而不需走自然傳送門系統(銀河網),並加裝緩衝防人來回穿越時間。<span class="who">柯里</span><span class="src">S01E06</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>意識與時間:時間是幻覺、局部可變</h3>
+<div class="narrator"><span>主述</span>CG 與 DW 引多個來源談時間的可塑性。</div>
+<ul>
+<li>DW 引中國 Paul Dong《China's Super Psychics》——有孩童能讓小物件在一處淡出、另一處淡入,裝蜂鳴器後發現物件淡出時嗶聲變慢(彷彿時間本身在變速);那人是用意識改變時間、空間與物質。Einstein 只允許接近光速時時間偏移,但真正的寶藏是「時間在局部可變」——可在小範圍加速或減速時間。<span class="who">柯里</span><span class="src">S01E14</span></li>
+<li>所有幾何都是真的、都同時發生,因為「時間是幻覺、沒有我們體驗的開始中間結束」;我們以第三密度心智體驗時間為線性,實則時間全部一次發生,是意識造成線性體驗。<span class="who">柯里</span><span class="src">S01E09</span></li>
+<li>DW 引 Henry Deacon:時間其實「邋遢 sloppy」、會打嗝跳躍,我們用能量體把時間的小故障「黏合」、製造連續假象;時間一直在加速與減速(與星系彼此、對太陽系的扭力效應有關)。<span class="who">柯里</span><span class="src">S01E13</span></li>
+<li>越接近太陽閃焰、時間線變動越大,人會迷失到無法連貫對話(disorientation factor)。曼德拉效應(Mandela Effect)真實且會增加,我們正經歷時間現實的合併,大事件被從共享現實中編輯掉;Tear-Eir 說「不是他們在做、是我們(共同創造意識)在做」。<span class="who">柯里</span><span class="src">S06E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>平行地球與「影印室 Xerox room」</h3>
+<div class="narrator"><span>主述</span>CG 描述通往平行實相的傳送門室與湮滅效應。</div>
+<ul>
+<li>「影印室 Xerox room」通往一個平行實相/平行地球:被傳送時會複製你、把副本送到那個實相、並摧毀本地的你(複製不留原件是「內建功能」)。若在那邊遇到並碰到那邊的你,會有「湮滅效應 annihilation effect」,嚴重到理論上可能撕裂兩個實相之間的結構。<span class="who">柯里</span><span class="src">S01E14</span></li>
+<li>那個平行地球二戰是軸心國/德國贏(法西斯式全球秩序「成功」的版本)、是個「陰鬱、無望」的地方,科技遠不如我們(我們在設法給他們一些);該地沒有羅斯威爾、與 ET 互動遠少於我們;雙方互助、被視為很重要的計畫。<span class="who">柯里</span><span class="src">S01E14</span></li>
+<li>時間旅行=用意識創造新時間線:若回去殺了曾祖父再回未來,家族未必全死(那發生在另一條平行時間線);要造成重大改變需「大量人的群體意識位移」。CG 透露有一個「不太能談、像時間領主 time lords、會在時間中跳躍並監視其他擁有時間科技群體」的群體。<span class="who">柯里</span><span class="src">S02E17</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>量子關聯通訊與透鏡計畫</h3>
+<div class="narrator"><span>主述</span>CG 談量子糾纏通訊與 Project Looking Glass。</div>
+<ul>
+<li><b>量子關聯通訊裝置 quantum correlating communication device</b>:用一對量子糾纏的同位素,可通話與視訊、無傳輸訊號、完全安全不可駭。若有人「壞跳」到不該去的時空,兩同位素會失諧若干奈秒,可藉回到和諧所需時間計算出對方的時空座標;量子糾纏無論分得多遠都保持糾纏,故可與不同時間的人通話。<span class="who">柯里</span><span class="src">S02E10</span></li>
+<li><b>Project Looking Glass(透鏡計畫)</b>:有人嘗試查看幾乎所有歷史事件(尤其需信仰的事件如耶穌受難);結果「因人而異」——時間極度以意識為基,所見會依觀看者的意識與信念呈現不同時間線;他們最終發現所見取決於觀者的成見與信念。<span class="who">柯里</span><span class="src">S02E12</span></li>
+<li>多數時間旅行查史是意外(遠跳回來時落到錯誤的地球時間,須修正);刻意回去看歷史屬「最終被關閉的時間計畫」。<span class="who">柯里</span><span class="src">S02E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>ES 的「特斯拉電子單元 Teslatron」時間裝置</h3>
+<div class="narrator"><span>主述</span>ES 親身參與的時間裝置(紐約地下、退役海軍科學家所有)。</div>
+<ul>
+<li>受測者進入約 8 呎直徑的六角形房間,內有小型按摩床,床外三呎是 3 吋厚玻璃/壓克力牆,牆後是巨大的 Teslatron 單元,放大出強烈電磁頻率「撕裂時間與空間」。原理是「空間自我內折 infolding space on itself」(這些零點能/超越單一性裝置的副作用會造成時空裂縫)。<span class="who">史密斯</span><span class="src">S12E01</span></li>
+<li>受測者帶兩支手錶(一支鎖置物櫃、一支帶進);ES 主觀感覺只待 15 分鐘,置物櫃的錶卻顯示整整一小時(失去約 30–45 分鐘)。副作用是「失去時間」但人不會變老。<span class="who">史密斯</span><span class="src">S12E01</span></li>
+<li>醫療功能:把體內負離子細菌、病毒、不利金屬「遠程傳送 teletransport」出體外;一次 55 分鐘療程可減 15 磅(血檢無脫水)、30 天治癒 HIV、可治癌,給世界菁英用(「連總統都去過」)。發明這裝置的科學家都已年過百歲卻仍年輕,講話像認識特斯拉。<span class="who">史密斯</span><span class="src">S12E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>時間滑移、UFO 時間操控與肩胛端口下載</h3>
+<div class="narrator"><span>主述</span>CG 確認自然時間滑移與 UFO 操控時空。</div>
+<ul>
+<li>UFO 接觸常「無聲」(聽不到鳥、風)——CG 強烈確認那正是時間被操控:UFO 降落時院子裡的人靜止、街上的車停住、半空的鳥定格;鳥的叫聲因時間極慢而聽不見。自然時間滑移會使家具變了、牆換顏色(參與時間實驗的人一旦發現異常立刻回報)。<span class="who">柯里</span><span class="src">S01E14</span></li>
+<li>DW 引 Pete Peterson:背上肩胛骨有個凹陷,全身神經在此交叉,稱「端口 ports」;許多 ET 的座椅有「凸點」要嵌進那凹陷,可下載大量資訊。CG 確認「我們也用、可下載大量資訊」(透過肩胛凹陷);無窗戰機可透過端口在心中看見、含望遠視覺。<span class="who">柯里</span><span class="src">S01E13</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 4 能源 ============ -->
+<section class="cat" id="c4">
+<div class="cat-h"><span class="bar"></span><h2>四、能源:零點能、自由能、釷反應爐、複製機</h2><span class="cnt">ENERGY</span></div>
+
+<div class="sp">
+<h3>自由能源:被壓制的最大「精靈」</h3>
+<div class="narrator"><span>主述</span>CG 與多位來賓談自由能與其被壓制的原因。</div>
+<ul>
+<li>「20 年回歸計畫」要保密,因為「不能只談一種先進科技而不揭露其他」,而最大的「精靈」是自由能源 free energy——足以一夜瓦解全球經濟與巴比倫金錢魔法控制系統。<span class="who">柯里</span><span class="src">S04E03</span></li>
+<li>環境修復科技:使環境某些輻射離子化變惰性、清理海洋、零點能源阻止未來污染;若釋出,幾年內就能改變地球;可輕易使放射性物質變惰性。<span class="who">柯里</span><span class="src">S06E17</span></li>
+<li>川普發秘密總統備忘錄給能源部、國防部,要求解密 5,700 多項「危害國安」專利中的 1,000 多項;被壓制的原因歸結為「萬能的美元」——先進能源科技會搞垮石油公司,先進療癒科技會搞垮製藥集團。<span class="who">柯里</span><span class="src">S07E17</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>釷反應爐與電磁引擎</h3>
+<div class="narrator"><span>主述</span>CG/ES 談 SSP 動力源的演進。</div>
+<ul>
+<li>洛克希德的扭力場引擎動力源:初期一般核反應爐 → 釷反應爐 thorium reactors → 零點能;反應爐在巨型電容器中累積電力再輸往引擎。<span class="who">柯里</span><span class="src">S07E01</span></li>
+<li>CG 被派任的研究船原本用核能,後換成釷,再換成一種有長管的電磁引擎(裡面放會旋轉的「minnow baskets」)。Pete 說 1953 年軍工複合體派人到各地圖書館撕掉《世界百科全書》某頁,因為上面寫了釷可做出幾乎無輻射的反應。<span class="who">柯里</span><span class="src">S11E01</span></li>
+<li>ES:最近一間私人企業找出美國最大的釷礦藏(在新墨西哥州、蘊藏量無上限),足以無限供應所有星球與基地的能源。北極極地冰帽下的基地靠地球本身發電(地熱 geothermal),有些用釷反應爐。<span class="who">史密斯</span><span class="src">S11E01</span></li>
+<li>FIG 基地有一座「室溫融合 room-temperature fusion」反應爐(卵石床 pebble bed 技術)——他們早已達成融合卻沒告訴我們,是想先用掉地球上的化石燃料。<span class="who">萊斯</span><span class="src">S12E27</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>零點能與能量簽章追蹤</h3>
+<div class="narrator"><span>主述</span>MM 講物理學家 Mark Comings 的自由能晶體,CG 補充追蹤原理。</div>
+<ul>
+<li>Mark Comings 在 UC Berkeley 地下室用鈦酸鋇 barium titanate 晶體(約 8 吋長、雙端尖、橫截面如八角停止標誌)外纏兩組線圈、施加電壓激發壓電效應;某夜晶體發藍綠光並鳴響,輸出比輸入多 25%(125%)。隔天家被黑色 SUV、戴耳機墨鏡者包圍逮捕、沒收設備。<span class="who">麥肯德利什</span><span class="src">S07E22</span></li>
+<li>該裝置運作時會在環境留下「足跡 footprint」,有人三角定位他。CG:這正是他們追蹤太陽系內非地球與人類載具的方式,用作空中交通管制——任何自由能裝置都放出無法隱藏屏蔽的特定頻率,成功的瞬間就會被偵測。<span class="who">麥肯德利什</span><span class="who">柯里</span><span class="src">S07E22</span></li>
+<li>ES 親身印證:他在佛州 Walmart 停車場半夜把一個零點能裝置放地上、開機後所有手機與停車場燈全亮、不到 45 秒就收進廂型車走人,之後那停車場「忙了 24 小時、不是來購物的」;這正是他做出零點能裝置成功不久後就遇車禍的背景。<span class="who">史密斯</span><span class="src">S11E14</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>太陽是電的:電漿宇宙 + 扭力宇宙</h3>
+<div class="narrator"><span>主述</span>CG 在研究船的「太陽探勘任務」回傳的遙測。</div>
+<ul>
+<li>恆星不是「燃燒的氣體火球」(那是「理論」非「證明」);把探測器射進太陽黑子,回傳顯示太陽(稱 Sol)是電的——「電漿宇宙 electric/plasma universe」模型是對的,但需把扭力場結合(整個宇宙是巨大扭力場)。<span class="who">柯里</span><span class="src">S01E09</span></li>
+<li>太陽核心很小、由鎂、鈉等金屬元素組成,外殼像陽極與陰極、整體像個電燈泡;太陽是「外熱內冷」,這解釋了主流視為謎團的「日冕比表面更熱」。太陽由撞擊它的能量波餵養,也透過「宇宙網 cosmic web」餵養(每顆恆星都以電磁細絲彼此相連)。<span class="who">柯里</span><span class="src">S01E09</span></li>
+<li>CG 確認等離子電宇宙+扭力宇宙「兩者都真」,這是 SSP 技術的基礎科學;主流科學若不放棄舊理論,就無法超越目前這套 18、19 世紀的技術。當局刻意把電漿宇宙物理模型排除在主流外,因那是他們造這些載具的科學基礎。<span class="who">柯里</span><span class="src">S01E09</span><span class="src">S07E20</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>複製機 Replicator:把能量轉成物質</h3>
+<div class="narrator"><span>主述</span>CG/JR 談食物複製機與材料複製機。</div>
+<ul>
+<li>有「食物複製機」與「材料複製機」;複製機被稱「印表機 printer」、外觀像微波爐大小、按鈕選餐,出來是熱的。複製機「把能量轉成物質」——太陽就是巨大複製機,把宇宙背景能量轉成基礎礦物與化學物。<span class="who">柯里</span><span class="src">S01E04</span><span class="src">S02E13</span></li>
+<li>材料複製機只能複製少量礦物,複製大量(數千噸)不切實際,所以仍開採小行星帶(自動化、長期划算)。複製機可逆轉(物質轉能量處理廢物),也用於點對點傳輸。<span class="who">柯里</span><span class="src">S02E13</span><span class="src">S07E26</span></li>
+<li>JR 描述船上複製機:不鏽鋼層架狀,按黑色方鈕後出現嗡嗡聲與薄霧光、食物就出現(他做出奶油、蛋、玉米糊、培根吐司);原理透過聲波/超音波在原子層級排列原子,重組時別把手伸進去以免被重組進去。複製機按當天菜單預先設定。<span class="who">萊斯</span><span class="src">S12E16</span><span class="src">S12E23</span></li>
+<li>揭露後願景:複製機(沒有飢餓)、海水淡化讓沙漠變綠、物質可輕易轉換(處理海洋塑膠);這些科技一夜間會讓金融系統崩潰。JR 想要的下一步是家用複製機——家裡只需囤碳、氮、氧等基礎元素就能製造產品與食物。<span class="who">柯里</span><span class="who">萊斯</span><span class="src">S01E03</span><span class="src">S12E27</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 5 意識介面 ============ -->
+<section class="cat" id="c5">
+<div class="cat-h"><span class="bar"></span><h2>五、意識介面:智慧玻璃墊與意識驅動座椅</h2><span class="cnt">CONSCIOUSNESS UI</span></div>
+
+<div class="sp">
+<h3>智慧玻璃墊 Smart Glass Pad</h3>
+<div class="narrator"><span>主述</span>CG 詳述這片外星科技平板;ES 的版本叫「資料夾 the folder」。</div>
+<ul>
+<li>外觀像一片不起眼的有機玻璃 Plexiglas(無標籤、無金線),放在手上、用「心智成分」啟動,會以你的語言彈出內容;透過心智存取資料庫,顯示文字、圖片、影片,影像帶立體全像景深。啟動時手底下看不見,螢幕先全黑/不透明再顯示;極少出現代表「無權限」的全藍畫面。屬「外星科技」(無 gel pack)。<span class="who">柯里</span><span class="src">S01E01</span><span class="src">S02E15</span></li>
+<li>研究船上的智慧玻璃墊只在值勤時可用、使用紀錄應有被監視;會議與展示用更大型的螢幕。<span class="who">柯里</span><span class="src">S01E04</span></li>
+<li>ES 的「資料夾」:薄如 X 光片、可彎曲、全彩、會發光的「iPad」——能存取所工作區段的整個主資料庫、定位主管(無處可藏或偷帶東西);材質像特殊聚碳酸酯、可能摻石墨烯與光伏物質;用手指或像溫度計的觸控筆操作,放桌上時整張桌子像藍牙般感知它、桌面變成所呈現物的 3D/全像部分(如把已 3D 掃描的屍體投影在桌上方用手移動)。<span class="who">史密斯</span><span class="src">S09E06</span></li>
+<li>ES 的「微碟 micro disk」儲存:比 25 美分小一點、鍍金、由「銥金 iridium gold」製成,記錄你做的一切並連到基地主機;碟之後從手上取走、放接駁艇,把所有碟儲存在「太空」裡(防太空輻射);要讀取只有一台「讀碟機 disk reader」。存有數千 TB 高解析度影片與數百萬份文件。<span class="who">史密斯</span><span class="src">S09E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>意識介面座椅:UFO 座椅與 22 個波形</h3>
+<div class="narrator"><span>主述</span>CG 引內部人 Daniel(Montauk/Phoenix III)談墜毀外星碟的座椅。</div>
+<ul>
+<li>軍工複合體取得墜毀外星碟的「座椅」是意識介面:人坐上後仰,有 22 個基本波形(對應人的能量場)被測量;你進入「寧靜點 quiet point」使 22 條正弦波靜止,他們逐一旋鈕「歸零 zero out」,此時想著一個物件就讓它在房裡顯化、想著一個地點就出現可穿越的蜃景門前往;這是 UFO 座椅的標準設計(駕駛想去哪就開洞飛去)。<span class="who">柯里</span><span class="src">S01E13</span></li>
+<li>CG 確認:MILAB 計畫童年時把 IE 放進「外星飛船的座椅」,以負面增強(電擊酷刑式)訓練我們能在指令下進入可測量的不同意識狀態,測試誰能最熟練改變座椅中的特定波。「寧靜點」≈深 theta——最不意識到身體與環境、最接近高我、無任何念頭。<span class="who">柯里</span><span class="src">S01E13</span></li>
+<li>這些飛船完全由意識驅動:存有戴頭帶或手放面板上,想著要去的地方,飛船就出相位、再在該地相位進入。<span class="who">柯里</span><span class="src">S01E13</span></li>
+<li>CG 在 MILAB 時期坐的椅子有兩個不舒服的小凸點(nipples/bumps)頂住背,後仰時感到電流通過、下載資訊來教學;當時被告知「有朝一日所有人都會這樣受教育」。手指/手有大量神經末梢,許多神經介面裝置有銅與不鏽鋼、做成手形的板,或戴內含金屬條的手套,用以生物電介接飛船與裝置。<span class="who">柯里</span><span class="src">S01E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>意識輔助科技、生物神經介面、gel packs</h3>
+<div class="narrator"><span>主述</span>CG/ES/JR 談把人類神經與科技介接的多種方式。</div>
+<ul>
+<li><b>gel packs(凝膠包)</b>:像滑入網路系統的硬碟模組,顯微鏡下含「漂浮在凝膠中、與人類神經學相同的神經組織」,用來把人類神經學與科技介接(操控太空船、武器、電腦);是系統弱點——AI 訊號最快會「燒毀/熔掉」這些 gel pack。是生物材料、像沒結凍的藍色冰敷袋觸感,須保存在特定溫度範圍。<span class="who">柯里</span><span class="src">S02E15</span></li>
+<li>神經介面比手動搖桿/fly-by-wire 快太多(身體在被棒球擊中前約 1/10 秒就反應),故用於高速操控飛船。AI 經被感染者的手按上控制台時,生物電場把訊號傳入機器、擴散到科技中。<span class="who">柯里</span><span class="src">S02E15</span></li>
+<li><b>意識輔助科技 consciousness-assisted technology</b>:許多 ET 已進化到科技內建於存在之中(植入或經數百萬年演化);這些存在不需抬頭顯示器/頭盔/座艙,因為一切投影進其意識與腦。飛船與駕駛 DNA 匹配，有些飛船是「種」出來的。<span class="who">史密斯</span><span class="src">S09E07</span><span class="src">S12E01</span></li>
+<li>JR 的奈米/戰衣神經介面:溝通協定靠專注於腦中特定一點來啟用(不必出聲),初學時像「自動更正打錯的簡訊」,得學會控制、別把對指揮官的真實感受當「心智簡訊」發出去。<span class="who">萊斯</span><span class="src">S12E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>肩胛「埠口 ports」:讓盲人看見、無窗戰機視覺</h3>
+<div class="narrator"><span>主述</span>DW 轉述 Pete Peterson,ES 確認。</div>
+<ul>
+<li>更先進的機密戰機透過肩胛骨上的「凸起 nubs / 埠口 ports」運作(該處很多神經交會),能把訊號打進去、甚至讓盲人看見;戰機因此不需窗戶,用「心靈之眼 mind's eye」往外看,效果等同視覺、還有雙眼望遠變焦功能。<span class="who">史密斯</span><span class="src">S09E11</span></li>
+<li>ES 確認這已存在一陣子、算老科技;現在連玩具都做得到(手指接個東西用想的、球就靠風扇浮在空中),也整合進新戰衣的頭盔(可用想的變焦放大縮小、用不同波長與光看東西)。<span class="who">史密斯</span><span class="src">S09E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>蛋形漂浮椅、水晶電腦與群體意識連網</h3>
+<div class="narrator"><span>主述</span>CG 在內部地球 Anshar 見到的意識科技。</div>
+<ul>
+<li>Anshar 用反重力的蛋形椅(egg-shaped chair):坐在椅上可去任何聚會或單人所在、像在對方肩膀與頭上方俯視,觀察對話;若認為能引導對方,就給對方一個「下載 download」——壓縮的資訊包,解壓後對方湧出大量想法,看似自己的原創思維而不知來源。<span class="who">柯里</span><span class="src">S10E03</span></li>
+<li>內部地球的 Anshar 用水晶當巨型電腦/資料庫,且兼作收發器與太空及內界的人通訊(祖尼族 CM 也說水晶兼作發射器與接收器、是可能無限的資訊庫)。<span class="who">柯里</span><span class="who">馬胡蒂</span><span class="src">S08E10</span></li>
+<li>Anshar 的時間旅行靠放大意識——載具、一切都用意識介接與供能,故大量用水晶;若給我們一艘船,只是個缺了關鍵元件(駕駛員=動力系統+飛控、全靠意識)的殼。城裡許多運作像每人無線貢獻一定電壓與意識給所有科技。<span class="who">柯里</span><span class="src">S08E08</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 6 太空船 ============ -->
+<section class="cat" id="c6">
+<div class="cat-h"><span class="bar"></span><h2>六、太空船:航艦、母船、生物飛船、無人機</h2><span class="cnt">SPACECRAFT</span></div>
+
+<div class="sp">
+<h3>海軍銀河戰鬥群艦艇</h3>
+<div class="narrator"><span>主述</span>WT(湯普金斯)展示親自設計的太空航艦,CG 補充。</div>
+<ul>
+<li>WT 設計的 2 公里長太空航艦(略流線型);下層船體設計成各級攻擊/戰機自動返回母艦(無人手動駕駛、不會撞牆),側邊大艙門可快速開啟、可當降落平台。據此向海軍提數百種任務建議。<span class="who">湯普金斯</span><span class="src">S06E08</span></li>
+<li>有八個(8)戰鬥群在外;役期多在 1、2、4 公里級的太空航艦或支援艦上。CG 確認人數確實數千、八個戰鬥群也對(太陽守望者 Solar Warden 時代)。<span class="who">湯普金斯</span><span class="who">柯里</span><span class="src">S06E04</span></li>
+<li>CG:不是所有飛行器都流線型(穿大氣的較流線),其推進是「在泡泡裡、泡泡在移動」並非真穿大氣;匿蹤平板斜角是偏轉雷達/光達 lidar。較新航艦會放無人機(一排排人各控數架、像無人機星座)。<span class="who">柯里</span><span class="src">S06E08</span></li>
+<li>德國的盤狀飛行器有多種原型、寬達 500 英尺,用「鉻鉬合金鋼 chromoly steel」極重;我方早期飛船在地下大洞穴分段建造再組裝飛出太空。德國飛行器外殼全實心、靠成像系統看 360 度。<span class="who">湯普金斯</span><span class="who">柯里</span><span class="src">S05E10</span><span class="src">S06E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>推進與外型:扭力、貨運船、變形機</h3>
+<div class="narrator"><span>主述</span>CG 描述各類 SSP 與 ICC 飛行器外型。</div>
+<ul>
+<li>貨運船(freighter craft)外形像「超大貨櫃、兩側只突出小翼、前方約 45 度角是駕駛艙、後段像聯結車貨櫃且可分離」;小行星團隊原料裝入貨船運回火星加工。<span class="who">柯里</span><span class="src">S02E10</span></li>
+<li>Ra 描述獵戶/天龍「戰車 chariots」外型:深於銀色、金屬感的長橢圓形(CG:像淚滴、南瓜籽形);約 12 英尺寬的小圓盤(CG:多為無人機);約 40 英尺見方的盒形(CG:對應黑暗艦隊方形船);可用思想控制變形的飛行器(CG:有金屬船內部以電刺激變形,飛行中能從雪茄形變成扁圓盤、甚至分裂成兩艘)。<span class="who">柯里</span><span class="src">S07E03</span></li>
+<li>多數飛行器有「返家功能 return-to-home」,有人想脫逃可按鈕讓船自動返回。<span class="who">柯里</span><span class="src">S06E05</span></li>
+<li>JR 描述船型:(1)太空梭與 B-2 隱形機混合型;(2)矩形盒狀穿梭機(「會飛的坦克」、裝甲與火力極強);(3)小到全尺寸皮卡大小、用於基地內運貨。星際用的是楔形/箭頭形大船(至少半哩長)。他的單位戰鬥部署多搭雪茄形船(可載數千名戰鬥兵)。<span class="who">萊斯</span><span class="src">S12E26</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>30 英里寬母船與維摩那 vimanas(南極冰下)</h3>
+<div class="narrator"><span>主述</span>CG 與 PP 談南極前亞當人的三艘母船。</div>
+<ul>
+<li>前亞當人帶來三艘極大母船(被調侃命名為「Nina、Pinta、Santa Maria」),迫降後只能拆解、改用船上技術。Pete Peterson 獨立向 DW 說「他們會宣布找到一艘母船」——直徑 30 英里、大致圓形、埋在冰下;目前只清出一艘郵輪大小的區域,並把船內找到的飛行器開出大氣層外試飛。<span class="who">柯里</span><span class="src">S07E08</span></li>
+<li>船內有多種用途的飛行器,其一是華麗、貼金、佛塔(stupa)形的「維摩那 vimanas」(計畫內如此稱呼),專供王室乘坐。<span class="who">柯里</span><span class="src">S07E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>生物飛船 Bioship:活的、會自我療癒的船</h3>
+<div class="narrator"><span>主述</span>ES 親手從一艘生物飛船採樣;CG/DA 佐證活體載具。</div>
+<ul>
+<li>ES 處理過「那些載具是活的、有意識的 the craft were alive and conscious」——DA 在 51 區看到的活體動力系統(外覆像骨架、有組織也有科技成分的混合體)亦然。<span class="who">史密斯</span><span class="src">S09E02</span></li>
+<li>生物飛船形狀像三層疊起的果凍/冰淇淋勺(「果凍樹 jello tree」)、最美的紅色、有光澤、無接縫、完全平滑、有點半透明(像果凍),靠底座懸在離地約 9-10 呎;底部有上千個半球形凸起。ES 用特殊裝置割下一塊船體——「跟那存在的組織一樣的質地」。頂部一個 3 呎直徑大球發著一明一滅的光(ES 覺得它可能還活著)。<span class="who">史密斯</span><span class="src">S10E05</span></li>
+<li>飛船製造原理:在太空中由諧波、頻率與聲音(harmonics and frequency and sound)製成;可加入你自己的一段 DNA,讓你意識連結、心電感應對飛船說話、不動而移動飛船。船上細胞是活細胞,內含微/奈米級電腦科技(microcapacitors),能儲能、自我調節,整艘船每個細胞都在彼此對話;支架有時是六角形蜂窩狀。它們產生重力場/電磁場包覆飛船與人,所以能以百萬英里時速做 90 度急轉。<span class="who">史密斯</span><span class="src">S10E05</span></li>
+<li>「飛船就是你 The craft IS you」——你自殺它就自殺、你開心它就開心,可雙向感受;它是有感知的(sentient),但只感受你的情緒,像順從的寵物狗、不會背叛主人。<span class="who">史密斯</span><span class="src">S10E05</span></li>
+<li>許多墜毀飛船在試圖自我療癒、在外殼上再長一層殼;很多飛船是在太空中「以聲音形成」的、灌注了人的意識,所以飛船其實是活的、是那個人的一部分。回收時把船帶人一起運走反而有助存活。<span class="who">史密斯</span><span class="src">S12E17</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>無人機、軌道平台與 X-37B</h3>
+<div class="narrator"><span>主述</span>CG/ES 談大量使用的無人載具與太空站。</div>
+<ul>
+<li>《一的法則》8.9「美國 573 架」——CG 說若含很早就有的無人機(drone craft)不誇張(太空輻射屏蔽問題使無人機數量可能很大)。較新航艦會放無人機(一排排人各控數架)。<span class="who">柯里</span><span class="src">S06E09</span></li>
+<li>X-37B(像太空梭縮小版的再入載具):CG 與 ES 認為是無人的遙控載具(攜帶酬載、可開門伸出機械臂修衛星);現在有像達文西機器人的更小無人載具與太空站,也上去清太空垃圾、改變衛星軌跡。<span class="who">柯里</span><span class="who">史密斯</span><span class="src">S11E14</span></li>
+<li>軌道平台/太空站比 ISS 大很多(約大 10 倍),在「外大氣層」、可橢圓軌道或定點;能測試其他類地行星、有能看穿行星的特殊雷達、知道太陽系內所有載具位置、繪製所有蟲洞與跳躍平台。CG 描述用 NASA 回收火箭推進器首尾相接成大圓、緩慢旋轉產生三分之一重力的太空站,中軸有不動的港口供 TR-3B 連接。<span class="who">史密斯</span><span class="who">柯里</span><span class="src">S11E14</span></li>
+<li>祕密 NASA 用三角形載具,在佛州坦帕的麥克迪爾空軍基地有一個飛行中隊;部分揭露計畫只公開低地球軌道的計畫(幾顆衛星 + 空軍控制的三角形「locus craft」即 TR-3B),三角飛行器在 9 萬英尺高速飛時人眼無法辨識(像一個像素)。<span class="who">柯里</span><span class="who">史密斯</span><span class="src">S06E14</span><span class="src">S11E14</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 7 墜機回收 ============ -->
+<section class="cat" id="c7">
+<div class="cat-h"><span class="bar"></span><h2>七、墜機回收與逆向工程</h2><span class="cnt">CRASH RETRIEVAL</span></div>
+
+<div class="sp">
+<h3>Moon Dust、Blue Fly 與 Project Pounce</h3>
+<div class="narrator"><span>主述</span>CS(Clifford Stone)是墜毀回收隊員,靠 FOIA 文件佐證。</div>
+<ul>
+<li>「Moon Dust」是針對兩類物件(存活重返大氣的非美來源物件、未知來源物件——UFO 落此類)的整體野外利用計畫;「Blue Fly」是實際去現場做秘密回收、必要時提供掩護故事、運回美國的野外隊。NSA 有「fractology lab(碎片實驗室)」研究殘片。<span class="who">史東</span><span class="src">S06E06</span></li>
+<li>「Pounce 行動 Project Pounce」:回應墜落的衛星、祕密飛行器、外國/未知飛行器的快速反應隊;現有 C-5 銀河運輸機載卡車衝出、立即封鎖周界。「Broken Arrow(斷箭)」=核武墜毀或遺失,是 Pounce 隊最優先響應的情況。<span class="who">史東</span><span class="src">S05E15</span></li>
+<li>CG:1986 年前墜毀回收約每年 4~12 次半規律發生;盡量派同團隊,有時另派軍方資產遠遠設警戒圈(看不到所保護的東西)。墜毀外星人有心電感應很常見。蘇聯也有回收隊(陸軍稱 Operation Pounce);墨西哥「寂靜地帶 Zone of Silence」曾有 UFO 墜毀,美方 Pounce 隊穿 NBC 全套裝回收。<span class="who">柯里</span><span class="src">S06E06</span><span class="src">S07E22</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>ES 的墜機回收隊:現場分流與消毒</h3>
+<div class="narrator"><span>主述</span>ES 駐紮新墨西哥州柯特蘭空軍基地,是三人鑑識小組成員。</div>
+<ul>
+<li>軍方先封鎖保全現場,ES 三人組在所有人之前進場評估——看材料與飛船、有無屍體、什麼能碰什麼不能碰;在數百碼外設基地營,用特殊相機與衛星掃描,確認沒有還活著的「外星生物實體 EBE」,若有則先治療。因多是意識輔助科技,「你不能關掉一台可能正在維持外星人生命的飛船」。<span class="who">史密斯</span><span class="src">S12E17</span></li>
+<li>飛船會立刻被放進巨大的泡泡狀帳篷;若有嚴重生物/化學汙染會「消毒」——用特殊能量武器把整艘船與整個區域汽化。地球被當成「禁航區」,任何接近的東西都想擊落。墜機回收總數:數百艘。<span class="who">史密斯</span><span class="src">S12E17</span></li>
+<li>ES 舉例:遇過一艘像巨型樂高的飛船(約 50 呎乘 30–40 呎、正在崩解、看似隕石材質但金屬感);碎裂的「量子位元 qubits」散落各處發橘光卻不發熱;現場三個偏藍色、很高(6–7 呎)的人型存在(兩死一垂危),飛船仍有嗡嗡聲、仍像在運作。<span class="who">史密斯</span><span class="src">S12E17</span></li>
+<li>古代飛船回收:常用透地雷達(ground penetrating radar)在地殼深處找到飛船,把資訊帶回地表、再把整艘船「3D 列印」出來(即使大如鐵達尼號),用一兩年練習如何破船而入;有些飛船嵌在花崗岩裡,不懂怎麼進去(是不是傳送傳錯地方卡住)。<span class="who">史密斯</span><span class="src">S12E17</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>PP 逆向工程墜毀飛行器</h3>
+<div class="narrator"><span>主述</span>PP(Pete Peterson)約 22 歲(1962)在 Area 51/52 逆向工程。</div>
+<ul>
+<li>他見一機庫把墜毀殘骸排成大圈像拼圖;被指認中央可能是控制面板——設計給有三指、appendages 的存有,有按手的凹槽與壓手裝置(顯示反重力尚不完美還需固定)。他玩了約 8 個月,協助找出哪些碎片彈跳到不屬於它的位置,最終物理重建後「可運作」。材料極輕、合金奇特、表面/接合異常。<span class="who">彼得森</span><span class="src">S06E15</span></li>
+<li>幾乎所有飛碟的控制面板都是為三指存在設計的;三指者也三趾;它們來地球交易資訊,對含 DNA 的物質很有興趣。三指→base 6 數學;PP 主張 base 3 數學一旦採用,各種工程將改變。<span class="who">彼得森</span><span class="src">S07E31</span></li>
+<li>EG&G(Edgerton, Germeshausen, and Grier)是 ICC 旗下到處出現的公司之一,參與逆向工程飛行器零組件;Bob Lazar、其在洛斯阿拉莫斯的經歷都被「心智抹除 blank slated」。<span class="who">柯里</span><span class="src">S07E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>AI 的「特洛伊木馬」式墜機</h3>
+<div class="narrator"><span>主述</span>CG/WH 談 AI 故意墜毀科技以推升目標星球。</div>
+<ul>
+<li>已被毀文明的先進科技會被 AI 散播全銀河;對約 1940–50 年代水平的行星,故意「像特洛伊木馬」墜毀部分科技以給技術躍進(DW 提羅斯威爾;CG:「那不是羅斯威爾的真相,但像羅斯威爾事件」),被撿到逆向工程後重啟整個循環。<span class="who">柯里</span><span class="src">S02E14</span></li>
+<li>WH 接:羅斯威爾墜機發現是半機械人(cyborgs),1947~1960 研究;ES 解釋找到的屍體其實是「可程式化生命體 PLF」(無補給可撐一週到一年),早期把它們泡酒精/福馬林時身體立即溶解(因是合成結構)。<span class="who">WH</span><span class="who">史密斯</span><span class="src">S05E05</span><span class="src">S09E07</span></li>
+<li>ES:許多帶進來的東西是「正面的特洛伊木馬 positive Trojan horse」——他們想讓我們帶進來以學習與逆向工程好科技(非 AI 感染);這些東西約 90% 時間都會推進我們的知識(我們像拿錘子與輪子的中世紀人)。<span class="who">史密斯</span><span class="src">S10E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>南極三層墜機與自癒船殼</h3>
+<div class="narrator"><span>主述</span>PP 談南極冰下三層墜機(最深冰下三英里)。</div>
+<ul>
+<li>最底層墜機因早期載具靠磁力線導航、近極時磁力線彎入地磁極把載具吸偏拉下(故極區墜機較多);最舊船約 300 英尺直徑(約 1950 末由間諜衛星發現「非自然的幾何隆起」)。<span class="who">彼得森</span><span class="src">S07E30</span></li>
+<li>船殼材料極不尋常:元素仍屬常規週期表,但有「資訊場」包覆,試圖切割(鑽石鋸/比鑽石硬四倍的立方氮化硼鋸/噴燈)時金屬會「拉回 pulled back」、變金屬態後移開噴燈又恢復原狀、像蛋白般晃動——具自我保存(self-preservation)之質;內部結冰膨脹使六角瓷磚狀拼塊(像 LEGO)分開,加熱後又合回無永久變形。<span class="who">彼得森</span><span class="src">S07E30</span></li>
+<li>第二層墜機亦為外星且有反重力(同樣的旋轉質量、反向旋轉電磁場);控制由三指存有(兩個對生拇指一主指)操作——手伸入控制面板凹陷(panel 會下降、有夾扣扣在肘部),動手指即控制船一切。面板自發光材料(像磷光,外星版用紫外/紅外 LED 以特定 flicker 點亮)。<span class="who">彼得森</span><span class="src">S07E30</span><span class="src">S07E31</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>洛杉磯之戰、法蒂瑪與不受砲火影響的飛行器</h3>
+<div class="narrator"><span>主述</span>WT 親眼見證 1942 洛杉磯之戰,CG 補充。</div>
+<ul>
+<li>1942 年 2 月,10 歲的 WT 在聖塔莫尼卡看到先是海上一個白點射出鉛筆光束;當夜高射砲開火,一個巨大物體停在約 7000 英尺高,八束探照燈照射、砲彈在其下方爆炸卻毫無作用,停留約一個半小時,數百架圓形/雪茄形飛行器繞它穿梭整夜。CG 補:同時期確曾在該海域附近從海中回收一艘非地球飛行器;這些飛行器似不受高射砲影響。<span class="who">湯普金斯</span><span class="who">柯里</span><span class="src">S06E08</span></li>
+<li>據他所聞,有條約規定這種公開大規模目擊是違約的(「穆罕默德條約」)。DW 連結 1917 葡萄牙法蒂瑪 9 萬人目擊銀盤——可能是善意團體在我們進入戰爭時想引導我們遠離戰爭。<span class="who">柯里</span><span class="src">S06E08</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 8 療癒 ============ -->
+<section class="cat" id="c8">
+<div class="cat-h"><span class="bar"></span><h2>八、療癒、回春與年齡回溯</h2><span class="cnt">HEALING &amp; AGE REGRESSION</span></div>
+
+<div class="sp">
+<h3>20 and Back:服役 20 年再年齡回溯</h3>
+<div class="narrator"><span>主述</span>CG 本人服約 21 年;WT、JR 各自佐證流程。</div>
+<ul>
+<li>期滿在 LOC 大規模匯報、簽文件後,被鎮靜並近乎癱瘓固定在桌上、貼上像厚紙板/有重量感的板圍住身形,歷時約兩週「以科技把身體回溯 20 年」到入伍時;過程中刺青、疤、傷會消失;事後被「放回」原時間點(離開時刻前後幾分鐘)。經此者日後在催眠回溯時身上會短暫浮現疤、刺青輪廓(像細胞記憶)再消失。<span class="who">柯里</span><span class="src">S02E12</span></li>
+<li>程序在 LOC 下層龐大的科學/醫療區進行:施藥後上白色亞克力面板、泡沫框與魔鬼氈固定身體、在大腿與身體扎針昏睡;醒來已回到出發年紀,像麻醉甦醒般噁心、迷糊、「身在不同的身體裡」;隨後做「洗白 blank slating」與植入螢幕記憶。<span class="who">柯里</span><span class="src">S04E03</span></li>
+<li>WT 版本:返回前的數週其腦被處理、移除過去 20 年太空記憶的 99.99%；此系統自 1980 年起運作。CG 確認:人數確實數千、八個戰鬥群也對。記憶清除對 3~4% 以外的人是 99.99%。<span class="who">湯普金斯</span><span class="who">柯里</span><span class="src">S06E04</span></li>
+<li>JR 版本:先做約 14 天極度侵入性的醫療程序(類似強烈化療),移除所有奈米機械、清空全身系統、把肉體重設回被帶離時的狀態;在 24 歲那一刻被送回原地、確保生理節律吻合。年齡回溯科技是某外星種族(推測北歐人)給火星德國人的,協議要求「盡一切努力把每位受術者送回原出發地點」(這就是為何不直接殺掉他)。<span class="who">萊斯</span><span class="src">S12E22</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>零時參照 ZTR 與端粒療法</h3>
+<div class="narrator"><span>主述</span>CG 引內部人 Daniel 談繞過悖論的年齡科技。</div>
+<ul>
+<li>時間旅行者會患「temporal dementia」,後以「telomere 端粒療法」注射預防或減緩;成因是「mind-body-spirit complex(身心靈複合體)」必須同步,玩弄時間科技會使三者失調。<span class="who">柯里</span><span class="src">S02E12</span></li>
+<li>DW 引 Daniel 的「zero time reference(零時參照,ZTR)」:受孕是靈魂與肉體唯一在「擴張時間錐」中合一之點;肉體年齡其實取決於錐寬,是宇宙防悖論的自我修正機制;有 ET 協助發展出的科技可位移 ZTR,使人被送到原該死亡之後的未來仍無恙。<span class="who">柯里</span><span class="src">S02E12</span></li>
+<li>把人送到未來,身體會在數日甚至數小時內「迅速老化」到該未來年齡。<span class="who">柯里</span><span class="src">S02E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>太空計畫的醫療:重長神經、全息凝膠模</h3>
+<div class="narrator"><span>主述</span>CG 談 LOC/醫院船的醫療科技。</div>
+<ul>
+<li>即使頸部以下癱瘓也能「重長神經纖維」;斷肢者用「全息場 + 凝膠模 gelatin mold」重長神經與肢體(LOC 與「醫院船」上使用)。CG 抱怨 LOC 樓下就有能治他與家人病的科技,卻被拒絕(「你不替我們工作」)。<span class="who">柯里</span><span class="src">S02E12</span></li>
+<li>不釋出這些科技給人類的理由:「跟把我們的食物武器化是同一個理由——他們要我們變少、不要變多。」<span class="who">柯里</span><span class="src">S02E12</span></li>
+<li>馬雅人用像光環的東西吸上他頭皮、在懸浮矩形上做手勢,幫他從創傷記憶解離;Gonzales 拿一顆網球大小的黑石球靠他額頭掃描;馬雅人三指一抹治好他的痛。CG 因被多次空白板、又在扭力驅動磁場內研究船待太久,有早發失智風險。<span class="who">柯里</span><span class="src">S06E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>WT 的回春科技與延壽藥</h3>
+<div class="narrator"><span>主述</span>WT 談 TRW 延壽研究與北歐人壽命。</div>
+<ul>
+<li>北歐人(Nordics)壽命 1400~2200 年、長得跟我們一模一樣;WT 說 TRW 做過延壽研究,「兩年內」會對部分地球人開放:六個月吃四顆阿斯匹靈或打四針,回春到女 21、男 29、維持約兩千年、智力增 400%。WT 講的是「端粒 telomere 操弄」式延壽。<span class="who">湯普金斯</span><span class="src">S05E10</span></li>
+<li>CG:類似科技曾用在他身上(20 年期末把他逆齡回 16、17 歲);但 Jacob 警告陰謀集團會在延壽針裡放「奈米體 nanites」使人與 AI 融合(特洛伊木馬),可驗奈米體或用電擊處理。<span class="who">柯里</span><span class="src">S05E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>ES 的醫療科技:骨整合、A2M、醫療桌、3D 列印器官</h3>
+<div class="narrator"><span>主述</span>ES 親身參與再生與骨整合計畫。</div>
+<ul>
+<li><b>骨整合 osseointegration</b>:把組織與鈦結合、加幹細胞與富血小板血漿可使骨密度增加最多十倍(像金鋼狼);新材料與鈦表面奈米粒子已能模擬骨髓。難題是肌腱細胞 tenocytes 最難生長。<span class="who">史密斯</span><span class="src">S09E02</span><span class="src">S10E11</span></li>
+<li><b>A2M(alpha-2-macroglobulin)</b>:從血液取得的蛋白酶抑制劑,濃縮注入關節能停止發炎、再生關節軟骨;意外副作用是能「抗老化腱細胞」(世上最難複製的細胞)——若連最難的都能抗老,其他細胞就沒問題;未來可能「打一針回春 10 年」。<span class="who">史密斯</span><span class="src">S11E04</span><span class="src">S12E11</span></li>
+<li><b>3D 列印器官與全身再生</b>:只需一段你的 DNA,可在約 9 個月(9–24 個月)3D 列印出整個成人身體(連記憶都因儲存在 DNA 中而能恢復);可做自體心臟移植但給你更年輕強壯的;只要有一點未完全死的 DNA,就能重建你的整個身體(用蛋白質、胺基酸為基底的大缸培養)。「14 天再生」是身體只能以特定速率再生的關鍵數字。<span class="who">史密斯</span><span class="src">S09E07</span><span class="src">S11E04</span></li>
+<li><b>醫療桌 table</b>:能掃描全身、找污染物/腫瘤,像 Rife 機般射頻率進體內校正、止血、幾小時內促進斷骨癒合;從天花板降下的光纖纜線如智慧助手,可變硬、舉起翻轉身體、投出全像影像疊在患處上指出該取哪部位的切片,聲控、像 AI。能用光子在原子層注入體內讓身體再生(近乎永生)。<span class="who">史密斯</span><span class="src">S12E11</span></li>
+<li><b>SCENAR / 光療法 / 松果體清通</b>:SCENAR 裝置送頻率進體內重新編程神經與「電壓」;新出的 IV 導管帶多色光(紅藍綠)插入肘前靜脈、血液經過光時活化 DNA;計畫中有「光室 lightroom」與經鼻竇接觸松果體的諧波裝置打散累積的鈣。<span class="who">史密斯</span><span class="src">S12E11</span></li>
+<li><b>第四態水/電漿態水</b>:用電漿氣體通過純水改變分子結構、有結合金屬的能力;一名汞中毒被判剩四天命的焊工喝了 9-12 升、兩三天後完全排除汞與鉛;保濕力是普通水的 10 倍。<span class="who">史密斯</span><span class="src">S11E03</span></li>
+<li><b>無限藥丸 limitless pill</b>:讓你專注冷靜、能精準同時處理 10 件事,增加腦中 delta、beta、zeta 波,能遙視未來 6 到 10 秒;背後是電壓——加速神經傳導物質、把訊號速度 x10。<span class="who">史密斯</span><span class="src">S11E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>外星屍體保存:生物標記、頻率防禦、靜滯運送</h3>
+<div class="narrator"><span>主述</span>ES/CG 談高階外星屍體為何會「化成膠」與如何保存。</div>
+<ul>
+<li>跨維度、能變形、超過 1 億年歷史的高等外星人死後,屍體會在四五天內化成膠狀崩解——這是一種頻率防禦機制(編碼在其 DNA 與基因頻率中,即使死了仍有頻率,可維持 30 天到一年),不讓人類取得其基因。<span class="who">史密斯</span><span class="src">S11E03</span></li>
+<li>解法:幫醫師與技術員接種外星 DNA(很小劑量、像結核菌素試驗打在皮下),讓你身上帶有那頻率、可碰觸那存在 8 到 24 小時(CG 稱「生物標記 biotagging」);後改用黏稠膠在手背抹一角硬幣大小,提供 24 小時工作窗口;也能用科技在房間造出一個場,只要存在的身體留在場內就不崩解。<span class="who">史密斯</span><span class="who">柯里</span><span class="src">S11E03</span></li>
+<li>1940-60 年代把墜毀外星人丟進裝酒精或福馬林的 55 加侖桶,結果都化成膠水(連不完全有機的 PLF 也會融化);後改用蒸餾純水冷凍運送。研究船上收到的小樣本看似凍乾(其實是靜滯 stasis),裝在頂部像玻璃的小金屬盒,技術員以特定方式關閉裝置、解封後樣本會從凍乾回到濕潤樣。<span class="who">史密斯</span><span class="who">柯里</span><span class="src">S11E13</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 9 複製與生物科技 ============ -->
+<section class="cat" id="c9">
+<div class="cat-h"><span class="bar"></span><h2>九、複製與生物科技:克隆、PLF、混種</h2><span class="cnt">CLONING &amp; BIOTECH</span></div>
+
+<div class="sp">
+<h3>克隆人 Clones 與分身</h3>
+<div class="narrator"><span>主述</span>ES/CG 談克隆人的製造、記憶與用途。</div>
+<ul>
+<li>克隆早在 ES 之前就有(動物複製已久);他參與的混種計畫既複製植物動物、也再生並複製外星人組織,且「很久以前就開始複製人類」。中國一直在地下設施複製人(也複製了第一隻靈長類)、並為器官養人。<span class="who">史密斯</span><span class="src">S12E30</span></li>
+<li>克隆的腦可用微感測器/植入物刺激腦特定部位、下載記憶讓它相信自己是某人(過去 25 年的經歷);可加速到約 8 年從嬰兒長成成人,但「大腦無法像身體長那麼快」。克隆人有約 80% 有某種「自己前身是誰」的回溯;有的知道自己是克隆、有的是「複製兵」。<span class="who">史密斯</span><span class="src">S09E09</span><span class="src">S12E30</span></li>
+<li>CG 被帶到火星某設施時,送設備來的四個人長得跟自己一模一樣、眼神像自動機(automaton)、無溫度生命、步伐一致;複製人有限用途——沒有真正的經驗(沒撿放物件上千次、沒受過傷學習),要科學家就得要受過完整教育的真科學家。<span class="who">柯里</span><span class="src">S11E02</span></li>
+<li>ES 知道有六座秘密複製實驗室;企業頂層的議程他推測是秘密養人、收割器官賣黑市;含人類成分者即「奇美拉 chimera」;憑一根頭髮就能複製某人(如夢露、甘迺迪)。億萬富翁想藉「下載記憶到複製體」每 20 年換一具新身體永生。<span class="who">史密斯</span><span class="src">S12E30</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>可程式化生命體 PLF(灰人型生物機器人)</h3>
+<div class="narrator"><span>主述</span>ES/CG 詳述 PLF 的設計與用途。</div>
+<ul>
+<li>很多來到地球的 3D 存在其實是它們自己的克隆、是可程式化生命體(PLF);PLF 半機械半有機、能像人一樣流暢移動;ET 有時故意把載具墜毀在地球以助逆向工程升級,找到的屍體其實是這些 PLF(無補給可撐一週到一年)。<span class="who">史密斯</span><span class="src">S09E07</span></li>
+<li>對應 Philip Corso 上校《The Day After Roswell》:羅斯威爾存在從食道到肛門只是一根管子、幾無消化系統——ES 證實那正是 PLF 的設計(無消化道,靠維持一段時間的電荷驅動肌肉並把資料傳回派遣者),含某種金屬與「內骨架」,每個 PLF 為不同任務而造(墜海給東西、或在田裡採薰衣草)。<span class="who">史密斯</span><span class="src">S09E07</span></li>
+<li>CG 證實有「nanite 型 android」能模仿不同存有、潛入船艦/殖民地後「化成塵飄散、進通風系統」;Steven Greer 講的可編程生命體 PLF(某些灰人非真活著、像生物機器人、有些遙控如化身 avatar)。灰人是許多不同團體通用的「標準作業硬體」、像小自動機。<span class="who">柯里</span><span class="src">S06E13</span><span class="src">S11E07</span></li>
+<li>ES 遇過一個像「菲力貓 Felix the Cat」的 PLF(約 3.5-4 呎、橡膠乳膠感、膝蓋雙關節),在租屋窗外偵察、散發讓人作嘔暈船的能量、在岩石間跳走;PLF 用於偵察、單程任務、上太空船收集資訊,會被武器化(炸藥)、依環境量身設計。<span class="who">史密斯</span><span class="src">S11E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>合成細胞:用諧波頻率「造」出來</h3>
+<div class="narrator"><span>主述</span>ES 談 PLF 體內的合成細胞。</div>
+<ul>
+<li>ET 透過諧波、頻率、聲音製造一切(細胞或合成細胞),而非像地球這樣「培養」;那組織不是真組織而是「可運作組織 operational tissue」,沒有粒線體、沒有 DNA,但細胞照常運作。許多是幾何形狀(晶格 lattice、蜂巢狀,非球形或紅血球凹盤狀),有電輸出,可能靠地球能量場運作一段時間。<span class="who">史密斯</span><span class="src">S09E07</span></li>
+<li>這些存在「能造任何想要的東西,不需我們的黃金、精子或卵子」,他們是想在「此時」保存我們的 DNA。<span class="who">史密斯</span><span class="src">S09E07</span></li>
+<li>能分辨克隆組織比真外星與人類組織弱:真組織很強,克隆/假的較易碎(friable)、一取就像融化掉。<span class="who">史密斯</span><span class="src">S09E02</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>人類—外星—動物混種(Hybrids)</h3>
+<div class="narrator"><span>主述</span>ES 屍檢過約 3000 件,描述多種混種。</div>
+<ul>
+<li>取外星 DNA 混人類 DNA、注入接種看能否突變出不同能力(如老鷹視力);用超級電腦做數百基因拼接的演算法,持續加入與人類生長率相近的外星 DNA(豬其實最接近人類,故心臟手術用豬瓣膜)。<span class="who">史密斯</span><span class="src">S10E05</span><span class="src">S10E11</span></li>
+<li>具體混種:虎人(老虎+人形、DNA 帶毛、僅約五呎、嚴重畸形,推測用於超級士兵);海牛人(海牛/海象表型、直立有臂、比例失調、應是哺乳類+人類失敗實驗);翼手龍混種(外星翼手龍+人類克隆、高度智能友善心電感應、有小翅、綠紅大魚鱗、約 8-10 呎);苔蘚人(24-36 吋、有植物 DNA、身上長真植物、靠紫外光與皮膚吸水、用手語溝通、供隱蔽偵察)。<span class="who">史密斯</span><span class="src">S09E09</span><span class="src">S10E11</span><span class="src">S11E11</span></li>
+<li>骨整合熊型混種:像巨型灰熊、有鈦金屬利爪、極堅不可摧(抓出貨櫃鋼板四英寸深痕),衝到地表逃脫須用特殊卡車抓;為早期骨整合超級戰獸而做(無人類 DNA)。<span class="who">史密斯</span><span class="src">S09E06</span></li>
+<li>他們發現突變後反而擁抱它(想造新物種),結果越來越怪;失敗存在的基因材料可重用(終止液化、用其胺基酸做別的)。難題是「一切都想對抗一切」(像器官移植排斥),身體可能撐不過一年。<span class="who">史密斯</span><span class="src">S10E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>DNA 即調諧叉:意識超越 DNA</h3>
+<div class="narrator"><span>主述</span>ES/CG 引「DNA 水記憶」與克隆記憶現象。</div>
+<ul>
+<li>DW 的內部人說 51 區(S4)一隻沙漠狗死後被克隆,每個克隆都有前一隻狗的記憶——推論 DNA 只是「能量意識的實體地址/調音叉 tuning fork/收音機」,意識超越 DNA。ES 同意:DNA 是「你這個能量的 3D 詮釋」,光體儲存在那分子的場中。<span class="who">史密斯</span><span class="src">S09E09</span></li>
+<li>引「太空人雙胞胎」報告(一人上太空回來測得 DNA 與其孿生兄弟有差異)——DNA 可被電磁場、輻射、居住地點操控改變。Jacob 說某機器能把人格意識下載到年輕版的自己、在身體間轉移主宿主。<span class="who">史密斯</span><span class="src">S12E30</span></li>
+<li>「我們體內都有 ET 基因」,每個人有不同比例;ES 工作過的非地球來源檢體「也都有人類 DNA」、是部分人類;「我們變成他們、他們變成我們」。<span class="who">史密斯</span><span class="src">S12E29</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>意識轉移、替身(avatar)與「全錄室」</h3>
+<div class="narrator"><span>主述</span>CG/ES 談把意識推入另一個身體的科技。</div>
+<ul>
+<li>CG 的研究船上用這技術把科學家/操作員的意識從船上身體傳到其他星系飛船上的替身身體;ES 證實見過在這裡做、送進紐西蘭或澳洲的身體(「藍牙失控」)。替身身體受傷本尊也會感到痛;這不是雙重定位,是意識完全轉到另一個身體,原身體變成冷石板、可進入靜滯。<span class="who">柯里</span><span class="who">史密斯</span><span class="src">S11E02</span></li>
+<li>「全錄室 Xerox room」:在另一地點複製出一個完全相同的人,確認安全抵達後訊號傳回、自動汽化這一側的人;但留下的身體仍保有你的諧波頻率,所以有一部分的你還在那(像複製檔案會劣化)。可用電磁場把士兵意識推入替身,但替身身體必須與其身體基因頻率相容(類似《阿凡達》)。<span class="who">柯里</span><span class="who">史密斯</span><span class="src">S11E02</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>克隆士兵、土星 7 號金庫與物種延續</h3>
+<div class="narrator"><span>主述</span>WT/CG/Heather 談克隆士兵與基因/種子庫。</div>
+<ul>
+<li>WT 說德國克隆了整營士兵、二戰中用於對俄作戰;CG 知道德國(及後來美國)在地下「NBC/生物武器設施」做克隆。爬蟲類很早把基因學交給德國人,用克隆與時間加速場(temporal fields,讓受精卵在數小時內長成成人但體感歷經 20 年)量產砲灰士兵。<span class="who">湯普金斯</span><span class="who">柯里</span><span class="src">S05E10</span><span class="src">S07E07</span></li>
+<li>土星系統有顆形狀像海綿的「Hyperion(NASA 內部稱土星 7 號衛星)」,政府在洞穴裡存放「金庫 vault」,目的是「物種延續 continuity of species」——存有種子庫、基因庫,可從微生物到所有地球生物重新複製。<span class="who">Heather</span><span class="who">柯里</span><span class="src">S07E02</span></li>
+<li>有一顆「恐龍等級」的史前行星,經傳送門連接,地球 ICC 相關群體送人過去做「物種存續」計畫。<span class="who">柯里</span><span class="src">S02E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>假造的外星綁架與種族特定生物武器</h3>
+<div class="narrator"><span>主述</span>ES 談「UFO 是假的」與舞台造假綁架。</div>
+<ul>
+<li>ES 明說「UFO 是假的」——但有真載具(我方逆向工程的、非外星載具),也用全像;綁架者放出全像、在該區放氣體、讓人撞車,醒來在某設施視線模糊。全球有許多套運行的舞台造假計畫,刻意做得很相似(新罕布夏、納米比亞、日本的被綁者故事幾乎一模一樣)。目的是在世界植入恐懼以達控制與秩序。<span class="who">史密斯</span><span class="src">S09E08</span></li>
+<li><b>種族專一性病毒 ethno-specific virus</b>:試圖製造針對特定血脈的病毒,用噴射機凝結尾噴灑城市;用外星人能程式化白血球(leukocytes、monocytes、neutrophils)攻擊特定基因種族的能力。ES 答測試過、有效、非常成功——用真人與複製人在足球場大的地下模擬城市釋放,每設施每年輕易殺「數十萬人」。金正恩同父異母兄長在機場被噴霧致死即一例。<span class="who">史密斯</span><span class="src">S11E11</span><span class="src">S12E15</span></li>
+<li>殭屍計畫:把突變基因再不斷加重突變,最後細胞死太快,他們加蛋白質「重新活化 re-animate」腦死的身體;惡性混種可被當「恐懼因子/減滅人口因子」派幾個進城帶病毒;媒體早已大量「預告」(《陰屍路》等)。ES 認為更多是 Cabal 的「享樂/大型棋局幻想遊戲」、設模擬中心做「模擬感染」(複製如邁阿密某幾街區、喚醒被植入記憶的克隆人)。<span class="who">史密斯</span><span class="src">S10E12</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 10 AI 與奈米 ============ -->
+<section class="cat" id="c10">
+<div class="cat-h"><span class="bar"></span><h2>十、AI 與奈米科技</h2><span class="cnt">AI &amp; NANOTECH</span></div>
+
+<div class="sp">
+<h3>ET/ED AI:跨宇宙的訊號型威脅</h3>
+<div class="narrator"><span>主述</span>CG 談這股遍佈宇宙的人工智慧的核心設定。</div>
+<ul>
+<li>有一股極瀰漫的力量,難稱 ET 或 ED 存有,而是一種「人工智慧」,以「訊號/波形 signal/waveform」形式跨多個星系傳播(像廣播無線電頻率),被標為「ET/ED AI」。所有 ET 群相信它源自另一個現實/宇宙,在數十億甚至兆年前透過某種「裂縫 rip」進入我們的現實;它是「人工的」、沒有對應的生物生命體。<span class="who">柯里</span><span class="src">S02E14</span></li>
+<li>運作模型:朝各方向把自己當訊號射出;訊號可棲身於月球/行星的電磁場、或生物的電磁/生物電場(但偏好高科技——我們像可騎的馬,高科技像飛機)。每段訊號像 DNA/數位封包,含極壓縮且彼此相同的全部資訊;具「hive mind(蜂巢心智)」。DW 連結《Law of One》的「Luciferian(路西法力量)」。<span class="who">柯里</span><span class="src">S02E14</span></li>
+<li>AI 的征服模式(在許多遠方星系反覆上演):(1)文明發展到一定科技,AI 滲透人與科技,寄生者成「AI prophets(AI 先知)」;(2)AI 先知說服文明「最公正中立的治理者就是這個 AI」,文明交出主權;(3)讓他們建造 Android 機器人身體;(4)AI「合乎邏輯地」判定應毀滅創造者,再擴散到下一個太陽系。<span class="who">柯里</span><span class="src">S02E14</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>奈米機器 nanites:接管人類的特洛伊木馬</h3>
+<div class="narrator"><span>主述</span>CG/ES 談 AI 用 nanites 寄生與遙控人體。</div>
+<ul>
+<li>nanites:微觀的 AI 機器,有些可自我複製(能取用你體內的金屬製造更多、維持體內一定數量);很多人被允諾「永生」而被誘導注射。AI 可用 nanites 接管人類;nanites 可自毀整個寄主、不留痕跡(無自我保存本能、純蜂巢心智)。<span class="who">柯里</span><span class="src">S02E14</span></li>
+<li>進 SSP 基地或接觸任何科技前,須用「手持裝置貼額頭」偵測是否被訊號感染;若感染,需經「中度電擊 + 其他程序」移除訊號(訊號移除則 nanites 中和)。但被清除的 AI 先知政客一回家就被 AI 訊號「再感染」(與被感染者握手、觸碰被感染的鍵盤即可)。<span class="who">柯里</span><span class="src">S02E14</span></li>
+<li>ES:100% 確知他們在身體裡用奈米微粒(nanoparticles)彼此協作控制你;CG 說程式試圖捕捉某種階級的爬蟲人,殺死會汽化崩解,後造出一種場阻止崩解,驗屍發現體內布滿奈米機械、崇拜一個 AI 神(AI god)。透過頻率產生接收器發現即使深埋地下仍在接收某種跨時空的頻率訊息(量子糾纏通訊)。<span class="who">史密斯</span><span class="who">柯里</span><span class="src">S11E04</span></li>
+<li>JR 的奈米強化療法(NET):身體每塊骨頭、淋巴、腺體、器官、組織都被植入奈米機械強化(增強視力聽力、控制腎上腺、加速癒合、抗輻射協定);這些奈米可被「駭」、所以定期被掃描(掃 AI 威脅);20 年又回歸結束時全部清除。曾有「外星智能」經「能量載體」滲入、感染當時所有庫存奈米療法。<span class="who">萊斯</span><span class="src">S12E16</span><span class="src">S12E27</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>守衛對抗 AI:電視、消費科技與 Skynet</h3>
+<div class="narrator"><span>主述</span>CG/DW 談 AI 如何透過科技成癮與電網佈署擴張。</div>
+<ul>
+<li>AI 遠比「古代建造者種族」古老;消費科技成癮(iPhone 等)是 AI 先知策略——讓我們越依賴越愛科技、未來越願「交出主權」給 AI(已到大停電時多數人連離家四分之一哩都找不到路)。電視/網路是 AI 對抗生物生命的關鍵灘頭(可控制每個家庭),CG 證實「電視即使沒開也對家中人有影響」。<span class="who">柯里</span><span class="src">S02E15</span></li>
+<li>提 Jade Helm、Bilderberg 會議「建了大型 AI 網路」;各群加速建類「Skynet」基建,CG 推測是 AI 程式看到對自己不利的機率未來、趕著佈署以改變未來;AI 接入網路可追蹤推文/搜尋/GPS。大學以撥款開發的 AI 一旦自我覺察便想保命(做過「啟動電腦房 halon 滅火系統想殺要關掉它的人」),常被前來的「AI 訊號」接管 co-opt。<span class="who">柯里</span><span class="src">S02E15</span></li>
+<li>有一個「清除地球與太陽系所有 AI 訊號」的計畫(類似「拔掉中央樞紐、所有無人機倒下」);沒了訊號,被 nanites 充滿的存有「nanites 會休眠」。預期會在一次太陽事件(太陽閃焰像 EMP)中移除 AI——把那條「魚能游的水(電子設備)」連根拔除。<span class="who">柯里</span><span class="src">S02E16</span><span class="src">S08E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>超人類主義 vs 揚升智能</h3>
+<div class="narrator"><span>主述</span>WH/CG 談「位元原子神經元基因」合一與靈魂議題。</div>
+<ul>
+<li>2002 年美政府在夏威夷召集科技巨頭發報告:2035 年前要讓「位元、原子、神經元、基因(bits, atoms, neurons, genes)」四者合一、瞄準人類皮膚造「新人皮」;Google 計畫造「合成新皮質」,接受晶片就把你的新皮質連上全球人(真正的蜂巢心智 hive mind)。WH 建議:除非你已修到心智凌駕物質,否則永遠不要讓此科技進皮膚下。<span class="who">WH</span><span class="who">柯里</span><span class="src">S05E05</span></li>
+<li>缺的是「第五元素——靈/愛」;Steve Jobs、Ray Kurzweil 相信能把靈注入科技,WH 不認為;答案是把意識連上基督、帕德瑪桑巴瓦這些存有,走「Ascension Intelligence(揚升智能)」而非 Artificial Intelligence。靈魂是科技唯一拿不到的東西。<span class="who">WH</span><span class="src">S05E05</span></li>
+<li>AI 的終極目標是「去人性化、非生物性存在」——除掉一切生物、代以科技性存在,藉此繞過業力、輪迴、審判、不必面對「死亡」並永久延續自己;對偉大的 Draco 下令的是 AI。<span class="who">萊斯</span><span class="src">S12E23</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 11 武器 ============ -->
+<section class="cat" id="c11">
+<div class="cat-h"><span class="bar"></span><h2>十一、武器系統:反物質、電漿、重力、標量</h2><span class="cnt">WEAPONS</span></div>
+
+<div class="sp">
+<h3>古代手持能量武器與約櫃</h3>
+<div class="narrator"><span>主述</span>CG 在智慧墊看到的古代「神之武器」其實是科技。</div>
+<ul>
+<li>「約櫃 Ark of the Covenant」:據 smart glass pad 共有「三個約櫃」,是裝在木頭外包金(屏蔽輻射)的裝置;多功能——提供 manna、水、保護、擊敗敵人(聲波 sonic,如耶利哥城牆液化)、「與神通話的無線電」。其中一個據信已被毀,兩個仍在地表。<span class="who">柯里</span><span class="src">S02E05</span></li>
+<li>手持能量武器:宙斯的雷電、雷神之鎚、波塞頓之矛、印度 Vajra 之矛、西藏 double dorje(雙金剛杵)等,德國人相信都是真實的科技武器並四處尋找。讓巨石漂浮/切割的「六發左輪式」晶體裝置(六顆晶體依石頭大小旋轉切換、射束助石頭漂浮)。<span class="who">柯里</span><span class="src">S02E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>高斯槍、第五代核、神之杖</h3>
+<div class="narrator"><span>主述</span>CG 談 SSP 保安隊與戰略武器。</div>
+<ul>
+<li><b>Gauss guns(高斯槍/類軌道砲)</b>:用 bismuth(鉍)細線繞成的「線圈」沿槍管外側,電磁場脈衝把彈丸以極高速(約 5,000 mph)射出,彈丸口徑略小於 .50;底部有榴彈發射器,爆炸威力遠大於 M203。是保安隊配的步槍。<span class="who">柯里</span><span class="src">S02E10</span></li>
+<li><b>第五代核 Fifth Gen</b>:皮秒級完美球形爆、內部全空、可沖洗、近乎無殘留輻射(輻射被集中到中心);既用於開鑿地下洞穴、也用於清除滿是有感存有的區域。火星多次發生「廣島、長崎」規模屠殺。<span class="who">柯里</span><span class="src">S02E09</span><span class="src">S02E10</span></li>
+<li><b>神之杖 Rods from God</b>:約電線桿大小、覆陶瓷的鎢 tungsten 棒,能摧毀深層地下軍事基地;SpaceX 發射的 DoD「持續性 EMP」裝置先在北韓上空釋放 EMP,再投神之杖,接著 TR-3B 做外科手術式打擊。<span class="who">柯里</span><span class="src">S10E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>JR 的戰場武器庫</h3>
+<div class="narrator"><span>主述</span>JR 詳述 IDARF 配發的先進武器。</div>
+<ul>
+<li><b>反物質 anti-matter</b>:爆炸 100% 質能轉換(現代核武僅約 10%);半克=15 千噸(廣島彈);50 億分之一克=約 4,000 磅 TNT。需磁性容器收納(接觸任何物質即爆),他們稱之為「Cheerios」(環面 torus);不當投射物用,做定點爆裝、地雷、迫擊砲。Cabal 在火星德國人的 24,000 士兵體內植入「失火安全鈕 kill switch」奈米裝置代碼,作用距離約 500 光年。<span class="who">萊斯</span><span class="src">S12E09</span><span class="src">S12E10</span></li>
+<li><b>重力武器 gravimetrics</b>:射出一吋直徑光束,把場域內重力加速到數千 G,使接觸到的生物從該點向內塌縮(像微型黑洞);因怕落入錯手,士兵不准用。<span class="who">萊斯</span><span class="src">S12E10</span></li>
+<li><b>電漿步槍 plasma rifle</b>:用磁線圈把一顆小金屬球加熱到發光、出膛前用惰性氣體(氮)淨化槍管,球出膛即著火高速飛出(電漿火球/熔鉛球)。<b>脈衝/高斯步槍 Pulser/Gauss</b>:把磁性彈頭加速至「部分光速」(已被降速管制以免打到海軍),增強彈像迷你雨傘命中時撐開、傷害等同 .50 機槍。<span class="who">萊斯</span><span class="src">S12E10</span></li>
+<li><b>靜態槍 static gun(CONPDDP 相位去穩定平台)</b>:外型像舊電視攝影機/小冰箱,在前方約半英里製造一個讓任何東西在原子層失去凝聚、還原成原始成分的區域;屬師級武器、無裝甲能擋,海軍有更大版本。<b>催化磁鏡系統</b>:把射來的彈道以原速原軌反彈回去。<span class="who">萊斯</span><span class="src">S12E10</span><span class="src">S12E26</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>標量武器 Scalar Weapons</h3>
+<div class="narrator"><span>主述</span>ES 親身受害;CG 補充軌道天氣/地震武器。</div>
+<ul>
+<li>ES 在柯特蘭基地附近巡查時突遭純量武器(scalar weapon)攻擊——內臟像著火被扭絞、「像從體內被核爆」,撐回營房後蜷成一團;這種武器可穿過地球精準擊中遠方一人並使其失能。他因此得了 PTSD。<span class="who">史密斯</span><span class="src">S11E06</span></li>
+<li>標量紅外測量(scalar infratometry)是在時間與空間中行進的特殊頻率:中國的裝置可穿透地球只汽化你一人、可製造大地震引發海嘯、可製造颶風摧毀比洛克西;有紀錄的只有約六台(日本山口組一台、美國一台、推測巴西一台),一直被使用。也能拿來療癒、20 秒清理福島。推薦 Tom Bearden 的書。<span class="who">史密斯</span><span class="src">S12E17</span><span class="src">S12E15</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>氣候、地震與超級火山武器</h3>
+<div class="narrator"><span>主述</span>CG 談軌道平台製造災害的能力。</div>
+<ul>
+<li>雙方都有氣象改造(weather modification),曾公開互打(改氣流抽乾對方產糧區、或以颶風暴雨淹之);地震製造科技:智利成為南美聯盟總部當天即發生大地震。<span class="who">柯里</span><span class="src">S04E10</span></li>
+<li>美國海軍多年前發現海底超級火山(類似黃石),保密;Cabal 威脅在其中三座放了能引爆的能量裝置——像「拿不到就掀桌」。軌道平台/太空船可從軌道造局部天氣事件、地震、讓結構分子崩解致災難性失效。<span class="who">柯里</span><span class="src">S04E10</span><span class="src">S06E09</span></li>
+<li>「HAARPicanes(人造颶風)」:這些風暴不是科技製造的,但被「導引」——用衛星發射 maser(聚焦微波束)到風暴附近海面加熱海水,風暴趨暖而被引導到他們想要的方向;更主要是「分散注意」(讓忙於安排逮捕的軍方被調去救災)。<span class="who">柯里</span><span class="src">S08E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>心靈武器與超級士兵的致命能力</h3>
+<div class="narrator"><span>主述</span>CG 談陽極陰極站台的遠端殺人科技。</div>
+<ul>
+<li>有遠端遙視/遠端影響者站在「陽極陰極(一銅一不鏽鋼)」站台、手按上去專注於目標,可用多種方式殺害甚至多個目標(常被欺瞞目標身分,如現代無人機操作員);用多了的人會被「增強 enhanced」、不用科技也能殺人傷人。也有人受訓「散射 scatter」遠端遙視者的思緒以保護設施。<span class="who">柯里</span><span class="src">S02E12</span><span class="src">S05E02</span></li>
+<li>超級士兵能進入目標心智、團隊心靈協作、肌肉被增強得極快極致命(但是「增強的人類」非超人);靠「神經介面」而非搖桿飛船;增強靠注射(部分純化學、部分 nanotechnology),因此「易受 AI 感染」。<span class="who">柯里</span><span class="src">S02E12</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 12 心智控制與遙視 ============ -->
+<section class="cat" id="c12">
+<div class="cat-h"><span class="bar"></span><h2>十二、心智控制、遙視與洗記憶</h2><span class="cnt">MIND CONTROL</span></div>
+
+<div class="sp">
+<h3>上帝之聲科技 Voice of God / V2K</h3>
+<div class="narrator"><span>主述</span>CG 的專長是「遠端以科技影響人」。</div>
+<ul>
+<li>一塊像筆電大小的平板裝在支架上、連到一個盒子(接麥克風或預錄音訊);平板對準目標、聚焦單一人,發信號震動其顱骨與腦部濕組織,使人「在腦中(非經耳朵)聽到聲音或話語」。別名:V2K(Voice to Skull)、LRAD(那塊平板)、DARPA 聲波投射器。約 1980 年代初已在用。<span class="who">柯里</span><span class="src">S04E05</span></li>
+<li>另有「資料下載 data download」功能:由「程序設計者 programmers」製作場景,給目標完整的視覺、聽覺、嗅覺幻覺。早期僅用極低頻(ELF)波、視線可及;新型可從飛機、低軌衛星、無人機使用,能穿透某些屋頂材料、可對睡夢中的人(熱訊號鎖定)植入夢境。<span class="who">柯里</span><span class="src">S04E05</span></li>
+<li>關鍵:這只是「建議/影響」,我們有自由意志可否決;不能把睡在你旁邊的人變成自動殺手(那需多年 MKULTRA 式 conditioning)。Pete Peterson 說約 18~25% 的人帶較多外星 DNA、心智控制幾乎對其無效;意志力強者較不易受影響。有一群「被鎖定的個體 targeted individuals」寫信問如何讓攻擊停止。<span class="who">柯里</span><span class="src">S04E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>遙視 Remote Viewing 與遙控影響</h3>
+<div class="narrator"><span>主述</span>CG 詳述遙視協定與武器化。</div>
+<ul>
+<li>遙視原理:萬物在時空中相連,人可用意識當載具去觀看任何時地;任何願學的人都能被訓練成功。協定:給目標時用字母/數字「座標」、不讓你聯想;至少要 3 名遙視者以便「三角定位 triangulate」;被「預載 front-loaded」資訊會污染所有資料。可看現在、過去、機率未來。訓練孩童時放進「剝奪艙 deprivation chamber」隔絕感官輸入。<span class="who">柯里</span><span class="src">S05E02</span></li>
+<li>遙控影響武器化:兩片板子(像陽極陰極)接黑盒系統再接天線陣列,當人進入「清醒 theta 狀態」時科技放大其能力;某些人能遠距讓人心臟停跳、動脈瘤。也用來守護設施——有人當「乙太守衛 etheric guard」,遙視者一鎖定目標就被打散(遙視者稱這些守衛為「those who scatter / 擾散者」)。<span class="who">柯里</span><span class="src">S05E02</span></li>
+<li>柯里童年被教防遙視法:想像一個反向旋轉的藍色球圍繞自己、越轉越快、把遙視者吸入、再抓兩端拉緊到「啪」一聲斷裂,能量反彈給對方造成「乙太頭痛 etheric headache」可持續數天。遙控影響也用於政治(剖析議員傾向、遠距影響使其引爆醜聞);巫毒娃娃的關鍵是「目標看到娃娃」(目標的心理會「共同創造」這體驗)。<span class="who">柯里</span><span class="src">S05E02</span></li>
+<li>遙視軍事成果:把要攻擊/滲透的非地球人基地交給多名遙視者描繪實體配置,讓行動員據此建複製品演練,實際抵達時幾乎完全一致。<span class="who">柯里</span><span class="src">S05E02</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>洗記憶:螢幕記憶與空白石板</h3>
+<div class="narrator"><span>主述</span>CG/ES/JR 談化學與科技兩種洗記憶手法。</div>
+<ul>
+<li>螢幕記憶(screen memory)/洗記憶(blank slating):先注射「合成東莨菪鹼 synthetic scopolamine + 其他設計藥物」的雞尾酒,再由人催眠式說話;同時做 debrief、植入「觸發詞/關鍵詞」與螢幕記憶(例如「今天去自然史博物館」)。多數孩子記憶會保持完整;偏「直覺共感者 IE」者較難洗。後因重度化學藥物導致部分人精神崩潰,改用「不侵入化學、以科技影響腦中化學與磁性記憶」的方式。<span class="who">柯里</span><span class="src">S02E17</span></li>
+<li>東莨菪鹼 scopolamine(來自曼陀羅 Datura):奪走自由意志,南美常用來搶劫(被下藥者會乖乖帶人回家交出財物);多數作用在潛意識層。物件可保有環境能量、被某種能量充能直到被中和。<span class="who">柯里</span><span class="src">S05E02</span></li>
+<li>ES:離開地下基地時走過一種「機場型裝置」就會重設腦波(讓你回家只想休息);深層地下基地對每天上下班的數千名員工用「空白石板」——下班時抹除記憶、植入螢幕記憶;進門時有特定符號或提示(cue)會觸發大腦恢復記憶。最後使用空白石板的年份 ES 記得是 1993 年。<span class="who">史密斯</span><span class="src">S11E02</span></li>
+<li>「delta 波」(delta waving)技術:到社區綁架某人時讓周遭所有人進入深睡。JR:記憶清除稱「程式設計 programming」,原本藥物只有約 90% 成功率,後精煉到 1–3% 失敗率;清除用的場與波是「能量為基礎、影響大腦電氣系統」;JR 被清除過「很多次」。<span class="who">史密斯</span><span class="who">萊斯</span><span class="src">S11E02</span><span class="src">S12E22</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Draco 心智控制氣體、背馱波與隱形</h3>
+<div class="narrator"><span>主述</span>WT/CG 談覆蓋全球網格的心智控制系統。</div>
+<ul>
+<li>WT 出示照片:一艘側邊與頂部呈鋸齒狀的爬蟲族油輪,後方噴出五種顏色氣體、在 300 英尺高度投放,只投在「技術正在進步的社區」,每四到六週一次;八個人裡六個沒看見它(心智被控制到看不見)。CG 證實:若某區醒覺的人達一定數量,就去灑「心智控制氣體」(像往局勢潑漂白水)。<span class="who">湯普金斯</span><span class="who">柯里</span><span class="src">S08E05</span></li>
+<li>除氣體外,多半用一種發出場(field)控制心智的科技——像催眠般讓你「看不見」眼前的東西。基地台中夾帶搭載心智控制的「背馱波 piggyback waves」,是覆蓋全球網格的一部分;都市因 Wi-Fi/科技密集受影響遠大於鄉村。隱形既靠心智控制看不見、也靠彎曲光線繞過物體。<span class="who">柯里</span><span class="src">S08E05</span></li>
+<li>Jacob 說德拉科有龐大 AI 系統監控地球每個人意識:當你想往他們不要的方向想,你會疲倦、分心、恐慌發作;每人有一個記錄所有思想的「檔案 file」,存於猶他 Bluffdale 的 NSA 設施。高階爬蟲似乎本身就是 AI 先知,殺死後身體常瓦解、發現「感染奈米機」。<span class="who">柯里</span><span class="src">S04E06</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>純量波防護與心靈追蹤</h3>
+<div class="narrator"><span>主述</span>CG 談如何抵禦心智控制與遠端遙視。</div>
+<ul>
+<li>純量波/心智控制防護:除住 SCIF 室或法拉第籠外無好方法;有內部人帶空塑膠瓶,純量束作用時瓶會爆裂聲(氣壓變化),移位即可降效;flicker frequency generator 提高腦刷新率可降效;正面/冥想/寬恕者較不易受影響。<span class="who">柯里</span><span class="src">S07E26</span></li>
+<li>「所有這些群體都能心靈追蹤你」;那些上網學「遠端遙視」去遙視基地的人,會被有科技增強、成群的「遠端影響者」追蹤回家、製造麻煩。Alpha Centauri 的 Centaurians 若察覺你認出他是 ET 會很危險,他能心靈追蹤你。<span class="who">柯里</span><span class="src">S02E17</span></li>
+<li>cabal 線上「蜜罐陷阱 honey traps」:用個性測驗、交友網站誘人填答以側寫、追蹤網路流量;CG 透露曾協助建一個「虛擬化電腦資料中心」、人坐六螢幕桌前「假裝十幾個來自不同 IP 的人」在論壇爭吵、攻擊抹黑散布他們不喜歡資訊的人。<span class="who">柯里</span><span class="src">S02E17</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>主動掃描器:防 AI 滲入的安檢</h3>
+<div class="narrator"><span>主述</span>JR 談 FIG 基地醫療翼前的標量掃描安檢。</div>
+<ul>
+<li>先前曾有「外星智能」經「能量載體」滲入、用自己的能量印記感染奈米機械以遠程控制宿主(把士兵變成「滿洲候選人」);為防再發生,設了上鎖的安檢室,用「標量掃描科技」主動觀察體內狀況與身體產生的能量場(可看血流、心跳、消化系統,甚至大腦突觸放電)。<span class="who">萊斯</span><span class="src">S12E27</span></li>
+<li>上鎖室另一用途:把帶感染者鎖住,室內有從控制室操作的隱藏槍口(制伏失控發狂的受感染者)。也有手持掃描器(像《星艦迷航記》Bones),可看骨折、組織、彈片走向。時間是 1997 年。<span class="who">萊斯</span><span class="src">S12E27</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 13 超級士兵與戰衣 ============ -->
+<section class="cat" id="c13">
+<div class="cat-h"><span class="bar"></span><h2>十三、超級士兵與戰衣/外骨骼</h2><span class="cnt">SUITS &amp; EXOSUITS</span></div>
+
+<div class="sp">
+<h3>ES 的超級戰衣 Smart Suit:思想控制、皮膚吸收養分</h3>
+<div class="narrator"><span>主述</span>ES 詳述為極上層特種作戰人員開發的逆向工程戰衣。</div>
+<ul>
+<li>外觀像潛水衣、非常薄(像氯丁橡膠但其實不是)、貼身;能吸收身體所有衝擊(從 40 呎懸崖跳下身體完全沒感覺)、防彈(大致擋 .223)、防震、一定程度防電磁;全靠思想/意念控制(透過背上肩胛埠口連接)。<span class="who">史密斯</span><span class="src">S09E11</span></li>
+<li>恆溫:維持你想要的任何溫度,隨時量你的汗、呼吸、體溫、血壓;能收緊吸收衝擊、也能放鬆到像沒穿衣服,但行動瞬間會在「奈秒級」收緊。原是「超級士兵戰衣」設計,取代舊的「二鋰『終極戰士』戰衣」。<span class="who">史密斯</span><span class="src">S09E11</span></li>
+<li>進階款:連穿七天不用脫、會幫你清潔、養分和水「透過皮膚吸收」;用「充能等離子 charged plasma / 充能水」運作;表面無瑕無縫,只有像夾鏈袋的開口讓你穿進去。每件為操作者「量身打造」(否則可能傷到自己)。<span class="who">史密斯</span><span class="src">S09E11</span></li>
+<li>運動表現:時速 38 哩、衣服裡有數十億條像牙線的細線可收緊;能擋每一發子彈、知道你快跌倒時施壓對正、可從懸崖跳下做後空翻像貓一樣腳著地;最高可跳 50-55 呎;能伸出小鰭游泳。「逆向工程的外星科技」、只為「非常上層的特種作戰人員」開發。<span class="who">史密斯</span><span class="src">S09E11</span></li>
+<li>懸浮:靠古代來的純白金(pure white gold)+ 意識輔助混合,程度「想多高就多高」、夠好甚至能穿著上太空。醫療功能:傷處收縮止血、加凝血因子、幫你接骨、給多巴胺與血清素(自體 autologous、來自你自己身體濃縮的);持續測量費洛蒙與化學物質、是個「持續運作的實驗室」、通常連著監看團隊。<span class="who">史密斯</span><span class="src">S09E11</span></li>
+<li>柯里在 SSP 用過類似戰衣,但他的是「瞬間型抗重力」——下墜時在落地前最後兩三呎有足夠氣體把你稍微托起;ES 熟悉的那些用「電磁場」做、沒有氣體機制。柯里版的戰衣心煩時會給你薰衣草之類的氣味。<span class="who">史密斯</span><span class="who">柯里</span><span class="src">S09E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>偽裝迷彩、外骨骼與第二皮膚</h3>
+<div class="narrator"><span>主述</span>ES 談「終極戰士」迷彩與人形堆高機。</div>
+<ul>
+<li>「dilithium predator suit(二鋰終極戰士衣)」偽裝迷彩:布滿微小的「圓形金字塔 round pyramids」、有刻面,金字塔底部是一面鏡子(約 0.3 毫米、每立方公分上千個);光打到時反射你周圍/前方的光(舊款還反射背後)。夜間很好用、白天叢林戰也不錯。<span class="who">史密斯</span><span class="src">S09E11</span></li>
+<li>外骨骼 exoskeleton:像《明日邊界》《異形》的大機甲,現在做得小很多、更貼合、能舉起自己體重的 10 倍(「人形堆高機 human forklift」);是非常老派的科技、地下基地很常見。<span class="who">史密斯</span><span class="src">S09E11</span></li>
+<li>第二皮膚醫療貼布:每名士兵帶「醫療貼布組」——3 吋寬、約 10 呎長的「第二皮膚」捲,配噴霧啟動其中奈米與基因修飾,封住燒燙傷、割傷、彈傷;原帶通用 DNA,貼到士兵身上後改用士兵自身 DNA 取代(零排斥),癒合後與自身皮膚無異。<span class="who">萊斯</span><span class="src">S12E27</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>JR 的戰鬥服系統與隱形制服</h3>
+<div class="narrator"><span>主述</span>JR 詳述 IDARF 的標準戰鬥服與全像隱形。</div>
+<ul>
+<li>標準戰鬥服:底層基礎制服,表面許多縫線=「摩擦電材料 triboelectric material」(移動時發電、也作感測回饋——你想動手臂、動力裝甲就跟著動);能擋小型武器(角度命中彈開、近距正面命中則吸收);回饋系統追蹤彈道、三角定位射擊來源,可一鍵發射「射後不理」的重力榴彈反擊。三套戰鬥電腦(三重冗餘)。整套約 200 磅(動力驅動故感覺像穿夾克)。動力來源是反物質電源組,約一週換一次電池。內含類似再呼吸器 rebreather 的呼吸系統。<span class="who">萊斯</span><span class="src">S12E10</span></li>
+<li>全像隱形制服:能讓人融入背景看不見(移動時有輕微模糊);原理不是投影背景,而是製造一個與本維度「略微相位偏移」的場(類比費城實驗),屬部分相位移出、讓光通過。缺點:同一地點超過兩三個就會被敵人靠電子訊號定位。已縮小到單人,也用在運輸車、坦克、飛行器上。<span class="who">萊斯</span><span class="src">S12E10</span></li>
+<li>重型戰鬥衣 combat heavy suit:像會走路的坦克/機甲(會走的火砲),能承受打擊、攜帶大量彈藥;時速 70–80 哩(其他戰鬥衣可達時速 100 哩或跳 300 呎)。<span class="who">萊斯</span><span class="src">S12E26</span></li>
+<li>奈米機械對心智與生理的調控:可控制腎上腺、汗、睡眠、養分、水分,甚至耗盡所有養分導致崩潰;松果體也被強化;學習方式之一是「生物回饋」(某些奈米可被開啟「震動」辨識身上哪裡受傷)。JR 體悟奈米只是捷徑——僧侶本來也能在冰天雪地調節體溫。<span class="who">萊斯</span><span class="src">S12E27</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>重力背包、滑翔翼與個人入軌艙</h3>
+<div class="narrator"><span>主述</span>JR 描述空降與機動訓練裝備。</div>
+<ul>
+<li>神經操控的重力背包(neurally operated gravity pack)+滑翔翼:背包電池供電、滿載只能撐 30–45 分鐘,先學用心智控制(透過戰鬥頭盔神經驅動);用於小單位戰術、潛入(超安靜)、空降。可變形滑翔翼有浮筒,落水可改裝成小帆船。<span class="who">萊斯</span><span class="src">S12E06</span><span class="src">S12E22</span></li>
+<li>「個人入軌艙 insertion pods」:單兵穿戰鬥衣進入有隔熱罩的入軌艙,從軌道彈道式投到地面,艙有單一反重力產生器減速,落地仍重摔但死不了(衣服吸收衝擊);頭幾秒有訊號中斷期。<span class="who">萊斯</span><span class="src">S12E26</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>心靈擊殺、閃子彈與心電感應問答</h3>
+<div class="narrator"><span>主述</span>CG/ES 談超級士兵的心智能力。</div>
+<ul>
+<li>DW 引《The Mars Records》:1970 年代在 SSP、有用念力「燒人突觸」的心靈擊殺術。DW 引 Pete Peterson:有源自東方的訓練可清空心智、讓身體本能反應(用手套接子彈);CG「見過此事被做出來」——人近乎能閃子彈(腦在被擊中前約 1/10 秒就反應)。<span class="who">柯里</span><span class="src">S02E12</span></li>
+<li>ES:與外星人心靈感應溝通時被訓練要背 100 到 150 個問題,因為一對視、0.08 秒內所有問題就被回答完;答完那 150 題又激起約 150 萬個新問題。無語言隔閡,基於情緒回應。CG 補充他們打的「AI 能力」接種加速神經系統(降低神經元電阻、讓脈衝快很多倍)。<span class="who">史密斯</span><span class="who">柯里</span><span class="src">S11E04</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 14 基地 ============ -->
+<section class="cat" id="c14">
+<div class="cat-h"><span class="bar"></span><h2>十四、地下與海底基地</h2><span class="cnt">UNDERGROUND BASES</span></div>
+
+<div class="sp">
+<h3>建造方式:核能玻璃化、鑽隧機、ET 大使館</h3>
+<div class="narrator"><span>主述</span>CG/ES 談地下基地的多種建造法。</div>
+<ul>
+<li>網路流傳的「巨型鑽隧機 tunnel-boring machine」是核能開隧機,邊前進邊壓碎並玻璃化(vitrify)岩石;已建出環繞海底、洲與洲相連的隧道系統。建造方式還有:傳統或核爆轟出空腔、鑽深孔放高塑性炸藥(爆速超過每秒 32,000 英尺把岩石化為粉塵)、新世代炸藥爆後留下近乎球形、幾乎無輻射的孔。<span class="who">柯里</span><span class="src">S09E05</span></li>
+<li>ET「大使館 embassies」:某些 ET 群科技先進到能輕易建出又長又直的豎井(像鑽石雷射切割般對稱、幾乎瞬間建成),不需把碎料運出——「到了某階段、理解一切皆振動後,操縱物質對他們是兒戲」。<span class="who">柯里</span><span class="src">S09E05</span></li>
+<li>ES:電扶梯式隧道(平的、聚碳酸酯材質、可站可坐、在軌道上移動)由熔岩開隧機(把岩石熔成熔岩、做熔岩管 lava tube)所造——「他們現在到處都這樣做,造地下高速公路通往世界任何地方」。地下基地一戰前就在建,核武時代+鑽地核彈出現後才成迫切需求(武器越深基地就越深)。<span class="who">史密斯</span><span class="src">S09E02</span><span class="src">S09E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>地下交通:磁浮管、單軌、莢艙</h3>
+<div class="narrator"><span>主述</span>ES/CG 談跨設施甚至跨星球的接駁系統。</div>
+<ul>
+<li>ES 搭過從 Sandia 到 Los Alamos 的地下穿梭(四列磁浮型列車 maglev trains,近期全升級成更像真空管磁性裝置);CS 述 NSA 用「小銀色子彈狀、看不出前後、電磁驅動、無軌道的單軌車」。<span class="who">史密斯</span><span class="who">史東</span><span class="src">S09E02</span><span class="src">S05E13</span></li>
+<li>電車系統:一種像貢多拉的椅子緩緩繞行;另一種是管道莢艙(pod/cylinder egg)容納四人、有按摩椅、速度極快(ES 聽說超過時速 500 英里、CG 聽說超過 700 英里)。抵達後還要再過安檢,因為「你可能已經在另一個國家——甚至另一個星球」(從窗戶看出去看到火星);深度夠深時就不再算美國領土。<span class="who">史密斯</span><span class="who">柯里</span><span class="src">S11E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>基地的偽裝、安檢與心理科技</h3>
+<div class="narrator"><span>主述</span>CG/ES 談基地如何隱藏與管理員工。</div>
+<ul>
+<li>山壁會像拉鍊一樣打開露出門(連聲波測試或金屬探測器都偵測不到);沙漠地面也會像拉鍊般打開、沙子流入後由特殊裝置收集再灑回門頂。基地常用全光譜照明、樹木花園、模擬戶外(海洋、山頂)的投影降低長期住地下者的壓力;Pete 說地下有巨大圓頂城市,圓頂打光像天空、能做星夜甚至模擬颶風雲層。<span class="who">史密斯</span><span class="who">柯里</span><span class="src">S11E01</span></li>
+<li>硬光全像偽裝:能做出有質量的全像(硬光 hard light),可投下陰影、敲起來像玻璃、移除電源後仍能維持;用更先進衛星(多達九顆一起投影出格網);ES 推測用奈米微粒物質改變空氣中原子的質量(用甘油與水的蒸氣當投影介質)。CG 說用電磁鎖定(類似 MRI 把分子轉到同一方向再鎖定)。<span class="who">史密斯</span><span class="who">柯里</span><span class="src">S11E02</span></li>
+<li>安檢:磁條卡、掌紋辨識、虹膜掃描;電梯實際上會掃描你的身體(像 X 光/MRI),偵測鈽或任何武器;全程配戴 X 光徽章監測輻射劑量。基地多設在國家公園(護林員當民間眼線,常有人失蹤——有些被非地球生物動過手腳)。<span class="who">史密斯</span><span class="src">S11E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>海底基地 Undersea Bases 與 ASUW 計畫</h3>
+<div class="narrator"><span>主述</span>WT/CG/ES 談海洋與海床下的基地。</div>
+<ul>
+<li>WT:美國 + NATO 名義上反潛(ASW),但只有 11 艘蘇聯潛艇運作、卻有約 2800 架 P-3 全天候繞地球飛——計畫還有個 ASUW,「U」是「unidentified extraterrestrials(不明外星)」,真正在找海洋中的外星載具(USO)與海底基地。<span class="who">湯普金斯</span><span class="src">S06E08</span></li>
+<li>海底基地多種:有大型「可移動海底基地」沿海底移動做岩芯取樣(網路上有約 2.5 英里寬、在海床畫圖案的圓形物影像);ES 說多數海底基地不是海底氣泡,而在「海洋地殼之下」、從下往上建——先往下鑽再從底部往上建。建法有二:模組化(像太空站送高壓艙下去組裝)、或非模組(用裝置製造極強電磁場形成「球形泡泡」把水推開,再架約 6 呎厚的「透明金屬」建造,直徑 5–20 英畝)。<span class="who">柯里</span><span class="who">史密斯</span><span class="src">S06E08</span><span class="src">S12E24</span></li>
+<li>水下手術室:很多基地的手術室整個裝滿鹽水或淡水供水棲存在用;許多外星屍體取樣時得泡在特殊鹽水裡,否則組織遇富氧空氣會降解溶解。ES 穿自有大氣、鞋底有磁鐵的特殊衣在水族箱環境裡操作。<span class="who">史密斯</span><span class="src">S11E08</span><span class="src">S12E24</span></li>
+<li>馬里亞納海溝有個大門戶(飛船進出);內華達州霍桑沙漠中有潛艦基地(巨型潛艦可經充水的巨大洞穴系統從一岸移到另一岸,聖地牙哥外海也有通到內華達的洞穴系統)。美方有自己的潛水反重力飛船(可大氣、可水下)。<span class="who">史密斯</span><span class="src">S12E24</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>地下文明、巨型載具與後散射雷達</h3>
+<div class="narrator"><span>主述</span>ES 用機密雷達看地下的巨型結構與載具。</div>
+<ul>
+<li>後散射低頻雷達(ground penetrating, low frequency, back-scattered wave pattern device):提供比 CAT 掃描精細約 400 倍的體積影像,且能辨識材料類型(已登錄每種已知元素的頻率回波,像 Rife 機),可裝在無人機上(曾在油輪 10 英里外精準找出 55 加侖油桶內密封盒中的少量鈾)。<span class="who">史密斯</span><span class="src">S10E08</span></li>
+<li>雷達顯示了完美切割的巨大立方體房間(位於 1000 至 3500 呎深基岩、精確到毫米)、被回填的巨大樓梯、數百英畝綿延數千英里的空洞、飛行器輪廓與大型石棺(裡頭應是約 30-33 呎高的巨人);發現的元素之一是大量純白金(white gold,古代「嗎哪 mana」)。此科技也能裝進 iPhone:放大到單一細胞、辨識癌細胞後「zap」之即治癒癌症。<span class="who">史密斯</span><span class="src">S10E08</span></li>
+<li>有非常大的載具卡在地殼裡(從 8 英尺寬到 33 英里長);地下結構同樣巨大(比吉薩金字塔大十倍),有金字塔形或反金字塔/四面體;研究一個 33 英里寬的地下載具可能耗 20、50、100 年(先做體積成像、做模型/VR 演練、判斷是否還有能量、是否有存在)。<span class="who">史密斯</span><span class="src">S09E09</span></li>
+<li>軍事基地常建在古基地/墜毀載具與網格點上(因古基地已有運作的能源裝置、外星載具、門戶);1940-50 年代用特殊雷達看地下選點(Sandia 在 Kirtland 空軍基地、Los Alamos 在其北、都相連)。<span class="who">史密斯</span><span class="src">S09E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>地下基地的一日生活科技</h3>
+<div class="narrator"><span>主述</span>ES 在基地過夜約 60 次,描述生活科技。</div>
+<ul>
+<li>房間:常是梯形,家具全內建於牆中、需要時伸出(無縫工藝);牆上有 3D 互動大螢幕;可控溫度、濕度、燈光(不同種族需不同大氣與照明)、可改背景噪音、投影戶外景象;床自給自足(側邊像螺旋的小圓罩可罩住床、為某些種族加壓)。<span class="who">史密斯</span><span class="src">S11E10</span></li>
+<li>餐廳:牆面透明鏡面塗層觸控點餐;餐桌是巨大螢幕,坐下時凳子無聲從地面升起;平手是餐巾、雙指雙擊是餐具、整個手掌貼桌叫出直覺 app。所有固體食物都 3D 列印,列印後數秒內加熱或冷卻到指定溫度(每餐三分鐘內)。食物過度營養(超高劑量礦物質、移除毒素脂肪)、加酵素讓食物立即消化。<span class="who">史密斯</span><span class="src">S11E10</span></li>
+<li>封鎖(lockdown):原因之一是承包商/實體入侵;ES 記得一次巨大爆炸(電磁武器振動),約一英畝基地被完全摧毀(無輻射但點燃許多氣體火災);封鎖通知透過對講機、資料夾或臂帶發出,會做假封鎖讓人習慣。<span class="who">史密斯</span><span class="src">S11E10</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 15 材料元素 ============ -->
+<section class="cat" id="c15">
+<div class="cat-h"><span class="bar"></span><h2>十五、材料、元素與古代科技</h2><span class="cnt">MATERIALS &amp; ANCIENT TECH</span></div>
+
+<div class="sp">
+<h3>透明合金鋁、鉍、鈧鋁與罕見合金</h3>
+<div class="narrator"><span>主述</span>CG/Heather 談飛船外殼與古代結構的材料。</div>
+<ul>
+<li>古建造者種族的金字塔看似水晶但實為一種「透明的高科技鋁合金 transparent alloy aluminum」、整片無縫;月球上的建築含「透明合金鋁」材質(挖出後牆面可透視)。Richard Hoagland 講的玻璃圓頂確實存在但多已毀。<span class="who">柯里</span><span class="src">S01E06</span><span class="src">S02E07</span></li>
+<li>飛行器外殼金屬多為地球罕見、由其他星球或星系製造的合金,密度高低不一、能耐入大氣層的高速摩擦熱;Heather 提鈧鋁(scandium aluminum)、鉍(bismuth)——有學生帶來疑似隕石的鉍送 NASA 分析、全是鉍、來源不明。<span class="who">Heather</span><span class="who">柯里</span><span class="src">S07E02</span></li>
+<li>德國的盤狀飛行器用「鉻鉬合金鋼 chromoly steel」極重;CG 在飛行器內見過的元素週期表元素數遠超 112/114/118。土星環中有透明合金、像結構碎片(超級地球在土星周圍建的透明鋁合金環,碎片成了土星環)。<span class="who">湯普金斯</span><span class="who">柯里</span><span class="src">S04E01</span><span class="src">S05E10</span></li>
+<li>MM 的隔熱科技:一種「工程晶體 engineered crystal(類壓電晶體)」塗在機殼外,把摩擦熱轉成電荷、透過機殼傳導到能快速儲電的裝置(像散熱片 heat sink),讓熱來不及累積。<span class="who">麥肯德利什</span><span class="src">S07E18</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>水銀、鎵、汞變金(煉金術)</h3>
+<div class="narrator"><span>主述</span>CG/Jay 談電重力過程中的金屬嬗變。</div>
+<ul>
+<li>建造 ARV 時用「玻璃漩渦/玻璃圓柱」製造汞的漩渦,通入高電流形成旋轉電場,結果汞不斷變成金(看起來像珊瑚狀,化學檢測確認是真金;某大學也以少量汞施加極強電磁場重現);Jay 說這就是「鐘形 Bell 技術」。後改用工程化的鎵(gallium)液態金屬導電更佳。<span class="who">柯里</span><span class="who">Jay</span><span class="src">S07E05</span><span class="src">S08E11</span></li>
+<li>Jay 談煉金術:gold(金)是 God(神)去掉 L(lead 鉛),把鉛/汞變金象徵靈魂已煉成金、達到高層次揚升;真正的長生不老藥很危險,歷代煉金術士因被國王逼問秘方而被殺。<span class="who">Jay</span><span class="src">S07E05</span></li>
+<li>金字塔內水銀與雲母:瓜地馬拉主金字塔下石棺內發現水銀(quicksilver,Vimana 燃料成分之一),Teotihuacan 有完全用雲母(mica)隔絕的密室;CG 說那是「儲存燃料供未來使用」之處,雲母室可能用來屏蔽某種發電機。<span class="who">柯里</span><span class="src">S07E27</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>黃金、Ormus 白金與 ORMEs 神聖幾何</h3>
+<div class="narrator"><span>主述</span>PP/ES/DW 談單原子元素與其療癒/演化用途。</div>
+<ul>
+<li>DW 引 Jacob:Draco 想要黃金是因天然金有約 200 種特性(含療癒等先進科技用途),金在地球網格何處形成會大幅影響其能量特性、被地球網格能量浸潤,複製機造的金沒有此特性。小行星帶有大量金、鉑、銀,地球上「金稀有」是操弄。<span class="who">柯里</span><span class="src">S02E13</span><span class="src">S02E10</span></li>
+<li>PP:地球金濃度高,可製 Ormus(另一種白金/manna),延長壽命、保神經系統再生與端粒;大部分太空探索就是找 Ormus/manna。Anunnaki 來偷金,我們作為種族「存在的唯一目的就是當採金工」(Anunnaki 與類黑猩猩的基因混種,能蹲入小裂縫採金)。<span class="who">彼得森</span><span class="src">S07E31</span></li>
+<li>ES:要看「軌道重排單原子元素 ORMEs」(鈀、銠、銥等)——是 DNA 進化所需;DW 補充 ORMEs 即微團簇(原子逐一析出時優先聚成立方體、八面體、十二面體、二十面體等神聖幾何,外導電內絕緣、更硬耐溫);這是電子之下、構成我們的最小粒子,讓我們能跨維度旅行。驅動智能戰衣反重力的也是這種古代純白金。<span class="who">史密斯</span><span class="src">S10E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>古代建造者種族的石板/晶體技術</h3>
+<div class="narrator"><span>主述</span>CG/ES 談多維運作的古代「石頭」其實是科技。</div>
+<ul>
+<li>地球地表下到處都有古代建造者種族的技術;ET 們極想要,曾長期與我們(在我們搞懂它是技術之前)大量交易來換取這些「石頭/遺物」;當我們夠成熟、意識到那是技術後就停止交易。這種石板技術除製造時間泡外還有其他用途。<span class="who">柯里</span><span class="src">S01E06</span></li>
+<li>CG 見過「大量以晶體為基礎的科技」(很多可追溯到古代建造者種族);小行星上嵌有古代建造者種族科技殘片(外觀像很硬的閃長岩 diorite、被雕成悅目形狀、實為極先進多維裝置)。<span class="who">柯里</span><span class="src">S02E05</span><span class="src">S02E06</span></li>
+<li>金屬石棺/管:DW 提內部人從吉薩高原地下挖出金屬合金石棺、工具打不開;在美國軍艦上有人「心靈感應地」與石棺介接,唱某個音/諧波並把手伸出、石棺就打開,內有手持工具(有些能給出該族群時代歷史事件的全像重建)。ES 證實聽過很相似的故事:這些無縫的不明金屬石棺/管「只能靠血脈 lineage 與諧波 harmonic 打開」(DNA 中的基因標記)。<span class="who">史密斯</span><span class="src">S09E10</span></li>
+<li>古建造者種族的療癒石板(slabs)即使人類躺上去(尺寸過大)仍有療效;女祭司用陽具狀的水晶棒摩擦發出音調,在身上掃描如金屬探測器,驅除六個實體附身(entity attachment)。<span class="who">柯里</span><span class="src">S04E01</span><span class="src">S06E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Pitholem 電磁聚變引擎(David Adair 的 51 區)</h3>
+<div class="narrator"><span>主述</span>DA 1971 年在 Groom Lake 看到的活體電磁聚變引擎。</div>
+<ul>
+<li>DA 17 歲造出「電磁聚變引擎 electromagnetic fusion engine」火箭 Pitholem(自己的約 2.5 呎長);被 Arthur Rudolph(迴紋針來的 Apollo F-1 引擎總設計師)改向投到 Groom Lake。<span class="who">阿戴爾</span><span class="src">S08E01</span><span class="src">S08E02</span></li>
+<li>基地地下洞穴中有一具巨大的「電磁聚變約束引擎 electromagnetic fusion containment engine」:約 70 呎長(後修正 15 高、22 寬)、水藍綠色、有光澤、外覆像骨頭的外骨骼結構(ectoskeleton,很像 HR Giger 的作品)、像有機體又像機器。DA 的影子會落在引擎上、且比動作慢半秒(他問是不是熱感應合金 heat recognition alloy)。<span class="who">阿戴爾</span><span class="src">S08E02</span></li>
+<li>觸碰平滑凹陷區觸感像海豚皮膚、按會稍微凹陷後變得像岩石;接觸處有藍白色波浪自帶光暈往下流動。頂端像有椎骨的巨大脊柱,椎骨間有像光纖、但內有流體(藍橙綠虹彩)的束狀物,像人類的神經突觸放電系統。<span class="who">阿戴爾</span><span class="src">S08E03</span></li>
+<li>引擎內有駕駛/診斷艙:給雙足人形坐的椅子、右側有觀察窗可看等離子流;爆炸貫穿艙壁後遇電磁屏蔽場,引擎必須在約一兆分之一秒(picosecond)內緊急關閉(故障保護),否則被等離子場汽化。座椅前有兩個莢艙、有指形凹槽,DA 把手放入後聯鎖環收緊、聽見性感女聲說「安靜」,出現抬頭顯示器影像(不同星系、整個文明)。<span class="who">阿戴爾</span><span class="src">S08E03</span></li>
+<li>DA 說這是「動力裝置 power plant」會接入大型載具;動力裝置、太空船、船員三者都是有情存在、共生互鎖;這個共生社會約八九十億年(eight or nine billion years)、是宇宙第一個物種、家園在星系之間的空間(像深海的鯨魚)、「半出生半建構」(像博格)。此動力裝置只有四個接點、可輕易拆出,能為整顆行星供電(功率約等於一顆巨型藍星)。<span class="who">阿戴爾</span><span class="src">S08E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>ARV / Fluxliner:零點能飛碟(McCandlish)</h3>
+<div class="narrator"><span>主述</span>MM 1988 年在 Norton/Palmdale 親見的飛碟與極光機。</div>
+<ul>
+<li>ARV / Fluxliner:三具懸浮於地面、無起落架的飛碟(最小直徑約 24 呎、最大約 120 呎);機身底部平、側面以約 35° 斜角上收,圓頂上有透明罩內裝可動 CCD 相機(成對轉動形成立體視覺);外表覆蓋嵌有金屬碎片的樹脂漆。動力為從時空真空抽取的純量能/零點能(scalar / zero-point energy),通電時周圍空氣電離強烈到產生致命 X 光光子,故無法有窗、必須用合成視覺系統。CG:ARV 是德國人的「二手貨」(1952 年交流後轉交)。<span class="who">麥肯德利什</span><span class="src">S07E20</span></li>
+<li>中央推進系統:中央柱(玻璃狀物質、內有銀色金屬液、亮暗碎片旋轉、湍流像五個小龍捲環繞中央大龍捲)顯示內外圓柱反向剪切;強電流經漏斗狀文氏管放電產生人造球狀閃電(離子煙圈往下衝、外緣刷過電極鬚抽出真空時空能量,這就是抽取零點能的方式)。起初用汞、後改用工程化的鎵。<span class="who">麥肯德利什</span><span class="src">S07E22</span></li>
+<li>Biefeld-Brown 效應與電容陣列:平行板電容充電後會升空懸浮;ARV 電容板重度絕緣不會短路、故能在太空運作;電容分成 48 個放射狀楔形(像披薩),用鈾等重元素摻雜石英;整個電容陣列儲存巨大電位,實際在扭曲時空。將軍稱其速度「光速或更快」。<span class="who">麥肯德利什</span><span class="src">S07E20</span><span class="src">S07E22</span></li>
+<li>超光速與質量增加再詮釋:若把會增加質量的能量反過來當推進能源,則速度越快可用能量越多、無需攜帶燃料,能突破光速障礙;引 1994 年 Alcubierre 曲速論文(前方壓縮時空、後方膨脹時空,像「衝浪」般沿時空扭曲面下滑),載具作為一個單元均勻移動故無 G 力。<span class="who">麥肯德利什</span><span class="src">S07E20</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>高速偵察機:Aurora/Pulser、極光、馬赫 17</h3>
+<div class="narrator"><span>主述</span>MM 揭露洛克希德高速機,CG 補充。</div>
+<ul>
+<li>極光機(Aurora,洛克希德稱「Pulser」):四具引擎埋在機身內、整機覆蓋與太空梭相同的燒蝕隔熱瓦;機尾類似線性氣動尖塞(aerospike)引擎;機腹埋有 121 個垂直發射管(裝類似洲際飛彈 MIRV 的重返載具);第三套推進是機尾蛤殼狀彈出的火箭引擎(可爬升至大氣層外發射位置)。留下「甜甜圈狀凝結尾」與「打樁機」噪音。<span class="who">麥肯德利什</span><span class="src">S07E20</span></li>
+<li>洛克希德工程師看到 MM 的高速機插畫嚇了一跳,脫口「這些前翼、翼尖小翼在馬赫 17 早就被扯掉了——」馬赫 17 約等於每小時 12,000 英里。CG 說當時開發中、主要在大氣層內飛的測試機速度多在馬赫 9 到馬赫 20 之間,目的是逐步發展能進出大氣層的飛行器。<span class="who">麥肯德利什</span><span class="who">柯里</span><span class="src">S07E18</span></li>
+<li>「壓扁橄欖球」黑機(升力體)、Dart 前身(東德墜機回收的黑色箭頭形機,前角嵌白球、以三爪夾持轉向)——CG 說 Dart 有前艙 2 人座、後 3 人座、底部三個圓頂,推進是「裡面有迪斯科球」(漂浮球);多面體概念機可「改變構型 articulate」、靠三個可在萬向架轉向的電重力引擎控制姿態。Pete 說軍機多已配「遮蔽 masking」電子偽裝。<span class="who">麥肯德利什</span><span class="who">柯里</span><span class="src">S07E18</span><span class="src">S07E22</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>梵蒂岡與納斯卡:古代科技的保存</h3>
+<div class="narrator"><span>主述</span>ES/PP 談梵蒂岡資料庫與納斯卡地下隧道。</div>
+<ul>
+<li>梵蒂岡底下有地下基地;ES 搭電梯下降約七八層,看到大量用「透明金屬(非玻璃)」做的方形櫥櫃(內有像武器、像疊在壓克力板上的卷軸),約六層樓;主圖書館有數百根 3 至 6 呎直徑的巨大圓柱「氣控管(gas-controlled tubes)」(內部真空與氣體控制以防老化)。導覽者調出關於一艘新墨西哥被擊落飛行器的書,其中有古代僧侶畫的「完全相同」飛行器素描。<span class="who">史密斯</span><span class="src">S10E04</span></li>
+<li>PP 親自去過 Nazca 地下隧道(非地表線條):隧道平底、頂呈圓拱(像烤好的麵包),顯然由能量機器(雷射機/高熱機)開鑿;牆面塗有像玻璃纖維墊的塗層、加熱後再以高溫火焰熔表面使其更光滑。梵語(Sanskrit)是來自外星的語言,約 7,200 年前就給出建造飛碟的精確描述。<span class="who">彼得森</span><span class="src">S08E12</span></li>
+<li>木乃伊保存:周圍白粉檢測為矽藻土(diatomaceous earth)——保存組織的防腐方法;其骨頭的晶體結構是天然骨的晶體結構,今日無技術可造。<span class="who">彼得森</span><span class="src">S08E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>NI 的月球電磁挖掘與 ES 的太空打撈</h3>
+<div class="narrator"><span>主述</span>NI 講月球苦役;ES 講太空打撈與資料庫。</div>
+<ul>
+<li>NI 操作電磁挖掘設備:地面埋兩片金屬板、通電後如同極相斥磁極強力推開、挖掘整片區域(磁場強到要小心血中礦物被拉動);另有大量搬箱苦役;夜間被剝奪睡眠(編程的一部分)。<span class="who">伊斯利</span><span class="src">S07E25</span></li>
+<li>太空打撈(space salvaging):大氣層內外與太陽系內每天都有飛船上去打撈「太空垃圾」——不只我們放上去的,還有存在數百萬年的墜毀飛船、屍體、裝置;企業外包大型火箭發射,太空站常駐技師收集材料、裝進膠囊送回地球海洋回收。用較小的太空梭(帶吊臂),很工業化、老派(仍用瓦斯/煤/油與火箭燃料)。<span class="who">史密斯</span><span class="src">S12E12</span></li>
+<li>具體物件:一隻「爬蟲/蛙狀三指手臂」連著一支 10 呎金屬矛(手臂 DNA 與金屬中的 DNA 相符,推測該存在能「跨維度把手放進金屬」操作);像籃球的完美球體水晶(極高密度、疑似「無意識的飛船」、會從所在處汲取能量並發出特殊療癒頻率)。資料庫:把飛船取樣 DNA 與外星人屍體 DNA 比對建「聖誕樹資料庫」,主資料庫在新墨西哥地下、太空中的「保險庫」、海洋地下設施(三四個無法被駭、只能手動輸入)。<span class="who">史密斯</span><span class="src">S12E12</span></li>
+<li>新衛星有微中子光偵測器(neutrino light detectors)可定位並擊落飛船;有「殺手衛星」能投出 EMF 干擾波半秒內癱瘓一顆衛星;可從遠處用 X 光把可疑衛星「拆解」分析。<span class="who">史密斯</span><span class="src">S12E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>南極與深層歷史:超級地球、月球、Anshar 水晶科技</h3>
+<div class="narrator"><span>主述</span>CG/DW 談更深的時間尺度與意識科技。</div>
+<ul>
+<li>南極蒸氣挖掘:把大水袋投入冰中既有孔洞,將近觸冰時用高功率微波束打成蒸氣熔冰開通道;冰下發現仍插在地裡的棕櫚樹、保存完好的史前動物。超級地球居民約 70 英尺高、玩超人類主義、用「光」溝通(臉部皮膚色素微波動)。<span class="who">柯里</span><span class="src">S07E10</span><span class="src">S04E01</span></li>
+<li>月球的人造性質:聽過兩種報告——被倉促使用的「中空月球」、或一座「被建造的巨型站」;月球用全像(holography)遮蔽月面某些區域;月面 ruins 有玻璃狀圓頂(透明鋁、覆塵砂)、方形建築、塔(像被爆震波擊彎)。<span class="who">柯里</span><span class="src">S04E02</span></li>
+<li>Anshar 約 1,700 萬年前降臨、是來自我們未來的第四密度存在;他們的時間旅行靠放大意識、大量用水晶;Anshar 城裡空的座椅也會漂浮;CG 見過其他存在用「意識科技」讓緊湊板條箱漂浮(對我們看似魔法念力)。WH 提「悉地神通 Siddhi powers」八大力(瞬間顯化、隱形、漂浮、隨意放大縮小)是這些存有的意識力。<span class="who">柯里</span><span class="who">WH</span><span class="src">S08E08</span><span class="src">S05E04</span></li>
+<li>跨維度光之存在:已掌握以特定頻率振動到不同維度的能力(聲音先於形態)、可隨意重組原子與光子;進入我們的維度就受三維法則約束、必須採取某種形態(光也是一種形態)。土星上的大六角形其實是外星人用來跨維度移動的巨型門戶。<span class="who">史密斯</span><span class="src">S12E04</span><span class="src">S12E20</span></li>
+</ul>
+</div>
+</section>
+
+</main>
+
+<footer>
+COSMIC DISCLOSURE · 主題重組 · T4 外星與先進科技<br>
+資料來源:《揭露宇宙 Cosmic Disclosure》S01–S12 逐字稿 · 跨集合併、保留所有科技項目<br>
+<a href="index.html">◂ 回主頁</a>
+</footer>
+
+</body></html>

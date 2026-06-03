@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>揭露宇宙 · 個人經歷</title>
+<style>
+:root{--bg:#05080f;--panel:#0c1320;--panel2:#111a2b;--line:#1d2b44;--ink:#e6ecf6;--soft:#8593ad;--cyan:#34e2d6;--violet:#b08cff;--amber:#ffcf6b}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.85;font-size:16.5px;-webkit-font-smoothing:antialiased;
+ background-image:radial-gradient(900px 520px at 15% -8%,rgba(52,226,214,.12),transparent 60%),radial-gradient(820px 520px at 90% 2%,rgba(176,140,255,.14),transparent 60%),radial-gradient(1px 1px at 20% 30%,rgba(255,255,255,.4),transparent),radial-gradient(1px 1px at 70% 22%,rgba(255,255,255,.3),transparent),radial-gradient(1px 1px at 45% 70%,rgba(255,255,255,.25),transparent);background-attachment:fixed}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+.mono{font-family:Consolas,"Roboto Mono",monospace}
+header.hero{text-align:center;padding:70px 0 26px}
+header.hero .eyebrow{letter-spacing:.42em;font-size:11.5px;color:var(--cyan);text-transform:uppercase;margin-bottom:18px;font-family:Consolas,monospace}
+header.hero h1{font-size:42px;font-weight:800;letter-spacing:.12em;background:linear-gradient(110deg,var(--cyan),#cfe9ff 50%,var(--violet));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 38px rgba(52,226,214,.16)}
+header.hero .sub{color:var(--soft);font-size:14.5px;margin-top:14px}
+header.hero .home{display:inline-block;margin-top:20px;font-size:12.5px;font-family:Consolas,monospace;letter-spacing:.08em;color:var(--cyan);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 15px;background:rgba(52,226,214,.05)}
+header.hero .home:hover{background:var(--cyan);color:#05080f}
+nav.toc{position:sticky;top:0;z-index:8;background:rgba(5,8,15,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--line);padding:11px 0}
+nav.toc .wrap{display:flex;gap:7px;flex-wrap:wrap;justify-content:center}
+nav.toc a{font-size:12.5px;color:var(--soft);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-family:Consolas,monospace;background:var(--panel)}
+nav.toc a:hover{color:var(--cyan);border-color:var(--cyan);box-shadow:0 0 12px rgba(52,226,214,.3)}
+.cat{padding:30px 0 6px}
+.cat-h{display:flex;align-items:center;gap:13px;margin:14px 0 18px}
+.cat-h .bar{width:24px;height:2px;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+.cat-h h2{font-size:21px;font-weight:800;letter-spacing:.03em}
+.cat-h .cnt{font-family:Consolas,monospace;font-size:12px;color:var(--violet);border:1px solid var(--line);border-radius:6px;padding:1px 9px}
+.sp{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:14px 0;scroll-margin-top:120px}
+.sp h3{font-size:19px;font-weight:800;color:#dff6f3;margin-bottom:10px;letter-spacing:.01em;border-bottom:1px solid var(--line);padding-bottom:9px}
+.narrator{font-size:13px;color:var(--soft);margin:8px 0 12px;line-height:1.7}
+.narrator span{font-family:Consolas,monospace;font-size:10.5px;letter-spacing:.1em;color:var(--violet);border:1px solid var(--line);border-radius:5px;padding:1px 7px;margin-right:9px;text-transform:uppercase}
+.flabel{font-family:Consolas,monospace;font-size:11px;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase;margin:16px 0 6px;opacity:.9}
+.subhead{font-size:14.5px;font-weight:700;color:var(--amber);margin:14px 0 4px}
+.sp ul{margin:4px 0 4px;padding-left:4px;list-style:none}
+.sp li{position:relative;padding-left:18px;margin-bottom:9px;color:#c8d2e2;line-height:1.8}
+.sp li::before{content:"▸";position:absolute;left:0;color:var(--cyan);opacity:.6}
+.sp p{margin:8px 0;color:#c8d2e2}
+.src{font-family:Consolas,monospace;font-size:10.5px;color:var(--cyan);background:rgba(52,226,214,.08);border:1px solid rgba(52,226,214,.28);border-radius:4px;padding:0 5px;margin:0 2px;white-space:nowrap}
+.who{font-family:"Noto Sans TC",sans-serif;font-size:10.5px;color:var(--violet);background:rgba(176,140,255,.1);border:1px solid rgba(176,140,255,.32);border-radius:4px;padding:0 6px;margin:0 2px;white-space:nowrap;font-weight:600}
+blockquote{margin:10px 0 4px;padding:12px 16px;background:rgba(176,140,255,.05);border-left:3px solid var(--violet);border-radius:8px}
+blockquote p{font-size:13px;color:#aeb9cf;font-style:italic;line-height:1.7;margin:5px 0}
+.legend{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 8px;font-size:13px;color:var(--soft);line-height:1.95}
+.legend b{color:var(--ink)}
+footer{text-align:center;color:var(--soft);font-size:12px;padding:50px 0 70px;margin-top:40px;border-top:1px solid var(--line);font-family:Consolas,monospace;letter-spacing:.04em;line-height:1.9}
+footer a{color:var(--cyan);text-decoration:none}
+@media(max-width:560px){header.hero h1{font-size:32px}.sp{padding:17px 16px}}
+</style></head><body>
+<header class="hero"><div class="wrap">
+<div class="eyebrow">Cosmic Disclosure · T1 — Personal Experiences</div>
+<h1>個 人 經 歷</h1>
+<div class="sub">各內部人的親身經歷 · 從童年被選中、MILAB 訓練、「20 年又送回」、研究船與星際戰場,到回歸後的記憶處理與威嚇 · 跨 12 季合併 · 每點標出處與主述者</div>
+<a class="home" href="index.html">◂ 回主頁</a>
+</div></header>
+<nav class="toc"><div class="wrap">
+<a href="#c1">柯里:童年被選中</a>
+<a href="#c2">柯里:MILAB 訓練</a>
+<a href="#c3">柯里:服役與超級聯邦</a>
+<a href="#c4">柯里:藍鳥人接觸</a>
+<a href="#c5">柯里:火星視察</a>
+<a href="#c6">柯里:地心與安莎</a>
+<a href="#c7">柯里:回歸與記憶</a>
+<a href="#c8">柯里:威嚇與審訊</a>
+<a href="#c9">柯里:遙視與星體投射</a>
+<a href="#c10">柯里:多星球戰場側影</a>
+<a href="#c11">傑森·萊斯</a>
+<a href="#c12">艾默里·史密斯</a>
+<a href="#c13">克里弗德·史東</a>
+<a href="#c14">皮特·彼得森</a>
+<a href="#c15">湯普金斯與 Bob Wood</a>
+<a href="#c16">妮亞拉·伊斯利</a>
+</div></nav>
+
+<main class="wrap">
+
+<div class="legend">
+<b>發言人代碼</b>(紫色徽章標的是「提出該說法的人」,通常是受訪者,不是主持 DW):
+CG=柯里·古德 · ES=Emery Smith(艾默里·史密斯) · JR=Jason Rice(傑森·萊斯) · WT=William Tompkins(湯普金斯) · PP=Pete Peterson(皮特·彼得森) · CS=Clifford Stone(克里弗德·史東) · NI=Niara Isley(妮亞拉·伊斯利) · BW=Bob Wood(伍德) · DW=David Wilcock(主持)。青色徽章為出處集數 SxxEyy。本頁前段是柯里·古德跨季逐步拼出的服役全貌,後段是各內部人各自的童年、招募、服役與回歸故事。
+</div>
+
+<!-- ============ 1 ============ -->
+<section class="cat" id="c1">
+<div class="cat-h"><span class="bar"></span><h2>一、柯里:童年被選中與 MILAB 招募</h2><span class="cnt">RECRUITMENT</span></div>
+
+<div class="sp">
+<h3>六歲被鑑定為「直覺共感人 IE」</h3>
+<div class="narrator"><span>主述</span>CG 是被藍鳥人指名的吹哨者;他的故事從童年被計畫挑中講起。</div>
+<ul>
+<li>柯里約 6 歲被帶進 MILAB 計畫,被鑑定為「直覺共感人 intuitive empath（IE）」——直覺（預知能力 precognitive）＋共感（能感受並情感連結周遭他人,像人體測謊機）;這套能力被刻意訓練、強化。<span class="who">柯里</span><span class="src">S01E01</span></li>
+<li>他約 5 歲首次接觸:被三個金色球體帶走,進入一房間,有北歐女子與走動的小灰人;被帶到孩子玩耍的房間（有些禿頭、眼睛略異的混血兒,也有像他的正常人類,還有一對與他年齡相近的紅髮兄妹）。北歐女子給他一個 3D 拼圖（方形、圓形凸起要拼合）,成功後被帶進較暗的控制室——霧屏跳出星圖,女子問「這是你的家嗎?」他答「我的家和媽媽在一起」;又展示一顆像土星、帶可居住衛星的大行星問「那是你的家嗎?」他起怪反應、要求回家,被送回。<span class="who">柯里</span><span class="src">S09E01</span></li>
+<li>同樣 5 歲時的「海盜船」經歷:住祖父母家,他會有「需要出門」的衝動,看見遠處像隨風飄的葉子般降下的海盜船,登船後進入有 360 度環窗的圓室,看見自己的公寓與整座城市;船飛進機械削平的平滑洞穴,在某區降落變成飛碟。他自主走過洞穴,看見各年齡各膚色的人排隊脫衣、在手術燈下裸躺,一側是很高的灰人加兩個小灰人、另一側是穿白袍的人類醫生,做聯合檢查/手術。<span class="who">柯里</span><span class="src">S09E01</span></li>
+<li>同步性 synchronicity（11:11、11:33、3:33）可能告訴你走在覺醒的正確道路上;柯里 30 多年來常見。<span class="who">柯里</span><span class="src">S01E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>「探索者計畫」與被偷偷帶離學校</h3>
+<ul>
+<li>CG 童年被招募進「Explorer program 探索者計畫」——1970–80 年代為資優、特殊需求等兒童設的非主流計畫;在測驗中顯露適合就進一步測試、取得父母同意後編入。小學時多在校、被帶出上某些課;之後「整天都在完全不同的班」。<span class="who">柯里</span><span class="src">S02E17</span></li>
+<li>他曾莫名被編到「還在包尿布的發展遲緩兒童班」一學期、幾乎沒作業（他閱讀測驗領先約四個年級,只是有打架等行為問題,綽號「Kicking Ass Corey」）。那學期常被帶離校。CG 認為父母即使察覺也「無法對自己承認」、不知全貌。<span class="who">柯里</span><span class="src">S02E17</span></li>
+<li>過去靠「標準化測驗」冒出異常旗標,再派為地區工作的另一名老師/輔導員面對面測試,即能輕易推斷是否「非本世界的靈魂」;這些測驗也用來及早找出反社會者來塑造。CG 自己就是被這樣選中。<span class="who">柯里</span><span class="src">S02E03</span><span class="src">S06E17</span></li>
+<li>Sigmund 後來給他看的文件記載:CG 約 7 歲（1977 年）被正式帶入 MILAB,1977–1997 是「資產 asset」。因被鑑定為直覺共感人,是完美工具。<span class="who">柯里</span><span class="src">S09E01</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 2 ============ -->
+<section class="cat" id="c2">
+<div class="cat-h"><span class="bar"></span><h2>二、柯里:MILAB 訓練——松果體、座椅、創傷與 VR</h2><span class="cnt">MILAB TRAINING</span></div>
+
+<div class="sp">
+<h3>松果體與 IE 訓練</h3>
+<ul>
+<li>在 lab 計畫被鑑定為 IE 後,他們在肩膀、臀部打針（年幼打臀、年長打肩）,並用一支尖端金屬棒抵在前額/眉心,向松果體發送聲波（可感到聲波進入腦中約 6 吋深）,目的是強化「直覺」部分。<span class="who">柯里</span><span class="src">S01E10</span></li>
+<li>訓練中的練習不只活化松果體,還要擴展「光體」——做到他們想要的程度時,人坐在房裡光體會擴展超出房間牆壁。<span class="who">柯里</span><span class="src">S01E10</span></li>
+<li>接受聲波治療會出體;感到光體向各方向長大、有時被「彈出」到自己身後。柯里幼年就有出體經驗（長途車程無聊時把自己投射出車外、飛越路牌與山丘回看車子）。電磁波也曾用在他們身上（類似 Michael Persinger「神之頭盔」）。<span class="who">柯里</span><span class="src">S01E10</span></li>
+<li>高壓高氧室:被放進壓力室做冥想,頭接 EEG 電極;受訓在指令下進入不同腦波狀態（含 theta）,測量在不同氣壓與含氧量下能多快達到。<span class="who">柯里</span><span class="src">S01E10</span></li>
+<li>能量球觀想與接地:把一顆白色能量球在手間、沿肩、沿脊椎上下、出頭頂移動;觀想自己與地球中心接地、把自己當成可吸入與推出宇宙背景能量的「天線」。CG 說他們教的超越「地球授權魔法」,關乎宇宙網層層相關。<span class="who">柯里</span><span class="src">S01E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>外星座椅與肩胛「端口」資訊下載</h3>
+<ul>
+<li>MILAB 計畫童年時把 IE 放進「外星飛船的座椅」,以負面增強（電擊酷刑式）訓練他們能在指令下進入可測量的不同意識狀態,測試誰能最熟練改變座椅中的特定波。<span class="who">柯里</span><span class="src">S01E13</span></li>
+<li>DW 引 Pete Peterson:背上肩胛骨有個凹陷、全身神經在此交叉,稱「端口 ports」;許多 ET 的座椅有「凸點」要嵌進那凹陷,可下載大量資訊。CG 確認「我們也用、可下載大量資訊」。<span class="who">柯里</span><span class="who">彼得森</span><span class="src">S01E13</span></li>
+<li>CG 在 MILAB 時期坐的椅子有兩個不舒服的小凸點頂住背,後仰時感到電流通過、下載資訊來教學;當時被告知「有朝一日所有人都會這樣受教育」。<span class="who">柯里</span><span class="src">S01E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>全像訓練、創傷 VR 與心理側寫</h3>
+<ul>
+<li>全像訓練室:他走進看見空軍人員與白袍人坐牌桌,經過程序出來後桌邊變成一個灰人——逐步讓他適應,把直覺共感技能訓練成能與非地球存在介接,訓練從七歲到十六歲（進入 SSP 前）。<span class="who">柯里</span><span class="src">S09E01</span></li>
+<li>把個人或團隊放進極度沉浸的 VR（有氣味、味覺、觸感、風）,常很可怕——置於恐怖情境或被要求做恐怖之事、與不愉快的存有戰鬥（柯里被放進與大蜘蛛、爬蟲類存有戰鬥的情境,因系統洞悉你最怕什麼）。只能靠直覺取勝,成功後像清醒夢般意識到身在 VR、把自己拉出來。<span class="who">柯里</span><span class="src">S01E10</span></li>
+<li>VR 也用來心理側寫——看你會服從何種命令、走多遠、誰是反社會者（有些命令很可怕、CG 不願在鏡頭前談）。系統會從受訓者腦中抽取資訊來操控情境,也能把多人放進同一 VR。一旦你能持續一開始就分辨自己在 VR 並抽離,就算「畢業」到新層級。<span class="who">柯里</span><span class="src">S01E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>心靈能力分級、黑魔法教官</h3>
+<ul>
+<li>DW 引內部人 Daniel:分「TP 心電感應者」與「TK 念力者」,TK 約千分之一、較罕見但可訓練;有「P-scale 心靈能力量表」（一般優秀通靈僅 P4,訓練最高可達 P8~P10）。<span class="who">柯里</span><span class="src">S01E11</span></li>
+<li>MILAB 之所以鎖定 5 歲到青春期前的孩童,是因他們意識更可塑（尚未形成「什麼可能/不可能」的成見）,而意識是能力的觸發器,故童年起訓練者的能力會「電爆」成年後才受訓者。確有用念力訓練年輕人「殺人」（如念力掐頸動脈致死）。<span class="who">柯里</span><span class="src">S01E11</span></li>
+<li>教年輕人的黑色行動類教官很相信《星際大戰》Jedi「原力」、駕馭「源場的黑暗面（西斯黑魔法）」,能觀想並射出能量球在金屬上打凹（若對人用,人無法存活）。這些人動作平順、毫不費力、像天線從源場拉能量。<span class="who">柯里</span><span class="src">S01E10</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section class="cat" id="c3">
+<div class="cat-h"><span class="bar"></span><h2>三、柯里:服役流程、超級聯邦與研究船</h2><span class="cnt">SERVICE · SUPER FEDERATION</span></div>
+
+<div class="sp">
+<h3>「20 年又送回」的入伍流程</h3>
+<ul>
+<li>柯里的服役流程:半夜被以傳統方式從德州家中載到 Carswell 空軍基地,基地下方有電梯通往極深處,接上美國地下「sub shuttle 次軌列車」系統(真空管中的磁浮單軌)。再經由「星門」式傳送門技術抵達 LOC（月球作戰指揮部）。<span class="who">柯里</span><span class="src">S01E01</span></li>
+<li>在 LOC 簽下文件（當時年紀根本不夠合法簽署）,被告知是「20 年又送回 20 and back」的 20 年承諾。然後被送上一艘鬼蝠魟（manta ray）外形、可載約 600 人的飛行器,飛行約 30~40 分鐘,送往太陽系外圍的研究船。<span class="who">柯里</span><span class="src">S01E01</span></li>
+<li>他被指派到研究船 6 年,之後因 IE 技能在其他計畫被需要而輪調多個計畫直到 20 年期滿;其中一例是「闖入者攔截與審訊 Intruder Intercept and Interrogation」計畫——攔截未經許可進入太陽系或地球大氣層的存有,柯里以 IE 身分在審訊時在場,負責「介接」溝通、讀取對方情緒、判斷真偽。<span class="who">柯里</span><span class="src">S01E01</span></li>
+<li>SSP 行動慣例:極少事前準備或情報,常只被告知「在某時段與某團體會面」,他多半盲目進場;有時隨行的維安支援小組比他知道更多。<span class="who">柯里</span><span class="src">S03E02</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>十三歲首次當 IE:超級聯邦會議</h3>
+<ul>
+<li>約 12~13 歲時,他和幾個一起受訓的人被帶進一個計畫,擔任「超級聯邦 Super Federation」中地球代表團的 IE 支援人員。聯邦會議使用一種非常單調的古老外星語言、部分以心電感應進行;會議時被發給一塊「智慧玻璃墊 glass smart pad」要他們瀏覽資料以保持心思忙碌,同時訓練他們偵測危險與欺騙的共感能力。<span class="who">柯里</span><span class="src">S01E01</span></li>
+<li>首次以 IE 實戰是十三歲:被帶到木星軌道外的小型太空站——一個肉眼看不見的「時間異常 temporal anomaly」,須以「同坐標進出 punching in/out」進入,內部漆黑無星;一端像蛤殼、另一端是大圓盤,圓盤內是巨大的聯合國式會議廳。CG 是三名直覺共感支援之一（需三人三角定位偵測欺騙、恐懼）。地球有一名代表獲席位。室內約 60 種不同存在;它們多半無視 CG。CG 一生共參加三次此類會議。<span class="who">柯里</span><span class="src">S09E01</span></li>
+<li>約 50 萬年前太陽系一顆「超級地球」爆炸,使保護網格失效,大批「基因農夫種族」湧入,被賦予在銀河散播先進生命、監督其基因與靈性發展的使命;CG 在智慧玻璃板讀到由超級聯邦整體管理的 22 個不同基因計畫,各方常處於對立。<span class="who">柯里</span><span class="src">S07E32</span></li>
+<li>最後一次超級聯邦會議（成人時）:當時地球周圍有阻止許多非地球存在進出的能量屏障,出現許多他沒見過的存在（更多水生型、昆蟲型）;會中常見反制手段——存在發言前自報身分那段被從 CG 記憶抹去,有些存在看起來「沒有臉」（是它們對你心智做的事）。<span class="who">柯里</span><span class="src">S09E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>研究船、區隔化、營養球與重力</h3>
+<ul>
+<li>CG 描述區隔化:連他所在的船上都模組化區隔——他與某組科學家工作時,完全不知一牆之隔的另一組在做什麼;會給特別存取計畫（SAP）與一般機密計畫「同名」以製造混淆;多數計畫派系不知有其他派系存在（見到別的飛船會被告知是自己計畫的概念機、不准談）。<span class="who">柯里</span><span class="src">S05E12</span></li>
+<li>SSP 裡可能與從 1950 年代被「拉進來」的人在同基地同時段共事（用祖魯/軍用時間）;他們從各年代拉聰明人與技師進來,不許談各自過去,故花了一段時間才發現是「回到過去抓人」,從談吐舉止可看出年代差異。<span class="who">柯里</span><span class="src">S07E12</span></li>
+<li>CG 必須吃 SSP 給的營養球（像加亞麻籽的花生醬球）,因為那裡的列印機/複製機做的食物會嚴重危害他的身體。<span class="who">柯里</span><span class="src">S07E12</span></li>
+<li>SSP 飛船地板有產生重力場的板,扭力場泡內也能控制重力;低階 SSP 沒有人工重力（天花板有單槓供移動）,德國鐘形機是零重力環境;LOC 有 1G 重力,某些其他月面基地只有月球自然重力。<span class="who">柯里</span><span class="src">S07E15</span></li>
+<li>整個太空計畫無薪、無金錢、無個人物品（連家人照片都沒有）,完全供給制;承諾退役後給免費大學、六位數年薪、終身舒適生活,但他們根本不打算履行。柯里最後一個任務是「較黑暗、他不愛談」的工作。<span class="who">柯里</span><span class="src">S04E03</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section class="cat" id="c4">
+<div class="cat-h"><span class="bar"></span><h2>四、柯里:藍鳥人接觸與第一次會議</h2><span class="cnt">BLUE AVIAN CONTACT</span></div>
+
+<div class="sp">
+<h3>被指名當聯絡人</h3>
+<ul>
+<li>背景:柯里約 2014 年 10 月開始幾乎每天與 DW 聯絡。藍鳥人指名要他當聯絡人/中間人,把他「推」進這個角色。藍鳥人此前已透過一位柯里稱為「Gonzales 中校」（化名）的人接觸 SSP;Gonzales 與柯里都與藍鳥人接觸約四年多。<span class="who">柯里</span><span class="src">S01E02</span></li>
+<li>同盟調查柯里,發現他大量服役紀錄被塗銷（redacted）——這在他們系統裡是「硬編碼、不該可能」的事,讓他們很不安。同盟想用自己完全掌控的人,對柯里沒有完全信任。<span class="who">柯里</span><span class="src">S01E02</span></li>
+<li>Blue Avians 約在 2011 年同時接觸 CG 與 Gonzales。原本聯盟議會希望 Gonzales 當代表,Blue Avians 卻指名要 CG,議會很不滿。先在非常清明的夢中介紹自己、經由夢境鋪陳後才實體現身——與《一的法則》描述的接觸協定完全一致。<span class="who">柯里</span><span class="src">S02E03</span></li>
+<li>藍鳥人接觸柯里的方式:直接出現在他家（他家挑高,8 英尺高的藍鳥人塞得下）,或派小球體 orb 來載他;出現時看起來完全實體、不浮空也不壓彎地板。接他的小型穿梭機:三角形/略呈金字塔狀,可載 5 人,側面開啟,顏色是與匿蹤轟炸機相關的黑灰色;到月球約 3~4 分鐘。<span class="who">柯里</span><span class="src">S01E02</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>著名插曲:NASA 帽與綠色暴龍</h3>
+<div class="narrator"><span>主述</span>CG 最廣為人知的第一次接觸場面。</div>
+<ul>
+<li>第一次接觸時柯里匆忙著裝,隨手抓了一頂在休士頓 NASA 觀光買的 NASA 帽戴上;前一晚 11 歲女兒在他手上畫了綠色暴龍(T-rex),沒洗掉、乾在手上。<span class="who">柯里</span><span class="src">S01E02</span></li>
+<li>被 Gonzales 帶到 LOC 一間能容約 300 人、像大教堂般挑高的會議室最前方站著。室內有來自世界各地的人——印度政要、各種軍裝。粗獷的軍人問他「你是誰、幹嘛戴那頂荒謬的帽子」要他脫掉,又問「你手上為什麼畫了一隻爬蟲類 reptilian」,他想擦掉卻擦花了,非常緊張、被奚落。<span class="who">柯里</span><span class="src">S01E02</span></li>
+<li>接著眾人安靜回座、看向他身後——藍鳥人 Raw-Tear-Eir 與另一個沒見過的球體存有出現。<span class="who">柯里</span><span class="src">S01E02</span></li>
+<li>如何分辨不是精神分裂/幻覺:「試驗靈體 testing the spirits」——他們先在夢中接觸以免嚇到你;確認是實體、是與他人（Gonzales 等）的共享經驗、被真實的飛船載到真實地點與真實的人對話。柯里強調他不是通靈。<span class="who">柯里</span><span class="src">S01E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>與白色皇家德拉科的侵入性接觸</h3>
+<ul>
+<li>CG 不幸見過一個德拉科皇族(約 14 英尺高、極肌肉、有退化翅膀與短尾、白鱗、約 3000 磅、垂直瞳孔);與他 telepathic 互動時眼睛不斷變色（藍紅各色）、裂瞳放大到全黑,像微波穿透額葉、抓住並固定他——他從沒有過如此「侵入性」的溝通。他與 Gonzales 事後頭痛噁心至少三天。<span class="who">柯里</span><span class="src">S02E16</span><span class="src">S04E06</span></li>
+<li>CG 因此曾拒絕再去見 Draco Alliance Federation。Raw-Tear-Eir 用全息影像給 CG 看 Draco 揚言「撕裂他、向他撒尿羞辱」等,並取消了該次會面。<span class="who">柯里</span><span class="src">S02E16</span></li>
+<li>Gonzales 代 CG 出席兩場會議後向 CG「道歉」,因他原以為 CG 誇大了與白龍接觸的可怕,親歷後才知屬實。地點在美國西南某「停業旅館」,由「Committee of 200（200 人委員會）」領導出席;巨大門廳新增「爬蟲士兵榮譽衛隊」,中央站著同一頭白色皇家德拉科,它一把抓住 Gonzales 心智令他踉蹌後退,命他「複述我說的每句話」。<span class="who">柯里</span><span class="src">S02E16</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>沙漠接觸會議:藍光球與「一無限造物者使者」</h3>
+<ul>
+<li>CG 在沙漠會議（現場約 5000 人）某晚從天窗見到一顆藍光,出去拍到它移動、閃爍掠過天空。DW 也看到、觀察超過一小時,其助理看到 DW 頭上有一團藍色能量雲。隔天很多人回報看到藍球;CG 被告知它閃爍時有些人（包括 DW）收到了「下載 download」。<span class="who">柯里</span><span class="src">S06E01</span></li>
+<li>隔天早上 CG 躺床上聽到各年齡、兩性的合唱聲,重複四次「We are the messengers and facilitators of the One Infinite Creator（我們是一無限造物者的使者與促成者）」。此後他終於能讀進《一的法則》（之前讀時字會浮在頁面上方）,且 Tear-Eir 開始用與書中非常相似甚至相同的術語與他溝通。<span class="who">柯里</span><span class="src">S06E01</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 5 ============ -->
+<section class="cat" id="c5">
+<div class="cat-h"><span class="bar"></span><h2>五、柯里:火星殖民地視察全程</h2><span class="cnt">MARS INSPECTION</span></div>
+
+<div class="sp">
+<h3>出發與抵達火星</h3>
+<div class="narrator"><span>主述</span>CG 最完整的單一事件敘事,從接送到牢房。</div>
+<ul>
+<li>出發:小藍球 orb（約 2 吋直徑、像高爾夫球）穿玻璃進來,他張開手心示意,球擴大、他懸浮在中間、瞬間抵達 LOC 大會議室（一次容約 70 多人）。安保人員給他全新挺括的連身服與全新靴子。一群 SSP 議員與一位 ICC 代表（白灰髮人類、穿尼赫魯立領裝）在場道別。<span class="who">柯里</span><span class="src">S01E07</span></li>
+<li>停在火星軌道外,70 吋大型智慧玻璃墊顯示火星 3D 影像與各基地圖示（至少十幾個、都在北半球）。Gonzales 卻以心智啟動南半球一個新圖示,說「我們選這座」,並回 ICC 代表「我們一位近期叛逃者住過這座殖民地,有非常新且詳細的情報」。<span class="who">柯里</span><span class="src">S01E07</span></li>
+<li>進入火星大氣時透明面板外有粉紅、薰衣草紫的放電;沿地表飛入一處像舊河道的峽谷崖壁,崖壁升起金屬圓柱（空中交通管制）,壁面開出原本看不見的開口,飛入後兩側有機庫、停著淚滴形鍍鉻飛船,降落在第三個機庫。<span class="who">柯里</span><span class="src">S01E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>「我來自德州」的失誤與工業導覽</h3>
+<ul>
+<li>被帶上很窄的小火車前往約 8 公里外的工業複合體。被問來自哪,柯里失誤答「德州 Texas」——而這座基地是「對人類很重要的社會實驗」,殖民者被告知地球因某種災難已不宜居、只有火星與太空計畫的人類倖存。柯里還剛曬傷塗了蘆薈、連體香劑髮膠都讓他「聞起來像外星/不對勁」。對面安保面色一變。<span class="who">柯里</span><span class="src">S01E07</span></li>
+<li>工業導覽:一名工頭展示「神經光學介面 neurological optical interface」彎曲完成件,機器人自動化機具生產。ICC 代表一直摸耳內裝置、面露憂色;另一班火車到、來了雙倍安保,把原本陪同的殖民地安保「自己人」全部繳械帶走。<span class="who">柯里</span><span class="src">S01E07</span></li>
+<li>住處導覽像牢房（jail cell）——牆內的床、集中用餐如廁、無馬桶、無窗;天花板用「聲波照明 sonic lighting」。殖民者穿「最好的衣服」、都試圖與訪客眼神接觸——因協議是訪客可帶一個家庭回去詢問條件,殖民者像在收容所盼望被選中。<span class="who">柯里</span><span class="src">S01E07</span></li>
+<li>主廳「作秀 dog and pony show」:各 ICC 同僚展示與 ET 交易/販售的科技。最震撼柯里的:一名 ICC 代表宣布我們「定期與近 900 個 ET 種族交易」,偶爾還與更多交易。<span class="who">柯里</span><span class="src">S01E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>收尾災難:被捕、關押、藍球營救</h3>
+<ul>
+<li>獲准帶一家四口上船;上船後 Gonzales 說「我們知道你們有家庭成員不見了」,父親震驚反問怎知道,接著一家人卻閉口不言（顯然殖民者被威脅:要說這裡很好,否則孩子遭殃）。Gonzales 動怒,帶兩名安保下船去找。<span class="who">柯里</span><span class="src">S01E07</span></li>
+<li>設施安保武裝衝上來,Gonzales 不在;柯里下令「站下、開門」,機組迅速清除船上情報。被押回安檢點,帶到原本沒有門的牆、開出一座拘留設施——一排排八角孔牢籠關著人,最後一間大牢關著 Gonzales 與兩名 IE 守衛;事情聽起來會「非常糟」（可能被殺）。<span class="who">柯里</span><span class="src">S01E07</span></li>
+<li>關押不久,藍 orb 穿牆出現,球體一一出現包住眾人、穿牆回到 LOC 那間靠牆桌的會議室,因非預期返回觸發入侵警報;飛船被留在火星。Gonzales 說「我們失去一艘船,但沒失去任何人」。柯里換回拖鞋、由藍球送回家。那家人最終下落不明、零情報。<span class="who">柯里</span><span class="src">S01E07</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section class="cat" id="c6">
+<div class="cat-h"><span class="bar"></span><h2>六、柯里:地心、安莎、金星與超級聯邦終結</h2><span class="cnt">INNER EARTH · ANSHAR</span></div>
+
+<div class="sp">
+<h3>被帶往地心、淨化儀式與女祭司</h3>
+<ul>
+<li>無事前資訊,本以為由藍色球體接他。等候許久後,在客廳沙發上突然一道刺眼白光、靜電般刺麻感,氣壓變低,聞到岩石與礦物味。他出現在巨大的圓頂花崗岩房間（推估天花板高約 100 英尺）,四面各有一道門,每門兩側站穿白袍的守衛。看到一群人從門中走出,認出其中有 Gonzales。<span class="who">柯里</span><span class="src">S03E02</span></li>
+<li>被要求進行「淨化儀式」:脫光衣物、在水池中以不同抹布分部位清洗身體,才能進入聖地神殿;他們的「金星崇拜」極重視淨化。女主人（白髮、蒼白、身高約 6'1"、極瘦）送來長袍、毛巾與涼鞋。<span class="who">柯里</span><span class="src">S03E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>「瓦肯心靈融合」與女祭司的一生</h3>
+<ul>
+<li>女祭司私下請求柯里:她得知柯里少年時 MILAB 曾被帶進一個水晶洞、被要求用心智（非觸碰）與活的水晶連結,他成功 interface、其他孩子身上出現粉/紫色光環。她想與柯里「分享」這段完整經驗。<span class="who">柯里</span><span class="src">S03E04</span></li>
+<li>兩人坐在懸浮的蛋形椅上、雙手交握。柯里感覺自己的星光體被拉向她,看到她約 130 年人生的隨機閃影:童年、女祭司訓練、與地表秘密社團/各國軍方政治團體會面、以「外星人」身分現身。他也看到她同齡時在一場昆蟲型攻擊中失去某人的記憶。結束後兩人都顫抖落淚、釋放大量愉悅腦內啡（非性意涵）;柯里自此變得更內省、直覺力大增。他戲稱為「瓦肯心靈融合 Vulcan mind meld」。<span class="who">柯里</span><span class="src">S03E04</span></li>
+<li>女祭司屬女祭司階級、超過 130 歲卻看似 30 多歲、是處女;她們一次次把農業等科技帶給掙扎中的文明,某次小災變後曾把農業與書寫語言帶給蘇美人。返程做了更隆重而尷尬的淨化（有人站在水中替你清洗）,過程有時間膨脹效應。<span class="who">柯里</span><span class="src">S03E05</span><span class="src">S03E07</span></li>
+<li>地心（土星墜飾、最古老）那群名為 <b>Anshar 安莎</b>;女祭司名 <b>Kaaree / Ka'Aree（卡阿芮）</b>。DW 指《一的法則》中「Ka」正是我們都有的靈性體之名。<span class="who">柯里</span><span class="src">S04E08</span><span class="src">S10E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>住進安莎、金星哨兵與「古人的數學語言」</h3>
+<ul>
+<li>CG 被帶到阿芮家族群的大樓,有間約 8x6 呎小房間,床上有三件藍 polo 衫與卡其褲。安莎不用床,每隔數日做一次約 45–50 分鐘的週期、沒有睡眠週期。食物全素、清淡量少但營養極高、吃了立即精神提振。他被告知不要碰任何人、保持距離。<span class="who">柯里</span><span class="src">S10E03</span></li>
+<li>重返金星:在 Anshar 機庫搭乘藍座位的 Anshar 巴士,經藍色漩渦光直上、出現在海洋上方,約 10 分鐘抵金星。一個 14 英尺高、穿亮白塑膠般衣物、黑虹膜、白髮的「哨兵 Sentinel」突然出現,似是智慧全息影像,領他們進有座像金字塔結構（超過 1000 英尺高、嶄新如初）的洞穴。<span class="who">柯里</span><span class="src">S06E03</span></li>
+<li>哨兵問他那個老問題:「你想知道你曾是誰、你是誰、你將是誰嗎?」CG 答「No」（直覺認為這會改變他與家人的所有關係）。CG 問「這是數學嗎?」Kaaree 答「這是古人的數學語言」。CG 覺得像硬碟被塞進一個巨大 zip 檔卻沒密碼、無法存取。<span class="who">柯里</span><span class="src">S06E03</span></li>
+<li>接著到土星附近進入時間異常空間,站體與超級聯邦開會場所一模一樣,但空無一艦、荒涼。哨兵把一連串影像射入他腦中:他自己一生倒帶、不是他的記憶、最後是太空中數百個場景——月球大小的巨型球體發出巨大電弧,摧毀進入太陽系的大型艦船。<span class="who">柯里</span><span class="src">S06E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>超級聯邦終結與馬雅船上的誘餌任務</h3>
+<ul>
+<li>2017 年 12 月 16 日深夜,藍色球體帶他到超級聯邦主會議廳。座位是馬蹄形:主椅加三張半月形小椅。CG 上中央圓形舞台、閉眼握拳想「我準備好了」,泰爾-艾爾與金三角存在出現在他身後,要他「逐字重複我說的話」。問候語是「在唯一無限造物者的愛與光中」,這次新增結尾:「為全體服務;為唯一服務」。<span class="who">柯里</span><span class="src">S10E02</span></li>
+<li>2017 年 10 月中,CG 凌晨被瞬移到馬雅飛船,氣氛驚慌。Gonzales 抓住他手肘往一道雙寬門推,說「沒時間解釋,你只需要進去讓人看到你」。房內地上有死去、扭曲的馬雅人;對面有一個漂浮在力場中、像爬蟲人卻有類人特徵的存在。當這存在轉頭看 CG、正要用馬雅人對他的稱呼「Hanush」喊他時,一聲響亮的「啪」,牠倒地——脖子被扭斷。CG 是被當成讓對方分心的誘餌。<span class="who">柯里</span><span class="src">S10E01</span></li>
+<li>之後北歐人、艾本人等存在齊聲連入 CG 心智,把他在船上看到的場景在腦中反覆重播多次,然後斷開。CG 形容自己被當成「USB 隨身碟」使用。「Hanush」聽起來像「Chanokh」（以諾 Enoch,字源意為「信使」）——藍鳥人說這是個「頭銜」不是名字,他不認為自己是以諾轉世。<span class="who">柯里</span><span class="src">S10E01</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section class="cat" id="c7">
+<div class="cat-h"><span class="bar"></span><h2>七、柯里:退役流程、年齡回溯與記憶處理</h2><span class="cnt">20-AND-BACK · MEMORY</span></div>
+
+<div class="sp">
+<h3>退役、強化匯報與洗白</h3>
+<ul>
+<li>CG 本人服約 21 年。退役流程:在 LOC 簽保密文件 → 「強化匯報」（被置於改變的意識狀態、接上監測遙測的電子設備、逐年回顧整個服役）→ 驗血等（LOC 共約兩三天,約百人一批輪流,彼此只能閒聊不能交流任務細節）。LOC 房間很小（四張上下鋪、僅容側身而過、無窗）。<span class="who">柯里</span><span class="src">S04E03</span></li>
+<li>年齡回溯在 LOC 下層龐大科學/醫療區進行,像一般術前室。被告知將施麻醉、誘導昏迷、保持完全靜止約近兩週;施藥後上白色亞克力面板、泡沫框與魔鬼氈固定身體、在大腿與身體扎針,然後昏睡。醒來時已回到出發時的年紀,任何疤痕、刺青都消失;像麻醉甦醒般噁心、迷糊、「身在不同的身體裡」。<span class="who">柯里</span><span class="src">S02E12</span><span class="src">S04E03</span></li>
+<li>隨後再做一次匯報（此時已在 20 年前的過去,LOC 一切「感覺都不同、不同的人」）,進行「洗白 blank slating」與植入「螢幕記憶」（如「被傳送進臥室」覆蓋「走進屋」的真實記憶,製造衝突記憶）。<span class="who">柯里</span><span class="src">S04E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>「拼接點」與記憶崩解</h3>
+<ul>
+<li>柯里的「拼接點 splice point」在他快滿 17 歲前（16 歲、約 6 分鐘的窗口）。回家次晨照鏡子才察覺不對勁;數週後洗白開始失效,先回來的是令人不安的記憶,再是有組織的連續記憶。約 3~5% 的人洗白完全無效;多數人可維持多年後才開始崩解（通常在那 20 年服役期過後）。<span class="who">柯里</span><span class="src">S04E03</span></li>
+<li>服役期間完全與地球資訊隔絕（無網路/廣播/電視/選舉結果）,推測為避免時間悖論。後遺症:手臂、手、腿的神經學問題,長時間在外者有白內障、視網膜問題,且無法走 VA 申請補助（計畫未被承認）。<span class="who">柯里</span><span class="src">S04E03</span></li>
+<li>「20 and Back + blank slating」過程約 3–5% 的人洗不掉;成功者特徵:看起來年輕、「某年齡前老得慢、之後老得很快」,30–40 歲間常出現神經問題（腕隧道、四肢神經、癲癇、眼睛、內臟衰退）。<span class="who">柯里</span><span class="src">S02E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>另外兩次「20 年又回來」與神經後遺症</h3>
+<ul>
+<li>CG 視網膜剝離手術（外科醫生說與太空人的眼睛無異,修了三次）後曾有「完整記憶回湧」,當時幾近自殺,馬雅團體把他帶上船壓抑了回湧的記憶、切斷他與某些記憶綁定的情緒能量（否則一講就恐慌發作）。<span class="who">柯里</span><span class="src">S07E17</span></li>
+<li>Gonzales 用一個「魔術 8 號球」模樣的石頭掃描他的頭,後告知柯里他其實還做過另外兩次「服役 20 年再回溯」,柯里完全沒有記憶、難以接受;這些被藏起的記憶正造成他的記憶問題,並以「滲漏 bleed through」形式變成黑暗的夢。CG 靈魂年齡約 105;三次是他所知最多。<span class="who">柯里</span><span class="src">S07E17</span><span class="src">S07E28</span></li>
+<li>CG 每 7–10 天與 Gonzales 會面（被帶上巨大圓柱石製瑪雅船）,因做太多 20-and-back 與長期接近高電磁場科技,監測腦部與腦化學、防「時間性失智 temporal dementia」提早發作。Gonzales 說「以你被空白板這麼多次、又在扭力驅動的磁場內研究船待這麼久,能記得孩子名字我都驚訝」。<span class="who">柯里</span><span class="src">S06E12</span><span class="src">S09E03</span></li>
+<li>未處理的創傷有實際「能量質量」、佔用約 10~20% 心智資源,釋放後資源回到意識。觀眾說 CG 像《獻給阿爾吉儂的花束》般轉變（語速、體重、表觀 IQ）;CG 說是開始真做內在功課＋高振動飲食＋停藥。<span class="who">柯里</span><span class="src">S06E17</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>實體附身的植入與驅除</h3>
+<ul>
+<li>CG 在公開談這些事前,他有記憶卻一試圖說出口就結巴、焦慮、極累、忘了要講。他做了自己光體的遙視,看到光體中一個球體,看進去——約四分之一變透明,看到像一隻蜷曲的青蛙、頭被壓長,第一次看到時牠驚慌說「你會忘記我」,他就真的忘了。後來他用基督教背景、呼喚耶穌之名做「驅除 deliverance」,用肉眼看到陰影「咻咻」離開他,隔夜就能談這些事。<span class="who">柯里</span><span class="src">S05E06</span></li>
+<li>後來被內部地球「被放逐者」Marra 再度植入附身:Kaaree 帶他到一房間躺上石板床,取出一根水晶棒摩擦使其發出音調,在他身上來回掃描如金屬探測器;發出高頻聲後,約六個只見頭肩、下半化為半透明陰影的形體從他的腹股溝、胸、頭離開。<span class="who">柯里</span><span class="src">S06E11</span><span class="src">S07E15</span></li>
+<li>為何先前約九次會議她沒告知也沒移除?因那些附身尚未附著到他的能量漩渦;一旦附著,她才能驅除並關閉其回來的入口。<span class="who">柯里</span><span class="src">S06E11</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 8 ============ -->
+<section class="cat" id="c8">
+<div class="cat-h"><span class="bar"></span><h2>八、柯里:威嚇、化學審訊與 Sigmund</h2><span class="cnt">HARASSMENT · INTERROGATION</span></div>
+
+<div class="sp">
+<h3>針對柯里的騷擾升級</h3>
+<ul>
+<li>他開始公開談「部分揭露敘事即將到來」「低階祕密太空計畫已從同盟脫離」後,騷擾加劇:一架契努克直升機（2015 年 11、12 月）直接停在他家上方,他拿手機出來他們才起飛、又繞他家三圈,他拍到影片。<span class="who">柯里</span><span class="src">S05E07</span></li>
+<li>某次他帶兒子在後院,看到自己胸口有「綠色雷射點」,鎮定地把兒子帶回屋內;清晨看到全身黑衣的人站在街道標誌旁手持不明物盯著他家;廚房桌上出現一根萬寶路香菸——這是黑手黨/辛迪加式警告（意指你可能「被做掉 smoked」、隨時能進你家）。<span class="who">柯里</span><span class="src">S05E07</span></li>
+<li>西班牙之行:CG 受邀去巴塞隆納附近 Montserrat 研討會,被告知 Rothschild 成分對他與 DW 都下了「機會目標暗殺令」。聯盟為 CG 提供國家元首級隨扈;在西班牙住處曾被闖入（CG 第一晚在門把放燈泡防開門）。回程一落地佛州即有多人跟蹤,一壯漢坐下後低聲說「我是友軍,其他人不是」。<span class="who">柯里</span><span class="src">S09E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>被低階 SSP 綁架與化學審訊</h3>
+<ul>
+<li>他赤腳走向停在他家後方體育場停車場的飛行器,被綁進折疊椅、打點滴。兩名「像空軍」的人取毛髮、刮皮膚、抽血（說「若他真去過他說的地方,會有微量證據,我們驗得出來」——能用微量元素測定地外地點）。<span class="who">柯里</span><span class="src">S05E07</span></li>
+<li>用帶眼動相機的 iPad 在他被下藥垂頭時,翻過一頁頁六宮格的軍校/西裝畢業照,他認出並使其變紅高亮的有三人,其中一個是 Gonzales。他們一直說「你會忘記、像麻醉」,但他因同樣使他在 20-and-back 後沒被空白板抹除的能力而沒被抹除——記憶分塊回來、要他自己拼合。<span class="who">柯里</span><span class="src">S05E07</span></li>
+<li>後果:「化學審訊事件」摧毀了聯盟對柯里的信任。指認出的三人中一人被殺、一人失蹤、Gonzales 被 Anshar「救出」並送回古柏帶基地;Gonzales 無法再以掩護身分履行地面職責,SSP 同盟此時已被「揭發為對手」、失去 LOC 空管與行星防禦網格的清關許可。<span class="who">柯里</span><span class="src">S05E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>「The Wrangler 牧人」的酷刑式脅迫</h3>
+<ul>
+<li>在金屬桌做筆記的「大塊頭」自我介紹「我是被找來『馴服 wrangle』表現不佳或不聽話的資產」。他要柯里做「化學彙報」（實為另一次化學審訊,藥劑灼燒）;態度極度輕蔑、要他「守規矩、接手 Gonzales 的地面工作」,若答應就給更多「物質支援」（其實是 Gonzales 的行動基金）與科技幫他處理身體問題,像在他面前吊胡蘿蔔。<span class="who">柯里</span><span class="src">S05E08</span></li>
+<li>CG 解釋同盟為何這樣對他:他們多出身陰謀集團計畫、是「受損的個體」;加上太陽進來、被球體緩衝的銀河能量湧入,造成「末日瘋狂 end time madness」、舊業力浮現,連他們也不能倖免。<span class="who">柯里</span><span class="src">S05E08</span></li>
+<li>Gonzales 療癒後歸來:CG 見到療癒過的 Gonzales,完全變了個人,沒了皺眉,眼神平和愉悅。Gonzales 為先前的敵意道歉,將留在馬雅團體當代表。<span class="who">柯里</span><span class="src">S06E02</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Sigmund（西格蒙):MIC-SSP 的調查</h3>
+<ul>
+<li>CG 醒來時赤腳穿睡衣在屋後巷子、身體自動走向同一艘飛行器（約 100 英尺長、從上看像魚形、匿蹤灰黑色）。兩名空軍人員把他綁進那間訊問室。一名約 5'9"、白山羊鬍、態度自負、無姓名階級臂章的長官進來,自稱叫他「Sir」即可,用「bizzZH」聲的科技改變 CG 意識狀態,再次辨認出同三人。<span class="who">柯里</span><span class="src">S06E12</span></li>
+<li>Sigmund 取了柯里的頭髮樣本、證實柯里確實去過他自稱去過的地方,結果「氣炸了」,認為上級沒給他完整資訊。他對柯里說的原話:「我以前以為我們是矛尖,結果發現我們只是他X的海岸防衛隊。」MIC SSP 在月球上有很小的據點（頂多約 30 人,保護與監視地球）。<span class="who">柯里</span><span class="src">S07E17</span></li>
+<li>VIP 簡報:某天清晨有人以正確接頭暗號表明與 Sigmund 團體有聯繫,問他能否現在做簡報;走廊有 5 人,其中 3 人（含一名戴共濟會戒指的前太空人）進房聽。物理工程師問的問題遠超柯里能力,Ka'Aree 便「透過柯里說話」回答,那人眼睛越睜越大,最後舉手大喊「我無法接受這一切」摔門而出。後續約 28 人中有 13 人喊「我無法接受」離場。<span class="who">柯里</span><span class="src">S07E17</span></li>
+<li>疑似下毒:簡報後柯里覺得不適,在博爾德就咳出大量「均勻的黑色物質」,到家數小時後進急診室——關節痛、難以呼吸、左肩與胸口痛。Ka'Aree 告訴他這是某種被策動的攻擊,東西很可能被下在食物或水裡。<span class="who">柯里</span><span class="src">S07E17</span></li>
+<li>Sigmund 後從維吉尼亞家中被帶走失蹤,家人慌張;同期 Linda Moulton Howe 的 SSP 主要內部人也失蹤。Sigmund 曾警告資訊一爆,CG 與周遭人要準備好「天降地獄」。<span class="who">柯里</span><span class="src">S07E27</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>政府網軍資料中心</h3>
+<ul>
+<li>柯里揭露他「親手協助設立」一個政府網軍資料中心:身為 IT,他建置了虛擬資料中心,每個工位一台跑 VMWare 的電腦接六個螢幕,操作者拉出位於世界各地伺服器上的虛擬機,使 IP 顯示為各地;每人有十多個有完整背景故事與社群媒體的假人格。<span class="who">柯里</span><span class="src">S04E04</span></li>
+<li>這些操作者多是「人格變形者型 personality metamorph」——社會病態者、極擅長說謊與滲透。任務:對指定的秘傳論壇用三四個帳號登入製造混亂、自己跟自己吵架;放假資訊把人拖入無休止的「循環辯論」激怒對方;甚至騷擾、跟蹤目標、鎖定並上報。<span class="who">柯里</span><span class="src">S04E04</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 9 ============ -->
+<section class="cat" id="c9">
+<div class="cat-h"><span class="bar"></span><h2>九、柯里:遙視、遙控影響與星體投射</h2><span class="cnt">REMOTE VIEWING</span></div>
+
+<div class="sp">
+<h3>遙視訓練與太陽閃焰預示</h3>
+<ul>
+<li>童年計畫會找出每個孩子的天賦,教他用來防被遙視:想像一個反向旋轉的藍色球圍繞自己、越轉越快、把遙視者吸入、再抓兩端拉緊到「啪」一聲斷裂,能量反彈給對方造成可持續數天的「乙太頭痛」。<span class="who">柯里</span><span class="src">S05E02</span></li>
+<li>約 1989 年他被指派遙視,目標是「復仇女神星 Nemesis Star」——他發現自己在太陽系外回望太陽系,還感受到星際風把他像太妃糖一樣拉扯。另一次遙視中:天空有存有不斷指向地面,最後從太陽發出一連串閃光,之後地球所有人手牽手唱歌、很快樂,而負面的人像往後跌、從地球上掉落消失。<span class="who">柯里</span><span class="src">S05E02</span></li>
+<li>他這個帶基督教被提/揚升色彩,因他們知道他的成長背景與信仰會影響資料解讀;到一定熟練度後就只給目標、不回饋,很令人沮喪。他聽說別人遙視看到不同景象（有的看到地球被火毀）。<span class="who">柯里</span><span class="src">S05E02</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>遙控影響武器化與心靈攻擊測試</h3>
+<ul>
+<li>遙控影響可訓練人遠距影響某地人的行為;也有「科技強化版」當武器系統:兩片板子接黑盒再接天線陣列,當人進入「清醒 theta 狀態」時科技放大其能力,某些人能遠距讓人心臟停跳、動脈瘤;用多了的人會被「增強」,不用科技也能殺人傷人。<span class="who">柯里</span><span class="src">S05E02</span></li>
+<li>招募心靈攻擊測試:房間裡有多人就你某訓練面談你,你會感到「腦中碎片 splinter」般疼痛,必須在三、四、六個都受過此訓練的人中辨識出是誰在乙太攻擊你。CG 自己也經歷過很多次。<span class="who">柯里</span><span class="src">S05E02</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>星體投射與「星體保安」</h3>
+<ul>
+<li>DW 五歲有出體經驗、CG 四五歲起自發、可控（長途車上投射飛在路標與天橋上方）,以為人人都會;這與外星靈魂血脈有關。SSP 用「極端創傷」誘發人星體投射（心理的解離/保護機制）,再訓練用於情報蒐集。<span class="who">柯里</span><span class="who">湯普金斯</span><span class="src">S07E16</span></li>
+<li>SSP 也讓孩子辨識隔離房間裡無人知曉的玩具/畫作其顏色（避免通靈作弊或前載）。不能隨意星體投射進黑色基地——有「擾散者 Those Who Scatter」打散你的思緒、有暗影存有追逐投射者,這是「星體保安」。<span class="who">柯里</span><span class="src">S07E16</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>夢境課堂與藍球體旅行</h3>
+<ul>
+<li>許多人在乙太層同一處的課堂環境相聚,CG 有時被當「化身 avatar」教人（人們常在夢中課堂環境看到他,他無記憶）;人們的高我以「坐在教室」的方式呈現此乙太事件。<span class="who">柯里</span><span class="src">S10E13</span></li>
+<li>CG 證實他真的乘藍球體旅行——球體在房間出現、之字形移動、停在面前約一臂遠、等他示意準備好、再擴張把他包進去。<span class="who">柯里</span><span class="src">S05E03</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 10 ============ -->
+<section class="cat" id="c10">
+<div class="cat-h"><span class="bar"></span><h2>十、柯里:時間旅行查史與多星球側影</h2><span class="cnt">TIME TRAVEL · GLIMPSES</span></div>
+
+<div class="sp">
+<h3>時間旅行的身體效應與查史</h3>
+<ul>
+<li>時間旅行者會患「temporal dementia」,後以「telomere 端粒療法」注射預防或減緩;CG 把成因歸於「身心靈複合體」必須同步,玩弄時間科技會使三者失調。<span class="who">柯里</span><span class="src">S02E12</span></li>
+<li>多數時間旅行是意外（遠跳回來時落到錯誤的地球時間,須修正）;刻意回去看歷史屬「最終被關閉的時間計畫」。Project Looking Glass（透鏡計畫）有人嘗試查看歷史事件,結果「因人而異」——時間極度以意識為基,所見會依觀看者的意識與信念呈現不同時間線（尤其神學性事件）。CG 記得列有林肯遇刺、獨立宣言簽署等。<span class="who">柯里</span><span class="src">S02E12</span></li>
+<li>出相位、穿牆與其副作用:柯里被「穿過實心牆」帶過。早期人會與牆「交換殘留物質」（牆的材料變成身體一部分、人的部分留在牆裡）;後來發展到人能穿牆無不良反應。高階黑色行動群體確有此能力（你鎖門窗、坐著拿上膛手槍也擋不住他們）。<span class="who">柯里</span><span class="src">S01E14</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>南極親見:前亞當人與金屬卷軸</h3>
+<ul>
+<li>CG 被安沙爾用蛋形飛行器帶往南極洲（Gonzales 同行）,Gonzales 用帶針的取芯工具對前亞當人屍體拍照並取基因樣本;柯里親眼見胎兒姿勢、有約十英寸長尾巴的矮人類冷凍屍體。<span class="who">柯里</span><span class="src">S07E08</span></li>
+<li>內部地球團體帶他們穿過尚未挖掘的牆進入一間滿是卷軸與書的圖書館,兩名內部地球存有取走數卷「金屬卷軸」（捲起的金屬薄片、雷射蝕刻符號、聲如錫箔）帶上飛行器,趕在挖掘人員找到前移走。<span class="who">柯里</span><span class="src">S07E08</span></li>
+<li>CG 對岡薩雷斯說從沒見過古建造者種族複合體這種景象,西格蒙卻說「其實你來過這裡」:在 CG 某次無完整記憶的「20 年又回來」任務中,他曾是探勘隊一員、走遍該複合體。<span class="who">柯里</span><span class="src">S10E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>銀河奴隸貿易:標記與救援</h3>
+<ul>
+<li>每年約「一百萬人」在地球失蹤,被用於「星際奴隸貿易系統」（我們自己人有份）。SSP 聯盟特工（CG 本人也參與過）在受害者被送走時標記（tagging）他們,已救出一些並帶到馬雅人控制的「療癒行星」。<span class="who">柯里</span><span class="src">S02E13</span><span class="src">S10E13</span></li>
+<li>未來會大規模進行:救出數百萬被交易者帶到一顆行星療癒數年（癒合所有創傷）,達一定程度後再與地球人重新整合,過程中會讓地球上的親人知道所愛之人在此療癒計畫中。<span class="who">柯里</span><span class="src">S10E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>柯里站出來的代價</h3>
+<ul>
+<li>CG 出來（原想匿名）是因看到許多人「走到線邊卻不跨過」——到過火星者本可講更多基地、奴工細節,跨線有後果。<span class="who">柯里</span><span class="src">S07E26</span></li>
+<li>CG 被捲入透過 Tompkins 進行的海軍揭露（內容幾乎與他所講相同）,故當局暫未動手;但有直升機飛越、後院他與兒子身上被綠色雷射點標記等威嚇。一開始他很後悔,毀了原本的好事業,他不是自願站出來的,對「被推出來的方式」也很有意見,但現在看到大局了。<span class="who">柯里</span><span class="src">S07E26</span><span class="src">S11E02</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 11 ============ -->
+<section class="cat" id="c11">
+<div class="cat-h"><span class="bar"></span><h2>十一、傑森·萊斯(Jason Rice):從行為矯正到星際戰場</h2><span class="cnt">JASON RICE</span></div>
+
+<div class="sp">
+<h3>童年招募:「行為矯正計畫」</h3>
+<div class="narrator"><span>主述</span>JR 是較晚出現的新內部人,自述走過兩次「20 年又回歸」、在多顆行星打過仗。</div>
+<ul>
+<li>JR 出面動機:有數千名（全球性、不只美國人）走過「20 年又回歸」的人,那些沒回來的士兵、科學家、平民為人類做了終極犧牲,他們的故事需要被講出來。<span class="who">萊斯</span><span class="src">S12E05</span></li>
+<li>JR 小時候是「逃脫藝術家」,父母把他送進當地大學的一個「行為矯正計畫」——給指令（坐著別動）,房裡放滿玩具誘惑,他一起身就被抓進箱子鎖起來,等他停止尖叫掙扎才放出來坐回椅子並給一顆 M&amp;M。這計畫其實是 MILAB 招募臂膀之一,他在此被辨識為「直覺型共感人」。<span class="who">萊斯</span><span class="src">S12E05</span></li>
+<li>MILAB 負責招募、訓練、為 SSP 準備兒童。JR 上學後會被接走帶到地下設施受訓,以為只是特別校外教學。三到五個孩子一組,被訓練在不能說話下用直覺共感能力合作拼拼圖（從少片到上千片單色拼圖、甚至蒙眼）。跟不上的孩子「就不再回來了」。他們用藥物提升能力、植入假的屏蔽記憶。<span class="who">萊斯</span><span class="src">S12E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>創傷訓練與被「消失」進現役</h3>
+<ul>
+<li>他們找出每個孩子的恐懼再用虛擬實境淹沒之（這是 1970 年代末）。怕溺水者就讓他在分不清真假的 VR 中反覆經歷火燒、中槍、毆打、溺斃等各種死法以「減敏」。回家後被洗腦、給屏蔽記憶（把一天被燒死五六次換成「去水族館」）,但惡夢仍在。夜裡被帶到打烊的商場做小型戰鬥、奪旗,穿著被紅外線打中會凍結肢體的衣服互相對抗。訓練持續約八年到 13 歲。<span class="who">萊斯</span><span class="src">S12E05</span></li>
+<li>13 歲某天他像往常一樣去學校附近上車,沒被告知他將「消失」、進入現役。回來時的「臨別禮物」包含讓他想從軍的程式設定,他一夜之間對軍事產生興趣,高中維持 3.9 GPA,獲空軍 ROTC 醫學獎學金與陸軍工程獎學金,選了工程。<span class="who">萊斯</span><span class="src">S12E05</span></li>
+<li>記憶為何 15–20 年後才浮現:JR 在 33 歲（正好是第一次「20 年又回歸」的 20 年後）做門診手術,麻醉退去時護理人員說他一直在講「在太空、是某計畫一份子」。「凡是 SSP 的一份子,我們每一個人都被動過手腳。」<span class="who">萊斯</span><span class="src">S12E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>大學畢業即入伍:被測試與膠囊列車</h3>
+<ul>
+<li>大學畢業（佛羅里達理工土木工程）當天即受任官、立刻現役。原令是去 Fort Leonard Wood,出發前一天改令調到北卡的陸軍研究辦公室,無解釋。他到設施進電梯只有上、下兩鈕,連長手按牆上掃描器後下降約五分鐘,接近底部時有「世界側翻一瞬」的眩暈感。從踏入設施起就被全程監看。<span class="who">萊斯</span><span class="src">S12E06</span></li>
+<li>電梯底部開向紅光月台,軌道上有藥丸狀、Lamborghini 式車門的白色膠囊。連長手按 Beretta、極專注盯著他（因他當天稍早已對另一名受訓者用過槍——怕新人精神崩潰攻擊）。膠囊行程約 30 分鐘,「穿過一個入口,我們不再在地球上」。JR 能察覺是因背景的舒曼共振不同（他猜是火星,也可能是太陽系內某挖空的小行星）。<span class="who">萊斯</span><span class="src">S12E06</span></li>
+<li>催眠回溯（由催眠治療師 Georgina Cannon 進行）釋出記憶:他想起進入巨型競技場的簡報,Schuller 上校先上台「感謝他們自願」（JR 旁白:「我們哪有選擇」）,說他們是「矛尖」。測謊（由 Brian Hoff 進行）結論:當 JR 回答「曾是 SSP 一員」「曾在火星服役」「曾殺死外星人」時沒有典型說謊喚起,「Jason 相信他所說的是真的」。<span class="who">萊斯</span><span class="src">S12E06</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>IDARF、Heflem 船與多星球戰場</h3>
+<ul>
+<li>JR 加入 IDARF（Interplanetary Defense and Reaction Forces 行星際防衛與反應部隊),類似邊境巡邏、支援其他星球。訓練有部分在南極與南太平洋進行（「期末考」性質）。手冊涵蓋地雷、區域阻絕場產生器、電漿步槍、脈衝手槍等。<span class="who">萊斯</span><span class="src">S12E16</span></li>
+<li>催眠中想起曾在一艘名為 Heflem 的船上（約 1985–86 年、Solar Warden 最初期）。內部像美國海軍艦艇——狹窄、頭頂滿是管線、艙壁漆成萊姆綠或奶油色,門是自動密封。<span class="who">萊斯</span><span class="src">S12E14</span></li>
+<li>他在第一顆星球（Planet One）打了 47 個月、無數場戰役,常受傷（奈米增強療法讓九吋傷口當天就開始癒合,但身上有些「神秘疤痕」後來才出現）。四年戰爭把這原本美麗、以物易物、多神信仰的星球摧殘到沒有一塊大陸倖免、被迫從農業氏族社會轉為都市化。<span class="who">萊斯</span><span class="src">S12E14</span></li>
+<li>JR 在三號行星（Callidus 3）的被俘經歷:他去和昆蟲族的「黑幫」安排協調會面,被帶進洞穴後遭俘——當了三天戰俘,遭刑求毒打,同伴來救他。他離開時搭穿梭機被擊落墜毀、受重創,被後送到「他們說是火星」的地方替換了兩條斷肢、修復第三條,花八個月學習重新使用四肢。<span class="who">萊斯</span><span class="src">S12E19</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>當教官、退役流程與返回後的人生</h3>
+<ul>
+<li>他在多星球的經驗被視為無價,被調回太陽系當教官,把新人帶過他經歷過的同一套流程,做了近五年（每年約 5,000 人,幾乎來自任何國家,全是自願者）。<span class="who">萊斯</span><span class="src">S12E22</span></li>
+<li>退役流程:先在 51 區的設施出處理（待幾天重新適應）,再轉到美國東北一處海軍基地做醫療程序與退役典禮。地球士兵不准升過少校,退役時給他「臨時晉升」中校——又是個謊言、又是維持分心的把戲（晉升文件從沒通過,「只是戲」）。<span class="who">萊斯</span><span class="src">S12E22</span></li>
+<li>年齡回溯流程:先做約 14 天極度侵入性的醫療程序（類似強烈化療,他被下重藥、半清醒）,移除所有奈米機械、清空全身系統、把肉體重設回當初被帶離原時間線時的狀態。回來時感覺像得了重感冒、宿醉五天、全身痠痛,體型體重脂肪都和離開時一模一樣。他在 24 歲那一刻被送回原地。<span class="who">萊斯</span><span class="src">S12E22</span></li>
+<li>返回後情緒受重創、有 PTSD 與憂鬱,最終把那段放下、繼續生活。20 年後記憶開始回來。他想起在 Fort Wood 受訓時被「黑西裝人」找,退伍後仍見到皇冠維多利亞轎車跟蹤（他認為是在確認掩護故事是否成立）。引述 Walter Bowart《心智控制行動》——MK 改造的程式效力約只持續 20 年,多數人 40 多歲開始回想。<span class="who">萊斯</span><span class="src">S12E22</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>「大騙局」與融入當地</h3>
+<ul>
+<li>JR 談「大謊言」:謊言從第一天、從他早年在卡納維拉爾角空軍站就開始。整套訓練像一齣戲,有目標終局卻刻意把他蒙在鼓裡。他認為訓練的終極目的是把他們「派駐到別的星球當地面部隊」,以推進「奴役與控制其他星球」。卡納維拉爾角的「去敏感化訓練」是讓他習慣看到外星種族、啟用直覺共感能力,為第二次進入 SSP 做準備。<span class="who">萊斯</span><span class="src">S12E23</span></li>
+<li>戰後留下單位幫忙清理、重新播種、依 Cabal（其實也是 Draco 與 AI 的傀儡）的需求重啟文明。他們與當地原住民因並肩作戰而建立深厚感情;指揮官政策鼓勵士兵融入當地關係,確有人與原住民發展戀情但不長久（因增強後使人最連結的是自己單位的人）。JR 承認當時士兵和 Cabal 本身都以為自己在幫忙、不知長期目標是把這些文明變成受控代理。<span class="who">萊斯</span><span class="src">S12E18</span></li>
+<li>戰場醫療:奈米可關閉血液循環（斷臂者不會失血而死）、極度傷危時讓士兵進入昏迷;斷肢可浸入凝膠狀物質、依檔案 3D 列印再生。訓練結束時他們告知已通知士兵家人「你已死」,有些家庭收到 100% 吻合的複製人遺體下葬。<span class="who">萊斯</span><span class="src">S12E27</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 12 ============ -->
+<section class="cat" id="c12">
+<div class="cat-h"><span class="bar"></span><h2>十二、艾默里·史密斯(Emery Smith):外星屍體解剖者</h2><span class="cnt">EMERY SMITH</span></div>
+
+<div class="sp">
+<h3>童年外星接觸與軍中背景</h3>
+<div class="narrator"><span>主述</span>ES 自述處理過超過 3,000 件非地球來源組織,後轉做能源與再生醫學而遭威脅。</div>
+<ul>
+<li>第一次外星接觸約 1979 年（二年級）在佛州 Fort Myers 五英畝農場。他常處於半夢半醒（hypnagogic）但很清醒的狀態出門。某晚被「心靈感應」叫去外面,走到湖邊碼頭抬頭看見一艘藍白色、碟形、靜默的載具,心靈感應地說「我們在這裡、我們會回來找你」,持續約一兩分鐘。<span class="who">史密斯</span><span class="src">S09E06</span></li>
+<li>第二次明確接觸約 1998 年（28 歲）露營時:眼前是一個三英尺高、藍灰色、大藍眼、頭上有像卡通天線的存在（不是灰人;很瘦、藍色、臉較圓像氣球、眼睛比人類大三倍）;像剛墜毀來求助。ES 追牠喊「回來!」,牠鑽進濃密灌木又翻回鐵絲網離開。<span class="who">史密斯</span><span class="src">S09E06</span></li>
+<li>ES 很年輕入伍,職務代碼 90252（外科技術員）,也是急救員與外科第一助手,很快成為教官。13 歲由父親引介加入 Civil Air Patrol,很早拿到飛行執照。他做的測驗比別人多很多,不是一般 ASVAB——而是「幾何形狀」、曼陀羅「這六個你喜歡哪一個?」,以及大量高階物理與磁學問題（DW 推測那些形狀可能是某些 ET 群的標誌）。<span class="who">史密斯</span><span class="src">S09E06</span></li>
+<li>ES 高二時開始接觸機密層級:大家考 ASVAB,他被額外要求每週末到 MacDill 空軍基地考試（後來他才知那是測量孩子的意識與集體狀態）。被調到柯特蘭空軍基地後一切起飛——指揮官問他要不要「為這個新的、處理器官採集的軍事單位兼差」。他簽了,後來才發現不是對士兵做器官採集。<span class="who">史密斯</span><span class="src">S11E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>進入 Sandia 地下實驗室</h3>
+<ul>
+<li>調到 Kirtland 空軍基地後獲「兼職」工作:對外掛名史密斯中士做某職,實則在民間分隔計畫解剖不明來源組織,仍領薪。地點是基地內的 Sandia 與 Los Alamos 實驗室——Sandia 是「基地中的基地」、向地下延伸很多層。Kirtland 是世界第五大基地。<span class="who">史密斯</span><span class="src">S09E02</span></li>
+<li>ES 已在現役、是「完美對象」（年輕、高 IQ、有醫療訓練、「搞砸了沒差,就說他死於直升機失事」）。先在一房間攤開極厚的合約（他 19 歲沒讀就簽了「那本書」）。安保人員穿白色戰術潔淨服（加壓系統內不能用槍）。頂層更衣室換刷手服,下去再換一次「太空衣」式潔淨服。<span class="who">史密斯</span><span class="src">S09E06</span></li>
+<li>ES 釐清:他不是在 Sandia/Los Alamos 領薪——他在那設施地下工作,每層樓由不同企業租用,軍方只是所有分隔化計畫的保全。他在軍中七年、在計畫中約四年,是朝九晚五通勤的工作,可上地面。<span class="who">史密斯</span><span class="src">S12E04</span></li>
+<li>進站檢查:盡頭有無縫玻璃門（像星艦那樣「咻」地開）;兩個檢查站查掌紋與視網膜;有特殊的狗聞每個經過的人。腕帶（band）觸感像矽膠、後來得知是石墨烯、會發光,記錄他在設施內的所有去向。色碼:紅色=絕對別動;藍色=正常;黃色=污染洩漏。<span class="who">史密斯</span><span class="src">S09E02</span><span class="src">S09E06</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>從「鮭魚片」到全屍:解剖工作</h3>
+<ul>
+<li>起初不知在解剖 ET。第一天在像電影裡的白色小室,工作是像生物課解剖青蛙般標記、取小樣本放入不同罐,從牆上抽屜推出去。組織有的像鮭魚片（約六英寸見方完美切塊,含動脈、靜脈、神經）,每三到六個月升一級安全許可。後來樣本越來越完整,能看出是「手」。被嚴禁發問;若告訴親友會被殺。<span class="who">史密斯</span><span class="src">S09E02</span></li>
+<li>從鮭魚片到手臂到全屍約花 16 個月升級。他第一具部分屍體:豹紋皮膚的軀幹,看似被炸開,有爬蟲皮膚,內臟與我們類似（看到脾、心、肺）,臉太毀無法辨識,皮膚是虹彩藍豹紋、很美。他能分辨克隆組織比真外星與人類組織弱（克隆的較易碎 friable,一取就像融化掉）。<span class="who">史密斯</span><span class="src">S09E02</span></li>
+<li>ES 見過的存在從 8 到 13 英尺高到僅 22 英寸都有,有些是活的（像被當囚犯押送）。他十年後退出的原因之一:某次收到的屍體是溫的——顯然剛死。他最初九個月做的解剖只是無聊的小方塊組織,約六到九個月後開始上特別課程,聽到「非地球來源的組織 tissue other than Earth origin」這個詞。<span class="who">史密斯</span><span class="src">S09E02</span><span class="src">S11E05</span></li>
+<li>ES 描述各種「手」:可能很小的手像青蛙但有掌紋,或像浣熊手;最迷人的是巨型昆蟲的手,且不只活組織還含植物組織。器械:用一般外科器械,也有高功率雷射與電燒,以及「音波刀」（後來才以「諧波手術刀」流入民間,他第一次用就是在那計畫）。<span class="who">史密斯</span><span class="src">S09E02</span><span class="src">S09E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>離開計畫的那具「溫暖屍體」</h3>
+<ul>
+<li>最後幾個月,一具送來的「人類外星人」屍體隔著太空衣仍感覺很溫暖,他內心感到這 ET 是「不必要地、非自然地死去」、像個幾小時前才過世的真正有意識的存在——此後他變得更有意識,決定辭職離開,從未回頭。<span class="who">史密斯</span><span class="src">S12E15</span></li>
+<li>該 ET:比他（六呎四）略高約七呎、極蒼白皮膚、無毛髮、大藍眼、小嘴、長鼻、外胚型瘦長體型,其餘構造與人相同。ES 表示他從未被要求做不願做的事,很以與全球及宇宙各地頂尖外科醫師共事為榮。<span class="who">史密斯</span><span class="src">S12E15</span></li>
+<li>ES 的離職:做了約 22 季升遷（每季都升、約 4.5–5 年）,做完 5.5 年現役後又多待兩季,接著開始拿到「還很溫熱、屍僵剛開始」的屍體。結束空軍工作後他改在 Sandia 與 Los Alamos 地下實驗室工作,並從採集解剖轉向生物製劑、生物戰部門。<span class="who">史密斯</span><span class="src">S11E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>門戶任務、時間旅行裝置與生物船</h3>
+<ul>
+<li>ES 描述親身穿越過的門戶（新墨西哥地下設施）:像從地面建起的「相框」,15–30 呎寬、金屬厚約 3 呎,會製造電磁通量場。送團隊穿越並非總成功,回來時有時間差。他做過約十幾次門戶任務,從沒在回程出問題（只停 15 分鐘採樣、從不遠離門口）。<span class="who">史密斯</span><span class="src">S12E20</span><span class="src">S12E21</span></li>
+<li>去年一月（2018 年 1 月）有一支從 90 年代初就在做的團隊「全員確認死亡」——那是 AI 為基礎的逆向工程門戶科技出了系統故障,回程時殺了他們。軍方愛用現役軍人當技術員,因為最「可消耗」（死了只需通知家屬「因公殉職」、給 15 萬美元）。他所有的朋友與同事都在「一月那場意外」中喪生,只剩他一人。<span class="who">史密斯</span><span class="src">S12E20</span><span class="src">S12E21</span></li>
+<li>ES 親身參與的時間旅行計畫使用「特斯拉電子單元 Teslatron」:受測者進入約 8 呎直徑的六角形房間,巨大的 Teslatron 單元放大強烈電磁頻率「撕裂時間與空間」。ES 第一次進去主觀只待 15 分鐘,置物櫃裡的手錶卻顯示整整一小時。裝置副作用是「失去時間」但人不會變老,還具醫療功能（一次療程可減 15 磅而無脫水、30 天治癒 HIV）。<span class="who">史密斯</span><span class="src">S12E01</span></li>
+<li>ES 年輕當中士時的時間旅行/傳送任務:穿過裝置去採集特定數量的岩石、泥土、植物與動物樣本。每次任務固定 15 分鐘進出,回來時現實時間已過了三、四小時。曾有他認識 20 多年的整個團隊在一次任務中全數喪命。<span class="who">史密斯</span><span class="src">S12E01</span></li>
+<li>生物船:ES 第一次當「搬運者 carrier」——搭很長的磁浮管/潛艇穿梭艙抵達,被告知此存在來自此飛行器,要從飛行器特定部位採樣;玻璃窗後的科學家用先進掃描器幾分鐘內回饋指示（如「停,去採內耳的東西」）。水下手術室:地面下設施有「巨型水族箱手術室」（很多外星屍體取樣時得泡在特殊鹽水裡,否則組織遇富氧空氣會降解）。<span class="who">史密斯</span><span class="src">S10E05</span><span class="src">S12E24</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>偷帶微碟、闖空門與暗殺威脅</h3>
+<ul>
+<li>ES 承認他「弄到了幾片那種微碟 micro disk」,藏在新墨西哥小房子的牆壁、混凝土裡。他要搬到洛杉磯與 DW 合作,房仲掛牌出售,結果一週內房子被洗劫、再一週後又被洗劫一次。後車庫門被破壞、雙重門閂被一個大腳印踹開。<span class="who">史密斯</span><span class="src">S09E12</span></li>
+<li>對方拿走他所有東西（8 台電腦、12 台筆電、40 個硬碟、300 多張 SD 卡——他「整個 30 年的工作」）,卻只在盒子裡留下他的軍方徽章、流理台上放一顆子彈（5x7x28 穿甲彈）。他認為這主要跟那台「過統一裝置 overunity device」有關——自從他用那裝置開了實驗室、又證明裝置有效後,事情就變得非常瘋狂。<span class="who">史密斯</span><span class="src">S09E12</span></li>
+<li>ES 唯一被威脅的一次,是他把 Atacama 那具存在的 DNA 從西班牙非法帶回、偷送史丹佛。他遭三次暗殺未遂。但威脅其實不是因為 DNA——而是因為他辭職,惹惱了某人。他被帶到華府的「濕房 wet room」（牆地貼磚、中央有排水孔,專門殺人後易清理）,被告知「你違反合約」;八小時後對方回來道歉說是「內部問題」——這是他第一次感到裡面有「聯盟」的人想保護他。<span class="who">史密斯</span><span class="src">S09E02</span></li>
+<li>他被槍擊過、被刺過、被三名探員圍毆過;在 DW 文章洩露更多 ES 資訊後 30 分鐘,ES 遭遇正面對撞車禍。他談對他的威脅:他從未被授權揭露;若說錯話他會「死掉」。曾有白色廂型車經過他家,兩個穿戰術裝戴面罩的人朝他揮舞 MP5;在丹佛機場被三個人撞了三次,植入「奈米蟲」（手臂上有「中間一個點、周圍十個點」的圓形印記用來追蹤）。<span class="who">史密斯</span><span class="src">S09E12</span><span class="src">S12E02</span></li>
+<li>威脅來源:政府不在乎他談 ET（ET 賺不了錢）,但他一教超越單一性的物理、或談能讓人不需藥物自癒的細胞生物學,就踩到痛點。曾有「西裝人」很久以前來找過他,說「我們知道你在做什麼,我們不在乎,但不要賣、不要教人怎麼做、不要接上電網」。攻擊在他停止教授零點能量裝置後明顯減少。<span class="who">史密斯</span><span class="src">S12E20</span><span class="src">S12E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>與外星人並肩工作、複製人與自己的「分身」</h3>
+<ul>
+<li>每天有「數千名外星人」在企業與全球各處與我們共事,外觀幾乎與我們一樣（差別多在眼距、鼻耳軟骨）。有的自願來、有的墜機、有的被擊落後決定留下較安全。最美的是心電感應——這是情緒為基礎的語言,你說「嗨」帶的情緒會被讀到。與外星人同室前必須先清除負能量、保持接地。<span class="who">史密斯</span><span class="src">S12E25</span></li>
+<li>ES 大概認識 10–20 種不同種族,且多已混血;他工作過的所有外星人「體內都有人類 DNA」。他協助建立「外星基因資料庫」:約 20 人團隊把資料以「老科技」（MS-DOS 時代格式）儲存於地球以外的衛星上、不用網路存取（防駭）。<span class="who">史密斯</span><span class="src">S12E25</span><span class="src">S12E29</span></li>
+<li>ES 在軍中曾面對面遇到兩個「絕對是我」的人,旁人也注意到極度相似,短暫成為朋友後對方消失或被調走;但對方人格與他完全相反。他「百分之百相信」有不知自己是複製人的複製人,被安插在各種位置執行議程;複製人還用於「演習」——地下有模擬世界各城市的龐大設施,用植入記憶的複製人測試生物戰系統、觀察公眾對災難如何反應。<span class="who">史密斯</span><span class="src">S12E30</span></li>
+<li>ES 是太空人、排定要搭一架太空梭,幸好沒搭——「在德州上空爆炸的那架（指 2003 哥倫比亞號）是我的回程航班」。他說那不只是爆炸、是針對性攻擊。他見過許多老太空人及其家屬,他們都說月球有人居住、有外星人。<span class="who">史密斯</span><span class="src">S11E14</span></li>
+<li>ES 對未來看法:會有艱難時刻與災難,但人類正在演化;他出面後,企業釋出他在節目談過的材料,三個月後就見諸商業/科學雜誌——「有人在聽」。他相信若沒有「外星干預」與某些有遠見政府組織的干預,他不會還活著。<span class="who">史密斯</span><span class="src">S12E29</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 13 ============ -->
+<section class="cat" id="c13">
+<div class="cat-h"><span class="bar"></span><h2>十三、克里弗德·史東(Clifford Stone):共感人與墜機回收</h2><span class="cnt">CLIFFORD STONE</span></div>
+
+<div class="sp">
+<h3>童年的「訪客」</h3>
+<ul>
+<li>史東童年有像普通男女孩童的玩伴會幫他做功課、警告他「別告訴別人、別人看不見我們」;其中一個金髮小男孩最親近。某次他撿到摔斷喙、流血尖叫的小鳥,想用水龍頭沖血反而弄死了牠,他哀傷;那金髮男孩出現時不再是男孩——穿銀色連身衣,心電感應問他「你為何如此悲傷?為何哀悼一隻小鳥?你眼中的水是什麼?」牠不懂他哭。<span class="who">史東</span><span class="src">S05E14</span></li>
+<li>史東恐懼逃躲,被「三根骨感手指與一根對生骨拇指」抓頭,像在說「你能躲但逃不掉」。後來「朋友」溫和回到他生命,解釋:「我們從你們物種中挑選人、終其一生跟隨、從你們的人生事件學習你們的文化;我選了你。我們壽命三百多年,我將活著哀悼你的死,但我會從你身上學到關於你們文化的美好事物。」並說「我喜歡你的一點是——你有你們所謂的『心』」。<span class="who">史東</span><span class="src">S05E14</span></li>
+<li>七歲時《True》雜誌出 UFO 專題,他買不到,一名空軍上尉 Captain Brown 替他買、套他話（知道他生命中發生的事、知道他大白天看到的 UFO）;此後每隔幾週來看他,直到 1968 年 3 月 Brown 在 T33 墜機中喪生。<span class="who">史東</span><span class="src">S05E14</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>招募與「直覺介面者」</h3>
+<ul>
+<li>1968 年史東有「醫療問題」本不合格,但一名華府來的上校讓他入伍。他從小因「共感能力/與『我們的訪客』的持續互動」被軍方注意——軍方需從民間找這種無法被教會、罕見的人,以「介接 interfacing」與外星人溝通。他出軍時全軍含他只有 7 個這種人。CG 評論:史東是「直覺共感人」（與柯里同類,被高度搜尋、極有價值）。<span class="who">史東</span><span class="src">S05E13</span></li>
+<li>Indiantown Gap UFO 墜機回收:野訓時午夜接報「飛機墜毀」,他帶蓋革計數器被叫去測「飛行器」表面輻射讀數。他見一個約 30~40 度插入地面的「丘形飛行器」,腎形艙口半開、半進半出一個「典型灰人」、已死。他情緒激動喊「我需要一名軍官上來」,上校只叫他「報告你看到什麼」。CG 評論:叫他這個「孩子」拿蓋革計數器去其實是「受控測試」——目的是看他的反應、能否承受壓力、事後是否保持沉默。<span class="who">史東</span><span class="src">S05E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>「送外星人回家」與越戰接觸</h3>
+<ul>
+<li>「送外星人回家」（Fort Belvoir):一名被軟禁的外星訪客（皮膚比典型灰人淡、長型頭、大眼）告訴史東「我害怕」、擔心見不到家人,並說「我的同類來接我,但用他們的科技從這建築裡把我抽出去,你們很多人會死傷」。史東請朋友把鐵絲剪放到圍欄外、要上校把建築清空到只剩他和外星人,帶牠出去剪開圍欄;飛船來、一道白光射下,牠就「被救走、消失」。史東當晚以為自己會被當叛徒從背後槍殺,上校只說「下次先讓我們知道你要幹嘛」。<span class="who">史東</span><span class="src">S05E15</span></li>
+<li>越南的外星接觸:出發越南前,史東等人被「假稱去佛羅里達野訓」、實則飛了十幾小時。降落越南、再搭直升機到柬埔寨「鸚鵡嘴」區一架幾乎完整的墜落 B-52。史東繞到尾段遇到「約 3~3.5 英尺的典型灰人」帶幾個同類出來,牠喊「Clifford,你怎麼會在這裡？你不該在這裡」;史東開火發現 M16 子彈打中卻毫無效果（極度謙卑、意識到任何武器都沒用）。<span class="who">史東</span><span class="src">S05E15</span></li>
+<li>越戰隧道內的灰人實驗室:CS 在越南被「上校」載往 Nui Ba Den 山。深入隧道後越過某條「沙中之線」無線電就失靈,進到一個巨大開放區、像龐大實驗室,另一側有「窗戶」可看到外面的友軍像走在空中。出現典型灰人,有人開槍;隨後一片牛奶般螢光白籠罩眾人,CS 左眼劇痛倒下,聽到聲音說「他們修不好,我們得處理否則他會失去左眼」。醒來在洞外,眼睛被處理過。<span class="who">史東</span><span class="src">S06E06</span></li>
+<li>CS 出來 20 年故事始終一致、從未藉此牟利,還失去一個兒子（當吹哨者的代價）。他在回收隊是核生化人員兼直覺介面者,隊友不一定知道每人真正任務。他寫了 178 頁《Operation Blue Fly 研究計畫致國會報告》寄給 27 位參眾議員。<span class="who">史東</span><span class="src">S06E06</span><span class="src">S06E07</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 14 ============ -->
+<section class="cat" id="c14">
+<div class="cat-h"><span class="bar"></span><h2>十四、皮特·彼得森(Pete Peterson):神童與逆向工程</h2><span class="cnt">PETE PETERSON</span></div>
+
+<div class="sp">
+<h3>童年大規模 UFO 目擊與特斯拉淵源</h3>
+<ul>
+<li>PP 10 歲時（愛達荷 New Plymouth 一帶、約 6000 人目擊）在一場約 150 人的婚禮上,連續一小時看到各種形狀大小的「飛碟」——垂直/水平圓柱、陀螺狀、德國鐘狀、傳統碟形帶駕駛艙、有的放下三腳起落架。有的近到約 60~70 英尺,有的可見鉚釘/焊縫。PP 的祖父是特斯拉在科羅拉多實驗室的右手工程師與心腹。<span class="who">彼得森</span><span class="src">S06E15</span></li>
+<li>PP 1940 年生,八年級時造出遠超軍方的天線（1 瓦電台能通全球）;他想申請專利卻被告知政府已先佔。地方業餘無線電俱樂部裡有政府付錢的「耳目」,他贏科展後被帶到猶他某堡造天線,獲五位數酬勞（14 歲）。<span class="who">彼得森</span><span class="src">S06E15</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>White Star Ranch 與逆向工程</h3>
+<ul>
+<li>第三次科展後,FBI 帶他去波夕郵局大樓某號房,介紹「White Star Ranch」計畫:挑最聰明的孩子,讓他高三前正常上學、暑假在超級實驗室工作。White Star Ranch 是照顧身心畸形兒童與天才（IQ 300~400 的「Mentats」）的隱晦機構、是「第一層情報」。他父母簽下把他「交易」給此計畫換大學等級教育;他被送去與約 40% 諾貝爾獎得主一對一各半年。<span class="who">彼得森</span><span class="src">S06E15</span></li>
+<li>約 22 歲（1962）,PP 在像 Area 51 的基地,搭電梯上去見一機庫把墜毀殘骸排成大圈像拼圖。他被指認中央可能是控制面板——設計給有三指的存有,有按手的凹槽。他玩了約 8 個月,協助找出哪些碎片彈跳到不屬於它的位置,最終物理重建後「可運作」。<span class="who">彼得森</span><span class="src">S06E15</span></li>
+<li>期間他接觸過一名存有（可能是該船倖存者）——除了身高、眼/頭/身比例,幾乎與人類無異;此人在他匯報尾聲出現端飲料、坐他旁問「你是做控制重建的?」。約 26 歲他被叫去看另一艘幾乎完整、看似「交易來」的飛行器,現場有「其他人（非本星球的）」。<span class="who">彼得森</span><span class="src">S06E15</span></li>
+<li>PP 受訓被告知「會看到很奇怪的人、別做假設、離開基地就抹掉別提」。多數存有與人類差異 3~4%。被帶上一艘船時首見昆蟲型存有:外骨骼摩擦像指甲銼聲、像扁管的眼柄末端有複眼、聲音高尖沙啞、說英語帶口音。<span class="who">彼得森</span><span class="src">S06E15</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 15 ============ -->
+<section class="cat" id="c15">
+<div class="cat-h"><span class="bar"></span><h2>十五、湯普金斯(William Tompkins)與 Bob Wood</h2><span class="cnt">TOMPKINS · BOB WOOD</span></div>
+
+<div class="sp">
+<h3>湯普金斯:道格拉斯智囊團與星體投射</h3>
+<ul>
+<li>WT 進道格拉斯當製圖員兩週後,主管查他海軍背景就把他放進一個「圍起來的智囊團」,內有 200 人、研究外星各層面。他為海軍設計約 16~18 種「海軍戰鬥群艦艇」——較大的 1 到 6 公里長、能在太空飛,最終 1970 年代末在猶他州地下建成,即 Solar Warden。「Solar Warden 就出自道格拉斯工程部裡的這個智囊團。」<span class="who">湯普金斯</span><span class="src">S05E10</span></li>
+<li>WT 1942~46 為海軍上將 Rico Botta 工作,聽取 29 名滲透納粹德國間諜共 1200 次簡報。間諜發現:希特勒與黨衛軍和「爬蟲族外星人」達成協議,德國造出數百種先進武器（60、250、500 英尺的圓形飛行器）。CG 評論:這正是「暗艦隊 Dark Fleet」的起源。<span class="who">湯普金斯</span><span class="src">S05E10</span></li>
+<li>WT 七八歲起就會「飛」（星體投射）——夜裡飛遍好萊塢、聖塔莫尼卡看海軍船,有時飛出銀河;曾飛進一名爬蟲類太空海軍上將的指揮艦辦公室,也飛進蘇聯 Sergey Gorshkov 上將辦公室,所聞語言都「以英語呈現」;後成為海軍某研究小組的通靈顧問。<span class="who">湯普金斯</span><span class="src">S07E16</span></li>
+<li>洛杉磯之戰（1942 年 2 月):10 歲的 WT 與家人在聖塔莫尼卡看到先是海上一個白點射出鉛筆光束;當夜高射砲開火,一個巨大物體停在約 7000 英尺高,八束探照燈照射、砲彈在其下方爆炸卻毫無作用,停留約一個半小時,期間數百架圓形飛行器繞它穿梭。CG 補:同時期他們確曾在該海域附近從海中回收一艘非地球飛行器。<span class="who">湯普金斯</span><span class="src">S06E08</span></li>
+<li>WT 與馮·布朗的軼事:馮·布朗想見「那個加州衝浪客 Tompkins」;WT 故意坐到 800 張製圖桌中央讓他走過來,還讓秘書遞上一份貶損德國 V-2 的圖紙作弄他,馮·布朗夾著尾巴離開。<span class="who">湯普金斯</span><span class="src">S06E05</span></li>
+<li>CG 評論:WT 完全不認識他、認不出他,這讓他相信 WT 的計畫（其簡報資料）正是餵進他讀的智慧玻璃墊的資料——他 30 年前讀的很可能就是 WT 簡報的結果。CG 曾請藝術家畫過 Tompkins 設計的「雪茄形、高度模組化」飛船。<span class="who">柯里</span><span class="src">S05E10</span><span class="src">S05E16</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Bob Wood:與道格拉斯同走廊擦身而過</h3>
+<ul>
+<li>伍德 1949 年科羅拉多大學畢業後在道格拉斯做暑期工,老闆就是後來 Tompkins 的上司——Dr. Wolfgang Klemperer 與 Elmer Wheaton。當年他找不到任何「保險庫/祕密智囊團」,卻可能與 Tompkins 在同走廊擦身而過。他做過 Thor、Nike-Zeus 飛彈、太空站設計,1993 退休。<span class="who">伍德</span><span class="src">S05E16</span></li>
+<li>伍德說 Tompkins 直接見證「RAND 公司是道格拉斯為研究外星問題而專門成立的」。Tompkins 所有可查證的人事物都正確（伍德認識同一批人）;打來指揮 Tompkins 智囊團的人之一是 Bobby Ray Inman。伍德認為柯里的涉入「可能是 Tompkins 所啟動之事的最終結果」。<span class="who">伍德</span><span class="src">S05E16</span></li>
+<li>BW 本人「從未被威脅停止談論」——因他們認為「像我這樣的人公開講是無害的、早已規劃好如何反制」。他評 Tompkins 是「超強行銷/系統工程師」、能畫出答案的圖、記憶超群,但非搞方程式的技術人。<span class="who">伍德</span><span class="src">S05E17</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 16 ============ -->
+<section class="cat" id="c16">
+<div class="cat-h"><span class="bar"></span><h2>十六、妮亞拉·伊斯利(Niara Isley):雷達兵的失落記憶</h2><span class="cnt">NIARA ISLEY</span></div>
+
+<div class="sp">
+<h3>MILAB 雷達追蹤與綁架</h3>
+<ul>
+<li>NI 1979–1983 在空軍,自動追蹤雷達專家,駐內華達 Nellis 空軍基地,Airman First Class。每週/隔週被巴士載到 Tonopah、Tolicha Peak 雷達站。在 Tonopah 半夜被帶去用雷達測試「特殊飛行器」（外星或逆向工程外星載具）。穿無階級無名牌的工作服,被禁止彼此交談（以恐懼隔離）。CG 比對:他被空軍人員接走,也不戴臂章。<span class="who">伊斯利</span><span class="src">S07E25</span></li>
+<li>NI 站在雷達車甲板上看到約 12–15 架載具,無法追蹤（可在天空一處消失再現於他處,這正是測試目的）;最近一架約 50–75 碼外,巨大、碟形、底部發橘光、底為透明薄皮;發出像音響無樂時的嗡嗡靜電聲。NI 自童年即是 Greys 的綁架經驗者,認為軍方知道她是被綁架者。<span class="who">伊斯利</span><span class="src">S07E25</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>化學創傷注射、性侵與心智控制</h3>
+<ul>
+<li>測試後被載上塗黑窗的巴士到 Area 51（或 Tonopah 地下設施）,在等候室一一被叫進小房間。NI 躺不鏽鋼檢查台,穿白袍者面無表情說三次「保持冷靜」,從右側用皮下注射針注入她頸側不明化學物,立即陷入「化學創傷」（像瞬間癲癇、全身抽搐,藥直達腦）,意識改變（覺得分子鍵溶解、要從地板排水孔流走）。CG:這是給遙視/遙影者的藥物以增強直覺能力。<span class="who">伊斯利</span><span class="src">S07E25</span></li>
+<li>NI 述藥效退時被兩名警衛在八人（含一名 Grey 外星人）注視下性侵;她（因童年 Greys 經驗對其心電感應敏感）感到那 Grey 難以置信人類竟對同類施暴。金髮殘暴警衛疑為從監獄找來的精神病態者（CG:他們專找這種人）。CG:他熟悉用性創傷移除記憶或深層控制人;技術好到只有約 3–5% 的人會記得。<span class="who">伊斯利</span><span class="src">S07E25</span></li>
+<li>NI 提對應的內部人:Clifford Stone、Dan Sherman（《Above Black: Project Preserve Destiny》,被訓為直覺溝通者、追蹤被 Greys 綁架者並把名單供給軍方）。CG:他們確實追蹤所有被綁架者。NI:她聽說光是掩蓋 Roswell 就殺了 400 人;心智控制＋創傷＋藥物精細到讓你至少不會立刻記起。<span class="who">伊斯利</span><span class="src">S07E25</span></li>
+</ul>
+</div>
+</section>
+
+</main>
+
+<footer>
+COSMIC DISCLOSURE · 主題重組 T1「個人經歷」<br>
+素材跨 S01–S12 逐字稿合併 · 出處標於各論點 · 發言人徽章標主述者<br>
+前段為柯里·古德跨季拼出的服役全貌,後段為各內部人各自的童年、招募、服役與回歸故事<br>
+<a href="index.html">◂ 回主頁</a>
+</footer>
+
+</body></html>

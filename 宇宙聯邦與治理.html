@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>揭露宇宙 · 宇宙聯邦與治理</title>
+<style>
+:root{--bg:#05080f;--panel:#0c1320;--panel2:#111a2b;--line:#1d2b44;--ink:#e6ecf6;--soft:#8593ad;--cyan:#34e2d6;--violet:#b08cff;--amber:#ffcf6b}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.85;font-size:16.5px;-webkit-font-smoothing:antialiased;
+ background-image:radial-gradient(900px 520px at 15% -8%,rgba(52,226,214,.12),transparent 60%),radial-gradient(820px 520px at 90% 2%,rgba(176,140,255,.14),transparent 60%),radial-gradient(1px 1px at 20% 30%,rgba(255,255,255,.4),transparent),radial-gradient(1px 1px at 70% 22%,rgba(255,255,255,.3),transparent),radial-gradient(1px 1px at 45% 70%,rgba(255,255,255,.25),transparent);background-attachment:fixed}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+.mono{font-family:Consolas,"Roboto Mono",monospace}
+header.hero{text-align:center;padding:70px 0 26px}
+header.hero .eyebrow{letter-spacing:.42em;font-size:11.5px;color:var(--cyan);text-transform:uppercase;margin-bottom:18px;font-family:Consolas,monospace}
+header.hero h1{font-size:42px;font-weight:800;letter-spacing:.12em;background:linear-gradient(110deg,var(--cyan),#cfe9ff 50%,var(--violet));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 38px rgba(52,226,214,.16)}
+header.hero .sub{color:var(--soft);font-size:14.5px;margin-top:14px}
+header.hero .home{display:inline-block;margin-top:20px;font-size:12.5px;font-family:Consolas,monospace;letter-spacing:.08em;color:var(--cyan);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 15px;background:rgba(52,226,214,.05)}
+header.hero .home:hover{background:var(--cyan);color:#05080f}
+nav.toc{position:sticky;top:0;z-index:8;background:rgba(5,8,15,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--line);padding:11px 0}
+nav.toc .wrap{display:flex;gap:7px;flex-wrap:wrap;justify-content:center}
+nav.toc a{font-size:12.5px;color:var(--soft);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-family:Consolas,monospace;background:var(--panel)}
+nav.toc a:hover{color:var(--cyan);border-color:var(--cyan);box-shadow:0 0 12px rgba(52,226,214,.3)}
+.cat{padding:30px 0 6px}
+.cat-h{display:flex;align-items:center;gap:13px;margin:14px 0 18px}
+.cat-h .bar{width:24px;height:2px;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+.cat-h h2{font-size:21px;font-weight:800;letter-spacing:.03em}
+.cat-h .cnt{font-family:Consolas,monospace;font-size:12px;color:var(--violet);border:1px solid var(--line);border-radius:6px;padding:1px 9px}
+.sp{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:14px 0;scroll-margin-top:120px}
+.sp h3{font-size:19px;font-weight:800;color:#dff6f3;margin-bottom:10px;letter-spacing:.01em;border-bottom:1px solid var(--line);padding-bottom:9px}
+.narrator{font-size:13px;color:var(--soft);margin:8px 0 12px;line-height:1.7}
+.narrator span{font-family:Consolas,monospace;font-size:10.5px;letter-spacing:.1em;color:var(--violet);border:1px solid var(--line);border-radius:5px;padding:1px 7px;margin-right:9px;text-transform:uppercase}
+.flabel{font-family:Consolas,monospace;font-size:11px;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase;margin:16px 0 6px;opacity:.9}
+.subhead{font-size:14.5px;font-weight:700;color:var(--amber);margin:14px 0 4px}
+.sp ul{margin:4px 0 4px;padding-left:4px;list-style:none}
+.sp li{position:relative;padding-left:18px;margin-bottom:9px;color:#c8d2e2;line-height:1.8}
+.sp li::before{content:"▸";position:absolute;left:0;color:var(--cyan);opacity:.6}
+.sp p{margin:8px 0;color:#c8d2e2}
+.src{font-family:Consolas,monospace;font-size:10.5px;color:var(--cyan);background:rgba(52,226,214,.08);border:1px solid rgba(52,226,214,.28);border-radius:4px;padding:0 5px;margin:0 2px;white-space:nowrap}
+.who{font-family:"Noto Sans TC",sans-serif;font-size:10.5px;color:var(--violet);background:rgba(176,140,255,.1);border:1px solid rgba(176,140,255,.32);border-radius:4px;padding:0 6px;margin:0 2px;white-space:nowrap;font-weight:600}
+blockquote{margin:10px 0 4px;padding:12px 16px;background:rgba(176,140,255,.05);border-left:3px solid var(--violet);border-radius:8px}
+blockquote p{font-size:13px;color:#aeb9cf;font-style:italic;line-height:1.7;margin:5px 0}
+.legend{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 8px;font-size:13px;color:var(--soft);line-height:1.95}
+.legend b{color:var(--ink)}
+footer{text-align:center;color:var(--soft);font-size:12px;padding:50px 0 70px;margin-top:40px;border-top:1px solid var(--line);font-family:Consolas,monospace;letter-spacing:.04em;line-height:1.9}
+footer a{color:var(--cyan);text-decoration:none}
+@media(max-width:560px){header.hero h1{font-size:32px}.sp{padding:17px 16px}}
+</style></head><body>
+<header class="hero"><div class="wrap">
+<div class="eyebrow">Cosmic Disclosure · T5 — Cosmic Federations &amp; Governance</div>
+<h1>宇 宙 聯 邦 與 治 理</h1>
+<div class="sub">12 季逐字稿裡關於各議會、聯邦、同盟、隔離屏障與治理結構的全部論點 · 依組織跨集合併 · 每點標出處與主述者</div>
+<a class="home" href="index.html">◂ 回主頁</a>
+</div></header>
+<nav class="toc"><div class="wrap">
+<a href="#c1">兩大同盟:地球 vs SSP</a>
+<a href="#c2">球體存有聯盟 · 守護者</a>
+<a href="#c3">超級聯邦與大實驗</a>
+<a href="#c4">超級聯邦的議會結構</a>
+<a href="#c5">超級聯邦的終結 · 新守護者</a>
+<a href="#c6">銀河聯邦與52星代表</a>
+<a href="#c7">德拉科同盟與AI霸主</a>
+<a href="#c8">Anshar議會與內部地球</a>
+<a href="#c9">SSP組織:Solar Warden · ICC · 暗黑艦隊 · GGLN</a>
+<a href="#c10">隔離 · 屏障 · 穆罕默德協定</a>
+<a href="#c11">攔截審訊 · 移民治理 · 奴隸貿易</a>
+<a href="#c12">《一的法則》的邦聯與獵戶座</a>
+<a href="#c13">揭露後的治理與經濟過渡</a>
+</div></nav>
+
+<main class="wrap">
+
+<div class="legend">
+<b>發言人代碼</b>(紫色徽章標的是「提出該說法的人」,通常是受訪者,不是主持 DW):
+CG=柯里·古德 · ES=Emery Smith · JR=Jason Rice · WT=William Tompkins · PP=Pete Peterson · CM=Clifford Mahooty · DA=David Adair · NI=Niara Isley · BW=Bob Wood · MM=Mark McCandlish · BB=Boyd Bushman · DW=David Wilcock(主持) · 另有來賓 Jay Weidner(Jay)。青色徽章為出處集數 SxxEyy。
+</div>
+
+<!-- ============ 1 ============ -->
+<section class="cat" id="c1">
+<div class="cat-h"><span class="bar"></span><h2>一、兩大「同盟」:地球同盟 vs SSP 同盟</h2><span class="cnt">THE ALLIANCES</span></div>
+
+<div class="sp">
+<h3>「同盟 Alliance」的兩種定義</h3>
+<div class="narrator"><span>主述</span>CG 反覆強調「同盟」一詞被混用,實際指兩個並肩但分立的派系。</div>
+<ul>
+<li><b>地球同盟 Earth Alliance</b>:議程是建立新金融系統、扳倒陰謀集團 cabal。<b>太空同盟 / SSP 同盟 Space Alliance</b>:起初主要是 Solar Warden 派系,後來其他 SSP 的叛逃者帶著飛船、情報加入。<span class="who">柯里</span><span class="src">S01E01</span></li>
+<li>更完整的定義:(1)地球同盟由各種祕密社團與團體鬆散合作,目標推翻現行金融體系與祕密地球政府及其辛迪加;(2)SSP 同盟由各 SSP 團體中脫離領導層的成員組成,成立「祕密太空計畫同盟議會」。<span class="who">柯里</span><span class="src">S03E03</span></li>
+<li>同盟由 Solar Warden 為根,加上各艦隊與黑色行動軍事計畫的叛逃者組成。共同目標:結束地球暴政、扳倒控制「巴比倫金錢魔法奴役系統」的祕密地球政府,把自由能源、各種醫療科技帶回地球,完全揭露菁英對人類的罪行。<span class="who">柯里</span><span class="src">S01E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>地球同盟:被疏遠者的鬆散聚合</h3>
+<ul>
+<li>地球同盟是 Cabal 數百年來樹立的所有敵人、被疏遠的每個團體鬆散聚合而成:各有文化舊痛與不同的「報復議程」(有的要嚴懲、有的只想做點改變、有的乾脆想接管「世界政府」用對的方式做)。儘管議程不同,他們為「打敗 Cabal」這個共同目標放下歧見——這正是抄 Cabal 的劇本(0.01% 彼此不睦卻能合作控制地球)。<span class="who">柯里</span><span class="src">S04E10</span></li>
+<li>地球同盟建立與西方/陰謀集團銀行體系競爭的新世界銀行金融系統:如同 BRICS(巴西、俄、印、中、南非)與 AIIB(亞洲基礎設施投資銀行);中國等逐步買下陰謀集團龐氏金融體系下國家的債務與天然資源。<span class="who">柯里</span><span class="src">S05E09</span><span class="src">S05E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>地球同盟的東方成分與被滲透問題</h3>
+<div class="narrator"><span>主述</span>Gonzales 當面向 CG 匯報地球同盟內部的裂痕。</div>
+<ul>
+<li>地球同盟出問題、有東方成分(中國、俄羅斯)。由數十個小團體(含民兵 militia 團體)組成,但多數是握有大量實體財寶與資訊、影響力大的東方祕密社團。<span class="who">柯里</span><span class="src">S03E08</span></li>
+<li>中國持有 4 兆美元美債,可摧毀美國經濟卻不願(因其經濟靠美國買產品);但握有此牌,只是在世界銀行與 IMF 沒拿到對等投票權。IMF 的人現在成了 BRICS 的權力掮客;AIIB(2014/6 或 7/29 宣布)啟動後 30 多個西方大國跳入。<span class="who">柯里</span><span class="src">S03E08</span></li>
+<li>地球同盟已被「光明會」高度滲透(他們擅長滲透並使團體分裂);CG 與 SSP 同盟都憂心被滲透者把待釋放的資料分享給 Cabal。<span class="who">柯里</span><span class="src">S03E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>SSP 同盟並非天使:來自「壞、更壞、更更壞」</h3>
+<ul>
+<li>SSP 同盟並非天使,原本替「祕密地球政府及其集團(cabal / Illuminati)」工作,是叛逃者組成;雖已「翻新一頁」、要為人類帶來新時代,但仍受創、仍有一定比例「服務自我」、各有議程,來自「壞、更壞、更更壞」的群體。Sphere Being Alliance 與其他 ET 因此不願直接打交道。<span class="who">柯里</span><span class="src">S02E12</span></li>
+<li>球體存有要 SSP 同盟停止全面軍事路線(負面生負面,無法從負面得到正面)。同盟原本期待球體存有來「痛宰敵人、給攻擊性科技、把惡勢力銬走」,結果大失所望——獲得的是防禦性而非攻擊性科技,並被告知不要再做造成大量傷亡的打擊、不要再摧毀基礎建設。<span class="who">柯里</span><span class="src">S01E02</span></li>
+<li>被解放者的安置計畫:這些人被解放後送到另一處由我方盟友進行「復健 rehabilitate」,SSP 同盟很多人也一樣(很多人很受傷、不是天使),復健後再回歸社會。<span class="who">柯里</span><span class="src">S01E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>部分揭露談判與「快速推進」</h3>
+<ul>
+<li>Gonzales 說同盟想「快速推進(fast track)」部分揭露。地球同盟與陰謀集團團體間在談如何揭露、揭露多少;有好幾套部分揭露方案,其一是揭露「低階祕密太空計畫」。<span class="who">柯里</span><span class="src">S05E07</span></li>
+<li>陰謀集團現在沒選擇、正在出局,已有人帶極敏感情報叛逃到同盟,只能「從弱勢談判、假裝有力」。低階 SSP 其實在同盟內有代表(如 DIA 等各團體中少數人在內部祕密叛逃),但多數成員不知情。<span class="who">柯里</span><span class="src">S05E07</span></li>
+<li>同盟「非常關注川普與桑德斯」、對兩人背後的運動(人民站出來反當權者貪腐謊言)很興奮;不認為川普是陰謀集團。CG 被告知「他們絕不會讓川普贏、會偷走選舉」。另提預期 ISIS 會有「最後一搏」式大恐攻。<span class="who">柯里</span><span class="src">S05E07</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 2 ============ -->
+<section class="cat" id="c2">
+<div class="cat-h"><span class="bar"></span><h2>二、球體存有聯盟與守護者</h2><span class="cnt">SPHERE BEING ALLIANCE</span></div>
+
+<div class="sp">
+<h3>名稱由來與巨型球體</h3>
+<ul>
+<li>「球體存有聯盟 Sphere Being Alliance」是 SSP / 祕密地球政府給的名稱(他們不自稱);因情報得知這群存有與三種不同大小的巨型球體(分別在月球、海王星 Neptune、木星 Jupiter 軌道)相關。至少 1980 年代起進入太陽系並增加數量,不回應任何呼叫(hailing)。<span class="who">柯里</span><span class="src">S04E06</span></li>
+<li>球體 1980 年代末來、整個 90 年代處於觀察 / 非運作模式,約 2011/2012 年開始增加數量並轉為運作模式,作為「共振緩衝器」化解進入太陽系的能量海嘯。<span class="who">柯里</span><span class="src">S01E05</span></li>
+<li>球體存有聯盟有五個存有;CG 首度透露三個已現身;另外兩個(新守護者)會在「轉變」前或期間向全人類現身、與我們同住一個世代。<span class="who">柯里</span><span class="src">S06E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>為何只透過 CG 與 Gonzales,不直接打交道</h3>
+<div class="narrator"><span>主述</span>球體存有不願直接與聯盟、超級聯邦、德拉科或地下團體溝通,需要「混血」中介。</div>
+<ul>
+<li>SSP 同盟並非天使(原替 cabal 工作、是叛逃者),仍受創、仍有一定比例服務自我;Sphere Being Alliance 與其他 ET 因此不願直接打交道,只透過 CG 與 Gonzales。<span class="who">柯里</span><span class="src">S02E12</span></li>
+<li>守護者(Guardians)=球體存有聯盟=古建造者種族。地心人想與守護者會面,卻一直得不到回應或承認(與外星、SSP、祕密地球政府的遭遇相同),只能透過柯里這個「混血」中介(原本先透過 Gonzales)。<span class="who">柯里</span><span class="src">S03E04</span><span class="src">S03E07</span></li>
+<li>DW 連結《一的法則》的「第一扭曲」即自由意志:這正是 SSP 同盟與負面存在都得透過 CG 與守護者溝通的原因。CG:他們做事都很迂迴,連接觸他都得先在夢中、與他的高我協商。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S10E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>守護者的角色:平衡競技場、不直接出手</h3>
+<ul>
+<li>球體聯盟明確表示他們是來「平衡競技場」,如同霍皮族所言「我們就是我們一直在等待的救星」。人類得自己清理爛攤、打敗光明會-Cabal、建立並實施新系統;他們不是來保護我們、是引導我們自己保護自己過渡。<span class="who">柯里</span><span class="src">S03E03</span><span class="src">S06E13</span></li>
+<li>有「守護者 guardians」種族(與球體存有聯盟相關、及鄰近行星來的存有)進來當不干預的「警察」、確保沒別的存有趁機佔便宜,但給被解放的文明時間消化後才協助(以 Mica 族人推翻德拉科為範本)。<span class="who">柯里</span><span class="src">S06E14</span></li>
+<li>負面只能透過時空連續體中「罕見且不可預測的窗口」穿入,這由我們自己的自由意志(集體狀態變糟)而被允許;「我方」放出大群微型衛星監視與防衛地球。<span class="who">柯里</span><span class="src">S07E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>WT 版本與情報誤差校正</h3>
+<div class="narrator"><span>主述</span>William Tompkins 收到的是「空心行星載具」說法,CG 認為是多手轉述混了。</div>
+<ul>
+<li>WT:約一年半前(從 2016 早夏往回推約 2014/12)一個「其實是空心行星」的載具停在太陽系外,極大、載有 2000 多個不同外星文明的觀察員,監看地球從羅馬時代以來的狀況。兩個目標:化解太陽問題(「太陽是活的、有情緒」)、糾正爬蟲類在地球實施的無法容忍狀況。<span class="who">湯普金斯</span><span class="src">S06E05</span></li>
+<li>CG 修正:他收到的是「能量球體」而非實體飛行器;不是「一個球體一年半前出現」,而是「這類球體自羅馬時代起來來去去」。WT 可能把多手轉述的訊息混了(像傳話遊戲)。<span class="who">柯里</span><span class="src">S06E05</span></li>
+<li>有團體從星到星、星團到星團監測各世界進展、看有無外來干預(類似星艦的「最高指導原則 Prime Directive」不干預),會以不公開干預居民的方式採取主動。<span class="who">柯里</span><span class="src">S06E05</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section class="cat" id="c3">
+<div class="cat-h"><span class="bar"></span><h2>三、超級聯邦 Super Federation 與大實驗</h2><span class="cnt">SUPER FEDERATION</span></div>
+
+<div class="sp">
+<h3>「聯邦的聯邦」:組成與規模</h3>
+<ul>
+<li>超級聯邦由多個聯邦、邦聯(confederations)、議會、組織組成,像「巨型 UN」;40 個主要團體 + 20 個常在但非全程的團體;成員多是類人外觀,基地多在月球背面及氣態巨行星(尤其土星)的衛星。<span class="who">柯里</span><span class="src">S05E09</span><span class="src">S02E11</span></li>
+<li>它由 40 主群 + 20 群構成;月球是 Super Federation 各群與 Draco 聯盟各群的「大雜燴」,是極嚴格的外交區——相距僅數公里、彼此交戰數千年的群體在此嚴守和平。木星與土星某些衛星周邊「完全禁止」地球任何 SSP 船隻接近。<span class="who">柯里</span><span class="src">S02E11</span></li>
+<li>許多衛星因屬 40/60 群(尤其土星周邊)的「外交領地」而禁入。<span class="who">柯里</span><span class="src">S02E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>22 個基因計畫與「宏大實驗」</h3>
+<ul>
+<li>有 22 個基因計畫(混合他們的基因、操弄人類基因),呈現得像「22 篇互相競爭的期刊論文 / 學期報告」、彼此較勁非協作;對人類基因操弄至少回溯 25 萬年、各計畫長度不一(5000 年起跳)。也有靈性成分——他們自己也是「宏大實驗 Grand Experiment」的一部分。<span class="who">柯里</span><span class="src">S05E09</span></li>
+<li>這些 ET 認為「大實驗」是對整個銀河乃至更廣的偉大貢獻。Blue Avians 指出即使部分 ET 在我們眼中很良性,仍是「議程導向」、有一定比例是服務自我。有 22 項議程,部分彼此競爭,再加 Draco 議程,非常複雜。<span class="who">柯里</span><span class="src">S02E03</span></li>
+<li>人類才剛爭取到一個席位、阻止不了他們。正負難定,全看角度。<span class="who">柯里</span><span class="src">S05E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>大實驗的起源:超級地球毀滅與基因農夫種族</h3>
+<div class="narrator"><span>主述</span>CG 轉述地心人說法 + S07E32 詳述大實驗起源。</div>
+<ul>
+<li>約 50 萬年前太陽系一顆「超級地球 Super Earth」爆炸,使本星團與鄰系外圍的保護網格(由古建造者種族設、後被內部居民從內破壞)失效,大批外星群體湧入,即「基因農夫種族 Genetic Farmer race」,被賦予在銀河散播先進生命(如人類)、監督協助其基因與靈性發展的使命。<span class="who">柯里</span><span class="src">S07E32</span></li>
+<li>太陽系內其他行星的高等人類型存有非常好戰,毀掉自己文明後,引來外部外星團體介入,把難民遷到地球(DW 提議稱「太陽系陸地人 Solar terrestrials」)。這些難民與地表原生人類基因相容,混血形成「混種人類」(就是我們)。此後大量基因農夫種族湧入,展開「大實驗」(含 22 個基因計畫與超級聯邦)。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S03E02</span></li>
+<li>DW 指出這與《一的法則》中超級地球(Maldek)毀滅時間相符。德拉科約 34 萬~37 萬年前抵達(非最早);約 50 萬年前已有其他團體先來。<span class="who">威爾科克</span><span class="who">柯里</span><span class="src">S03E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>大實驗的四要素與「自我管理」目標</h3>
+<div class="narrator"><span>主述</span>CG 在 S07E32 把大實驗拆成基因、意識、靈性、宇宙四要素。</div>
+<ul>
+<li><b>基因</b>:從他星系 / 銀河採基因樣本(像吐口水 / 棉棒,不是丟進攪拌機),發展到某程度後帶到目標球體基因操作,須嚴守自由意志等宇宙法。<span class="who">柯里</span><span class="src">S07E32</span></li>
+<li><b>意識</b>:讓目標群(我們)意識按宇宙時程發展,藉宗教 / 文化 / 教養動物等加速(對應亞特蘭提斯災變後約 12,500 年各地獨立發展磨穀、冶金、管道、建築、數學、計時、法典)。<span class="who">柯里</span><span class="src">S07E32</span></li>
+<li><b>靈性</b>:與意識緊密相連,基因農夫常化身為我們(壽終時其族來取靈魂加回集體、通常備有 backup body),且因業力相連:不能再進化除非我們跟上,故其議程很大部分是讓我們進展好讓他們也能。<span class="who">柯里</span><span class="src">S07E32</span></li>
+<li><b>宇宙</b>:星團隨銀河旋轉進入高能氣態區(催化劑,自 1930 年代起增強),配合時程做基因 + 意識 + 靈性工程,使我們在能量湧入高潮時能「渦輪跳躍」改變密度 / 意識(否則只是略不同版本)。<span class="who">柯里</span><span class="src">S07E32</span></li>
+<li>目標是讓每個行星球體與其上先進存有達到「自我管理 self-management」、技術靈性夠進化時自管基因與進化步調,屆時加入「宏大聯邦 Grand Confederation」。地球因位於本星團正中、靠超級門,是高度被需求的擄掠商品(奴隸 / 基因材料)、銀河奴隸貿易目標。<span class="who">柯里</span><span class="src">S07E32</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>競爭而非協作的 60 群</h3>
+<ul>
+<li>60 群體鬆散合作、有條約但非協同,許多是競爭計畫:故彼此隔離實驗、灌輸「勿與他族混」「勿異族通婚」「us vs them」種族主義(以免污染各自實驗);不同種族被海洋分隔於不同區域亦是刻意。<span class="who">柯里</span><span class="src">S07E32</span></li>
+<li>會綁架他群實驗對象取基因、評其靈性 / 意識以監控競爭對手進度,有時破壞對方實驗;競爭非為威望而是想自己的議程先完成(進入新區先做主張、起衝突、簽條約直到實驗達宇宙階段)。一文化區可能有多達五個 ET 群共同參與(有的只取基因、有的給宗教意識形態、有的給文明技術)。<span class="who">柯里</span><span class="src">S07E32</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section class="cat" id="c4">
+<div class="cat-h"><span class="bar"></span><h2>四、超級聯邦的議會結構與運作</h2><span class="cnt">COUNCIL MECHANICS</span></div>
+
+<div class="sp">
+<h3>會場與時間異常泡</h3>
+<div class="narrator"><span>主述</span>CG 幼時(約十三歲)起以直覺共感者 IE 身分出席,描述會場結構。</div>
+<ul>
+<li>一艘約 50–60 呎的模組化梭子飛船,把代表帶到「氣體巨行星之間(木星與土星附近)」、肉眼 / 望遠鏡看不到、處於「時間扭曲泡泡 temporal distortion bubble」內的區域:進入後一片漆黑(看不到星、太陽、行星),只看到議會所在的太空站。<span class="who">柯里</span><span class="src">S02E03</span></li>
+<li>須以「同坐標進出 punching in/out」進入;太空站一端像蛤殼、另一端是大圓盤,圓盤內是巨大的聯合國式會議廳——這就是超級聯邦會議。<span class="who">柯里</span><span class="src">S09E01</span></li>
+<li>站體是極先進太空站,有主大廳、會前的玄關交誼區。座位排成馬蹄形,每個代表團一個馬蹄,主椅升高、三張顧問椅降低、四周有欄杆。完整為 60 群(40 主群 + 20 群)。<span class="who">柯里</span><span class="src">S02E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>「通用翻譯機」主椅與自我貢獻簡報</h3>
+<ul>
+<li>坐上主椅會像「通用翻譯機」翻譯一種單調的奇特 ET 通用語(他人聽不到);坐主椅是與整個群體溝通(像巨型電信)。<span class="who">柯里</span><span class="src">S02E03</span><span class="src">S10E02</span></li>
+<li>40 群各自上前做約兩分鐘的「自我貢獻簡報」(誇耀自己對人類與大實驗的貢獻);在場存在意識中是在「驗證自己的計畫 / 實驗」、提出實驗資訊與對其他干擾其基因實驗者的申訴。<span class="who">柯里</span><span class="src">S02E03</span><span class="src">S09E01</span></li>
+<li>常見反制手段:存在發言前會自報身分但那段被從 CG 記憶抹去;有些存在看起來「沒有臉」(是它們對你心智做的事)。<span class="who">柯里</span><span class="src">S09E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>地球席位、IE 三角偵測與代表角色</h3>
+<ul>
+<li>Gonzales 與 CG 都被任命為代表:Gonzales 是 SSP 與 Blue Avians 間的代表;CG 是 Blue Avians 與 SSP 同盟及其他眾多群體間的代表,出席各種聯邦議會。<span class="who">柯里</span><span class="src">S02E03</span></li>
+<li>CG 約十三歲被帶到木星外的超級聯邦基地,擔任「直覺共感者 intuitive empath, IE」偵測欺騙或危險;現在每位代表出席都帶三名 IE(需三人三角定位偵測欺騙、恐懼等)。地球有一名代表獲席位(代表席輪替、非民選、只是觀察、近期才獲准)。<span class="who">柯里</span><span class="src">S02E03</span><span class="src">S07E32</span><span class="src">S09E01</span></li>
+<li>IE 多半只能讀到背景情緒與能量,要先與每個存在建立基線 baseline 才能判讀;主要找欺騙、恐懼、恐慌的感受並用手持裝置傳給所支援的會中人。CG 一生共參加三次此類會議。<span class="who">柯里</span><span class="src">S09E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>內層屏障放寬的宣布</h3>
+<div class="narrator"><span>主述</span>S02E03 那次因有重大宣布而座無虛席。</div>
+<ul>
+<li>一位「南瓜色皮膚、大藍眼、有從耳到耳的脊突、極高、穿僧袍」的存有做宣布:地球的「內層屏障 inner barrier」將放寬,讓許多被困地球、研究海洋叢林生態、對人類無害的良性 ET 重返其在地球軌道外等待的支援團隊;改回舊式「網格巡邏、像空中交通管制」的進出管理。IE 都感到全室鬆一口氣。<span class="who">柯里</span><span class="src">S02E03</span></li>
+<li>最後一次超級聯邦會議(成人時):當時地球周圍有能量屏障,出現許多他沒見過的存在——更多水生型、昆蟲型,聲稱在地球做研究但與人類無關,因有族人困在地球,來遊說「當權者 The Powers That Be」設法讓族人離開地球。<span class="who">柯里</span><span class="src">S09E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Draco 為何缺席聯邦</h3>
+<ul>
+<li>Draco 爬蟲族缺席這些會議是因為大量敵意:Draco 聲稱這個超級聯邦機構在 6,500 萬年前來到地球,摧毀了一個已大幅推進的爬蟲實驗(想做爬蟲與哺乳類混合的恐龍實驗),之後成為超級聯邦一部分的「基因農夫種族」進來竄改基因、創造全新的全哺乳類實驗;Draco 聲稱這本是他們的行星。Draco 派昆蟲(螞蟻型)中介者代表出席。<span class="who">柯里</span><span class="src">S09E01</span></li>
+<li>亞加森人不在 Super Federation 議會有席位;Super Federation 裡有一個外觀類似但「明顯更高大(約 9–10 呎)、前額略大、北歐長相」的不同群體。<span class="who">柯里</span><span class="src">S02E02</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 5 ============ -->
+<section class="cat" id="c5">
+<div class="cat-h"><span class="bar"></span><h2>五、超級聯邦的終結與新守護者</h2><span class="cnt">END OF SUPER FEDERATION</span></div>
+
+<div class="sp">
+<h3>泰爾-艾爾傳達:超級聯邦即將解散</h3>
+<div class="narrator"><span>主述</span>S10E02 CG 被帶上最後一場超級聯邦會議,為泰爾-艾爾(Teir-Eir)逐字傳話。</div>
+<ul>
+<li>主要與 CG 溝通的藍鳥人是泰爾-艾爾,透過夢境告知數日後將帶他上超級聯邦會議,他要為泰爾-艾爾傳遞訊息,之後再去土星議會迎接兩位新守護者。近三年泰爾-艾爾告訴他,藍鳥人與「金三角存在」將淡出我們的實相,由屬於球體存有聯盟的新守護者接手。<span class="who">柯里</span><span class="src">S10E02</span></li>
+<li>CG 上中央圓形舞台、坐主椅,泰爾-艾爾與金三角存在出現在他身後,要他「逐字重複我說的話」。問候語是「在唯一無限造物者的愛與光中」,這次新增結尾:「為全體服務;為唯一服務 In service to all; in service of the One」。<span class="who">柯里</span><span class="src">S10E02</span></li>
+<li>訊息核心:超級聯邦即將解散,22 個基因計畫(已擺弄人類基因「與」靈性數千年)即將結束;人類如今是星際種族,將開始管理自己的基因與靈性,不再被這些存在管理、不再向他們報告。CG 溝通時淚流滿面。<span class="who">柯里</span><span class="src">S10E02</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>現場反應與「記得龐塞系統」</h3>
+<ul>
+<li>現場反應極大:有的心靈大喊、有的口頭抗議揮拳,「站」接管讓他們動嘴卻發不出聲;也有存在很高興。CG 在地球代表席看到他曾打過交道、面帶怒容的「200 人議會 Council of 200」成員之一(大眾認得的人)。<span class="who">柯里</span><span class="src">S10E02</span></li>
+<li>泰爾-艾爾要 CG 宣告超級聯邦將重組:大多數被解散移除,少數將與本地 52 顆星的代表(我們的宇宙表親)共事,組成新的超級聯邦,人類將擁有「永久席位」。當他們激動時,泰爾-艾爾要 CG 說「記得龐塞系統 Remember the Ponce System」,全場立即安靜——CG 腦中看到超級聯邦與守護者資產交戰的畫面。<span class="who">柯里</span><span class="src">S10E02</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>龍族與昆蟲族躲進時空泡、超級門戶與「毒井」</h3>
+<ul>
+<li>龍族與昆蟲族會像安莎建造時空泡藏城那樣,形成時空口袋躲進去等待能量變化,或躲在地球深處重度屏蔽的基地,打算撐過這 1000 年後再出來統治。人類將負責下到地球深處找出這些區域、清除爬蟲類。<span class="who">柯里</span><span class="src">S10E02</span></li>
+<li>太陽系外有一座「超級門戶 supergate」,依宇宙法任何物種都不能被禁止使用;他們不能禁龍族用,但能「毒化我們太陽系這口井」,讓龍族 1000 年內無法進入(太陽約 1000 年間累積一種對爬蟲類「如毒藥般」的能量)。守護者管理這些能量,但不是為了擋龍族,而是宇宙進程的自然部分。<span class="who">柯里</span><span class="src">S10E02</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section class="cat" id="c6">
+<div class="cat-h"><span class="bar"></span><h2>六、銀河聯邦與 52 星代表(新超級聯邦)</h2><span class="cnt">GALACTIC FEDERATION · 52 STARS</span></div>
+
+<div class="sp">
+<h3>新守護者的到來與土星議會</h3>
+<div class="narrator"><span>主述</span>S10E06 CG 被帶到土星議會迎接兩位新守護者與 52 星代表。</div>
+<ul>
+<li>內部地球「奧米茄群 Omega group」(深髮、白人外觀、軍事感)穿藍色連身制服、左胸有大金星(與安莎會議桌上看到的星相同),引導大家上一艘約 120 呎寬的經典飛碟,前往土星議會(Council at Saturn,CG 在金星見過哨兵 Sentinels 後被帶到的土星異常處,有座一模一樣的太空站)。船上約 40 名代表。<span class="who">柯里</span><span class="src">S10E06</span></li>
+<li>泰爾-艾爾要 CG 去數米卡那群人——共 52 個,都是不同類型人類(多非白人,橄欖膚、棕膚、棕褐膚),是本地 52 顆星各自的代表、我們的宇宙表親。他們將進入超級聯邦董事會,與我們一同任職。22 個基因實驗不再由超級聯邦領導,人類獲得自己基因與靈性發展的「管理鑰匙」。<span class="who">柯里</span><span class="src">S10E06</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>52 位「見證者」與銀河聯邦化身</h3>
+<ul>
+<li>52 個存在(連 CG 共 53)的角色是「見證者 witnesses」,是各自集體意識的管道。CG 見證的是地球這個太陽系集體意識的一部分。他們全被告知是來自這個銀河聯邦的「化身 incarnates」;銀河聯邦曾派數波到各星系協助。<span class="who">柯里</span><span class="src">S10E06</span></li>
+<li>各人所服務的行星上有數十萬來自其靈魂群的「流浪者 Wanderers」化身於此,CG 強調自己只是其中之一、毫不特殊。對地球的意義不在物質層面,只在能量與意識層面。米卡介紹身邊的人都由守護者挑選、各自在母星系與藍鳥人或三角頭存在接觸過。<span class="who">柯里</span><span class="src">S10E06</span></li>
+<li>泰爾-艾爾以「為全體服務;為唯一服務」結束後,他們緩緩淡去消失。新守護者只傳達了這些群體如何合作的「宇宙基本規則 cosmic ground rules」(即組成新超級聯邦的規則),CG 暫不能透露。<span class="who">柯里</span><span class="src">S10E06</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>宇宙和平部隊與人類的議會代表方式</h3>
+<ul>
+<li>52 位見證者中許多能輕易冒充地球人、且現在就在這裡——他們是「宇宙和平部隊 Cosmic Peace Corps」,融入與自己最像的族裔區域(看起來較亞洲就插入亞洲區),研究我們文明的不同面向,擬定如何幫助我們的計畫。<span class="who">柯里</span><span class="src">S10E13</span></li>
+<li>人類就是人類的代表;尚未啟動開會,仍在準備組織,現行超級聯邦正收尾計畫。不會是一人決定,很可能像現在——各區輪替的不同人;各區(亞洲、非洲及其下各國)會有大使般的人崛起、輪調,匯集人民所求帶到議會。<span class="who">柯里</span><span class="src">S10E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Mica 大使:宇宙表親的範本</h3>
+<div class="narrator"><span>主述</span>S06E01 Mica 大使首次登場,代表「本地星團內某星系」的宇宙表親。</div>
+<ul>
+<li>Mica 約 5'5"、穿閃亮綠袍,膚色像今日利比亞或埃及人帶極淡橘調,五官像混血但偏非洲;說英語完美無口音,其族人對地球文化、藝術、音樂、娛樂極為著迷,自其文明初始就追蹤我們的廣播、電視、網路。他們是「宇宙表親 cosmic cousins」,與我們共享約 94% 相同基因,壽命略超過繞恆星 300 圈。<span class="who">柯里</span><span class="src">S06E01</span></li>
+<li>Mica 族人曾被「壓迫我們地球的同一批存有」壓迫,僅三代之前才贏得自由;衝突末期他曾以與 CG 幾乎一模一樣的方式與 Tear-Eir 接觸。是太陽活動清除了 AI、其軍隊趁德拉科混亂之際推翻德拉科。<span class="who">柯里</span><span class="src">S06E01</span><span class="src">S06E14</span></li>
+<li>Mica 族人開始在夢境狀態接觸我們人類、自我介紹、傳授如何脫離德拉科控制系統、如何在被編程內鬥的社會中團結——為未來公開接觸與協助鋪路。他們能提供「經驗」,幫我們療癒情緒、成長為銀河物種。<span class="who">柯里</span><span class="src">S06E11</span><span class="src">S06E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>ES 版本:銀河聯邦與銀河法庭</h3>
+<ul>
+<li>ES 相信有「銀河聯邦 galactic federation」不允許會做壞事的存在去星際間遊走——人類被「隔離 quarantined」在這顆星球上,直到我們更有意識、照顧好星球與彼此。<span class="who">史密斯</span><span class="src">S12E04</span></li>
+<li>ES 預言:即將有與銀河聯邦的重大會議,會帶這顆行星的 5 名領袖到「銀河法庭 galactic court」問「你們為何這麼做?」這些世界領袖會否認,但背後巨型螢幕會投射他們所知的一切——無法說謊;接著會看到是 300 家大企業該為世界領袖與對地球人所做的一切負責。<span class="who">史密斯</span><span class="src">S10E11</span></li>
+<li>揭露也為外星人安全來此開門,會有銀河聯邦許多種族的大型會議;一旦 ET 現身,大家放下防備,他們會帶來酷科技、幫我們找出誰在綁架、保護我們。<span class="who">史密斯</span><span class="src">S11E12</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section class="cat" id="c7">
+<div class="cat-h"><span class="bar"></span><h2>七、德拉科同盟與「超維度霸主」AI</h2><span class="cnt">DRACO ALLIANCE · AI OVERLORD</span></div>
+
+<div class="sp">
+<h3>德拉科同盟的組成與階級</h3>
+<ul>
+<li>德拉科同盟含多種爬蟲型存有、一些昆蟲型(insectoid)、一些「被征服而服役的奇異北歐型 Nordic」存有。階級制如蜂巢:戰士階級、工程師 / 科學家,頂端是皇室 royalty。<span class="who">柯里</span><span class="src">S04E06</span></li>
+<li>爬蟲型有不同種:約 4.5~5 英尺像灰人的、9~14 英尺以上的德拉科型。柯里見過的「德拉科皇族 Draco royal」約 14 英尺高、極肌肉、退化的翼與短尾、白鱗無衣、垂直裂瞳、約 3000 磅重、肩寬超過 5 英尺。<span class="who">柯里</span><span class="src">S05E08</span></li>
+<li>德拉科主張數百萬年前這裡是他們的基因實驗地點,某些團體從別的星系進來消滅了他們的殖民地,他們對「三個失落種族 three lost races」很不滿、聲稱地球一直是他們的(但 CG 指出德拉科是超級地球爆炸後約 37.5 萬年前才來,與其主張矛盾)。<span class="who">柯里</span><span class="src">S05E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>白色皇家德拉科的會面(CG 與 Gonzales)</h3>
+<div class="narrator"><span>主述</span>S02E16 CG 與 Draco Alliance Federation 的兩次侵入性接觸。</div>
+<ul>
+<li>那是約 14 呎高、有退化尾巴與翅膀、極強大的爬蟲存有。CG 從沒有過如此「侵入性」的溝通——像微波穿透額葉、抓住並固定他,其眼睛不斷變色、裂瞳放大到全黑。CG 因此曾拒絕再去見 Draco Alliance Federation。<span class="who">柯里</span><span class="src">S02E16</span></li>
+<li>地點在美國西南某「停業旅館」,由集團 / 祕密地球辛迪加團體「Committee of 200(200 人委員會)」領導出席(自稱 chairmen)。巨大門廳新增「爬蟲士兵榮譽衛隊」持闊劍式長柄刃武器、後方有 mantid(螳螂)與其他 insectoid 存有列隊;中央站著同一頭白色皇家德拉科。一切佈置得極具劇場效果,為「展示 Draco 並非示弱」。<span class="who">柯里</span><span class="src">S02E16</span></li>
+<li>Gonzales 代 CG 出席兩場會議(一場 Super Federation、一場 Draco Alliance Federation),事後向 CG「道歉」,因他原以為 CG 誇大了與白龍接觸的可怕,親歷後才知屬實(同樣的微波穿額葉、被抓住固定、之後劇烈頭痛噁心)。<span class="who">柯里</span><span class="src">S02E16</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>德拉科的提議與威脅、cabal 內爆</h3>
+<ul>
+<li>白龍的提議:若 Sphere Being Alliance 允許「White Royal Draco」安全離開太陽系,他們願「交出所有人類追隨者(祕密地球政府及其辛迪加)、低階爬蟲士兵與被困系內的 ET 盟友」給 SSP Alliance——即「背叛所有替他們工作的人」。<span class="who">柯里</span><span class="src">S02E16</span></li>
+<li>Committee of 200 代表在場目睹此背叛,引發 cabal / 辛迪加群體大量分裂、內鬥、互相反目;許多 cabal 群開始「轉作污點證人」、帶大量證據叛逃到 SSP Alliance、承諾日後出庭作證,以換取「離世庇護與離世證人保護計畫」。<span class="who">柯里</span><span class="src">S02E16</span></li>
+<li>(Gonzales 此次)白龍以毫不含糊的口吻命令:所有人類追隨者不得被起訴、皆予寬赦,所有 ET 群與 Draco 須被允許隨意離開太陽系;若不從,將透過操弄地表人類「掀起戰爭與紛亂」、累積「loosh 能量」(如假旗、孤狼槍手式事件,乃至揚言第三次世界大戰)。<span class="who">柯里</span><span class="src">S02E16</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>重大洩漏:德拉科之上有「超維度霸主」</h3>
+<div class="narrator"><span>主述</span>S02E15 / S02E16 經 Gonzales 報告的關鍵情報。</div>
+<ul>
+<li>Draco 聯盟「似乎正是 AI 先知、與此 AI 並肩工作」。Draco 一直告訴 cabal 他們是金字塔頂、最高,但其實有個「超維度 / 更高存有」是 Draco 非常害怕的。<span class="who">柯里</span><span class="src">S02E15</span></li>
+<li>較高階的 Draco 爬蟲類階層被殺時身體會自毀(低階士兵不會);後找到防自毀保存的方法,Gonzales 親口告訴 CG:「解剖較高階 Draco 內部,發現它們體內滿是 AI(nanites)」。CG 問是否為 AI 先知,Gonzales 答:「不是 AI 先知,就是與同一股力量共事」。Draco 既崇拜又害怕這個超維度智慧——它對 Draco 也不仁慈。<span class="who">柯里</span><span class="src">S02E15</span><span class="src">S04E06</span></li>
+<li>白龍首次「確認 Draco 也向更高者報告」——有一個「超維度霸主 extradimensional overlord」。Gonzales 告訴 CG:「我們相信這個超維度霸主也要為 ET/ED AI 威脅負責」。<span class="who">柯里</span><span class="src">S02E16</span></li>
+<li>擊敗德拉科不只是擊落船,而是擊敗「控制德拉科的東西——AI」;要能徹底清除 AI 使其無法備份重感染,才有機會真正擊敗德拉科(以 Mica 族人為範本)。<span class="who">柯里</span><span class="src">S06E14</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>JR 版本:Cabal 與外星的層級</h3>
+<ul>
+<li>現代銀行家與實業家的 Cabal 確實起於 1700 年代德國(可能法蘭克福),也是太空殖民計畫背後的一股力量,但「最終的線、最終控制與決策」是在他們之上的層級做的,是外星人把人類推到舞台正中央當代理人。<span class="who">萊斯</span><span class="src">S12E23</span></li>
+<li>背後是一個「財團 consortium」:Draco 加上盟友(更認同其思維的存在)。也有反 Draco 的善意外星種類;地下外星種族則有支持與反對 Draco 兩派混雜。<span class="who">萊斯</span><span class="src">S12E23</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 8 ============ -->
+<section class="cat" id="c8">
+<div class="cat-h"><span class="bar"></span><h2>八、Anshar 議會與內部地球聯盟</h2><span class="cnt">ANSHAR · INNER EARTH</span></div>
+
+<div class="sp">
+<h3>地心聯盟:七個人類分離文明</h3>
+<ul>
+<li>地心聯盟是「人類」分離文明的聯盟,不是爬蟲類,共有七個團體,彼此族裔多元。其中三個是「表親級」相關團體,都配戴土星符號(Saturn symbol),只是寶石不同:3 點鐘位置鑲黑石、9 點鐘位置鑲玉(jade)、6 點鐘位置鑲玫瑰紅。配戴土星符號者(1700~1800 萬年最古老)是議會的主辦方。其餘有的約 50 萬年,最年輕的約「兩三個冰河期前」。<span class="who">柯里</span><span class="src">S03E02</span></li>
+<li>會議廳為橢圓形圓頂房,有石長椅,前方為石桌(刻有金色與紅色八角星)。各團體符號:銀色星、風格化的卍字(與納粹無關)、三種土星符號、像沙漏或獵戶座的符號。配戴墜飾者輕觸即投射出像抬頭顯示器的全像影像——墜飾是科技而非單純珠寶。會議用「前阿卡德語 / 前蘇美語」交談。<span class="who">柯里</span><span class="src">S03E04</span></li>
+<li>各團體外貌涵蓋地表各主要人種:銅膚矮壯的「非洲型」、體型不同的「亞洲型」、像印度人皮膚泛淡藍的群體;戴歐米茄(omega)符號者最像能行走於地表的人類,自稱金星崇拜者,提及「金星王子 / 晨星」。<span class="who">柯里</span><span class="src">S03E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Anshar(安莎)與女祭司 Kaaree</h3>
+<div class="narrator"><span>主述</span>土星墜飾、最古老的那群現在可以說出名字。</div>
+<ul>
+<li>地心(土星墜飾、最古老)那群名為 <b>Anshar</b>;女祭司名 <b>Kaaree / Ka'Aree</b>。她率代表團乘自己的飛行器抵達。Anshar 是四密度,決策在 telepathic 層級進行——眾人進「The Construct」、有某種蜂巢心智 / 群體意識來決定事情;有祭司種姓與長老,但人們輪流做不同工作(園藝、帶小孩),不被定型,不是女王 / 工蜂式種姓。<span class="who">柯里</span><span class="src">S04E08</span><span class="src">S06E17</span></li>
+<li>SSP 同盟一段時間以來持續把地心存有(Anshar)請到柯伊伯帶基地建立政治關係。Anshar 能輕易在太陽系內外旅行,在其他星系有殖民地;唯一被告知的具體地點是「馬雅團體 Mayan group」——在昴宿星團的一些世界,他們曾把約 4000 萬人從地球帶過去。<span class="who">柯里</span><span class="src">S04E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Anshar 來自 1700 萬年後的未來</h3>
+<ul>
+<li>CG 強力追問後 Kaaree 確認 Anshar 其實是來自未來的人——在我們經歷四密度轉變之後的某個未來,Anshar 社會發生類似「曼德拉效應」的時間異常 / 分岔,他們回溯找出分岔前的時點,派一小群(非整城)回到 1700 萬年前(就在時間異常發生前)當其時間線的守護者 stewards,否則時間線偏移可能使他們不復存在。<span class="who">柯里</span><span class="src">S07E27</span></li>
+<li>回到過去有業力後果,故與我們業力相連:我們須照其時間線正確進展(揚升、推翻 Cabal),他們才能存在。那小群像殖民者,從未與未來 Anshar 聯繫,逐漸長成今日地下大城。<span class="who">柯里</span><span class="src">S07E27</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>三角頭存有的靜默會面與守護者的評語</h3>
+<ul>
+<li>CG 與 Gonzales 興奮等候,以為要與藍鳥會面,結果出現「三角頭存有」(10~11 英尺高、頭幾乎與肩同寬、極瘦、三指三趾、動作極慢像在水中)。它與 Anshar 代表團進行「完全靜默」的交流(主觀約 30~40 分鐘),結束時「像轉電台般」瞬間消失。在場另有配戴「星」墜飾的團體站很後面。<span class="who">柯里</span><span class="src">S04E08</span></li>
+<li>Kaaree 事後透露:守護者從其觀點認為地心人「未能成為這個行星球體的適當管理者 not proper stewards」。原因推測:地心團體對地表人口的欺騙、把部分人口當棋子、利用地表人;七個團體本就彼此不睦,有的偏服務自我、有的偏服務他人但仍處自保模式。<span class="who">柯里</span><span class="src">S04E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>地心聯盟的分裂</h3>
+<ul>
+<li>那次與守護者會面後,七團體開會是他們最後一次聚在一起——三個團體(其一為 Omega 群)退出地心聯盟,儘管聯盟原是為對抗 Cabal 致命威脅而生;退出的一群還升級了對其遠端通靈對象的反情報 / 影響計畫。其中一個退出團體與「在非洲有大量利益與地產的外世界團體」有聯繫。<span class="who">柯里</span><span class="src">S04E08</span></li>
+<li>Anshar 決定要開始慢慢對遠端通訊對象「坦白自己身分」(不再謊稱來自各星系),退出的三個團體則認為魯莽、會招致毀滅,故升級反情報。Anshar 從守護者得到的資訊像「資料傾倒」般灌進其「心智網際網路」,他們有了新的使命——將更「直接地、正面地」影響地表人口。<span class="who">柯里</span><span class="src">S04E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>四正面團體違反穆罕默德協定、開始接觸人類</h3>
+<div class="narrator"><span>主述</span>S08E04 CG 首次從 Ka'Aree 身上感到焦慮。</div>
+<ul>
+<li>Anshar 擔心時間線進展不順。因此 Anshar 加上另三個非人類存在,共四個正面團體決定違反「穆罕默德協議」——因為無法集齊所有簽署方來批准或終結協議。他們將開始主動接觸人類:先透過夢境與異象大規模接觸,再像對 CG 那樣對個人與小團體現身(非全國 / 全球電視規模),是緩慢的適應過程。<span class="who">柯里</span><span class="src">S08E04</span></li>
+<li>北歐團體的目的:阻止他們看見的「負面 ET 公開統治」時間線。宇宙法則規定不能直接干預發展中的社會,只能透過幕後操偶者、祕密社團;負面方長期更「親力親為」造成戰局失衡,故正面方開始更積極介入(走「夢境接觸→一對一現身」的正當程序)。<span class="who">柯里</span><span class="src">S08E04</span></li>
+<li>被選中者通常是長期被接觸、花大量時間冥想、頻率對得上的正面安靜的人(不會選有救世主情結者);接觸後可能拿到搭乘母船的通行證。<span class="who">柯里</span><span class="src">S08E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>把整座城市移入時間異常泡</h3>
+<ul>
+<li>Anshar 的住所是模組化的(像可自行移動的小太空船),像樂高 / 電磁般彼此相連,360 度環繞、抬頭看都朝球體中心同一點;全都升空進入那個異常的事件視界以躲避能量劇變。她的大多數族人(整座城市)目前都在那異常裡;但宗教教團以及許多 Anshar 與子群直到最後一刻仍留在泡外,把全部時間精力用於正面影響地表人口、把時間線導回。<span class="who">柯里</span><span class="src">S08E07</span><span class="src">S09E03</span></li>
+<li>這時間泡與木星、土星外的時間泡一樣,可從許多銀河系與本銀河多處進入(各銀河有隧道通到同一點);防侵入靠「同軌跡進出 punching in/out」設計——只能從進入點離開回到自己的時空。<span class="who">柯里</span><span class="src">S09E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>七團體的「網際網路」高峰會</h3>
+<ul>
+<li>最初與 Ka'Aree 進入的祭司高峰是極罕見地把所有決策者聚在一起(其宗教階級有些兼戰士階級,Omega 群尤其如此);會聚是因與「競爭不同未來」的非地球存在有多項分歧,且地表人類已發展出能打到他們那麼深的科技與武器。此次是更深層的合作(每約 25,000 年一次):聚在泡內,之後離開、看時間線偏離多少,再設法把時間線「修剪」回正軌。<span class="who">柯里</span><span class="src">S09E03</span></li>
+<li>被展示的全像:長方形塊體中間有像纜線的大型晶質纜(螺旋狀摻入某礦物)——用來把所有人的意識網絡起來,以供能與控制他們在泡內期間要用的科技。各族群有標示居住區域的護身符寶石,各有自己的「方塊 / 區域」不混居。爭論點在「如何把各自獨立的意識能量網格與他人的網格相連」很謹慎。<span class="who">柯里</span><span class="src">S09E03</span></li>
+<li>當初邀 CG 的七個不同族群全都在場——他們都是來自地球未來、回到過去的(各種族群同任務但於不同時期前來)。Ka'Aree 說 CG 的角色是「見證者」並協助仲裁。<span class="who">柯里</span><span class="src">S09E03</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 9 ============ -->
+<section class="cat" id="c9">
+<div class="cat-h"><span class="bar"></span><h2>九、SSP 治理組織:Solar Warden · ICC · 暗黑艦隊 · GGLN</h2><span class="cnt">SSP ORGANIZATIONS</span></div>
+
+<div class="sp">
+<h3>Solar Warden(太陽守望者)</h3>
+<ul>
+<li>Solar Warden 起於 SDI / 星戰時代(70 末、80 年代,升級到 90 年代初),屬老化艦隊,原本職責是巡邏太陽系防闖入者、兼太空交通管制。它打不過大規模入侵軍,但多數過境群體只一到數艘船;像幫派守地盤。<span class="who">柯里</span><span class="src">S01E03</span></li>
+<li>Solar Warden 自 90 年代起打「冷戰」式試圖揭露:故意在國際太空站前飛過「不小心」露出飛船(約 90 年代末成形理念、2000 年代初開始行動)。<span class="who">柯里</span><span class="src">S01E03</span></li>
+<li>DW 問 CG 所在的「太陽看守者 Solar Warden」計畫——warden 如監獄看守。CG 確認 Solar Warden 的職權是巡守太陽系,也有在本地星團最近恆星建基地的計畫。<span class="who">柯里</span><span class="src">S11E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>ICC(行星際企業聯合集團)</h3>
+<div class="narrator"><span>主述</span>ICC 是 SSP 中最大、由軍工承包商集資的分離企業計畫。</div>
+<ul>
+<li>ICC 最大,擁有太陽系幾乎所有基礎建設(企業包括 Lockheed、Boeing、McDonnell Douglas、Hughes Aircraft 等,不只美國公司),科技遠超曲速 / 星門 / 粒子束之上。<span class="who">柯里</span><span class="src">S01E03</span><span class="src">S03E03</span></li>
+<li>WT 說因高層人士不願接受外星實在、甚至在道格拉斯、TRW、通用動力等公司內阻撓軍方計畫,這群頂級企業高層用所有太空系統的軍事進展,發展出離開地球、在太陽系行星採礦、並沿最近 12 顆恆星向銀河推進採礦賺錢的能力——動機是貪婪。CG 證實這就是 ICC。<span class="who">湯普金斯</span><span class="who">柯里</span><span class="src">S06E04</span></li>
+<li>他們不想被太陽守望者的指揮規則綁手綁腳(走企業途徑就無監督、無問責),且科技遠優於交給軍方的。雖是對手卻不公開撕破臉、會互借資源。<span class="who">柯里</span><span class="src">S06E04</span></li>
+<li>CG 發現我們光是透過 ICC 就跟約 900 個外星文明維持常態貿易關係;人類已成為許多物種採購先進科技的「首選地」。<span class="who">柯里</span><span class="src">S09E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>暗黑艦隊 Dark Fleet</h3>
+<ul>
+<li>Dark Fleet 極機密、技術先進、好戰、攻擊性,幾乎一直在太陽系外,與 Draco 聯盟並肩在系外作戰。<span class="who">柯里</span><span class="src">S01E03</span><span class="src">S02E11</span></li>
+<li>CG 透露 CIA 有一支祕密艦隊也叫「暗黑艦隊 Dark Fleet」(含核潛艇、核動力航母、監獄船、醫療船、驅逐艦的流氓艦隊);據信一艘流氓核潛艇進到北韓附近、向檀香山發射 ICBM(即新聞上那則「假飛彈警報」),被軍工複合體 SSP 擊落攔截,幾天後又想向東京發射、同樣被攔截。<span class="who">柯里</span><span class="src">S11E14</span></li>
+<li>這意味 MIC 集團與控制 CIA 的集團處於交戰,且 MIC 集團內部也在彼此角力。<span class="who">柯里</span><span class="src">S11E14</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>全球銀河國家聯盟 GGLN</h3>
+<div class="narrator"><span>主述</span>CG 此前稱「NATO 式」SSP,正式名在一次 LOC 會議才聽到。</div>
+<ul>
+<li>1950 年代末、60 年代初各國已察覺有 SSP;大國開始合作,但小國也想參與。美方與各國有協議:任何國家有 UFO 墜毀,美方可派回收隊進入,故無法保密。為安撫各國、讓它們閉嘴並覺得參與保護地球,成立了「Global Galactic League of Nations」。<span class="who">柯里</span><span class="src">S01E08</span></li>
+<li>它被告知有各種威脅、可參與解方,獲提供基地與科技,但基地完全在太陽系外。此計畫其實相當晚近(約 80 甚至 90 年代才開始,非 50/60 年代)。各國高度被「區隔化 compartmentalized」;參與者多為高階情報、軍方、科學家(也有銀行 / 金融數字人)。<span class="who">柯里</span><span class="src">S01E08</span></li>
+<li>GGLN 幾乎只在太陽系外活動。CG 被帶去的一個 GGLN 基地在「某氣體巨行星的衛星」上、洞內(火車穿過傳送門停在洞中,左側深入安全設施、右側是石窟洞區,洞外有發光水池供 R&R)——很可能由 ICC 資產建造。<span class="who">柯里</span><span class="src">S02E11</span><span class="src">S06E04</span></li>
+<li>外屏障豎起後,銀河國家聯盟幾乎全員在屏障升起時都在太陽系外、是地球人類,回不來;有人請願讓他們回來(願接受任何條件),請求被駁回,所有進出太陽系的旅行在可預見未來都暫停。<span class="who">柯里</span><span class="src">S01E02</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>北歐人海軍、火星德國人與各國貢獻士兵</h3>
+<ul>
+<li>WT 說他在道格拉斯、北美航空、TRW 的祕書是「北歐海軍情報中校」,任務是推動整個阿波羅計畫——第一階段登月,第二階段在所有宜居行星 / 衛星建海軍站、在 12 顆最近恆星建基地。「Nova 卡車」是阿波羅的 8~10 倍大,用來運建 2 萬人月球海軍站的設備;但登月後爬蟲人叫他們「別再來了」、第三階段被擋下。<span class="who">湯普金斯</span><span class="src">S05E12</span></li>
+<li>JR:全球所有國家都向「火星德國人計畫」貢獻士兵——任何想參與或使用 LOC(月球作戰指揮部)的國家都得貢獻士兵,這是代價。<span class="who">萊斯</span><span class="src">S12E22</span></li>
+<li>JR:Cabal 與火星德國人互不信任、是不安的同盟,有開戰可能;火星德國人仍稱 Cabal 為「地球皇族 Earth royals」。有「協定」禁止用地球部隊對付地球;有「封鎖 blockade」阻止船艦進入太陽系(至少到「未來某事件」決定走向前)。並非所有火星德國人都仇視地球。<span class="who">萊斯</span><span class="src">S12E19</span></li>
+<li>SSP 各組織不只與外星人有契約規則,彼此之間也有規則必須遵守(「連黑手黨都有規矩」),有完整的數位文件軌跡追蹤。<span class="who">萊斯</span><span class="src">S12E22</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>飛行器數量與「現有科技足以解決一切」</h3>
+<ul>
+<li>政府保密是想在外星敵對行動時保留奇襲(怕外來闖入者 interlopers)；當時「美國」有 573 架(若含很早就有的無人機不誇張)，數字不含俄國與分離軍事複合體。最高速約半光速(因設計缺陷)；要突破才能超光速，除非走宇宙網。<span class="who">柯里</span><span class="src">S06E09</span></li>
+<li>Ra 說我們現有科技足以解決社會記憶複合體的每一個侷限；CG 親身證實——飢餓、缺水、能源危機、疾病、太空垃圾、油污、輻射廢料本都不該存在，以現有科技仍任其發生是危害人類罪。<span class="who">柯里</span><span class="src">S06E09</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 10 ============ -->
+<section class="cat" id="c10">
+<div class="cat-h"><span class="bar"></span><h2>十、隔離、屏障與穆罕默德協定</h2><span class="cnt">QUARANTINE · BARRIERS · ACCORDS</span></div>
+
+<div class="sp">
+<h3>外層屏障的豎立(2014/12/05)</h3>
+<div class="narrator"><span>主述</span>S02E16 球體存有把整個太陽系隔離的關鍵事件。</div>
+<ul>
+<li>Sphere Beings 豎起包圍整個太陽系、遠達日球層外的「外層屏障 outer barrier」,是一道「隔離 quarantine」,任何存有不得進出。量子關聯通訊裝置仍可用(SSP 曾用以聯繫 GGLN 試圖談判);無線電通訊無法穿透。<span class="who">柯里</span><span class="src">S02E16</span></li>
+<li>觸發點:祕密地球政府及其集團、軍方與某些 ET 開發出強力武器,瞄準一個「球體」發射(ISS 在 2014/12/05 拍到的影像:約月球 1/4–1/5 直徑的紅色球體與一道紅色光束)。此次為月球大小、近地、原本隱形,但靠 ET 協助被鎖定攻擊。<span class="who">柯里</span><span class="src">S02E16</span></li>
+<li>Sphere Alliance 用防禦科技「把光束能量導回源頭」(被形容為「合氣道 Aikido 原理」),擊毀發射武器的設施(很可能在澳洲、近 Pine Gap),有人類與非人類喪生、含「cabal 高層」。屏障在此之後幾乎立刻升起。DW 連結《一的法則》的自由意志:不能採攻擊行動,但若負面方更負面之舉會「授權」新行動。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S02E16</span></li>
+<li>Voyager 探測器越過日球層時「屏障尚未升起」;屏障本就可能排定發生,但在 cabal 對遠地球軌道的球體發射能量武器、被合氣道式反彈毀基地後,情勢迅速升級而升起。<span class="who">柯里</span><span class="src">S02E17</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>《一的法則》的「隔離」與「網中之窗」</h3>
+<ul>
+<li>Ra 講「隔離 Quarantine」:守護者巡邏地球能量場,以「一的造物者」之名招呼接近的存有,被「愛 / 光之網」籠罩後依自由意志服從隔離,硬闖如同走進實心磚牆。CG 證實確有環繞地球的能量屏障,進出須循特定受監控軌跡。<span class="who">威爾科克</span><span class="who">柯里</span><span class="src">S07E03</span></li>
+<li>「外部屏障 Outer Barrier」豎立時困住了一些極良善、原本只是來研究雨林或海洋生物的存有。負面只能透過時空連續體中「罕見且不可預測的窗口 windows」穿入,這由我們自己的自由意志(集體狀態變糟)而被允許。<span class="who">柯里</span><span class="src">S07E03</span></li>
+<li>被困者要被「清算」:屏障升起後,這些 ET 將為其在地球數千年所做的負面之事被究責、被困住,這正是 CG 與 Gonzales 被任命為代表去開會的原因。<span class="who">柯里</span><span class="src">S02E16</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>穆罕默德協定 Muhammad Accord</h3>
+<div class="narrator"><span>主述</span>S05E08 Anshar 努力想促成所有簽署方的會議。</div>
+<ul>
+<li>該協定大意:約在穆罕默德之後,各方停止公開現身與在天空公開衝突,改為「讓人類表面自行發展、只暗中操縱傀儡領袖」。所有簽署方須一致同意才能修改 / 批准。為何善惡雙方都同意:因當時激烈衝突、互相驅逐、破壞彼此的基因實驗、一片混亂。CG 直覺此協定也涉及「把地球劃分成各自勢力範圍 territories」。<span class="who">柯里</span><span class="src">S05E08</span></li>
+<li>藍鳥人告知:因與德拉科相關的團體拒絕參加,缺簽署方,穆罕默德協定大會不會舉行。Kaaree 聽到大會被拒毫不在意——說這種拒絕正是那些存有「開啟談判」的方式。<span class="who">柯里</span><span class="src">S05E08</span></li>
+<li>穆罕默德協議有正面與負面團體共同簽署;近期四個團體決定不再遵守,無論正負都有後果——若不是業力 / 能量層面處置,就在另一層面被處置。<span class="who">柯里</span><span class="src">S08E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>SSP 同盟失去通行權</h3>
+<ul>
+<li>SSP 同盟此時已被「揭發為對手」、失去 LOC(月球作戰指揮部)空管與行星防禦網格的清關許可,無法再進入地球大氣 / 近地軌道(此前可透過情報資產辦事而對方不知是替同盟跑腿)。<span class="who">柯里</span><span class="src">S05E07</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 11 ============ -->
+<section class="cat" id="c11">
+<div class="cat-h"><span class="bar"></span><h2>十一、攔截審訊計畫、移民治理與銀河奴隸貿易</h2><span class="cnt">INTERCEPT · IMMIGRATION · SLAVE TRADE</span></div>
+
+<div class="sp">
+<h3>攔截與審訊計畫 Intercept and Interrogation Program</h3>
+<ul>
+<li>入侵者飛進太陽系、不給敵我識別訊號被攔截後從船上帶走;或大多是已抵地球祕密混入人群的 ET,這團體把未經許可者帶到某站審訊,也當作獲准在此的非地球團體的「警察」(讓他們分開、有衝突時介入)。<span class="who">柯里</span><span class="src">S11E13</span></li>
+<li>審訊時若對方合作(說「我有支援隊在木星外隱形,請聯絡查證」)通常會把他們交回支援團體、警告後放行(這才是合法入境程序)。要再審問的關進監獄(不放靜滯、像一般監獄);有些監獄是飛船,有些是被開採過的小行星(後來做成部分低溫監獄)。<span class="who">柯里</span><span class="src">S11E13</span></li>
+<li>人類軍方常以觀察員身分在綁架船上記錄被綁者姓名、時間、所做之事——因為這些存在原本該誠實回報綁架對象卻不誠實,如今我方有能力攔阻進入大氣的船,他們只好與我方合作、允許人類觀察員登船。<span class="who">柯里</span><span class="src">S09E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>ET 移民治理:誰管、向誰報告</h3>
+<div class="narrator"><span>主述</span>S11E12 攔截審訊計畫處理的存在多很像人類。</div>
+<ul>
+<li>攔截審訊計畫處理的存在中只有約 10-15% 是「外星長相」,大多很像人類(就是來自別星球的人類,沒被改造、會被安置在最能融入的國家如玻里尼西亞長相者)。若回收到昆蟲存在或任何爬蟲存在會被移交給龍族(其中有些對龍族很不友善、來偵察如何滲透打敗龍族,會尖叫抗議)。<span class="who">柯里</span><span class="src">S11E12</span></li>
+<li>DW 問誰治理這移民,CG:最終是企業決定,由「行星際企業聯合集團 ICC」主導,向龍族(Draco)報告。CG 描述一名在此十多年、融入並爬到企業高位的高階主管被在白天從高樓拉出帶走審訊。<span class="who">柯里</span><span class="src">S11E12</span></li>
+<li>有一陣子是基因農夫團體控制進出;我們發展出星際旅行能力與太空軍力後開始巡守自己的太陽系,很多團體別無選擇(因我們透過貿易取得了他們的科技或更強的)。<span class="who">柯里</span><span class="src">S11E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>銀河奴隸貿易與「牧人 / 盜牛賊」</h3>
+<ul>
+<li>BB(Boyd Bushman 臨終證詞)說外星人分兩群:像牧場的「牧人 wranglers」會管理牛群、較友善;「盜牛賊 rustlers」會偷牛。CG:這對應銀河奴隸貿易;Bushman 取得簡報時這類擄掠盛行,後來美國 SSP 發展到能用 Solar Warden 守衛自家太陽系領域(約 1980 年代早期)。<span class="who">布許曼</span><span class="who">柯里</span><span class="src">S07E21</span></li>
+<li>CG 見過活著的「橘色人 Oranges」(胡蘿蔔色偏褐),很正面、是來協助管理地球的「牧人 / 守望者」。<span class="who">柯里</span><span class="src">S07E21</span></li>
+<li>我們在「銀河奴隸貿易」中交易人與基因材料,商業活動龐大;發展本地 52 星團貿易路線時曾與既有路線衝突、經歷學習過程。現在用雪茄型自動船,從星系到星系投放貨櫃、不擔心被劫。<span class="who">柯里</span><span class="src">S11E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>與 ICC 交易的「商隊種族」</h3>
+<ul>
+<li>有幾種商隊種族,被描述的這種看起來像犬類(canine)——耳朵尖立如狗、有突出口鼻,但雙足直立、有手、是人形,不通靈、會說話,用一種聽起來很像阿卡德語的近乎通用的商貿語言。他們一切以貿易為主、無道德立場(amoral,非正非負),居中與正面負面團體都打交道,傳遞資訊、科技、貨物與服務。<span class="who">柯里</span><span class="src">S08E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>「捕捉或擊殺」高密度存有與低溫監獄</h3>
+<ul>
+<li>為何要活捉高密度存有?可審訊取得情報,但更重要的是殺了牠們會帶著完整記憶轉世到另一生命體;所以要把意識錨定在身體上——放進低溫睡眠 / 靜滯。太陽系中有若干非常古老的監獄,其中一座是被挖空的小行星,滿是低溫囚犯。<span class="who">柯里</span><span class="src">S10E01</span></li>
+<li>馬雅人因未能活捉某存在而不悅;CG 形容自己被當成「USB 隨身碟」把所見場景反覆重播下載。<span class="who">柯里</span><span class="src">S10E01</span></li>
+<li>CG 描述後來在研究船見到的一個貓科存在(能瞬移、高度進化),軍方下「捕捉或擊殺令」,設電網把它困住電死;運送其屍體時呈淡紫色、滿是燒傷,連無情緒的反社會人格者都落淚——這存在原本在給某人靈性建議,被捕時那個人也被殺。<span class="who">柯里</span><span class="src">S11E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>ES 版本:被擋下的綁架與「九成善、一成惡」</h3>
+<ul>
+<li>綁架其實「不那麼糟」(人被送回、記不太得),因為有善意力量在阻止他們做更多。綁架自 1950-60 年代以來「一直在減少而非增加」,因為「同盟 / 白帽 White Hats」已成形;ES 說現在已是「九成善、一成惡 90% good, 10% bad」。<span class="who">史密斯</span><span class="src">S09E08</span></li>
+<li>ES 說軍方 100% 站在我們這邊,高層對被操縱很憤怒、有自己的探員;若 Cabal 被擊敗,綁架等令人不安的事會大幅(若非完全)停止;這等於一場「影子第三次世界大戰」。<span class="who">史密斯</span><span class="src">S09E08</span></li>
+<li>外面是有法律的、涉及某種「聯邦 federation」——不是「你想去就去」(就像沒護照不能出國);人類確實有能力「帶 ET 回家」,但真正能做到得等人類在地球上行為更端正、進化意識、停止互相殘殺。<span class="who">史密斯</span><span class="src">S09E12</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 12 ============ -->
+<section class="cat" id="c12">
+<div class="cat-h"><span class="bar"></span><h2>十二、《一的法則》的邦聯、獵戶座與十字軍</h2><span class="cnt">CONFEDERATION · ORION</span></div>
+
+<div class="sp">
+<h3>邦聯 vs 獵戶座:數量與靈性熵</h3>
+<ul>
+<li>Ra 用希特勒當「壞 / 好意圖」之例——征服者想以選出「菁英」、奴役非菁英來「統一」一個社會記憶複合體(即一整顆星球的人)。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S06E13</span></li>
+<li>獵戶座因「分離」釋放大量隨機能量、成員間不和諧而脆弱;數量約是邦聯的 1/10(因靈性熵 spiritual entropy 不斷瓦解其社會記憶複合體)。密度:少數三密度(300 委員會、光明會型)、較多四密度與五密度、極少六密度。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S06E13</span></li>
+<li>CG 對照:他們確被寡不敵眾,故用被征服團體當代理士兵(部分 SSP 與他們並肩作戰);一直是權力起落(被趕出又奪回)。服務自我(STS)會因「凌駕他人」內含的分離而自我瓦解——正如白龍那場會議自稱「200 委員會」、皇家德拉科提議交出該團體與所有走卒以換安全離開所造成的震撼。<span class="who">柯里</span><span class="src">S06E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>「十字軍」即天龍人、接觸地球菁英</h3>
+<ul>
+<li>DW 解釋《一的法則》裡的「十字軍 crusaders」就是天龍人(Draco)。Ra 因自由意志原則不點名,但暗示接觸對象是「享受權力扭曲」的人。DW 與 CG 列舉:外交關係協會、三邊委員會、光明會血脈家族、300 人委員會、各智庫。<span class="who">威爾科克</span><span class="who">柯里</span><span class="src">S07E03</span></li>
+<li>CG 對照:德拉科最先接觸的是納粹(同振動、同議程:奴役世界、減控人口)。Ra 說「十字軍」乘戰車在行星達成「社會記憶」之前去征服;一旦我們意識到共同創造意識的力量,他們就完全無法操縱我們。網路使知識統一、是社會記憶的踏腳石,所以對他們很危急。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S06E13</span></li>
+<li>11.18:征服遵循自由意志——接觸召喚他們的人(從 1930 年代德國與軍工複合體,甚至更早就與菁英打交道數千年),由這些人散播「服務自我」哲學使其餘人「以自身自由意志被奴役」(金錢系統、物質主義、貪婪、撒旦象徵的影視音樂)。<span class="who">柯里</span><span class="src">S06E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>被征服種族、「網中之窗」與隔離</h3>
+<ul>
+<li>Ra 說天龍麾下有多種文明;對應常被誤認為北歐人的「被征服種族」——約 8 英尺高、額頭高、髮際線後退、金髮、大藍眼、六指,情報指他們和我們一樣是被征服者,被天龍當砲灰派去征戰,黑暗艦隊則隨爬蟲類出征。<span class="who">柯里</span><span class="src">S07E03</span></li>
+<li>負面的關鍵弱點:完全的自利、階層彼此緊密相連又互相背叛,只要擾動上層就會向下崩解;藍鳥人不直接出手消滅爬蟲類,而是刺激、提升我們的意識,讓我們自己解決問題。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S07E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>為何「幕後運作」比公開登陸更糟</h3>
+<ul>
+<li>Ra 說若聯邦公開登陸會被當神、違反自由意志而降低其極性;獵戶若大規模登陸反而會強化其自利極性,但長遠來看「幕後運作、透過地球人辦事」對獵戶更有利(不違反自由意志)。<span class="who">威爾科克</span><span class="who">柯里</span><span class="src">S07E04</span></li>
+<li>大家以為外星入侵會更糟,其實「幕後操作」才是最糟的處境——他們公開打廣告(美元上的全視之眼)、靠電影電視吹哨者揭露,而我們卻當成虛構轉身否認。自由意志法則要求負面必須「公開廣告」自己在做什麼。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S07E04</span></li>
+<li>SSP 裡多數工程師是好人,以為自己在發明保護地球的東西、被誤導而把正能量投入他們以為正向的結果。<span class="who">柯里</span><span class="src">S07E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>1950 年代「藍色存有」的拒絕</h3>
+<ul>
+<li>1950 年代「藍色存有 the Blues」曾向政府表示我們走錯方向、與錯誤的非地球團體結盟,願在我們放棄那些議程與技術的條件下相助,但被趕走。<span class="who">柯里</span><span class="src">S07E05</span></li>
+<li>「棕色筆記本 The Brown Notebook」(1958 年起)是《一的法則》通靈人 Carla Rueckert 用以校準的直接前身(署名 Odina/Adonai),強調光與愛、「造物者正把你們的太陽系帶回平衡」。Jay 說 1950 年代約 1,400 名普通人開始收到此類心電感應(Tompkins 本人即其一)。<span class="who">魏德納</span><span class="src">S07E05</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 13 ============ -->
+<section class="cat" id="c13">
+<div class="cat-h"><span class="bar"></span><h2>十三、揭露之後的治理與經濟過渡</h2><span class="cnt">POST-DISCLOSURE</span></div>
+
+<div class="sp">
+<h3>金錢系統、禧年與外星介入談判</h3>
+<ul>
+<li>CG:任何有金錢系統的星球基本是受控 / 監獄星球(巴比倫金錢魔法系統只為控制)。他相信全面平等前會先有經濟轉變(由東方控制的新經濟系統)、有「禧年 jubilee」債務赦免,人們依受控制系統傷害程度獲得一定金額;受害較深的國家獲較大補助以拉到同等水平。<span class="who">柯里</span><span class="src">S06E14</span></li>
+<li>一些百萬 / 億萬富翁的財富可能被抹除、回到較平等的起跑線。這禧年是談判的一部分。揭露之後 ICC 等整個基礎設施會移交人類,我們「一夜成為星艦文明」(基礎設施已在太空)。談判中辛迪加與聯盟各自與非地球團體開會,正式談判時雙方都是這些非地球團體的代理人(proxies)、帶其議程。<span class="who">柯里</span><span class="src">S06E14</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>揭露後的「星艦迷航記式」生活</h3>
+<ul>
+<li>會像《星際爭霸戰》——傳送門站取代飛機、複製器(replicators)消除飢餓、海水淡化把沙漠變綠、海洋塑膠垃圾可轉化;無金錢需求(要的話用複製器複製金銀 / 百元鈔);過渡期人會「瘋一陣」(像所有人同時中樂透),之後才能處理並放下過去。<span class="who">柯里</span><span class="src">S05E08</span></li>
+<li>傳送門揭露後的展望:初期科技多用於改善地表生活,還有很多「爛攤子」要清,不會一夜解決;宇宙網連接的眾多存有就是「失散的宇宙家人」,終會互訪、有各種「外籍交換生」情境。初期大概能傳送到坎昆、開曼群島,也可能地表用傳送門站(像地鐵 / 航線)加上飛快的私人飛船。<span class="who">柯里</span><span class="src">S01E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>資料傾洩(data dumps)的時程與風險</h3>
+<div class="narrator"><span>主述</span>S02E17 CG 與 DW 談揭露為何不能太早。</div>
+<ul>
+<li>「data dumps」會在地表發生「催化事件」後才發生(例如全球經濟崩潰,讓沉睡大眾明白這是龐氏騙局),屆時透過各媒體向大眾傾洩資訊。若太早,cabal 能化解、貼上「陰謀論」標籤拆毀;且地表 Alliance 中有人「叛變地把 data dump 內容給 cabal 看」。<span class="who">柯里</span><span class="src">S02E17</span></li>
+<li>多次推翻當權者的嘗試總被「怪異墜機、心臟病、疾病」搶先化解——他們似乎總早一步知情(cabal 用 AI 的機率未來科技保持領先)。但只要地面 Alliance 配合,他們有信心能完成 data dumps。<span class="who">柯里</span><span class="src">S02E17</span></li>
+<li>因 CG 現公開分享,Alliance 對他「隱瞞大量計畫」,他被告知的內容甚至可能是「刻意的轉移」,以免 cabal 預判。<span class="who">柯里</span><span class="src">S02E17</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>「混亂中生秩序」與帝國建構</h3>
+<ul>
+<li>「混亂中生秩序 order out of chaos / ordo ab chao」(雙頭鷹徽記)是這些人的宗教信仰,遠早於羅馬——他們認為宇宙起於大爆炸的大混亂、之後生秩序,故用混亂達成目的、轉移注意(如被刻意設計的敘利亞難民危機)。<span class="who">柯里</span><span class="src">S09E04</span></li>
+<li>那個較負面取向的「卐字團體」並非「同時幫戰爭兩邊」,而是把地表人類當代理人 / 棋子——他們從內部地球對抗「基因農夫」,打一場用我們當棋子的複雜「非熱戰」。亞利安外貌的人形會直接「現身」在國王的王室密室;Ka'Aree 說 Anshar 在歷史上現身引導做決策的人,包括美國建國之初。<span class="who">柯里</span><span class="src">S09E04</span></li>
+<li>帝國建構(羅馬、西班牙、鄂圖曼、大英)是目標的一部分:各群想擴張權力、把敵人趕出地球或趕入地下——其中一種情境就是「新世界秩序 New World Order」。各群議程不同(有些要減少人口)。<span class="who">柯里</span><span class="src">S09E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>「混亂中生秩序」的動機與內部地球操縱菁英</h3>
+<ul>
+<li>製造混亂的動機:有些存在吸食負面能量「loosh」,但更多是關於「控制」(像想 50 步之後的棋手);有些用恐懼混亂分散我們注意,有些則說服跟隨他們的人類「製造混亂就會生出秩序、那是宇宙的自然秩序」。<span class="who">柯里</span><span class="src">S09E04</span></li>
+<li>這種高層通敵很古老,且涉及「非地表文明」——內部地球文明與非地球文明操縱祕密地球政府集團(我們稱菁英 / Cabal),或這些菁英把 ET、內部地球存在當神、執行其旨意。DW 舉羅馬將領 Scipio Africanus 被控賄賂敵國領袖、在競技場前撕毀帳本為例。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S09E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>ES 版本:從內部修正、揭露一夜改變世界</h3>
+<ul>
+<li>ES 把地球稱為「宇宙的迪士尼世界」;ET 比我們意識先進幾百萬年、曾經就是我們,給我們時間自己學會相處相愛——這也是我們沒回月球、NASA 沒進太空的「發育停滯」原因。<span class="who">史密斯</span><span class="src">S09E08</span></li>
+<li>「媒體控制世界」、與全球主義犯罪集團勾結;但同盟正從「內部」修正——會由內部、也由站出來的平民引爆,以「直播 live streaming」方式揭露(就算只播五秒也會瘋傳,除非關掉所有主伺服器,而且會是數百人)。<span class="who">史密斯</span><span class="src">S09E08</span></li>
+<li>揭露與 Cabal 被擊敗後「一夜之間就會改變」——所有被藏起的科技會出現,世界繁榮、全然豐盛、無人挨餓、人人有乾淨水與房子、世界合一,舊典範(含宗教)被同時揭露而拋下。<span class="who">史密斯</span><span class="src">S09E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>NASA 深層政府與假旗、第三次世界大戰幌子</h3>
+<ul>
+<li>現在要小心假旗(false flags);這全球 Cabal(由各宗教、各政治意識形態的人組成)正被揭露,需要大轉移注意力,似乎傾向發動第三次世界大戰當幌子,以免我們看到南極洲與海底藏的東西。ES 補充也可能是測試反應時間或一點試探。<span class="who">柯里</span><span class="who">史密斯</span><span class="src">S11E14</span></li>
+<li>ES 說若不是 MIC 攔下,外星人大概也會出手——他們不會讓任何能毀掉半個星球的核彈引爆。CG 補充核爆會透過宇宙網反饋影響無數其他文明,若有船隊正穿越宇宙網,核彈在錯誤時間引爆會毀掉整支艦隊。<span class="who">史密斯</span><span class="who">柯里</span><span class="src">S11E14</span></li>
+</ul>
+</div>
+</section>
+
+</main>
+
+<footer>
+COSMIC DISCLOSURE · 主題重組 T5「宇宙聯邦與治理」<br>
+素材跨 S01–S12 逐字稿合併 · 出處標於各論點 · 發言人徽章標主述者<br>
+<a href="index.html">◂ 回主頁</a>
+</footer>
+
+</body></html>

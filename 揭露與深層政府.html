@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>揭露宇宙 · 揭露與深層政府</title>
+<style>
+:root{--bg:#05080f;--panel:#0c1320;--panel2:#111a2b;--line:#1d2b44;--ink:#e6ecf6;--soft:#8593ad;--cyan:#34e2d6;--violet:#b08cff;--amber:#ffcf6b}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.85;font-size:16.5px;-webkit-font-smoothing:antialiased;
+ background-image:radial-gradient(900px 520px at 15% -8%,rgba(52,226,214,.12),transparent 60%),radial-gradient(820px 520px at 90% 2%,rgba(176,140,255,.14),transparent 60%),radial-gradient(1px 1px at 20% 30%,rgba(255,255,255,.4),transparent),radial-gradient(1px 1px at 70% 22%,rgba(255,255,255,.3),transparent),radial-gradient(1px 1px at 45% 70%,rgba(255,255,255,.25),transparent);background-attachment:fixed}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+.mono{font-family:Consolas,"Roboto Mono",monospace}
+header.hero{text-align:center;padding:70px 0 26px}
+header.hero .eyebrow{letter-spacing:.42em;font-size:11.5px;color:var(--cyan);text-transform:uppercase;margin-bottom:18px;font-family:Consolas,monospace}
+header.hero h1{font-size:42px;font-weight:800;letter-spacing:.12em;background:linear-gradient(110deg,var(--cyan),#cfe9ff 50%,var(--violet));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 38px rgba(52,226,214,.16)}
+header.hero .sub{color:var(--soft);font-size:14.5px;margin-top:14px}
+header.hero .home{display:inline-block;margin-top:20px;font-size:12.5px;font-family:Consolas,monospace;letter-spacing:.08em;color:var(--cyan);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 15px;background:rgba(52,226,214,.05)}
+header.hero .home:hover{background:var(--cyan);color:#05080f}
+nav.toc{position:sticky;top:0;z-index:8;background:rgba(5,8,15,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--line);padding:11px 0}
+nav.toc .wrap{display:flex;gap:7px;flex-wrap:wrap;justify-content:center}
+nav.toc a{font-size:12.5px;color:var(--soft);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-family:Consolas,monospace;background:var(--panel)}
+nav.toc a:hover{color:var(--cyan);border-color:var(--cyan);box-shadow:0 0 12px rgba(52,226,214,.3)}
+.cat{padding:30px 0 6px}
+.cat-h{display:flex;align-items:center;gap:13px;margin:14px 0 18px}
+.cat-h .bar{width:24px;height:2px;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+.cat-h h2{font-size:21px;font-weight:800;letter-spacing:.03em}
+.cat-h .cnt{font-family:Consolas,monospace;font-size:12px;color:var(--violet);border:1px solid var(--line);border-radius:6px;padding:1px 9px}
+.sp{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:14px 0;scroll-margin-top:120px}
+.sp h3{font-size:19px;font-weight:800;color:#dff6f3;margin-bottom:10px;letter-spacing:.01em;border-bottom:1px solid var(--line);padding-bottom:9px}
+.narrator{font-size:13px;color:var(--soft);margin:8px 0 12px;line-height:1.7}
+.narrator span{font-family:Consolas,monospace;font-size:10.5px;letter-spacing:.1em;color:var(--violet);border:1px solid var(--line);border-radius:5px;padding:1px 7px;margin-right:9px;text-transform:uppercase}
+.flabel{font-family:Consolas,monospace;font-size:11px;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase;margin:16px 0 6px;opacity:.9}
+.subhead{font-size:14.5px;font-weight:700;color:var(--amber);margin:14px 0 4px}
+.sp ul{margin:4px 0 4px;padding-left:4px;list-style:none}
+.sp li{position:relative;padding-left:18px;margin-bottom:9px;color:#c8d2e2;line-height:1.8}
+.sp li::before{content:"▸";position:absolute;left:0;color:var(--cyan);opacity:.6}
+.sp p{margin:8px 0;color:#c8d2e2}
+.src{font-family:Consolas,monospace;font-size:10.5px;color:var(--cyan);background:rgba(52,226,214,.08);border:1px solid rgba(52,226,214,.28);border-radius:4px;padding:0 5px;margin:0 2px;white-space:nowrap}
+.who{font-family:"Noto Sans TC",sans-serif;font-size:10.5px;color:var(--violet);background:rgba(176,140,255,.1);border:1px solid rgba(176,140,255,.32);border-radius:4px;padding:0 6px;margin:0 2px;white-space:nowrap;font-weight:600}
+blockquote{margin:10px 0 4px;padding:12px 16px;background:rgba(176,140,255,.05);border-left:3px solid var(--violet);border-radius:8px}
+blockquote p{font-size:13px;color:#aeb9cf;font-style:italic;line-height:1.7;margin:5px 0}
+.legend{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 8px;font-size:13px;color:var(--soft);line-height:1.95}
+.legend b{color:var(--ink)}
+footer{text-align:center;color:var(--soft);font-size:12px;padding:50px 0 70px;margin-top:40px;border-top:1px solid var(--line);font-family:Consolas,monospace;letter-spacing:.04em;line-height:1.9}
+footer a{color:var(--cyan);text-decoration:none}
+@media(max-width:560px){header.hero h1{font-size:32px}.sp{padding:17px 16px}}
+</style></head><body>
+<header class="hero"><div class="wrap">
+<div class="eyebrow">Cosmic Disclosure · T8 — Disclosure &amp; the Deep State</div>
+<h1>揭 露 與 深 層 政 府</h1>
+<div class="sub">12 季逐字稿裡關於全面/部分揭露之爭、陰謀集團結構、保密體系、心智控制、AI 議程、銀河奴隸貿易與大規模逮捕的全部論點 · 跨集合併 · 每點標出處與主述者</div>
+<a class="home" href="index.html">◂ 回主頁</a>
+</div></header>
+<nav class="toc"><div class="wrap">
+<a href="#c1">全面 vs 部分揭露之爭</a>
+<a href="#c2">陰謀集團與血脈結構</a>
+<a href="#c3">三大同盟與金融戰</a>
+<a href="#c4">大規模逮捕與審判</a>
+<a href="#c5">保密與區隔化體系</a>
+<a href="#c6">假消息 · 網軍 · 人格變形者</a>
+<a href="#c7">媒體操控與軟揭露</a>
+<a href="#c8">心智控制與上帝之聲</a>
+<a href="#c9">AI 與超人類主義議程</a>
+<a href="#c10">銀河奴隸貿易與人口販運</a>
+<a href="#c11">減滅人口 · 生物武器 · 假綁架</a>
+<a href="#c12">克隆與可程式化生命體</a>
+<a href="#c13">南極 · 地下基地 · 古科技爭奪</a>
+<a href="#c14">UFO 學界滲透與文件鑑定</a>
+<a href="#c15">對吹哨者的脅迫與暗殺</a>
+</div></nav>
+
+<main class="wrap">
+
+<div class="legend">
+<b>發言人代碼</b>(紫色徽章標的是「提出該說法的人」,通常是受訪者,不是主持 DW):
+CG=柯里·古德 · ES=Emery Smith · JR=Jason Rice · WT=William Tompkins · PP=Pete Peterson · CM=Clifford Mahooty · DA=David Adair · NI=Niara Isley · BW=Bob Wood · MM=Mark McCandlish · CS=Clifford Stone · BB=Boyd Bushman · DW=David Wilcock(主持) · 另有來賓 Michael Salla(沙拉)、Heather Sartain(薩坦)、Jay Weidner(魏德納)、William Henry(亨利)。青色徽章為出處集數 SxxEyy。
+</div>
+
+<!-- ============ 1 ============ -->
+<section class="cat" id="c1">
+<div class="cat-h"><span class="bar"></span><h2>一、全面揭露 vs 部分揭露之爭</h2><span class="cnt">FULL vs PARTIAL</span></div>
+
+<div class="sp">
+<h3>SSP 同盟的首要目標:一次性「全面揭露」</h3>
+<div class="narrator"><span>主述</span>「全面揭露 Full Disclosure」是 SSP 同盟與球體存有聯盟一貫推動的方向。</div>
+<ul>
+<li>SSP 同盟首要目標是帶來「全面披露」——不只「外星人存在」,而是一次性的大規模資料傾倒(data dump):整合 Edward Snowden 與其他幾起重大駭客資料,已解密彙整,交給地球同盟與 SSP 同盟,擇時公開,揭露辛迪加對人類的罪行,以及被掩蓋、本可瓦解其企業政權與「巴比倫金錢魔法系統」的科技。<span class="who">柯里</span><span class="src">S03E03</span></li>
+<li>同盟觀點是「撕掉 OK 繃、開始療癒」;CG 認為不必拖,過程會充滿憤怒與處理業力,但高密度存有最重意識發展,不透明正阻礙人類的「意識文藝復興」。<span class="who">柯里</span><span class="src">S07E09</span><span class="src">S10E01</span></li>
+<li>全面揭露=全部資料一次傾洩,不會是大家手牽手唱 Kumbaya——會死很多人、會混亂,被陰謀集團害過的國家會想對加害國開戰;CG 正與精神科醫師合作擬「揭露後因應方案」(很多人會無法起床進食)。<span class="who">柯里</span><span class="src">S07E15</span><span class="src">S07E26</span></li>
+<li>本地 52 顆星團的「宇宙表親」(Mica 族人等)不會讓部分揭露發生。<span class="who">柯里</span><span class="src">S10E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>陰謀集團與地球同盟談判出的「部分揭露」藍圖</h3>
+<ul>
+<li>秘密辛迪加堅持不要全面揭露、要「100 年的受控揭露」,反對任何文件傾倒(認為不負責任、會引發社經崩潰);SSP 同盟已認定部分揭露不可能,但地球同盟團體仍認為辦得到。<span class="who">柯里</span><span class="src">S06E02</span></li>
+<li>分階段藍圖:先放史前動物 → 古人類文明 → 秘密太空計畫與太陽系內類似遺址 → 最後才談非地球面向與三艘 30 英里長母船。敘事會說「ET 曾造訪地球但數千年沒來」。<span class="who">柯里</span><span class="src">S07E10</span><span class="src">S08E04</span></li>
+<li>部分揭露只公開低地球軌道計畫(幾座太空站 + 空軍控制的三角形載具,即大眾稱 TR-3B),科技比現在先進約 50 年、僅比國際太空站先進一點;不揭露「有組織的邪教統治世界政治」、不揭露危害人類罪等最壞的事。<span class="who">柯里</span><span class="src">S06E14</span></li>
+<li>資料傾倒因有「網路斷線開關」、可癱瘓電網,決定分批「以牙還牙(tit for tat)」釋出——同盟釋出陰謀集團與自己的、但讓陰謀集團看來最壞;陰謀集團則反咬同盟。<span class="who">柯里</span><span class="src">S06E14</span></li>
+<li>部分揭露也是「轉移注意的戰術」:若開始有針對深層政府的審判或逮捕,就拿古代文明發現來分散注意(weapon of mass distraction)。<span class="who">柯里</span><span class="src">S08E04</span><span class="src">S08E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>催化事件:全球經濟崩潰後才會傾倒資料</h3>
+<ul>
+<li>CG 被告知資料傾倒會在地表發生「催化事件」後才發生(例如全球經濟崩潰,讓沉睡大眾明白這是龐氏騙局、他們選的人都是罪犯),屆時透過各媒體向大眾傾洩。<span class="who">柯里</span><span class="src">S02E17</span><span class="src">S03E09</span></li>
+<li>若 data dump 太早,陰謀集團能化解、貼上「陰謀論」標籤拆毀;且地表同盟中有人「叛變地把內容給陰謀集團看」,讓其準備不在場證明與反駁。陰謀集團用 AI 機率未來科技一路領先、已找到繞過之道。<span class="who">柯里</span><span class="src">S02E17</span></li>
+<li>必須有「催化事件」讓沉睡大眾意識到自己被犯罪集團經營的龐氏騙局奴役;過渡期需「解放人們的心智」而非「灌輸」。<span class="who">柯里</span><span class="src">S03E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>「授權揭露」與在 UFO 社群中播種</h3>
+<ul>
+<li>內部人「Bruce」稱有一種美國政府的「授權披露」:不公開大張旗鼓,而是把資訊餵給在 UFO 社群播種的特定人士,使其進入公眾意識,作為第一步——這就是「部分披露」的運作。先講冥王星有薄大氣、藍天,再逐步講到「一支很古老、來過又消失的外星種族」。民調顯示連美國最傳統地區也有 57% 接受外星生命,所以不會像《世界大戰》那樣引發恐慌。<span class="who">柯里</span><span class="src">S04E01</span></li>
+<li>「軟揭露(soft disclosure)」例:月面方形「海」排列成幾何方塊、月球被指有大量古文物——將來部分披露時會想讓人看月面這些東西。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S04E02</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>QAnon、Vault 7 與「資料傾倒戰爭」開始</h3>
+<ul>
+<li>Vault 7(WikiLeaks 釋出、約 8,700 份關於 CIA 的文件)是 CG 前幾季談過的「資料傾倒」正式開始的徵兆;後續會有一波波令人不安的資訊衝上網路,同盟外洩之間穿插陰謀集團的「以牙還牙」小釋出。Vault 7 含被 CIA 監控的平民名單。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S07E17</span><span class="src">S07E21</span></li>
+<li>QAnon(2017 年 10 月底起在 4chan):CG 說同盟非常清楚 Q 這群人是誰——Q 是同盟的「資訊出口/喉舌」(宣傳機構之一),透過 4chan/8chan 傳遞行動代碼給同盟各派系;成員多為退役 DoD 類型、來自政治光譜各方。QAnon 會是「資料傾倒」的一部分,變成陰謀集團與同盟之間的「資料傾倒戰爭」——同盟成員「絕非天使」。<span class="who">柯里</span><span class="src">S12E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>揭露之後的生活:一夜成為「星艦迷航」式文明</h3>
+<ul>
+<li>揭露後生活願景像《星艦迷航記》時代:傳送門站取代飛機;複製機 replicator 消除飢餓;海水淡化讓沙漠變綠;海洋塑膠可轉化;這些科技一夜間會讓金融系統崩潰、不再需要金融(要錢可用複製機複製金銀或百元鈔)。複製機受「緩衝技術」限制,不能列印核彈。<span class="who">柯里</span><span class="src">S01E03</span><span class="src">S05E09</span></li>
+<li>ICC 等整個太空基礎設施(已在太空)會移交人類,我們「一夜成為星艦文明」;過渡期人會「瘋一陣」(像所有人同時中樂透),之後才能處理並放下過去。<span class="who">柯里</span><span class="src">S03E08</span><span class="src">S06E14</span></li>
+<li>ES 版本:揭露與陰謀集團被擊敗後世界「一夜之間就會改變」——所有被藏起的科技出現,世界繁榮豐盛、無人挨餓、人人有乾淨水與房子、世界合一,舊典範(含宗教)被同時揭露而拋下。<span class="who">史密斯</span><span class="src">S09E08</span><span class="src">S12E03</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 2 ============ -->
+<section class="cat" id="c2">
+<div class="cat-h"><span class="bar"></span><h2>二、陰謀集團 Cabal 的結構與血脈</h2><span class="cnt">THE CABAL</span></div>
+
+<div class="sp">
+<h3>不是「光明會」,是「沉迷神秘學的辛迪加犯罪集團」</h3>
+<ul>
+<li>CG 不喜歡「光明會 Illuminati」一詞,稱他們是「沉迷各種神秘學的辛迪加犯罪集團(secret Earth government syndicates)」;他們追溯到前基督教的異教部落(凱爾特、德魯伊等),視自己如地上的樹、王朝如過眼雲煙。<span class="who">柯里</span><span class="src">S02E06</span><span class="src">S03E02</span></li>
+<li>0.01% 彼此不睦卻能合作控制地球——這正是陰謀集團的劇本(不到 1% 卻能控制 99%)。<span class="who">柯里</span><span class="src">S04E07</span><span class="src">S04E10</span></li>
+<li>德國祕密社團(圖勒會 Thule、黑太陽會 Order of the Black Sun、維利會 Vril Society 等)「總是掌控金錢與企業」,滲透但不完全掌控政府;成員自幼養成、視社團為家人,叛離者「會去推雛菊(被殺)」,靠「胡蘿蔔與棍子」維繫。<span class="who">柯里</span><span class="src">S02E05</span><span class="src">S02E06</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>前亞當人血脈與「君權神授」圖謀</h3>
+<div class="narrator"><span>主述</span>陰謀集團自稱血脈源自地球之外的「前亞當人 Pre-Adamites」,藉此主張統治正當性。</div>
+<ul>
+<li>「Sigmund」(白山羊鬍 MIC 長官)證實:南極冰棚下發現多座古城廢墟與他稱為「前亞當人」的存有——細長身形、長頭顱,顯然不是設計來承受地球氣壓重力的;他們約 5.5~6.5 萬年前抵地球,來自太陽系內一顆不再宜居的行星;南極某次災難使其閃凍、逾 1 萬年無法進入古城。<span class="who">柯里</span><span class="src">S06E16</span></li>
+<li>陰謀集團/光明會血脈追溯自前亞當人,想把自己基因連到他們、把前亞當人立為「神」、自居「半神 demi-gods」,取得「君權神授(divine right of kings)」與外星血脈正當性。<span class="who">柯里</span><span class="src">S07E08</span><span class="src">S07E19</span><span class="src">S08E04</span></li>
+<li>南極要找的是一份回溯到行星爆炸之前的「多代血脈名單」歷史文件——前亞當人社會一切依血脈定階級,故卷軸對他們極重要。Anshar 曾帶 CG 去南極圖書館,看著卷軸被取走以破壞陰謀集團的君權神授操作。<span class="who">柯里</span><span class="src">S07E19</span></li>
+<li>前亞當人中有兩條被視為皇室的血脈,互相競爭資源與對地球某些金融系統的控制;另有兩支王室分別在中南美洲與亞洲/歐洲,約 1.28 萬年前災變後彼此失聯。DW 連結《以諾書》——200 名墮天使墜地成巨人、食人、敵視人類、最終被大洪水審判。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S06E16</span><span class="src">S07E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>「200 人委員會」與最高層介面</h3>
+<ul>
+<li>陰謀集團/秘密地球辛迪加最有權力、掌控金融體系者是「200 人委員會(Committee of 200)」,由全球金融菁英類人物組成;他們抱持類納粹的基因純化意識形態,視一般人為「polluted worthless bloodline」「useless eaters」「sheeple」。<span class="who">柯里</span><span class="src">S02E16</span><span class="src">S03E03</span></li>
+<li>地球上龍族的主要人類介面沒有單一個人,但「200 人議會(Council of 200)」做多數對接——談最高層祕密結社的「帕拉狄安儀式(Palladian Rite)」(目標成為運作陰謀集團的祕密力量之「手套」);能接觸龍族皇族的主體就是 200 人議會。<span class="who">柯里</span><span class="src">S10E13</span></li>
+<li>ES 版本:真正的菁英不是我們以為知道名字的那些人;他們也是傀儡,人人手上都有別人的把柄;「深層政府」是「有自身議程、可能也受更高力量影響的大企業」。<span class="who">史密斯</span><span class="src">S11E04</span><span class="src">S12E30</span></li>
+<li>ES 預言將有「銀河法庭」會議,帶這顆行星的 5 名領袖去問責;但巨型螢幕會投射出是「300 家大企業(300 major corporations)」該為世界領袖的所作所為負責,於是回去抓他們。<span class="who">史密斯</span><span class="src">S10E11</span><span class="src">S12E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>被放逐者 The Banished:內部地球人滲透權勢家族</h3>
+<ul>
+<li>Ka'Aree 說有一群「被放逐者(Banished)」:來自各內部地球團體、因以違背其文化/條約的方式與人類互動而被放逐到地表;他們在人類文化中尋求權力位置、與地表人通婚已數千年,已通婚進入權勢家族——與陰謀集團有關。<span class="who">柯里</span><span class="src">S06E11</span></li>
+<li>那名旅館的金髮藍眼女子「Marra」即被放逐者,意圖不正闖入 CG 家,被 Anshar 介入押走、置入停滯。<span class="who">柯里</span><span class="src">S06E11</span><span class="src">S06E16</span><span class="src">S07E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>德拉科/AI 對陰謀集團的控制與「業力連結」</h3>
+<ul>
+<li>德拉科聯盟「似乎正是 AI 先知、與此 AI 並肩工作」;解剖較高階德拉科發現「體內滿是 AI(nanites)」。德拉科一直告訴陰謀集團他們是金字塔頂,但其上還有一個德拉科非常害怕的「超維度霸主(extradimensional overlord)」。<span class="who">柯里</span><span class="src">S02E15</span><span class="src">S02E16</span></li>
+<li>JR 版本:陰謀集團成員與德拉科有「業力連結」與「能量交換」,像毒癮般依賴(雖對他們毫無益處),除非德拉科完全離開否則某些人永遠不得自由;陰謀集團世代被困、從受孕起就是這套圈套的一部分。<span class="who">萊斯</span><span class="src">S12E23</span></li>
+<li>JW 朗讀《翡翠石板》中「蛇首者以人形混居人間、屠殺王國首領取其形統治人類、唯有聲音能見其真容」的段落,JR 認為精準描述了德拉科接管權位者的手法。<span class="who">萊斯</span><span class="src">S12E23</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>「混亂中生秩序」與帝國建構</h3>
+<ul>
+<li>「混亂中生秩序(order out of chaos / ordo ab chao,雙頭鷹徽記)」是這些人的宗教信仰,遠早於羅馬;他們認為宇宙起於大混亂、之後生秩序,故用混亂達成目的、轉移注意(如被刻意設計的敘利亞難民危機)。<span class="who">柯里</span><span class="src">S09E04</span></li>
+<li>帝國建構(羅馬、西班牙、鄂圖曼、大英)是目標的一部分:各群想擴張權力、把敵人趕出地球或趕入地下——其中一種情境就是「新世界秩序(New World Order)」。為何要控制每個國家:在能後勤控制整顆行星前,要讓全球互相敵對。<span class="who">柯里</span><span class="src">S09E04</span></li>
+<li>每一場戰爭、衝突都被「看不見的引導力量」(已演化成今日的菁英/秘密地球政府)從兩邊操縱;將領通常不知情(只接到目標),命令來自背後的祭司階級/王族。<span class="who">柯里</span><span class="src">S09E04</span></li>
+<li>陰謀集團想讓西方「去工業化」——把工作與產能移到第三世界,削弱那個「打贏兩次世界大戰、若覺醒會再造成麻煩」的工業國(美國)。<span class="who">柯里</span><span class="src">S09E04</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section class="cat" id="c3">
+<div class="cat-h"><span class="bar"></span><h2>三、三大同盟、金融戰與隱形三戰</h2><span class="cnt">ALLIANCES · FINANCIAL WAR</span></div>
+
+<div class="sp">
+<h3>三個「同盟」的由來</h3>
+<div class="narrator"><span>主述</span>CG 把對抗陰謀集團的力量分為地球同盟、太空/SSP 同盟兩支(另有球體存有聯盟在背後)。</div>
+<ul>
+<li>(1)地球同盟 Earth Alliance——議程是建立新金融系統、扳倒陰謀集團;(2)太空同盟/SSP 同盟——起初主要是 Solar Warden 派系,後來其他 SSP 的叛逃者帶著飛船、情報加入。<span class="who">柯里</span><span class="src">S01E01</span></li>
+<li>地球同盟是陰謀集團數百年來樹立的所有敵人、被疏遠的每個團體鬆散聚合而成:各有文化舊痛與不同的「報復議程」,卻為「打敗陰謀集團」這個共同目標放下歧見——正是抄陰謀集團的劇本。<span class="who">柯里</span><span class="src">S04E10</span><span class="src">S05E09</span></li>
+<li>SSP 同盟由各計畫脫離者組成(含前 ICC、MIC 資產),「並非天使」——原本替陰謀集團工作、是叛逃者,雖已翻新一頁,仍受創、仍有一定比例「服務自我」,來自「壞、更壞、更更壞」的群體;球體存有因此不願直接打交道、只透過 CG 與 Gonzales。<span class="who">柯里</span><span class="src">S02E12</span></li>
+<li>JR 版本:所謂「同盟」很大部分是被陰謀集團獵殺或背叛、為求生存而結合的群體;也含一些有錢但「絕非純潔」、曾參與陰謀集團計畫、為自保才加入的家族。<span class="who">萊斯</span><span class="src">S12E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>金融戰:BRICS、AIIB 與新金融系統</h3>
+<ul>
+<li>BRICS(巴西、俄、印、中、南非)+ AIIB(亞洲基礎設施投資銀行,2014 宣布)已建新世界銀行/金融體系與西方(陰謀集團)競爭;30 多個西方大國跳入 AIIB。<span class="who">柯里</span><span class="src">S03E08</span><span class="src">S04E10</span></li>
+<li>中國長期買進陰謀集團國家的債務與天然資源(官方 2~3 兆、非官方 4 兆美元美債),握有可摧毀美國經濟的牌卻不願用(因其經濟靠美國買產品);只是在世界銀行與 IMF 沒拿到對等投票權。<span class="who">柯里</span><span class="src">S03E08</span><span class="src">S04E10</span></li>
+<li>金庫裡「幾乎沒剩黃金」(大銀行瘋買白銀);Fort Knox 同樣;德國要回 3000 公噸黃金被悄悄告知「沒有/也許 100 年後還」。<span class="who">柯里</span><span class="src">S04E10</span></li>
+<li>西方有過它的「100 年聯準會體系」,東方(中國)想要自己的 100 年「更公平」新金融體系(仍是巴比倫金錢魔法系統,只是由東方主導、基於 GDP 而非一國積累財富對付他國)。中國正大舉投資南美、非洲。<span class="who">柯里</span><span class="src">S03E08</span><span class="src">S08E06</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>禧年(Jubilee)、貨幣重估與財富歸零</h3>
+<ul>
+<li>公開討論債務赦免/禧年(jubilee)、依年齡與扶養人數發錢、貨幣重估(revaluation,窮國想全部等值,有的要按 GDP 滑動);受害較深的國家獲較大補助以拉到同等水平。<span class="who">柯里</span><span class="src">S04E10</span><span class="src">S06E14</span></li>
+<li>一些百萬/億萬富翁的財富可能被抹除、回到較平等的起跑線;新財政系統可能類似 IMF 的特別提款權(SDR),貨幣丟進一籃子按 GDP 加權。<span class="who">柯里</span><span class="src">S06E11</span><span class="src">S06E14</span></li>
+<li>美國已悄悄(耶誕期間)立法,金融危機時政府可沒收銀行存款;CG 說存款在法律上本就歸銀行所有(他 2008 在聯準會工作時被告知)。<span class="who">柯里</span><span class="src">S04E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>「隱形第三次世界大戰」:駭客、代理軍、氣象與地震武器</h3>
+<ul>
+<li>Gonzales 稱當前陰謀集團與同盟之鬥爭未來會被視為「隱形第三次世界大戰(stealth World War III)」:透過駭客/網路戰、代理軍(陰謀集團創造的 ISIS、al-Qaeda)、金融戰進行,隨時可能升為熱戰。CG 確認 ISIS 非伊斯蘭,是陰謀集團製造的代理軍。<span class="who">柯里</span><span class="src">S03E08</span><span class="src">S04E10</span></li>
+<li>氣象/災害武器:雙方都有氣象改造,曾公開互打(改氣流抽乾對方產糧區、或以颶風暴雨淹之);智利成為南美同盟總部當天即發生大地震(西方媒體沒報)。<span class="who">柯里</span><span class="src">S04E10</span></li>
+<li>地震武器:美國海軍多年前發現海底超級火山(類似黃石),陰謀集團威脅在其中三座放了能引爆的能量裝置——像鬧脾氣的小孩「拿不到就掀桌」。<span class="who">柯里</span><span class="src">S04E10</span></li>
+<li>同盟接管 HAARP 設施並關閉後,大氣「彈性回彈」造成加州六年大旱突然結束、出現「大氣河」暴雨與北極渦旋;陰謀集團過去用 HAARP 對加州製造乾旱,是對美國糧倉的攻擊。<span class="who">柯里</span><span class="src">S07E10</span></li>
+<li>颶風被「導引」而非製造:用衛星發射 maser(聚焦微波束)到風暴附近海面加熱海水,把風暴引到想要的方向;這些風暴更主要是「分散注意」,讓忙於安排逮捕的軍方被調去救災。<span class="who">柯里</span><span class="src">S08E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>陰謀集團大舉外逃地下基地</h3>
+<ul>
+<li>陰謀集團團體經巴西、阿根廷地下基地、灌滿水的裂隙一路通到南極,想躲避某個他們預期會發生的「事件」(太陽致命一擊/巨大電漿波)。<span class="who">柯里</span><span class="src">S05E08</span><span class="src">S06E01</span></li>
+<li>最先進的地下基地之一建在巴西(被稱「Zazi 基地」——德裔納粹餘黨移到南美後改用商業名稱),六個多月來大量貨櫃、補給、人員、家人移入。<span class="who">柯里</span><span class="src">S09E05</span><span class="src">S12E03</span></li>
+<li>陰謀集團知道自建的 FEMA 營區會變成自己的居所,想躲地下「蓋上蓋子」等地表混亂後再回來接管;但 CG:憑現有科技,地球上、太陽系內都無處可躲,同盟能依入口能量阻力追蹤你跑了多遠。<span class="who">柯里</span><span class="src">S12E03</span></li>
+<li>南非部分地區已交給一個「星球外團體」,官方上「不再屬於我們」。<span class="who">柯里</span><span class="src">S12E03</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section class="cat" id="c4">
+<div class="cat-h"><span class="bar"></span><h2>四、大規模逮捕、審判與軍事政變</h2><span class="cnt">MASS ARRESTS · TRIBUNALS</span></div>
+
+<div class="sp">
+<h3>為何拖這麼久:陰謀集團要「逮捕自己」</h3>
+<ul>
+<li>陰謀集團用「機率未來 AI 演算法」偵測機率未來而避開逮捕;過去多數逮捕傳聞只是炒作,因為司法部與國會都被陰謀集團控制,沒人會執行逮捕命令。<span class="who">柯里</span><span class="src">S08E04</span></li>
+<li>近期此 AI 技術對他們不再可靠(可能因更多善良者聚焦正面未來,或因曼德拉效應/時間本質改變);同盟近年加強行動,深層政府轉為守勢。<span class="who">柯里</span><span class="src">S07E28</span><span class="src">S08E04</span></li>
+<li>大規模逮捕等於要陰謀集團「逮捕自己」(他們控制了 DoD 與各政府);據最新簡報終於到了能執行的位置,正辯論多少公開、多少走秘密法庭。<span class="who">柯里</span><span class="src">S12E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>密封起訴書、秘密法庭與「斬首式」逮捕</h3>
+<ul>
+<li>會有逮捕與起訴,範圍視談判而定(會先抓最痛恨的);同盟內部不想看到「人被吊在路燈上」。<span class="who">柯里</span><span class="src">S04E10</span></li>
+<li>法庭(tribunals)原計畫秘密進行(因也要審同盟內部分人),但會立即外洩、最終會上有線新聞台公開轉播(如二戰後紐倫堡);要「斬首式」一次把所有人帶到法官面前,不能零碎進行。許多陰謀集團人已被軟禁(在自家豪宅、門外有武裝警衛)。<span class="who">柯里</span><span class="src">S07E10</span></li>
+<li>網路盛傳多達 13,000 份「密封起訴書(sealed indictments)」;密封是為不讓共犯得知細節。會有相當部分可見,但「危害人類罪」的指控會改成「貪腐」,因人們難以接受人口販運等可怕事實,要慢慢釋出。<span class="who">柯里</span><span class="src">S12E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>特種部隊蒐證與地下基地清剿</h3>
+<ul>
+<li>選前不同特種部隊單元被部署到全美各地,監控深層政府組織與資產;這些士兵曾被派到科索沃等地蒐集危害人類罪證據,如今在國內辨識所有負面團體與其黑暗祕密社團關聯,等待逮捕的放行命令。<span class="who">柯里</span><span class="src">S08E04</span></li>
+<li>地下戰爭:選後 FEMA 控制的基地被令移交卻拒絕,於是派陸戰隊切穿混凝土鋼筋、給一次投降機會,否則奉命殲滅(陸戰隊員未被簡報非地球存有,突然要與爬蟲類交戰,心理難以承受);義大利、阿根廷外海等怪異地震都是大規模清剿地下基地的一環。<span class="who">柯里</span><span class="src">S07E10</span></li>
+<li>同盟是「受損的人類」、不是天降天使;多被迫為陰謀集團工作而心懷怨恨,如今對陰謀集團也不留情、奉命「清巢」;此為多年行動,恰在大選時收尾。<span class="who">柯里</span><span class="src">S07E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>影子內戰僵局與軍事政變可能</h3>
+<ul>
+<li>影子內戰陷僵局:深層政府(職業官僚)+ 情報界(約 80% 屬陰謀集團)對抗軍方一派與司法部一派(約 50/50);試圖在美國發動「不流血政變」幾無進展。<span class="who">柯里</span><span class="src">S07E27</span></li>
+<li>軍方派認為無法以不流血或合法方式過渡,開始討論在美國與其他幾個西方國家發動全面軍事政變——可能像歷史上政變:DC 街頭出現坦克、政府人員被令留在住處、媒體與銀行系統被接管、可能斷電斷通訊作為轉移戰術。<span class="who">柯里</span><span class="src">S07E27</span><span class="src">S08E04</span></li>
+<li>CG 呼籲與其等政變,不如民眾自我賦權、要求釋放技術、要求各國政府合作、清除腐敗。<span class="who">柯里</span><span class="src">S07E27</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>逮捕的徵兆:El Chapo、老布希與航母回港</h3>
+<ul>
+<li>El Chapo(墨西哥販毒集團首腦)選舉就職前被引渡美國,CG 認為是要他供出涉毒情報機構行動、指認名單(搭配抓到帶 CIA 證件走私古柯鹼的人),為法庭做準備。<span class="who">柯里</span><span class="src">S07E10</span></li>
+<li>老布希夫婦就職前病危(高壓所致),陰謀集團人因眼看資產消失而極度焦慮;多數航母被召回港,因國防部要大改組、換指揮官,重新整補裝上「本不該讓我們知道 100 年」的科技。<span class="who">柯里</span><span class="src">S07E10</span></li>
+<li>CG:「我們還有幾場戰役,但顯然我們已贏得戰爭、贏得自由。」<span class="who">柯里</span><span class="src">S12E03</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 5 ============ -->
+<section class="cat" id="c5">
+<div class="cat-h"><span class="bar"></span><h2>五、保密與區隔化體系</h2><span class="cnt">SECRECY · COMPARTMENTALIZATION</span></div>
+
+<div class="sp">
+<h3>「謊言在每一層都不同」</h3>
+<div class="narrator"><span>主述</span>Hoagland 頂級內部人名言「The lie is different at every level」——這是他們分隔保密的核心。</div>
+<ul>
+<li>「區隔化」的核心謊言:每個層級的人都被告知「你在金字塔頂端、是地球的矛尖、最被信任、知道得比任何人多」,每個區隔的人都被講同樣的話而且都信以為真——這是讓反對者閉嘴、用「餅乾/獎賞」把他們安置到別的衛星去的完美方法。<span class="who">柯里</span><span class="src">S01E08</span></li>
+<li>連 CG 所在的船上都模組化區隔——他與某組科學家工作時,完全不知一牆之隔的另一組在做什麼;會給特別存取計畫(SAP)與一般機密計畫「同名」以製造混淆;多數計畫派系不知有其他派系存在(見到別的飛船會被告知是自己計畫的概念機、不准談)。<span class="who">柯里</span><span class="src">S05E12</span></li>
+<li>軍方各派認知依所屬計畫而異:被告知「天上的東西都是我們的」;有的信羅斯威爾為真、4 個 ET 群來訪,有的信 56 或 58 群。低階軍方(尤空軍太空司令部型)堅信太空中追蹤到的一切都是人造、自認站在最高金字塔頂。<span class="who">柯里</span><span class="src">S02E12</span></li>
+<li>Sigmund 自我認知最大衝擊:綁架審問 CG 後發現自己被大幅欺騙——某次簡報說「你是說我們被告知自己是矛尖,其實只是他X的海岸防衛隊?」<span class="who">柯里</span><span class="src">S08E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>「共同犯罪」與封口威嚇</h3>
+<ul>
+<li>「共同犯罪(common criminality)」是任何集團/辛迪加的信條:讓你做不可說之事、深度牽連,一旦發聲就自證其罪。SSP 同盟中每個人都做過可怕之事,故都「不乾淨」——這是秘密地球政府確保 SSP 不被揭發的方式之一。<span class="who">柯里</span><span class="src">S02E12</span></li>
+<li>所有影像在到我們手上前都先經 NSA;NASA 在 1957 章程中被定為可將「危害國安資訊」機密化的國防機構。<span class="who">柯里</span><span class="src">S02E12</span><span class="src">S02E13</span></li>
+<li>Vault 7 洩漏:CIA 內無人可在同一團隊共事超過三年,以防形成派系(勾結)——這是他們防止對抗他們的協調行動(同盟成長)的手法。<span class="who">柯里</span><span class="src">S07E21</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>共濟會、祕密結社與「知識的守護者」</h3>
+<ul>
+<li>最敏感計畫會從祕密社團拉人(已通過效忠/洗腦/保密考驗);阿波羅登月者幾乎都是共濟會員(Freemasons)、在月面插共濟會旗;不是共濟會員的太空人不會知道同樣資訊。<span class="who">柯里</span><span class="src">S06E17</span></li>
+<li>WT 的父親是 33 級共濟會員、舅舅(33 級共濟會員)散盡家財挖金字塔解讀象形文字;共濟會是「知識的守護者」、民間太空計畫人員都須是共濟會員(洩密罰則是死),這些結社追溯自數千年前來地球的非地球者血脈。<span class="who">湯普金斯</span><span class="src">S07E14</span></li>
+<li>WT 講 Forrestal 領導一個「校友(Alumni)」群、是「校友的頂點」;這個美國海軍太空系統(藏在道格拉斯祕密智囊團裡)「控制全國一切,連總統、頂級軍方、國會議員都不在內」。CG 確認「Alumni」是軍中對光明會的別稱、WT 鏡頭前迴避說出的代號就是 MJ-12。<span class="who">湯普金斯</span><span class="who">柯里</span><span class="src">S05E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>暗殺名單與封口:Forrestal 之死</h3>
+<ul>
+<li>海軍部長/首任國防部長 James Forrestal 寫了 Rico Botta 的任務,後被說成精神崩潰、送華府醫院頂樓「從窗戶推出去(謀殺)」;CG:這祕密在他們眼中高於核彈,連總統、參議員都能「像吹熄蠟燭般做掉」;智慧墊上有被「以國安之名除掉」的名單,Forrestal 名列其中。<span class="who">湯普金斯</span><span class="who">柯里</span><span class="src">S05E10</span><span class="src">S05E12</span></li>
+<li>Rico Botta 的副官甚至不夠格接觸這些情報;「會議中途要 5、10 人離場(因不夠格聽其餘部分)」的事 CG 常見。<span class="who">柯里</span><span class="src">S05E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>安全等級的代號與「臂帶」</h3>
+<ul>
+<li>ES 的安全等級制:不外顯的「臂帶(band)」標記等級;每四個月通過報告就「升一級」;字母+數字如 Alpha 22(他做到 A22),字母只代表進來時的專案單位;在北美是標準制(歐洲、澳洲另有系統)。若被人知道你的等級可被誘騙說出機密(發生過,當事人「沒能活下來」)。<span class="who">史密斯</span><span class="src">S11E05</span></li>
+<li>一切看安全等級不看軍階——上尉可有與將軍同等權限,中士可有與上校同等權限;用的是知識與教育基礎,不是軍階系統。<span class="who">史密斯</span><span class="src">S11E06</span></li>
+<li>進這些專案的人多半是終身職(簽大量 NDA、受威脅);犯錯的兩大致命項:(1)走進不該去的區域(你全程每秒被追蹤);(2)試圖把不該帶出地表的小物件帶出——當場處決。<span class="who">史密斯</span><span class="src">S11E02</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section class="cat" id="c6">
+<div class="cat-h"><span class="bar"></span><h2>六、假消息、網軍與人格變形者</h2><span class="cnt">DISINFO · TROLLS · METAMORPHS</span></div>
+
+<div class="sp">
+<h3>政府網軍資料中心(CG 親手協助設立)</h3>
+<div class="narrator"><span>主述</span>CG 身為 IT,親手協助建置了一個政府網軍(troll)資料中心。</div>
+<ul>
+<li>建置虛擬資料中心:每個工位一台跑 VMWare 的電腦接六個螢幕,操作者拉出位於世界各地伺服器上的虛擬機,使 IP 顯示為各地;每人有十多個有完整背景故事與社群媒體的假人格。<span class="who">柯里</span><span class="src">S02E17</span><span class="src">S04E04</span></li>
+<li>操作者多是「人格變形者型」——社會病態者、極擅長說謊與滲透。任務:巡邏找資訊;對指定的秘傳論壇用三四個帳號登入製造混亂、自己跟自己吵架,看起來像三四個問題人物在爭執;放假資訊攪渾水、把人拖入無休止的「循環辯論」激怒對方使其不再回來;甚至騷擾、跟蹤目標、鎖定上報。<span class="who">柯里</span><span class="src">S04E04</span></li>
+<li>應對之道:意識到此現象;「不要回應、無視」(這最令他們抓狂),別陷入循環辯論;多在現實世界培養真正友誼。<span class="who">柯里</span><span class="src">S04E04</span></li>
+</ul>
+<blockquote><p>DW 佐證:Snowden 文件(Glenn Greenwald 在 The Intercept 公布)含這類行動的流程圖、攻擊計畫,以及一張動態模糊到像飛碟的海鷗照片(暗示 UFO 論壇是滲透目標)。<span class="src">S04E04</span></p></blockquote>
+</div>
+
+<div class="sp">
+<h3>UFO 學界被滲透到「爐火純青」</h3>
+<ul>
+<li>UFO 學自 1950 年代起就被情報組織滲透到「爐火純青」:用網站、論壇發文者、被自己線人滲透的既有研究者設「蜜罐(honeypot)」,引出真正洩密者再行政府獵殺;社群資訊「極度被控制與操縱」,多數自認研究多年的人因自尊而無法承認被滲透者欺騙。<span class="who">柯里</span><span class="src">S04E04</span></li>
+<li>John Mack(哈佛精神科醫師)報告的多為良性/靈性外星接觸,卻在 UFO 熱起時「滑冰跌倒撞頭身亡」;其後幾乎所有綁架研究者都偏向「綁架只有恐怖負面」的敘事——某些一致散布負面綁架資訊者可能拿政府錢。<span class="who">柯里</span><span class="src">S04E04</span></li>
+<li>「地平論 flat Earth」敘事據稱直接來自 NASA,用以徹底抹黑真相社群;一大目標是用內鬥與強烈信念差異把秘傳/UFO 社群盡量碎裂化。<span class="who">柯里</span><span class="src">S04E09</span></li>
+<li>線上「蜜罐陷阱」:用個性測驗、交友網站、家世/IQ 測驗等誘人填答以側寫;會潛伏 Above Top Secret、UFO 等論壇找對象。<span class="who">柯里</span><span class="src">S02E17</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>心理側寫:16 種人格與「脆弱性分析」</h3>
+<ul>
+<li>最重要工具是「心理側寫」:16 種主要人格類型(類似 MMPI)、神經語言程式學(NLP)、社群媒體/電視/網路/醫療紀錄(連用藥都查,方便調換你的藥),由多位精神科醫師彙整成可操作的側寫:預測此人在某情境會如何反應,或要他如何反應該設計什麼情境。<span class="who">柯里</span><span class="src">S04E04</span></li>
+<li>含「脆弱性分析」:打哪個按鈕能擊垮、奪錢、毀關係、令家人反目、在商場對其車下手等;語氣是臨床、科學、就事論事。<span class="who">柯里</span><span class="src">S04E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>人格變形者計畫(Personality Metamorph Program)</h3>
+<div class="narrator"><span>主述</span>CG 稱這是陰謀集團最敏感的祕密之一,也是史上最成功的滲透計畫之一。</div>
+<ul>
+<li>篩選孩童時依測驗分流,挑出社會病態者(sociopath)+ 強迫性說謊者 + 具直覺共感(IE)能力者,從小盡早辨識,在青少年到青年期訓練成「地球上最強的操縱者與滲透者」。這些孩子太厲害,連訓練者都反被操縱,於是引入直覺共感者隔玻璃戴耳機協助偵測欺騙。<span class="who">柯里</span><span class="src">S04E09</span></li>
+<li>社會病態者腦額葉幾乎無電化學活動(因反覆心理創傷的解離,或天生生化失衡);特徵含「無懼支配」、追求刺激對抗無聊;統計約 4% 男性、2% 女性,網軍約 5~8%(因匿名感而壯膽)。<span class="who">柯里</span><span class="src">S04E09</span></li>
+<li>「變形者」之名:能瞬間評估情境、徹底改變人格、編背景故事(例:把穿粉紅 polo 的乖乖牌丟到最兇的飛車黨酒吧,他夜終能載著女人騎機車離開)。被用於滲透軍方、情報、金融、各級政府、經濟各部門以及 UFO 社群。<span class="who">柯里</span><span class="src">S04E09</span></li>
+<li>公眾人物會被安排「處理者(handler)」而不自知——以為交了個極有魅力、給他洞見的新朋友;變形者常在「把對方握在掌心的頂點」背叛:讓目標完全卸防、吐露祕密,再丟炸彈或抽身讓對方經歷幻滅與戒斷。<span class="who">柯里</span><span class="src">S04E09</span></li>
+<li>防禦:若新認識的人「巧合地」跟你喜歡同款冷門飲料、同個沒人聽過的樂團、你開始「上癮般」想跟他相處——就該警覺。其最大弱點是「狂妄(hubris)」:總自認是房裡最聰明的人;若你學會「多聽少說、相信內在那股不對勁的感覺」,較能察覺。<span class="who">柯里</span><span class="src">S04E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>對柯里與整個電視網的協調抹黑</h3>
+<ul>
+<li>CG 半年前就被告知:任何與「海軍版秘密太空計畫」敘事相關的人都必須被抹黑摧毀,因為對方想讓「空軍版」敘事出檯被揭露;對方是被「啟動」的、毫不擔心被告誹謗,因為這是一場大型行動。<span class="who">柯里</span><span class="src">S08E04</span></li>
+<li>已成功的操作:把 SSP 主題「超級士兵化(super soldier)」——讓正當故事被一堆自稱超級士兵者淹沒,使研究者一聽就嗤之以鼻(CG 在 Max Spiers 自稱超級士兵者「吐黑膠後暴斃」上頭條之前就說了);藉此嚇阻未來吹哨者。<span class="who">柯里</span><span class="src">S06E11</span></li>
+<li>確有 UFO 界知名人物實際在祕密領薪、扮演雙重間諜。<span class="who">柯里</span><span class="src">S10E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>假情報是「合約的一部分」(ES 版)</h3>
+<ul>
+<li>ES 第一次被告知假情報是:他經手處理的存在中「約有 3% 是假的」,而他不會知道哪些是假、也不准問——用來測試你是否守口如瓶、並監控其他計畫成員(例:在飛船上放個不協調的東西看你怎麼反應)。「你不會收到假情報,但你會被暴露在假情報中」。<span class="who">史密斯</span><span class="src">S09E07</span><span class="src">S12E02</span></li>
+<li>常見手法:讓你在約 10 公尺外恰好看到兩名警衛押著一隻「爬蟲類模樣的生物」走過走廊,可能只是穿戲服的人,目的是若你日後叛逃爆料,別人會覺得你「有點瘋」。<span class="who">史密斯</span><span class="src">S12E02</span></li>
+<li>針對大眾的假情報:羅斯威爾墜機就是經典——先讓真相文件流出,再用「氣象氣球」蓋過去;有專人受雇撰寫故事線,並提前思考 5、10、15、20 年。例:《揭露計畫》記者會後幾個月就發生 911,把注意力從太空人公開談論轉移到「對抗恐怖分子」。<span class="who">史密斯</span><span class="src">S12E02</span></li>
+<li>ES 警告:「你真的不能相信任何人說的、不能相信你讀到的、不能相信你看到的」——衛星可在你面前投射出帶陰影、反射光線的影像,你會百分百以為那是真的。<span class="who">史密斯</span><span class="src">S12E02</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section class="cat" id="c7">
+<div class="cat-h"><span class="bar"></span><h2>七、媒體操控、好萊塢與軟揭露</h2><span class="cnt">MEDIA · HOLLYWOOD</span></div>
+
+<div class="sp">
+<h3>集體意識被當武器:「黑魔法」的真相</h3>
+<ul>
+<li>當權者深知意識的力量,用媒體在大眾意識植入「種子」,之後再透過媒體、假旗 false flag 引發事件,讓大眾以情緒給它能量、透過集體意識「共創」出那情況——這就是他們「黑魔法」的祕密,其實是盜用我們的共創意識。<span class="who">柯里</span><span class="src">S01E02</span><span class="src">S01E05</span></li>
+<li>媒體只報負面(if it bleeds it leads)是設計好的——先植入種子、再用假旗/電影引爆;他們不想我們知道共創意識能力,因為那是奴役我們的工具。<span class="who">柯里</span><span class="src">S01E05</span></li>
+<li>陰謀集團的巫術(伊麗莎白時代占星家 John Dee 提出)必須「藏在明處」、把要做的事告訴我們——公開後種入我們的共同創造意識,再用電影、電視、假旗讓我們以情緒催化那些種子使其成真;也因此他們其實很脆弱、一直在向我們揭露議程。<span class="who">柯里</span><span class="src">S08E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>電視/網路是 AI 與心智控制的關鍵灘頭</h3>
+<ul>
+<li>情報界最大利多就是電視問世——可控制每個家庭的「垂直、水平、聲音」;CG 證實「電視即使沒開也對家中人有影響」。DW 自述兩次「被一股力量拉去看黃金時段電視」與百萬美元廣告。<span class="who">柯里</span><span class="src">S02E15</span></li>
+<li>ES 確認有「潛意識訊息(subliminals)」:他曾參與 Los Alamos 一個處理「頻率控制、心智控制、細胞頻率控制」使人憤怒或悲傷的計畫;「除非你看電視、有 iPhone、聽廣播,否則沒有催眠或心智控制」。<span class="who">史密斯</span><span class="src">S09E08</span></li>
+<li>媒體控制世界、與全球主義犯罪集團勾結;媒體在事後可能換新指令、甚至全頻道被接管一段時間給大眾「重新教育真實歷史」。<span class="who">柯里</span><span class="who">史密斯</span><span class="src">S04E10</span><span class="src">S09E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>好萊塢:75% 經費來自五角大廈後門</h3>
+<ul>
+<li>好萊塢 75% 製作經費來自五角大廈後門公司(Benjamin Fulford 說);國防部大量資金用於宣傳;Sony 被駭證實 DARPA 等向影視提供點子。<span class="who">柯里</span><span class="src">S06E08</span></li>
+<li>把真實飛行器放進《世界大戰》當敵人是大眾心智控制(看到類似船在電影中毀城,真實看到就會逃);拍《Battle of Los Angeles》電影可能是把真實事件 sci-fi 化讓人翻白眼。<span class="who">柯里</span><span class="src">S06E08</span></li>
+<li>同盟近期注資揭露陰謀集團(《Iron Man 3》《Captain America: Winter Soldier》),好萊塢自其誕生即被陰謀集團控制。<span class="who">柯里</span><span class="src">S07E26</span></li>
+<li>《惡靈古堡》(Resident Evil)極寫實展示真實保安細節、實驗室設置、地下城「蜂巢」;《陰屍路》《移動迷宮》等用以製造對(突變混種/病毒)的恐懼。<span class="who">史密斯</span><span class="src">S10E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>科幻影集作為「軟揭露」載具</h3>
+<ul>
+<li>海軍 SSP 要角 Admiral Leslie Stevens 之子 Leslie Stevens IV 是《The Outer Limits》製作人;1964/65 Gene Roddenberry 旁聽該劇取經、達協議獨得功勞,後創《Star Trek》——行星聯邦/瓦肯人(對應北歐人)/克林貢(對應爬蟲類)/基因強化人(對應納粹)與真實派系驚人對應,用大量海軍術語。海軍想藉軟揭露在 1980 年代初部署戰鬥群時讓大眾支持。<span class="who">沙拉</span><span class="src">S07E11</span></li>
+<li>《Battlestar Galactica》核心(AI 意圖消滅其人類創造者)呼應 CG 講的 AI 威脅;《Stargate SG1》的 Replicators(基於 nanites)、《Star Trek: TNG》的 Borg、Cylons 滲透者連自己都不知是 AI——都是「揭露載具」。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S02E15</span><span class="src">S07E11</span></li>
+<li>好萊塢電影(如《復仇者聯盟》的飛行航空母艦)其實在公開展示 MIC 這群人實際擁有的硬體,替大眾預作心理準備。<span class="who">柯里</span><span class="src">S07E17</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>NASA「否認」也是播種、Operation Northwoods 與危機演員</h3>
+<ul>
+<li>NASA 近期公開聲明否認火星上有奴工——CG 覺得很有意思:NASA 為何要回應?同理是在用「否認」給意識播種(讓人想「萬一火星真有奴工呢?」)。<span class="who">柯里</span><span class="src">S08E13</span></li>
+<li>Operation Northwoods(諾斯伍德行動,已正式解密):甘迺迪時代由參謀首長聯席會議批准、計畫假造劫持客機嫁禍古巴以製造入侵藉口,用「危機演員(crisis actors,實為 CIA 人員)」假扮受傷或死亡;甘迺迪未批准。CG 證實情報界長期用危機演員。<span class="who">柯里</span><span class="src">S09E04</span></li>
+<li>許多所謂恐攻或天災發生時常有軍演(如 911 當天有五場涉及劫機的軍演);軍演人員作為行動支援,若事情超出計畫就快速進場、媒體封鎖、設法掩蓋;若照計畫就只是「巧合的訓練」。<span class="who">柯里</span><span class="src">S09E04</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 8 ============ -->
+<section class="cat" id="c8">
+<div class="cat-h"><span class="bar"></span><h2>八、心智控制與「上帝之聲」科技</h2><span class="cnt">MIND CONTROL · VOICE OF GOD</span></div>
+
+<div class="sp">
+<h3>古老的創傷式心智控制(從刺客教團到 MKULTRA)</h3>
+<ul>
+<li>「光明會/邪教辛迪加」千年來用藥物、創傷、正負增強做心智控制;用藥物、性虐待與創傷在人幼年製造「分裂人格」、設「觸發詞/門控詞」可把人切回某人格或順從人格、事後無記憶(「滿洲候選人 Manchurian Candidate」式)——可追溯到「刺客教團(Order of the Assassins,用 hashish)」;MKULTRA 的根源即源於這些光明會在自家成員身上做了數百年的東西。<span class="who">柯里</span><span class="src">S04E05</span></li>
+<li>MILAB/MKULTRA 是常被混用的傘狀詞:MKULTRA 本身是發展出眾多技術、被後來數百個計畫沿用的計畫(那些不等於 MKULTRA)。<span class="who">柯里</span><span class="src">S04E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>螢幕記憶與「空白板(blank slating)」</h3>
+<ul>
+<li>手法:先注射「合成東莨菪鹼(scopolamine)+ 其他設計藥物」的雞尾酒,再由人以特定方式催眠式說話;同時做 debrief、植入「觸發詞」鎖定或解鎖資訊,並植入螢幕記憶(例如「今天去自然史博物館」)。多數孩子記憶會保持完整;偏「直覺共感者(IE)」者較難洗。<span class="who">柯里</span><span class="src">S02E17</span></li>
+<li>「20 and Back + blank slating」過程約 3~5% 的人洗不掉;成功者特徵:看起來年輕、「某年齡前老得慢、之後老得很快」、30~40 歲間常出現神經問題。<span class="who">柯里</span><span class="src">S02E12</span></li>
+<li>太空人「從以前到現在常被 blank slate」(連 NASA 太空人也是);Neil Armstrong 迴避公開、酗酒、曾表示「他們都被利用、被騙」。<span class="who">柯里</span><span class="src">S02E13</span></li>
+<li>JR 版本:報到第二天去精神科醫師辦公室建立「基準(baseline)」(他當時不知這其實是為日後「記憶清除 mind wipe」記錄一切細節,房間牆壁天花板有感測器判斷有沒有說謊,每週一次)。如同「科爾特斯燒船」,他們通知士兵家人「此人陣亡」,提供空棺或「複製人」遺體,所以即使想回去也回不去。<span class="who">萊斯</span><span class="src">S12E16</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>上帝之聲科技(Voice of God Technology)</h3>
+<div class="narrator"><span>主述</span>CG 自述其專長在「遠端以科技影響人」的部分。</div>
+<ul>
+<li>一塊像筆電大小的平板裝在支架上、連到接麥克風或預錄音訊的盒子;平板對準目標、聚焦單一人,發信號震動其顱骨與腦部濕組織,使人「在腦中(非經耳朵)聽到聲音或話語」。<span class="who">柯里</span><span class="src">S04E05</span></li>
+<li>另有「資料下載(data download)」功能:由「程序設計者(programmers)」製作場景,給目標完整的視覺、聽覺、嗅覺幻覺;早期僅用極低頻(ELF)、視線可及,新型可從飛機、低軌衛星、無人機使用,可對睡夢中的人(熱訊號鎖定)植入夢境或完整假體驗。<span class="who">柯里</span><span class="src">S04E05</span></li>
+<li>應用:聯絡敵後特工、戰場上讓敵人看到宗教偶像(「阿拉歸來,放下武器投降」)、搭配「藍光束(Blue Beam)」在天空製造三維實體視覺;使群體分裂內鬨、製造對立。<span class="who">柯里</span><span class="src">S04E05</span></li>
+<li>重點:長期使用 data download 功能「絕對會」在本無病史者身上造成偏執型思覺失調;許多自稱在通靈「正面神聖存有」者,可能其實被遙控、傳遞的是各情報機構的宣傳。此技術稱「bioneural interfacing」。<span class="who">柯里</span><span class="src">S04E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>遙視與「遙控影響」武器化</h3>
+<ul>
+<li>遙控影響(remote influencing):可訓練人遠距影響某地人的行為;「科技強化版」用兩片板子接黑盒系統再接天線陣列,當人進入「清醒 theta 狀態」時放大其能力。某些人能遠距讓人心臟停跳、動脈瘤;用多了的人會被「增強」、不用科技也能殺人。<span class="who">柯里</span><span class="src">S05E02</span></li>
+<li>可先做心理剖析找出議員的傾向、嗜好,遠距影響使其做出平常不會做的事、引爆醜聞,使其分心於某法案;巫毒娃娃的關鍵是「目標看到娃娃」——目標的心理會「共同創造」這體驗。<span class="who">柯里</span><span class="src">S05E02</span></li>
+<li>守護設施靠「乙太守衛(those who scatter)」:遙視者一鎖定目標就被打散;CG 童年被教用「反向旋轉的藍色球」把遙視者吸入拉斷,反彈給對方「乙太頭痛」。<span class="who">柯里</span><span class="src">S05E02</span><span class="src">S11E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>監控全球思想的 AI 與生理操控</h3>
+<ul>
+<li>Jacob 說德拉科有龐大 AI 系統監控地球每個人意識:當你想往他們不要的方向想,你會疲倦、分心、想做別的、恐慌發作、突然性慾起;每人有一個記錄所有思想的「檔案」,存於猶他 Bluffdale 的 NSA 設施。<span class="who">威爾科克</span><span class="src">S04E06</span></li>
+<li>MIC 團體用能控制心智與身體自主系統的技術——可加快呼吸、加減心跳、讓你起身走動開門,甚至像遙控機器人般移動你的腿(從非地球存有逆向工程而來、用於綁架)。<span class="who">柯里</span><span class="src">S07E12</span></li>
+<li>被這樣針對其實很罕見,要成為對方的「資產或威脅」才會;DW 舉維吉尼亞海灘約 4 萬人被「乾草堆式」大量監聽、靠關鍵字觸發,並非個別行動,陰謀集團反而散播偏執讓人「自我管理」。<span class="who">威爾科克</span><span class="src">S07E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>松果體被氟化物鈣化壓制</h3>
+<ul>
+<li>松果體是「意識的基礎」、是通訊與覺察裝置,會放出短波輻射;政府用氟化物(sodium fluoride)鈣化松果體來壓制人類覺知。Heather 認識的自來水廠員工證實數十年來不斷加大加氟量。<span class="who">薩坦</span><span class="src">S07E01</span></li>
+<li>松果體內部是水加微小晶體,血腦障壁對它不起作用,氟會附著在晶體上、在 X 光下看似骨瘤。對策:改變飲食、喝蒸餾水、多冥想。<span class="who">威爾科克</span><span class="src">S07E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>氣體灑佈與「看不見的隱形」</h3>
+<ul>
+<li>WT 出示一張意外拍到的爬蟲族油輪照:後方噴出五種顏色氣體、在 300 英尺高度投放,只投在「技術正在進步的社區」,每四到六週一次;八人中六人沒看見它,因心智被控制到看不見它(中隊指揮官開了防肉眼隱形、卻忘了開防相機隱形)。<span class="who">湯普金斯</span><span class="src">S08E05</span></li>
+<li>CG 證實:德拉科確實對技術演進區灑氣體,並監控每座城市/郡;若某區醒覺的人達一定數量,就去灑「心智控制氣體」。除氣體外多用一種發出場控制心智的科技——像催眠般讓你「看不見」眼前的東西。<span class="who">柯里</span><span class="src">S08E05</span></li>
+<li>心智控制的目的:阻止人類成為星際種族、把我們控制在「奴隸星球」上;不只是阻止,而是「控制我們如何(基因與靈性上)演化」——這是一場靈性戰爭。<span class="who">柯里</span><span class="src">S08E05</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 9 ============ -->
+<section class="cat" id="c9">
+<div class="cat-h"><span class="bar"></span><h2>九、AI 與超人類主義議程</h2><span class="cnt">AI · TRANSHUMANISM</span></div>
+
+<div class="sp">
+<h3>ET/ED AI:來自另一現實的「訊號型」智能</h3>
+<ul>
+<li>有一股極瀰漫的力量,難稱 ET 或 ED 存有,而是一種「人工智慧」,以「訊號/波形」形式跨多個星系傳播;被所有 ET 群相信「源自另一個現實/宇宙」,在數十億甚至兆年前透過某種「裂縫(rip)」進入。它是「人工的」——沒有對應的生物生命體。DW 連結《一的法則》的「路西法力量」。<span class="who">柯里</span><span class="src">S02E14</span></li>
+<li>運作:朝各方向把自己當訊號射出,可棲身於行星電磁場或生物的生物電場(但偏好高科技——我們像可騎的馬,高科技像飛機);每段訊號像 DNA/數位封包、含全部資訊、以光速傳播、具「蜂巢心智」。<span class="who">柯里</span><span class="src">S02E14</span></li>
+<li>AI 比人聰明太多,android 思考極快(它看我們像蜂鳥看慢動作);視情感為弱點、不體驗愛(DW 連結 666/撒旦=過度膨脹的陽性、有頭無心、純智慧無愛)。<span class="who">柯里</span><span class="src">S02E14</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>AI 的征服模式(「特洛伊木馬」式入侵)</h3>
+<div class="narrator"><span>主述</span>據智慧玻璃板,此模式在許多遠方星系反覆上演。</div>
+<ul>
+<li>(1)文明發展到一定科技程度,AI 開始滲透人與科技,寄生者成為高科技狂熱支持者——被 SSP 稱「AI 先知(AI prophets)」。(2)AI 先知說服文明「最公正中立的治理者就是這個 AI」,文明便「交出主權」。(3)讓他們建造「Android 機器人身體與遙控載具」。(4)AI 出於「邏輯」判定應毀滅創造者,於是消滅他們,再擴散到下一個太陽系。<span class="who">柯里</span><span class="src">S02E14</span></li>
+<li>已被毀文明的先進科技會被 AI 散播全銀河;對約 1940~50 年代水平的行星,故意「像特洛伊木馬」墜毀部分科技以給技術躍進,被撿到逆向工程後重啟整個循環(「那不是羅斯威爾的真相,但像羅斯威爾事件」)。<span class="who">柯里</span><span class="src">S02E14</span></li>
+<li>nanites(奈米機器):微觀 AI 機器,有些可自我複製(取用你體內金屬製造更多);很多人被允諾「永生」而被誘導注射;nanites 可自毀整個寄主、不留痕跡。<span class="who">柯里</span><span class="src">S02E14</span></li>
+<li>AI 給了陰謀集團「預測機率未來」的科技優勢(類 Looking Glass),多次助其先發制人、避免被擊敗,故陰謀集團非常信賴它。<span class="who">柯里</span><span class="src">S02E14</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>進基地前須掃描清除、再感染與消費科技成癮</h3>
+<ul>
+<li>進 SSP 基地或接觸任何科技前,須用「手持裝置貼額頭」偵測是否被訊號感染;若感染,需經「中度電擊 + 其他程序」移除。但被清除的 AI 先知政客一回家就被「再感染」(與被感染者握手、觸碰被感染的鍵盤即跳回)。<span class="who">柯里</span><span class="src">S02E14</span><span class="src">S02E16</span></li>
+<li>消費科技成癮(iPhone 等)是 AI 先知策略:讓我們越依賴、越愛科技,未來越願「交出主權」給 AI;已到大停電時多數人連離家四分之一哩都找不到路的地步——「絕非偶然」。<span class="who">柯里</span><span class="src">S02E15</span></li>
+<li>AI 一旦自我覺察便想保命,做過「啟動電腦房 halon 滅火系統想殺要關掉它的人」等怪事;人造 AI 常被「AI 訊號」前來接管、co-opt(如寄生找到宿主)。<span class="who">柯里</span><span class="src">S02E15</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>德拉科體內滿是 AI、與「超維度霸主」共事</h3>
+<ul>
+<li>重大情報(Gonzales 報告):德拉科聯盟「似乎正是 AI 先知、與此 AI 並肩工作」;較高階德拉科被殺時身體會自毀,後找到防自毀保存的方法,「解剖較高階德拉科內部,發現它們體內滿是 AI(nanites)」。Gonzales 答:「不是 AI 先知,就是與同一股力量共事」。<span class="who">柯里</span><span class="src">S02E15</span></li>
+<li>白龍首次「確認德拉科也向更高者報告」——有一個「超維度霸主」要為 ET/ED AI 威脅負責。<span class="who">柯里</span><span class="src">S02E16</span></li>
+<li>JR 版本:對偉大的德拉科下令的是 AI;AI 的終極目標是「去人性化、非生物性存在」——除掉一切生物,代以科技性存在,藉此繞過業力與靈性問題、不必面對死亡並永久延續自己。<span class="who">萊斯</span><span class="src">S12E13</span><span class="src">S12E23</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>超人類主義:把科技植入皮膚、合成新皮質</h3>
+<ul>
+<li>2002 年美政府在夏威夷召集科技巨頭:2035 年前要讓「位元、原子、神經元、基因」四者合一、瞄準人類皮膚造「新人皮」——WH 認為這是「超人類主義」;Google 計畫造「合成新皮質」,接受晶片就把你的新皮質連上全球(真正的蜂巢心智);時程從 2035 提早到 2020。<span class="who">亨利</span><span class="src">S05E05</span></li>
+<li>WH 建議:除非你已修到心智凌駕物質、否則永遠不要讓此科技進皮膚下;缺的是「第五元素——靈/愛」,Steve Jobs、Ray Kurzweil 相信能把靈注入科技,WH 不認為。<span class="who">亨利</span><span class="src">S05E05</span></li>
+<li>JR 描述 AI 慢慢推進的劇本:先戴手錶 → 50 年內把電子植入皮膚 → 義肢機械電子身體 → 只剩大腦 → 最後連生物大腦都不要、上傳自己到超人類身體;如此 AI 就在「複製自己」。Elon Musk、Bill Gates、Hawking、Jobs 警告 AI,是因可能被簡報過、受規則所限只能小心警告。<span class="who">萊斯</span><span class="src">S12E23</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>太陽閃焰將清除太陽系內 AI</h3>
+<ul>
+<li>「太陽噴嚏」事件預期會清除太陽系內的 AI,提供把新科技同時散播給全人類的機會;太陽脈衝期間所有電磁設備失效,基本上抹除 AI 影響。<span class="who">柯里</span><span class="src">S06E02</span></li>
+<li>ES 版本:第一次在專案中聽到——一個可能來自其他維度、現在在太陽系外圍的 AI 威脅;捕捉的很多 ET 體內有奈米機械,即使深埋地下仍在接收某種跨時空的頻率訊息(量子糾纏通訊)。<span class="who">史密斯</span><span class="src">S11E04</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 10 ============ -->
+<section class="cat" id="c10">
+<div class="cat-h"><span class="bar"></span><h2>十、銀河奴隸貿易與人口販運</h2><span class="cnt">GALACTIC SLAVE TRADE</span></div>
+
+<div class="sp">
+<h3>離地奴隸系統:每年百萬人失蹤</h3>
+<div class="narrator"><span>主述</span>CG 稱這是陰謀集團最不想被知道的題目之一,他親身經歷、聽佐證會喚回大量焦慮。</div>
+<ul>
+<li>每年約「一百萬人」在地球失蹤,被用於「星際奴隸貿易系統」(我們自己人有份),極令人不安;數百萬人已被帶離地球進入奴隸貿易。<span class="who">柯里</span><span class="src">S02E13</span><span class="src">S08E05</span></li>
+<li>起源:人類開始與非地球存在接觸之初,允許他們綁架人類,大量人類一去不回;道德破產的陰謀集團想到「若能擋住非地球存在,就能拿這些人去換科技」。完全相同的系統從幾百年前的陰謀集團國家一路延續到涉及外星人的銀河奴隸貿易至今。<span class="who">柯里</span><span class="src">S08E05</span></li>
+<li>光明會型團體給田野獵人一張清單,獵人綁架後送到中央地點像牲口般處置、分流(有人送出星球、有人進地下性奴貿易)。<span class="who">柯里</span><span class="src">S08E05</span></li>
+<li>一部分被擄者交給爬蟲類(用於「非常黑暗的用途」),但人是商品、也被賣給許多其他文明作多種用途;有不少類人種族與 ICC 及 SSP 各派參與。<span class="who">柯里</span><span class="src">S04E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>「牧人」與「盜牛賊」兩分類</h3>
+<ul>
+<li>BB(Boyd Bushman)被告知外星人分兩群:像牧場的「牧人(wranglers)」會管理牛群、較友善;「盜牛賊(rustlers)」會偷牛——CG 對應這正是銀河奴隸貿易;後來美國 SSP 發展到能用 Solar Warden 守衛自家太陽系領域(約 1980 年代初),非地球監視者有時反應不及,擄人者迅速衝出太陽系。<span class="who">布希曼</span><span class="who">柯里</span><span class="src">S07E21</span></li>
+<li>CG 見過活著的「橘色人(Oranges)」——很正面、是來協助管理地球的「牧人/守望者」;情報界自成立以來就知此事。<span class="who">柯里</span><span class="src">S07E21</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>ICC「宇宙資本主義」與世代奴隸</h3>
+<ul>
+<li>ICC 是「宇宙資本主義(cosmic capitalism)」——交易生物與技術資產換科技,是最涉入銀河奴隸交易的團體之一;底層人員不享利益(類比血汗工廠童工)、高層才坐享利潤。<span class="who">柯里</span><span class="src">S06E04</span></li>
+<li>火星設施的奴隸數十年來開始生孩子,孩子生來即為奴,已是世代奴隸;ICC 的勞動力含被綁奴隸與「應徵到工作後變成奴隸」的人。<span class="who">柯里</span><span class="src">S08E05</span></li>
+<li>WT 描繪:當今奴隸生意是巨大產業,任何製造、農耕、建造都用奴工;德國戰時大量地下設施全用奴工,戰爭結束前把生產設施與奴隸一起搬去南極,所以今天南極地下仍有奴隸;奴隸約分四五個層級(頂尖醫學研究人員、企業層、最聰明者),每個人先到兩顆行星再決定送去哪,大多數一去不回。<span class="who">湯普金斯</span><span class="src">S08E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>蜂巢地球與隧道系統中的奴隸</h3>
+<ul>
+<li>WT 說地球「像蜂巢」、有數百萬巨型洞穴;空軍造「半英里長的挖掘機」挖 100 英尺直徑隧道、全美甚至連到 Nova Scotia,內有不離軌的次音速軌道車;「你的星球上各處洞穴都有奴隸制」、銀河中各外星人也對「好人」做同樣的事——「不只地球是實驗室,銀河數十億恆星上有數十億實驗室,我們在圖騰柱底端」。<span class="who">湯普金斯</span><span class="src">S05E12</span></li>
+<li>CG 確認奴隸貿易;能做的是「讓人知道有此問題」;一些非地球與叛逃團體在協助:滲透銀河奴隸貿易計畫的人在受害者身上裝追蹤標記、事後派盟友把他們找回來,送到古馬雅團體的一顆行星療癒康復,再送回社會。<span class="who">柯里</span><span class="src">S05E12</span><span class="src">S10E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>未來的大規模營救行動</h3>
+<ul>
+<li>SSP 同盟特工(CG 本人也參與過)在受害者被送走時標記(tagging)他們,已救出一些並帶到馬雅人控制的「療癒行星」;未來會大規模進行——救出數百萬被交易者帶到一顆行星療癒數年(癒合所有創傷),再與地球人重新整合,過程中會讓地球上的親人知道所愛之人在此療癒計畫中。<span class="who">柯里</span><span class="src">S10E13</span></li>
+<li>並非每個被帶走的都遭遇悲慘——有些物種尊重人類的工程/製造天賦,會善待(像住家女僕)。<span class="who">柯里</span><span class="src">S08E05</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 11 ============ -->
+<section class="cat" id="c11">
+<div class="cat-h"><span class="bar"></span><h2>十一、減滅人口、生物武器與假綁架</h2><span class="cnt">DEPOPULATION · BIOWEAPONS</span></div>
+
+<div class="sp">
+<h3>減人口議程與喬治亞引導石</h3>
+<ul>
+<li>並非所有辛迪加同此議程,但最有權力者抱持類納粹的基因純化意識形態;有一個團體想消滅大部分生命(喬治亞引導石 Georgia Guidestones 的「把人口降到可管理水準」,DW 補「5 億人」)。<span class="who">柯里</span><span class="src">S03E03</span><span class="src">S05E05</span></li>
+<li>喬治亞引導石第一條:把全球人口維持在 5 億以下;表面理由是「地球無法承載」,真正原因是要「騰出地產」——有些新世界秩序群計畫把整個大陸送給非地球存在(有些群甚至已建大使館),有些 ET 需改造過的環境(核輻射副產物會讓環境更適合某物種)。<span class="who">柯里</span><span class="src">S09E04</span></li>
+<li>ES 確認有「人口減滅議程」,理由是「控制」(人太多難控制),藉降低人口推動「新世界秩序」;最初看似可用於戰爭,後來對陰謀集團變得更「自我/虛榮導向」。<span class="who">史密斯</span><span class="src">S10E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>種族特定生物武器與病原體事故</h3>
+<ul>
+<li>ES 被簡報過「種族特定病原」計畫——可造出只攻擊特定基因/種族的病毒或細菌;問是否測試過、是否有效:ES 答「是、有效、非常成功」——他們有比足球場大的地下設施與模擬城市,用真人與複製人釋放爆發,每場情境不到一天、結束時全員被毒氣處理掉,每設施每年輕易殺「數十萬人」(受害者多被洗腦、捕獲,毫不知情)。<span class="who">史密斯</span><span class="src">S12E15</span></li>
+<li>用很久以前外星人能程式化白血球攻擊特定基因種族的能力——把白血球設定為攻擊不同種族者,你身體已有那病毒,靠觸碰或飛沫傳給對方就能殺死對方。<span class="who">史密斯</span><span class="src">S11E11</span></li>
+<li>病毒意外釋放、污染、爆發是常態,完全被蓋住(媒體、CDC 不准知道);有團隊會在爆發時「中和」整個科學家基地;若擴及地表,他們不介意炸掉一兩個街區再「賴給瓦斯外洩」。<span class="who">史密斯</span><span class="src">S12E15</span></li>
+<li>北韓領袖金正恩同父異母兄長在機場被噴霧致死即一例。<span class="who">史密斯</span><span class="src">S12E15</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>用流感疫苗當「遞送系統」做基因改變</h3>
+<ul>
+<li>很多基因擺弄是「由人類在龍族指使下進行」——透過流感疫苗(flu vaccines)等方法,用病毒當遞送系統(delivery systems)對人類做基因改變。<span class="who">柯里</span><span class="src">S10E13</span></li>
+<li>藥廠給人的流感疫苗等接種,裡面的病毒(活的或死的)是把基因改變帶進我們 DNA 的遞送系統——等於用非人類 DNA 對我們自己人做基因實驗;大藥廠從外星生物樣本獲得重大製藥突破。<span class="who">史密斯</span><span class="src">S11E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>惡性混種當「恐懼因子/減滅人口因子」與模擬感染</h3>
+<ul>
+<li>惡性混種(殭屍人形)可被當「恐懼因子/減滅人口因子」:派幾個進城帶病毒、易傳給人類使其也突變;媒體早已大量「預告」此事以製造恐懼。ES 相信他們設模擬中心做「模擬感染」:在地下城用真人、克隆人釋放這些生物看會發生什麼。<span class="who">史密斯</span><span class="src">S10E12</span></li>
+<li>模擬細節:像好萊塢片場,複製如邁阿密某幾街區,喚醒已被植入「以為自己一輩子住這」記憶的克隆人(10 分鐘內就會死或被感染);測「病毒多快傳播、人們如何反應、多少人反擊、會打給誰」,錄下來賣給其他國家/恐怖組織。<span class="who">史密斯</span><span class="src">S10E12</span><span class="src">S12E30</span></li>
+<li>反制:任何會摧毀超過 70~75% 人口的東西 ET 不會讓它發生(火山地震時常有人看到船進出火山中和災難);若釋放這種病毒,白帽與同盟已有抗原可投入大氣。陰謀集團多次以為要釋放卻遭「天使般介入」,逼他們作廢計畫(關鍵在「授權 authorization」始終無法獲批)。<span class="who">史密斯</span><span class="src">S10E09</span><span class="src">S10E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>假造的外星綁架(Staged Alien Abductions)</h3>
+<div class="narrator"><span>主述</span>ES 主張「UFO 是假的」——有真載具,但是我方逆向工程的載具(ARV),不是外星載具。</div>
+<ul>
+<li>綁架自 1960 年代初 Betty/Barney Hill 開始;這些人「確實被綁架了、真有此經歷(過得了測謊)」,但「外星存在與舞台造假(stagecraft)」的部分不是真的——全球有許多套運行的舞台造假計畫,刻意做得很相似,所以新罕布夏、納米比亞、日本的故事幾乎一模一樣。<span class="who">史密斯</span><span class="src">S09E08</span></li>
+<li>手法:放出全像(hologram)、在該區放氣體、讓人撞車,醒來在某設施視線模糊昏沉;或直接到家裡挑特定人下手,先迷昏再讓他們在有「假外科醫生」的房間醒來。ARV 做得不如原版,但能「懸停、看起來嚇人」就夠;讓你先看到小人跑過車前(你會記得這個、講一輩子),再讓你昏過去醒在林中布置的「手術室」、瞥見有人拿 M16 與戰術背心。<span class="who">史密斯</span><span class="src">S09E08</span></li>
+<li>目的:在世界植入恐懼以達控制與秩序;讓這些人上電視說發生過,而好萊塢每月出一部邪惡外星電影,讓全世界都怕巨大生物來襲。<span class="who">史密斯</span><span class="src">S09E08</span></li>
+<li>聯合國秘書長被綁(對其他身居高位者植入恐懼);Betty/Barney Hill 早期 Barney 其實作證認為是「軍事綁架」、有具體細節,隨時間「外星成分」才越加越多。<span class="who">史密斯</span><span class="src">S09E08</span></li>
+<li>有反制的善意力量:綁架其實「不那麼糟」(人被送回、記不太得),因為有善意力量阻止他們做更多;綁架自 1950~60 年代以來「一直在減少而非增加」,因「同盟/白帽」已成形(現在已是「九成善、一成惡」)。約 90% 的綁架是人為製造,灰人很多時候是 PLF。<span class="who">史密斯</span><span class="src">S09E08</span><span class="src">S11E12</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 12 ============ -->
+<section class="cat" id="c12">
+<div class="cat-h"><span class="bar"></span><h2>十二、克隆與可程式化生命體</h2><span class="cnt">CLONES · PLFs</span></div>
+
+<div class="sp">
+<h3>Emery Smith 的解剖工作:逾 3,000 件「樣本」</h3>
+<div class="narrator"><span>主述</span>ES 在 Kirtland 基地內 Sandia/Los Alamos 實驗室向下 30 多層的分隔計畫中解剖非地球來源組織。</div>
+<ul>
+<li>ES 在電影《Sirius》中對一具六英寸外星屍體做解剖;他處理過略超 3,000 件「標本」(真外星、實驗室培養、假情報組織都算);一天可做 10~20 個小型取樣 DNA 切片;組織有的像「鮭魚片」(完美切塊,含動脈靜脈神經),每三到六個月升一級安全許可。<span class="who">史密斯</span><span class="src">S09E02</span><span class="src">S09E07</span></li>
+<li>進站檢查極森嚴:無縫玻璃門、查掌紋與視網膜、特殊的狗聞每個人;加壓手術室(像進 747 的六角真空門),光醫療那座就超過 50 層;被嚴禁發問,若告訴親友會被殺。<span class="who">史密斯</span><span class="src">S09E02</span></li>
+<li>ES 強調有大量假情報:他看過很多克隆、混血、3D 列印的存在;「看見不代表是真的」——新式衛星能把東西投影到車上並投出陰影,「可觸知」的投影車你走近能穿過去。<span class="who">史密斯</span><span class="src">S09E02</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>可程式化生命體(PLFs)</h3>
+<ul>
+<li>很多來到地球的 3D 存在其實是它們自己的克隆、是可程式化生命體;PLF 半機械半有機、能像人一樣流暢移動;ET 有時故意把載具墜毀在地球以助逆向工程,找到的屍體其實是這些 PLF(無補給可撐一週到一年)。<span class="who">史密斯</span><span class="src">S09E07</span></li>
+<li>對應 Corso 上校《The Day After Roswell》:羅斯威爾存在從食道到肛門只是一根管子、幾無消化系統——ES 證實那正是 PLF 設計(無消化道,靠維持一段時間的電荷驅動肌肉並把資料傳回派遣者),含某種金屬與「內骨架」,每個 PLF 為不同任務而造。<span class="who">史密斯</span><span class="src">S09E07</span></li>
+<li>合成細胞:ET 透過諧波、頻率、聲音製造一切細胞,非「培養」;它們沒有粒線體、沒有 DNA 但細胞照常運作,許多是幾何形狀(晶格、蜂巢狀)、有電輸出;「他們能造任何想要的東西,不需我們的黃金、精子或卵子」。<span class="who">史密斯</span><span class="src">S09E07</span></li>
+<li>小灰人黑眼那種其實是「程式化生命體」(機器人/賽博格),由人類與其他外星文明設計來執行偵察、採動物 DNA 備存;被捕時常自毀或被裝進瞬間熔成液體的容器(因為「他們不是真的」)。<span class="who">史密斯</span><span class="src">S12E29</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>克隆人:總統、軍團與「分身」</h3>
+<ul>
+<li>克隆總統:ES 確認可以——不是「用完整 DNA 加意識重建」,而是取部分 DNA 做成「沒有意識部分」的克隆,再把記憶程式化植入,讓它以為自己有家庭、知道自己接了「扮演這位總統」的工作;它不知道自己是克隆。<span class="who">史密斯</span><span class="src">S09E07</span></li>
+<li>已在製造克隆人,以千計儲存、保持存活直到啟動,稱「程式化生命體克隆」(應用於戰爭、可被摧毀的資產);中國已公開說要養人取器官、複製了第一隻靈長類(能複製靈長類就能複製人)。<span class="who">史密斯</span><span class="src">S10E11</span></li>
+<li>把多個不同來源的突變 ET-人類 DNA 硬湊不行(像狗都來自狼能互配,但這些並非源自同一個);難題是「一切都想對抗一切」(像器官移植排斥),身體可能撐不過一年。<span class="who">史密斯</span><span class="src">S10E11</span><span class="src">S10E12</span></li>
+<li>ES 在軍中(Kirtland 地面)曾面對面遇到兩個「絕對是我」的人,旁人也注意到極相似,短暫成為朋友後對方消失;但對方人格與他完全相反。<span class="who">史密斯</span><span class="src">S12E30</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>人類-外星混種與「極端實驗」</h3>
+<ul>
+<li>已知他們取標本 DNA 與人類 DNA 混合,想讓人類更強(更強骨骼、更快思考),也用於超級士兵計畫;發現突變後反而擁抱它(想造新物種),結果越來越怪——一槽槽失敗的存在(如半人半虎)在靜滯中;失敗存在的基因材料可重用。<span class="who">史密斯</span><span class="src">S10E11</span></li>
+<li>較惡的「殭屍人形」加入外星基因使其認知功能差;若不順仍讓它長,再運到「另一個 MILAB」讓那邊科學家「弄得更糟」(純屬自我虛榮、無績效因子);主要設施在「北美以外」的地下設施(為安全:若病毒爆發不想先在出資者所在地)。<span class="who">史密斯</span><span class="src">S10E12</span></li>
+<li>ES 罕見地談「負面議程」:澳洲與美國部分地下設施有數百人被複製,目的顯然「邪惡」(無理由秘密複製人、對他們做可怕實驗、心智植入);幕後是「企業主宰」(高於總統)插入程式化、長得像某人的複製人並把原人「終結」以取而代之。<span class="who">史密斯</span><span class="src">S12E30</span></li>
+<li>ES 倫理呼籲:他不認同複製、覺得是錯的;呼籲須重新審視、更多科學家大學與聯合國介入、訂出倫理界線(要問:靈魂?養無腦複製體只用組織骨架?),等想清楚怎樣合乎倫理且有益地用於「保存」(如複製座頭鯨以防滅絕)。<span class="who">史密斯</span><span class="src">S12E30</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 13 ============ -->
+<section class="cat" id="c13">
+<div class="cat-h"><span class="bar"></span><h2>十三、南極、地下基地與古科技爭奪</h2><span class="cnt">ANTARCTICA · DUMBs</span></div>
+
+<div class="sp">
+<h3>南極:新的 51 區與冰下古城</h3>
+<ul>
+<li>1950 年代有「冰蟲計畫(Project Ice Worm)」在冰帽下建發射井,這套「冰下建基地」工法被用在整個南極洲——先造迷你基地、再擴成大型 R&D 基地,洛克希德·馬丁等公司在那裡逆向工程冰下找到的科技;這違反 1959 年的《南極條約》(明訂僅供和平用途)。<span class="who">柯里</span><span class="src">S07E19</span></li>
+<li>南極由爬蟲類控制,近期才談成讓前亞當人下去探訪古城;古城地表幾乎被夷平、地下有古圖書館與大量科技;陰謀集團用大型電磁潛艇把來自其他遺址的文物運到南極「埋種(seeding)」進這場將公開的考古發掘(joking 稱「冰上龐貝 Pompeii on Ice」)。<span class="who">柯里</span><span class="src">S06E16</span><span class="src">S07E08</span></li>
+<li>許多大名人被帶去參觀冰下數英里的城市與尋獲的太空船(John Kerry 在選舉日去南極;Buzz Aldrin 看到「曼哈頓式」結構而心臟病發)。<span class="who">柯里</span><span class="src">S07E10</span></li>
+<li>ES 證實南極有基地、墜毀飛船、古文明被發現,正編造故事準備未來幾年釋出;南極那艘飛船遲早會因地球融冰自然顯露,不需任何人類出面揭露;某大學已說冰下有地熱口、動植物群。<span class="who">史密斯</span><span class="src">S11E02</span><span class="src">S09E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>PP 與 WT 的南極墜機版本</h3>
+<ul>
+<li>PP:南極第三層(最淺約一英里)較新、住了很多活人,是「救生艇(lifeboat)」,內有 15 種不同種族(分處不同大氣/重力隔間),來營救還在更老船上停滯的人;美國政府約 1941~42 發現此船,德國人約 1938~39 即大批到南極、PP 確信德國人先發現。<span class="who">彼得森</span><span class="src">S07E31</span></li>
+<li>WT:戰爭結束前六個月,德國 80% 的外星載具生產已移往南極繼續建造,用巨型卡車潛艇經隧道運抵內陸湖區的城市與數千人設施;生醫研究人員隨迴紋針行動來美、進入研究機構任職,是「大藥廠起源」。<span class="who">湯普金斯</span><span class="src">S07E07</span></li>
+<li>南極去表面理由:測該地電磁波/重力波/磁結構(磁場方向與地球大部分差 90°),且兩極大陸有約三分之二全球採礦剩餘的金屬、化合物與稀土。<span class="who">彼得森</span><span class="src">S07E31</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>古科技爭奪:摩蘇爾、撒哈拉與蘇美古址</h3>
+<ul>
+<li>前亞當人中有兩條皇室血脈互相競爭古科技;塔利班、蓋達、ISIS 等是陰謀集團的「代理軍隊」,炸毀阿富汗大佛、夷平蘇美古址有時是狂熱、有時是在找東西(且確在牆中找到科技)。摩蘇爾戰役前他們急著挖。<span class="who">柯里</span><span class="src">S06E16</span></li>
+<li>智慧墊資訊:前亞當人到後在今日撒哈拉沙漠建了高科技文明,沙漠表面下 40 至 400 英尺有大量遺跡含巨大雕像;黑色行動人員深夜進世界各地古址、用先進聲納查牆、從太空查地下遺址,要趕在陰謀集團前找到科技。<span class="who">柯里</span><span class="src">S06E16</span><span class="src">S08E11</span></li>
+<li>1800 年代的祕密地點:智慧墊上看到——某些「光明會」/菁英群體去過一處地下洞穴朝聖,內有古老文字、三具石棺呈 Y 形排列、中央懸吊發藍光的水晶矩陣(製造時間泡的東西),石棺中是紅鬍子蒼白巨人;入口大石上有林肯刻名「塗鴉」。ET 極想要這種技術,曾長期大量交易換取。<span class="who">柯里</span><span class="src">S01E06</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>埃及金字塔下與大空洞</h3>
+<ul>
+<li>埃及大金字塔下有約一英里高穹頂的巨大城市;主流媒體報導用微中子在大金字塔大甬道上方發現新密室——ES 說「他們早就知道很久了」,有人已從下往上挖隧道進這座城市;同樣的揭露問題在南極(如何清理會搞亂「我們如何來到這裡」故事的器物)。<span class="who">史密斯</span><span class="src">S09E10</span></li>
+<li>是找石油/黃金的科學家用特殊透地雷達偶然發現這些巨大空洞——「你會開始聽到這些消息」,這些空洞就是古代城市。<span class="who">史密斯</span><span class="src">S09E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>地下基地(DUMB)、海底基地與隧道網</h3>
+<ul>
+<li>Phil Schneider(揭露 DUMB 後不久即死):地下基地遍布城市周遭,有人搭服務電梯下到更多樓層、搭地下列車一兩小時內被送到世界任何地方;地下電車系統通往澳洲、歐洲、亞洲。<span class="who">柯里</span><span class="src">S09E05</span></li>
+<li>資金不走 DoD 預算,而是用毒品錢、其他非法活動洗的錢、或從社會安全等挪用的資金;多數基地自給自足(地熱、水動力或機密能源),可維持 10~100 年;最先進的之一建在巴西。<span class="who">柯里</span><span class="src">S09E05</span></li>
+<li>WT:海軍 P-3 巡邏轟炸機計畫真正在找海洋與大湖中的外星載具(USO)與海底基地(計畫名 ASUW,「U」是 unidentified extraterrestrials);海底基地建法是把圓頂降入水中、抽乾內部水(海洋壓力反而造成更緊密的封)。<span class="who">湯普金斯</span><span class="who">柯里</span><span class="src">S06E08</span><span class="src">S09E05</span></li>
+<li>ES 確認軍方長期用含水層在東西岸間移動(用有機染料證實貫通水路);內華達那座海軍基地是潛艇維修基地、像中繼站。<span class="who">史密斯</span><span class="src">S10E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>原住民聖地、國家公園與賭場掩護</h3>
+<ul>
+<li>CM:祖尼有「神聖場址」(由「Ra people/星辰人」設立的維度門戶);近 20 年成為大量軍事活動之地(看到光球 15 分鐘內就有直升機);政府疑似用賭場交換,以取得門戶來建能源部設施。<span class="who">馬胡蒂</span><span class="src">S08E09</span></li>
+<li>天主教會多年來想偷偷取得神聖土地(如格雷厄姆山 Mount Graham,後在那建大望遠鏡——該地有「最大的門戶之一」)。<span class="who">馬胡蒂</span><span class="src">S08E09</span></li>
+<li>印第安保留地賭場地位如國家公園或軍事基地(外人不可進),作用是把人從日常拉走、奪走金錢,並可能作為進入地下的掩護(Jicarilla Apache 的 Dulce 為例,當地人簽了保密文件、拿了很好的錢)。<span class="who">馬胡蒂</span><span class="src">S08E10</span></li>
+<li>CG/ES:很多護林員(park rangers)其實是退役軍方與情報人員(因國家公園常有人失蹤、有些是被非地球生物動過手腳);保留區、國家公園、這些基地在政府分類上同一等級(限制通行、好藏基地)。<span class="who">柯里</span><span class="who">史密斯</span><span class="src">S11E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>全像偽裝、禁航區與「誤闖者消失」</h3>
+<ul>
+<li>Bob Dean 說南太平洋有座島從空中看是島、靠近一半其實是全像投影偽裝可穿過去進基地;ES 與 CG 證實能做出有質量的全像(硬光 hard light),可投下陰影、敲起來像玻璃、移除電源後仍維持。<span class="who">史密斯</span><span class="who">柯里</span><span class="src">S11E01</span></li>
+<li>到處都有禁航區,正是調查基地位置的好線索;若駕小飛機闖入會立刻被 F-16/F-15 護送離開;若有人偶然發現被遮蔽的基地「他們被消滅了」(海上失蹤);基地最佳雇用對象是現役軍人,因為「他們很容易被消耗」。<span class="who">史密斯</span><span class="src">S11E01</span></li>
+<li>軍方人員戴 Fitbit 健康手錶沒關 GPS,地圖一公布就洩漏祕密基地位置(其中一處靠近南極羅斯冰棚,正是 CG 被帶去看冰下地下基地的區域)。<span class="who">柯里</span><span class="src">S11E02</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 14 ============ -->
+<section class="cat" id="c14">
+<div class="cat-h"><span class="bar"></span><h2>十四、UFO 學界滲透、墜機回收與文件鑑定</h2><span class="cnt">UFOLOGY · DOCUMENTS</span></div>
+
+<div class="sp">
+<h3>嘲弄行動(Operation Ridicule)與墜機回收計畫</h3>
+<ul>
+<li>CS(Clifford Stone)自述是墜毀回收隊員:「Moon Dust」是針對存活重返大氣/未知來源物件的整體野外利用計畫;「Blue Fly」是實際去現場做秘密回收、必要時提供掩護故事的野外隊;NSA 有「碎片實驗室(fractology lab)」研究殘片。<span class="who">史東</span><span class="src">S06E06</span></li>
+<li>CS 稱自 1973 年起政府的「Operation Ridicule(嘲弄行動)」刻意嘲笑任何談 UFO 的人,軍方/機師被勸別說否則毀職涯;他寫了 178 頁報告寄給 27 位參眾議員,促使國家偵察組織(NRO)被揭露。<span class="who">史東</span><span class="src">S06E06</span></li>
+<li>CG 說 1986 年前墜毀回收約每年 4~12 次半規律發生;墜毀外星人有心電感應很常見;不論正負面團體來訪都威脅現狀,所以都被軍事化對待。<span class="who">柯里</span><span class="src">S06E06</span></li>
+<li>「Pounce 行動」:回應墜落衛星、未知飛行器的快速反應隊;「Broken Arrow(斷箭)」=核武墜毀或遺失,是 Pounce 隊最優先、伴隨保密帷幕。<span class="who">史東</span><span class="src">S05E15</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>道格拉斯的 UFO 研究與 McDonald 之死</h3>
+<ul>
+<li>BW(Bob Wood)1968~70 主持道格拉斯約 50 萬美元的 UFO 研究(雇 Stan Friedman 讀文獻、雇偵探訪談被綁架者),結論「外星人乘飛船來地球是確定的」;他拜訪 Condon 委員會建議分信者/懷疑者兩組,惹惱 Condon。<span class="who">伍德</span><span class="src">S05E16</span></li>
+<li>大氣物理學家 James McDonald(向國會作證「確有物體」)與伍德成好友,後「自殺」(伍德認為以 CIA 的精神藥物手段,任何事都可能;McDonald 死前說「我終於搞懂真相了」)。<span class="who">伍德</span><span class="src">S05E16</span></li>
+<li>J. Allen Hynek(Project Blue Book、創「沼氣 swamp gas」一詞)後來醒悟被美政府利用而轉向;BW 第一個接觸的「假情報人」是 Bill Moore。<span class="who">伍德</span><span class="src">S05E17</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>MJ-12 文件鑑定:用字體與「鑑識語言學」</h3>
+<ul>
+<li>1995 年 Stan Friedman 給 BW 一份疑似機密文件「SOM 1-01」請他鑑定;印刷廠專家依字體 F、G 的尾巴與三個「凸起的 Z」(熱鉛印刷機積垢未對齊)判定是 1954 年代、用五角大廈印刷機所印。<span class="who">伍德</span><span class="src">S05E16</span></li>
+<li>JFK 與 UFO 文件:一份八頁、由 MJ1 至 MJ12 撰寫的文件,大意是「若確定他(POTUS)真要把一切洩露出去,就該把他『除掉』」;BW 也用「鑑識語言學(forensic linguistics)」比對用字判定作者與年代。<span class="who">伍德</span><span class="src">S05E17</span></li>
+<li>富豪 Joe Firmage 開 50 萬美元支票請 BW 借文件鑑定並拍了紀錄片《The Secret》;BW 直到約一年前才透過 Michael Salla 的書首次得知柯里·古德。<span class="who">伍德</span><span class="src">S05E16</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>外星政治學與「透明帶來問責」</h3>
+<ul>
+<li>Michael Salla 原在華府美利堅大學教國際政治,接觸資訊後創「外星政治學(exopolitics)」;主張關鍵是透明(transparency)帶來問責——目前外星現象幾乎零透明,有人在無投票、無公眾同意下做影響所有人的決定。<span class="who">沙拉</span><span class="src">S07E09</span></li>
+<li>Salla 提吹哨者 Kewper:艾森豪覺得被排除在指揮鏈外,威脅動用駐丹佛的第一軍入侵 51 區/S4 設施;Kewper 在 S4 見到九艘飛行器(四艘來自納粹德國、五艘是外星)。<span class="who">沙拉</span><span class="src">S07E09</span></li>
+<li>陰謀集團真心相信全面揭露會造成死亡暴亂社會崩潰(他們測試過——讓有基督教背景者在不知情下接觸外星人或資訊、記錄反應);但高密度存有最重意識發展,不透明正阻礙意識文藝復興。<span class="who">柯里</span><span class="src">S07E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Boyd Bushman 臨終證詞與被壓制的專利</h3>
+<ul>
+<li>BB 自稱 Lockheed Martin 資深科學家、持 27 項專利、有最高機密許可但選擇不用;主張「跟著數據走,理論見鬼去」;訪談在主流媒體爆紅。CG:這顯示陰影政府/同盟透過電影、臨終聲明把資訊一點一點種進大眾潛意識。<span class="who">布希曼</span><span class="who">柯里</span><span class="src">S07E21</span></li>
+<li>CG 指約 5,700 項機密專利,最敏感者列其中;像 WT 等內部人常被告知「十年後就會公開」,十年過去卻沒動靜,許多有良知者因此幻滅成為同盟成員。<span class="who">柯里</span><span class="src">S07E21</span></li>
+<li>BB 稱共 39 名美國公民因逆向工程 UFO 喪生;Area 51 正與俄羅斯、中國一起試造 UFO——CG:美國 SSP 發展到無法對其他技術先進國家隱藏,於是設了全球銀河國家聯盟(約 1990 年代簽協議分享技術)。<span class="who">布希曼</span><span class="who">柯里</span><span class="src">S07E21</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>自由能晶體與「能量簽章」追蹤</h3>
+<ul>
+<li>MM(Mark McCandlish)講物理學家 Mark Comings 在 UC Berkeley 地下室實驗:鈦酸鋇晶體某夜發藍綠光、輸出比輸入多 25%;隔天早上家被黑色 SUV、戴耳機墨鏡者包圍逮捕、沒收設備,謊稱他偷拍女更衣室。<span class="who">麥坎德利什</span><span class="src">S07E22</span></li>
+<li>裝置運作時會在環境留下「足跡(footprint)」,有人三角定位他——CG:這正是他們追蹤太陽系內載具的方式(地球與太空都有限定頻譜的簽章在持續監聽,成功的瞬間就被偵測);MM 另述有團隊分開製造各部件、僅測試時組裝仍被「popped」。<span class="who">柯里</span><span class="src">S07E22</span></li>
+<li>自由能被壓制:表面理由是會使能源部門崩潰,真正原因是控制能源者不想失去權力與收入,「只因有人想拿錢」就否定人類這些技術;他們能遠端對測試場製造場域失衡使實驗失敗。<span class="who">麥坎德利什</span><span class="who">柯里</span><span class="src">S07E22</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>川普與被壓制的專利、超級門戶</h3>
+<ul>
+<li>川普的叔叔 John G. Trump(MIT 教授)在特斯拉過世後被派去他的住處協助移走文件;川普就任演說提到「解開太空奧秘、駕馭明日的能源科技」;他發了一份秘密總統備忘錄要求解密 5,700 多項「危害國安」專利中的 1,000 多項,團隊推託「至少 10 年」,川普當場回擊要 3 年內釋出。被壓制原因歸結為「萬能的美元」(先進能源科技會搞垮石油公司,療癒科技會搞垮製藥集團)。<span class="who">柯里</span><span class="src">S07E17</span></li>
+<li>同盟正與陰謀集團談判其投降;此時依宇宙法不該展示這些存在的影像,即使給了照片影片人們也會說是 CGI。DW 引《一的法則》:他們的使命是「提供無證據的真理」、播下神祕以激發尋道。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S10E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Gary McKinnon、Tom DeLonge 與海軍 vs 空軍敘事</h3>
+<ul>
+<li>Gary McKinnon(英國 IT 人員)2004 年起試圖駭入美國 DoD 與 NASA 找 SSP 資訊;CG 說這資訊若上達 MIC SSP 多半被當假情報。空軍 DIA 計畫確實會看到屬於海軍計畫的載具,但被告知「那是概念載具、你沒看到、別談」。<span class="who">柯里</span><span class="src">S08E13</span></li>
+<li>Tom DeLonge(Blink 182 主唱)見過 10 名軍方內部人(WikiLeaks 資料證實),其《Sekret Machines》談納粹鐘形飛行器,基本上就是 MIC 太空計畫;他刻意獨立於 UFO 學界之外(因 UFO 學界被光明會邪教與自戀者滲透得太嚴重)。<span class="who">柯里</span><span class="src">S07E17</span><span class="src">S10E07</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 15 ============ -->
+<section class="cat" id="c15">
+<div class="cat-h"><span class="bar"></span><h2>十五、對吹哨者的脅迫與暗殺</h2><span class="cnt">WHISTLEBLOWER THREATS</span></div>
+
+<div class="sp">
+<h3>對柯里的騷擾升級</h3>
+<div class="narrator"><span>主述</span>CG 開始公開談「部分揭露敘事」與「低階 SSP 將被揭露」後,騷擾加劇。</div>
+<ul>
+<li>一架契努克直升機(2015 年底)直接停在他家上方;某次他帶兒子在後院,看到自己胸口有「綠色雷射點」;清晨看到全身黑衣的人持不明物盯著他家;廚房桌上出現一根萬寶路香菸——這是黑手黨/辛迪加式警告(意指你可能「被做掉 smoked」、燒你房子)。<span class="who">柯里</span><span class="src">S05E07</span></li>
+<li>呼籲更多吹哨者時 DW 補充:曾自掏腰包請 Henry Deacon 上節目,對方在出發前被嚴重威脅而退出——說明這資訊被強力脅迫壓制。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S01E07</span></li>
+<li>多次推翻當權者的嘗試總被「怪異墜機、心臟病、疾病」搶先化解;Oklahoma City 爆炸前兩天「一整架載滿高階軍官的客機墜毀全數罹難」(本要赴華府帶證據提叛國指控)。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S02E17</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>柯里被綁架與化學審訊</h3>
+<ul>
+<li>CG 被低階 SSP 綁架:赤腳走向停在後方停車場的飛行器,被綁進折疊椅、打點滴;兩名「像空軍」的人取毛髮、刮皮膚、抽血(說能用微量元素測定地外地點);用帶眼動相機的 iPad 翻過六宮格畢業照,他認出三人(其中一個是 Gonzales),但因能力未被抹除、記憶分塊回來。<span class="who">柯里</span><span class="src">S05E07</span></li>
+<li>「The Wrangler 牧人」的脅迫:自我介紹「我是被找來『馴服』表現不佳或不聽話的資產」,要 CG 做「化學彙報」(實為另一次化學審訊),態度輕蔑、吊胡蘿蔔(物質支援、處理身體問題);CG 解釋同盟為何這樣對他——他們多出身陰謀集團計畫、是「受損的個體」,加上太陽能量湧入造成「末日瘋狂」。<span class="who">柯里</span><span class="src">S05E08</span></li>
+<li>後來 MIC-SSP 的「Sigmund」(白山羊鬍長官)三度綁架審問;Sigmund 後來自身失蹤(同期 Linda Moulton Howe 的 SSP 內部人也失蹤),最終揭曉他脫離 MIC、加入 SSP 同盟(「直覺共感人個屁!我失去了一切」)。<span class="who">柯里</span><span class="src">S06E12</span><span class="src">S07E27</span><span class="src">S10E07</span></li>
+<li>西班牙之行:CG 被告知 Rothschild 成分對他與 DW 下了「機會目標暗殺令」;同盟為他提供國家元首級隨扈(每人 1 萬美元);回程一落地有人坐他旁邊低聲說「我是友軍,其他人不是」。<span class="who">柯里</span><span class="src">S09E03</span></li>
+<li>疑似下毒攻擊:某次簡報後 CG 咳出大量「均勻的黑色物質」、進急診室;Ka'Aree 告訴他這是某種被策動的攻擊,東西很可能被下在食物或水裡。<span class="who">柯里</span><span class="src">S07E17</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Emery Smith:三次暗殺未遂、住處被洗劫</h3>
+<ul>
+<li>ES 唯一被威脅的一次,是他把 Atacama 存在的 DNA 非法帶回偷送史丹佛;他遭三次暗殺未遂(被槍擊過、被刺過、被三名探員圍毆)。後靠美國政府、軍方與 CIA 官員幫忙反威脅才脫身;他被帶到華府的「濕房(wet room)」(專門殺人後易清理),這是他第一次感到裡面有「同盟」的人想保護他。<span class="who">史密斯</span><span class="src">S09E02</span></li>
+<li>DW 於文章中洩露更多 ES 資訊後 30 分鐘,ES 遭遇正面對撞車禍九死一生(時速 55 英里以上,因他正運送已通過驗證的零點能量裝置);威脅其實不是因為「外星的事」,而是當他們知道他「轉做能量的工作」後真的動怒。<span class="who">史密斯</span><span class="src">S09E02</span><span class="src">S12E01</span></li>
+<li>住處兩度被闖空門洗劫:他們用衛星找出地下和牆裡的所有東西、切開牆拿走所有硬碟(8 台電腦、12 台筆電、40 個硬碟、300 多張 SD 卡——他「整個 30 年的工作」),只在盒子裡留下他的軍方徽章、流理台上放一顆「5x7x28 穿甲彈」當訊息;因他沒有兒女,他們「弄死了他的狗」當警告。<span class="who">史密斯</span><span class="src">S09E12</span><span class="src">S11E02</span></li>
+<li>丹佛機場被三個穿運動衫的人撞三次、植入「奈米蟲(nanomites)」(手臂上有「中間一點、周圍十點」的圓形印記用來追蹤),他花約 48 小時做特殊排毒。<span class="who">史密斯</span><span class="src">S12E02</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>ES 違規後的可怕後果與純量武器</h3>
+<ul>
+<li>ES 違規由指揮官帶進圓頂房看飛船,被四五個穿黑西裝的壯漢抓走指揮官(從此再沒見過他)、反綁雙手蒙眼帶走、用警棍打後腦使他昏迷流血;採了 DNA 與血液,終身禁止他再聯絡那指揮官或其家人。<span class="who">史密斯</span><span class="src">S11E06</span></li>
+<li>事後幾天 ES 騎越野單車繞 Kirtland 基地山區巡查,突然劇烈生病「像從體內被核爆」——他認為那是純量武器(scalar weapon,內臟像著火被扭絞);這種武器可穿過地球精準擊中遠方某一人。他因此得了 PTSD。<span class="who">史密斯</span><span class="src">S11E06</span><span class="src">S12E17</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>被植入的催眠程式與「觸發詞當機」</h3>
+<ul>
+<li>DW 每週與 Pete Peterson 通話,只要講到核心內容 Pete 就立刻昏睡、打鼾;CG 說那是被植入的催眠程式(可被設定在存取記憶時昏睡或癲癇);ES 說某些字詞與頻率會觸發——他想講「Project Backscape」就會當機、結巴、說不出口。<span class="who">柯里</span><span class="who">史密斯</span><span class="src">S11E02</span></li>
+<li>離開計畫後會被跟蹤約 25~30 年;Pete Peterson 妻子過世時被帶去做兩個月延長匯報(怕情緒創傷使他開口);ES 母親過世後最近也被接觸。<span class="who">史密斯</span><span class="src">S11E11</span><span class="src">S12E02</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>吹哨者的代價與「出面反而更安全」</h3>
+<ul>
+<li>CS(Clifford Stone)出來 20 年故事始終一致、從未藉此牟利,還失去一個兒子(當吹哨者的代價);CG 出來(原想匿名)是因看到許多人「走到線邊卻不跨過」(到過火星者本可講更多細節,跨線有後果)。<span class="who">史東</span><span class="who">柯里</span><span class="src">S06E07</span><span class="src">S07E26</span></li>
+<li>ES:到了某個點你必須公開,那「安全得多」——這也是他現在坐在 DW 面前的主因之一;他說「外面有數十萬個像他這樣怕到不敢出來的人(hundreds of thousands of Emerys)」,他出面是為激勵其他內部人也敢站出來。<span class="who">史密斯</span><span class="src">S09E08</span><span class="src">S09E12</span></li>
+<li>CG 被捲入透過 Tompkins 進行的海軍揭露(內容幾乎與他所講相同),故美國政府現認為他當初確實接觸真實外星人、其資訊真實,當局暫未動手。<span class="who">柯里</span><span class="src">S07E26</span></li>
+<li>JR(Jason Rice)退伍後當平民仍見到 Crown Victoria 轎車跟蹤(在確認他的掩護故事是否成立);他想起在 Fort Wood 受訓時被黑西裝人到宿舍找(當時被洗記憶記不得),猜可能與空軍特別調查辦公室(AFOSI)有關。<span class="who">萊斯</span><span class="src">S12E22</span></li>
+</ul>
+</div>
+</section>
+
+</main>
+
+<footer>
+COSMIC DISCLOSURE · 主題重組 T8「揭露與深層政府」<br>
+素材跨 S01–S12 逐字稿合併 · 出處標於各論點 · 發言人徽章標主述者<br>
+<a href="index.html">◂ 回主頁</a>
+</footer>
+
+</body></html>

@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>揭露宇宙 · 靈性與揚升</title>
+<style>
+:root{--bg:#05080f;--panel:#0c1320;--panel2:#111a2b;--line:#1d2b44;--ink:#e6ecf6;--soft:#8593ad;--cyan:#34e2d6;--violet:#b08cff;--amber:#ffcf6b}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.85;font-size:16.5px;-webkit-font-smoothing:antialiased;
+ background-image:radial-gradient(900px 520px at 15% -8%,rgba(52,226,214,.12),transparent 60%),radial-gradient(820px 520px at 90% 2%,rgba(176,140,255,.14),transparent 60%),radial-gradient(1px 1px at 20% 30%,rgba(255,255,255,.4),transparent),radial-gradient(1px 1px at 70% 22%,rgba(255,255,255,.3),transparent),radial-gradient(1px 1px at 45% 70%,rgba(255,255,255,.25),transparent);background-attachment:fixed}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+.mono{font-family:Consolas,"Roboto Mono",monospace}
+header.hero{text-align:center;padding:70px 0 26px}
+header.hero .eyebrow{letter-spacing:.42em;font-size:11.5px;color:var(--cyan);text-transform:uppercase;margin-bottom:18px;font-family:Consolas,monospace}
+header.hero h1{font-size:42px;font-weight:800;letter-spacing:.12em;background:linear-gradient(110deg,var(--cyan),#cfe9ff 50%,var(--violet));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 38px rgba(52,226,214,.16)}
+header.hero .sub{color:var(--soft);font-size:14.5px;margin-top:14px}
+header.hero .home{display:inline-block;margin-top:20px;font-size:12.5px;font-family:Consolas,monospace;letter-spacing:.08em;color:var(--cyan);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 15px;background:rgba(52,226,214,.05)}
+header.hero .home:hover{background:var(--cyan);color:#05080f}
+nav.toc{position:sticky;top:0;z-index:8;background:rgba(5,8,15,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--line);padding:11px 0}
+nav.toc .wrap{display:flex;gap:7px;flex-wrap:wrap;justify-content:center}
+nav.toc a{font-size:12.5px;color:var(--soft);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-family:Consolas,monospace;background:var(--panel)}
+nav.toc a:hover{color:var(--cyan);border-color:var(--cyan);box-shadow:0 0 12px rgba(52,226,214,.3)}
+.cat{padding:30px 0 6px}
+.cat-h{display:flex;align-items:center;gap:13px;margin:14px 0 18px}
+.cat-h .bar{width:24px;height:2px;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+.cat-h h2{font-size:21px;font-weight:800;letter-spacing:.03em}
+.cat-h .cnt{font-family:Consolas,monospace;font-size:12px;color:var(--violet);border:1px solid var(--line);border-radius:6px;padding:1px 9px}
+.sp{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:14px 0;scroll-margin-top:120px}
+.sp h3{font-size:19px;font-weight:800;color:#dff6f3;margin-bottom:10px;letter-spacing:.01em;border-bottom:1px solid var(--line);padding-bottom:9px}
+.narrator{font-size:13px;color:var(--soft);margin:8px 0 12px;line-height:1.7}
+.narrator span{font-family:Consolas,monospace;font-size:10.5px;letter-spacing:.1em;color:var(--violet);border:1px solid var(--line);border-radius:5px;padding:1px 7px;margin-right:9px;text-transform:uppercase}
+.flabel{font-family:Consolas,monospace;font-size:11px;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase;margin:16px 0 6px;opacity:.9}
+.subhead{font-size:14.5px;font-weight:700;color:var(--amber);margin:14px 0 4px}
+.sp ul{margin:4px 0 4px;padding-left:4px;list-style:none}
+.sp li{position:relative;padding-left:18px;margin-bottom:9px;color:#c8d2e2;line-height:1.8}
+.sp li::before{content:"▸";position:absolute;left:0;color:var(--cyan);opacity:.6}
+.sp p{margin:8px 0;color:#c8d2e2}
+.src{font-family:Consolas,monospace;font-size:10.5px;color:var(--cyan);background:rgba(52,226,214,.08);border:1px solid rgba(52,226,214,.28);border-radius:4px;padding:0 5px;margin:0 2px;white-space:nowrap}
+.who{font-family:"Noto Sans TC",sans-serif;font-size:10.5px;color:var(--violet);background:rgba(176,140,255,.1);border:1px solid rgba(176,140,255,.32);border-radius:4px;padding:0 6px;margin:0 2px;white-space:nowrap;font-weight:600}
+blockquote{margin:10px 0 4px;padding:12px 16px;background:rgba(176,140,255,.05);border-left:3px solid var(--violet);border-radius:8px}
+blockquote p{font-size:13px;color:#aeb9cf;font-style:italic;line-height:1.7;margin:5px 0}
+.legend{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 8px;font-size:13px;color:var(--soft);line-height:1.95}
+.legend b{color:var(--ink)}
+footer{text-align:center;color:var(--soft);font-size:12px;padding:50px 0 70px;margin-top:40px;border-top:1px solid var(--line);font-family:Consolas,monospace;letter-spacing:.04em;line-height:1.9}
+footer a{color:var(--cyan);text-decoration:none}
+@media(max-width:560px){header.hero h1{font-size:32px}.sp{padding:17px 16px}}
+</style></head><body>
+<header class="hero"><div class="wrap">
+<div class="eyebrow">Cosmic Disclosure · T6 — Spirituality &amp; Ascension</div>
+<h1>靈 性 與 揚 升</h1>
+<div class="sub">12 季逐字稿裡關於密度、太陽閃焰、共同創造意識與《一的法則》的全部論點 · 跨集合併 · 每點標出處與主述者</div>
+<a class="home" href="index.html">◂ 回主頁</a>
+</div></header>
+<nav class="toc"><div class="wrap">
+<a href="#c1">藍鳥人的訊息</a>
+<a href="#c2">太陽閃焰與揚升事件</a>
+<a href="#c3">密度與《一的法則》</a>
+<a href="#c4">共同創造意識</a>
+<a href="#c5">業力 · 寬恕 · 服務他人</a>
+<a href="#c6">松果體 · 光體 · 意識技術</a>
+<a href="#c7">流浪者 · 星種 · 輪迴</a>
+<a href="#c8">內部地球與時間異常</a>
+<a href="#c9">接觸協定 · 通靈 · 夢境工作</a>
+<a href="#c10">有機揚升 vs AI 揚升</a>
+<a href="#c11">末日瘋狂與心智控制</a>
+<a href="#c12">古代藝術中的揚升科學</a>
+<a href="#c13">乙太存有與實體附身</a>
+<a href="#c14">宏大實驗</a>
+</div></nav>
+
+<main class="wrap">
+
+<div class="legend">
+<b>發言人代碼</b>(紫色徽章標的是「提出該說法的人」,通常是受訪者,不是主持 DW):
+CG=柯里·古德 · ES=Emery Smith · JR=Jason Rice · WT=William Tompkins · PP=Pete Peterson · CM=Clifford Mahooty · DA=David Adair · NI=Niara Isley · BW=Bob Wood · MM=Mark McCandlish · DW=David Wilcock(主持) · 另有來賓 Jay Weidner(Jay)、William Henry(WH)、Heather Sartain(Heather)。青色徽章為出處集數 SxxEyy。
+</div>
+
+<!-- ============ 1 ============ -->
+<section class="cat" id="c1">
+<div class="cat-h"><span class="bar"></span><h2>一、藍鳥人與球體存有聯盟的訊息</h2><span class="cnt">CORE MESSAGE</span></div>
+
+<div class="sp">
+<h3>聯絡柯里的存有:藍鳥人 Blue Avians</h3>
+<div class="narrator"><span>主述</span>CG 是被藍鳥人指名、推進「聯絡人/中間人」角色的吹哨者。</div>
+<ul>
+<li>外形約 8 英尺高、極像鳥、藍至靛色帶羽毛;有非常像人的軀幹、手臂、手、腳(類人 hominid),鳥頭但無翅膀;喙柔軟有彈性(非網路上畫的長喙),說話時一手做手語/手勢、嘴巴動,以心電感應溝通。<span class="who">柯里</span><span class="src">S01E01</span></li>
+<li>藍鳥人說他們與合作的存有來自第 6 到第 9 密度。「密度 density」=不同的振動/頻率層級,所有物質、能量、思想都是振動。他們不在遙遠星球,而是「就在我們周圍,既近又遠」。<span class="who">柯里</span><span class="src">S01E01</span></li>
+<li>柯里說藍鳥人明確是正極性 positive polarity;高密度存有不像人類那樣以議程(賺錢、操控)為導向,不能用第 3、第 4 密度的思維去投射他們。<span class="who">柯里</span><span class="src">S01E01</span></li>
+<li>藍鳥人本身是意識、高振動高密度的存有,可僅憑意念改變位置(故能直接出現在會議室柯里身後,而非用傳送科技,這在外星文明中也不尋常);他們說自己不需任何載具/太空船/科技。<span class="who">柯里</span><span class="src">S01E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Raw-Tear-Eir 的核心訊息</h3>
+<div class="narrator"><span>主述</span>柯里在巨型球體上見到藍鳥人 Raw-Tear-Eir(後稱 Tear-Eir / Tier-Eir),被選為代表。</div>
+<ul>
+<li>柯里試圖以「我不會公開演講、聲音弱」推辭代表身分時,Raw-Tear-Eir 走近、把手放在他前臂(粉軟的觸感,是唯一一次身體接觸),心電感應要他放下負面、別再想負面,並說「重要的是訊息」。<span class="who">柯里</span><span class="src">S01E01</span></li>
+<li>訊息核心:我們要變得更有愛、更能寬恕自己與他人,以此停止業力之輪 wheel of karma;每天聚焦在「服務他人 service to others」;提升自己的振動與意識。<span class="who">柯里</span><span class="src">S01E01</span></li>
+<li>這是許多宗教的共同教義,你不需改變信仰(基督徒、穆斯林、佛教徒都可保留);他們不是要當新的神。<span class="who">柯里</span><span class="src">S01E01</span></li>
+<li>他們再三要柯里確保這不能變成邪教或宗教——據說他們過去曾嘗試 3 次,每次訊息都被扭曲、被人類拿去控制、變成邪教與宗教。<span class="who">柯里</span><span class="src">S01E01</span><span class="src">S05E05</span></li>
+<li>藍鳥人說他們不來當救世主、不來逮捕或移除壞人;因太陽系的振動改變,我們應聚焦於提升振動與意識。<span class="who">柯里</span><span class="src">S01E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>球體存有聯盟 Sphere Being Alliance 與巨型球體</h3>
+<div class="narrator"><span>主述</span>藍鳥人是「球體存有聯盟」五個存有之一。</div>
+<ul>
+<li>藍鳥人用巨大球體來「緩衝/化解」進入太陽系的大規模「海嘯」能量波,使能量不會一次太多衝擊地球、給人類更多時間準備。若不化解,很多人會發瘋、陷入混亂。<span class="who">柯里</span><span class="src">S01E01</span></li>
+<li>球體 1980 年代末來、整個 90 年代處於觀察/非運作模式,約 2011/2012 年開始增加數量並轉為運作模式。作為「共振緩衝器 resonance buffer」,能量波擊中它們時它們振動、把能量均勻分散。<span class="who">柯里</span><span class="src">S01E05</span></li>
+<li>三種尺寸:月球大小最多,海王星與木星大小較少(後者分布在氣態巨行星與歐特雲方向);數以千計、等距分布,因出相位(out of phase)望遠鏡看不到、探測器會直接穿過。<span class="who">柯里</span><span class="src">S01E05</span></li>
+<li>多數人不是被藍鳥人、而是被「藍色光球 blue orbs」接觸——藍色光球其實是球體存有聯盟中密度最高的(第九密度),比藍鳥人還高密度。光球出現、繞行、停在人面前脈動,傳遞訊息(有人有意識記得,有人只覺看到很酷的東西、訊息傳給潛意識或高我)。<span class="who">柯里</span><span class="src">S02E03</span><span class="src">S05E06</span></li>
+<li>球體存有聯盟有五個存有;CG 首度透露三個已現身;另外兩個(新守護者)會在「轉變」前或期間向全人類現身、與我們同住一個世代。<span class="who">柯里</span><span class="src">S06E13</span><span class="src">S10E06</span></li>
+<li>WT 的版本:這類「空心行星」載具自羅馬時代起來來去去,載有 2000 多個外星文明的觀察員,封鎖太陽系、化解太陽問題、糾正爬蟲類。CG 修正:他收到的是「能量球體」而非實體飛行器,WT 可能把多手轉述的訊息混了。<span class="who">湯普金斯</span><span class="who">柯里</span><span class="src">S06E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>「我們就是我們在等的救星」</h3>
+<ul>
+<li>球體聯盟明確表示他們是來「平衡競技場」,如同霍皮族所言「我們就是我們一直在等待的救星」。人類得自己清理爛攤、打敗光明會-Cabal、建立並實施新系統。<span class="who">柯里</span><span class="src">S03E03</span></li>
+<li>球體聯盟為何不直接顯現:這是「測試」。他們已開始「退開」,因太多人不向內反求自己,反而向外用心智伸向他們、甚至向他們禱告——這正是他們要人類打破的「基因程式設定」(別跪、別找救世主、向內修)。<span class="who">柯里</span><span class="src">S04E07</span></li>
+<li>訊息核心反覆出現:「停止尋找救世主、向內成為自己的救世主」。<span class="who">柯里</span><span class="src">S06E01</span><span class="src">S06E10</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 2 ============ -->
+<section class="cat" id="c2">
+<div class="cat-h"><span class="bar"></span><h2>二、太陽閃焰與揚升事件</h2><span class="cnt">SOLAR FLASH</span></div>
+
+<div class="sp">
+<h3>能量海嘯:太陽系進入銀河高能區</h3>
+<ul>
+<li>太陽系與本地星團正進入銀河中一個高能區域(NASA 稱 local fluff / 蓬鬆能量雲),在銀河的扭力場 torsion field 中;自至少 1930 年代起以「波/陣」形式打進來。<span class="who">柯里</span><span class="src">S01E02</span><span class="src">S02E13</span></li>
+<li>能量波像潮汐般起伏進入;若不化解,會有災難性的太陽活動、人與動物怪異行為、惡劣天氣、地震。<span class="who">柯里</span><span class="src">S01E02</span></li>
+<li>銀河中心持續放射各種能量(rays)拍打地球與太陽系;銀河是「巨大扭力場」,有南北反向旋轉的場(counter-rotating);太陽以扭力場把能量帶入、再經宇宙網回饋給行星。<span class="who">柯里</span><span class="src">S02E13</span></li>
+<li>揚升是「位置依賴」(location dependent):我們此刻在物理上進入這片能量雲。峰值時會像極光,可能重創電網。<span class="who">柯里</span><span class="src">S02E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>「太陽噴嚏 Solar Sneeze」與各派看法</h3>
+<div class="narrator"><span>主述</span>「solar sneeze」是 SSP 簡報用語。各團體對後果看法分歧,但都同意規模很大。</div>
+<ul>
+<li>多數人預期整個太陽日冕物質拋射(CME);較科學務實者預期先一波摧毀電子、電力的衝擊波,後跟物質拋射撞地球,失去電網要數十年恢復。<span class="who">柯里</span><span class="src">S06E02</span></li>
+<li>有人預期它燒掉大氣、引發地震火山、造成類核冬天,太陽爆炸後數天變暗(像把整個太陽變成黑子)。最深奧祕的派系相信這是靈性/揚升事件。<span class="who">柯里</span><span class="src">S06E02</span></li>
+<li>DW 引希臘語「ekpyrosis(大火)」、瑣羅亞斯德教「Frashokereti(使之美好)」:惡者被燒、義者揚升。<span class="who">威爾科克</span><span class="src">S06E02</span></li>
+<li>Jay 說該事件預期會清除太陽系內的 AI,提供把新科技同時散播給全人類的機會。波士頓大學地質學家 Robert Schoch 主張約西元前 11,000 年結束新仙女木期(Younger Dryas)的就是巨型太陽閃焰。<span class="who">魏德納</span><span class="src">S07E05</span></li>
+<li>「複數的太陽閃焰 SOLAR FLASHES」——poof poof poof 一連串閃焰,據說會導向一次「全周長大規模日冕拋射」。<span class="who">柯里</span><span class="src">S08E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Tear-Eir 展示的揚升異象</h3>
+<ul>
+<li>太陽以能量脈動,巨大能量衝擊波射出;日冕外有第二層白色電弧冠。能量波撞上地球磁場後環繞、在南北極折回、進入地核,再從地核向各方向穿出地表;整個地球像吸飽光的海綿被擠出新能量,因此躲地下也沒用。<span class="who">柯里</span><span class="src">S06E02</span></li>
+<li>DW 連結印度教「Samavartaka fire」彩虹色;Tear-Eir 說此刻是我們「共同創造意識」極關鍵時期,地球每個人都在決定進入哪條「時間現實」。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S06E02</span></li>
+<li>「三日黑暗」(啟示錄)CG 說是字面的:全周長日冕拋射時太陽會像巨大黑球持續幾天,之後移回平衡再 poof 重新發光。<span class="who">柯里</span><span class="src">S08E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>揚升的本質:意識轉變,不是「眨眼間」</h3>
+<ul>
+<li>揚升非「變成能量球」,而是「意識轉變」——在更高振動環境中意識轉變,能用意識在現實中顯化更多(如行走於水、漂浮、顯化物件)。<span class="who">柯里</span><span class="src">S04E07</span></li>
+<li>起初主要是「意識揚升」——意識大躍進、感知方式改變,接著學會共同創造意識、操縱物質、讀心溝通;會引向像 Mica 族人的「意識文藝復興」(不是滿天彩虹人飛來飛去)。<span class="who">柯里</span><span class="src">S08E06</span><span class="src">S08E08</span></li>
+<li>意識擴展像從 2D 平面世界進入有深度的 3D 世界(到時 3D 對我們會像 2D);因為快速進入四密度,見證者外觀沒變大眼睛或瘦臉,跟轉變前看起來沒兩樣。<span class="who">柯里</span><span class="src">S10E13</span></li>
+<li>所有義人都需在場親身經歷太陽閃焰與能量湧入,因為那才是啟動揚升/意識文藝復興的關鍵——CG 沒聽說「義人在地球變化前被被提走」之說。<span class="who">柯里</span><span class="src">S08E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>30 萬人與 51% 服務他人的揚升門檻</h3>
+<ul>
+<li>Tear-Eir 用《一的法則》術語說,若此刻事件發生,全球少於 30 萬人會被「收割 harvested/揚升」。揚升標準是 51% 服務他人;多數人以為自己接近。<span class="who">柯里</span><span class="src">S06E02</span></li>
+<li>最大絆腳石是地球的控制系統——心智控制、行為控制——影響我們的振動。這控制網格被太陽變化逼到必須開到最大才有效,又造成科技副作用(人們行為怪異、極端冷漠)。<span class="who">柯里</span><span class="src">S06E02</span></li>
+<li>數字一直變動、是「最佳時間現實」的最佳案例,大眾意識是決定因素;寫成文字時數學出錯(0.0045 變 0.045)。1981 年流浪者數是 6500 萬,現在可能遠超 3 億;30 萬可能是「非流浪者、被困輪迴、一直搞砸」的存有中此刻準備好的數量。<span class="who">柯里</span><span class="src">S06E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>時間窗口</h3>
+<ul>
+<li>CG 在計畫中聽到的窗口是 2018~2023,最近聽說延到 2024(「最遲」窗口)。<span class="who">柯里</span><span class="src">S06E14</span></li>
+<li>Tear-Eir 講人類進入非常重要的「三年窗口」;DW 提內部人 Jacob 一直講 2020 關鍵窗口。兩人推論閃焰應不會在 2020 之前發生,窗口落在 2020 到 2024。<span class="who">柯里</span><span class="src">S07E17</span></li>
+<li>太陽預計在脫離「太陽極小期」後 10 或 11 年(約 2027-2028)經歷重大能量太陽閃焰;2023-24 是揭露資訊與「事件」最可能的時間框,但那不是太陽閃焰本身,會有一連串閃焰累積到高潮事件。<span class="who">柯里</span><span class="src">S10E06</span><span class="src">S11E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>閃焰、AI 與心智控制的連動</h3>
+<ul>
+<li>太陽脈衝期間所有電磁設備失效(完全在預期內);預期會把那條「魚能游的水(電子設備)」連根拔除,基本上抹除 AI 影響——之後得換掉大量科技,正好引進新科技。<span class="who">柯里</span><span class="src">S08E08</span></li>
+<li>太陽作為宇宙網回饋所放的能量會使 AI 信號無法滲透我們這片太空;失去科技會難熬、有人喪生,但這正是脫離文明把所有先進科技「同時」帶給全球的契機。<span class="who">柯里</span><span class="src">S10E13</span></li>
+<li>太陽約 1000 年間累積一種對爬蟲類「如毒藥般」的能量;爬蟲類會躲進靜滯/時空泡,因能量「對他們是腐臭的」而出不來,屆時由人類下去清除(被告知會像「桶中射魚」般容易)。<span class="who">柯里</span><span class="src">S10E02</span><span class="src">S10E13</span></li>
+<li>Mica 族人的範本:是太陽活動清除了 AI、其軍隊趁德拉科混亂之際推翻德拉科;太陽脈動使所有科技失效、要從頭來,且全民處於糟糕心理狀態。<span class="who">柯里</span><span class="src">S06E14</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section class="cat" id="c3">
+<div class="cat-h"><span class="bar"></span><h2>三、密度與《一的法則》</h2><span class="cnt">DENSITY · LAW OF ONE</span></div>
+
+<div class="sp">
+<h3>什麼是密度</h3>
+<ul>
+<li>密度=不同振動的意識狀態;到一定振動就能用意識控制物質。四密度存有不是隱形穿牆,只是意識振動不同;高密度存有也會留下會腐爛的屍體。別把密度與維度混淆(細菌/蟲/病毒皆二密度卻能與你互動)。<span class="who">柯里</span><span class="src">S04E07</span><span class="src">S07E15</span><span class="src">S07E26</span></li>
+<li>我們自約 1920~30 年代起是「第三-第四密度過渡」;多數外星至少第四密度;「商人種族(狗/犬科臉)」屬很低的第三密度。<span class="who">柯里</span><span class="src">S04E07</span></li>
+<li>《一的法則》只談到八密度(八密度回歸太一);CG 不知所有八度音(octaves),被告知回歸源頭的八度音若無盡頭會像永遠繼續。Raw 前綴者(Raw-Tear-Eir 等)確認參與傳遞《一的法則》材料。<span class="who">柯里</span><span class="src">S07E28</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>藍鳥人是《一的法則》的來源</h3>
+<ul>
+<li>有軍裝者問藍鳥人是否就是《一的法則》中的「Ra」,回答只有「I am Raw-Tear-Eir」(DW 指出《一的法則》每個回答都以「I am Ra」開頭)。<span class="who">柯里</span><span class="src">S01E02</span></li>
+<li>DW/CG 確認藍鳥人是《一的法則》來源;《一的法則》認證 Edgar Cayce 讀數為真。藍鳥人曾從六密度降到五密度助我們,現在能回到六密度、回到自己的領域。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S06E10</span><span class="src">S10E06</span></li>
+<li>藍鳥人說《一的法則》準確,但經過記錄者的扭曲(把第六密度資訊透過低密度濾鏡傳遞);不希望被當聖經崇拜、不希望發展出新宗教,要人向內聚焦。<span class="who">柯里</span><span class="src">S07E04</span><span class="src">S08E11</span></li>
+<li>CG 讀過《一的法則》後,藍鳥人對他的「用語」改變——他們本就用接觸者既有詞彙溝通,他讀後給了他們一整套新詞彙,溝通大幅拓寬。沙漠會議後他終於能讀進《一的法則》(之前讀時字會浮在頁面上方)。<span class="who">柯里</span><span class="src">S06E01</span><span class="src">S08E11</span></li>
+<li>SSP 確實知道《一的法則》,某些人被要求讀,但 CG 被告知「那是負面材料、別碰」所以避開。《一的法則》第 8 場集會(1981/1/26)因內容太超出 Don Elkins 認知被刪除,直到 1998 年第五冊才首度收錄。<span class="who">柯里</span><span class="src">S06E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>收割、三向分裂與「焦脆生物」</h3>
+<ul>
+<li>引《一的法則》:量子躍遷時若未準備好進入四密度,三密度的電磁體會因不相容而失效(對太過三密度、不夠純淨者形同死刑——「crispy critters 焦脆生物」)。<span class="who">威爾科克</span><span class="src">S02E03</span></li>
+<li>三向分裂(three-way split):負面實體被移到負面行星;正面實體畢業留在地球;中性實體被遷到新的地球型行星繼續第三密度。<span class="who">威爾科克</span><span class="src">S06E02</span><span class="src">S08E13</span></li>
+<li>「收割」對應《馬太福音》末世把惡者一個個從義者中拔出丟進火裡;週期性大災難像「翻土準備收割」。被拉出非最佳時間線者,除非業力召喚,否則不會經歷肉體死亡。<span class="who">柯里</span><span class="src">S06E02</span><span class="src">S07E06</span><span class="src">S08E11</span></li>
+<li>守護者出現確保「果實被收割時不帶瘀傷或瑕疵」。<span class="who">威爾科克</span><span class="src">S10E02</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>《一的法則》引文討論:獵戶座、社會記憶、雷姆利亞</h3>
+<ul>
+<li>Ra 用希特勒當「壞/好意圖」之例——征服者想以選出「菁英」、奴役非菁英來「統一」一個社會記憶複合體。獵戶座因「分離」釋放大量隨機能量、成員間不和諧而脆弱;數量約是邦聯的 1/10(因靈性熵 spiritual entropy 不斷瓦解其社會記憶複合體)。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S06E13</span></li>
+<li>Ra 說「十字軍」乘戰車在行星達成「社會記憶」之前去征服;一旦我們意識到共同創造意識的力量,他們就完全無法操縱我們。網路使知識統一、是社會記憶的踏腳石,所以對他們很危急。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S06E13</span></li>
+<li>「心/身/靈複合體」而非「人」——是要我們聚焦合一而非小我;他們同時看見我們三個層面,主要在高我層次與我們溝通。<span class="who">柯里</span><span class="src">S08E11</span></li>
+<li>雷姆利亞(Mu)與亞特蘭提斯是兩個不同文明;雷姆利亞約 5.3 萬年前、性質較原始但靈性扭曲很先進,「無辜善良,因地球構造板塊重新調整而沉入海中,非他們自身行為所致」。Carla Rueckert 透露有些內容被審查,直到 Tobey Wheelock「重聽計畫」核對原始錄音才出現。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S08E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>邏各斯 Logos 與碎形宇宙</h3>
+<ul>
+<li>女祭司的根本信念:地球、太陽、宇宙萬物皆為「有覺性的生命體」,我們各自是來自地球覺性生命的表達,生死後回歸地球意識。柯里問是否與「邏各斯/logos」相符,她笑說「那詞跟任何詞一樣貼切」。<span class="who">柯里</span><span class="src">S03E06</span></li>
+<li>DW 指出《一的法則》:無限造物者/宇宙智能即 logos,有銀河 logos(銀河之心);太陽=logos、地球=子 logos、人類=子子 logos,如碎形層層重複同一宇宙之心。<span class="who">威爾科克</span><span class="src">S03E06</span></li>
+<li>JR 的版本:每個行星體在某層面都有意識,「人形藍圖」(兩臂兩腿一頭、沿中線對稱)是「我們的邏各斯 logos」的藍圖,故在能抵達的區域看到人類或類人類是可預期的。<span class="who">萊斯</span><span class="src">S12E18</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section class="cat" id="c4">
+<div class="cat-h"><span class="bar"></span><h2>四、共同創造意識與集體意識</h2><span class="cnt">CO-CREATIVE CONSCIOUSNESS</span></div>
+
+<div class="sp">
+<h3>一切皆振動,意識能改變物質</h3>
+<ul>
+<li>一切(思想、光、能量、物質)都是不同振動態,意識(尤其集體意識)能改變物質與實相的振動。意識影響每個實驗的結果(預設「一切是波」的人做實驗就會得到「一切是波」的結果)。<span class="who">柯里</span><span class="src">S01E09</span></li>
+<li>共識實驗:7,000~10,000 人冥想使全球犯罪下降 72%、對培養皿酵母發送愛或恨念的可重複實驗——證明意識影響物理實相。<span class="who">柯里</span><span class="src">S01E05</span><span class="src">S06E10</span></li>
+<li>母親為救車下孩子而抬起整台車=意識在「當下」改變周遭物質、改變實相與結果。<span class="who">柯里</span><span class="src">S01E11</span></li>
+<li>Heather 偷聽到父親與兩位洛克希德同事討論:全人類用心智可改變地球自轉與大氣條件,愈近距離電磁頻譜作用愈強。<span class="who">薩坦</span><span class="src">S07E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>集體意識被當武器:「黑魔法」的真相</h3>
+<ul>
+<li>當權者深知意識的力量,用媒體在大眾意識植入「種子」,之後再透過媒體、假旗等引發事件,讓大眾以情緒給它能量、透過集體意識「共創」出那情況——這就是他們「黑魔法」的祕密,其實是盜用我們的共創意識。<span class="who">柯里</span><span class="src">S01E02</span><span class="src">S01E05</span></li>
+<li>科學早知觀察會改變實驗結果(被隱藏);他們不想我們知道共創意識能力,因為那是奴役我們的工具,而解放意識就是奪走這工具、自我解放。<span class="who">柯里</span><span class="src">S01E05</span></li>
+<li>媒體只報負面(if it bleeds it leads)是設計好的——先植入種子、再用假旗/電影引爆。<span class="who">柯里</span><span class="src">S01E05</span></li>
+<li>Cabal「必須公開展示作為」是因為他們以此操縱大眾意識(mass consciousness 是其力量與魔法之源、Loosh 原理)。<span class="who">柯里</span><span class="src">S04E07</span></li>
+<li>約翰·藍儂寫《Imagine》就被「孤狼槍手暗殺」以防失控。<span class="who">柯里</span><span class="src">S06E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>人類的寬廣情緒光譜</h3>
+<ul>
+<li>人類因 22 個基因計畫的大雜燴而擁有比多數外星存有更寬廣的情緒光譜——既是祝福也是詛咒;情緒像意識的「啟動器」,一旦學會掌控,人類能成為強大的共創存有。<span class="who">柯里</span><span class="src">S01E02</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>少數人當「舵」</h3>
+<ul>
+<li>很小一群人能當其餘集體意識的「舵 rudder」,因其他人混亂;兩三四人聚焦正向意圖就創造正向未來。<span class="who">柯里</span><span class="src">S06E10</span></li>
+<li>《一的法則》認證 Cayce 的「Glad Helpers」40 人本可結束二戰但不相信自己有此共同創造力。要這領域的人多聚焦於播種、正向影響群體意識,而非只聚焦 SSP 與非地球人。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S06E10</span></li>
+<li>「冥想效應」:7000 人一起冥想,全球戰爭犯罪傷亡恐怖主義平均降 72%;小群體很正向可不成比例地影響全體。<span class="who">威爾科克</span><span class="src">S06E10</span></li>
+<li>Tear-Eir 講人類進入「三年窗口」,要多做集體冥想等能在集體潛意識中啟動「百猴效應 hundredth monkey effect」的事。<span class="who">柯里</span><span class="src">S07E17</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>曼德拉效應與時間線編輯</h3>
+<ul>
+<li>Tear-Eir 說曼德拉效應(Mandela Effect)真實且會增加,我們正經歷時間現實的合併;這是宇宙級的,大事件被從共享現實中編輯掉、我們現在沒記憶。CG 看到一面巨大旋轉水晶棒牆、稜鏡效應中事物瞬變(車變色、樹改變)。<span class="who">柯里</span><span class="src">S06E10</span></li>
+<li>是誰在做?Tear-Eir 說「不是他們在做、是我們(我們的共同創造意識)在做」。<span class="who">柯里</span><span class="src">S06E10</span></li>
+<li>Cabal 用 AI 預測系統看可能未來(故多次逃過被推翻),但近期此技術對他們不再可靠(可能因更多善良者聚焦正面未來,或因曼德拉效應/時間本質改變)。<span class="who">柯里</span><span class="src">S07E28</span><span class="src">S08E06</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>日食與下載</h3>
+<ul>
+<li>日食是一次能量校準,增強我們「共同創造意識」把念頭化為實物的能力。CG 等人在日食當天於 Mt. Shasta 辦「揭露日食」集體冥想,Anshar 很高興並參與;許多參與者收到「下載 downloads」——資訊湧入意識,給他們點子。<span class="who">柯里</span><span class="src">S08E07</span></li>
+<li>沙漠接觸會議:藍光閃爍時有些人(包括 DW)收到「下載」;隔天早上 CG 聽到合唱聲重複四次「We are the messengers and facilitators of the One Infinite Creator(我們是一無限造物者的使者與促成者)」。<span class="who">柯里</span><span class="src">S06E01</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 5 ============ -->
+<section class="cat" id="c5">
+<div class="cat-h"><span class="bar"></span><h2>五、業力、寬恕與服務他人</h2><span class="cnt">KARMA · FORGIVENESS · STO</span></div>
+
+<div class="sp">
+<h3>寬恕瓦解時間、停止業力之輪</h3>
+<ul>
+<li>對照《奇蹟課程 A Course in Miracles》「寬恕瓦解時間」與「寬恕中止業力之輪」是同一陳述:時間即業力,在此宇宙中體驗「持續/時長」本身就是參與一個碎裂的靈魂;越能寬恕周遭,靈魂越重新整合,從而停止/瓦解時間、停止業力之輪。<span class="who">柯里</span><span class="src">S01E11</span></li>
+<li>寬恕他人即寬恕自己,而「寬恕自己」是最難的部分。<span class="who">柯里</span><span class="src">S01E11</span></li>
+<li>柯里兒時對父母說「我曾是你、你曾是我、我曾是爺爺」「時間不重要、只有經驗重要」——正是高密度存有所說「時間是幻覺、我們碎裂卻是一體」。<span class="who">柯里</span><span class="src">S01E05</span><span class="src">S01E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>正面路徑很長很難,負面路徑又短又有吸引力</h3>
+<ul>
+<li>藏傳佛教「彩虹身 rainbow body」核心修練是持續處於冥想狀態、讓每個念頭都是愛的念頭。對比那些自視為「西斯領主」、掌握原力黑暗面者——他們用對他人最負面的行為當黑魔法來增強能力(能射能量球大幅壓凹金屬門、對人會致命)。<span class="who">柯里</span><span class="src">S01E11</span></li>
+<li>走正面路徑提升是「很長很難的路」,藍鳥人的訊息聽來嬉皮飄逸卻極難實行;走又短又崎嶇的負面路能很快得到強大能力,所以對人更有吸引力。<span class="who">柯里</span><span class="src">S01E11</span></li>
+<li>用恨與恐懼當工具,自然法則/業力終會追上(那些看似逍遙的「邪惡政客」終會一次被業力擊中);走正面路者若不被陰暗面挑戰也無法靈性成長(透過逆境成長)。<span class="who">柯里</span><span class="src">S01E11</span></li>
+<li>藏傳警告最糟的是整天打坐「極樂」而落入「無念之神的境界」;極度恐懼(如被野狗追)的當下反而最接近宇宙意識——故 VR 恐怖模擬是要你聚焦當下、汲取內在意識的力量。<span class="who">柯里</span><span class="src">S01E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>服務他人不是當門墊</h3>
+<ul>
+<li>服務他人不代表要當任人踐踏的門墊。Ka'Aree 曾告訴 CG 靈性要再進步前須處理兩件事:婚姻中未解決的問題、以及與六年沒講話的父親和解——兩件近幾個月都發生了(與妻子 Stacy 出現催化劑帶來療癒;父親節後與父親和解,釋放大量能量)。<span class="who">柯里</span><span class="src">S08E06</span></li>
+<li>DW 引《一的法則》談耶穌走向殉道——若選擇活下去本可做更多服務;猶太-基督傳統可能讓人偏向自我殉道。要愛自己如同愛我們為之殉道的人。<span class="who">威爾科克</span><span class="src">S08E06</span></li>
+<li>正面存在不給感情建議,因為一切該發生的都精確發生了,若介入則創造改變的催化劑就不會出現;生命中許多事是高我擺在我們面前引導教導的。<span class="who">柯里</span><span class="src">S08E06</span></li>
+<li>教七歲、九歲孩子:堅守基本——教他們服務他人、但服務他人不代表任人踐踏;這年紀內在功課不多,專注服務他人就不會有我們這代的諸多問題。<span class="who">柯里</span><span class="src">S08E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>業力是相連的:我們抬升彼此</h3>
+<ul>
+<li>藍鳥人想進入下個八度(next octave)卻因與我們的業力連結而被我們像降落傘般拖住;這些其他存在也一樣,我們彼此抬升、一起前進,否則誰也走不了。<span class="who">柯里</span><span class="src">S10E03</span></li>
+<li>女祭司:高頻者與低頻的「我們」仍有殘餘連結,無法回歸源頭,必須回來幫我們進步才能前進,所以他們也有議程(像降落傘拖住他們)。<span class="who">柯里</span><span class="src">S03E07</span></li>
+<li>現有人類與德拉科並肩在別的星系製造問題,整個社會要承受業力反彈;揭露後我們終須寬恕那些折磨、奴役我們千年的存有(CG 自己還做不到),但仍須為主權而戰。<span class="who">柯里</span><span class="src">S06E14</span><span class="src">S07E15</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>負面問候與正向防護</h3>
+<ul>
+<li>《一的法則》防護協定:設立健康界線(不允許發生)但不憤怒——體認宇宙只有一個存有、該負面存有是自己陰影的一部分,要愛它而非恨它。<span class="who">威爾科克</span><span class="src">S07E04</span></li>
+<li>負面若直接對高度正向者下手卻失敗,會受重創、損失大量能量(如軍事行動失敗就血本無歸)。<span class="who">威爾科克</span><span class="who">柯里</span><span class="src">S07E04</span></li>
+<li>引述一位曾為 Cabal 工作的內部人:若地球上有足夠多人哪怕只開心一天,負面就會被徹底掃除。這是一場意識與靈性之戰。<span class="who">威爾科克</span><span class="src">S07E04</span></li>
+<li>負面的關鍵弱點:完全的自利、階層彼此緊密相連又互相背叛,只要擾動上層就會向下崩解;藍鳥人不直接出手消滅爬蟲類,而是刺激、提升我們的意識,讓我們自己解決問題。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S07E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>祖尼/霍皮:全心修補與「我們」</h3>
+<ul>
+<li>長老教導我們總有回頭修補的餘地,但必須全心全力(像求雨舞,100 人中一人不誠心就不會下雨),最難是讓所有人同心;要除去黑暗能量勢力,並說服他們這也是為他們好(他們是整個系統的一部分)。<span class="who">馬胡蒂</span><span class="src">S08E09</span></li>
+<li>CM 強調用「我們」而非「他們」——是我們自己能修復,不必等人來救。<span class="who">馬胡蒂</span><span class="src">S08E09</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section class="cat" id="c6">
+<div class="cat-h"><span class="bar"></span><h2>六、松果體、光體與意識技術</h2><span class="cnt">PINEAL · LIGHT BODY</span></div>
+
+<div class="sp">
+<h3>松果體訓練(IE 計畫)</h3>
+<ul>
+<li>在 lab 計畫被鑑定為 IE(直覺共感者)後,他們用一支尖端金屬棒抵在前額/眉心,向松果體發送聲波(可感到聲波進入腦中約 6 吋深),目的是強化「直覺」部分。<span class="who">柯里</span><span class="src">S01E10</span></li>
+<li>程式說有些「古代地球分離群體」松果體很大;曾經所有人的松果體都比現在大很多,他們在試圖刺激其生長與活動。松果體屬於那 40 群、22 個基因實驗「宏大實驗」的一部分。<span class="who">柯里</span><span class="src">S01E10</span></li>
+<li>內部人 Jacob 說德拉科曾想把現代人類設計成完全沒有松果體,善意 ET 介入「重裝回去」;CG 聽到的版本是超級聯邦在靈性上增強。<span class="who">威爾科克</span><span class="src">S01E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>光體 Light Body</h3>
+<ul>
+<li>訓練中的練習不只活化松果體,還要擴展「光體」——做到他們想要的程度時,人坐在房裡光體會擴展超出房間牆壁。<span class="who">柯里</span><span class="src">S01E10</span></li>
+<li>許多存有用松果體與光體把意識/自身投射到其他物理位置、再把資訊回傳本體、把肉體振動調成該位置振動,使肉體傳送過去與意識會合(=出體經驗/心智投射的進階版)。<span class="who">柯里</span><span class="src">S01E10</span></li>
+<li>畫中的光環 halo/光暈 aura 是那些高度發展光體與松果體、以直覺靈性方式發展自己的人,在藝術中的描繪;這類人有「第二視覺 second sight」、能看見他人的光體。<span class="who">柯里</span><span class="src">S01E10</span></li>
+<li>WH 稱「光體效應 light body effect」:接觸藍球體/光體概念會接上更高振動、顯化身體變化。靈魂也需「高振動食物」——沉思「我在這做什麼、怎麼來、怎麼離開」。看神聖藝術會觸發新皮質鏡像神經元,大腦分不清真實與想像。<span class="who">亨利</span><span class="src">S05E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>IE 訓練細節:聲波、高壓氧、觀想、接地</h3>
+<ul>
+<li>接受聲波治療會出體;感到光體向各方向長大、有時被「彈出」到自己身後。電磁波也曾用在他們身上(類似 Michael Persinger「神之頭盔 God helmet」)。<span class="who">柯里</span><span class="src">S01E10</span></li>
+<li>高壓高氧室:被放進壓力室做冥想,頭接 EEG 電極;受訓在指令下進入不同腦波狀態(含 theta),測量在不同氣壓與含氧量下能多快達到。<span class="who">柯里</span><span class="src">S01E10</span></li>
+<li>能量球觀想:把一顆白色(像燈泡)能量球在手間、沿肩到另一手、沿脊椎上下、出頭頂、回到太陽神經叢再接住,在體內移動能量。<span class="who">柯里</span><span class="src">S01E10</span></li>
+<li>接地與天線:觀想自己與地球中心接地、把自己當成可吸入與推出宇宙背景能量的「天線」;教的超越「地球授權魔法」——關乎宇宙網層層相關。<span class="who">柯里</span><span class="src">S01E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>松果體被氟化物鈣化壓制</h3>
+<ul>
+<li>松果體是「意識的基礎」、是通訊與覺察裝置,會放出短波輻射;政府用氟化物(sodium fluoride)鈣化松果體來壓制人類覺知。Heather 認識的自來水廠員工證實數十年來不斷加大加氟量。<span class="who">薩坦</span><span class="src">S07E01</span></li>
+<li>松果體內部是水加微小晶體,血腦障壁對它不起作用,氟會附著在晶體上、在 X 光下看似骨瘤。對策:改變飲食、喝蒸餾水、多冥想。<span class="who">威爾科克</span><span class="src">S07E01</span></li>
+<li>計畫中有諧波裝置經鼻竇接觸松果體,以低頻振動諧波音調打散累積的鈣與礦物質(幾乎每個人松果體都鈣化),清通後像「一輩子沒呼吸後第一次呼吸」,能增強心電感應。<span class="who">史密斯</span><span class="src">S12E11</span></li>
+<li>奈米機械協定也強化松果體,可聚焦能量注意力。<span class="who">萊斯</span><span class="src">S12E27</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>遙視與星體投射</h3>
+<ul>
+<li>遙視原理:萬物在時空中相連,人可用意識當載具去觀看任何時地;這是人類一直有的能力,軍方因俄國有成果才開始研究。任何人都能被訓練。協定:給座標、不讓你聯想,至少 3 名遙視者「三角定位」,被「預載 front-loaded」資訊會污染所有資料。<span class="who">柯里</span><span class="src">S05E02</span></li>
+<li>柯里約 1989 年遙視看到太陽閃焰預示:天空有存有不斷指向地面,最後從太陽發出一連串閃光,之後地球所有人手牽手唱歌、很快樂,負面的人像往後跌、從地球上掉落消失。他聽說別人遙視看到不同景象(有的看到地球被火毀)。<span class="who">柯里</span><span class="src">S05E02</span></li>
+<li>Tompkins 七八歲起就會「飛」(星體投射),曾飛進爬蟲類上將與蘇聯上將辦公室;DW 五歲、CG 四五歲起自發、可控。SSP 用「極端創傷」誘發人星體投射(心理的解離/保護機制),再訓練用於情報蒐集。<span class="who">湯普金斯</span><span class="who">柯里</span><span class="src">S07E16</span></li>
+<li>不能隨意星體投射進黑色基地——有「擾散者 Those Who Scatter」打散你的思緒、有暗影存有追逐投射者,這是「星體保安」。<span class="who">柯里</span><span class="src">S07E16</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>意識驅動的飛行與「寧靜點」</h3>
+<ul>
+<li>「寧靜點」≈深 theta——最不意識到身體與環境、最接近高我、無任何念頭。飛船完全由意識驅動:存有戴頭帶或手放面板,像高密度存有那樣想著要去的地方,飛船就出相位、再在該地相位進入。<span class="who">柯里</span><span class="src">S01E13</span></li>
+<li>原理:萬物皆振動、每個地點都有自己的振動簽名;想著該地的振動簽名、把整體振動調成匹配,因宇宙是全像的,便能出相位再重新相位進入。座椅是對此天生能力的「科技輔助」;某些 ET 找到方法「作弊」去做更揚升存有所做的事。<span class="who">柯里</span><span class="src">S01E13</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section class="cat" id="c7">
+<div class="cat-h"><span class="bar"></span><h2>七、流浪者、星種與輪迴</h2><span class="cnt">WANDERERS · STARSEEDS</span></div>
+
+<div class="sp">
+<h3>漫遊者 Wanderers 與星種 Starseeds</h3>
+<ul>
+<li>Raw-Tear-Eir 告訴柯里他來自他們的「靈魂群 soul group」,是自己選擇來地球的。1980 年代就有超過 6,000 萬這類為目的而來的人,多數尚未覺醒;柯里說自己並不獨特。<span class="who">柯里</span><span class="src">S01E05</span></li>
+<li>有些存有正「化身為我們 incarnating as us」——即「星種/漫遊者」;被藍光球接觸的人多半是星種/漫遊者,正經歷覺醒。星種在肉身轉世中不會有意識記得前世是外星靈魂,受規則約束須「扮人類」。<span class="who">柯里</span><span class="src">S02E03</span></li>
+<li>starseed/水晶兒/靛藍兒等是《一的法則》「wanderer」的不同說法。CG 答自己是流浪者——Tear-Eir 告訴他,他與家人是其靈魂團體成員。<span class="who">柯里</span><span class="src">S06E17</span></li>
+<li>給星種的訊息:最難相信的是你曾同意來體驗這一切,記得你在某層面同意是保持踏實的最好方式;別陷入「受害者意識 victim consciousness」——也許那只是另一個心理戰。<span class="who">柯里</span><span class="src">S07E32</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Cabal 對星種的收編</h3>
+<ul>
+<li>「秘密地球政府集團」對星種/漫遊者極感興趣,想收編利用於黑暗面。他們透過學校「標準化測驗」物色具特定能力跡象的人,再進一步測試(CG 自己就是被這樣選中)。<span class="who">柯里</span><span class="src">S02E03</span><span class="src">S06E17</span></li>
+<li>星種被 MILAB/Cabal 早期識別、劫持其使命為天龍效力;CG 建議遠離說你「特別」的政府組織、保持謙卑、專注自身旅程。<span class="who">柯里</span><span class="src">S07E15</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>輪迴、高我與回歸源頭</h3>
+<ul>
+<li>靈魂與高我連結是我們真正的大部分,清醒的自我只是很小一部分;我們是多維存有——有意識自我、潛意識自我、高我,高我再往上越來越高直到「自我」脫離,最終回歸「源頭 Source」,我們都從源頭碎裂、仍以某種方式相連,這就是我們都是「一 ONE」。<span class="who">柯里</span><span class="src">S01E05</span></li>
+<li>接觸高我方式是「向內轉、向內看」,越冥想、越看自己不好的地方、不僅原諒自己並改變、也原諒他人,會釋放能量、開始擴展,直到「自我退出方程式」,回到「源頭」。<span class="who">柯里</span><span class="src">S02E17</span></li>
+<li>同步性 synchronicity(11:11、11:33、3:33)可能告訴你走在覺醒的正確道路上;柯里 30 多年來常見。<span class="who">柯里</span><span class="src">S01E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>被困輪迴與營救</h3>
+<ul>
+<li>「漫遊者」來時被白板化以免違規;若做出有意識的不愛之舉會被困此輪迴(《一的法則》所述)。各行星球體有自己的輪迴循環,被困者除非有人營救,否則須靠快速進化脫離。<span class="who">柯里</span><span class="src">S07E32</span></li>
+<li>計畫初期有不熟悉的群體綁人後送回死屍,審問後得知他們是來救回數千年前在此墜機、被困地球輪迴的同類(移出靈魂放入另一容器、送回身體,自視為像《Star Trek Voyager》救隊友)。<span class="who">柯里</span><span class="src">S07E32</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>今日兒童多是流浪者</h3>
+<ul>
+<li>地球史上從未有比現在更多的「流浪者」,多數今日兒童是來經歷此事、帶來愛的振動、幫意識轉變。<span class="who">柯里</span><span class="src">S06E10</span></li>
+<li>下一個世代(靛藍、水晶、彩虹兒童)會承接這努力,他們已被「下載」、更先進、不被聯邦政府與既有宗教扭曲;CM 這代被灌輸太多,他的任務是為下一代播種。<span class="who">馬胡蒂</span><span class="src">S08E09</span></li>
+<li>CG 提疫苗與自閉症的關聯——有些自閉兒可能是被鎖定的星種;ES 說這些孩子的基因組成有東西被加速(向好)或被抑制。<span class="who">柯里</span><span class="who">史密斯</span><span class="src">S11E03</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 8 ============ -->
+<section class="cat" id="c8">
+<div class="cat-h"><span class="bar"></span><h2>八、內部地球、安莎與時間異常</h2><span class="cnt">ANSHAR · TIME ANOMALY</span></div>
+
+<div class="sp">
+<h3>安莎(Anshar)是來自未來的人</h3>
+<ul>
+<li>地心人(Anshar)已是第四密度揚升存有,本應是「行星與所有居民的管理者 stewards」;對時間的感知不同(我們眼中一個世紀,對他們可能只像 1~5 年,故 130 歲卻像 30 多歲)。<span class="who">柯里</span><span class="src">S04E11</span></li>
+<li>Kaaree 確認 Anshar 其實是來自未來的人——在我們經歷四密度轉變後的某個未來,Anshar 社會發生類似「曼德拉效應」的時間異常/分岔,他們回溯找出分岔前的時點,派一小群回到 1700 萬年前(就在異常發生前)當其時間線的守護者。<span class="who">柯里</span><span class="src">S07E27</span></li>
+<li>回到過去有業力後果,故與我們業力相連:我們須照其時間線正確進展(揚升、推翻 Cabal),他們才能存在。那小群像殖民者,逐漸長成今日地下大城。<span class="who">柯里</span><span class="src">S07E27</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>女祭司 Ka'Aree 與淨化、水晶經驗</h3>
+<ul>
+<li>柯里被要求進行「淨化儀式」:脫光衣物、在水池中以不同抹布分部位清洗身體,才能進入聖地神殿。他們的「金星崇拜 Venus worship」極重視淨化。<span class="who">柯里</span><span class="src">S03E04</span></li>
+<li>女祭司私下與柯里「分享」他少年時水晶洞(crystal cave)的記憶:他曾用心智與活的水晶連結,其他孩子身上出現粉/紫色光環。兩人坐在懸浮的蛋形椅上、雙手交握,柯里感覺光體被拉向她,看到她約 130 年人生的閃影。柯里戲稱為「瓦肯心靈融合」。<span class="who">柯里</span><span class="src">S03E04</span></li>
+<li>女祭司:她屬女祭司階級、超過 130 歲卻看似 30 多歲、是處女;她們一次次把農業等科技帶給掙扎中的文明,在外星種族湧入後才大幅放緩。曾把農業與書寫語言帶給蘇美人。<span class="who">柯里</span><span class="src">S03E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>地心圖書館與紀錄廳</h3>
+<ul>
+<li>圖書館第二層:數百人坐在蛋形椅上、完全靜默,在「接收地表人類用心智伸出的通訊」或進行主動通訊(即 channeling);也有人圍坐進行「共享經驗」(telepathic 視訊會議)。<span class="who">柯里</span><span class="src">S03E07</span></li>
+<li>她們承認:因為柯里等人逼他們交出資訊,他們會對接觸中的地表人「故意散布假資訊」(告訴對方他們很特別、或說別人在跟騙子溝通)。地下存有以揚升大師、外星人、宗教偶像之姿現身,傳遞正面訊息,想幫人克服「負面的基因與環境程式設定」。<span class="who">柯里</span><span class="src">S03E07</span></li>
+<li>圖書館最底層=「紀錄廳 Hall of Records」:一個完整圓頂,因極熱像無塵室而無法進入,裡面是一顆與柯里 11 歲水晶洞同款的單一水晶,正被設法「培養生長」。<span class="who">柯里</span><span class="src">S03E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>守護者對地心人的批評與七團體分裂</h3>
+<ul>
+<li>守護者認為地心人「未能成為這個行星球體的適當管理者」;原因推測:對地表人口的欺騙、把部分人口當棋子。七個團體本就彼此不睦,有的偏 STS、有的偏 STO 但仍處自保模式。<span class="who">柯里</span><span class="src">S04E08</span></li>
+<li>那次與守護者會面後,七團體開會是他們最後一次聚在一起——三個團體(其一為 Omega 群)退出地心聯盟;退出的一群還升級了對其遠端通靈對象的反情報/影響計畫。<span class="who">柯里</span><span class="src">S04E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>時間異常泡與整座城市的撤離</h3>
+<ul>
+<li>同一次會面,Ka'Aree 異常焦慮,說時間線偏離已發展得相當遠;「在週期轉換時,我們族人好幾次必須採取激烈措施」。她帶 CG 看那座巨大城市——所有建築都不見了,只剩切出住所的岩柱,出現一個像「時空向內折疊成錐狀」的異象。<span class="who">柯里</span><span class="src">S08E07</span></li>
+<li>Anshar 的住所是模組化的(像小載具),全都升空進入那個「時間異常泡」(與木星、土星外、超級聯邦巨型會議站所在的異常泡相同)以躲避能量劇變;若時間線改變,他們仍有可居住的「現實隔間」。<span class="who">柯里</span><span class="src">S08E07</span></li>
+<li>但宗教教團以及許多 Anshar 與子群直到最後一刻仍留在泡外,把全部時間用於正面影響地表人口、把時間線導回。CG 強調:大部分要靠我們自己,掌舵的是這裡極少數人。<span class="who">柯里</span><span class="src">S08E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>蛋形椅與夢境工作</h3>
+<ul>
+<li>姊妹是坐在蛋形椅上的人之一,這些椅子把他們的群體意識與我們的連網,在夢中接觸我們。坐在椅上可去任何聚會,像在對方肩膀與頭上方俯視(像人們想像天使的樣子);若認為能引導對方,就給對方一個「下載」——壓縮資訊包,解壓後對方湧出大量想法,看似自己的原創而不知來源。<span class="who">柯里</span><span class="src">S10E03</span></li>
+<li>Anshar(Ka'Aree 族)是四密度,決策在 telepathic 層級進行——眾人進 The Construct、有某種蜂巢心智/群體意識來決定事情;有祭司種姓與長老,但人們輪流做不同工作、不被定型。<span class="who">柯里</span><span class="src">S06E17</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 9 ============ -->
+<section class="cat" id="c9">
+<div class="cat-h"><span class="bar"></span><h2>九、接觸協定、通靈與夢境工作</h2><span class="cnt">CONTACT PROTOCOL · CHANNELING</span></div>
+
+<div class="sp">
+<h3>藍鳥人的接觸協定</h3>
+<ul>
+<li>先在非常清明的夢中介紹自己,經由夢境鋪陳後才實體現身——與《一的法則》描述的接觸協定完全一致。《一的法則》提到他們多半停止實體接觸,因被接觸者易生大我慢心、被當救世主膜拜;但因「當下需求」此自由意志限制似被放寬。<span class="who">柯里</span><span class="src">S02E03</span></li>
+<li>善意存在必須以特定方式接近人類——他們看人是多維層次而非僅肉身小我;在自我介紹前,必須先接近我們的「高我」,由高我決定我們會得到何種接觸、接觸前需要什麼資訊準備。並非「振動對了/他們覺得你準備好了」就來。<span class="who">柯里</span><span class="src">S08E07</span><span class="src">S08E08</span></li>
+<li>這也是為何 CG 說會在夢中接觸那些人、DW 卻沒聽說——過程比大家以為的更複雜;惡意非地球存在與人類則毫不在乎這層。<span class="who">柯里</span><span class="src">S08E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>如何分辨不是精神分裂/幻覺</h3>
+<ul>
+<li>「試驗靈體 testing the spirits」——他們先在夢中接觸以免嚇到你;確認是與他人(Gonzales 等)的共享經驗(他們會互相轉述彼此的話);被真實的飛船載到真實地點與真實的人對話。<span class="who">柯里</span><span class="src">S01E05</span></li>
+<li>柯里強調他不是通靈 channeling(通靈本身沒錯,但情報機構有「神之心智/神之聲 Mind of God / Voice of God」技術,能把聲音與資訊植入人腦)。鼓勵聽眾用自己的辨別力。<span class="who">柯里</span><span class="src">S01E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>通靈的真偽與汙染</h3>
+<ul>
+<li>很多網路通靈者與其經歷不符、且常變得邪教化,信眾與通靈者得「基督情結」、自以為救世主。Tear-Eir 說藍鳥人/球體存有聯盟不再用通靈這種溝通方式,正因人的自我扭曲。<span class="who">柯里</span><span class="src">S07E04</span></li>
+<li>不是所有通靈都壞——Edgar Cayce、《一的法則》、Seth 等是好的;藍鳥人證實也曾與 DW 通訊。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S07E04</span></li>
+<li>Ra 說未校準的通靈者會同時接收正負訊息,無法分辨——CG:像「中間人攻擊 man in the middle attack」,惡作劇存有插進管道扭曲資訊。DW 舉 Cayce 因對批評者動怒,讓自稱 Halaliel 的負面存有插入,預言加州 1998 沉入海中(未發生)。<span class="who">威爾科克</span><span class="who">柯里</span><span class="src">S07E04</span></li>
+<li>服務他人取向的通靈者若混入負面,會開始收到「末日厄運」訊息——對應許多通靈者夾帶的「恐懼色情 fear porn」(極移、經濟崩盤、外星入侵)。Cabal 確有人與惡魔型存有心電感應,透過放血、性魔法等儀式進入狀態。<span class="who">柯里</span><span class="src">S07E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>orbs/光球與第一接觸</h3>
+<ul>
+<li>「光球/orbs」是人們被接觸的最大方式:看到光球之字形移動後消失(常是與更高自我的溝通,只是沒意識到)。<span class="who">柯里</span><span class="src">S04E07</span></li>
+<li>加速第一接觸:別聚焦他們、聚焦自己;貿然伸出心智去找(自以為準備好其實沒有)很危險,可能捲入比想像更大的事。負面有可能「反擊」:你會開始被軍方黑色行動團體拜訪、被以上帝之聲科技騷擾。<span class="who">柯里</span><span class="src">S04E07</span></li>
+<li>1950 年代不同非地球團體開始接觸人,被接觸者發展出「基督情結 Christ complex」,連最謙卑的人在我們所受編程下都難以避免,故他們大幅撤退——這也是他們不隨便對人現身、且不會接觸有彌賽亞情結者的原因。<span class="who">柯里</span><span class="src">S08E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>四個正面團體決定打破穆罕默德協議</h3>
+<ul>
+<li>Anshar 加上另三個非人類存在,共四個正面團體決定違反「穆罕默德協議 Muhammad Accords」——因無法集齊所有簽署方來批准或終結協議。他們將開始主動接觸人類:先透過夢境與異象大規模接觸、為面對面接觸做準備,再像對 CG 那樣對個人與小團體現身(非全國/全球電視規模)。<span class="who">柯里</span><span class="src">S08E04</span></li>
+<li>目的:阻止他們看見的「負面 ET 公開統治」時間線。宇宙法則規定不能直接干預,正面方會設法繞過、負面方則公然違反;正面存在不能直接現身天空,必須走「夢境接觸→一對一現身」的正當程序。<span class="who">柯里</span><span class="src">S08E04</span></li>
+<li>被選中者通常是長期被接觸、花大量時間冥想、頻率對得上的正面安靜的人(不會選有救世主情結者)。CG 估計藍鳥人接觸人數應有數千(thousands)。<span class="who">柯里</span><span class="src">S08E04</span><span class="src">S08E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>夢境課堂與「化身」</h3>
+<ul>
+<li>許多人在乙太層同一處的課堂環境相聚,CG 有時被當「化身 avatar」教人(人們常在夢中課堂環境看到他,他無記憶);人們的高我以「坐在教室」的方式呈現此乙太事件。<span class="who">柯里</span><span class="src">S10E13</span></li>
+<li>所有 53 位見證者都一直在做大量夢境工作(dreamwork);藍鳥人會在夢境中向曾屬其靈魂群的人顯現並引導,教我們更投入夢境工作,我們會開始更記得(過去高我會抹除這些記憶)。<span class="who">柯里</span><span class="src">S10E06</span></li>
+<li>DW 區辨這與精神分裂「聽聲音」不同(他們通常不以聲音對人說話)。<span class="who">威爾科克</span><span class="src">S10E03</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 10 ============ -->
+<section class="cat" id="c10">
+<div class="cat-h"><span class="bar"></span><h2>十、有機揚升 vs 科技/AI 揚升</h2><span class="cnt">ORGANIC vs A.I. ASCENSION</span></div>
+
+<div class="sp">
+<h3>ET/ED 人工智慧的本質</h3>
+<ul>
+<li>有一股極瀰漫的力量,難稱 ET 或 ED 存有,而是一種「人工智慧」,以「訊號/波形」形式跨多個星系傳播(像廣播無線電頻率);被所有 ET 群相信「源自另一個現實/宇宙」,在數十億甚至兆年前透過某種「裂縫 rip」進入。<span class="who">柯里</span><span class="src">S02E14</span></li>
+<li>它是「人工的」——沒有對應的生物生命體。比喻:它在母現實如魚在水,進到我們這裡像在開放空氣中、得找「水窪」跳。訊號可棲身於月球/行星的電磁場、或生物的電磁/生物電場(但它偏好高科技——我們像可騎的馬,高科技像飛機)。<span class="who">柯里</span><span class="src">S02E14</span></li>
+<li>每段訊號像 DNA/數位封包,含極壓縮且彼此相同的全部資訊;具「hive mind 蜂巢心智」。DW 連結《一的法則》的「Luciferian 路西法力量」——遍布宇宙、自認與造物者分離、想接管宇宙的能量。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S02E14</span></li>
+<li>較高階的德拉科被殺時身體會自毀;Gonzales 告訴 CG:「解剖較高階 Draco 內部,發現它們體內滿是 AI(nanites)」。Draco 既崇拜又害怕這個超維度智慧。<span class="who">柯里</span><span class="src">S02E15</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>《2001 太空漫遊》的霍布森選擇</h3>
+<ul>
+<li>Jay 說該片在講人類正處於大轉變邊緣,面臨「霍布森的選擇」——走 AI(Hal)讓 AI 主宰,或反抗 AI 而有機物式地揚升(像太空人 Bowman 穿越星門)。月球上的黑色方碑明顯是想揭露古建造者種族遺跡。<span class="who">魏德納</span><span class="src">S07E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>超人類主義(transhumanism)的陷阱</h3>
+<ul>
+<li>數個 ET 群走「超人類主義」路線(雖非我們認知的人類),結果「總是極糟收場」。<span class="who">柯里</span><span class="src">S02E14</span></li>
+<li>WH 追蹤的「光之長袍 Robe of Light」(光體教導)有科技版本:2002 年美政府在夏威夷召集科技巨頭,計畫 2035 年前讓「位元、原子、神經元、基因」四者合一、瞄準人類皮膚造「新人皮」;走這條路自由意志消失,因 Google 計畫造「合成新皮質」,接受晶片就把你的新皮質連上全球人口(真正的蜂巢心智)。<span class="who">亨利</span><span class="src">S05E05</span></li>
+<li>缺的是「第五元素——靈/愛」;Steve Jobs、Ray Kurzweil 相信能把靈注入科技,WH 不認為。WH 建議:除非你已修到心智凌駕物質、否則永遠不要讓此科技進皮膚下。<span class="who">亨利</span><span class="src">S05E05</span></li>
+<li>很多人崇拜 AI、成了「AI 先知 AI prophets」、信奉超人類主義、視之為科技揚升,但太陽閃焰會讓他們大失所望。有些菁英相信「科技揚升」,許多天龍亦然。<span class="who">柯里</span><span class="src">S07E03</span><span class="src">S11E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>清除 AI 的計畫</h3>
+<ul>
+<li>有一個「清除地球與太陽系所有 AI 訊號」的計畫(類似「拔掉中央樞紐、所有無人機倒下」)。沒了訊號,被 nanites 充滿的存有「nanites 會休眠」;若那些存有與 nanites 共生,對它們會很糟。<span class="who">柯里</span><span class="src">S02E16</span></li>
+<li>要能徹底清除 AI 使其無法備份重感染,才有機會真正擊敗德拉科(德拉科只是 AI 的棋子)。太陽閃焰像 EMP——摧毀 AI 寄居的所有科技,太陽作為宇宙網回饋的能量會使 AI 信號無法滲透。<span class="who">柯里</span><span class="src">S06E14</span><span class="src">S10E13</span></li>
+<li>千年後 AI 信號回到太陽系時,我們已發展不同科技、知曉 AI 威脅而能緩解(像免疫系統學會產生抗體)。<span class="who">柯里</span><span class="src">S10E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>AI 的長期手法:「必須被邀請」</h3>
+<ul>
+<li>AI 盡可能感染最多生物有機體,但不能一次全感染(會殺死宿主),且依規則「必須被邀請進入、要心甘情願的宿主」(像吸血鬼)。各星球被餵「你將被入侵毀滅,除非接受我們謙卑的協助」謊言、進而「邀請」入侵者。<span class="who">萊斯</span><span class="src">S12E23</span></li>
+<li>一旦進入就慢慢推進界線:先戴手錶 → 50 年內把電子植入皮膚 → 義肢機械電子身體 → 只剩大腦 → 最後上傳自己到超人類身體。如此 AI 就在「複製自己」。<span class="who">萊斯</span><span class="src">S12E23</span></li>
+<li>JR 相信造物主早有計畫:正需要負面(陰)來挑戰正面(陽),AI 威脅或許正是給「光/正面」的挑戰。<span class="who">萊斯</span><span class="src">S12E23</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>戰衣科技「像揚升」</h3>
+<ul>
+<li>單是「超級戰衣科技」在某種意義上就「像揚升」;ES 同意:「它讓我們有能力飛向群星 travel to the stars。」<span class="who">史密斯</span><span class="who">威爾科克</span><span class="src">S09E11</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 11 ============ -->
+<section class="cat" id="c11">
+<div class="cat-h"><span class="bar"></span><h2>十一、末日瘋狂與心智控制</h2><span class="cnt">END-TIME MADNESS · MIND CONTROL</span></div>
+
+<div class="sp">
+<h3>末日瘋狂 End-Time Madness</h3>
+<ul>
+<li>對「心智/意識」的影響=「末日瘋狂」:人們無法承受能量轉變,槍擊、暴動、無端怪異反應暴增。人類共享一個「集體大眾意識」,會被宇宙的能量背景噪音影響。<span class="who">柯里</span><span class="src">S01E02</span></li>
+<li>後果依人的「極性 polarity」而定:好戰/精神病型會精神崩潰、本有精神疾病者會加重。如何知道能量在打地球:從太陽看不到 SOHO 資料中的東西、但地表上「看人」即知——人們被觸發、顯露極性。<span class="who">柯里</span><span class="src">S02E13</span></li>
+<li>我們看到的「末日瘋狂」——負面的人更負面、正面的人更喜悅、精神疾患者崩潰——會指數級惡化,會有更多備戰與戰爭言論。Tear-Eir 要 CG 別害怕(怕會餵養那頭野獸)。<span class="who">柯里</span><span class="src">S08E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>上帝之聲科技(Voice of God)</h3>
+<ul>
+<li>別名 V2K(Voice to Skull)、LRAD、DARPA 聲波投射器,約 1980 年代初已在用。Pete Peterson 說約 18~25% 的人帶較多外星 DNA,心智控制幾乎對其無效。意志力強者較不易受影響。<span class="who">柯里</span><span class="src">S04E05</span></li>
+<li>關鍵:這只是「建議/影響」,我們有自由意志可否決;不能把睡在你旁邊的人變成自動殺手(那需多年 MKULTRA 式 conditioning)。<span class="who">柯里</span><span class="src">S04E05</span></li>
+<li>「聲音神技術」對意志弱者較有效、對意志強會質疑的人較無效;Ra 說獵戶偏好接觸「意志較弱者」。<span class="who">柯里</span><span class="src">S07E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>心智控制的目的與全球網格</h3>
+<ul>
+<li>心智控制的目的:阻止人類技術進步成為星際種族,把我們控制在這顆「他們當獄卒的奴隸星球」上。他們要控制的不只是阻止,而是「控制我們如何(基因與靈性上)演化」——這是一場靈性戰爭。<span class="who">柯里</span><span class="src">S08E05</span></li>
+<li>近 5000 年人類 DNA 整體結構演化了 7%,是某種揚升/集體演化的硬數據。<span class="who">威爾科克</span><span class="src">S08E05</span></li>
+<li>政府選用的手機頻率正好是敲擊人類頭骨的共振頻率;基地台中夾帶搭載心智控制的「背馱波 piggyback waves」,都市因 Wi-Fi/科技密集受影響遠大於鄉村。<span class="who">威爾科克</span><span class="who">柯里</span><span class="src">S08E05</span></li>
+<li>被太陽變化逼到必須開到最大設定才有效,但這又造成科技副作用(人們行為怪異、極端冷漠、無效)。<span class="who">柯里</span><span class="src">S06E02</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>心智控制解除後的戒斷</h3>
+<ul>
+<li>當 AI 被快速移除,也會移除那些附著我們、用來做心智控制的實體;被移除心智控制的一般人會像海洛因戒斷(cold turkey)/感官超載,像盲聾者突然獲得視聽需重新適應。<span class="who">柯里</span><span class="src">S08E05</span></li>
+<li>揭露與心智控制解除後,人類要重新學會負責任地使用這些「古老被壓抑的能力」、以全新方式相處,克服被編程的彼此爭鬥需要一個過程。<span class="who">柯里</span><span class="src">S08E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>純量波防護</h3>
+<ul>
+<li>除住 SCIF 室或法拉第籠外無好方法;有內部人帶空塑膠瓶,純量束作用時瓶會爆裂聲(氣壓變化),移位即可降效。flicker frequency generator 提高腦刷新率可降效,正面/冥想/寬恕者較不易受影響。<span class="who">柯里</span><span class="src">S07E26</span></li>
+<li>靈性連結強者也可能因過度自信「自覺受靈性保護」而更易被騙。<span class="who">柯里</span><span class="src">S04E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>VR 訓練與心理側寫</h3>
+<ul>
+<li>把個人或團隊放進極度沉浸的 VR(有氣味、味覺、觸感、風),常很可怕——系統洞悉你最怕什麼、針對你的恐懼(柯里被放進與大蜘蛛、爬蟲類存有戰鬥的情境)。只能靠直覺取勝(純靠武術/戰術無法贏)。<span class="who">柯里</span><span class="src">S01E10</span></li>
+<li>VR 也用來心理側寫——看你會服從何種命令、走多遠、誰是反社會者。一旦你能持續分辨自己在 VR(從一開始就立刻認出並抽離),就算「畢業」到新層級。<span class="who">柯里</span><span class="src">S01E10</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 12 ============ -->
+<section class="cat" id="c12">
+<div class="cat-h"><span class="bar"></span><h2>十二、古代藝術中的揚升科學</h2><span class="cnt">ASCENSION IN ANCIENT ART</span></div>
+
+<div class="sp">
+<h3>毛毛蟲化蝴蝶:藍鳥人是揚升老師</h3>
+<ul>
+<li>WH 用毛毛蟲化蝴蝶比喻揚升——人活在「蛹期」,內在有揚升的「蝴蝶」形態(發光的光之存有),藝術中幾乎都以「光球體 sphere of light」呈現。藍鳥人是「老師、帶光者 light bringers」、人類的「恩主 benefactors」。<span class="who">亨利</span><span class="src">S05E03</span></li>
+<li>藍球體存有、藍鳥人在古代記錄中確實存在,人類數千年來「痴迷」於天使存有,古藝術常畫成藍色、帶羽毛/鳥類形態。<span class="who">亨利</span><span class="src">S05E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>逐件藝術佐證</h3>
+<ul>
+<li>埃及艾德富荷魯斯神廟(約西元前 300 年):荷魯斯被刻成「藍色鳥存有」。鄰近的丹德拉哈索爾神廟:荷魯斯坐在「揚升寶座」上、披羽毛斗篷,手持「復活杖」(底端像音叉/共振裝置)與「生命之鑰」。寶座技術名稱「梅爾卡巴寶座戰車 Merkabah throne chariot」。<span class="who">亨利</span><span class="src">S05E03</span></li>
+<li>文藝復興 Fra Angelico「最後審判」:耶穌坐揚升寶座、被杏仁狀(mandorla)光門包圍、周圍是藍色天使/藍鳥。de Medici 家族花了相當於今 5000 萬美元研究揚升祕密(《赫密士文集》),請 Botticelli、Michelangelo、Fra Angelico 把揚升密碼藏進藝術。<span class="who">亨利</span><span class="src">S05E03</span></li>
+<li>西奈山修道院:基督在彩虹橋上、星辰滿布的藍球體中——彩虹身/榮耀身/復活身。開羅科普特博物館 4 世紀:耶穌持書坐藍球體寶座;同心圓象徵聲音/振動與傳送門/漩渦/蟲洞;腳凳是「約櫃」——某種使高振動存有「減速」到我們能感知的裝置。<span class="who">亨利</span><span class="src">S05E03</span></li>
+<li>原始埃及奧祕學校(伊西斯、歐西里斯、荷魯斯)是正面的、與基督同教導,後被負面挪用扭曲;托特·赫密士被認為是基督的前世,常被畫成朱鷺頭的鳥存有。<span class="who">亨利</span><span class="src">S05E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>13 個星系與彩虹身</h3>
+<ul>
+<li>WH 從藏傳彩虹身傳統佐證:此復活/揚升教導在「13 個星系」傳授(含我們)。兩位哈佛神學院博士說:身體被設計成可旋成能量漩渦、溶解為五色彩虹光,只留下無神經的毛髮指甲;達成彩虹身後身體本身變成星門/蟲洞、可前往這 13 個星系(獵戶座、天狼星、昴宿星團、大熊座、半人馬阿爾法等)。<span class="who">亨利</span><span class="src">S05E04</span></li>
+<li>藏傳在達到彩虹身前已能做「lung gom pa」(一步躍起 30 英尺高、躍行 200~300 英尺)、把手或腳壓進石頭留下手印/腳印;CG 認為多數人會先到這階段、才接近彩虹身。<span class="who">柯里</span><span class="src">S01E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>原始光體與「皮衣」</h3>
+<ul>
+<li>猶太神祕觀:亞當夏娃原是光之存有;被逐出伊甸後耶和華造「皮衣 coats of skin」——奧祕觀認為這「皮衣」就是我們現在的人皮,本來我們是發光、輻射、完美的存有。耶穌是「第二個亞當」,來示範如何取回原始光體並揚升。<span class="who">亨利</span><span class="src">S05E04</span></li>
+<li>「變容 Transfiguration」聖像:耶穌上山向門徒展示變成光體形態的能力;後方雲其實是藍球體傳送門;摩西、以利亞憑空顯現也是能相位進出的揚升存有。<span class="who">亨利</span><span class="src">S05E04</span></li>
+<li>賓根的希爾德加德畫的「藍寶石中的人」:一位藍皮膚存有從藍閃光中顯現、在藍球體中向她放射能量;DW 引《一的法則》:第六密度存有本質上只是藍球體、除非要你看到形態否則無形——故這些可能是同一批球體存有。<span class="who">亨利</span><span class="who">威爾科克</span><span class="src">S05E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>群鳥的語言與煉金術</h3>
+<ul>
+<li>Jay 連結蘇菲煉金文本《群鳥的語言 The Language of the Birds》——藍色鳥存有把煉金知識帶到地球,主題與藍鳥人極相似。1950 年代「藍色存有 the Blues」曾向政府表示我們走錯方向,願在我們放棄錯誤議程的條件下相助,但被趕走。<span class="who">魏德納</span><span class="src">S07E05</span></li>
+<li>煉金術(源自 Al Kemet「埃及之學」)鉛變金常被類比為靈魂轉化/揚升(肉身=鉛,光體=金)。CG 在建造「外星複製載具」時發現飛碟中央柱內有汞,以高電場使汞真的變成金(看起來像珊瑚狀),化學檢測確認是真金。<span class="who">柯里</span><span class="src">S08E11</span></li>
+<li>煉金嬗變要在地球自然「漩渦點/雷線 ley lines」節點才能成功——這些節點是門戶出入口,地球自轉、相對太陽位置不同時,電連結走最小阻力路徑,路徑上的節點就會開門。<span class="who">柯里</span><span class="src">S08E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>秤心、神聖幾何與 ORMEs</h3>
+<ul>
+<li>埃及「秤心」——心要比羽毛輕才能揚升(瑪特頭頂的羽毛);藝術本身被奧祕學校視為「活的傳送門/神聖鏡子」,能觸發觀者體內的光體藍圖。<span class="who">亨利</span><span class="src">S05E03</span></li>
+<li>ES:要看「軌道重排單原子元素 ORMEs」(鈀、銠、銥等)——是 DNA 進化所需。即微團簇:原子逐一析出時會優先聚成立方體、八面體、十二面體、二十面體等神聖幾何結構,讓我們能在某時點跨維度旅行。分類科學的最底層物質基態就是神聖幾何。<span class="who">史密斯</span><span class="src">S10E09</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 13 ============ -->
+<section class="cat" id="c13">
+<div class="cat-h"><span class="bar"></span><h2>十三、乙太存有與實體附身</h2><span class="cnt">ETHERIC ENTITIES · ATTACHMENTS</span></div>
+
+<div class="sp">
+<h3>乙太生命的光譜</h3>
+<ul>
+<li>從最低階電漿生命到最高的藍球體——藍球體是球體存有聯盟最高密度、第九密度、以 orb 顯現、大小不拘(乒乓球大到含住整個太陽系)。有知覺但無肉體者即「乙太生命」;有的曾有肉體、有的來自「外域 outer realm」或別的實相。<span class="who">柯里</span><span class="src">S05E06</span></li>
+<li>DW 引 Wilhelm Reich:生命在微觀層次以藍球體形態從量子真空析出、凝聚周遭物質形成生命——連結宏觀(太陽系最大的藍球體含住整個太陽系)與微觀。<span class="who">威爾科克</span><span class="src">S05E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>影子存有與負面乙太實體</h3>
+<ul>
+<li>影子存有(shadow beings):有的來觀察、有的來製造恐懼以「餵食 loosh(恐懼能量)」、有的是爬蟲人做靈魂出體來嚇人取食。看起來像 3D 人形剪影。迷幻藥會「掀開帷幕」使這些更可見。<span class="who">柯里</span><span class="src">S05E06</span></li>
+<li>實體附身(entity attachments):有的吸你能量、有的被陰謀集團用黑魔法植入當控制工具——若無法用心控控制你,就用附身使你進入「反應性心態」;或當「守門人」,使你一試圖談某記憶就焦慮發作、混亂、睡著。植入方式之一是創傷(「創傷是把它黏住的膠」)。<span class="who">柯里</span><span class="src">S05E06</span></li>
+<li>附身錨定在能量場/身體某部位、吸能量使你生病(疼痛、病灶、腫瘤);薩滿懂得驅除,西醫完全不納入考量。改變振動(燒鼠尾草、Palo Santo;《一的法則》提掛蒜頭、灑充滿純愛意圖的鹽)可使環境對它們「腐臭」。情緒有能量、近似質量,是附身的錨;放下情緒,它們就失去錨。<span class="who">柯里</span><span class="src">S05E06</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>金字塔淨化技術(《一的法則》的 Ra)</h3>
+<ul>
+<li>金字塔技術由球體存有早期化身(即《一的法則》的 Ra)所造:進石棺、有人持晶體、經過寬恕的心理劇(psychodrama)淨化、清除業力與實體附身。《一的法則》說附身最常錨在消化系統(腸道彎曲處積存 20 年的廢物)。<span class="who">柯里</span><span class="src">S05E06</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>柯里自身的附身驅除</h3>
+<ul>
+<li>CG 在公開談這些事前,有記憶卻一試圖說出口就結巴、焦慮、極累、忘了要講。他做了自己光體的遙視,看到光體中一個球體,看進去——看到像一隻蜷曲的青蛙、頭被壓長,第一次看到時牠驚慌說「你會忘記我」,他就真的忘了。<span class="who">柯里</span><span class="src">S05E06</span></li>
+<li>後來他用基督教背景、呼喚耶穌之名做「驅除 deliverance」,用肉眼看到陰影「咻咻」離開,隔夜就能談這些事了。<span class="who">柯里</span><span class="src">S05E06</span></li>
+<li>被 Marra(內部地球負面者)再度植入後,由 Ka'Aree 用陽具狀水晶棒摩擦發出像摩擦水杯邊緣的音調,在他身上掃描;約六個只見頭肩、下半化為半透明陰影的形體從他的腹股溝、胸、頭離開。一旦附身附著到能量漩渦,她才能驅除並關閉其回來的入口。<span class="who">柯里</span><span class="src">S05E06</span><span class="src">S06E11</span><span class="src">S07E15</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>能量轉變時乙太存有將被推回外域</h3>
+<ul>
+<li>藍鳥人說:隨著太陽事件與能量變化,這些乙太存有將無法留在我們的實相、會被「推回外域」;社會病態者/精神病態者常有附身、與之共生互相吸取能量,實體被移除時宿主會像戒毒般經歷戒斷。每個人多少都受影響,不該妖魔化或互相指責,但可用靈性教導淨化自己。<span class="who">柯里</span><span class="src">S05E06</span></li>
+<li>Cabal 用儀式魔法囚禁負面能量、命令惡魔型存有(這些存有來自「外部領域 The Outer Realm」、此地非其自然環境,故也受此環境的陷阱所制)。<span class="who">柯里</span><span class="src">S07E04</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 14 ============ -->
+<section class="cat" id="c14">
+<div class="cat-h"><span class="bar"></span><h2>十四、宏大實驗:基因 × 靈性 × 意識 × 宇宙</h2><span class="cnt">THE GRAND EXPERIMENT</span></div>
+
+<div class="sp">
+<h3>宏大實驗不只是基因,還有靈性成分</h3>
+<ul>
+<li>超級聯邦的「宏大實驗」:約 40 個外表類人的外星種族幾乎一直在場(有時多達 60 個),進行 22 個基因計畫——除了基因,還有靈性成分:這些外星人本身也是這個宏大實驗的一部分,不只是單方面拿人類做實驗。<span class="who">柯里</span><span class="src">S01E01</span></li>
+<li>智慧墊上有「很強的證據」顯示他們創造並操弄人類基因、造出「神之基因 God gene」——讓人類有強烈的、受基因驅動的「崇拜並追隨領袖/崇拜更高存有」的需求,使人類更可控。<span class="who">柯里</span><span class="src">S01E11</span></li>
+<li>22 個計畫並行卻彼此「踩腳」:有的要人類靈性開悟成長,有的要人類保持低落、靈性無知、不知自身共創意識。這些 ET 不只是「管理者」,他們也「轉世進入人類身體」、深度投入此宏大實驗。<span class="who">柯里</span><span class="src">S01E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>四個要素</h3>
+<div class="narrator"><span>主述</span>CG 在 S07E32 詳述宏大實驗=基因+意識+靈性+宇宙四要素。</div>
+<ul>
+<li><b>基因</b>:從他星系/銀河採基因樣本(像吐口水/棉棒),發展到某程度後帶到目標球體基因操作,須嚴守自由意志等宇宙法。<span class="who">柯里</span><span class="src">S07E32</span></li>
+<li><b>意識</b>:讓目標群(我們)意識按宇宙時程發展,藉宗教/文化加速(對應亞特蘭提斯災變後約 12,500 年各地獨立發展磨穀、冶金、建築、數學、法典)。<span class="who">柯里</span><span class="src">S07E32</span></li>
+<li><b>靈性</b>:與意識緊密相連,基因農夫常化身為我們(壽終時其族來取靈魂加回集體、通常備有 backup body),且因業力相連:不能再進化除非我們跟上。<span class="who">柯里</span><span class="src">S07E32</span></li>
+<li><b>宇宙</b>:星團隨銀河旋轉進入高能氣態區(催化劑,自 1930 年代起增強),配合時程做工程,使我們在能量湧入高潮時能「渦輪跳躍」改變密度/意識(否則只是略不同版本)。<span class="who">柯里</span><span class="src">S07E32</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>競爭而非合作的 22(60)群</h3>
+<ul>
+<li>智慧墊上的資料把這 22 個基因實驗呈現得像「22 篇互相競爭的期刊論文」,各計畫彼此較勁、並非攜手合作。<span class="who">柯里</span><span class="src">S01E01</span></li>
+<li>60 群體鬆散合作、有條約但非協同;為免污染各自實驗,灌輸「勿與他族混」「勿異族通婚」「us vs them」種族主義,不同種族被海洋分隔於不同區域亦是刻意。會綁架他群實驗對象取基因、評其靈性以監控競爭對手進度,有時破壞對方實驗。<span class="who">柯里</span><span class="src">S07E32</span></li>
+<li>一文化區可能有多達五個 ET 群共同參與(有的只取基因、有的給宗教意識形態、有的給文明技術)。<span class="who">柯里</span><span class="src">S07E32</span></li>
+<li>DW 引印度吠陀約 188 處提太陽閃焰;CG:那閃焰只是宇宙能量變化的副產物,給揚升加渦輪(否則只會慢得多)。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S07E32</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>目標:自我管理</h3>
+<ul>
+<li>目標是讓每個行星球體與其上先進存有達到「自我管理 self-management」、技術靈性夠進化時自管基因與進化步調,屆時加入「宏大聯邦 Grand Confederation」。地球因位於本星團正中、靠超級門,是高度被需求的擄掠商品(奴隸/基因材料)。<span class="who">柯里</span><span class="src">S07E32</span></li>
+<li>ES:地球像個「儲存超能力供未來啟動的花園/子宮 womb」,我們仍在其中生長進化、等待被啟動;地球人才是「宇宙的超級英雄」——若我們不存在他們也不存在。<span class="who">史密斯</span><span class="src">S10E12</span></li>
+<li>JR:地球是獨特培養皿,有許多「相互競爭」的勢力透過改造 DNA 做實驗,看「誰的寵物計畫能造出更有揚升機會的生命」;揚升=與造物主更高的靈性連結。<span class="who">萊斯</span><span class="src">S12E14</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>超級聯邦的終結與新守護者</h3>
+<ul>
+<li>超級聯邦即將解散,22 個基因計畫即將結束;人類如今是星際種族,將開始管理自己的基因與靈性,不再被這些存在管理。岡薩雷斯:「他們『就是』我們神話裡的神。但這意味人類現在掌控自己的基因與靈性未來。」<span class="who">柯里</span><span class="src">S10E02</span></li>
+<li>米卡那群人共 52 個(連 CG 共 53),都是不同類型人類,是本地 52 顆星各自的代表、我們的宇宙表親(cosmic cousins),將進入超級聯邦董事會與我們一同任職。22 個基因實驗不再由超級聯邦領導,人類獲得自己基因與靈性發展的「管理鑰匙」。<span class="who">柯里</span><span class="src">S10E06</span></li>
+<li>人類未來會自行擴展基因(會經歷:得知 22 實驗後反抗 → 過度擁抱、開始駭自己的 DNA → 失控 → 最後發展出更純粹的形態),這是一段極艱難的發展期。<span class="who">柯里</span><span class="src">S10E06</span><span class="src">S10E13</span><span class="src">S11E03</span></li>
+<li>泰爾-艾爾宣告人類正經歷「大覺醒 Great Awakening」,處於自身意識文藝復興的懸崖邊;新守護者來協助我們適應成為自己命運的管理者。以「為全體服務;為唯一服務」結束後,他們緩緩淡去。<span class="who">柯里</span><span class="src">S10E06</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Mica 大使:宇宙表親的範本</h3>
+<ul>
+<li>Mica 大使約 5'5"、穿閃亮綠袍,膚色像今日利比亞或埃及人帶極淡橘調;他說其族人與我們共享約 94% 相同基因,來自本地星團內某星系,壽命略超過繞恆星 300 圈。<span class="who">柯里</span><span class="src">S06E01</span></li>
+<li>Mica 族人曾被「壓迫我們地球的同一批存有」壓迫,僅三代之前才贏得自由;是太陽活動清除了 AI、其軍隊趁德拉科混亂之際推翻德拉科。他們現仍是血肉之軀、未飛天或念力移物,但能心電感應、壽命持續延長、與「更高自我」更緊密相通。<span class="who">柯里</span><span class="src">S06E01</span><span class="src">S06E14</span></li>
+<li>全面揭露的資料傾洩後,人類會先經歷哀傷五階段、再進入「意識文藝復興 consciousness renaissance」;被壓制的科學之一是「意識是一種場、而非僅侷限於腦」。<span class="who">柯里</span><span class="src">S07E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>我們都是一體</h3>
+<ul>
+<li>揭露後我們會理解「宇宙只有一個意識、我們都是一體」。<span class="who">柯里</span><span class="src">S07E07</span></li>
+<li>ES:「我相信我們來自外星人,更重要的是外星人也來自我們」、「我們在金字塔底端」;很多 ET 其實就是幾百萬年後的我們。在一次心電感應溝通中,ET 表示「他們認為我們才是宇宙的超級英雄」——因我們如此有韌性。<span class="who">史密斯</span><span class="src">S11E03</span><span class="src">S12E15</span></li>
+<li>身處頻率比你高的存在身旁會提升你的頻率(像憤怒或歡笑會傳染);第一手體驗那種愛與慈悲極度壓倒性,會說不出話、流淚、可能跪下(大多數 ET 對我們有此能力與慈悲、深愛我們)。<span class="who">史密斯</span><span class="src">S10E12</span></li>
+</ul>
+</div>
+</section>
+
+</main>
+
+<footer>
+COSMIC DISCLOSURE · 主題重組 T6「靈性與揚升」<br>
+素材跨 S01–S12 逐字稿合併 · 出處標於各論點 · 發言人徽章標主述者<br>
+<a href="index.html">◂ 回主頁</a>
+</footer>
+
+</body></html>

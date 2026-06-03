@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>揭露宇宙 · 歷史(古代與分離文明)</title>
+<style>
+:root{--bg:#05080f;--panel:#0c1320;--panel2:#111a2b;--line:#1d2b44;--ink:#e6ecf6;--soft:#8593ad;--cyan:#34e2d6;--violet:#b08cff;--amber:#ffcf6b}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.85;font-size:16.5px;-webkit-font-smoothing:antialiased;
+ background-image:radial-gradient(900px 520px at 15% -8%,rgba(52,226,214,.12),transparent 60%),radial-gradient(820px 520px at 90% 2%,rgba(176,140,255,.14),transparent 60%),radial-gradient(1px 1px at 20% 30%,rgba(255,255,255,.4),transparent),radial-gradient(1px 1px at 70% 22%,rgba(255,255,255,.3),transparent),radial-gradient(1px 1px at 45% 70%,rgba(255,255,255,.25),transparent);background-attachment:fixed}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+.mono{font-family:Consolas,"Roboto Mono",monospace}
+header.hero{text-align:center;padding:70px 0 26px}
+header.hero .eyebrow{letter-spacing:.42em;font-size:11.5px;color:var(--cyan);text-transform:uppercase;margin-bottom:18px;font-family:Consolas,monospace}
+header.hero h1{font-size:42px;font-weight:800;letter-spacing:.12em;background:linear-gradient(110deg,var(--cyan),#cfe9ff 50%,var(--violet));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 38px rgba(52,226,214,.16)}
+header.hero .sub{color:var(--soft);font-size:14.5px;margin-top:14px}
+header.hero .home{display:inline-block;margin-top:20px;font-size:12.5px;font-family:Consolas,monospace;letter-spacing:.08em;color:var(--cyan);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 15px;background:rgba(52,226,214,.05)}
+header.hero .home:hover{background:var(--cyan);color:#05080f}
+nav.toc{position:sticky;top:0;z-index:8;background:rgba(5,8,15,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--line);padding:11px 0}
+nav.toc .wrap{display:flex;gap:7px;flex-wrap:wrap;justify-content:center}
+nav.toc a{font-size:12.5px;color:var(--soft);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-family:Consolas,monospace;background:var(--panel)}
+nav.toc a:hover{color:var(--cyan);border-color:var(--cyan);box-shadow:0 0 12px rgba(52,226,214,.3)}
+.cat{padding:30px 0 6px}
+.cat-h{display:flex;align-items:center;gap:13px;margin:14px 0 18px}
+.cat-h .bar{width:24px;height:2px;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+.cat-h h2{font-size:21px;font-weight:800;letter-spacing:.03em}
+.cat-h .cnt{font-family:Consolas,monospace;font-size:12px;color:var(--violet);border:1px solid var(--line);border-radius:6px;padding:1px 9px}
+.sp{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:14px 0;scroll-margin-top:120px}
+.sp h3{font-size:19px;font-weight:800;color:#dff6f3;margin-bottom:10px;letter-spacing:.01em;border-bottom:1px solid var(--line);padding-bottom:9px}
+.narrator{font-size:13px;color:var(--soft);margin:8px 0 12px;line-height:1.7}
+.narrator span{font-family:Consolas,monospace;font-size:10.5px;letter-spacing:.1em;color:var(--violet);border:1px solid var(--line);border-radius:5px;padding:1px 7px;margin-right:9px;text-transform:uppercase}
+.flabel{font-family:Consolas,monospace;font-size:11px;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase;margin:16px 0 6px;opacity:.9}
+.subhead{font-size:14.5px;font-weight:700;color:var(--amber);margin:14px 0 4px}
+.sp ul{margin:4px 0 4px;padding-left:4px;list-style:none}
+.sp li{position:relative;padding-left:18px;margin-bottom:9px;color:#c8d2e2;line-height:1.8}
+.sp li::before{content:"▸";position:absolute;left:0;color:var(--cyan);opacity:.6}
+.sp p{margin:8px 0;color:#c8d2e2}
+.src{font-family:Consolas,monospace;font-size:10.5px;color:var(--cyan);background:rgba(52,226,214,.08);border:1px solid rgba(52,226,214,.28);border-radius:4px;padding:0 5px;margin:0 2px;white-space:nowrap}
+.who{font-family:"Noto Sans TC",sans-serif;font-size:10.5px;color:var(--violet);background:rgba(176,140,255,.1);border:1px solid rgba(176,140,255,.32);border-radius:4px;padding:0 6px;margin:0 2px;white-space:nowrap;font-weight:600}
+blockquote{margin:10px 0 4px;padding:12px 16px;background:rgba(176,140,255,.05);border-left:3px solid var(--violet);border-radius:8px}
+blockquote p{font-size:13px;color:#aeb9cf;font-style:italic;line-height:1.7;margin:5px 0}
+.legend{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 8px;font-size:13px;color:var(--soft);line-height:1.95}
+.legend b{color:var(--ink)}
+footer{text-align:center;color:var(--soft);font-size:12px;padding:50px 0 70px;margin-top:40px;border-top:1px solid var(--line);font-family:Consolas,monospace;letter-spacing:.04em;line-height:1.9}
+footer a{color:var(--cyan);text-decoration:none}
+@media(max-width:560px){header.hero h1{font-size:32px}.sp{padding:17px 16px}}
+</style></head><body>
+<header class="hero"><div class="wrap">
+<div class="eyebrow">Cosmic Disclosure · T9 — History: Ancient &amp; Breakaway Civilizations</div>
+<h1>歷 史</h1>
+<div class="sub">12 季逐字稿裡關於古代建造者種族、超級地球與火星之毀、前亞當人、亞特蘭提斯與雷姆利亞、納粹-德國分離文明、南極與月球祕史的全部論點 · 跨集合併 · 每點標出處與主述者</div>
+<a class="home" href="index.html">◂ 回主頁</a>
+</div></header>
+<nav class="toc"><div class="wrap">
+<a href="#c1">守護者與古代建造者種族</a>
+<a href="#c2">超級地球·火星·月球之毀</a>
+<a href="#c3">難民、大實驗與超級聯邦</a>
+<a href="#c4">前亞當人與南極古城</a>
+<a href="#c5">亞特蘭提斯·雷姆利亞·大災變</a>
+<a href="#c6">內部地球與冒充為神</a>
+<a href="#c7">巨人·紅髮巨人·停滯存有</a>
+<a href="#c8">原住民口傳史與古代藝術</a>
+<a href="#c9">蘇美·阿努納奇·Cabal血脈</a>
+<a href="#c10">德國分離文明的起源</a>
+<a href="#c11">納粹-外星交易與南極</a>
+<a href="#c12">高跳行動與美德融合</a>
+<a href="#c13">月球與火星的殖民</a>
+<a href="#c14">冷戰假象與軟揭露</a>
+<a href="#c15">傳送門·宇宙網·延壽科技</a>
+</div></nav>
+
+<main class="wrap">
+
+<div class="legend">
+<b>發言人代碼</b>(紫色徽章標的是「提出該說法的人」,通常是受訪者,不是主持 DW):
+CG=柯里·古德 · ES=Emery Smith · JR=Jason Rice · WT=William Tompkins · PP=Pete Peterson · CM=Clifford Mahooty · DA=David Adair · MM=Mark McCandlish · DW=David Wilcock(主持) · 另有來賓 Jay Weidner(魏德納)、William Henry(亨利)、Heather Sartain(薩坦)、Michael Salla(薩拉)、Bob Wood(伍德)。青色徽章為出處集數 SxxEyy。本頁依時間軸排列:從數十億年前的古代建造者種族,到二戰後的祕密交易與近代祕史。
+</div>
+
+<!-- ============ 1 ============ -->
+<section class="cat" id="c1">
+<div class="cat-h"><span class="bar"></span><h2>一、守護者與古代建造者種族</h2><span class="cnt">ANCIENT BUILDER RACE</span></div>
+
+<div class="sp">
+<h3>太陽系內最古老的有形證據</h3>
+<div class="narrator"><span>主述</span>CG 在月球作戰指揮部(LOC)的「智慧玻璃墊 smart glass pads」上讀到的太陽系最古老遺跡記載。</div>
+<ul>
+<li>依智慧玻璃墊記載,太陽系內最古老的有形證據是「古代建造者種族 Ancient Builder Race」的廢墟,從金星一路到歐特雲(Oort Cloud)都有;年代極古,數億甚至數十億年,無法精確定年。<span class="who">柯里</span><span class="src">S05E01</span></li>
+<li>遺跡材質常是一種「透明合金 transparent alloy」(類鋁透明合金),本身就是科技——他們會在合金中嵌入小型科技,使玻璃變不透明、變暗、甚至顯示影像。<span class="who">柯里</span><span class="src">S05E01</span></li>
+<li>地表上的多半遭巨大衝擊波扭曲、折彎、毀壞,不堪入目;埋在地底或被覆蓋的保存較好。沒找到任何文字,無法得知古建造者是誰、來自何方。<span class="who">柯里</span><span class="src">S05E01</span></li>
+<li>結構形態多樣:崩塌的圓頂、矩形結構、塔(或曾是塔)、金字塔、方尖碑;金字塔與方尖碑多在地底發現(包括地球內部與其他行星體內部)。技術以類似黑色花崗岩的「閃長岩 diorite」製成、為耐久而造、已存在數百萬年。<span class="who">柯里</span><span class="src">S01E06</span><span class="src">S05E01</span></li>
+<li>DW 引述 Hoagland 的內幕人「Bruce」說「我們住在一個宇宙垃圾場 cosmic junkyard」,呼應地表遺跡都是砸爛的東西,得仔細搜尋才找得到有用的。<span class="who">威爾科克</span><span class="src">S05E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>多維科技:對我們如同魔法</h3>
+<ul>
+<li>古代建造者技術遠超我們在這些會議中打交道的那些第 4/5 密度 ET,以致這些 ET 想取得它;它是多維技術,某些看似石板的東西在其他維度運作,對我們(甚至 20 世紀)如同魔法,花很久才看出那是技術。技術以意識/互動層級操作,弄懂後人類學會啟動它。<span class="who">柯里</span><span class="src">S01E06</span></li>
+<li>沒有任何古代建造者種族本身仍在停滯——沒人知道他們怎麼了(各種神話:升到更高密度、被殺、離開會回來,但硬事實是無人知曉)。<span class="who">柯里</span><span class="src">S01E06</span></li>
+<li>古建造者種族的文物比任何其他文明或較新外星團體早「數千萬年」;每次發現其結構(尤其暴露在外的),上面的字符 glyphs 都被後來的種族抹除清空,留下大量神話與謎團——像地球上新王刮掉前王名字。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S04E01</span><span class="src">S03E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>守護者 Guardians:億年尺度的保護者</h3>
+<div class="narrator"><span>主述</span>內部地球女祭司 Ka'Aree 在「紀錄廳」向 CG 講述的億年尺度史。</div>
+<ul>
+<li>數十億年前有一支「守護者 Guardians」古老種族,早已離開我們的頻率;女祭司說這正是 SSP 所稱的「古建造者種族」。守護者極先進強大,保護這片銀河區域與本地星團,連離開此頻率後仍留下能量屏障保護其領域。<span class="who">柯里</span><span class="src">S03E07</span></li>
+<li>DW 指出:守護者=球體存有聯盟(Sphere Being Alliance)=古建造者種族。地心人想與守護者會面,卻一直得不到回應或承認(與外星、SSP、秘密地球政府的遭遇相同),只能透過柯里這個「混血」中介。<span class="who">威爾科克</span><span class="who">柯里</span><span class="src">S03E07</span><span class="src">S03E08</span></li>
+<li>DW 對照《一的法則》:金星是「古代建造者種族」的源頭,可能逾 20 億年古老,哨兵(sentinel)可能與此文明相關;CG 說哨兵是「這裡殘存科技的照管者」。<span class="who">威爾科克</span><span class="who">柯里</span><span class="src">S10E06</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>本地星團與「保護網格」</h3>
+<ul>
+<li>離開太陽系後,在「本地星團 local star cluster」(約 50~52 顆恆星、由宇宙網 cosmic web 連結)中發現幾乎一模一樣的古建造者遺跡,年代同樣古老;這些恆星彼此在深層能量層面相連(不完全是群體意識/蜂巢,但深度連結)。<span class="who">柯里</span><span class="src">S05E01</span></li>
+<li>整個本地星團曾受古建造者種族保護,他們架設了某種「保護網格 protective grid」,維持了數百萬到數十億年後消失,文字與歷史資訊都被後來進入的團體抹除。<span class="who">柯里</span><span class="src">S05E01</span></li>
+<li>保護/武器的投送系統是「月球大小、近行星大小的巨型球體 giant spheres」——多半是被挖空/雕鑿成站點的衛星,有些有月球大小的外部開口,可看出是金屬或結構物。一個星系內這種「死星 Death Star 月球」不只一個。<span class="who">柯里</span><span class="src">S05E01</span><span class="src">S04E11</span></li>
+<li>哨兵把一連串太空場景射入 CG 腦中:月球大小的巨型有形球體發出巨大電弧,摧毀進入太陽系的大型艦船與其他看似科技的巨球。DW 連結土星衛星 Iapetus(伊阿珀托斯)的奇異赤道脊、可能是武器平台;附近有可通往其他星系的巨大傳送門(也是入侵路線)。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S06E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>古建造者種族的雪茄形船:Oumuamua(奧陌陌)</h3>
+<div class="narrator"><span>主述</span>CG 隨 SSP 聯盟登上一艘古代廢棄飛行器,後對應主流媒體 2017 年的 Oumuamua 報導。</div>
+<ul>
+<li>西格蒙(Sigmund)率隊登上一艘長雪茄形的「石造船 stone craft」,約三分之一處有結晶金屬材料(原艦橋處),歷經數百萬年撞擊、傷痕累累,圓頂破裂滿是洞。船內無重力,科技早被各種外星人「啃食」乾淨,留下不同 ET 的標記。<span class="who">柯里</span><span class="src">S10E10</span></li>
+<li>船底厚冰層(像帶有機物的起泡湖水);西格蒙說後來檢測那「滿是有機物,很可能是原船員的遺骸」。一停屍間式抽屜中有像翼手龍的淡藍色存在、另一粉橘色水生存在(觸手般兩腿、三趾三指帶吸盤);屍體像太空凍乾般碎裂成塵。<span class="who">柯里</span><span class="src">S10E10</span></li>
+<li>某層牆面有兩種文字:一種與本地 52 星團數行星上發現的「字根語言 root language」很像、很快譯出(地球上也找到該字根語言元素);另一種未能破譯(是語言與超維數學的混合,有飄逸字符與像複雜摩斯密碼的點與長短橫)。當時所有星曾是一個龐大帝國/群體,這些是其消失帝國的殘餘。<span class="who">柯里</span><span class="src">S10E10</span></li>
+<li>船上有幾層曾以水(非空氣)加壓,是水生與非水生物種的聯合飛船;災難性減壓把存在均質化成凍在船上的黏泥。<span class="who">柯里</span><span class="src">S10E10</span></li>
+<li>DW 指 2017 年 12 月 10-11 日主流媒體宣布 NASA 發現雪茄形小行星「Oumuamua」(奧陌陌),很像 CG 描述的物體;CG 確認「就是它」。NASA 報告說它離開太陽系、有紅金屬色;用「時間性資料 temporal data」(非碳 14)定年此物體為「10 億年以上」古老,曾繞某顆恆星數百萬年。<span class="who">威爾科克</span><span class="who">柯里</span><span class="src">S10E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>宇宙第一個物種:活的動力裝置</h3>
+<div class="narrator"><span>主述</span>David Adair 在 51 區見到的古老共生科技。</div>
+<ul>
+<li>DA 在 51 區見到一具「動力裝置 power plant」,動力裝置、太空船、船員三者都是有情存在(sentient beings),彼此共生互鎖,像活的動力源+活的船被+活的船員,船長能直接「感覺」到船被擊中的位置。<span class="who">阿戴爾</span><span class="src">S08E03</span></li>
+<li>這個共生社會非常古老——約八九十億年(eight or nine billion years),是宇宙(不只銀河系)第一個物種,家園在星系之間的空間(像深海的鯨魚),性質「半出生半建構」(像博格 Borg)。<span class="who">阿戴爾</span><span class="src">S08E03</span></li>
+<li>DA 推測它在某場激戰中受傷,飛進銀河系尋找 M 型行星(就是地球,因地球在銀河系最邊緣)降落療傷,人類挖出了它(可能因此把 51 區建在那裡)。此裝置只有四個接點、可輕易拆出,能為整顆行星供電,功率約等於一顆巨型藍星。<span class="who">阿戴爾</span><span class="src">S08E03</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 2 ============ -->
+<section class="cat" id="c2">
+<div class="cat-h"><span class="bar"></span><h2>二、超級地球、火星與月球的毀滅</h2><span class="cnt">SUPER EARTH · MARS · MOON</span></div>
+
+<div class="sp">
+<h3>被毀的超級地球(Maldek)</h3>
+<ul>
+<li>小行星帶(Asteroid Belt)是一顆被毀行星的碎片場。柯里聽過「Brilliant Pebbles」計畫:一套電腦/數學程式,根據小行星帶軌道遙測回推它過去的大小與密度,結論是它曾是一顆行星(《一的法則》稱 Maldek)。可看到不同地層(mantle/core/crust)。<span class="who">柯里</span><span class="src">S04E01</span></li>
+<li>Hoagland 的內線「Bruce」與 Van Flandern 的「爆炸行星假說 EPH」:彗星是該行星海洋凍乾成的水冰,可回推到單一起源點。柯里確認:某區域有來自失敗行星的冰=該行星的水。<span class="who">柯里</span><span class="src">S04E01</span></li>
+<li>小行星帶只是它「極小的一部分」,爆炸極劇烈,連柯伊伯帶很多東西其實都是它的海洋、岩質核層碎片;這些碎片有的是比地球大的「冰行星」。一度有三顆是會進來造成浩劫的長週期彗星,其中一顆很久以前撞入太陽。<span class="who">柯里</span><span class="src">S04E07</span></li>
+<li>《一的法則》稱 Maldek 約 80 萬年前爆炸;Brilliant Pebbles 與 Bruce 算約 50 萬年前。Sigmund 的護衛空軍近期試圖把日期推得更遠(說超級地球 5 億年前爆),DW 認為是在對 CG 散布假情報(多個來源與《一的法則》都指 50 萬年)。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S04E01</span><span class="src">S07E32</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>超級地球居民:70~90 英尺高、玩超人類主義</h3>
+<ul>
+<li>Bruce 說超級地球居民約 70 英尺高、極先進,在玩「超人類主義 transhumanism」(把人體整合進電腦/網路主機);他們早已不用口語、改用「光」溝通(臉部皮膚色素的微波動,如微表情般的「微面部光環」)。Jacob 也獨立佐證他們用「光」溝通。<span class="who">威爾科克</span><span class="who">柯里</span><span class="src">S04E01</span><span class="src">S04E02</span></li>
+<li>他們在土星(Saturn)周圍建造一個透明鋁合金的環,若完成可成毀滅其他世界的脈衝武器(原理類似 Tesla 地震機/共振波);此環在超級地球被毀同時遭攻擊摧毀,碎片成了土星環,環內有可住人的房間(為約 70 英尺高的存有而建)。CG 確認土星環中有類似文物,但沒聽過「巨型武器」之說。<span class="who">威爾科克</span><span class="who">柯里</span><span class="src">S04E01</span></li>
+<li>CG 也證實見過為遠高於人類者建造的巨型石椅、天花板、門、桌台;古建造者種族的療癒石板(slabs)即使人類躺上去(尺寸過大)仍有療效。<span class="who">柯里</span><span class="src">S04E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>火星:曾是超級地球的衛星</h3>
+<ul>
+<li>據智慧玻璃墊,火星曾是一顆「超級地球(現為小行星帶位置)」的衛星;火星曾有海洋與厚大氣,在同一事件中大氣被吹走、軌道改變、並形成小行星帶。火星半邊布滿隕石坑、半邊平滑,符合「爆炸行星假說(Dr. Thomas Van Flandern)」。<span class="who">柯里</span><span class="src">S02E07</span></li>
+<li>火星表面半邊有大量「震裂石英 shocked quartz」沉積,一半正電一半負電,因該事件成了「巨大電容器」。<span class="who">柯里</span><span class="src">S02E07</span></li>
+<li>柯里說(最新資訊)地球分別在不同時期接收了來自至少兩顆失敗行星(火星與超級地球)的難民。但火星與超級地球的居民是「兩支獨立崛起的不同團體」,且都非古建造者種族。<span class="who">柯里</span><span class="src">S04E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>哨兵展示的火星毀滅異象</h3>
+<div class="narrator"><span>主述</span>金星下方古建造者前哨的「哨兵」把火星毀滅的記憶射入 CG 腦中。</div>
+<ul>
+<li>CG 看到火星曾有雲、海洋、像島嶼般的大陸、綠意。一顆球體掠過、邊飛邊射電、撕開行星一道大裂縫;水汽化、碎屑噴出大氣、部分變紅熱落回。CG 感覺看到數十億人死亡、極度難受。<span class="who">柯里</span><span class="src">S06E03</span></li>
+<li>接著看到較像現在的火星,地表閃光、極高細長的蘑菇雲,擠扁橢圓形的飛船朝各方向離去(有些朝地球、有些朝外太陽系)。Kaaree 說這是「古建造者的資料庫 repository of the Ancient Builders」傳給他的。<span class="who">柯里</span><span class="src">S06E03</span></li>
+<li>火星與 Maldek 之戰:Kaaree 在圖書館說兩者是兩個不同團體、彼此衝突。兩方在交戰中「駭入 hacked into」古建造者種族佈在本地星團(約 50 顆星)的「防禦網 defense grid」(多為攻防兼具的球體、常挖空改造一顆衛星,像死星 Death Star),想用來互打;結果其中一擊毀了超級地球,同時打垮了古建造者種族的防禦保護場。<span class="who">柯里</span><span class="src">S04E11</span></li>
+<li>防禦網一倒,「基因農夫種族」湧入(部分滲透超級聯邦),德拉科聯邦也趁機進來在太陽系與本地星團大肆作亂。<span class="who">柯里</span><span class="src">S04E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>火星地表:被毀的古建築與生命</h3>
+<ul>
+<li>Cydonia(賽多尼亞):CG 親自飛越並看到「五面金字塔」與其他金字塔(部分被泥/淤泥掩埋,實際比一般認知大很多);沒看到「火星臉」。<span class="who">柯里</span><span class="src">S02E07</span></li>
+<li>火星地表處處古代建築多被毀或埋於地下,經歷如「衝擊波繞行全球」的巨大災變。Olympus Mons 等地的「熔岩管 lava tubes」比地球大十倍,極適合密封造基地,被「一個爬蟲類群與一個昆蟲類群」依條約佔據、激烈防守,內住「數百萬」存有。德國人想搶熔岩管、打過幾仗、慘敗。<span class="who">柯里</span><span class="src">S02E07</span></li>
+<li>火星生命多為「穴居型」動物。CG 親見一種「黑色、皮革感、似披甲、像蝙蝠鳥的小東西」;提到「半人大的大型蜘蛛」、「類蠶的大型蠕蟲」。有一個「非常隱密、人形、總穿袍、住洞穴」的群體,自稱火星「原生 indigenous」、外貌極似人類但偏紅,非常和平。<span class="who">柯里</span><span class="src">S02E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>月球:被「傳送」進來的方舟</h3>
+<ul>
+<li>月球本身有兩種報告——(1)被倉促使用的「中空月球 hollowed-out moon」;(2)一座「被建造的巨型站 giant station」。有報告說在月球深處挖到人造材料的「外殼 fuselage」。月球地質年齡「不對」:可能不源自本太陽系,或對內太陽系物件而言太老。<span class="who">柯里</span><span class="src">S04E02</span></li>
+<li>Jacob 說月球是從別處「傳送」進本太陽系、比各行星都老;超級地球菁英在行星爆炸前最後一刻把自己傳送進月球(Bruce 說 120~160 億這種 70~90 英尺高的存有湧入,月內 20~40 英里深全是建好的居所/走廊),但月球進來途中被小行星重創、許多人死亡;月球一側受損明顯多於另一側(像火星)。CG 證實月球確有一側破壞遠多於另一側。<span class="who">柯里</span><span class="src">S04E02</span></li>
+<li>DW 引述 Bruce 說最新資訊認為地球的月球是在 6000 萬年前(恐龍滅絕後)被放置到地球周圍,內部是巨大文明,月球被稱為「方舟 ark」。CG 從智慧墊讀到的記憶是「50 萬年前」這個時間點。兩人討論:消滅恐龍的小行星可能不是意外、是被導引的;若月球是方舟,可能把生命(以 DNA 形式)從別處帶來地球再複製。<span class="who">威爾科克</span><span class="who">柯里</span><span class="src">S04E02</span><span class="src">S05E01</span></li>
+<li>月球用全像(holograms)等手段遮蔽月面某些區域(讓望遠鏡看不到)。月球技術數億到數十億年古老,其他文明覬覦並一直在劫持這類技術;月球可像車一樣透過宇宙網被駕駛移動。<span class="who">柯里</span><span class="src">S04E02</span><span class="src">S05E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>月球與火星上的古建造者遺跡</h3>
+<ul>
+<li>月球上有為「極高大存有(估高 60、70、80 呎)」建造的建築:沿牆面外向排列的石座(被稱 thrones 王座),原有文字徽記但被人「噴砂磨除」(勝者書寫歷史——後來的 ET 群移入、抹去原文以自稱為神)。多被月塵與隕石殘骸覆蓋,約僅 10% 露出表面。<span class="who">柯里</span><span class="src">S02E07</span></li>
+<li>含「透明合金鋁 transparent alloy aluminum」材質(挖出後牆面可透視)。Richard Hoagland 講的玻璃圓頂確實存在但多已毀(可能毀於災變或大戰)。<span class="who">柯里</span><span class="src">S02E07</span></li>
+<li>CG 親眼見過月面 ruins:玻璃狀圓頂(透明鋁、已破損、覆塵砂)、方形建築、塔(高窄、像被爆震波擊彎扭曲)、埋在月壤 regolith 中的結構;這些屬不同年代、有不同衝突的破壞痕跡,被列為禁區、當作「開戰時代」的提醒(後來才有聯邦、條約與月球外交區)。含 Disclosure Project 的 Sgt. Karl Wolfe 證詞:月背有基地、幾何形狀、塔、球形建築、像雷達盤的大型結構。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S04E02</span></li>
+<li>德國人初期也去小行星帶,發現「早已被開採許久」的跡象:該處曾是一顆行星,部分小行星嵌有古代建造者種族科技殘片(外觀像很硬的閃長岩、被雕成悅目形狀,看似古祭壇,實為極先進多維裝置)。被毀古船多在月球古戰場找到;地球、月球、火星到處都有被武器擊毀的古飛行器殘骸。<span class="who">柯里</span><span class="src">S02E06</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section class="cat" id="c3">
+<div class="cat-h"><span class="bar"></span><h2>三、難民、大實驗與超級聯邦</h2><span class="cnt">REFUGEES · THE GRAND EXPERIMENT</span></div>
+
+<div class="sp">
+<h3>保護網倒下後:基因農夫種族湧入</h3>
+<ul>
+<li>約 50 萬年前太陽系一顆「超級地球」爆炸,使本星團與鄰系外圍的保護網格(由古建造者種族設、後被內部居民從內破壞)失效,大批外星群體湧入,即「基因農夫種族 Genetic Farmer race」,被賦予在銀河散播先進生命(如人類)、監督協助其基因與靈性發展的使命。<span class="who">柯里</span><span class="src">S07E32</span></li>
+<li>網格崩潰後,原本因防禦網格太先進而遠離的各團體蜂擁而入,變成「自由開放區」。超級聯邦(Super Federation)團體最先進來(約 50 萬年前),立即監控;約 37.5 萬~36.5 萬年前德拉科(Draco)進來。<span class="who">柯里</span><span class="src">S05E01</span></li>
+<li>同時有一波波「難民 refugees」——超級地球大災難倖存者——湧入地球。超級地球爆炸後,碎片在太陽系亂飛,飛到歐特雲又被太陽拉回,撞擊地球與其他行星,「像撞球一樣」,持續一段時間。<span class="who">柯里</span><span class="src">S05E01</span></li>
+<li>《一的法則》描述地球第一批第三密度生命在 7.5 萬年前,源自正在輪迴的火星毀滅文明;三個 25000 年週期、每週期末有災變。DW 指出守護者破毀時間與《一的法則》中超級地球(Maldek)毀滅時間相符。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S05E01</span><span class="src">S03E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>太陽系類人生命的自毀</h3>
+<ul>
+<li>地心人說:銀河與太陽系有一個「模板」會在合適區帶自然產生特定生命型態;當時太陽系其他行星也有先進生命,地球上的人類是自然崛起的。但太陽系內其他行星的高等人類型存有非常好戰,毀掉自己的文明後,引來外部外星團體介入,把這些難民遷到地球。DW 提議稱他們為「太陽系陸地人 Solar terrestrials」。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S03E02</span></li>
+<li>這些難民與地表原生人類基因相容,開始混血形成「混種人類」(就是我們)。此後大量「基因農夫種族」湧入,開始對地表人口進行基因/社會/靈性的實驗,即「大實驗 the Great Experiment」的一部分。<span class="who">柯里</span><span class="src">S03E02</span></li>
+<li>Kaaree 說很大一部分「控制、權力、暴力、毀滅這種病」是社會程式設定,加上來自 Maldek 與火星難民(約 50 萬年前至約 6 萬年前分階段帶來)的基因——那是顯性的「攻擊性基因」,是我們攻擊、嫉妒、貪婪問題的根源。<span class="who">柯里</span><span class="src">S04E11</span></li>
+<li>我們仍在打 50 萬年前以前的仗,地球人是這些幕後難民的「代理人 proxies」,替他們打代理戰、當棋子。但宇宙中「好戰自毀」並非常態——許多文明因和睦、共同、單一外貌物種而進步很快;地球因「很有趣的基因混合」而不同(也因此被奴隸貿易團體覬覦)。<span class="who">柯里</span><span class="src">S04E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>超級聯邦與 22 個基因計畫</h3>
+<div class="narrator"><span>主述</span>CG 約 13 歲時被帶到木星外的超級聯邦基地,當三名直覺共情者(IE)之一。</div>
+<ul>
+<li>超級聯邦由多個聯邦、邦聯、議會、組織組成,像「巨型 UN」;40 個主要團體 + 20 個常在但非全程的團體;成員多是類人外觀,基地多在月球背面及氣態巨行星(尤其土星)的衛星。<span class="who">柯里</span><span class="src">S05E09</span></li>
+<li>有 22 個基因計畫(混合他們的基因、操弄人類基因),呈現得像「22 篇互相競爭的期刊論文/學期報告」、彼此較勁非協作;對人類基因操弄至少回溯 25 萬年、各計畫長度不一(5000 年起跳)。也有靈性成分——他們自己也是「宏大實驗」的一部分。<span class="who">柯里</span><span class="src">S05E09</span></li>
+<li>CG 飛入時間異常後進入看不到星的漆黑泡泡,空間站居中、各種族載具往來開會。聯邦 60+ 群體:多數很像人類(僅膚色略異)、部分前亞當人(較高、長頭骨)、也有綠膚黑髮者;來自全銀河;屏障未破前泡內只有自身已先進的群體在做基因實驗,已進行十億年。<span class="who">柯里</span><span class="src">S07E32</span></li>
+<li>22 個計畫並行卻彼此「踩腳」:有的要人類靈性開悟成長,有的要人類保持低落、靈性無知、不知自身共創意識。崇拜更高存有本身是好事,但壞在這些存有以「騙子神 trickster gods」之姿介入要人崇拜。<span class="who">柯里</span><span class="src">S01E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>大實驗的四個要素</h3>
+<ul>
+<li><b>基因</b>:從他星系/銀河採基因樣本(像吐口水/棉棒,不是丟進攪拌機),發展到某程度後帶到目標球體基因操作,須嚴守自由意志等宇宙法。<span class="who">柯里</span><span class="src">S07E32</span></li>
+<li><b>意識</b>:讓目標群(我們)意識按宇宙時程發展,藉宗教/文化/教養動物等加速(對應亞特蘭提斯災變後約 12,500 年各地獨立發展磨穀、冶金、管道、建築、數學、計時、法典)。<span class="who">柯里</span><span class="src">S07E32</span></li>
+<li><b>靈性</b>:與意識緊密相連,基因農夫常化身為我們(壽終時其族來取靈魂加回集體、通常備有 backup body),且因業力相連:不能再進化除非我們跟上。<span class="who">柯里</span><span class="src">S07E32</span></li>
+<li><b>宇宙</b>:星團隨銀河旋轉進入高能氣態區(催化劑,自 1930 年代起增強),使我們在能量湧入高潮時能「渦輪跳躍」改變密度/意識(否則只是略不同版本)。<span class="who">柯里</span><span class="src">S07E32</span></li>
+<li>60 群體鬆散合作、有條約但非協同,許多是競爭計畫(故彼此隔離實驗、灌輸「勿與他族混」「勿異族通婚」「us vs them」種族主義,以免污染各自實驗;不同種族被海洋分隔於不同區域亦是刻意)。一文化區可能有多達五個 ET 群共同參與(有的只取基因、有的給宗教意識形態、有的給文明技術)。<span class="who">柯里</span><span class="src">S07E32</span><span class="src">S09E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>超級聯邦的終結與新守護者</h3>
+<ul>
+<li>目標是讓每個行星球體與其上先進存有達到「自我管理 self-management」、技術靈性夠進化時自管基因與進化步調,屆時加入「宏大聯邦 Grand Confederation」。地球因位於本星團正中、靠超級門,是高度被需求的擄掠商品(奴隸/基因材料)。<span class="who">柯里</span><span class="src">S07E32</span></li>
+<li>超級聯邦即將解散,22 個基因計畫即將結束;人類如今是星際種族,將開始管理自己的基因與靈性。岡薩雷斯:「他們『就是』我們神話裡的神。但這意味人類現在掌控自己的基因與靈性未來。」<span class="who">柯里</span><span class="src">S10E02</span></li>
+<li>米卡那群人共 52 個(連 CG 共 53),都是不同類型人類,是本地 52 顆星各自的代表、我們的宇宙表親,將進入超級聯邦董事會與我們一同任職。22 個基因實驗不再由超級聯邦領導,人類獲得自己基因與靈性發展的「管理鑰匙」。<span class="who">柯里</span><span class="src">S10E06</span></li>
+<li>JR 的版本:每個種族對某種真菌、某種無脊椎動物、或人類各有自己的議程;其中一個 ET 群體在試圖造出「與造物主有更強靈性連結」的生命、加速揚升過程。ES 認同地球像個「儲存超能力供未來啟動的花園/子宮 womb」。<span class="who">萊斯</span><span class="who">史密斯</span><span class="src">S12E14</span><span class="src">S10E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>誰來救被困輪迴的靈魂</h3>
+<ul>
+<li>CG 述計畫初期有不熟悉的群體綁人後送回死屍,審問被捕者後得知他們是來救回數千年前在此墜機、被困地球輪迴的同類(移出靈魂放入另一容器、送回身體,自視為像《Star Trek Voyager》救隊友)。<span class="who">柯里</span><span class="src">S07E32</span></li>
+<li>「漫遊者 Wanderers」(《一的法則》用語,即星種 Starseeds)來時被白板化以免違規;若做出有意識的不愛之舉會被困此輪迴;各行星球體有自己的輪迴循環,被困者除非有人營救,否則須靠快速進化脫離。<span class="who">柯里</span><span class="src">S07E32</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section class="cat" id="c4">
+<div class="cat-h"><span class="bar"></span><h2>四、前亞當人與南極古城</h2><span class="cnt">PRE-ADAMITES · ANTARCTICA</span></div>
+
+<div class="sp">
+<h3>前亞當人:迫降地球的「墮天使」</h3>
+<div class="narrator"><span>主述</span>CG 被「Sigmund」長官訊問時得知的前亞當人(Pre-Adamites)起源。</div>
+<ul>
+<li>Sigmund 證實冰棚下發現多座古城廢墟、閃凍的長毛象級動物,以及「前亞當人」存有——細長身形、長頭顱、軀幹比例怪異,顯然不是設計來承受地球氣壓與重力的,在各大陸有研究人類的小站。<span class="who">柯里</span><span class="src">S06E16</span></li>
+<li>前亞當人是曾居火星與馬爾戴克(Maldek)的非地球團體,約 50 萬年前因自身災變與戰爭、輾轉到月球一段時間、後被趕離月球,飛船受損無法離開太陽系而迫降地球;選了仍有 18 億年前「古建造者種族」技術運作的這塊大陸(南極)。古城可追溯到約 5.5 萬~6.5 萬年前抵達地球時。<span class="who">柯里</span><span class="src">S06E16</span><span class="src">S07E08</span></li>
+<li>某場災難使南極完全閃凍,前亞當人逾 10000 年無法進入其古城。失去古城後他們與當地人類通婚,產生各種「亞當-前亞當混血 Adamite-Pre-Adamite hybrids」(有非洲、白人、南美外觀)。<span class="who">柯里</span><span class="src">S06E16</span></li>
+<li>CG 說前亞當人基本上是「墮天使」、非天龍盟友但曾壓制爬蟲類;DW 連結《以諾書 Book of Enoch》——200 名墮天使墜地成巨人、食人、敵視人類、最終被大洪水審判,與前亞當人故事吻合。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S07E08</span><span class="src">S07E15</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>三艘船:Nina、Pinta、Santa Maria</h3>
+<ul>
+<li>Pete Peterson 估有一艘 30 英里長橢圓母船;柯里先前說有三艘。澄清版:有一艘長達 3 英里的橢圓主船,加上兩艘較小的支援船,是當年從月球受攻擊後一路逃到地球、倖存下來的船隊。<span class="who">柯里</span><span class="src">S07E19</span></li>
+<li>CG 收到簡報:冰下地面層(當時有樹有植物)發現三艘原始橢圓形載具(一大兩小)——被戲稱為「Nina、Pinta、Santa Maria」(哥倫布船隊名)。它們約 6 萬年前同時抵達、在地表呈三角定位,船上存在隨後「拆解 cannibalize 載具」在三船之間建城。<span class="who">柯里</span><span class="src">S08E04</span></li>
+<li>這些存在熱中基因工程:把自身基因與人類及不同動物基因混合;某個基因實驗室裡發現一個處於不同發育階段的奇異爬蟲存在。CG 猜想 Nazca(納斯卡)出土的三指木乃伊是否是這些前亞當人的實驗品之一。<span class="who">柯里</span><span class="src">S08E04</span></li>
+<li>最大那艘船內確實找到一批處於停滯(stasis)的存有,是最初從火星來的「原始前亞當人」;我們近世接觸到的多是大災難後倖存的混血前亞當人。<span class="who">柯里</span><span class="src">S07E19</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>兩條皇室血脈與「君權神授」圖謀</h3>
+<ul>
+<li>前亞當人中有兩條被視為皇室(royal)的血脈,互相競爭資源與對地球某些金融系統的控制;災變(約 12,800 年前)發生時純血前亞當人多在南極洲,另有兩支不同血脈王室分別在中南美洲與亞洲/歐洲,災變後彼此失聯。<span class="who">柯里</span><span class="src">S06E16</span><span class="src">S07E08</span></li>
+<li>Cabal/光明會(Illuminati)血脈即追溯自前亞當人,其「宗教」是一切行為背後的核心。陰謀集團想藉血脈卷軸把自己基因連到前亞當人,把前亞當人立為「神」、自居「半神 demi-gods」,取得「君權神授 divine right of kings」與外星血脈正當性。<span class="who">柯里</span><span class="src">S07E08</span><span class="src">S07E19</span></li>
+<li>Anshar 曾帶柯里到南極一座圖書館目睹卷軸被取走;Ka'Aree 證實取走文件是為了破壞 Cabal 的未來計畫、阻止君權神授操作。<span class="who">柯里</span><span class="src">S07E19</span></li>
+<li>摩蘇爾(Mosul)的古科技爭奪:古代結構牆內藏有古科技;塔利班、蓋達、ISIS 等是陰謀集團的「代理軍隊 proxy armies」,炸毀阿富汗大佛、夷平蘇美古址有時是狂熱、有時是在找東西(且確在牆中找到科技)。前亞當人在盡量蒐集自己的古科技,正為某種衝突/大事準備、怕被揭露公審。<span class="who">柯里</span><span class="src">S06E16</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>南極古文明的挖掘與停滯艙</h3>
+<ul>
+<li>據 Sigmund 一行,1939 年德國南極遠征隊發現刻有古文字的大石板(像帕拚普庫 Pumapunku 那樣破碎散落);德國人不為考古而清出洞穴區、把古文物移走、移入軍隊建基地;1950–60 年代持續挖掘,2002 年起引進真正的大學教授與考古學家,他們做了 14 年不能對外講的研究。<span class="who">柯里</span><span class="src">S07E08</span></li>
+<li>發現包括:被拆解重組成新文明城市的太空船、基因實驗室(前亞當人基因實驗失控,留下各種人類——有尾的、矮的、高的),以及約 5.5 萬到 6 萬年前墜落於此的原始前亞當人存有。<span class="who">柯里</span><span class="src">S07E08</span></li>
+<li>南極冰下的古墓:長頭顱(elongated skulls)、寬臀、較小胸廓的存有遺骸——正常人類身高,年代範圍 1.8 萬到 6 萬年。也發現像「閃凍 flash frozen」的史前動物;一些巨石塊被抬離地面數英尺後閃凍,像有巨大海嘯在中途瞬間結冰。<span class="who">柯里</span><span class="src">S06E02</span></li>
+<li>停滯存有的喚醒:停滯存有可回溯到約 50 萬年前爆炸的超級地球;數量不多,約一打;守護者把船帶下地球接上古建造者種族的能量源以維持停滯艙。已找到喚醒方法,但只能「全部一起」喚醒;若喚醒,會在停滯存有正中央擺第五代迷你核彈、由人員持「死人扳機 dead man trigger」待命(CG 以電影《普羅米修斯》比喻顧慮)。<span class="who">柯里</span><span class="src">S07E19</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>ES 的南極與美國地下文明證詞</h3>
+<div class="narrator"><span>主述</span>Emery Smith 受雇於找石油/黃金的科學家團隊,用透地雷達發現巨大地下空洞。</div>
+<ul>
+<li>ES 確認南極冰下至少有一艘很大的母船;他說揭露不會是人類來做,而是「地球(Gaia)因暖化來揭露」——明年若部分雪融,這巨物與不同金屬會開始露出、很難解釋,「地球會是揭露者」。<span class="who">史密斯</span><span class="src">S09E09</span></li>
+<li>南極最古老的殘骸據多個來源是 33 呎高巨人;聽過南極有逾 30 呎高的石棺與外星屍體已被挖出。ES 認為那艘船不是墜毀,而是本來就在那、停在那。<span class="who">史密斯</span><span class="src">S10E09</span></li>
+<li>美國一處:後散射低頻雷達顯示完美切割的巨大立方體房間(空的),位於 1000~3500 呎深基岩中;找到大量純白金(古代文明的粉末「嗎哪 mana」)、被回填的巨大樓梯(8~13 呎一階,符合 33 呎高巨人)、飛行器輪廓與大型石棺。政府隨即買下周邊大片土地。<span class="who">史密斯</span><span class="src">S10E08</span></li>
+<li>含水層中央有座似乎不與大陸相連的巨大空心岩石(數英里大),內有遺址,被稱為「蛋 the egg」,白金全淹在水下。ES 推測此岩石原是小行星,很久前以熔岩黏附地球,水把它從地球切離。內有逾 300 具人類遺骸、盔甲、海量黃金、立方體、隧道、金字塔、石棺與飛行器;盔甲與裝滿黃金的陶罐與聖殿騎士團(Knights Templar)時代用的相同;ES 認為「約櫃」、聖杯與 1700 塊石板可能就在那。<span class="who">史密斯</span><span class="src">S10E08</span><span class="src">S10E09</span></li>
+<li>能看金子發光的人:眼中有不同視錐細胞,能看見多種藍與灰光波長;ES 推測有一支外星 DNA 種入人類群體。聖殿騎士團其中一艘船在科珀斯克里斯蒂(Corpus Christi)登陸,把寶藏埋進這個已有世界最大金礦的地方;辛克萊(Sinclair)家族出資造船。<span class="who">史密斯</span><span class="src">S10E08</span></li>
+<li>大金字塔下的城市:他們已開始說「下面有東西、一個大空洞」,埃及金字塔下也有大空洞——ES 說那是一座非常大的城市,金字塔下有約一英里高的穹頂;主流媒體用微中子在大甬道上方發現新密室,ES 說「他們早就知道很久了」,有人已從下往上進去過。<span class="who">史密斯</span><span class="src">S09E10</span><span class="src">S10E08</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 5 ============ -->
+<section class="cat" id="c5">
+<div class="cat-h"><span class="bar"></span><h2>五、亞特蘭提斯、雷姆利亞與週期大災變</h2><span class="cnt">ATLANTIS · LEMURIA · CATACLYSMS</span></div>
+
+<div class="sp">
+<h3>多文明同時公開交戰</h3>
+<ul>
+<li>智慧墊上幾乎每個大陸都找到文明痕跡。亞特蘭提斯其實是把一個名字套在好幾個文明上;多數人認為的「真正亞特蘭提斯」是被小行星造成大洪水的那個文明。<span class="who">柯里</span><span class="src">S05E01</span></li>
+<li>如同印度《摩訶婆羅多》,地球(乃至整個太陽系)上曾有多個擁有先進科技的殖民團體同時公開交戰;甚至月球上有些區域留作戰爭的紀念/提醒,後來達成某種協議避免再戰。洪水後重建期,世界各地出現的「善神」是非地球人與內部地球團體的組合。<span class="who">柯里</span><span class="src">S05E01</span></li>
+<li>許多含血脈資訊的祕密書籍如今藏在梵蒂岡等祕密地點。<span class="who">柯里</span><span class="src">S05E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>《一的法則》引文:雷姆利亞與亞特蘭提斯</h3>
+<div class="narrator"><span>主述</span>DW 曾與做《一的法則》的人(Carla Rueckert 等)同住兩年。</div>
+<ul>
+<li>Carla 透露有些內容被審查、未收入前五書,直到 Tobey Wheelock 的「重聽計畫 Re-Listening Project」核對原始錄音才出現(僅在 lawofone.info 可讀)。<span class="who">威爾科克</span><span class="src">S08E11</span></li>
+<li>引文:亞特蘭提斯與雷姆利亞是兩個不同文明(CG 確認 SSP 早知);雷姆利亞(Mu)在靠近亞洲的太平洋,約 5.3 萬年前、是性質較原始但靈性扭曲很先進的存在。CG 對應:靈性高度進化的存在會遠離世俗物質,像西藏,專注提升意識而非造法拉利,故不需科技。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S08E11</span></li>
+<li>雷姆利亞「無辜善良,因地球構造板塊重新調整而沉入海中,非他們自身行為所致」。Ra 說雷姆利亞災變約 5 萬年前(剛好兩個 2.5 萬年週期),起源約 5.3 萬年前。<span class="who">柯里</span><span class="src">S08E11</span></li>
+<li>約 5.3 萬年前正是前亞當人到來的時期;地球當時是「難民區 refugee zone」,雷姆利亞可能與前亞當人同期共存。CG 解釋災變原因:地球揚升的成長痛,每個週期都有這類災變,不是地球要清除人類;雷姆利亞那些靈性極高的和平之人未必死於洪水,可能有遙視能力被預警而先撤離,或被善意存在移走。<span class="who">柯里</span><span class="src">S08E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>5 萬年前的意識躍進</h3>
+<ul>
+<li>考古已知 5 萬年前之前人類不製作儀式宗教物品或先進工具,約 5 萬年前(全球幾乎同時、相當自發)人類開始宗教行為、藝術、更複雜的工具/衣物/武器。CG 解釋:意識場擴展、突然獲得全新意識頻譜(密度提升即意識提升),太陽閃焰也帶來大規模意識提升。<span class="who">柯里</span><span class="src">S08E11</span></li>
+<li>這也暗示前亞當人剛到時,原住人類可能像《浩劫餘生》般原始——無語言、無宗教行為、無先進製工;雷姆利亞與亞特蘭提斯可能在週期之間,亞特蘭提斯可能就是前亞當人,雷姆利亞人則靈性發展頗遠。<span class="who">柯里</span><span class="src">S08E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Barringer 隕石坑與超級火山之謎</h3>
+<ul>
+<li>Barringer 隕石坑(美國)通常被認為是隕石撞擊,但 DW 指出兩點怪異——(1)從上看近乎方形(四角圓鈍),暗示某種幾何能量場;(2)沙下有「閃電熔岩 fulgurite」。多名學者認為這其實是超級火山爆發、且如電宇宙模型般帶電放電把沙石化;地質定年正好約 5 萬年前。<span class="who">威爾科克</span><span class="src">S08E11</span></li>
+<li>Tier-Eir 展示過地球過渡期超級火山會爆、火山地震增、風暴更高能,與週期災變一致。太陽閃焰(若準時、約 5 萬年週期末)能同時造成超級火山與太平洋海嘯——太陽不只噴等離子,還噴巨大電磁波,抵達地球與地球電磁互動「總得有東西讓步」,造成地殼位移、地震、摩擦使火山爆發。<span class="who">柯里</span><span class="src">S08E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>倖存者去向與印第安人起源</h3>
+<ul>
+<li>Ra 說倖存者抵達俄羅斯、北美、南美等地,「你們社會中令你同情的印第安人就是這些存在的後裔」——對應霍皮傳說(被螞蟻人帶到大峽谷地下度過大災變)。<span class="who">柯里</span><span class="src">S08E11</span></li>
+<li>DW 提原住民與亞洲人外貌相似的傳統解釋是白令陸橋;但 CG 近期與一位祖尼長老談話,長老說「我們不是經陸橋來的,是經洞穴複合體、在海洋之下來的,不是遷徙」。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S08E11</span></li>
+<li>前亞當人到後在今日撒哈拉沙漠建了高度科技文明,沙漠表面下 40 至 400 英尺有大量遺跡含巨大雕像(有些雕像看起來有點非洲風格)。CG 確認智慧玻璃板有此資訊。<span class="who">柯里</span><span class="src">S08E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>瑪雅與奧爾梅克:被移植的難民</h3>
+<ul>
+<li>瑪雅人不是在地球發展的,是難民——他們原處出了問題,被移植到地球當難民;在地球人口增長,宗教階級(religious caste)保守所有科學秘密(像種姓制度)。他們的巨型母船是一個巨大圓柱、基本上是從山內挖空雕出的一整塊岩石,仍存放在地下某處,他們在這裡有飛地。<span class="who">柯里</span><span class="src">S08E13</span></li>
+<li>米卡(Mica)代表的群體即地球已知的奧爾梅克人(Olmecs)。奧爾梅克人因母星系出大事被帶來當難民,後又被帶回(本地 52 星團中最近的星之一,主要是海洋行星)。他們三代前(壽命約 300 年,即約 900 年前)在母星推翻了龍族統治。<span class="who">柯里</span><span class="src">S10E06</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section class="cat" id="c6">
+<div class="cat-h"><span class="bar"></span><h2>六、內部地球與冒充為神</h2><span class="cnt">INNER EARTH · TRICKSTER GODS</span></div>
+
+<div class="sp">
+<h3>地心聯盟:古代地球分離文明</h3>
+<ul>
+<li>柯里說地心聯盟是「古代地球分離文明 Ancient Earth breakaway civilizations」。這些是地球上崛起的少數古文明,像現代的祕密太空計畫一樣自行分離、遷入地下與外太空,然後在地球自然的災變週期中把地表人口留下自生自滅,災後再回來幫助倖存者。他們聲稱是 1700~1800 萬年前地球最早的原生人類。<span class="who">柯里</span><span class="src">S03E02</span></li>
+<li>這些分離文明屬技術型文明(非石器),但科技與我們完全不同(不是電路板那套),由僧侶階級與菁英階級發展出更高的「靈性科技文明」。他們宣稱不靠外星贈與而自行發展;因社會問題少、不具我們的攻擊性,發展得更快。<span class="who">柯里</span><span class="src">S03E02</span></li>
+<li>他們把可居住的地心區域當作僧侶階級的機密,平民不知;災變(極移、隕石、海嘯、超級火山爆發)來時躲入地下,事後再去幫地表倖存者。他們極度孤立主義、是「基因純化主義者 genetic purists」,不與其他崛起的人種/原始人混血。<span class="who">柯里</span><span class="src">S03E02</span></li>
+<li>地心人告訴他地表極為動態:火山活動、對流、大陸升降頻繁,變化遠比地質學/考古學認知的快;Thompson-Cremo《禁忌考古學》中數百萬年前的人造文物,很可能就是這些文明留下、隨地表翻churn 而保存的遺跡。<span class="who">柯里</span><span class="src">S03E02</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>冒充為神:行動安全與「騙子神」</h3>
+<ul>
+<li>地下/分離文明對地表偽裝為神「至今仍在」。CG 確認希臘諸神(金髮藍眼、彼此爭戰、宙斯的雷電像手持科技武器)與亞加森人「絕對有關聯」:這些地下/分離文明對地表人類自稱為神,直到人類達到一定成熟度後,才改口自稱「外星人/ET」。<span class="who">柯里</span><span class="src">S02E02</span></li>
+<li>地心人歷經 oceans of time,在大小災變後到地表重啟文明、提供律法、農業等;現身時讓人保留「他們是神」的假設或乾脆自稱是神(為行動安全 operational security,要人「向上看」而非看腳下找他們)。但這些古代神話/神祇是「地心人 + 非地球存有」的混合(常同時造訪同一文明,給他們兩個不同的神)。<span class="who">柯里</span><span class="src">S04E11</span></li>
+<li>Gonzales 傳達 SSP 聯盟訊息:要求地心團體將來別再對地表人謊稱自己是外星人或神。地心團體反擊:他們在地球已近 2000 萬年、是地球原生最早人類,並以我們是混血、攻擊性強的「骯髒血統」自居純血的雅利安式意識形態。<span class="who">柯里</span><span class="src">S03E04</span></li>
+<li>呼應 Graham Hancock《Fingerprints of the Gods》:金髮藍眼亞利安人乘船到各地原住民文化、自稱為神,教導水車磨穀、冶金、數學、天文。地下越深越熱越高壓是真,但到一定深度後「反轉」——形成可居住的蜂巢狀洞穴結構(honeycomb)。<span class="who">威爾科克</span><span class="who">柯里</span><span class="src">S02E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Anshar:來自 1700 萬年後未來的守護者</h3>
+<ul>
+<li>地心人(Anshar)已是第四密度揚升存有,留在地球協助地球與我們,本應是「行星與所有居民的管理者 stewards」。他們對時間的感知不同:我們眼中一個世紀,對他們可能只像 1~5 年。<span class="who">柯里</span><span class="src">S04E11</span></li>
+<li>CG 強力追問後 Kaaree 確認 Anshar 其實是來自未來的人——在我們經歷四密度轉變之後的某個未來,Anshar 社會發生類似「曼德拉效應」的時間異常/分岔,他們回溯找出分岔前的時點,派一小群(非整城)回到 1700 萬年前(就在時間異常發生前)當其時間線的守護者。<span class="who">柯里</span><span class="src">S07E27</span></li>
+<li>回到過去有業力後果,故與我們業力相連:我們須照其時間線正確進展(揚升、推翻 Cabal),他們才能存在。那小群像殖民者,從未與未來 Anshar 聯繫,逐漸長成今日地下大城。<span class="who">柯里</span><span class="src">S07E27</span></li>
+<li>他們比 Mika 族人現在先進得多;是在成為第四密度後的遙遠未來才注意到時間異常、回到過去保時間線。他們的時間旅行靠放大意識——載具、一切都用意識介接與供能,故大量用水晶。若給我們一艘船,只是個缺了關鍵元件(駕駛員=動力系統+飛控,全靠意識)的殼。<span class="who">柯里</span><span class="src">S08E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>內部地球的危機與七個族群</h3>
+<ul>
+<li>當初 Anshar 首次邀 CG 參加會議時見的七個不同族群全都在場——他們都是來自地球未來、回到過去的(各種族群同任務但於不同時期前來,非與 Anshar 同時)。討論主題是如何整合一項他們共享的科技。<span class="who">柯里</span><span class="src">S09E03</span></li>
+<li>被展示的全像:長方形塊體中間有像纜線的大型晶質纜(螺旋狀摻入某礦物)——用來把所有人的意識網絡起來,以供能與控制他們在泡內期間要用的科技。各族群有標示居住區域的護身符寶石,各有自己的「方塊/區域」不混居。<span class="who">柯里</span><span class="src">S09E03</span></li>
+<li>Anshar(Ka'Aree 族)是四密度,決策在 telepathic 層級進行——眾人進 The Construct、有某種蜂巢心智/群體意識來決定事情;有祭司種姓與長老,但人們輪流做不同工作,不被定型。<span class="who">柯里</span><span class="src">S06E17</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>地下隧道、城市與母船(ES、PP 證詞)</h3>
+<ul>
+<li>地心人飛行器艦隊叫「銀色艦隊 Silver Fleet」;地下區域有生物發光細菌、樹木、流水與自成一格的動物演化路徑。<span class="who">柯里</span><span class="src">S02E01</span></li>
+<li>PP 多次進入亞歷山卓大圖書館(即梵蒂岡圖書館),按材料年代分樓層。南美地下「高速公路」:平底、橢圓頂、牆為柔性玻璃、綿延數英里(PP 坐月球車式車輛走過約 120-150 英里);牆上有 yantra(幾何圖,保護人、保持玻璃柔性)。隧道高是為氣流/氧氣流通。<span class="who">彼得森</span><span class="src">S07E29</span></li>
+<li>ES 獨立確認南極墜毀地點有非常巨大的母船(據科學家說已研究 24 年),它與厄瓜多(Ecuador)的地下文明有連結;洞內空氣是最乾淨的、可直接呼吸。<span class="who">史密斯</span><span class="src">S10E09</span></li>
+<li>CG 看過水下巨大廳道(底平頂圓、極大、可航行潛艇、筆直延伸極遠,我方曾用其從北方到南極);ES 確認這些是人造的、古老、被改造成像完美足球場大小的熔岩管。北美與墨西哥有洞穴直通南極,且會「繞回原點、不靠近地核」;因這些隧道,全球含水層已被滲透相連。<span class="who">史密斯</span><span class="who">威爾科克</span><span class="src">S10E09</span></li>
+<li>Malibu(洛杉磯外海)是進入一個洞穴/裂隙系統的入口,該系統穿越海底通到內華達、西北方,再連到一路到南極的裂隙;古建造者種族在裂縫間挖出大拱門。他們有大型電磁潛艇(像貨櫃船大小)在此裂隙系統電磁式行進於地下。<span class="who">柯里</span><span class="src">S07E23</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section class="cat" id="c7">
+<div class="cat-h"><span class="bar"></span><h2>七、巨人、紅髮巨人與停滯存有</h2><span class="cnt">GIANTS · STASIS BEINGS</span></div>
+
+<div class="sp">
+<h3>沉睡的巨人:時間泡 stasis 科技</h3>
+<div class="narrator"><span>主述</span>CG 在智慧玻璃墊上看到的地表下「停滯存有」。</div>
+<ul>
+<li>地球地表下(常在山下、印第安墳塚下)發現「停滯存有 stasis beings」——非死非完全活。他們用了「古代建造者種族」很久以前留下的技術:躺進石棺或石床/石檯,會在周圍製造「時間泡 time-bubble / temporal well」,內部時間遠慢於外部;主觀像睡 20 分鐘小盹、外界卻過了約 3 萬年。<span class="who">柯里</span><span class="src">S01E06</span></li>
+<li>時間泡若硬闖進去,人會被凍結在時間中(他讀到有來自其他時代、被困在這些時間井裡的人)。<span class="who">柯里</span><span class="src">S01E06</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>1800 年代的祕密朝聖地</h3>
+<ul>
+<li>智慧墊上看到——早在 1800 年代,某些「光明會」/菁英群體就去過一處地點朝聖。那是地下洞穴/石窟,約 90 英尺高、塗滿瀝青般黑色物質,內有大致已破譯的古老文字與手印,地上三具石棺呈 Y 形排列;中央有個像盒子的結構懸吊上下,中間是發藍光的水晶矩陣,以蛛網狀(可能光纖)連到四角——這就是製造時間泡的東西。<span class="who">柯里</span><span class="src">S01E06</span></li>
+<li>石棺中是極高大、紅鬍子、皮膚蒼白的巨人,肩膀被擠進石棺(石棺非為他們所造);棺外有可能裝食物飲料的罐子。地下長廊有大量美洲原住民岩畫;入口大石上有人刻名「塗鴉」,其中一個是 Abraham Lincoln(林肯曾在尼加拉瀑布演說提及巨人)。為保護岩畫,該地最後被封閉。地點 CG 傾向俄亥俄,在某條河的盡頭。<span class="who">柯里</span><span class="src">S01E06</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>紅髮巨人的分布與滅落</h3>
+<ul>
+<li>停滯存有全球都有發現——美國有數十處、橫跨歐洲到亞洲;高大、紅髮紅鬍的群體分布在歐洲、南北美洲,上次冰河期前曾統治很大區域。他們有些有很先進的冶金技術,但無我們認知的高科技跡象。<span class="who">柯里</span><span class="src">S01E06</span></li>
+<li>紅髮巨人是南極前亞當文明的基因創造物,用來管理其人類奴隸人口。大災變後前亞當人幾乎被滅,巨人得自謀生路、開始吃人、製造麻煩;人類重新組織後組成狩獵隊獵殺他們,巨人只好深入地球深處有生態系的洞穴。他們缺乏陽光與養分、健康惡化、越來越瘦,把一種住在內部地球的人形物種獵到滅絕(因愛上其味道)。<span class="who">柯里</span><span class="src">S10E03</span></li>
+<li>巨人外觀:大前額、厚下顎、雙排牙(double rows of teeth),即使縮小也不像普通人類。文化在洪水後幾乎全失(變得不識字)。<span class="who">柯里</span><span class="src">S10E03</span></li>
+<li>超過 130 個巨人分散在各靜滯艙,但大多被 Cabal 找到、喚醒後移到監獄與基地。Cabal 進不去停滯艙,但有諧波方式(harmonic ways)關閉與控制該科技。靜滯中的巨人感覺像睡一覺就醒;世代住在地底生態系的巨人則受創最深、心理崩潰。<span class="who">柯里</span><span class="src">S10E03</span></li>
+<li>岡薩雷斯與一支「紅髮、六指巨人」種族工作近一年以上,想讓他們接受馬雅人的療癒科技,但巨人拒絕,要求先救出被 Cabal 關在某基地的皇族才肯接受療癒。<span class="who">柯里</span><span class="src">S10E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>切羅基與祖尼的紅髮巨人傳說</h3>
+<ul>
+<li>CG 說他祖父是切羅基人(Cherokee),聽過紅髮巨人的故事:他們曾有橫跨美國東岸到中美洲的龐大文明,大災變後衰落、淪落到吃人,原住民獵殺他們(把他們趕進洞穴、在洞口生火悶死)。<span class="who">柯里</span><span class="src">S08E09</span></li>
+<li>CM 說岩畫常見巨人,紅髮巨人尤其盛行於猶他與科羅拉多(冰河期後出現);內華達有些墓址仍有紅髮巨人;與阿努納奇(Anunnaki)連結,東岸與美國中部各部落都有此傳說。西班牙人剛來時也報告見過。<span class="who">馬胡蒂</span><span class="src">S08E09</span></li>
+<li>PP 述俄勒岡曾有博物館公開展示高達約 12 英尺的人骨(紅髮較易保存);巨人是外星人類(部分來自大角星 Arcturus),為何用黑曜石?因到無人居星球要從零建造。巨人骨多有拉長頭骨(腦可能大 5-6 倍);巨人與地球女性育種(長期育種計畫)。地球智慧文明可回溯至少 2-2.5 億年。<span class="who">彼得森</span><span class="src">S07E29</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>跨文明文物與停滯存有的甦醒</h3>
+<ul>
+<li>停滯存有的兩段影片:一段是失效的停滯艙、存有已死(胸前有刻蘇美楔形文字的金牌;CG 說從遠古有一條從原始類蘇美語演化下來的根語言);另一段是仍在停滯、據說正被甦醒的存有(留長鬍、配埃及女性頭像金盤、像印度教雙蛇的怪雕像),顯示印度教、埃及、蘇美等不同宗教混合,跨文明文物並不罕見。<span class="who">柯里</span><span class="src">S01E06</span></li>
+<li>地下城市的遺跡有金字塔——影像中有較扁的金字塔,看似水晶但實為一種透明的高科技鋁合金、整片無縫,比埃及金字塔小;地表/衛星上的多半像扭曲倒塌的塔(似遭某種衝擊波/巨大軍事打擊或自然災變)。<span class="who">柯里</span><span class="src">S01E06</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 8 ============ -->
+<section class="cat" id="c8">
+<div class="cat-h"><span class="bar"></span><h2>八、原住民口傳史與古代藝術</h2><span class="cnt">INDIGENOUS LORE · ANCIENT ART</span></div>
+
+<div class="sp">
+<h3>祖尼揭露:卡奇納與天空人</h3>
+<div class="narrator"><span>主述</span>Clifford Mahooty,新墨西哥州祖尼普韋布洛部落,工程師出身。</div>
+<ul>
+<li>祖尼是口傳歷史,透過故事、神話、神聖教導分階段傳授。看到火球視為凶兆,看到光球(orb)或飛碟型物視為「守護者/看守者」。全美各地的岩畫(petroglyphs)總能找到飛碟與天空活動的描繪——祖尼人早知飛碟,只是不叫飛碟。<span class="who">馬胡蒂</span><span class="src">S08E09</span></li>
+<li>卡奇納(kachina)代表最早來到祖尼人這裡的 ET——當時人類還在發展階段,ET 處於教導階段,教原住民照顧自己、地球與其他生物,內容包括農業、耕作、建造;後因早期 ET 的綁架,人類進入「卡奇納社會」取代那些存在。<span class="who">馬胡蒂</span><span class="src">S08E09</span></li>
+<li>CM 22 歲時參與「來自長老的資訊」計畫,用錄音機蒐集村中長老的故事與祖傳歷史。一位祖父述說 1950 年代祖尼大旱,他把羊群趕到水壩,壩上停著一艘飛碟,旁邊三個約三四英尺高的小人用「祖尼語」與他交談(顯示他們能講任何語言)。<span class="who">馬胡蒂</span><span class="src">S08E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>祖尼創世觀與「兩心人」</h3>
+<ul>
+<li>祖尼創世觀:地球是水行星,神創造了它,但人類本來就在這裡——祖尼人不認為人類來自其他行星,而是被神用其科技與方法「升級」(尤其智力與靈性)。地球人被造時,「兩心人/黑暗勢力者」也一起被造,本應只當「生命的平衡者(防止人口過剩的保險)」,但失控、與來自不同星系的其他團體交織。<span class="who">馬胡蒂</span><span class="src">S08E09</span></li>
+<li>瑪雅人、霍皮人、祖尼人同源;CM 一場講座談「雷姆利亞沉沒」後他們遷來這裡、因人數太多被分開。查科峽谷(Chaco Canyon)文化也相關,與瑪雅約同時消失(理論含食人、紅髮巨人入侵)。<span class="who">馬胡蒂</span><span class="src">S08E09</span></li>
+<li>CG 提到智慧玻璃板中原住民報告一群叫「兩心人 Two Hearts」的存在(因爬蟲族有主、副兩心)。CM 說祖尼神話中所有被造的人本都是好人,但有「兩心人」即今稱「黑暗勢力者/巫術人」,使命是當黑暗勢力以維持平衡,但越權變得更強大。<span class="who">柯里</span><span class="who">馬胡蒂</span><span class="src">S08E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>霍皮四世界預言與螞蟻人</h3>
+<ul>
+<li>霍皮第一至第四世界預言:前三個世界分別被自然之力毀滅(地、風、火、地震),最後一個是洪水。普韋布洛人因此在大峽谷存活,成為昆蟲人(insectoid people)的被監護者。螞蟻人/昆蟲人不僅來自內界,也來自其他外星系統,屬「守護者與看守者」之列。<span class="who">馬胡蒂</span><span class="src">S08E10</span></li>
+<li>螞蟻人帶祖尼人到「第四地下世界(黑暗世界)」,每往上一層越乾淨明亮,最後來到「光的世界」。出來的地點是大峽谷:小科羅拉多河與大科羅拉多河交匯處有一個石灰華穹丘,稱「Sipapu / Sipapulima」——所有印第安人都有此參照,是他們從宇宙其他地方出來必須穿過的門戶(今日可稱蟲洞或漩渦)。<span class="who">馬胡蒂</span><span class="src">S08E10</span></li>
+<li>霍皮木乃伊:CM 透過 First Mesa 最後的祭司 Mr. Malava 得知——從查科峽谷取出、裝在原木中運到霍皮的木乃伊存在,約 30 英寸長,表面像桃花心木根般打磨光亮,CM 直覺它曾是活的存在、一看就像 ET、完全不像人類。<span class="who">馬胡蒂</span><span class="src">S08E10</span></li>
+<li>大峽谷之謎:1800 年代晚期發現疑似埃及風格的器物。CM 拍了紀錄片《Expedition to Sipapu》,要尋找史密森尼資助、由 Kincaid 主持的遠征進入的洞穴(內有埃及與佛教雕像被移走運到華府);官方說那些金雕像已被傾倒入海。CG 對應:過去也聽說史密森尼把巨人骨骸傾倒入海。<span class="who">馬胡蒂</span><span class="who">柯里</span><span class="src">S08E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>祖尼的外星器物:水晶與飛行盾</h3>
+<ul>
+<li>祖尼擁有的外星器物首先是水晶(crystals),兼作發射器與接收器(transceiver),用來與地球上及他處的神聖團體通訊;CM 認為水晶是可能無限的資訊庫。CG 對應:內部地球的 Anshar 也用水晶當巨型電腦/資料庫。<span class="who">馬胡蒂</span><span class="who">柯里</span><span class="src">S08E10</span></li>
+<li>其他星辰人器物多被早期探險者(如史密森尼)取走。CM 提到曾交給原住民並真的飛過的「飛行盾 flying shields」(因外形像盾,也叫「飛行葫蘆 flying gourds」)。<span class="who">馬胡蒂</span><span class="src">S08E10</span></li>
+<li>長頭顱與藍血血統:DW 提南非 Boskop 頭骨(顱骨拉長、腦約常人兩倍)、西伯利亞、埃及法老描繪都有長頭顱。CM 的理論:起初為了有領導者承接「新人類」職能,需要混血計畫;祖尼歷史中祭司是「一半外星、一半人形」,開啟了「藍線/藍血 bluebloods 組織」。<span class="who">馬胡蒂</span><span class="who">威爾科克</span><span class="src">S08E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>古代藝術中的揚升科學(William Henry)</h3>
+<div class="narrator"><span>主述</span>William Henry 自 2002 年起研究古代藝術中的揚升載具。</div>
+<ul>
+<li>埃及艾德富荷魯斯神廟(Temple of Horus,約西元前 300 年):荷魯斯被刻成「藍色鳥存有」。鄰近的丹德拉哈索爾神廟:荷魯斯坐在「揚升寶座」上、披羽毛斗篷,是藍鳥人;手持「復活杖」(底端像音叉/共振裝置)。DW 補:杖頂的貝努鳥其實是翼龍頭,暗示恐龍曾穿越傳送門進入古埃及人視野。<span class="who">亨利</span><span class="who">威爾科克</span><span class="src">S05E03</span></li>
+<li>文藝復興 Fra Angelico「最後審判」:耶穌坐揚升寶座、被杏仁狀(mandorla)光門包圍、周圍是藍色天使/藍鳥。WH 說 de Medici 家族花了相當於今 5000 萬美元研究揚升祕密(《赫密士文集》),解碼後請 Botticelli、Michelangelo、Fra Angelico 把揚升密碼藏進藝術。<span class="who">亨利</span><span class="src">S05E03</span></li>
+<li>托特·赫密士·崔斯墨吉斯特斯(Thoth Hermes Trismegistus)是基督的前世;托特常被畫成朱鷺頭的鳥存有。開羅科普特博物館 4 世紀:耶穌持書坐藍球體寶座;寶座下的腳凳是「約櫃」——某種使高振動存有「減速」到我們能感知的裝置。<span class="who">亨利</span><span class="src">S05E03</span></li>
+<li>「智慧墊/石板技術」與藍寶石:CG 修正——更像他們在內部地球發現的「石板 stone tablets」,起初不知是什麼、後來發現是科技。WH 對應蘇美「Me 石板/命運石板」、阿努納奇交易的石頭。WH 提摩西兩上西奈山:第一次帶回藍寶石啟蒙石板、見以色列人拜金牛犢而摔碎,第二次帶回十誡——象徵人類「還無法駕馭」這先進意識科技。<span class="who">柯里</span><span class="who">亨利</span><span class="src">S05E04</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 9 ============ -->
+<section class="cat" id="c9">
+<div class="cat-h"><span class="bar"></span><h2>九、蘇美、阿努納奇與 Cabal 血脈</h2><span class="cnt">SUMER · ANUNNAKI · BLOODLINES</span></div>
+
+<div class="sp">
+<h3>「阿努納奇」一詞的真相</h3>
+<ul>
+<li>CG 被詳細告知「Annunaki」只是蘇美語,對今人而言意指「ETs、從天而降者」,且指涉「不只一個群體」,但文本明顯在講某種爬蟲類。蘇美雕刻中除了比人高兩倍的存有,還有「鳥頭人身 Avian」。CG 確認人類 DNA 中確實接合了不少不同種族的基因,包括「少量爬蟲類 DNA」。<span class="who">柯里</span><span class="src">S02E02</span></li>
+<li>女祭司指著 Sitchin 的書說其內容「大多是杜撰的 contrived」:你無法拿真正的蘇美石板翻譯出書裡的說法。「Anunnaki」的字根意為「royal seed 皇族種子」,而非「外星人」。Sitchin 由「三個人」提供要寫的敘事。<span class="who">柯里</span><span class="src">S03E06</span></li>
+<li>DW 補:他大學朋友 Antonio 是 Sitchin 私交,曾親聞 Sitchin 說書中內容是「光明會」告訴他該寫什麼、非基於研究。柯里事後花三週上網查主流阿卡德/蘇美學者譯本,發現 Sitchin 書中許多故事線根本不存在,結論是學者是對的(可參考網站 "Sitchin is Wrong")。<span class="who">威爾科克</span><span class="who">柯里</span><span class="src">S03E06</span></li>
+<li>地心人(及上層 SSP)提到「雙星假說/復仇女神星 nemesis star」;地心人明確說 Zecharia Sitchin 的 Nibiru 3600 年軌道敘事不準確,是辛迪加放出的敘事。柯里自己追查蘇美譯本也找不到 Sitchin 書中內容,是被杜撰的心理戰/假資訊。<span class="who">柯里</span><span class="src">S04E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Draco 與蘇美的關聯</h3>
+<ul>
+<li>有研究顯示 Draco 很久以前就接觸並對人類做實驗,可能就是 Sitchin 講的 Annunaki。地球歷史上 Draco 與其他 ET 群多次拉鋸:被趕走、留下殘部、又回來趕走別人,數十萬年來歷史相當狂野。Draco 確實要求人類獻祭(human sacrifice)作為貢品。<span class="who">柯里</span><span class="src">S02E02</span></li>
+<li>土耳其是分離群體與 ET 群混合之地;當地有偏「蘇美神王型」的負面群體(Draco 爬蟲類型,也在南非活動,名如 Marduk 馬杜克),土耳其受某 ET 派系長期控制。<span class="who">柯里</span><span class="src">S02E06</span></li>
+<li>「阿努納奇」是「從天而降」的籠統詞,爬蟲類與前亞當人都常被這樣稱。CG 說前亞當人 5.5 萬到 6 萬年前迫降、非天龍盟友但曾壓制爬蟲類。<span class="who">柯里</span><span class="src">S07E15</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>PP 的版本:Anunnaki 採金</h3>
+<ul>
+<li>PP:他們為何對地球有興趣?因地球金(gold)濃度高,可製 Ormus(另一種白金/manna),延長壽命、保神經系統再生與端粒(telomeres)。Anunnaki 來偷金,我們作為種族「存在的唯一目的就是當採金工」——是 Anunnaki 與類黑猩猩的基因混種,能蹲入小裂縫採金。Anunnaki 最先發現地球大量金,有採礦「claim」,其工頭很可能是 Draconian。<span class="who">彼得森</span><span class="src">S07E31</span></li>
+<li>ES 的版本:他相信阿努納奇來過、我們確有「外力協助」演化成人,但不確定收集黃金或當奴隸之說;不認為他們是我們的神,只是更先進、掌握跨維度旅行。引「太空人雙胞胎」報告、克羅馬儂人到現代人之間的 DNA 缺口、與史丹佛 Dr. Garry Nolan 發表的「阿塔卡馬存在」取 DNA 案。<span class="who">史密斯</span><span class="src">S12E15</span></li>
+<li>ES:「我相信我們來自外星人,更重要的是外星人也來自我們」、「我們在金字塔底端」。他相信現在共事的 ET 沒對我們做基因改造,但確有一個古代種族製造了我們(有人稱拿非利人 Nephilim、阿努納奇);他工作過的所有外星人「體內都有人類 DNA」。<span class="who">史密斯</span><span class="src">S12E15</span><span class="src">S12E25</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Cabal 的古老根源</h3>
+<ul>
+<li>Cabal 古史:埃及/巴比倫神秘學校→羅馬帝國吸收→亞歷山卓圖書館遷梵蒂岡→遷英格蘭 Bath。「光明會/邪教辛迪加」千年來用藥物、創傷、正負增強做心智控制;在人幼年製造「分裂人格」、設「觸發詞」(「滿洲候選人」式)——這是非常古老的手法,可追溯到「刺客教團 Order of the Assassins」;MKULTRA 的根源即源於此。<span class="who">柯里</span><span class="src">S04E05</span></li>
+<li>德國祕密社團可追溯到前基督教的異教部落(Celtic 凱爾特、Druids 德魯伊等),視自己如地上的樹、王朝如過眼雲煙。大量祕密教導流入梵蒂岡地下與其金庫,耶穌會(Jesuits)等仍可取用。<span class="who">柯里</span><span class="src">S02E06</span></li>
+<li>德魯伊/凱爾特等祭司階層中有些確實掌握太空旅行與「傳送門」科技:CG 在智慧墊讀到西班牙人追逐馬雅祭司,祭司抱著卷軸跑向刻在岩壁上「通往無處的門」,觸碰後直接「走進岩石、穿牆而過」——明顯是傳送門。<span class="who">柯里</span><span class="src">S02E06</span></li>
+<li>JR 談 Cabal 與外星的層級:現代銀行家與實業家的 Cabal 確實起於 1700 年代德國(可能法蘭克福),但「最終的線、最終控制」是在他們之上的層級做的,是外星人把人類推到舞台正中央當代理人。背後是一個「財團 consortium」:Draco 加上盟友。<span class="who">萊斯</span><span class="src">S12E23</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>古代神祇身分與「翡翠石板」</h3>
+<ul>
+<li>古代神祇身分常取決於個人信仰體系——很多人說「只有阿努納奇或爬蟲族」,他們是,但也涵蓋其他與人類互動、被冠上該名的團體。Cabal 某程度仍自覺是「被污名化的神」,想恢復他們對地球的神格——他們相信自己血脈來自地球之外、其血脈創造了他們來管理的「基因牲口/牛群」。<span class="who">柯里</span><span class="src">S08E08</span></li>
+<li>JW 朗讀《翡翠石板 Emerald Tablet》(相傳由圖特 Thoth 所寫)中描述「蛇首者以人形混居人間、屠殺王國首領取其形統治人類、唯有魔法能識破、唯有聲音能見其真容」的段落。JR 認為這精準描述了 Draco 接管權位者的手法。<span class="who">萊斯</span><span class="src">S12E23</span></li>
+<li>JR 推測:地球是個「試驗實驗室」,Draco 不被排除在「製造本星球有情生命」之外;3 億年前可能有更有智慧、爬蟲為基礎的有情生命存在過;殺死恐龍的 6,000 萬年前墨西哥灣小行星撞擊「強烈懷疑不是意外」,而是因當時 Draco 在地球的基因操弄而起的計畫。<span class="who">萊斯</span><span class="src">S12E23</span></li>
+<li>DW 提另一些內部人說的:某些 ET 團體擔心地球上的爬蟲類知覺生命變得強勢侵略,6500 萬年前撞地球的災變是有意要消滅牠們;當時月球(WT 說是「二手車」)被停泊到地球軌道創造季節氣候,讓哺乳類而非爬蟲類主導。<span class="who">威爾科克</span><span class="who">史密斯</span><span class="src">S11E08</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 10 ============ -->
+<section class="cat" id="c10">
+<div class="cat-h"><span class="bar"></span><h2>十、德國分離文明的起源</h2><span class="cnt">GERMAN BREAKAWAY · ORIGINS</span></div>
+
+<div class="sp">
+<h3>當代分離文明真正起源於德國</h3>
+<ul>
+<li>柯里解釋為何 SSP 的科技與地表落差巨大:因為 SSP 是一個「完全分離出去的社會 complete breakaway society」。CG 指出「當代」分離文明真正起源於德國,最早可回溯到 1920 年代,尤其 1930 年代。<span class="who">柯里</span><span class="src">S02E01</span></li>
+<li>德國祕密社團特別之處在於「不把科學與神祕靈性分開」,反而兩者交織:有些團體在做「通靈 channeling」,試圖接觸其他世界的種族;同時派人在全球搜羅古代文獻,尤其東方關於古代「Vimana(飛行器)」的記載,用來逆向工程打造太空船。社會型態屬於「受控的極權主義政權」。<span class="who">柯里</span><span class="src">S02E01</span></li>
+<li>涉及社團:Thule Society(圖勒會)、Order of the Black Sun(黑太陽會)、Vril Society(維利會)等。這些社團「總是掌控金錢與企業」,滲透但不完全掌控政府。CG 也提到 Vril Society 與 Maria Orsic。<span class="who">柯里</span><span class="src">S02E01</span><span class="src">S02E05</span></li>
+<li>納粹(Nazism)是祕密社團創造出來控制大眾的主流工具,而真正的分離團體只想建立自己的分離文明、優等民族與太空計畫。<span class="who">柯里</span><span class="src">S02E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>文獻掠奪:搶卷軸與聖物</h3>
+<ul>
+<li>德國人到喜馬拉雅、西藏、印度、中國等地的村落與寺院,常「持槍」搶走卷軸與書籍運回德國。年代主要在 1918–1919 起,1920–30 年代指數成長。打開後德國工程師震驚發現是「科技藍圖」。德國人帶了不合作的「西藏與守護知識的人」回去協助翻譯,最大難關是語言。<span class="who">柯里</span><span class="src">S02E05</span></li>
+<li>另一個納粹分支被派去找宗教聖物,他們相信這些根植於古代分離科技或古代外星 ET 科技。「約櫃 Ark of the Covenant」:據智慧墊,共有「三個約櫃」,是裝在木頭外包金的裝置,多功能:提供 manna、水、保護、擊敗敵人(聲波,如耶利哥城牆液化)、「與神通話的無線電」。<span class="who">柯里</span><span class="src">S02E05</span></li>
+<li>手持能量武器:宙斯的雷電、雷神之鎚、波塞頓之矛、印度 Vajra 之矛、西藏 double dorje(雙金剛杵)等,德國人相信都是真實的科技武器並四處尋找。<span class="who">柯里</span><span class="src">S02E05</span></li>
+<li>德國人去西藏奪取卷軸與識讀者(內含製造「維摩那 vimanas」的藍圖),卻把自身負面信念覆蓋上去、扭曲正面符號與教義。<span class="who">柯里</span><span class="src">S01E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>反重力科技:水銀渦流與鐘形機</h3>
+<ul>
+<li>CG 確認看過 Viktor Schauberger 的資料——他原本研究鱒魚逆流躍瀑的反重力效應。德國人根據 Vimana 古文獻打造「水銀渦流電重力裝置」:一個裝水銀的玻璃圓柱,高速旋轉並施加高電壓,產生抵消重力的效果,後來再加上反向旋轉的銅板。讀過 Nick Cook《The Hunt For Zero Point》提到的「鐘形飛行器 Bell craft」,最早約 1940 年代初。<span class="who">柯里</span><span class="src">S02E01</span></li>
+<li>重要副作用:強電場施加於水銀會使其「轉變成金(像鍊金術)」,水銀變成珊瑚狀的金,反被視為問題。飛行器若開始變金就會不穩並墜毀。納粹給 Bell 計畫的代號是「Chronos(時間)」;CG 證實玩電重力科技時「時間與空間之間的帷幕會變薄」。<span class="who">柯里</span><span class="src">S02E01</span></li>
+<li>1936 年黑森林(Black Forest)有一起墜毀事件,地點據說在 Eva Braun 家族的土地上(「德國版羅斯威爾」)。德國人在探險中也接觸並開始與喜馬拉雅山一個古老的分離文明(很多人稱「Nordics 北歐人」)合作。<span class="who">柯里</span><span class="src">S02E01</span></li>
+<li>Maria Orsic 與「Bell 技術」(Mark McCandlish 訪談):德國載具是從贈予的載具逆向工程而來,那些載具用汞引擎(汞為電磁場供能),已用了數千年甚至人類之前。CG 說德國人在 Roswell 之前(1930 年代)就有自己的墜機,工程師更優秀,早約十年逆向工程。<span class="who">麥肯德利什</span><span class="who">柯里</span><span class="src">S07E20</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>亞加森網絡與「優等民族」執念</h3>
+<ul>
+<li>德國祕密社團在喜馬拉雅地區遇到一群北歐外貌的存有,他們自稱外星 ET,實際上是一個在喜馬拉雅地下存在數萬年的「古代人類分離文明」。他們住在地下相連的城市網絡裡,自稱「The Agartha Network 亞加森網絡」,有一支太空艦隊叫「Silver Fleet 銀色艦隊」。他們對德國人聲稱原本來自昴宿星。CG 推測德國人對金髮藍眼「優等民族 master race」的執著很可能來自亞加森人。<span class="who">柯里</span><span class="src">S02E01</span></li>
+<li>德國人偏好亞加森人勝過 Draco(外貌相近、金髮藍眼、契合優等民族觀)。亞加森人身高與我們相近、穿「連身緊身衣 unitards」;德國人後來也穿同款制服、在 1950 年代飛來飛去假扮 ET 與人接觸。德國人很可能先接觸 Draco,再慢慢與亞加森人連上線。<span class="who">柯里</span><span class="src">S02E02</span></li>
+<li>亞加森人因「災變 cataclysm」而轉入地下,地球在時間循環中經歷過數次災變。亞加森人至今仍在,對 SSP 自稱 ET,SSP 約在 1970 年代末/80 年代識破他們不是 ET。<span class="who">柯里</span><span class="src">S02E02</span></li>
+<li>反重力飛船在空中開傳統武器會因反作用力位移,他們還沒解決校正——這就是希特勒想用於二戰卻不行的原因(JR 的版本)。1930 年代末德國把若干祕密社團(其中之一為 Vril 社團)併入研發計畫,已在拜訪其他星球。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 11 ============ -->
+<section class="cat" id="c11">
+<div class="cat-h"><span class="bar"></span><h2>十一、納粹-外星交易與南極</h2><span class="cnt">NAZI-ET PACTS · ANTARCTICA</span></div>
+
+<div class="sp">
+<h3>德國與爬蟲族的交易(Tompkins 的情報)</h3>
+<div class="narrator"><span>主述</span>William Tompkins 1942~46 為海軍上將 Rico Botta 工作,聽取 29 名(另說 23 名)滲透納粹德國間諜的簡報。</div>
+<ul>
+<li>間諜發現:希特勒與黨衛軍(SS)和「爬蟲族外星人」達成協議;德國造出數百種先進武器,包括 60、250、500 英尺的圓形飛行器、由爬蟲族給的電磁反重力推進、雷射武器系統;有龐大地下生產設施;放了 11 架 UFO 形飛行器量產。<span class="who">湯普金斯</span><span class="src">S05E10</span></li>
+<li>協議內容:德國要發展與爬蟲族平行的太空海軍、出去到銀河各處,協助爬蟲族佔領行星、奴役當地人。CG 評論:這正是他報告的「暗艦隊 Dark Fleet」的起源——主要在太陽系外、與爬蟲族並肩防衛/征服領地。<span class="who">湯普金斯</span><span class="who">柯里</span><span class="src">S05E10</span></li>
+<li>爬蟲族很早把基因學交給德國人,DNA 其實在所謂 1953/56 年「發現」前計畫內早已知,並在士兵身上測試;用克隆與時間加速場(temporal fields,讓受精卵在數小時內長成成人但體感歷經 20 年)量產砲灰士兵。WT 說德國克隆了整營士兵、二戰中用於對俄作戰。<span class="who">湯普金斯</span><span class="src">S07E07</span><span class="src">S05E10</span></li>
+<li>Ra 說這些飛行器「更該稱為武器」,兩類武器:「psychotronic(心智電子)」與「particle beam(粒子束)」。CG 連結:許多飛行器是生物神經介面(bio-neural interfaced)武器系統,曾用來改變天氣型態、引地震(對應 HAARP)。<span class="who">柯里</span><span class="src">S06E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Maria Orsic 與南極的爬蟲洞穴</h3>
+<ul>
+<li>WT 說德國外一名北歐型少女(Maria)與約八名女孩被心電感應指導設計太空船、真的造出來,兩架後來到了 51 區。女孩們只想讓飛行器用於旅行、不願軍用。Maria 做自動書寫、寫出蘇美語(只有三人能正確讀)、被指引去找古文件助發展。<span class="who">湯普金斯</span><span class="src">S05E10</span></li>
+<li>她們最後到了南極大型設施——爬蟲族有三個巨型洞穴(大如加州),讓德國用其中兩個小的;洞裡有城市與製造一切所需的設施。二戰末德國決定把一切搬到南極。<span class="who">湯普金斯</span><span class="src">S05E10</span></li>
+<li>亞加森人依條約協助德國人在南極與南美東部(阿根廷、巴西)定位、建立地下基地與幾乎全德裔的地面城市。德國人主要靠潛艇或先進飛行器抵達南極以避開空中偵測。德國人在戰爭明顯要輸之前數年就開始建這些藏身處,因為他們早知道戰爭會打輸。<span class="who">柯里</span><span class="src">S02E02</span></li>
+<li>南極冰下有三座城市,其中兩座更內陸的「已被佔用」,德國人抵達時就已有其他群體在住,後來結盟。一座較破敗的城市適合 U-boat 從冰下浮出進入洞穴,德國人從那裡擴建。南極當年的氣候「比較像澳洲」,在某次比 13,000 年前亞特蘭提斯洪水「更古老」的事件後,軸轉/地殼位移使其成現狀。<span class="who">柯里</span><span class="src">S02E02</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>JR 的版本:南極基地與 30-40 萬人</h3>
+<ul>
+<li>早期(1940 年代初)德國在研發能量武器,而爬蟲族(Reptilian / Draco)在幫德國人,條件是「我們要你們在南極建基地」。Draco 要求德國人在南極冰下建一座可容納 30–40 萬人的基地(Draco 真正目的是要一個代理人幫忙取回南極地下的外星科技,但當時沒告訴德國人)。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+<li>二戰結束標誌著南極那群人「終於能擺脫自毀的政府、照自己意思運作」。到 1947 年他們掌握了「行動式平台武器」,能為反重力飛船配上武器,武力超越地球上任何東西。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+<li>WT 說戰爭結束前德國已在山體內用奴工大量生產十多種天龍人給的外星載具,戰爭結束前六個月 80% 已移往南極洲繼續建造,用巨型卡車潛艇(truck submarines)經隧道運抵內陸湖區。Tompkins 稱大藥廠(Big Pharma)起源於隨迴紋針行動來美、接管研究機構的納粹生醫人員。<span class="who">湯普金斯</span><span class="src">S07E07</span></li>
+<li>ES 證實:當年德國人「非常忙碌」,在世界各地設立這些地方,雇用第三世界當地人建造後再殺掉他們,所以這些被遺棄的地下城市背負很多業力上的壞事。DW 提《Hunting Hitler》描述德國人在南美(阿根廷、巴西)的廣泛地下據點,有納粹卐字符號的走廊、卐字泳池。<span class="who">史密斯</span><span class="who">威爾科克</span><span class="src">S12E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>忠誠維繫與「黑魔法+科學」</h3>
+<ul>
+<li>德國祕密社團的忠誠維繫:成員自幼養成、視社團為家人;叛離者「會去推雛菊(被殺)」。靠「胡蘿蔔與棍子」:讓你富有、覺得自己是比「無用的食客 useless eaters」更高的存在、肩負社團數代精心策劃的古老計畫。<span class="who">柯里</span><span class="src">S02E06</span></li>
+<li>德國人把符文、字符畫在試驗飛行器上、配合儀式與科技,使負面願意給更多資訊;美國人純科學取向反而較難讓逆向工程成功。CG 提 Jack Parsons(NASA 創辦人之一)與 L. Ron Hubbard 的「Babalon Working」儀式,在博爾德山區圈地辦儀式時常有爬蟲類現身圈中;該儀式在地球保護場上「撕開一道隨地球自轉拉長的裂口」。<span class="who">威爾科克</span><span class="who">柯里</span><span class="src">S07E03</span></li>
+<li>BW 證實道格拉斯高層為「掌控/勒索員工」辦「裸體性派對」、有黑紅帷幕像撒旦儀式的房間(德國太空計畫把黑魔法與科學並用)。<span class="who">伍德</span><span class="src">S05E17</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 12 ============ -->
+<section class="cat" id="c12">
+<div class="cat-h"><span class="bar"></span><h2>十二、高跳行動與美德融合</h2><span class="cnt">OPERATION HIGHJUMP · PAPERCLIP</span></div>
+
+<div class="sp">
+<h3>分離開始:SSP 的關鍵歷史</h3>
+<ul>
+<li>二戰末德國本土早已被「德國分離文明」拋棄;他們在南美(巴西)與南極建飛地,只想延續自己的分離文明、拋下一般民眾。發展分離文明的機構與打仗的政府機構此時已「完全分開」。<span class="who">柯里</span><span class="src">S02E04</span></li>
+<li>Operation Paperclip(迴紋針行動):美國取得的德國科學家比公開宣稱的多很多;這些人據稱技術上領先美國 20–30 年,被安插進美國的新生太空計畫與基礎建設並獲權力。理由:他們替美國賺錢。<span class="who">柯里</span><span class="src">S02E04</span></li>
+<li>1947 年美國情報發現德國分離團體在南美與南極建有大型軍事基地,DOD 派 Admiral Byrd(伯德上將)率大艦隊執行 Operation High Jump(跳高行動)。艦隊在南極遭遇從水中與南極大陸升起的高科技飛行器以「能量武器」攻擊,擊落其飛機、重創數艘驅逐艦、折損人命,慘敗撤退。<span class="who">柯里</span><span class="src">S02E04</span></li>
+<li>Byrd 航海日誌至今封存;流出的隻字片語包括「下一場戰爭,我們將被能在數分鐘內極點到極點飛行的飛行器攻擊」。<span class="who">柯里</span><span class="src">S02E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>杜魯門、艾森豪與條約</h3>
+<ul>
+<li>此事促使美方找 Paperclip 德國科學家牽線,經無線電開啟對話,安排 Truman(杜魯門)與德國分離團體會面;對方提出杜魯門不喜歡的苛刻要求。<span class="who">柯里</span><span class="src">S02E04</span></li>
+<li>德國團體利用美國「絕不向人類公開 ET 與某些科技存在」的最高機密政策,開始在美國上空進行飛行示威,包括 1952 年相隔兩週、飛越華府國會的兩次飛越(藉此逼美方簽約)。此事發生在 Truman 任期末與 Eisenhower 任期初;兩位總統都簽了與該團體的條約。<span class="who">柯里</span><span class="src">S02E04</span></li>
+<li>兩方都各懷算計:美方想滲透、取得科技、再擊敗對方;德國團體也有同樣計畫——他們要在深空建基礎建設,而最佳工具就是擊敗他們的美國工業實力。<span class="who">柯里</span><span class="src">S02E04</span></li>
+<li>Salla 整理:1954/2 艾森豪在愛德華空軍基地會見正面的北歐人(勸採和平),國安團隊拒絕放棄核武;1955/2 在霍洛曼空軍基地與高個灰人達成分享科技的協議(傳為 Tau IX 條約)。1952 華府上空飛越事件的飛行器被指為納粹機。<span class="who">薩拉</span><span class="src">S07E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>JR 的版本:南極條約與「人才外流」</h3>
+<ul>
+<li>二戰後一年內,美國已計畫派艦隊去南極「一勞永逸解決這些討厭的德國人」=高跳行動。1946 年 11 月底抵達後遇上德國基地,幾艘配備定向能量武器的 UFO 出動,擊毀一艘船,把整支艦隊趕回美國(「Highjump 變成 Hightail 夾尾巴逃跑」)。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+<li>此後南極德國人開始與 Cabal 談判,給 Cabal 一張需求清單:確立南極德國人為主權國家、在各國設大使館、在全球每家航太/汽車/石化大企業安插 1–5 名高階主管(都是火星德國人)。迴紋針行動是其第一階段。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+<li>南極條約(Antarctic Treaty):1954–1959 談成。非公開條款:再次確認南極德國人主權;要 Cabal 提供 15–20 萬名(有特定 IQ 與體能要求的)人 = 1950–60 年代的「人才外流 brain drain」;各大企業董事會 1–5 席給火星德國人。掩護行動是「深凍行動 Operation Deep Freeze I、II」。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+<li>Salla 寫過納粹鐘形飛行器(Die Glocke/Nazi Bell)——SS 在 Kammler 主持下試圖武器化但未成功;真正最有效的計畫在南極洲。據 Tompkins,Byrd 上將先於 1945/46 去南極談判失敗,海軍才在 1946/47 發動第 68 特遣隊(Highjump)。<span class="who">薩拉</span><span class="src">S07E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>ICC 的形成</h3>
+<ul>
+<li>Paperclip 與 High Jump 後、德國分離團體與 Eisenhower/Truman 簽約並與軍工複合體結合,所有航太與工程公司被高階德國科學家工程師滲透,開始建造祕密太空科技。<span class="who">柯里</span><span class="src">S02E09</span></li>
+<li>當德國人向航太公司展示小行星帶有整顆貴金屬小行星(且已開採部分),美國資本家「眼裡只剩錢」,全力支持德國宏圖。協助美國等政府先組第一個太空計畫(如 Solar Warden)後,他們另組「ICC」——全球航太企業組成的企業集團,自 1950 年代起沿德國足跡從月球到火星擴建小基地成巨型基地(如 LOC 從卐字小基地擴建)。<span class="who">柯里</span><span class="src">S02E09</span></li>
+<li>LOC 外觀與歷史:自 1950 年代起不斷增建,蓋進隕石坑與岩石區;呈鐘形向下越來越寬。LOC 建在一個 1930~40 年代後期就存在的「納粹 NAZI 設施」之上;美國工業力量介入後,於 1950 年代末開始大規模擴建。<span class="who">柯里</span><span class="src">S01E03</span></li>
+<li>Maldek 之戰沒有第三方介入(直到防禦網倒下後外來者才來)。Eisenhower 很可能在 1952 年情勢升溫後看過「dog-and-pony show 展示秀」——德國人利用美國最怕公開 ET 的最高法,逼美簽約。<span class="who">柯里</span><span class="src">S02E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>驗證:Tompkins、Rico Botta 與 FOIA</h3>
+<div class="narrator"><span>主述</span>Michael Salla、Bob Wood 透過文件檔案驗證 Tompkins 的證詞。</div>
+<ul>
+<li>Salla 透過 Dr. Robert Wood(甘迺迪刺殺文件驗證專家)證實 Tompkins 在道格拉斯飛機公司任職 12 年(1950–1963)為真。Tompkins 書中把上將名字誤拼為「Rick Obatta」,後查出真名是「Rico Botta」(出生澳洲、確為上將、曾掌聖地牙哥海軍航空站)。<span class="who">薩拉</span><span class="src">S07E09</span></li>
+<li>2016 年 3 月,海軍飛行員網站「Golden Eagles」上憑空冒出 Rico Botta 一頁傳記,Salla 與 CG 認為是海軍內部有意協助、因 Tompkins 是「被官方認可的揭露 sanctioned disclosure」。Salla 用 FOIA 取得 Botta 1,500 頁文件,Tompkins 書中的「出站通行證」由 Botta 簽署、簽名與 1934 年照片一致。<span class="who">薩拉</span><span class="src">S07E09</span><span class="src">S07E11</span></li>
+<li>1942/2/25(洛杉磯空襲事件隔日)命 Botta 於 3/2 赴萊特機場做「引擎開發」工作——據 Majestic 文件與 Tompkins,該空襲擊落兩艘飛碟,陸航那艘送萊特機場;Botta 是海軍研究外國(外星/納粹)科技與引擎的不二人選。<span class="who">薩拉</span><span class="src">S07E11</span></li>
+<li>BW 說(今早才從 Tompkins 得知有 29 名間諜)流程高度結構化——德國學到的東西被間諜轉述、由 Tompkins 理解後,以「需求建議書 RFP」給承包商、或交給大學(如 Caltech 在 China Lake 的人);這些文件「都沒蓋機密標記」(以便散布給更多人)。Rico Botta 會在包裹上親筆寫「我知道你不會相信裡面的東西,但都是真的」。<span class="who">伍德</span><span class="src">S05E17</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Tompkins 的養成與「智囊團」</h3>
+<ul>
+<li>湯普金斯 9 歲起在加州長灘港邊用素描記下海軍艦艇的雷達與機密部位,引起海軍情報注意。被海軍情報帶去威爾遜山天文台用 100 吋望遠鏡,他當場「就是知道」外面有住人的行星。<span class="who">湯普金斯</span><span class="src">S05E11</span></li>
+<li>主管查其海軍背景後把他放進道格拉斯(Douglas)工程部「200 人的智囊團」——他在此為海軍設計 16~18 種 1 到 6 公里長、能在太空飛的「太空航艦」,1970 年代末在猶他州地下建成。「Solar Warden 就出自道格拉斯工程部內的這個智囊團。」<span class="who">湯普金斯</span><span class="src">S05E11</span></li>
+<li>Tompkins 任道格拉斯阿波羅計畫工程組長(173 名工程師、11 名博士),提出全新 NASA 登月計畫;做了六英尺見方的新任務指揮中心模型送到 Redstone 兵工廠(von Braun 與 NASA 所在),其展示的正是眾人熟知的「Complex 39」發射控制系統。<span class="who">湯普金斯</span><span class="src">S07E14</span></li>
+<li>外星竄改全球教育:Tompkins 說至少 6,000 年來,天龍人與爬蟲類影響全球,竄改了每所學校的天文、數學、技術、宇宙等資訊。海軍部長改選了出生於澳洲、未被爬蟲類謊言「感染」的 Rico Botta 上將;Tompkins 因未上大學、未沾染錯誤資訊而被選中。<span class="who">湯普金斯</span><span class="src">S07E07</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 13 ============ -->
+<section class="cat" id="c13">
+<div class="cat-h"><span class="bar"></span><h2>十三、月球與火星的殖民</h2><span class="cnt">COLONIZING MOON &amp; MARS</span></div>
+
+<div class="sp">
+<h3>德國人上月球</h3>
+<ul>
+<li>德國人飛向月球時遭遇阻力,發現月球是眾多 ET 群在中立區設基地、觀察地球的樞紐。與 Draco 結盟後落在 Draco 控制的月球背面大片區域、受其保護。自建月球基地初期屢敗,後發現「非常古老的建築」、設法加壓使用。月球無可呼吸大氣;德國人發展加壓式「水肺型再呼吸服」。<span class="who">柯里</span><span class="src">S02E06</span></li>
+<li>有一個與爬蟲(reptoid)群合作的計畫,透過「傳送門」前往月球(且似乎是月球某個不同時代的過去)建地面設施,後被棄置;SSP 後來發現帶納粹徽記、鷹抓卐字、德文字的「非常古老(數千年)」廢棄建築。SSP 用一種「類碳十四、但讀取建築『時間特徵』」的科技判斷年代。建外哨時,工程師以時間勘測科技發現「建址地下早被埋設炸藥」——數千年前就有人預知此處日後會被建設並埋藥。<span class="who">柯里</span><span class="src">S02E06</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>JR 的版本:月球地產交易的駭人代價</h3>
+<ul>
+<li>1940 年代末德國人到月球,發現:月球是人造衛星構造、非地球原生、是被從別處帶來的「逃生船」、內部被挖空、大部分「地產」已被占用(數十個外星種族在月球有基地)。德國人沒能力硬搶,而 Draco 透過賄賂/勒索/操縱讓德國人「只能找 Draco」。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+<li>Draco 原本開價 225 名女性 + 25 年科技優先承購權;德國人拒絕交 225 名育齡女性,六個月後談成:150 名男性 + 75 名女性 + 25 年科技優先承購權,換月球 20 英畝地建月球行動指揮部(LOC)。後來才知有至少六個其他種族願給兩倍空間、不要任何人——德國人被坑慘了。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+<li>Yohan 講述那次「交換」的駭人經過:53 名武裝守衛把人趕進約定的洞穴,Draco 啟動某種昏迷裝置,並向洞中每個人「以心靈傳送」他們自己家人遭極端凌虐的影像(只因覺得「有趣」)。場外兩名守衛逃走,此後再也不正常,約五年後雙雙自殺。Draco 共帶走 278 個靈魂,德國人多次詢問下落從未得到回應。德國人自此發誓絕不再交出自己人,改去別處找「棋子」。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>殖民火星的拓荒</h3>
+<ul>
+<li>時間線概要:月球穩定基地約 1930 年代末(先用加壓的古代建造者遺跡);火星首座持久基地約 1952–54,在火星吃了很多苦、折損許多人命,做了真正的拓荒。小行星與衛星採礦與火星穩定「同時」進行。<span class="who">柯里</span><span class="src">S02E10</span></li>
+<li>JR 的版本:1950 年代德國人為火星地產與外星種族(非 Draco)開戰,花約 10 年、損失逾 17,000 條人命(按人口比例相當於盟軍二戰全部損失)才奪得能建電子設施的非高能量區。因急需人力,加緊與 Cabal 談判,造成 1950 年代初大量 UFO 目擊(含 1952 年華府連兩個週末的大規模目擊=德國人秀肌肉施壓)。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+<li>德國人在 Bikini Atoll 附近對美國一艘核試返航的重巡洋艦做「示範打擊」:四艘碟形機在 60 公里高空投下小當量裝置,EMP 癱瘓該艦(殺艦不毀艦)。德國人很討厭 Cabal(Yohan 稱 Cabal 為「地球的爛皇族」)。<span class="who">萊斯</span><span class="src">S12E07</span><span class="src">S12E18</span></li>
+<li>火星德國人自獨立後就一直改造自身基因,通常更強更快、IQ 更高,且有令人難以忍受的傲慢。JR 在卡利杜斯三號從火星德國人 Yohan 口中得知許多 SSP 歷史。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>IDARF、1991 協議與 Draco 動機</h3>
+<ul>
+<li>JR 簽完大量文件後加入 IDARF(行星際防衛與反應部隊),作為「邊境巡邏」協助其他星球。1991 年協議:1980 年代末 Cabal 想建自己的月球行動指揮部,卻遇上「地產全被占用」。協議讓 Cabal 接管德國人占用的月球基地;Cabal 提供兩個師(約 24,000 名士兵)供火星德國人調度,這構成了 IDARF 的開端。<span class="who">萊斯</span><span class="src">S12E07</span><span class="src">S12E08</span></li>
+<li>德國人為脫離與 Draco 的月球租約,須把 12 個航母戰鬥群中的 10 個交給 Draco 隨時使用(名義是「邊境巡邏」)。為何德國人允許 Cabal/美國組建獨立 SSP 而不直接消滅?因為他們需要地球的製造能力(德國人沒有對等的製造能力)。<span class="who">萊斯</span><span class="src">S12E08</span></li>
+<li>Draco:高度靈通、比我們先進數十萬年、極負面;使命是征服、控制、支配。他們是多項星際條約的簽署方,被禁止干預原住民族,但會找漏洞——透過人類代理人來達成。「何必殺自己的兵,當有願意代勞的代理人時。」<span class="who">萊斯</span><span class="src">S12E08</span></li>
+<li>Draco 在這些星球上為自己的目的建立各地的「行星 Cabal」;地球 Cabal 在這些星球只提供地面兵,火星德國人提供海軍艦船。即使這些菁英做盡卑劣之事,仍須遵守 Draco 為其終局設下的行為準則。<span class="who">萊斯</span><span class="src">S12E14</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>IDARF 接觸的外星科技水準</h3>
+<ul>
+<li>JR 談 IDARF 接觸的外星科技水準:多數約等同地球 1850 年代、工業革命邊緣,科技多半不比我們先進(少數例外)。一號行星(Planet One)的人型 ET 用「行星產生的電位差」發電(類似特斯拉的沃登克里弗塔),但他們文明「不追求發明改良」(穩定狀態、找到能用的就停在那)。<span class="who">萊斯</span><span class="src">S12E27</span></li>
+<li>動能武器攻擊(KEW):JR 看到一個裝了粗糙隔熱罩的「改裝撞擊體」朝湖落下——這是動能武器(用質量驅動器把太空岩石射向地表,無輻射污染但有巨大融合爆炸)。撞擊點偏離目標城市 50–75 英里。<span class="who">萊斯</span><span class="src">S12E09</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 14 ============ -->
+<section class="cat" id="c14">
+<div class="cat-h"><span class="bar"></span><h2>十四、冷戰假象與軟揭露</h2><span class="cnt">FAKE COLD WAR · SOFT DISCLOSURE</span></div>
+
+<div class="sp">
+<h3>冷戰其實是個幌子</h3>
+<ul>
+<li>DW 講述他為《Ancient Aliens》做的研究:史達林知道羅斯威爾是墜毀的碟;史達林挖出 1800 年代末在西伯利亞發現、刻有梵文的金屬火箭,箱中有飛船與太空站的精細藍圖,蘇聯據此發展出「宇宙球 Cosmospheres」(球形飛行器)。<span class="who">威爾科克</span><span class="src">S01E08</span></li>
+<li>CG 確認:蘇聯用宇宙球「硬擠」進某些 SSP、參一腳;我們的飛船追蹤到它們回到蘇聯。CG 回:那之前美俄早已合作,「冷戰其實是個幌子 gimmick / 像募款活動」,基層人員當真但高層其實是盟友。<span class="who">柯里</span><span class="src">S01E08</span></li>
+<li>DW 補:美國當年濃縮鈾根本不夠造原子彈、其餘來自納粹德國。美俄因應「不同的外星威脅」早在冷戰前就在太空結盟保護地球。雷根那段「外星威脅將團結世界」的著名演說可能正源於此。<span class="who">威爾科克</span><span class="src">S01E08</span></li>
+<li>俄國 1950 年代就有自己的計畫(基於迴紋針計畫人員與德國等多源科技),已飛多種球形飛行器、領先美國,讓早期 SSP 軍事派系吃了不少莫名其妙的虧。<span class="who">柯里</span><span class="src">S06E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>50 多年的太空合作</h3>
+<ul>
+<li>DW 提冷戰其實是門面:1950 年代韓戰賣給美國大眾的說法是美蘇核戰的代理戰爭。CG:50 多年來俄美其實一直在太空合作、共建太空站與星球外據點,大部分是「演戲」。DW 提華爾街資助 1917 布爾什維克革命;ES 回:洛克斐勒同時賣汽油給德國與美國。<span class="who">柯里</span><span class="who">史密斯</span><span class="src">S12E03</span></li>
+<li>CG:過去九、十個月 Cabal 各派系急著湧入地下基地,其中最先進的一座在巴西(Brazil)。南非(South Africa)部分地區已交給一個「星球外團體」,官方上「不再屬於我們」。<span class="who">柯里</span><span class="src">S12E03</span></li>
+<li>MM 講東德飛行三角機墜機回收:冷戰末蘇聯瓦解時,某未列帳冊的陸軍單位被改派到 Halle 西南墜機點回收一架黑色箭頭形載具;CG 對「美軍直升機能進東德回收」表現震驚,認為這證明冷戰期間美蘇在 SSP 最高層的合作。CG:這是「Dart」的早期前身。<span class="who">麥肯德利什</span><span class="who">柯里</span><span class="src">S07E22</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Cabal 的「失火安全鈕」與洗腦科技</h3>
+<ul>
+<li>JR:冷戰是門面、太空競賽是黑預算管道。Cabal 想自建 SSP 但受制於德國人的「洗腦科技 mind wipe technology」——德國人滲透了 Cabal 各機密計畫每一層,能逼計畫關閉或收歸私有。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+<li>1970 年代末,Cabal(三名 CIA、兩名 KGB 幹員主導)潛上一艘南極德國穿梭機、奪得一支洗腦裝置,再炸毀穿梭機製造意外假象。花三年逆向工程,參與的科學家成了該科技第一批受害者(被洗腦)。這成就了 1980 年代初的「太陽守望者行動 Operation Solar Warden」(雷根日記提到可載 300 人的穿梭機即指此)。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+<li>德國人的反擊(1986):德國人花八年查出穿梭機爆炸的真相與兇手(美、蘇)。1986 年 2 月挑戰者號(Challenger)爆炸是第一個訊息,車諾比(Chernobyl)冷卻塔被毀是第二個訊息——兩者皆由軌道平台執行。兩國領袖各收到一個牛皮紙箱,內有一支印著南極德國徽章的記憶清除裝置,外面蓋著八年前穿梭機爆炸的確切日期。同時德國人把所有製造移到火星。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>科幻影集作為「軟揭露」</h3>
+<ul>
+<li>Tompkins 指認 Admiral Leslie Stevens 是海軍 SSP 要角,其子 Leslie Stevens IV 是影集《The Outer Limits 外星界限》製作人、軍事情報背景。1964/65 Gene Roddenberry 旁聽該劇取經,後創《Star Trek 星艦迷航》。<span class="who">薩拉</span><span class="src">S07E11</span></li>
+<li>《Star Trek》行星聯邦/瓦肯人(對應北歐人)/克林貢(對應爬蟲類)/基因強化人(對應納粹)與真實派系驚人對應,且用大量海軍術語。《Battlestar Galactica》核心(AI 意圖消滅其人類創造者)正呼應 CG 講的 AI 威脅。海軍想藉軟揭露在 1980 年代初部署戰鬥群、屆時揭露時讓大眾支持。<span class="who">薩拉</span><span class="src">S07E11</span></li>
+<li>Jay 講庫柏力克 1967 年底突然把《2001 太空漫遊》片名從《Journey Beyond the Stars》改為《2001》,並牽連《Get Smart》一集「Walls of Jericho」暗示世貿中心邊建邊埋炸藥。CG 說《2001》月球上的黑色方碑明顯是想揭露古建造者種族遺跡。<span class="who">魏德納</span><span class="who">柯里</span><span class="src">S07E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>甘迺迪、Forrestal 與海軍祕密</h3>
+<ul>
+<li>海軍部長/首任國防部長 James Forrestal 寫了 Rico Botta 的任務,後被說成精神崩潰、送華府醫院頂樓「從窗戶推出去(謀殺)」。CG:這祕密在他們眼中高於核彈,連總統、參議員都能「像吹熄蠟燭般做掉」;智慧墊上有被「以國安之名除掉」的名單,Forrestal 名列其中。<span class="who">湯普金斯</span><span class="who">柯里</span><span class="src">S05E10</span></li>
+<li>Salla 著《Kennedy's Last Stand》。甘迺迪(JFK)早年是 Forrestal 的門生,1945 年隨 Forrestal 赴戰後德國考察。JFK 在身後出版的《Prelude to Leadership》寫過 Forrestal 給他看的德國先進科技;故 JFK 1961 就任後努力把秘密計畫的控制權拿回總統手中。<span class="who">薩拉</span><span class="src">S07E11</span></li>
+<li>艾森豪曾下令入侵 51 區、離任前警告「軍工複合體」勢力坐大。CG 親述:杜魯門、艾森豪都有與非地球團體會面,包括「Blues(藍色存有)」——藍皮膚、議程和平,勸我們別碰核能/核武(軍方戲稱他們與北歐人為「太空嬉皮」)。<span class="who">薩拉</span><span class="who">柯里</span><span class="src">S07E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>1950 年代友善團體的接觸</h3>
+<ul>
+<li>1950 年代的接觸:當時有一整批存有接觸地球,有些要我們放棄核武、傳遞類似「嬉皮訊息」。其中一群被稱「The Blues 藍人」,被形容非常「愛與嬉皮」,警告核能與核武的危險,但被我們不客氣地打發走。CG 認為「The Blues」與「Blue Avians 藍鳥人」訊息高度相近。<span class="who">柯里</span><span class="src">S01E05</span></li>
+<li>Ra 說約 27 年前(即 1953-54)邦聯(正面團體)把科技給了俄國人想促成和平,但出錯了(俄國拿去做戰爭武器)。同期也有友善團體接觸美國軍事複合體、警告其路線(《一的法則》提與艾森豪會面、提和平方案被拒)。<span class="who">柯里</span><span class="src">S06E09</span></li>
+<li>Salla 舉 1933 年墨索里尼成立由馬可尼(Guglielmo Marconi)領導的最高機密智庫研究尋獲的飛碟,義大利隨後與德國分享,馬可尼把資訊帶到南美另設較私人的計畫。<span class="who">薩拉</span><span class="src">S07E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>部分揭露計畫與南極「免死金牌」</h3>
+<ul>
+<li>部分揭露原計畫:先釋出海底與南極冰下古代地下結構的資訊,再揭露空軍與 DIA 控制的祕密太空計畫,接著說「順帶在火星也找到這些結構」。敘事會說 ET 曾造訪地球但數千年沒來。<span class="who">柯里</span><span class="src">S08E04</span></li>
+<li>部分揭露也是「轉移注意的戰術 diversionary tactic」——若開始有針對深層政府的審判,就拿古代文明發現來分散注意。南極資訊是他們的「最終免死金牌 get-out-of-jail-free card」。<span class="who">柯里</span><span class="src">S08E04</span><span class="src">S08E13</span></li>
+<li>菁英進一步計畫:創造冰下文明的存在不是人類,而這些菁英是這些存在的血脈後裔,因此「特別」,借此推行「君權神授」。前亞當人敘事就是菁英自稱為神的劇本。<span class="who">柯里</span><span class="src">S08E04</span></li>
+<li>納斯卡隧道與五艘載具被接管:DW 透露因 Gaia 做了《Unearthing Nazca》,聯盟對該區更感興趣,近期「我方」取得五艘不同載具,先進到完全不知如何進入,估約 2,000-3,000 人在研究;ES 100% 確認 DIA 軍工複合體現在控制了所有隧道、船、屍體與科技。<span class="who">威爾科克</span><span class="who">史密斯</span><span class="src">S09E10</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 15 ============ -->
+<section class="cat" id="c15">
+<div class="cat-h"><span class="bar"></span><h2>十五、傳送門、宇宙網與延壽科技</h2><span class="cnt">PORTALS · COSMIC WEB · LIFE EXTENSION</span></div>
+
+<div class="sp">
+<h3>宇宙網 Cosmic Web 與自然星門</h3>
+<ul>
+<li>宇宙的自然傳送門系統=「宇宙網 Cosmic Web」;古代與現代的傳送門系統都「利用/開採」這個自然宇宙網來點對點旅行。地球上發現多個不同古代群體留下的古代傳送門系統,精密度不一。古代系統做短距「跳躍 hop」:若目的地隔 10 個太陽系,可能要跳 3~4 次。<span class="who">柯里</span><span class="src">S01E12</span></li>
+<li>古代裝置是實體物理裝置(像影集《星際之門》、跨多個太陽系散布)。有些像環形,但柯里看到的那座像「金字形神塔 ziggurat / 階梯金字塔」——四個方向呈階梯往上、頂部平坦、傳送門在頂部開啟。這些多半被埋在地球地下、為它們打過仗。<span class="who">柯里</span><span class="src">S01E12</span></li>
+<li>地球有能量網格與「地脈 ley lines」;地球自轉時,依其與太陽的關係、太陽行為,以及地下的石頭/水晶/金屬種類,在交會處形成「節點 node」;自然星門會沿節點出現。許多 ET 出現在北緯 33 度與 36 度線一帶。Ivan T. Sanderson 找到地球上 10 個船機消失點,加南北極構成二十面體;百慕達三角等船機消失=它們在錯的時間出現在節點區、被「自然傳送門」傳走。<span class="who">柯里</span><span class="src">S01E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>定址系統:像 IP 位址</h3>
+<ul>
+<li>古代與早期現代系統都用類似電腦的「定址系統 addressing system」(像 MAC 位址或 IP 位址)。DW 引內部人 Daniel:他公開過地球是「606」、火星是「605」;古代種族會在開始有智慧生命的行星放一座中央門,撥入該地址會路由到該行星的星門。<span class="who">威爾科克</span><span class="who">柯里</span><span class="src">S01E12</span></li>
+<li>CG 補:他聽到地球有兩座門、且有好幾個世代的古代門(最遠回溯到古代建造者種族);懂得使用許多門之前,需先有 ET 群體交給我們的超維數學模型。位址像 IP 的子網路遮罩,逐層(銀河→太陽系→行星)以 10 為單位、用三維神聖幾何切成象限。<span class="who">柯里</span><span class="src">S01E12</span></li>
+<li>找門的工具與磁通量:DW 引 Jacob——古代凱爾特人、德魯伊嚴守一種技術:類似音叉上裝兩塊永久磁鐵,靠近傳送門時磁鐵會更用力相吸或相斥。傳送門區有磁通量;NASA 近期釋出:太陽與太陽系每顆行星有磁性細絲連接=傳送門,它是同時帶強扭力場的電磁管、像可穿越的蟲洞。<span class="who">威爾科克</span><span class="who">柯里</span><span class="src">S01E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>南極超級閘門 Supergate</h3>
+<ul>
+<li>DW 的內部人 Daniel 多年前說地球上有一個天然古星門、位於南極;CG 證實。CG 稱南極有一座由古代建造者種族建造的非常強大「超級閘門 Supergate」。差別在:超級閘門能透過宇宙網直達銀河系內或鄰近星系任一端,不必等;地球上其他節點星門若距離遠則要「轉乘」跳好幾次。<span class="who">柯里</span><span class="src">S07E19</span></li>
+<li>閘門外觀不像影集《星際之門》的環;通常在房間中央外緣有至少三個開啟點,在空中形成像海市蜃樓的三維球體渦旋。古代建造者種族在這個約 50–52 顆恆星的本地星團建了星門網。Daniel 說原始古建造者閘門不能帶金屬/武器/任何非有機物通過。<span class="who">柯里</span><span class="src">S07E19</span></li>
+<li>Daniel 還說 1970 年代初對超級閘門的分析催生了網際網路 IP 位址協定;CG 說不確定 ARPANET 的 TCP/IP 是否模仿閘門,但運作很像。<span class="who">柯里</span><span class="src">S07E19</span></li>
+<li>ES 談「宇宙門戶高速公路」:不同門戶通往不同地方,這與「宇宙的雷線」有關——雷線不只在地球,還行星到行星、太陽系到太陽系。地球上雷線是地球的神聖幾何,常對應遺址。ES 認為土星上的大六角形(big hexagon)其實是外星人用來跨維度移動的巨型門戶。穿越時要走在約 3 呎寬、100–150 呎長的「人行道」正中央,否則可能失去肢體或喪命。<span class="who">史密斯</span><span class="src">S12E20</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>時間泡、平行地球與「影印室」</h3>
+<ul>
+<li>DW 提「仙女環 fairy rings」——進入後須沿原來軌跡出去,否則會時間旅行;CG 推測仙女環可能是某 ET 用來觀察的時間泡。DW 引 Henry Deacon:時間其實「邋遢 sloppy」、會打嗝跳躍;CG 說「某種程度上是真的」——時間是幻覺,以第三密度思維無法真懂。<span class="who">柯里</span><span class="src">S01E13</span></li>
+<li>「影印室 Xerox room」:通往一個平行實相/平行地球——被傳送時會複製你、把副本送到那個實相、並摧毀本地的你。那邊的地球歷史不同;若在那邊遇到並碰到那邊的你,會有「湮滅效應 annihilation effect」。那個平行地球二戰是軸心國/德國贏(法西斯式全球秩序「成功」的版本)、是個「陰鬱、無望」的地方,科技遠不如我們。<span class="who">柯里</span><span class="src">S01E14</span></li>
+<li>地下廢棄城市:有些被埋在地球地下、為它們打過仗;CG 提此區可能數百萬年前曾在地面上。Cappadocia(土耳其,九層深隧道)像軍事角度為躲避入侵/災變而隔離人群之處。<span class="who">柯里</span><span class="src">S07E23</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>金字塔:汞、雲母與資訊結構</h3>
+<ul>
+<li>《Erich von Däniken, Beyond the Legend》片段:瓜地馬拉主金字塔下石棺內發現水銀(quicksilver,印度 Vimana 燃料成分之一),Teotihuacan 有完全用雲母(mica)隔絕的密室。CG:金字塔內水銀與雲母是「儲存燃料供未來使用」之處。<span class="who">柯里</span><span class="src">S07E27</span></li>
+<li>Heather 父親談過火星與地球的金字塔,是「定位點」用來鎖定行星特定區域進行操控,其一是控制地球內液態核、進而大幅影響磁場。大金字塔下方有大量科技、至今仍運作,頂石裡有「連接型技術」。<span class="who">薩坦</span><span class="src">S07E02</span></li>
+<li>PP:全球金字塔(中美洲 500+、埃及 100-120、中國約 100 座平頂)顯然以外星或極先進知識建造,建者是祭司階級與科學家階級。這麼多質量以特定「宗教數學結構」排列,於特定時地產生資訊場(informational field),可做儀式、與外星溝通、增強祭司的通靈能力。PP:祭司階級就是外星人。<span class="who">彼得森</span><span class="src">S07E29</span></li>
+<li>地球漩渦點/雷線節點:CG 說煉金嬗變要在地球自然地點成功,必須在這些特殊節點(門戶的出入口);地球自轉、相對太陽位置不同時,該電連結走最小阻力路徑,路徑上的節點就會開門。<span class="who">柯里</span><span class="src">S08E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>三指存有與 base 6 數學</h3>
+<ul>
+<li>PP:幾乎所有古代存有/近期回收的外星載具都用三指控制;三指者也三趾。base 3 數學一旦採用,各種工程將改變。他把巴別塔(Tower of Babel)詮釋反過來:不是把一種語言搞亂成多種,而是各種族本就從相距光年的地方來、語言全不同;巴別塔真正做的主要是「改變計數基底」並把我們從三/六指改成五指,使我們用 base 10 偏離理想數學。<span class="who">彼得森</span><span class="src">S07E30</span><span class="src">S07E31</span></li>
+<li>萬物物理皆基於 3;宇宙以六角瓦鋪砌。PP 祖父是 Tesla 在科羅拉多泉的左右手,Tesla 也懂數字 3(且明顯被造訪過),因此被打壓一生。<span class="who">彼得森</span><span class="src">S07E30</span></li>
+<li>納斯卡(Nazca)地下隧道:PP 親自看過——隧道平底、頂呈圓拱,顯然由某種能量機器開鑿,綿延數英里又數英里,位於納斯卡線條下方;從墨西哥市以北一路到阿根廷末端。ES 被簡報的內容:那下面有超過 200 到 300 艘飛行器(皮特推測多達 500 艘),還有許多「石化進牆裡」的存有,像進入某種「假死/懸置狀態」。<span class="who">彼得森</span><span class="who">史密斯</span><span class="src">S08E12</span><span class="src">S09E11</span></li>
+<li>木乃伊不可能造假:其骨頭的晶體結構是天然骨的,今日無技術可造;木乃伊周圍白粉檢測為矽藻土(diatomaceous earth)。PP 認為梵語(Sanskrit)是來自外星的語言,約 7,200 年前就給出建造飛碟的精確描述。<span class="who">彼得森</span><span class="src">S08E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>地球上五個外星殖民紀元</h3>
+<ul>
+<li>DW 拋出皮特簡報:地球上有「五個不同紀元 epochs」的外星殖民地存在過,規模都相當大、幾乎全在地下,有些可回溯到數百萬年前,科技類型、社會型態、外觀全都不一樣。<span class="who">威爾科克</span><span class="src">S09E11</span></li>
+<li>ES:「我聽過最多到五個。我自己因為看過文物與存有,直接知道的大概是三個。」ES 同意至少有五個不同文明,彼此「相隔百萬年級別」。他推測這可能與埃及、南極洲、雷姆利亞、亞特蘭提斯互相關聯。<span class="who">史密斯</span><span class="src">S09E11</span></li>
+<li>ES 說現在有很多科學家被雇來「破解這個密碼」;有些東西他們根本沒法操作,因為他們不懂「意識本身就是一種科技 consciousness is just a technology」。<span class="who">史密斯</span><span class="src">S09E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>延壽科技、克隆與煉金術</h3>
+<ul>
+<li>北歐人(Nordics)壽命 1400~2200 年。WT 說 TRW 做過延壽研究:六個月吃四顆阿斯匹靈或打四針,回春到女 21、男 29、維持約兩千年、智力增 400%。CG:類似科技曾用在他身上(20 年期末把他逆齡回 16、17 歲);但 Jacob 警告陰謀集團會在延壽針裡放「奈米體 nanites」使人與 AI 融合。WT 講的是「端粒 telomere 操弄」式延壽。<span class="who">湯普金斯</span><span class="who">柯里</span><span class="src">S05E10</span></li>
+<li>Jay 談煉金術:gold(金)是 God(神)去掉 L(lead 鉛),把鉛/汞變金象徵靈魂已煉成金;歷代煉金術士因被國王逼問秘方而被殺。1700 年代末 Amschel Rothschild 想取長生藥,共濟會內部分裂,白帽帶著生命秘密出走,黑帽至今追尋(二戰末 CIA/OSS 全歐找大煉金術士 Fulcanelli)。<span class="who">魏德納</span><span class="src">S07E05</span></li>
+<li>共濟會延壽閉關儀式:在全黑房三天、再放進無光棺、抬到能見日出處,取下眼罩盯太陽三分鐘(內源性 DMT 暴衝),再回黑暗中待 40 天,使褪黑激素轉成「超級褪黑激素」逆轉老化(據說 40 天年輕 15–20 歲)。<span class="who">魏德納</span><span class="src">S07E06</span></li>
+<li>ES 談 3D 列印器官與孿生 DNA:批評複製不釋出更好的替代;億萬富翁想藉「下載記憶到複製體」每 20 年換一具新身體永生;憑一根頭髮(如夢露、甘迺迪)就能複製。德國與外星人有大量接觸,「協議是不准用於戰爭」(故沒用在歐洲戰場),但「誰說他沒用在自己與親信身上」(暗示希特勒可能被複製)。<span class="who">史密斯</span><span class="src">S12E30</span></li>
+<li>梵蒂岡的外星科技:ES 進入主圖書館有數百根 3 至 6 呎直徑、玻璃/金屬的巨大圓柱氣控管(內部真空與氣體控制以防老化);導覽者調出關於某飛行器的多本書與古代素描卷軸(由某僧侶畫的)。ES 一行人拍照取得副本帶回家,但回去後 ES 就被調離該專案。<span class="who">史密斯</span><span class="src">S10E04</span></li>
+<li>金屬石棺與諧波/血脈開啟:這些無縫的不明金屬石棺/管「只能靠血脈 lineage 與諧波 harmonic 打開」——須唱某個音/諧波並把手伸出。是「意識輔助科技 consciousness-assisted technology」,須有正確的古代血脈、握住那一個頻率才能運作(DNA 中的基因標記)。<span class="who">史密斯</span><span class="src">S09E10</span></li>
+</ul>
+</div>
+</section>
+
+</main>
+
+<footer>
+COSMIC DISCLOSURE · 主題重組 T9「歷史(古代與分離文明)」<br>
+素材跨 S01–S12 逐字稿合併 · 依時間軸排列 · 出處標於各論點 · 發言人徽章標主述者<br>
+<a href="index.html">◂ 回主頁</a>
+</footer>
+
+</body></html>

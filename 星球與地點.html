@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>揭露宇宙 · 各星球與地點</title>
+<style>
+:root{--bg:#05080f;--panel:#0c1320;--panel2:#111a2b;--line:#1d2b44;--ink:#e6ecf6;--soft:#8593ad;--cyan:#34e2d6;--violet:#b08cff;--amber:#ffcf6b}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.85;font-size:16.5px;-webkit-font-smoothing:antialiased;
+ background-image:radial-gradient(900px 520px at 15% -8%,rgba(52,226,214,.12),transparent 60%),radial-gradient(820px 520px at 90% 2%,rgba(176,140,255,.14),transparent 60%),radial-gradient(1px 1px at 20% 30%,rgba(255,255,255,.4),transparent),radial-gradient(1px 1px at 70% 22%,rgba(255,255,255,.3),transparent),radial-gradient(1px 1px at 45% 70%,rgba(255,255,255,.25),transparent);background-attachment:fixed}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+.mono{font-family:Consolas,"Roboto Mono",monospace}
+header.hero{text-align:center;padding:70px 0 26px}
+header.hero .eyebrow{letter-spacing:.42em;font-size:11.5px;color:var(--cyan);text-transform:uppercase;margin-bottom:18px;font-family:Consolas,monospace}
+header.hero h1{font-size:42px;font-weight:800;letter-spacing:.12em;background:linear-gradient(110deg,var(--cyan),#cfe9ff 50%,var(--violet));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 38px rgba(52,226,214,.16)}
+header.hero .sub{color:var(--soft);font-size:14.5px;margin-top:14px}
+header.hero .home{display:inline-block;margin-top:20px;font-size:12.5px;font-family:Consolas,monospace;letter-spacing:.08em;color:var(--cyan);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 15px;background:rgba(52,226,214,.05)}
+header.hero .home:hover{background:var(--cyan);color:#05080f}
+nav.toc{position:sticky;top:0;z-index:8;background:rgba(5,8,15,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--line);padding:11px 0}
+nav.toc .wrap{display:flex;gap:7px;flex-wrap:wrap;justify-content:center}
+nav.toc a{font-size:12.5px;color:var(--soft);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-family:Consolas,monospace;background:var(--panel)}
+nav.toc a:hover{color:var(--cyan);border-color:var(--cyan);box-shadow:0 0 12px rgba(52,226,214,.3)}
+.cat{padding:30px 0 6px}
+.cat-h{display:flex;align-items:center;gap:13px;margin:14px 0 18px}
+.cat-h .bar{width:24px;height:2px;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+.cat-h h2{font-size:21px;font-weight:800;letter-spacing:.03em}
+.cat-h .cnt{font-family:Consolas,monospace;font-size:12px;color:var(--violet);border:1px solid var(--line);border-radius:6px;padding:1px 9px}
+.sp{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:14px 0;scroll-margin-top:120px}
+.sp h3{font-size:19px;font-weight:800;color:#dff6f3;margin-bottom:10px;letter-spacing:.01em;border-bottom:1px solid var(--line);padding-bottom:9px}
+.narrator{font-size:13px;color:var(--soft);margin:8px 0 12px;line-height:1.7}
+.narrator span{font-family:Consolas,monospace;font-size:10.5px;letter-spacing:.1em;color:var(--violet);border:1px solid var(--line);border-radius:5px;padding:1px 7px;margin-right:9px;text-transform:uppercase}
+.flabel{font-family:Consolas,monospace;font-size:11px;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase;margin:16px 0 6px;opacity:.9}
+.subhead{font-size:14.5px;font-weight:700;color:var(--amber);margin:14px 0 4px}
+.sp ul{margin:4px 0 4px;padding-left:4px;list-style:none}
+.sp li{position:relative;padding-left:18px;margin-bottom:9px;color:#c8d2e2;line-height:1.8}
+.sp li::before{content:"▸";position:absolute;left:0;color:var(--cyan);opacity:.6}
+.sp p{margin:8px 0;color:#c8d2e2}
+.src{font-family:Consolas,monospace;font-size:10.5px;color:var(--cyan);background:rgba(52,226,214,.08);border:1px solid rgba(52,226,214,.28);border-radius:4px;padding:0 5px;margin:0 2px;white-space:nowrap}
+.who{font-family:"Noto Sans TC",sans-serif;font-size:10.5px;color:var(--violet);background:rgba(176,140,255,.1);border:1px solid rgba(176,140,255,.32);border-radius:4px;padding:0 6px;margin:0 2px;white-space:nowrap;font-weight:600}
+blockquote{margin:10px 0 4px;padding:12px 16px;background:rgba(176,140,255,.05);border-left:3px solid var(--violet);border-radius:8px}
+blockquote p{font-size:13px;color:#aeb9cf;font-style:italic;line-height:1.7;margin:5px 0}
+.legend{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 8px;font-size:13px;color:var(--soft);line-height:1.95}
+.legend b{color:var(--ink)}
+footer{text-align:center;color:var(--soft);font-size:12px;padding:50px 0 70px;margin-top:40px;border-top:1px solid var(--line);font-family:Consolas,monospace;letter-spacing:.04em;line-height:1.9}
+footer a{color:var(--cyan);text-decoration:none}
+@media(max-width:560px){header.hero h1{font-size:32px}.sp{padding:17px 16px}}
+</style></head><body>
+<header class="hero"><div class="wrap">
+<div class="eyebrow">Cosmic Disclosure · T2 — Worlds &amp; Locations</div>
+<h1>各 星 球 與 地 點</h1>
+<div class="sub">12 季逐字稿裡關於月球、火星、金星、土星、南極冰下、地心安莎、地下海底基地與各星球的全部見聞 · 跨集合併 · 每點標出處與主述者</div>
+<a class="home" href="index.html">◂ 回主頁</a>
+</div></header>
+<nav class="toc"><div class="wrap">
+<a href="#c1">月球作戰指揮部 LOC</a>
+<a href="#c2">月球本體與背面</a>
+<a href="#c3">火星殖民地</a>
+<a href="#c4">研究船與太空站</a>
+<a href="#c5">金星</a>
+<a href="#c6">土星與外圍</a>
+<a href="#c7">南極冰下</a>
+<a href="#c8">地心與內部地球</a>
+<a href="#c9">安莎與時間泡</a>
+<a href="#c10">地下與海底基地</a>
+<a href="#c11">納斯卡與南美隧道</a>
+<a href="#c12">小行星帶與古建造者</a>
+<a href="#c13">傳送門與星際旅行</a>
+<a href="#c14">系外行星與 Planet One</a>
+<a href="#c15">太空打撈與軌道平台</a>
+</div></nav>
+
+<main class="wrap">
+
+<div class="legend">
+<b>發言人代碼</b>(紫色徽章標的是「提出該說法的人」,通常是受訪者,不是主持 DW):
+CG=柯里·古德 · ES=Emery Smith · JR=Jason Rice · WT=William Tompkins · PP=Pete Peterson · CM=Clifford Mahooty · DA=David Adair · NI=Niara Isley · BW=Bob Wood · MM=Mark McCandlish · CS=Clifford Stone · DW=David Wilcock(主持) · 另有來賓 Heather Sartain(薩坦)、Michael Salla(薩拉)、Jay Weidner(魏德納)、John Lear(李爾)。青色徽章為出處集數 SxxEyy。
+</div>
+
+<!-- ============ 1 ============ -->
+<section class="cat" id="c1">
+<div class="cat-h"><span class="bar"></span><h2>一、月球作戰指揮部 LOC</h2><span class="cnt">LUNAR OP COMMAND</span></div>
+
+<div class="sp">
+<h3>LOC 是什麼:中立中途站</h3>
+<div class="narrator"><span>主述</span>柯里被分配進 SSP 後,LOC 是他往返各站點的第一個中繼樞紐。</div>
+<ul>
+<li>LOC(Lunar Operation Command 月球作戰指揮部)位於月球背面,是外交中立設施,所有不同太空計畫都可使用,是個「中途站 weigh station」——人員不斷往返,前往太陽系更外圍的其他站點、基地,或登上各自的船艦。<span class="who">柯里</span><span class="src">S01E01</span></li>
+<li>柯里抵達後的機庫像「海軍潛艦 + 飛機庫」的混合;有一系列機庫,他降落的是較大的那個。船艦/設施內部其實不像《星艦迷航記》那麼科幻——窄走廊、普通的門,拍下來可輕易讓人誤以為是地表建築。<span class="who">柯里</span><span class="src">S01E01</span></li>
+<li>LOC 只是「人類」在月球活動的焦點,其他 ET 群體有自己的版本;柯里在 LOC 沒見過 ET,除非是球體聯盟成員出現。<span class="who">柯里</span><span class="src">S01E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>LOC 外觀與建造史:鐘形、蓋在納粹設施上</h3>
+<ul>
+<li>LOC 自 1950 年代起不斷增建,蓋進隕石坑與岩石區、與環境融合,地表上的部分極少;整體呈鐘形(bell shape)向下越來越寬,柯里只到過上層,像只看見冰山一角/鐘頂。<span class="who">柯里</span><span class="src">S01E03</span><span class="src">S05E09</span></li>
+<li>LOC 建在一個 1930~40 年代後期就存在的「納粹 NAZI 設施」之上;美國工業力量介入後,於 1950 年代末開始大規模擴建。<span class="who">柯里</span><span class="src">S01E03</span><span class="src">S05E09</span></li>
+<li>《Iron Sky》提到的卐字形納粹月球基地:原本確是卐字形排列,如今已擴建覆蓋,成為 LOC 的一小舊部分,各地球 SSP 經常使用。柯里出示他委製的兩幅圖佐證原始卐字佈局後被蓋住。<span class="who">柯里</span><span class="src">S02E06</span><span class="src">S07E16</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>LOC 內部:權限色線、VIP 區、醫療層</h3>
+<ul>
+<li>柯里多半只到一般區(2~4 床的小住處、窄走廊);VIP 區走廊較寬、有櫻桃木護牆板、很高檔,落差明顯。<span class="who">柯里</span><span class="src">S01E03</span><span class="src">S05E09</span></li>
+<li>地板有不同顏色的線引導到不同區域(跟你的權限色走)。頂層是大多數活動發生處,往下兩層是醫療與更先進的醫療;他沒去過更下層,近期有些人被帶去看了更多。<span class="who">柯里</span><span class="src">S01E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>LOC 詳盡導覽:Alpha / Bravo / Charlie 三部</h3>
+<div class="narrator"><span>主述</span>後期柯里獲新聯盟帶領,做了遠比以往更深入的 LOC 導覽,首次見到 NASA 相關標誌。</div>
+<ul>
+<li>飛向 LOC 時,飛船在隕石坑做兩三次飛越啟動「遮罩科技 masking technology」——看起來只是普通隕石坑(連坑底的次級坑洞都被蓋住),取得許可、關閉遮罩後才現出綠紅白燈光的基地,飛入隕石坑中央像天坑的洞,進入熔岩管洞穴(lava tube cavern)。<span class="who">柯里</span><span class="src">S10E07</span></li>
+<li>LOC 內可見熟悉的鐘形往岩石下延伸,建在洞穴中;有兩個主機庫埠(一進一出)。電梯極快下降,抵達遠比以往更深的位置。<span class="who">柯里</span><span class="src">S10E07</span></li>
+<li>LOC 連接另兩個指揮部:地面的 LOC Alpha、地下熔岩管中的 LOC Bravo 與 Charlie;LOC Charlie 有低溫研究設施(cryogenics),其中一層是把存在放入靜滯(stasis)的儲存設施。<span class="who">柯里</span><span class="src">S11E13</span></li>
+<li>「LOC Bravo」是較小的設施,有人穿印 NASA 標誌的連身服甚至西裝外套——柯里首次見到與 NASA 相關的東西。乘穿梭機飛過巨大熔岩管,下方有像老舊損壞的巨大牽引機被推到一旁。<span class="who">柯里</span><span class="src">S10E10</span></li>
+<li>從 LOC 窗戶看出去竟看到火星——有人告訴他常有人搭電車結果到了另一個星球卻不自知;月球設施看起來就跟地球設施一模一樣,還會在窗戶上播放大峽谷等景象讓人深信還在地球。<span class="who">史密斯</span><span class="who">柯里</span><span class="src">S11E01</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 2 ============ -->
+<section class="cat" id="c2">
+<div class="cat-h"><span class="bar"></span><h2>二、月球本體與背面</h2><span class="cnt">THE MOON</span></div>
+
+<div class="sp">
+<h3>月球是「巨大的瑞士」:嚴格中立外交區</h3>
+<ul>
+<li>月球是「巨大的瑞士 Switzerland」——極中立的外交中立區。月球背面像南極一樣被劃分,各區由不同 ET 群體擁有/居住;有些群體彼此世仇、曾交戰數千年,基地卻只相距幾公里,長期和平共處——沒人需要執法,「就是不會做 it just isn't done」。<span class="who">柯里</span><span class="src">S01E03</span><span class="src">S02E11</span></li>
+<li>多數設施在背面以避人耳目;正面也有飛船出入口與被 ET 群體用「全像屏蔽 hologram shielding」遮蔽的區域。業餘天文愛好者用望遠鏡接攝影機常拍到成群飛船進出(從地球看暗艦隊基地約在 10 點鐘方向)。<span class="who">柯里</span><span class="src">S01E03</span></li>
+<li>月球旁有古代戰役留下的殘骸,當作紀念/見證,通常為禁區;他們的武器可摧毀整顆行星。月球是觀察與往返地球做實驗的完美地點。<span class="who">柯里</span><span class="src">S01E03</span></li>
+<li>WT 版本:月球「不是你的月亮、也不是衛星」,而是銀河這一區的指揮中心、不自轉、住約 25~35 個文明(有些彼此世仇卻在一兩公里內共處),有家庭、孩子受教育、結婚生老;由各基因農夫種族設「觀察哨」往返做對人類的基因實驗。<span class="who">湯普金斯</span><span class="src">S07E16</span></li>
+<li>John Lear 稱月球上約有 25 萬「非我們這種人類」加上有實驗室的灰人;Luna City(月城)燈火多,建築上有偽裝投影(看似貧瘠地形/隕石坑),可隱藏整座基地。<span class="who">李爾</span><span class="src">S07E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>月球是人造天體</h3>
+<ul>
+<li>月球是「人造天體」:用「類牽引光束 tractor beam」科技鎖定與地球同步軌道,有深入地球的能量場錨定;月球不自轉、不被潮汐捕獲解釋(科學家說的月球密度無法被地球引力捕獲、且地球自轉本應使其自轉),約「50 萬年前」成為地球衛星,每若干年才遠離地球數公分。<span class="who">柯里</span><span class="src">S02E11</span><span class="src">S05E09</span></li>
+<li>CG 順帶證實「我們的月球是人造結構」,上覆數百呎的風化層與隕石碎屑。提到「Operation Brilliant Pebbles 璀璨卵石行動」:測繪所有小行星軌跡後可反推數十萬年前它們的位置。<span class="who">柯里</span><span class="src">S02E07</span><span class="src">S02E11</span></li>
+<li>DW 引內幕人 Bruce:地球的月球是在 6000 萬年前(恐龍滅絕後)被放置到地球周圍,內部是巨大文明,月球被稱為「方舟 ark」;消滅恐龍的小行星可能不是意外、是被導引的。月球可像車一樣透過宇宙網被駕駛移動。<span class="who">威爾科克</span><span class="src">S05E01</span></li>
+<li>內幕人 Jacob 描述某些衛星內部像挖空的測地線/十二面體、有樹與宜居地的「天堂世界」,CG 證實有此類資訊。<span class="who">柯里</span><span class="src">S05E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>德國人上月球:屢敗、古老建築、與 Draco 結盟</h3>
+<ul>
+<li>德國人先去月球,建基地有幾次失敗。月球暗面有 Super Federation 各群與多個 ET 群的大型聚落,各有外交領地與界線;德國人能在月球落腳,是因建在盟友(很可能是 Draco)的外交區內、受其保護。<span class="who">柯里</span><span class="src">S02E02</span><span class="src">S02E06</span></li>
+<li>自建月球基地初期屢敗,後發現「非常古老的建築」、設法加壓使用;月球無可呼吸大氣,德國人發展加壓式「水肺型再呼吸服」。本地材料造混凝土屢試屢敗。<span class="who">柯里</span><span class="src">S02E06</span></li>
+<li>有一個與爬蟲(reptoid)群合作的計畫,透過「傳送門」前往月球某個不同時代的過去建地面設施,後被棄置;SSP 後來發現帶納粹徽記、鷹抓卐字、德文字的「非常古老(數千年)」廢棄建築,用「讀取建築時間特徵 temporal signature」的科技判斷年代。<span class="who">柯里</span><span class="src">S02E06</span></li>
+<li>月球上有一座 Draco 與德國分離群體共用、至今仍用的「聯合基地」,外形像「梯形(被截頂的金字塔)」,是重要的「暗黑艦隊 Dark Fleet」基地,約建於 1960~70 年代初,僅限 Draco 與其盟友人類群體進入。<span class="who">柯里</span><span class="src">S02E06</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>月球上的古建造者種族遺跡與巨人王座</h3>
+<ul>
+<li>月球上有為「極高大存有(估高 60、70、80 呎)」建造的建築:沿牆面外向排列的石座(被稱 thrones 王座),原有文字徽記但被人「噴砂磨除」(可能後來的 ET 群移入、抹去原文以自稱為神)。<span class="who">柯里</span><span class="src">S02E07</span></li>
+<li>多被月塵與隕石殘骸覆蓋,約僅 10% 露出表面、需挖掘進入;地球面與背面都有,形狀材質各異,含「透明合金鋁 transparent alloy aluminum」材質(挖出後牆面可透視)。Richard Hoagland 講的玻璃圓頂確實存在但多已毀。<span class="who">柯里</span><span class="src">S02E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>阿波羅登月與月球攔阻</h3>
+<ul>
+<li>阿波羅任務曾把登月艙像飛彈般撞向月球測試月震儀器——月球是外交上嚴格劃分的地產,他們被警告「不要再回來」。<span class="who">柯里</span><span class="src">S01E03</span><span class="src">S02E13</span></li>
+<li>Neil Armstrong 迴避公開、酗酒、曾表示「他們都被利用、被騙」;傳他在首次登月時於坑緣見到圓頂/圓形飛行器,意識到「有人先到過」。太空人有 ET 活動暗號「Santa Claus」;太空人「從以前到現在常被 blank slate(洗記憶/給螢幕記憶)」。<span class="who">柯里</span><span class="src">S02E13</span></li>
+<li>Tompkins 版本:阿波羅抵達時月球邊緣已有眾多飛行器,一艘差點把他們撞出軌道;著陸時又有巨大飛行器停在著陸點環緣,有人對他們說「拿幾塊石頭、做兩三個額外任務,別回來。完畢。」靠心智抹除、至少兩分鐘延遲、不對公眾開放的「醫療頻道」掩蓋。<span class="who">湯普金斯</span><span class="src">S07E14</span></li>
+<li>Heather:阿波羅登月是真的、土星五號火箭確實發射;月球同步自轉(約 28 天)是「刻意」的,讓我們永遠看不到背面;背面有飛行器與墜機、發射台、被遺棄的舊電子設備。<span class="who">薩坦</span><span class="src">S07E02</span></li>
+<li>Buzz Aldrin 被帶到月球背面看到「曼哈頓式」燈光與結構,回程經過南極上空的基地對它「擺翼致意」,經歷震撼到使他心臟病發。<span class="who">威爾科克</span><span class="src">S07E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>被當「人類貨物」運上月球(Niara Isley)</h3>
+<div class="narrator"><span>主述</span>NI 在某值勤週被她的金髮警衛「handler」半夜帶上飛船、運往月球背面苦役。</div>
+<ul>
+<li>她須脫光換上會真空吸附貼身的銀色服(含手套靴子),上船後被叫躺地板;船內中央控制台周圍有椅、正中有一道寬光束(DW:那是推進系統的波導 waveguide)。一個至少 8 英尺高、橄欖灰綠膚、黃色垂直瞳孔的爬蟲人從光束後走出又退回。<span class="who">伊斯利</span><span class="src">S07E25</span></li>
+<li>降落後被令直走向最近建物、不准左右上下看;她偷瞄上方想確認有無圓頂(因無太空衣卻能呼吸)。建物像把地球上的醜陋軍用建物(Quonset 半圓拱頂屋)搬上月球。<span class="who">伊斯利</span><span class="src">S07E25</span></li>
+<li>她操作電磁挖掘設備:地面埋兩片金屬板通電後如極相斥磁極強力推開、挖掘整片區域(磁場強到要小心血中礦物被拉動);另有大量搬箱苦役,食物如稀粥乾麵包,夜間被剝奪睡眠(編程的一部分)。挖掘時瞥見很高很瘦(willowy)、不太像傳統灰人的外星人。<span class="who">伊斯利</span><span class="src">S07E25</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section class="cat" id="c3">
+<div class="cat-h"><span class="bar"></span><h2>三、火星殖民地</h2><span class="cnt">MARS COLONIES</span></div>
+
+<div class="sp">
+<h3>火星概況:數十座殖民地與工業廠</h3>
+<ul>
+<li>火星有數十座殖民地、設施與生產科技的工業廠;殖民地多在廠區外圍,人員被接駁去上班。火星上小型安全前哨站約 18~40 人。<span class="who">柯里</span><span class="src">S01E04</span><span class="src">S01E07</span></li>
+<li>火星現有 Phobos、Deimos 兩衛星與「大量人造衛星(含武器系統)」,多由現代人類(可能是早期德國火星殖民者後裔)所建——德國滲透美國軍工複合體後,這些殖民地擴張至全火星。<span class="who">柯里</span><span class="src">S02E07</span></li>
+<li>較大的「殖民地 colony」最大可達上百萬人,但這種極大型不多,數十萬人規模的相當多。<span class="who">柯里</span><span class="src">S01E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>火星殖民地視察:NATO 式檢查的全程災難</h3>
+<div class="narrator"><span>主述</span>ICC 為反駁「火星奴隸殖民地」報導,邀 SSP 同盟代表(Gonzales 與柯里)做一次視察,結果演變成衝突與營救失敗。</div>
+<ul>
+<li>停在火星軌道外,70 吋的大型智慧玻璃墊降下顯示火星 3D 影像與各基地圖示(至少十幾個、都在北半球)。ICC 代表(白灰髮人類、穿尼赫魯立領裝)推薦幾個基地;Gonzales 卻以心智啟動南半球一個新圖示,說「我們選這座」——以「一位近期叛逃者住過這座、情報非常新」堅持要查。<span class="who">柯里</span><span class="src">S01E07</span></li>
+<li>進入火星大氣時透明面板外有粉紅、薰衣草紫的放電(屏蔽);急降後沿地表飛入一處像舊河道的峽谷崖壁,崖壁升起一支金屬圓柱(空中交通管制),壁面開出原本看不見的開口,飛入後兩側有機庫、停著淚滴形鍍鉻飛船,降落在第三個機庫。<span class="who">柯里</span><span class="src">S01E07</span></li>
+<li>被帶上很窄的小火車(兩人並排對坐)前往約 8 公里外的工業複合體。這座基地是「對人類很重要的社會實驗」——殖民者被告知地球因災難已不宜居、只有火星與太空計畫的人類倖存。柯里剛曬傷塗了蘆薈乳液、「散發地球味」,引起殖民地安保警覺。<span class="who">柯里</span><span class="src">S01E07</span></li>
+<li>工業導覽展示「神經光學介面 neurological optical interface」彎曲完成件,很多飛船愛用,機器人自動化機具生產。住處導覽像牢房(jail cell)——牆內的床、集中用餐、集中如廁、無馬桶、無窗;天花板用「聲波照明 sonic lighting」(聲波產生光、整片天花板發光)。<span class="who">柯里</span><span class="src">S01E07</span></li>
+<li>主廳「作秀 dog and pony show」:一名 ICC 代表宣布我們「定期與近 900 個 ET 種族交易」,偶爾與更多(可能上千)交易。<span class="who">柯里</span><span class="src">S01E07</span></li>
+<li>收尾災難:獲准帶一家四口上船,卻發現有家庭成員被扣為人質;Gonzales 帶安保下船去找,設施安保武裝衝上來;眾人被押到原本沒有門的牆、開出一座拘留設施(一排排八角孔牢籠關著人)。藍 orb 穿牆出現把眾人送回 LOC,飛船被留在火星。「我們失去一艘船,但沒失去任何人。」那家人最終下落不明。<span class="who">柯里</span><span class="src">S01E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>火星地質史:超級地球的衛星、爆炸行星假說</h3>
+<ul>
+<li>據智慧玻璃墊,火星曾是一顆「超級地球(現為小行星帶位置)」的衛星;火星曾有海洋與厚大氣,在同一事件中大氣被吹走、軌道改變、並形成小行星帶。<span class="who">柯里</span><span class="src">S02E07</span></li>
+<li>火星半邊布滿隕石坑、半邊平滑,符合「爆炸行星假說 EPH(Dr. Thomas Van Flandern)」;表面半邊有大量「震裂石英 shocked quartz」沉積,一半正電一半負電,成了「巨大電容器」。<span class="who">柯里</span><span class="src">S02E07</span></li>
+<li>哨兵展示的異象:火星曾有雲、海洋、像島嶼般的大陸、綠意;一顆球體掠過邊飛邊射電、撕開行星一道大裂縫,水汽化、CG 感覺看到數十億人死亡。接著是較像現在的火星、地表閃光、極高細長的蘑菇雲、擠扁橢圓形飛船朝各方離去。<span class="who">柯里</span><span class="src">S06E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>火星地表:天空顏色、空氣、金字塔</h3>
+<ul>
+<li>火星天空顏色動態多變:赤道沙塵多時為紅;越靠極區大氣沙塵越少、有極光,日出日落呈紫粉、白天偏紫藍,但風暴時滿天紅沙。各處空氣都不宜呼吸;南北區較易,但像聖母峰頂——需輕便防護服與供氧呼吸器(非重型加壓服)。<span class="who">柯里</span><span class="src">S02E03</span><span class="src">S02E07</span></li>
+<li>Cydonia(賽多尼亞):CG 親自飛越並看到「五面金字塔」與其他金字塔(部分被泥淤掩埋,實際比一般認知大很多);沒看到「火星臉」。<span class="who">柯里</span><span class="src">S02E07</span></li>
+<li>Phobos(火衛一)是一顆「被壓碎的球體」,曾是完美圓球、一端有開口、有「超結構」;Deimos(火衛二)可能是天然天體。火星地殼累積大量電後會以「巨大雷電」擊向 Phobos。<span class="who">柯里</span><span class="src">S02E07</span><span class="src">S02E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>德國人抵火星:選址失誤、熔岩管爭奪戰</h3>
+<ul>
+<li>德國人 1930 年代末/40 年代初抵火星(先月球失敗後設基地、再火星)。飛行路線:地球→月球→月球→火星,當年約數小時,現在僅數分鐘。靠德國發展的二氧化碳洗滌器與閉式供氧系統,加上與 ET 合作後取得的電重力飛行、人工重力、環境控制。<span class="who">柯里</span><span class="src">S02E07</span></li>
+<li>德國人選址失誤:在赤道附近建基地,當地頻繁的高速沙塵暴帶大量靜電(產生像 EMP/CME 的強電場),摧毀電子設備;後發現北南極 20 度內最宜居住(有冰即有水、大氣相對較宜呼吸)。<span class="who">柯里</span><span class="src">S02E07</span></li>
+<li>Olympus Mons(奧林帕斯山)等地的「熔岩管 lava tubes」比地球大十倍,極適合密封造環境基地,是高度搶手的建基地點;但已被「一個爬蟲類群與一個昆蟲類群 insectoid」依條約佔據、激烈防守,內住「數百萬」存有。德國人想搶熔岩管、打過幾仗、慘敗、甚至整座早期基地連人被毀。<span class="who">柯里</span><span class="src">S02E07</span><span class="src">S05E09</span></li>
+<li>火星擴張軍事化:德國人完成地圖測繪、找到極區宜居地後,有 ICC 撐腰便先「建軍備」,再大舉抵達、打仗、驅逐原佔領群體,接著派工程師建基地(多在地下或既有洞穴、峽谷,類似地球的 DUMBs)。挖地下用「第五代核」(瞬間大爆炸、無殘留輻射)開鑿。<span class="who">柯里</span><span class="src">S02E09</span><span class="src">S02E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>火星生命:穴居動物、紫紅植物、原生人形種族</h3>
+<ul>
+<li>火星上有挖洞的小型動物、極耐旱的植物(一種紫紅相間、帶巨刺、矮胖的灌木);CG 親見一種「黑色、皮革感、似披甲、像蝙蝠鳥的小東西」,黃昏飛出、每拍翅發出 cheep 聲。也提到「半人大的大型蜘蛛」、「類蠶的大型蠕蟲」。<span class="who">柯里</span><span class="src">S01E04</span><span class="src">S02E07</span><span class="src">S02E08</span></li>
+<li>有一個「非常隱密、人形、總穿袍、住洞穴」的群體,自稱火星「原生 indigenous」、外貌極似人類但偏紅;每當太空計畫在其文明附近建殖民地,他們就整群遷走、完全避開,非常和平。被捕/審問者自稱一向源自火星,但審問者無法確認真假。<span class="who">柯里</span><span class="src">S02E07</span><span class="src">S02E08</span></li>
+<li>跨星球污染:1930~50 年代初運大量補給時帶來蟑螂、老鼠、蜘蛛等地球害蟲——老鼠變大些仍在地表存活,蟑螂「變得比手還大」。Skipper 照片中像囓齒類的火星岩石,CG 推測就是這些變大突變的生物(疑因輻射)。<span class="who">柯里</span><span class="src">S02E08</span><span class="src">S07E23</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>CG 親歷火星設施:行屍走肉般的殖民者</h3>
+<ul>
+<li>外觀像海軍設施,居住區以英數字編號標示,很像軍事基地。曾被帶去修一台 ICC 自己人來不及修的關鍵設備,被押解、被令不得與人對視交談。<span class="who">柯里</span><span class="src">S02E09</span><span class="src">S05E09</span></li>
+<li>見一面牆有人在掛藝術品(像為維持心理健康、避免人員絕望自殺),但人員憔悴蒼白、面黃肌瘦、像沒靈魂的「drone」般過日子。<span class="who">柯里</span><span class="src">S02E09</span></li>
+<li>北半球那座最初有德國名的主基地被「大規模擴建」以容納大量工程師科學家,並在稍遠處建工業複合區,把火星、衛星、小行星帶開採的原料就地加工成所需物資與科技。約 1952~54 美國簽協議時才剛站穩腳跟。<span class="who">柯里</span><span class="src">S02E10</span><span class="src">S05E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>火星訓練與德國火星城(Jason Rice)</h3>
+<ul>
+<li>火星訓練(四個月)著重艦對地介面——戰鬥空降、跳出穿梭機、用滑翔翼或反重力背包射出。火星表面像有岩石峽谷的沙漠、有「異世界感」;他們從不脫頭盔/不呼吸火星空氣(被告知絕不可)。<span class="who">萊斯</span><span class="src">S12E08</span></li>
+<li>德國人在火星有兩座地下大城市——新柏林(New Berlin)與新符茲堡(New Wurzburg),地面上多是機械結構與輻射屏蔽。JR 所屬為「第三裝甲師(柏林熊 Berlin Bears)」,火星德國人繼承複製了大量二戰德軍番號、徽章、制服。火星德國人約有 300 萬公民(可能是假情報)。<span class="who">萊斯</span><span class="src">S12E08</span></li>
+<li>ES 聽過火星上有 20 萬人(200,000)在工作的基地,這在地下圈是「眾所周知、甚至是個玩笑」——當你坐在輸送帶穿過能量系統到一個大氣不同的地下地方,誰敢說那不是火星?<span class="who">史密斯</span><span class="src">S09E12</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section class="cat" id="c4">
+<div class="cat-h"><span class="bar"></span><h2>四、研究船與太空生活</h2><span class="cnt">RESEARCH VESSEL</span></div>
+
+<div class="sp">
+<h3>太陽系基礎建設的規模</h3>
+<ul>
+<li>遍布整個太陽系——小行星帶與各衛星、行星的採礦作業,生產科技的工業複合體,以及在其中工作的人類殖民地。設施類型:挖空小行星內部、火星地表下各處、氣態巨行星各衛星、地球的月球。氣態行星內部因壓力過大無法建基地。<span class="who">柯里</span><span class="src">S01E04</span></li>
+<li>也有漂浮在各「拉格朗日點 Lagrange point」(引力平衡、可定點停留)的設施,數以百計。<span class="who">柯里</span><span class="src">S01E04</span></li>
+<li>遠離太陽變冷靠先進科技克服:地板互鎖的「重力鋪板 gravity plating」通電產生人造重力;把地球的「舒曼共振 Schumann resonance」管進船艦/設施維持人與植物健康;氣壓、重力都受控。<span class="who">柯里</span><span class="src">S01E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>研究船的工作:異域極端生物</h3>
+<div class="narrator"><span>主述</span>柯里在研究船上工作 6 年,主研究「異域極端生物 exo-extremophiles」。</div>
+<ul>
+<li>看過的生命形式:以木星電磁場為食、像巨型變形蟲的「電漿生命 plasma life」——非碳基、無細胞結構,卻像單細胞生物以有絲分裂分裂繁殖,且有自我意識、有保命特徵(sentient);因太大只能取小樣本,樣本會死亡或腐敗。<span class="who">柯里</span><span class="src">S01E04</span></li>
+<li>木星某冰封衛星(如歐羅巴 Europa)冰下海洋有類似鯨豚的生物。生物生命在太陽系幾乎無所不在(含微觀層級,連太空中都有冷凍乾燥漂浮的)。<span class="who">柯里</span><span class="src">S01E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>研究船生活細節:印表機餐、迷宮船艙</h3>
+<ul>
+<li>智慧玻璃墊只在值勤時可用,使用紀錄應有被監視;研究船比軍艦輕鬆,科學家被叫「蛋頭 eggheads」;每人有冗餘訓練(不只一份工作)。住 18~24 人一間的鋪位區(牆內床鋪+小收納)、人員流動大。<span class="who">柯里</span><span class="src">S01E04</span></li>
+<li>複製機被稱「印表機 printer」、複製食物稱「printing」,外觀像微波爐大小、按鈕選餐(如燉肉+馬鈴薯泥),出來是熱的;蔬菜另以水耕區 hydroponic 種植。穿連身服(藍/白依工作區別,白=實驗室)。<span class="who">柯里</span><span class="src">S01E04</span></li>
+<li>船內如迷宮、走完一層約 30~45 分鐘;天花板約 8 英尺;他主要在 4 層活動、相信至少 9 層;區域以編號(如 1-A、1-B)標示,地板有顏色線引導。據說最早的船由造潛艦的人建造,故有潛艦感、牆上有零重力時用的扶手;水在太陽系不稀缺,船是完全封閉、一切回收的系統。<span class="who">柯里</span><span class="src">S01E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>ICC 企業殖民地:不得交談的維修任務</h3>
+<ul>
+<li>ICC 企業殖民地由 ICC 擁有,研究船人員通常不能參觀。只有當殖民地缺乏自己人修理關鍵機器、而研究船上有該專長者時,才獲准前往,且嚴令不得與設施人員交談互動、全程武裝戒護、不提供導覽或餐食,修完即護送回船。<span class="who">柯里</span><span class="src">S01E04</span></li>
+<li>柯里在「20 年又送回」期間完全與地球斷絕(無新聞、電視、書籍雜誌、連家人照片都沒有),只有報到時發給的東西。<span class="who">柯里</span><span class="src">S01E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>太陽探勘:電太陽與宇宙網</h3>
+<ul>
+<li>柯里在研究船時有「太陽探勘任務」——把探測器射進太陽(靠周圍能量場+抵抗引力壓縮的防護避免燒毀)、射入太陽黑子。回傳顯示太陽(稱「Sol」)是電的,「電漿宇宙 electric/plasma universe」模型是對的。<span class="who">柯里</span><span class="src">S01E09</span></li>
+<li>太陽核心很小、由鎂、鈉等金屬元素組成,外殼像陽極與陰極、整體像個電燈泡;太陽是「外熱內冷」(外殼熔融燃燒、內部較涼、中心有大片空曠區),這解釋了「日冕比表面更熱」之謎。<span class="who">柯里</span><span class="src">S01E09</span></li>
+<li>太陽透過「宇宙網 cosmic web」餵養——每顆恆星都以電磁細絲彼此相連,一處的事件可透過此網路回饋影響我們的太陽。太陽黑子在某些情況下也是不同 ET 群體進出太陽系所用的星門 stargate。<span class="who">柯里</span><span class="src">S01E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>太空站:回收火箭體拼成的旋轉環</h3>
+<ul>
+<li>John Lear 提到 Kwajalein(瓜加林環礁)幾乎每隔一天發射、約有 1,000 名合格太空人;太空梭去 ISS 要 48 小時,其實是去服務多座秘密太空站。<span class="who">李爾</span><span class="src">S07E13</span></li>
+<li>CG 證實這是 MIC SSP——用多級火箭在數座島嶼發射,部分舊火箭級數被熔接成扁圓/八角形太空站(兩三層、中央有反向火箭級數旋轉產生約三分之一重力),太空梭與黑色三角穿梭機在輪輻頂端對接;太空人以為自己在做「星戰計畫 SDI」。<span class="who">柯里</span><span class="src">S07E13</span></li>
+<li>ES:那些太空站比 ISS 大很多(約大 10 倍),不在大氣層內、在「外大氣層」;上面為尋找其他類地行星測試、有能看穿行星的特殊雷達、繪製所有蟲洞與跳躍平台、知道太陽系內所有載具位置。CG 描述的用 NASA 回收火箭推進器首尾相接成大圓、旋轉產生三分之一重力的太空站,正是 ES 講過的那座。<span class="who">史密斯</span><span class="who">柯里</span><span class="src">S11E14</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 5 ============ -->
+<section class="cat" id="c5">
+<div class="cat-h"><span class="bar"></span><h2>五、金星</h2><span class="cnt">VENUS</span></div>
+
+<div class="sp">
+<h3>金星基地:浮在雲端、地表加壓基地</h3>
+<ul>
+<li>金星地表有像馬里亞納海溝底般的「重度加壓基地」,但「多數基地浮在金星上層雲端大氣」中,皆 ICC 控制。金星有「極大的資訊封鎖」,「金星上有某種正在進行的事」CG 也不知道是什麼(在 glass pad 上看金星資料會「blue screen 當機」)、只能看到有船進出。<span class="who">柯里</span><span class="src">S02E11</span></li>
+<li>Pete Peterson 被告知金星因雲層極熱、只能由仿生人(androids)駐守;CG 說我方在金星雲層中有懸浮的「研究設施」、地面也有像高壓水下基地的設施。金星對各 SSP 團體多半是「禁飛區 no fly zone」。<span class="who">柯里</span><span class="src">S05E08</span></li>
+<li>DW 引《一的法則》:發言群體(Ra)曾在 12 億年前住金星;金星可能是「古代建造者種族」的源頭,逾 20 億年古老。<span class="who">威爾科克</span><span class="src">S02E11</span><span class="src">S10E06</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>運作中的古建造者前哨與「哨兵」(Gonzales 的見聞)</h3>
+<ul>
+<li>Gonzales 搭 Anshar 巴士與 Kaaree 進金星大氣,雲層破開處的「偽裝全像 camouflage holograms」一個個關掉(原本只顯示貧瘠地表),露出巨大的「H 形建築」;鑽進地下、在洞穴降落——這是「運作中的古建造者前哨」。<span class="who">柯里</span><span class="src">S05E08</span></li>
+<li>Kaaree 與兩名駕駛走進一個巨大的 A 形(斜角玻璃狀)拱結構,結構亮起、玻璃變暗並冒出符號;一個「12~14 英尺高、全白、白衣、鼻子像復活節島摩艾石像」的存有與她們交談——它是被該前哨「物質化/投影」出來的「哨兵 sentinel」(非血肉活物)。哨兵說 Gonzales「缺乏謙卑 lacked humility」,不准他進入。<span class="who">柯里</span><span class="src">S05E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>CG 重返金星:數英里高的 H 形建築</h3>
+<div class="narrator"><span>主述</span>CG 先前因排程衝突被擋下,這次先冥想調整心境後成行。</div>
+<ul>
+<li>在 Anshar 內部地球的機庫,與 Kaaree 及兩名 Anshar 搭乘藍座位的巴士,經頭頂縱向開啟的藍色漩渦光直上,約 10 分鐘抵金星。Anshar 科技顯示金星大氣有顆像小行星帶碎片、卡在引力場的東西。獲准後高速穿過厚厚的黃色雲層,停在地表上方約 1000 英尺,見到像被智慧之手雕刻的地形。<span class="who">柯里</span><span class="src">S06E03</span></li>
+<li>地板天花板變透明後,看到坑內巨大的 H 形建築,中間一條線把它分成兩棟,達數英里(miles)高,平面、銳邊、古老風化。飛入底部洞穴,降落在像石窟、牆壁如水晶般閃爍的洞窟區。入口大門兩側各有一座石製方尖碑狀物,上有「H」符號如圖騰柱般往上漸小、刻入石中。<span class="who">柯里</span><span class="src">S06E03</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section class="cat" id="c6">
+<div class="cat-h"><span class="bar"></span><h2>六、土星與太陽系外圍</h2><span class="cnt">SATURN · OUTER SYSTEM</span></div>
+
+<div class="sp">
+<h3>超級聯邦:衛星外交領地與禁飛區</h3>
+<ul>
+<li>許多衛星因屬 40/60 群(Super Federation,尤其土星周邊)的「外交領地」而禁入;木星、天王星的衛星與小行星帶有大量德/ICC 活動。Io(木衛一)等太熱不可登。<span class="who">柯里</span><span class="src">S02E10</span></li>
+<li>Super Federation 是「聯邦的聯邦」(像 ET 版巨型 UN),40 主群 + 20 群,多為人形/人類型,基地主要在月球背面與氣體巨行星(尤土星)衛星;木星與土星某些衛星周邊「完全禁止」地球任何 SSP 船隻接近。<span class="who">柯里</span><span class="src">S02E11</span></li>
+<li>CG 讀到「某顆繞氣體巨行星的衛星向太空噴出某種元素雲、他們從衛星背後的太空收集」——DW 證實 Io 火山確實噴出粒子形成環(含氬、氖、氦、氧等可用元素)。<span class="who">柯里</span><span class="src">S02E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>土星站:超級聯邦會議空間的複製品與哨兵異象</h3>
+<ul>
+<li>Gonzales 被帶到土星外一個與木星旁超級聯邦會議站「完全相同的複製站」(空無一船一人、要經某種時間異常進出),同樣因「缺乏謙卑」被拒。<span class="who">柯里</span><span class="src">S05E08</span></li>
+<li>CG 到土星附近,進入像木星旁那種「時間異常空間 temporal anomaly」(星空全消失、漆黑)。站體與超級聯邦開會的場所一模一樣(圓端、長碼頭供各艦停靠、大圓廳),但空無一艦、荒涼。<span class="who">柯里</span><span class="src">S06E03</span></li>
+<li>走進主廳,哨兵把一連串影像射入他腦中:最後是太空中數百個場景——月球大小的巨型有形球體發出巨大電弧,摧毀進入太陽系的大型艦船與其他看似科技的巨球。DW 連結土星衛星 Iapetus(伊阿珀托斯)的奇異赤道脊、可能是武器平台;這呼應古建造者種族建造這些以形成保護本地星團的統一防護網格。<span class="who">柯里</span><span class="src">S06E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>土星 7 號衛星金庫:物種延續</h3>
+<ul>
+<li>Heather 父親說土星系統有超過 60 顆衛星,其中一顆形狀像海綿、布滿深穴的「Hyperion(許珀里翁)」,NASA 內部稱「土星 7 號衛星」;政府在它的一個洞穴裡存放「金庫 vault」,藏極重要的資訊與材料,因為地球放不下。<span class="who">薩坦</span><span class="src">S07E02</span></li>
+<li>CG 證實確有此金庫,目的是「物種延續 continuity of species」——存有種子庫、基因庫,可從微生物到所有地球生物重新複製,也是資料庫。<span class="who">柯里</span><span class="src">S07E02</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>冥王星、歐特雲與失敗的雙星系統</h3>
+<ul>
+<li>Pluto(冥王星)軌道怪異、不在黃道面;CG 說「我們是失敗的雙星系統 failed binary system」,Oort Cloud(歐特雲)裡還有其他冥王星大小的行星(未被告知)。<span class="who">柯里</span><span class="src">S02E11</span></li>
+<li>古代建造者種族遺跡「到處都是」,連 Oort Cloud 也有;ICC 已在 Oort Cloud 的小行星體上建基地。<span class="who">柯里</span><span class="src">S02E11</span></li>
+<li>SSP 聯盟一段時間以來持續把地心存有(Anshar)請到「柯伊伯帶 Kuiper Belt」基地建立政治關係;古柏帶內外的行星與矮行星在奇怪軌道,都曾被或正被我方艦隊與非地球者佔用。<span class="who">柯里</span><span class="src">S04E08</span><span class="src">S07E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>古柏帶基地與「牧人 The Wrangler」審訊室</h3>
+<ul>
+<li>柯里搭一艘像巴士(26~28 座、前端方形再收成戰機般錐形)的 Anshar 巴士,只有他與 Kaaree,前往古柏帶基地。在金屬桌焊死的審訊室見 Gonzales 與一個「大塊頭」(後稱「The Wrangler 牧人」);大塊頭用紙筆寫筆記、推給 Gonzales。簡報很短、料很少——明顯在演戲、要表達「柯里搞砸了、代價慘重」。<span class="who">柯里</span><span class="src">S05E07</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section class="cat" id="c7">
+<div class="cat-h"><span class="bar"></span><h2>七、南極冰下</h2><span class="cnt">ANTARCTICA</span></div>
+
+<div class="sp">
+<h3>南極冰下的古城與德國基地</h3>
+<ul>
+<li>戰爭後期亞加森人邀部分德國人進入亞加森網絡,並向他們展示「南極冰層下的古代廢墟」。南極冰下有許多被冰川壓碎的古城與地下網絡,因火山/地熱活動而保溫,像有圓頂冰層、下方有城市。CG 表示南極當年的氣候「比較像澳洲」,在某次比 13,000 年前亞特蘭提斯洪水「更古老」的事件後,軸轉/地殼位移使其成現狀。<span class="who">柯里</span><span class="src">S02E02</span></li>
+<li>南極冰下有三座城市,其中兩座更內陸的「已被佔用」,德國人抵達時就已有其他群體在住;一座較破敗的城市適合 U-boat 從冰下浮出進入洞穴,德國人從那裡擴建。亞加森人依條約協助德國人在南極與南美東部(阿根廷、巴西)建立地下基地與幾乎全德裔的地面城市。<span class="who">威爾科克</span><span class="who">柯里</span><span class="src">S02E02</span></li>
+<li>Tompkins:戰爭結束前六個月,德國 80% 的外星載具生產已移往南極洲繼續建造,用巨型卡車潛艇(truck submarines)經隧道運抵內陸湖區的城市、海軍基地與數千人設施。<span class="who">湯普金斯</span><span class="src">S07E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>陰謀集團大撤退:裂谷系統與黑色潛艇</h3>
+<ul>
+<li>Wrangler 與 Gonzales 給南極、巴西、阿根廷地下基地的情報——陰謀集團像螞蟻搬運補給進去。有一套「裂谷系統 rift system」從南極連到南美、中美、北美下方(部分全在水下、部分頂部建有小基地)。<span class="who">柯里</span><span class="src">S05E08</span></li>
+<li>有「黑色潛艇 black subs」大如貨櫃船、滿載「豆子、子彈 beans, bullets」等補給、以電磁推進在水下穿過裂谷一路到南極的港口。部分撤往南極的陰謀集團相信會有「太陽致命一擊 solar kill shot」打擊地球,因無法逃離地球而想躲在冰棚下。<span class="who">柯里</span><span class="src">S05E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>柯里的南極偵察飛行(2016 年 4~5 月)</h3>
+<div class="narrator"><span>主述</span>柯里被 Kaaree 帶上 Anshar 巴士,穿過某全像進入南極冰棚下做偵察飛行(對方不知道他在、非受邀客人)。</div>
+<ul>
+<li>穿過一條巨大「冰管」(最大船進去仍有兩三倍船高),霧氣瀰漫,飛數英里後開闊成「冰下水域+冰穹」;熱泉、冒蒸氣的水池、小針葉樹——這「冰下伊格魯 igloo」由熱液活動形成,位於南極西北部。<span class="who">柯里</span><span class="src">S05E08</span></li>
+<li>看到巨大破碎的「H 形石塊(像祕魯 Pumapunku)」——是亞特蘭提斯洪水前的遺跡,被冰擠碎;大量三角形飛船、兩艘常規潛艇與幾艘巨型黑潛艇(蛋形、頂部滑開卸貨)。<span class="who">柯里</span><span class="src">S05E08</span></li>
+<li>巴士「直覺式」科技:他一動念好奇有多少前哨,周圍就彈出全像顯示(地圖顯示兩大區+四小前哨);天花板地板座椅變透明。Kaaree 警告他「別迷失在資料中 Do not get lost in the data」。<span class="who">柯里</span><span class="src">S05E08</span></li>
+<li>一座「工業城」(從小擴建到大);海灣區冰頂高達 500~600 英尺、有 70~90 米寬的散熱孔斜向上;巴士「belly flop」入水進入潛艇進出的洞穴,沿裂谷繞行,看到連接兩段裂谷的「巨大古拱 ancient arch」。<span class="who">柯里</span><span class="src">S05E08</span></li>
+<li>對 Bob Wood 印證:在南極西北部熱液活動區,冰下被地熱形成「巨大伊格魯」、天花板高 300~600 英尺;地表上有一堆像空軍基地的圓頂鐵皮建築(工業型城市),多數設施在地下,有像貨櫃船大小、電磁推進的「巨型黑船」上來卸貨。<span class="who">柯里</span><span class="src">S05E17</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>南極古墓與閃凍遺骸</h3>
+<ul>
+<li>Gonzales 偵察時看到的古結構附近,發現一處古墓地,有長頭顱(elongated skulls)、寬臀、較小胸廓的存有遺骸——正常人類身高,年代範圍 1.8 萬到 6 萬年。<span class="who">柯里</span><span class="src">S06E02</span></li>
+<li>在冰下發現像「閃凍 flash frozen」的史前動物與這些存有遺骸;一些巨石塊被抬離地面數英尺後閃凍,像有巨大海嘯在中途瞬間結冰——某文明遭遇極快速災難、來不及反應。<span class="who">柯里</span><span class="src">S06E02</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>前亞當人與南極古城(Sigmund 長官透露)</h3>
+<ul>
+<li>Sigmund 自述曾駐南極多個基地,證實冰棚下發現多座古城廢墟、閃凍的長毛象級動物,以及他稱為「前亞當人 Pre-Adamites」的存有——細長身形、長頭顱、軀幹比例怪異,顯然不是設計來承受地球氣壓與重力的。<span class="who">柯里</span><span class="src">S06E16</span></li>
+<li>古城可追溯到這些存有約 55000~65000 年前抵達地球時;他們來自太陽系內一顆不再宜居的行星。某場災難使南極完全閃凍,前亞當人逾 10000 年無法進入其古城,失去後與當地人類通婚產生各種「亞當-前亞當混血」。南極由爬蟲類控制,近期才談成讓前亞當人下去探訪。<span class="who">柯里</span><span class="src">S06E16</span></li>
+<li>前亞當人是曾居火星與馬爾戴克(Maldek)的非地球團體,約 50 萬年前因自身災變與戰爭、輾轉到月球一段時間、後被趕離月球,飛船受損無法離開太陽系而迫降地球;選了仍有 18 億年前「古建造者種族」技術運作的這塊大陸。CG 說前亞當人基本上是「墮天使」,5.5 萬到 6 萬年前迫降。<span class="who">柯里</span><span class="src">S07E08</span><span class="src">S07E15</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>30 英里母船 Nina/Pinta/Santa Maria</h3>
+<ul>
+<li>前亞當人帶來三艘極大母船,被(以調侃口吻)命名為「Nina、Pinta、Santa Maria」(哥倫布三船名),迫降後只能拆解、改用船上技術。約 6 萬年前同時抵達、在地表呈三角定位,船上存在隨後「拆解 cannibalize」載具在三船之間建城。<span class="who">柯里</span><span class="src">S07E08</span><span class="src">S08E04</span></li>
+<li>Pete Peterson 獨立向 DW 說「他們會宣布找到一艘母船」——直徑 30 英里、大致圓形、埋在冰下。澄清版本:有一艘長達 3 英里的橢圓主船,加上兩艘較小的支援船。<span class="who">威爾科克</span><span class="who">柯里</span><span class="src">S07E08</span><span class="src">S07E19</span></li>
+<li>船內有多種飛行器,其一是華麗、貼金、佛塔(stupa)形的「維摩那 vimanas」(專供王室乘坐)。前亞當人身高 12~14 英尺、長顱、瘦削,男性胸前有鬆垮的肉袋;生物學家驗屍判定其發育環境氣壓與重力都比地球低。<span class="who">柯里</span><span class="src">S07E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>被淨化的揭露計畫與柯里親見</h3>
+<ul>
+<li>1939 年德國南極遠征隊發現刻有古文字的大石板;2002 年起引進真正的大學教授與考古學家,做了 14 年不能對外講的研究。Cabal 用大型電磁潛艇把其他遺址的文物運到南極「埋種 seeding」進這場將公開的考古發掘,並移走任何不像人類的屍體;留下的人類屍體穿著織金線長袍、像王室(調侃稱「冰上龐貝 Pompeii on Ice」)。<span class="who">柯里</span><span class="src">S07E08</span></li>
+<li>計畫是先給「淨化版揭露」(史前動物→古人類文明),再經數十年慢慢揭露 MIC SSP、太陽系內類似遺址,最後才談母船與非人類。<span class="who">柯里</span><span class="src">S07E08</span></li>
+<li>CG 親述被安沙爾用蛋形飛行器帶往南極(Gonzales 同行),Gonzales 用帶針的取芯工具對前亞當人屍體拍照並取基因樣本;柯里親眼見胎兒姿勢、有約十英寸長尾巴的矮人類冷凍屍體。內部地球團體還帶他們穿過尚未挖掘的牆進入一間滿是卷軸與書的圖書館,取走數卷「金屬卷軸」帶上飛行器。<span class="who">柯里</span><span class="src">S07E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>南極「51 區」:軍工 R&amp;D 與太空港</h3>
+<ul>
+<li>1950 年代有「冰蟲計畫 Project Ice Worm」在冰帽下建發射井,這套「冰下建基地」工法被用在整個南極洲——先造迷你基地、再擴成大型研發(R&amp;D)基地,洛克希德·馬丁等公司在那裡逆向工程冰下找到的科技;早期月球與火星基地也是類似工法建的。這違反 1959 年《南極條約》。<span class="who">柯里</span><span class="src">S07E19</span></li>
+<li>有一座很大的前納粹基地被移交給軍工複合體/影子政府,當年是秘密太空計畫的港口,現在是影子政府的主要太空港(spaceport),常態進出大氣層。在南極設太空港的理由:電磁場與重力場條件較有利、范艾倫帶效應較小、需要難被窺視的地點。<span class="who">柯里</span><span class="src">S07E19</span><span class="src">S12E03</span></li>
+<li>Highjump 行動(1946/47):據 Tompkins,Byrd 上將先去南極與納粹談判失敗,海軍才發動第 68 特遣隊;德國人靠定向能武器擊退海軍最好的戰機與驅逐艦。Salla 寫過納粹鐘形飛行器(Die Glocke/Nazi Bell),真正最有效的計畫在南極。<span class="who">薩拉</span><span class="src">S07E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>南極超級閘門與停滯存有的喚醒</h3>
+<ul>
+<li>CG 證實南極有一座由古建造者種族建造的非常強大「超級閘門 Supergate」——能透過宇宙網直達銀河系內或鄰近星系任一端,不必等(其他節點星門距離遠則要「轉乘」跳好幾次)。Daniel 說 1970 年代初對超級閘門的分析催生了網際網路 IP 位址協定。<span class="who">柯里</span><span class="src">S07E19</span></li>
+<li>船內找到一批處於停滯(stasis)的存有,是最初從火星來的「原始前亞當人」;數量約一打(a dozen),在遠古某時點自行進入停滯,守護者把船帶下地球接上古建造者種族的能量源以維持。<span class="who">柯里</span><span class="src">S07E19</span></li>
+<li>已找到喚醒方法,但只能「全部一起」喚醒;若喚醒,會在這些停滯存有正中央擺第五代迷你核彈,由人員持「死人扳機 dead man trigger」待命(柯里以電影《普羅米修斯》比喻顧慮)。<span class="who">柯里</span><span class="src">S07E19</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>名人南極行、蒸氣挖掘、融冰危機</h3>
+<ul>
+<li>John Kerry 在選舉日去南極;許多大名人被帶去參觀冰下數英里的城市與尋獲的太空船。Pete 說他們把大水袋投入冰中既有孔洞,用高功率微波束打成蒸氣熔冰開通道,文物附近靠人工高壓蒸氣軟管。冰下還發現仍插在地裡的棕櫚樹、保存完好的史前動物。<span class="who">柯里</span><span class="src">S07E10</span></li>
+<li>大陸冰下正在升溫、地熱活動使冰下湖大幅升溫、加速融冰;冰以每天約一英尺移動,基地是固定點,所以要往兩個方向挖。2017 年 1 月主流媒體報導哈雷(Halley)等南極基地因巨大裂縫怕崩入海而撤離。<span class="who">柯里</span><span class="src">S07E19</span></li>
+<li>ES 確認南極冰下至少有一艘很大的母船(他與 DW 從未談過此事);揭露不會是人類來做,而是「地球(Gaia)因暖化來揭露」——明年若部分雪融,巨物與不同金屬會開始露出、很難解釋,所以「地球會是揭露者」。最古老的殘骸據多個來源是 33 呎高巨人;軍方人員戴 Fitbit 未關 GPS,公布的地圖洩漏了靠近羅斯冰棚的祕密基地位置。<span class="who">史密斯</span><span class="src">S09E09</span><span class="src">S09E10</span><span class="src">S11E02</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 8 ============ -->
+<section class="cat" id="c8">
+<div class="cat-h"><span class="bar"></span><h2>八、地心與內部地球</h2><span class="cnt">INNER EARTH</span></div>
+
+<div class="sp">
+<h3>不是中空地球,是「蜂巢地球」</h3>
+<ul>
+<li>柯里描述地球並非「中空地球」,而應稱為「蜂巢地球 honeycomb earth」:一個巨大的多孔洞穴網路,單一洞穴比德州還大,一路延伸到地表下約 40 英里、接近地函處。地函本身充滿水,地球的水比人類所知多得多;地殼下的海洋水量可能是地表所有海洋的兩倍。<span class="who">柯里</span><span class="src">S03E01</span></li>
+<li>地下越深越熱越高壓是真,但到一定深度後「反轉」——壓力與溫度呈指數遞減,形成可居住的蜂巢狀洞穴結構;這些洞穴多在地殼 20~40 英里深、低於多數斷層線,先進團體有「能量式減震」科技。<span class="who">柯里</span><span class="src">S02E04</span><span class="src">S05E12</span></li>
+<li>讓巨石漂浮/切割的科技大量在「蜂巢地球(即很多人稱的 Inner Earth/Hollow Earth)」被發現,由古代建造者種族、古代 ET 與古代分離群體留下。<span class="who">柯里</span><span class="src">S02E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>亞加森網絡與古代分離文明</h3>
+<ul>
+<li>「Agartha Network(亞加森網絡)」:德國祕密社團在喜馬拉雅遇到北歐外貌的存有,他們自稱外星 ET,實際上是一個在喜馬拉雅地下存在數萬年的「古代人類分離文明」,住在地下相連的城市網絡裡,重新佔用「古代建造者種族」蓋的東西。有一支太空艦隊叫「Silver Fleet 銀色艦隊」。<span class="who">柯里</span><span class="src">S02E01</span><span class="src">S02E02</span></li>
+<li>這些地下/分離文明對地表人類自稱為神,直到人類達到一定成熟度後才改口自稱「外星人/ET」。CG 確認希臘諸神(金髮藍眼、宙斯的雷電像手持科技武器)與亞加森人「絕對有關聯」;德國人對金髮藍眼「優等民族」的執著很可能來自亞加森人。<span class="who">柯里</span><span class="src">S02E02</span></li>
+<li>地下/分離文明對地表偽裝為神「至今仍在」。德魯伊/凱爾特等祭司階層中有些確實掌握太空旅行與「傳送門 portal」科技;CG 在 smart glass pad 讀到馬雅祭司抱著卷軸跑向刻在岩壁上「通往無處的門」,觸碰後直接「走進岩石、穿牆而過」。<span class="who">柯里</span><span class="src">S02E06</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>地心洞穴生態:白化生物、發光細菌、古遺跡</h3>
+<ul>
+<li>地心洞穴生態系完全獨立於地表發展:岩石上長有像地衣/細菌的厚墊,會吃岩石、把礦物或能量轉成光,發出低度螢光;某些植物能行這種光的光合作用,呈非綠色、有的會發光。多數植物矮小(膝蓋以下)。<span class="who">柯里</span><span class="src">S03E01</span></li>
+<li>動物多為白化或淡色素,包括巨型白化蠑螈、無眼小魚、多種甲殼類、蜘蛛與昆蟲;沒看到飛行生物。越往深處越會看到古建造者種族的水晶金字塔、方尖碑與怪異建築;也有大量像普韋布洛式(Pueblo)的廢墟靠在洞壁,顯示曾有數萬人居住過。<span class="who">柯里</span><span class="src">S03E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>內部地球的神殿、圖書館與紀錄廳</h3>
+<div class="narrator"><span>主述</span>柯里被內部地球女祭司 Kaaree 帶領,逐層參觀內部地球的神殿建築群。</div>
+<ul>
+<li>神殿全由花崗岩雕成、像雷射切割或鑄模而成,光無所不在、無陰影(「光是由頻率產生的」)。一個圓頂房間頂部有孔流出近乳白色的水如瀑布,沖在一尊女神雕像背上;各神殿用門以白色光屏障(light barrier)封閉,觸碰墜飾(amulet)即可降下屏障。<span class="who">柯里</span><span class="src">S03E04</span></li>
+<li>圖書館傳送:白色大理石、整塊;有三層——最上層是真正的「書庫」,陳列物件像時間膠囊般演進(卷軸→石板→複合材板→皮革麻繩裝訂的書→看似 1500~1600 年代的書→帶 ISBN 編號的現代書,有 Sitchin、von Däniken 等地表作者的書);多數書以可調閱格式保存,他們密切追蹤網際網路。座椅是反重力的蛋形椅。<span class="who">柯里</span><span class="src">S03E06</span></li>
+<li>圖書館第二層:數百人坐在蛋形椅上、完全靜默,在「接收地表人類用心智伸出的通訊」或進行「通靈/channeling」。她們承認因被逼交出資訊,會對接觸中的地表人「故意散布假資訊」;地下存有以揚升大師、外星人、宗教偶像之姿現身傳遞正面訊息,想幫人克服「負面的基因與環境程式設定」。<span class="who">柯里</span><span class="src">S03E07</span></li>
+<li>圖書館最底層=「紀錄廳 Hall of Records」:一個完整的圓頂,因極熱、像無塵室而無法進入,只能透過一扇有能量場的「窗」看。裡面是一顆與柯里 11 歲水晶洞同款的單一水晶,正被設法「培養生長」;上一層的人 telepathic 連結這顆水晶取資訊。<span class="who">柯里</span><span class="src">S03E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>地心大導覽:德州大小的洞穴城市</h3>
+<ul>
+<li>在小圓頂房內觸碰轉盤(dial)即閃光傳送到另一區。來到一個如德州一州大小的巨大洞穴,有粗於任何摩天大樓、直抵看不見頂的巨柱,柱內建有結構供人居住/工作。城市裡人們穿各色一件式連身衣行走、各年齡層皆有。<span class="who">柯里</span><span class="src">S03E05</span></li>
+<li>空中有 30 多艘飛行器盤旋:1950 年代電影式的碟形飛碟、大雪茄形、近乎完美的蛋形,還能全速直接穿過洞壁岩石(可與岩石異相 out of phase)。<span class="who">柯里</span><span class="src">S03E05</span></li>
+<li>水耕花園:一望無際的分區作物、葡萄園、樹林,介質是壓碎的岩石與水晶,水含天然礦物、全部循環;全光譜光以頻率方式產生,水晶與這種光創造「高振動 high vibratory」、高產量的食物。<span class="who">柯里</span><span class="src">S03E05</span></li>
+<li>人工生態洞穴(比花園更大):有淡藍色天空、霧狀雲,有藍紅黃長尾羽毛的美麗鳥類;聽到象鳴聲、大型貓科吼聲(可能劍齒虎)。洞中央有一座風化的巨大方尖碑(obelisk),其上方洞頂有一顆模擬太陽的巨大電漿球(plasma ball)。<span class="who">柯里</span><span class="src">S03E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>內部地球團體的起源與外星殖民地</h3>
+<ul>
+<li>內部地球團體聲稱在此已近 2000 萬年(柯里也說「1800 萬年最早」),自稱是在地球上發展出來的、是地球創生生命的產物。不同團體在不同時間出現,有的近至 2.8~3 萬年前,有的回溯 25 萬年,長相各異。<span class="who">柯里</span><span class="src">S05E01</span></li>
+<li>雖然把他們想成住地球內,但他們能輕易在太陽系內外旅行,在其他星系有殖民地。唯一被告知的具體地點是「馬雅團體 Mayan group」——在昴宿星團的一些世界,他們曾把約 4000 萬人從地球帶過去。<span class="who">柯里</span><span class="src">S04E08</span></li>
+<li>Kaaree 在圖書館說地心人歷經 oceans of time,在大小災變後到地表重啟文明、提供律法、農業等;現身時讓人保留「他們是神」的假設(為行動安全,要人「向上看」而非看腳下找他們)。這些古代神話/神祇是「地心人 + 非地球存有」的混合。<span class="who">柯里</span><span class="src">S04E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>被放逐者(The Banished)與融入人類社會</h3>
+<ul>
+<li>CG 在長灘旅館被一名金髮藍眼、極像人類的女子用手指點他額頭、昏睡。Kaaree 說那是「被放逐者 Banished」:來自各內部地球團體、因以違背其文化/條約的方式與人類互動而被放逐到地表的人。被放逐後他們在人類文化中尋求權力位置、住小聚落、與地表人類生兒育女,已持續數千年,並通婚進入權勢家族——與陰謀集團有關。<span class="who">柯里</span><span class="src">S06E11</span></li>
+<li>實體附身的驅除:CG 被傳送到 Anshar 圓頂室、躺上石板床,Kaaree 取出一根水晶棒摩擦發出音調,在他身上掃描;發出高頻聲後,約六個只見頭肩、下半化為半透明陰影的形體從他的腹股溝、胸、頭離開——被放逐者用某程序給他植入「實體附身」以蒐集 Anshar 情報。<span class="who">柯里</span><span class="src">S06E11</span></li>
+<li>被放逐者 Marra 闖入(房間充滿靜電、壁面像液體般內凹波動),自稱「Marra」朝他走來;Anshar 介入把他與 Marra 一起傳送出來,Marra 被押走、置入「停滯狀態 stasis」直到地表事件結束。<span class="who">柯里</span><span class="src">S06E16</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Telos / 沙斯塔山與瑪雅分離文明</h3>
+<ul>
+<li>CG 近期去過沙斯塔山(Mt. Shasta),沒收到那裡傳說中 Telos 城居民的任何通訊;知道該區有一個內部地球團體,但無直接資訊。<span class="who">柯里</span><span class="src">S08E13</span></li>
+<li>瑪雅人不是在地球發展的,是難民——原處出了問題,被移植到地球;宗教階級保守所有科學秘密(像種姓制度)。他們的巨型母船是一個巨大圓柱、基本上是從山內挖空雕出的一整塊岩石,仍存放在地下某處,他們在這裡有飛地(enclaves)。<span class="who">柯里</span><span class="src">S08E13</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 9 ============ -->
+<section class="cat" id="c9">
+<div class="cat-h"><span class="bar"></span><h2>九、安莎與時間泡</h2><span class="cnt">ANSHAR · TIME BUBBLE</span></div>
+
+<div class="sp">
+<h3>安莎與「構造體 The Construct」乙太會議</h3>
+<ul>
+<li>柯里堅持要與內部地球團體面對面(怕資訊被騙)。Kaaree(內部地球女祭司)以「心電遠端會議 telepathic teleconferencing」即「構造體 the Construct」聯絡——他躺床上時被拉進一個像《駭客任務》的白色無邊房間,Kaaree 坐在蛋形椅上、心電溝通。<span class="who">柯里</span><span class="src">S05E07</span><span class="src">S06E01</span></li>
+<li>她建立的「心智融合 mind meld」連結會讓她終其 CG 一生看顧他(因她壽命長得多);The Wrangler 對 CG 有某種仇恨/執念,正聯繫各方代理人。守護冰下設施的安全團體偵測不到 Anshar 的隱形巴士、極度驚恐。<span class="who">柯里</span><span class="src">S06E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>安莎「巴士」飛船與時間異常</h3>
+<ul>
+<li>Anshar 巴士飛船(載超過 15 人):約 26~28 座、前端方形再收成戰機般錐形;有不同顏色座椅版本(藍、酒紅)。城市沿球形能量泡內側排列,建築頂部朝向球心。飛入時間異常(temporal anomaly)時像有巨大磁鐵在他頭旁,他意識短暫昏厥。<span class="who">柯里</span><span class="src">S05E07</span><span class="src">S10E03</span></li>
+<li>圓頂內安莎四處走動,穿著明顯手織的彩色衣物;年長者用科技像超人般飛行;長者外觀不同:四密度及其他存在年老時會長高變瘦(再長約兩呎)、極瘦弱、膚色更白、戴護眼裝置。<span class="who">柯里</span><span class="src">S10E03</span></li>
+<li>安莎不用床,每隔數日做一次持續約 45~50 分鐘的週期(坐在椅上),沒有睡眠週期。食物全素、清淡無調味、量少、但營養極高。CG 被告知不要碰任何人、保持距離。<span class="who">柯里</span><span class="src">S10E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>安莎把整座城市移入時間異常泡</h3>
+<div class="narrator"><span>主述</span>因時間線嚴重偏離他們受命守護的版本,Anshar 採取激烈措施。</div>
+<ul>
+<li>整座城市全變了:所有建築都不見了,只剩切出住所的岩柱(無燈光),地上只剩建築曾在的足跡。出現一個像「時空向內折疊成錐狀 time-space folding into a cone」的異象。Anshar 把族人放進這個「時間異常泡」——與木星、土星外、超級聯邦巨型會議站所在的異常泡完全相同。<span class="who">柯里</span><span class="src">S08E07</span></li>
+<li>Anshar 的住所是模組化的(像小載具,像樂高/電磁「Zezt」般彼此相連,360 度環繞、抬頭看都朝球心同一點),全都升空進入那個異常的事件視界以躲避能量劇變;若時間線改變,他們仍有可居住的「現實隔間」。<span class="who">柯里</span><span class="src">S08E07</span><span class="src">S09E03</span></li>
+<li>異常運作:太陽系在一個保護屏障內;進那個異常開會時,是去一個被造在我們現實之外的時空泡,入口在別的星系,別的星系存在飛進來開會,但必須從原入口出去(怎麼進就怎麼出),不能從另一出口跑到我們銀河系——防侵入靠「同軌跡進出 punching in/out」設計。各銀河有隧道通到同一點,行程很短(像到月球的距離),大家聚在一起但實際相距數千數百萬光年。<span class="who">柯里</span><span class="src">S08E07</span><span class="src">S09E03</span></li>
+<li>宗教教團以及許多 Anshar 與子群直到最後一刻仍留在泡外,把全部時間精力用於正面影響地表人口、把時間線導回。<span class="who">柯里</span><span class="src">S08E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>七個內部地球團體的會議</h3>
+<ul>
+<li>進入一個圓頂,當初 Anshar 首次邀他參加會議時見的七個不同族群全都在場——他們都是來自地球未來、回到過去的(各種族群同任務但於不同時期前來)。討論主題是如何整合一項他們共享的科技。<span class="who">柯里</span><span class="src">S09E03</span></li>
+<li>被展示的全像:長方形塊體中間有像纜線的大型晶質纜(螺旋狀摻入某礦物)——用來把所有人的意識網絡起來,以供能與控制他們在泡內期間要用的科技。各族群有標示居住區域的護身符寶石,各有自己的「方塊/區域」不混居。<span class="who">柯里</span><span class="src">S09E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>安莎與紅髮六指巨人</h3>
+<ul>
+<li>岡薩雷斯在安莎處與一支「紅髮、六指巨人 red-haired, six-fingered giants」種族工作近一年以上,想讓他們接受馬雅人的療癒科技,但巨人拒絕,要求先救出被 Cabal 關在某基地的皇族才肯。SSP 聯盟與馬雅人曾多次從各地救出紅髮巨人帶到此庇護所。<span class="who">柯里</span><span class="src">S10E03</span></li>
+<li>超過 130 個巨人分散在各靜滯艙(stasis chambers)想在能量巨變時更有用地醒來,但大多被 Cabal 找到、喚醒後移到監獄與基地。靜滯中的巨人感覺像睡一覺就醒;世代住在地底生態系的巨人則受創最深、心理崩潰。<span class="who">柯里</span><span class="src">S10E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>新守護者的到來:土星議會</h3>
+<ul>
+<li>停著一艘約 120 呎寬的經典飛碟,內部地球「奧米茄群 Omega group」(深髮、白人外觀、軍事感)的人穿藍色連身制服、左胸有大金星符號,引導大家上船,前往哨兵所在的太空站,他們稱之為「土星議會 Council at Saturn」。穿過對接站,門與通道極高(為服務約 18 呎高的存在)。<span class="who">柯里</span><span class="src">S10E06</span></li>
+<li>哨兵出現,感覺像從另一密度/領域投射而來;哨兵與守護者互動時,室內出現彩虹色的光條/光舌般閃爍快速竄動——這是他們溝通的方式。哨兵是這裡殘存科技的照管者。<span class="who">柯里</span><span class="src">S10E06</span></li>
+<li>泰爾-艾爾宣告新守護者即將到來,太陽系已過渡夠多,藍色球體不再需要、開始消失;太陽系周圍的「外屏障 Outer Barrier」也已相位淡出。兩位新守護者出現,室內充滿數千個藍色球體;CG 被告知此時不能描述新守護者的長相。<span class="who">柯里</span><span class="src">S10E06</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 10 ============ -->
+<section class="cat" id="c10">
+<div class="cat-h"><span class="bar"></span><h2>十、地下與海底基地</h2><span class="cnt">DUMBs · SEA BASES</span></div>
+
+<div class="sp">
+<h3>蜂巢地球的隧道系統與奴隸貿易(William Tompkins)</h3>
+<ul>
+<li>WT 說地球「像蜂巢」、有數百萬巨型洞穴(一個南加州洞穴一路通到奧勒岡、東到內華達、是單一洞穴);有 ET 在洞中住了數千年、有城市、工業、娛樂、完整生活,壽命有短如人類、有 2000~3000 年、有「不會死」的。<span class="who">湯普金斯</span><span class="src">S05E12</span></li>
+<li>空軍造「半英里長的挖掘機 diggers」挖 100 英尺直徑隧道、全美甚至連到 Nova Scotia,把岩石化為微觀材料噴在隧道壁形成發光玻璃襯裡,內有不離軌的次音速軌道車(從華府五角大廈到 Vandenberg 空軍基地);外星隧道達 300~400 英尺。<span class="who">湯普金斯</span><span class="src">S05E12</span></li>
+<li>「你的星球上各處洞穴都有奴隸制」;銀河中各外星人也對「好人」做同樣的事;「我們在圖騰柱底端」。CG 確認:人被地外人抓去太陽系外當奴隸交易;一些非地球與叛逃團體在受害者身上裝追蹤標記、事後派盟友把他們找回來,送到古馬雅團體的一顆行星療癒康復,再送回我們社會。<span class="who">湯普金斯</span><span class="who">柯里</span><span class="src">S05E12</span><span class="src">S08E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>五角大廈地下與「硬光」穿牆(Clifford Stone)</h3>
+<ul>
+<li>CS 被帶到 Fort Belvoir「NSA 總部」與五角大廈,搭電梯下到不知幾層,進一輛「小銀色子彈狀、電磁驅動、無軌道的單軌車」開了至少 20 分鐘;進一條「無門長廊」,陪同者敲牆說「看似實心其實不然」、把他推「穿過牆」——進到一個房間,一張野戰桌後坐著「典型灰人、約 4.5~5 英尺高」。<span class="who">史東</span><span class="src">S05E13</span></li>
+<li>CG 對照:那是設施內的小接駁列車/地下交通系統;牆是全像「硬光 hard light」(可敲、可觸、可程式化帶電);灰人的「腦中電鋸」是「侵入式介接嘗試」。<span class="who">柯里</span><span class="src">S05E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>海底基地與反潛計畫真相(Tompkins)</h3>
+<ul>
+<li>WT 被通用動力雇用做海軍反潛計畫;美國 + NATO 名義上是反潛,但只有 11 艘蘇聯潛艇在運作,卻有約 2800 架 P-3 全天候繞地球飛——其實計畫還有個 ASUW,「U」是「unidentified extraterrestrials(不明外星)」,真正在找海洋與大湖中的外星載具(USO)與海底基地。<span class="who">湯普金斯</span><span class="src">S06E08</span></li>
+<li>海底基地有多種,有大型「可移動海底基地」沿海底移動做岩芯取樣(網路上有約 2.5 英里寬、在海床畫圖案的圓形物影像)。為何有海底基地而不用蜂巢地球?因蜂巢內各區屬不同團體領地;也有把海洋視為生命體的水生物種(aquatic species)。<span class="who">柯里</span><span class="src">S06E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>海底基地的建造與全球網路</h3>
+<ul>
+<li>網路流傳的「US Air Force」巨型鑽隧機是核能開隧機,邊前進邊壓碎並玻璃化(vitrify)岩石,已建出環繞海底、洲與洲相連的隧道系統。建造方式多種:傳統或核爆轟出空腔;鑽深孔放高塑性炸藥(爆速超過每秒 32,000 英尺);鑽隧機;近期新世代炸藥爆後留下近乎球形、幾乎無輻射的孔。<span class="who">柯里</span><span class="src">S09E05</span></li>
+<li>地下城市確實存在:有些像杜拜的豪華購物中心或飯店、非常未來感(這是給菁英看以招攬進 SSP 的);軍事基地則樸素得多。Phil Schneider 手繪的美國基地地圖「極不完整」——地下電車系統通往澳洲、歐洲、亞洲。<span class="who">柯里</span><span class="src">S09E05</span></li>
+<li>建海底基地一法:把圓頂(dome)降入水中、海軍定位、施加水下混凝土做地基,圓頂置於地基上後抽乾內部水,海洋壓力反而造成更緊密的封;可由多個相連圓頂組成聚落。海軍也建了數個潛艇基地。CG 估計現代文明已建的地下/海底基地有「數百個 hundreds」。<span class="who">柯里</span><span class="src">S09E05</span></li>
+<li>加州外海的潛艇地下基地:衛星影像曾拍到一扇與海床特徵相符的門大開,潛艇從此進入,通到內布拉斯加的湖(「內布拉斯加海軍」)——夠大讓核潛艇在地下洞穴系統航行。<span class="who">柯里</span><span class="src">S09E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>資金、人力與最先進的巴西基地</h3>
+<ul>
+<li>不是走 DoD 編列預算——而是用毒品錢、其他非法活動洗的錢、或從社會安全等挪用的資金。維護建造的人是軍工複合體一員、獲重酬。非 Cabal 國家(如印度、中國)的基地與 Cabal 基地是分開、自成一體的。多數基地自給自足,可維持 10、20 到 100 年。電力用地熱、水動力或機密能源系統。<span class="who">柯里</span><span class="src">S09E05</span></li>
+<li>住下面被視為災難時的「金票 golden ticket」。最先進的基地之一建在巴西(Brazil),六個多月來大量貨櫃、補給、人員移入,被稱為「Zazi 基地」(德裔納粹餘黨移到南美後改用商業名稱、自稱「Zazi」)。<span class="who">柯里</span><span class="src">S09E05</span></li>
+<li>全球聽到的深沉號角聲:地下基地有可部分開合的進氣口,排氣時像吹號角發出共鳴聲;但更廣域天空的號角聲其實是太陽來的能量衝擊波與上層大氣互動所致。<span class="who">柯里</span><span class="src">S09E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>ES 親歷的地下設施與電扶梯/管道莢艙</h3>
+<ul>
+<li>ES 住基地內,騎腳踏車到一棟看似消防塔的小樓,搭電梯下到一條大走廊接「電扶梯 escalator」(像機場那種但很長、可坐著,坐約十分鐘——實際是去別處,很快);隧道白色、黑瑪瑙(黑曜石)般的天花板。DW 推測是熔岩開隧機所造,ES 證實「他們現在到處都這樣做,造地下高速公路通往世界任何地方」。<span class="who">史密斯</span><span class="src">S09E02</span><span class="src">S09E06</span></li>
+<li>有四列磁浮型列車(maglev trains)從 Sandia 到 Los Alamos,近期升級成更像真空管磁性裝置。多層地下設施達 100 英畝,有專做能源推進、再生、醫療的不同側翼。<span class="who">史密斯</span><span class="src">S09E02</span></li>
+<li>電車系統有多種:一種像貢多拉(gondola)的椅子沿長廊緩繞;另一種是管道莢艙(pod/cylinder egg),容納四人、有像牙科椅的躺椅,速度極快(ES 聽說超過時速 500 英里,CG 聽說超過 700 英里)。抵達後還要再過一道安檢,因為「你可能已經在另一個國家——甚至另一個星球」。<span class="who">史密斯</span><span class="who">柯里</span><span class="src">S11E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>美國境內約 300 座地下設施(ES)</h3>
+<ul>
+<li>光是美國境內就有約 300 座這類地下設施;並非總是政府所有,軍方負責守衛,實際擁有者是大型企業與不知名組織。較大的位於新墨西哥、內華達、科羅拉多,內部容納整座城市、有完整運作的醫院,專供菁英階層使用。有些高度區隔化,人口通常控制在 200 人以下以便管控。<span class="who">史密斯</span><span class="src">S11E01</span></li>
+<li>ES 去過的基地包括:德州艾爾帕索 UTEP 大學底下、洛斯阿拉莫斯、柯特蘭空軍基地、維吉尼亞夏洛茨維爾、丹佛、達爾西、白沙國家紀念碑底下、克雷斯通沙丘底下;加拿大卑詩省、華盛頓州外海惠德比島附近。95% 的入口都不顯眼但有守衛,通常靠近或設在軍事基地內。柯特蘭基地的入口偽裝成一座消防瞭望塔。<span class="who">史密斯</span><span class="src">S11E01</span></li>
+<li>基地常用全光譜照明、樹木花園、模擬戶外的投影降低長期住地下者的壓力。CG 說山壁會像拉鍊一樣打開露出門,連聲波測試或金屬探測器都偵測不到;沙漠地面也會像拉鍊般打開。ES 提到北極極地冰帽下也有基地,靠地熱發電(有些用釷反應爐)。<span class="who">史密斯</span><span class="who">柯里</span><span class="src">S11E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>海床下基地與反重力載具</h3>
+<ul>
+<li>多數海底基地不是海底的氣泡,而在「海洋地殼之下」,從下往上建(先往下鑽再從底部往上建),稱「海洋實驗室 sea labs」遍布全球。他們不用潛艇,用我方的 ARV(外星複製載具)——載具自成重力場故不被海壓壓碎,能上太空、能直接潛入水中繼續走,可跨維度改變自身大小、能穿過地球岩石。<span class="who">史密斯</span><span class="src">S09E09</span></li>
+<li>水中手術:很多基地的手術室整個裝滿鹽水或淡水供水棲存在用;有些飛船必須泡在特殊鹽溶水中才能維持形狀(關閉後撐不住),這些飛船能飛越太空因為周圍有自己的重力場包覆住水。<span class="who">史密斯</span><span class="src">S11E08</span></li>
+<li>軍事基地有時建在特定地球網格點上,因為建在更古老的基地之上(那些古基地已有運作的能源裝置、外星載具、門戶);1940~50 年代他們用特殊雷達看地下、選這些點設實驗室(Sandia 在 Kirtland 空軍基地、Los Alamos 在其北、都相連)。<span class="who">史密斯</span><span class="src">S09E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>地下巨型載具與美國巨大空心岩石「蛋」</h3>
+<ul>
+<li>有非常非常大的載具卡在地殼裡;ES 用機密雷達(解析度比 CAT 掃描高 400 倍)看過照片。載具從 8 英尺寬到 33 英里長都有;地下結構同樣巨大(比吉薩金字塔大十倍),有金字塔形或反金字塔/四面體等形狀。研究一個 33 英里寬的地下載具可能耗 20、50、100 年。<span class="who">史密斯</span><span class="src">S09E09</span></li>
+<li>北美一個非常大的空洞,有大型含水層(aquifer)環繞、自有大氣;含水層中央有座似乎不與大陸相連的巨大空心岩石(數英里大),內有遺址,被稱為「蛋 the egg」。白金就在蛋裡(全淹在水下)。計畫用數十億加侖液態氮凍住該段含水層再鑽入。<span class="who">史密斯</span><span class="src">S10E08</span></li>
+<li>蛋內有逾 300 具人類遺骸、盔甲、海量黃金、立方體、隧道、金字塔、石棺與飛行器；盔甲與裝滿黃金的陶罐與聖殿騎士團時代用的相同。也發現一具 33 呎高、處於靜滯的存在在石棺中(疑前亞當型),附近有金字塔、空立方體房、五英畝白粉金、通往挖空隕石的階梯(8 至 13 呎一階,符合 33 呎高巨人)。<span class="who">史密斯</span><span class="src">S10E08</span><span class="src">S10E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>含水層運輸系統與水下通道</h3>
+<ul>
+<li>主要地下含水層全都相連,有一套地下水路運輸系統。軍方長期用含水層在東西岸間移動;內華達(往拉斯維加斯路上)那座海軍基地是潛艇維修基地、像中繼站。曾用特殊有機染料做祕密研究:在聖地牙哥外海投入後數週在大西洋採集到,證明確有貫通水路。<span class="who">史密斯</span><span class="src">S10E08</span></li>
+<li>CG 看過水下巨大廳道(底平頂圓、極大、可航行潛艇、筆直延伸極遠,我方曾用其從北方到南極)。ES 確認這些是人造的、古老,被改造成像完美足球場大小的熔岩管;北美與墨西哥有洞穴直通南極,且會「繞回原點、不靠近地核」。因這些隧道,全球含水層已被滲透相連。<span class="who">柯里</span><span class="who">史密斯</span><span class="src">S10E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>梵蒂岡電梯與外星科技金庫(ES)</h3>
+<ul>
+<li>梵蒂岡電梯很大(可放下一輛車)、方形、白地白牆、無窗、極安靜。門開後是巨大禮堂式區域,像《哈利波特》霍格華茲金庫系統但極乾淨:大量「透明金屬」(非玻璃)做的方形櫥櫃(小至 1 呎、大至 20 呎),內有各種設備(有些像武器、有些像疊在類壓克力板上的卷軸);約 6 呎直徑的平台能平順移動。共約六層樓的方形櫥櫃,外面無任何標籤、編號、符號。<span class="who">史密斯</span><span class="src">S10E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>確認地下文明:自有大氣、發光與生命</h3>
+<ul>
+<li>ES 團隊受雇遙視疑似金礦處,該特殊雷達掃描後 99.9% 準確找到金子；發明此系統的科學家給他們看金礦下方深處的巨大空洞與巨大金字塔(約吉薩的 10 倍大)。此科技能看穿整個地球、也是用來找墨西哥邊境地道的科技。<span class="who">史密斯</span><span class="src">S10E08</span></li>
+<li>ES 確認:地球深處存在自有大氣、自有發光、自有生命與水源的文明。撒哈拉沙漠地下 40~400 呎到處是巨大文明遺址(衛星地面穿透雷達能看穿較淺的沙)。用後向散射雷達技術可看到地殼內、近地函處有巨大球形開口,內有自己的大氣壓力與生命。<span class="who">史密斯</span><span class="src">S10E08</span><span class="src">S11E02</span></li>
+<li>聯盟某些部分擔心地表宜居性,已開始抽空大型地下洞穴以備人類所需空間,副作用是不該存在的怪生物沖上岸。太空也有東西降下:巨大衛星像空氣濾網收集太空物;緩步動物(水熊蟲)能在太空真空中存活,ES 參與過研究如何讓人類也能如此。<span class="who">史密斯</span><span class="src">S10E09</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 11 ============ -->
+<section class="cat" id="c11">
+<div class="cat-h"><span class="bar"></span><h2>十一、納斯卡與南美地下隧道</h2><span class="cnt">NAZCA · SOUTH AMERICA</span></div>
+
+<div class="sp">
+<h3>馬里布、裂隙系統與電磁潛艇(CG)</h3>
+<ul>
+<li>Malibu(洛杉磯外海)外星-人類聯合基地傳聞:那是進入一個洞穴/裂隙系統的入口,該系統穿越海底通到內華達、西北方,再連到一路到南極的裂隙;古建造者種族在裂縫間挖出大拱門。<span class="who">柯里</span><span class="src">S07E23</span></li>
+<li>他們有大型電磁潛艇(像貨櫃船大小,載貨櫃)在此裂隙系統與大拱門間電磁式行進於地下;拱門內部像雷射刻削般銳利。Islas San Benito 附近怪異非自然管狀物,CG 連結到用核能熔岩成玻璃自封的深層鑽掘機。<span class="who">柯里</span><span class="src">S07E23</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>納斯卡地下隧道:平底圓拱、地下城(Pete Peterson)</h3>
+<ul>
+<li>PP 親自去過 Nazca 地下隧道(非地表線條):隧道平底、頂呈圓拱(像烤好的麵包),顯然由某種能量機器(雷射/高熱機)開鑿,綿延數英里又數英里,位於 Nazca 線條下方。地表入口他知道的約 6~10 個,據說有 60~75 個。隧道內高約 30~37 英尺、多在地表下 150 英尺以上。<span class="who">彼得森</span><span class="src">S08E12</span></li>
+<li>牆面塗有像玻璃纖維墊的塗層,加熱冷卻後再以高溫火焰熔表面使其更光滑。這是一座地下城:沿隧道處處有像公寓的居住處;PP 說同一條隧道片段找到綿延達 1,500~2,000 英里,可容納至少數千、甚至數十萬人;隧道從墨西哥市以北一路到阿根廷末端。<span class="who">彼得森</span><span class="src">S08E12</span></li>
+<li>PP 認為《Unearthing Nazca》發現的木乃伊存在就是建造這些隧道的人;每一個隧道都有對應地表現象(如 Nazca 線條,從外太空可見、標示位置)——線條確實對應地下隧道冒出地面的位置。隧道裡從沒見過木乃伊,地方像被吸塵器清過。<span class="who">彼得森</span><span class="src">S08E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>納斯卡的「石化進牆」存有與數百艘飛行器(ES)</h3>
+<ul>
+<li>ES 被簡報:納斯卡地下有超過 200~300 艘飛行器,還有許多「石化進牆裡」的存有。那像是熔岩管型的洞穴系統,看起來是被「刻意熔化」的,然後在某個瞬間被「凍結」、像進入「假死/懸置狀態 suspended animation」。Pete 推測那下面可能多達 500 艘。<span class="who">史密斯</span><span class="src">S09E11</span></li>
+<li>DW 首次透露:因 Gaia 做了《Unearthing Nazca》,近期「我方」取得了五艘不同的載具,先進到完全不知如何進入或運作,估約 2,000~3,000 人在研究。ES 100% 確認:DIA 軍工複合體現在控制了所有隧道、船、屍體與科技(近期才發生)。<span class="who">史密斯</span><span class="src">S09E10</span></li>
+<li>CG 證實:德國人發現了如何穿越從北美一路到南極、極深、充滿水的「裂谷系統」,用貨櫃船大小的電磁推進潛艇上下航行。ES 證實:這條水道(含水層裂谷高速公路)穿過秘魯納斯卡地下、一路通到南極;另有更古老的岩石巨型熔岩管系統穿過納斯卡(那裡有地下巨型飛船,人從牆裡以假死狀態出現)。<span class="who">柯里</span><span class="who">史密斯</span><span class="src">S12E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>厄瓜多/哥斯大黎加洞窟:比《阿凡達》更驚人的生態(ES)</h3>
+<div class="narrator"><span>主述</span>ES 親自去過厄瓜多那個地下複合體,本體可能是一艘墜毀或停在那的飛行器。</div>
+<ul>
+<li>那地方似乎已經長出了自己的動植物;裡面有一艘很久以前墜毀的飛行器,還保留著某種能量系統運作中,可能帶來額外的細菌,深處有強烈的「生物發光 bio-luminescent」感,大氣跟地表不同。埋得不深;水滲進去讓動植物與外面帶進去的東西混在一起。<span class="who">史密斯</span><span class="src">S09E11</span></li>
+<li>ES 說「那會讓《阿凡達》的世界看起來像一個小學操場」:裡面每樣東西都有液體在流動;到處有各種色階的光(不只彩虹的顏色);植物「像是有意識的」;從葉子到土壤全是海綿狀的(踩上去像一吋厚的泡棉床墊);有像老鼠大小、像裸鼴鼠的小生物,身上會散發顏色。從那裡取出的植物和動物在地球地表無法存活,是自成一格的生物圈,也許有電磁場保護開口。<span class="who">史密斯</span><span class="src">S09E11</span></li>
+<li>ES 親自去過兩處外星墜機地點:一在哥斯大黎加、一在厄瓜多。飛船穿過地殼卡住,墜在大型洞穴中,是橢圓/蛋形的碟狀。飛船散發某種能量場(約 120 呎範圍),使範圍內的細胞「上調 upregulating」、動植物特別健康體型較大。哥斯大黎加站由哥國軍方與美軍共管,厄瓜多站可能由 Cabal 控制。<span class="who">史密斯</span><span class="src">S12E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>南美地下「高速公路」與亞歷山卓圖書館分層(PP)</h3>
+<ul>
+<li>南美地下「高速公路」:平底、橢圓頂、牆為柔性玻璃、綿延數英里(PP 坐月球車式車輛走過約 120~150 英里);明顯由工程師設計(過坡時上斜→圓柱面→下斜接平面),早期隧道有切削刀痕,後期發展雷射。牆上有 yantra(像 mandala 的幾何圖)、有人物雕刻(高矮比例反映當時居民比例)。<span class="who">彼得森</span><span class="src">S07E29</span></li>
+<li>有地下城市內建金字塔(由隧道相連到城市);某座城市很大(猶他州一座 12,400 英尺山內,300,000 燭光車燈照瀑布仍見不到頂、可划船過看不到對岸的湖)。地下金字塔為「形狀」而建(形狀影響三分之一的宇宙資訊)。PP 多次進入亞歷山卓大圖書館(即梵蒂岡圖書館),按材料年代分樓層。<span class="who">彼得森</span><span class="src">S07E29</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>卡帕多奇亞、馬里亞納海溝與海帶農場(CG)</h3>
+<ul>
+<li>Cappadocia(土耳其,九層深隧道)CG:像軍事角度為躲避入侵/災變而隔離人群之處;做這些所需的「數學技術」比當時認知更先進。較深處的廢棄城市多是挖地下電車軌道時意外撞進;曾撞進方正切割的大空間(疑文明在災變時躲藏處)。<span class="who">柯里</span><span class="src">S07E23</span></li>
+<li>馬里亞納海溝放射狀條紋:CG 想到海帶農場,但此深度海帶不長且無人管理、規模更大,可能是依 Richard Hoagland 講的直線幾何排列的結構;海底基地多為長圓柱管接圓頂結構(模組化,由船投放或潛運後焊接組裝),海軍與部分海岸防衛隊共用。<span class="who">柯里</span><span class="src">S07E23</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>祖尼/霍皮的門戶與神聖場址(Clifford Mahooty)</h3>
+<ul>
+<li>祖尼有「神聖場址」,由「Ra people / 星辰人」設立,只有特定教階能參與那些「門戶 portals」的活動。近 20 年祖尼成為大量軍事活動之地(看到光球 15 分鐘內就有直升機到)。Archuleta Mesa 連當地 Jicarilla Apache 都不准進入某些地方。<span class="who">馬胡蒂</span><span class="src">S08E09</span></li>
+<li>有權柄者能用吟唱與祈禱打開「大岩石」——岩面實際打開成通道(不僅是能量現象,是實體岩石打開);大峽谷內有許多這類地方。Los Alamos 是一個門戶,所有普韋布洛部落的社會體系源自於此;銀河系的門戶從 Los Alamos 出來,把不同社會分配給各普韋布洛人。<span class="who">馬胡蒂</span><span class="src">S08E09</span></li>
+<li>祖尼與霍皮被帶到地下達數千年,出來的地點是大峽谷:小科羅拉多河與大科羅拉多河交匯處有一個石灰華穹丘「Sipapu / Sipapulima」——他們從宇宙其他地方出來必須穿過的門戶(今日可稱蟲洞或漩渦)。祖尼部落過去每年招募約 20 人帶進大峽谷做 10 天船程,標記所有神聖場址(其實是在找這些漩渦)。<span class="who">馬胡蒂</span><span class="src">S08E10</span></li>
+<li>賭場都在保留地(地位如國家公園/軍事基地),作用是把人從日常拉走、奪走金錢、多一項「轉移注意」;DW 推測賭場可能作為掩護以便進入地下。天主教會多年想偷取神聖土地(如 Mount Graham 建大望遠鏡),因該地有一個門戶。<span class="who">馬胡蒂</span><span class="src">S08E09</span><span class="src">S08E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>原始火箭人:Groom Lake 地下洞穴(David Adair)</h3>
+<ul>
+<li>1971 年 6 月 20 日,DA 進入 Groom Lake,基地不在政府地圖上,有三座機庫。基地內有無排氣、只發出渦輪般嗡鳴聲的「高爾夫球車」。中央機庫的整個地板是一具大於體育館的電梯,靠 12 個比紅杉樹還大的蝸桿驅動下降約 200 英尺。<span class="who">阿戴爾</span><span class="src">S08E02</span></li>
+<li>底下是像猛獁洞但大 10 倍的巨大洞穴,拱頂離地約 100 英尺,兩側牆內全是工坊、機庫與辦公室。主走廊一眼望不到盡頭、隨地球曲率彎曲。整個空間完美無影、無任何燈具卻均勻照明,DA 推測可能是「會發光的大氣」。<span class="who">阿戴爾</span><span class="src">S08E02</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 12 ============ -->
+<section class="cat" id="c12">
+<div class="cat-h"><span class="bar"></span><h2>十二、小行星帶與古建造者種族</h2><span class="cnt">ASTEROID BELT · BUILDER RACE</span></div>
+
+<div class="sp">
+<h3>小行星帶:早已被開採許久的爆炸行星</h3>
+<ul>
+<li>德國人初期去小行星帶,發現「早已被開採許久」的跡象:該處曾是一顆行星,部分小行星嵌有古代建造者種族科技殘片(外觀像很硬的閃長岩 diorite、被雕成悅目形狀,看似古祭壇,實為極先進多維裝置)。小行星上有為對接、補給、運礦而開鑿的大洞與外建區,開採活動已進行數千年。<span class="who">柯里</span><span class="src">S02E06</span></li>
+<li>被毀古船多在月球古戰場找到;地球、月球、火星到處都有被武器擊毀的古飛行器殘骸。<span class="who">柯里</span><span class="src">S02E06</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>古建造者種族遺跡:從金星到歐特雲</h3>
+<ul>
+<li>依智慧玻璃墊記載,太陽系內最古老的有形證據是古建造者種族的廢墟,從金星一路到歐特雲都有。年代極古,數億甚至數十億年,無法精確定年。遺跡材質常是一種「透明合金」(類鋁透明合金),本身就是科技。<span class="who">柯里</span><span class="src">S05E01</span></li>
+<li>地表上的多半遭巨大衝擊波扭曲、折彎、毀壞;埋在地底或被覆蓋的保存較好。沒找到任何文字,無法得知古建造者是誰、來自何方。結構形態多樣:崩塌的圓頂、矩形結構、塔、金字塔、方尖碑;金字塔與方尖碑多在地底發現。<span class="who">柯里</span><span class="src">S05E01</span></li>
+<li>DW 引 Hoagland 的內幕人「Bruce」說「我們住在一個宇宙垃圾場 cosmic junkyard」,呼應地表遺跡都是砸爛的東西。讓巨石漂浮的科技很多可追溯到古代建造者種族,CG 見過「大量以晶體為基礎的科技」。<span class="who">威爾科克</span><span class="who">柯里</span><span class="src">S02E05</span><span class="src">S05E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>太陽系時間線:超級地球爆炸與防護網格崩潰</h3>
+<ul>
+<li>約 50 萬年前:超級地球(Super Earth)與火星間有衝突,其中一方劫持/駭入一顆「死星月球」當武器,結果造成超級地球爆炸,並使整個星團的保護網格崩潰。網格崩潰後,原本因防禦網格太先進而遠離的各團體蜂擁而入,變成「自由開放區」。<span class="who">柯里</span><span class="src">S05E01</span></li>
+<li>超級聯邦團體最先進來(約 50 萬年前);約 37.5 萬~36.5 萬年前德拉科進來。同時有一波波「難民」(超級地球大災難倖存者)湧入地球。超級地球爆炸後,碎片在太陽系亂飛,「像撞球 billiards 一樣」持續撞擊地球與其他行星。<span class="who">柯里</span><span class="src">S05E01</span></li>
+<li>《一的法則》描述地球第一批第三密度生命在 7.5 萬年前,源自正在輪迴的火星毀滅文明;三個 25000 年週期、每週期末有災變。<span class="who">威爾科克</span><span class="src">S05E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>古建造者種族的防護網格與哨兵</h3>
+<ul>
+<li>古建造者種族建造這些(月球大小的巨型球體、武器平台)以形成保護本地星團的統一防護網格,且附近有可通往其他星系的巨大傳送門(也是入侵路線),使我們很易受入侵。哨兵是這些殘存科技的照管者。<span class="who">柯里</span><span class="src">S06E03</span></li>
+<li>古建造者種族在這個約 50~52 顆恆星的本地星團建了星門網(也外延到別處)。金星可能是古建造者種族的源頭,可能逾 20 億年古老,哨兵可能與此文明相關。<span class="who">柯里</span><span class="src">S07E19</span><span class="src">S10E06</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>地下與太空的古建造者新發現</h3>
+<ul>
+<li>一名太空人在母船內找到像停屍間的彎曲抽屜:一個像翼手龍的存在(淡藍色);另一個粉橘色存在(軀幹細而柔韌、兩腿像章魚觸手、有水噴口、明顯水生,三趾三指帶吸盤——與金三角存在相似)。屍體像在太空凍乾般碎裂成塵。<span class="who">柯里</span><span class="src">S10E10</span></li>
+<li>ES:有地下結構比吉薩金字塔大十倍,有金字塔形或反金字塔/四面體(一個疊另一個倒置)形狀、很深;蛋內階梯用該科技看完美無瑕(像金字塔與馬丘比丘),不可能是地球造的。<span class="who">史密斯</span><span class="src">S09E09</span><span class="src">S10E09</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 13 ============ -->
+<section class="cat" id="c13">
+<div class="cat-h"><span class="bar"></span><h2>十三、傳送門與星際旅行</h2><span class="cnt">PORTALS · TRAVEL</span></div>
+
+<div class="sp">
+<h3>自然傳送門系統:能量泡泡</h3>
+<ul>
+<li>德國人運物資到火星初期使用「自然傳送門系統」,對生物極危險(以「很恐怖的方式」殺死生物)。靠另一種族交給他們的「超維度數學 hyper-dimensional mathematics」做計算。1930~40 年代起就用傳送門運物資、不運人/有機體;直到 1950 年代才能穩定無傷地傳送人。早期傳送門過去的人會在數日後出現「時間性失智 temporal dementia」。<span class="who">柯里</span><span class="src">S02E07</span></li>
+<li>自然門是「能量泡泡」,外圍有像熱公路上的「海市蜃樓」效應,可從 360 度方向走入、另一側從 360 度方向走出;進入時視角全錯亂,無「持續時間」感。會讓人很噁心暈眩(像強磁鐵靠近腦),需打針/藥緩解(DW 引內部人 Henry Deacon 稱該藥為 lorentzil)。<span class="who">柯里</span><span class="src">S02E08</span></li>
+<li>運物時物體像「融化、被吸進排水孔」般沒入,另一側彈出。自然門常出現在露天、上空、地下,沿行星網格系統跳動,有「時間因素」(非隨時隨地可用)。中東(如伊拉克)有「實際裝置」用「點對點協定」安全傳送。早期用 IE 預測門何時何地出現,後改用 AI 協助。<span class="who">柯里</span><span class="src">S02E08</span><span class="src">S02E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>宇宙網與絲線跳躍</h3>
+<ul>
+<li>星際旅行現在「例行且幾乎不花時間」:每個行星/恆星/星系彼此有電磁關係,像一張「網 web」,計算正確即可走「絲線 filament」一跳到任何想去之處,絲線中「時間不存在」、近乎瞬間;須等絲線對齊、計算正確。可走直達或「轉機」式多跳。<span class="who">柯里</span><span class="src">S02E11</span></li>
+<li>外屏障移除後門戶系統完全開放,但被極度監控——能由跳躍的電性回饋判斷你跳了幾次、命中幾個連接點、最終位置,可追蹤你;逃脫者餘生被追捕。<span class="who">柯里</span><span class="src">S10E13</span></li>
+<li>到一個地方若不知地址或缺正確設備就無法判斷自己在哪(因星空參考座標全變)。宜居衛星需比木星/土星的衛星稍大、軌道稍遠以避開過強的潮汐力;雙星系統 binary 從行星上多半只見遠處一顆較暗的星。<span class="who">柯里</span><span class="src">S01E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>GGLN 基地:另一太陽系的衛星(全球銀河國家聯盟)</h3>
+<ul>
+<li>用地下「次軌列車 tram」穿過一個傳送門,出現在「另一個太陽系中、某氣態巨行星的一顆衛星」上。一出來是洞穴/石窟,人們穿著肩上有各國國旗的連身服(很像《星際之門:亞特蘭提斯》、藍色為大宗),認得的國旗有愛沙尼亞、烏克蘭等,五眼國家也都有代表。<span class="who">柯里</span><span class="src">S01E08</span></li>
+<li>洞口外是熱帶環境、有植被;不同時間天上有不同位置的月亮(看過兩顆,其一橙色)。洞口左方有一座自然形成、發藍色螢光的水池+小瀑布,人們在那游泳做 R&amp;R(與火星奴隸殖民地「180 度不同」)。內部有 ICC 較新的工具與科技。傳聞此地在「昴宿星團 Pleiades」(很多人不信)。<span class="who">柯里</span><span class="src">S01E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>膠囊運輸與不知自己在哪(Jason Rice)</h3>
+<ul>
+<li>電梯底部開向紅光月台,前方軌道上有藥丸狀、Lamborghini 式車門的白色膠囊。膠囊行程約 30 分鐘,「穿過一個入口 portal,我們不再在地球上」。JR 能察覺是因背景的舒曼共振不同。入口科技可大可小,瞬間從一處移到另一處,可能在太陽系內、也可能在銀河他處——他猜是火星,也可能是某挖空的小行星。<span class="who">萊斯</span><span class="src">S12E06</span></li>
+<li>抵達後是約 100 呎長、30 呎高、全白光的新月台,有三道電梯門(一道大到可開進半聯結車)。最後一道電梯上升四五層,門開是 NFL 體育場大小的天然岩洞,牆與天花板「自體發光」(亮如白晝卻找不到光源)。<span class="who">萊斯</span><span class="src">S12E06</span></li>
+<li>月球訓練多在一艘專用訓練艦上進行;從地球到月球只需「幾分鐘」。首次集體移動到月球是搭穿梭機,從 Area 51 出發到月球行動指揮部,停留六個月學微重力;訓練艦呈三角形、楔形、巨大平滑。<span class="who">萊斯</span><span class="src">S12E08</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 14 ============ -->
+<section class="cat" id="c14">
+<div class="cat-h"><span class="bar"></span><h2>十四、系外行星與 Planet One</h2><span class="cnt">EXOPLANETS · PLANET ONE</span></div>
+
+<div class="sp">
+<h3>系外世界:水世界與超級地球</h3>
+<ul>
+<li>NASA 稱 20% 恆星有類地行星,與 SSP 所見相符——大量水世界,但多已有人居住(要搬去多半得「從別人手中奪取」)。很多是繞氣體巨行星的「類地衛星」與「超級地球」。「我們沒自以為的那麼稀有特別」;凡像地球的行星都有大量生命與智慧生命。<span class="who">柯里</span><span class="src">S02E11</span></li>
+<li>有不同發展程度的行星,包括「史前 prehistoric」行星。有一顆「恐龍等級」的史前行星,經傳送門連接,地球 syndicate/ICC 相關群體送人過去做「物種存續 continuity-of-species」計畫。長期「terraform 地球化」一顆行星是現有能力可做到的。<span class="who">柯里</span><span class="src">S02E11</span></li>
+<li>2003 年北美航空已在火星與「第二近恆星的另一行星」兩處採礦商業運作;這些公司很可能是 ICC 的核心創始企業。我方在小行星帶、多顆行星、火星採礦,並在天龍控制的世界獲准採礦權,到本地星團其他星系找礦時曾被當地居民趕走。<span class="who">湯普金斯</span><span class="who">柯里</span><span class="src">S07E14</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Planet One:無戰爭的人類淡水世界(Jason Rice)</h3>
+<div class="narrator"><span>主述</span>JR 被部署到太陽系外的 Planet One,任務是偵察當地社會以便後續協助訂防禦計畫。</div>
+<ul>
+<li>Planet One 居民是人類,平均約 5 呎(比地球人略小);植被有像松樹、像橡樹的森林、河流溪流,淡水比地球多。有不同膚色種族(主流是橄欖色的希臘/地中海膚色)。吃水果蔬菜、不吃牲畜肉、重海鮮。經濟非貨幣制,以物易物、行會/氏族制。首站城市臨一座像墨西哥灣大小的淡水湖。數百年無戰爭、沒有軍隊、沒有武器,很信任友善開放。<span class="who">萊斯</span><span class="src">S12E09</span></li>
+<li>更多細節:比地球大約 2%,但 60% 是陸地;水「全是淡水、無鹹水」;有兩個月亮——一個因形狀與淡黃色稱「馬鈴薯 The Potato」,另一個因移動快、淡紅色稱「Nike」。文明約處於我們的工業革命水準;靠星球電網與電池供電、有城際鐵路。其中一處仍在生產武器(JR 懷疑是為「最終入侵」預留)。<span class="who">萊斯</span><span class="src">S12E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>狼人型入侵者與行星支配戰(Jason Rice)</h3>
+<ul>
+<li>JR 首次部署(Area 26):任務是偵察該城、了解社會安排與城市布局,以便後續訂防禦計畫——這些都在行星政府公開「我們被入侵、這些人來幫忙」之前進行。他們稱當地人為「Indigs」(原住民),須偽裝成市民三到六個月。<span class="who">萊斯</span><span class="src">S12E09</span></li>
+<li>入侵者是「狼人型外星人」:約八呎高,人形(四足演化來的兩臂兩腿)、有毛皮、大耳、短吻多齒。分士兵階與指揮階;士兵階像無人機,受令就不顧己身安危前進。經檢驗發現牠們是「人造存在」(機械部件比組織器官多),是 Draco 為入侵此星球而造的代理。<span class="who">萊斯</span><span class="src">S12E09</span></li>
+<li>災後:衝擊波摧毀防波堤建物,JR 失去幾名排員;連長(火星德國人)指責他「太在乎那些該死的平民」。敵人 MO 還包括轟擊兩極融冰抬高海平面淹沒沿海(有些沿海區沒入 20~30 呎水下)。整場戰爭持續 47 個月、約半數行星人口(約 10 億)死亡。<span class="who">萊斯</span><span class="src">S12E09</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 15 ============ -->
+<section class="cat" id="c15">
+<div class="cat-h"><span class="bar"></span><h2>十五、太空打撈與軌道平台</h2><span class="cnt">SALVAGE · ORBITAL</span></div>
+
+<div class="sp">
+<h3>太空打撈:收集百萬年的墜毀飛船(ES)</h3>
+<ul>
+<li>太空打撈(space salvaging)像海上打撈沉船,大氣層內外與太陽系內每天都有飛船上去打撈「太空垃圾」——不只我們放上去的,還有存在數百萬年的墜毀飛船、屍體、裝置。企業外包大型火箭實體發射,已有太空站常駐技師收集材料、裝進膠囊送回地球海洋回收,再帶回實驗室研究。<span class="who">史密斯</span><span class="src">S12E12</span></li>
+<li>打撈方式很「老學校」:用較小的太空梭(帶吊臂 boom arm),仍用瓦斯/煤/油與火箭燃料(不是反重力);還有單雙人「太空摩托車」般的小型載具(蟹臂)抓小物。退回的屍體有人類、人類外星人、混種,「所有外星人都有人類 DNA」。完整飛船因太大無法帶回地表,只能在太空拆解、取樣。<span class="who">史密斯</span><span class="src">S12E12</span></li>
+<li>具體物件:一隻「爬蟲/蛙狀三指手臂」連著一支 10 呎金屬矛,後判定是某種武器(手臂 DNA 與金屬中的 DNA 相符)。另有像籃球的完美球體水晶,極高密度,疑似「無意識的飛船」,帶回後發現是某種能量裝置,會從所在處汲取能量並發出特殊療癒頻率。<span class="who">史密斯</span><span class="src">S12E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>三四個無法被駭的資料庫</h3>
+<ul>
+<li>在地下設施把飛船取樣 DNA 與外星人屍體 DNA 比對配對,建巨大「聖誕樹資料庫」;主資料庫之一在新墨西哥地下設施,另一在太空中的「保險庫 a vault in space」,還有一個在海洋地下設施——三四個無法被駭(只能手動輸入)的保險庫保存這些資料。<span class="who">史密斯</span><span class="src">S12E12</span></li>
+<li>ES 認為 ET 會盡量取回自己的東西,但也常「故意把東西放在太空讓我們找到」以助我們逆向工程、激發科學突破。打撈會成為大生意,他預期不久會公開說「該清太空垃圾了」,之後再說「順便發現這不知名的東西」(其實已做了 20 年)。<span class="who">史密斯</span><span class="src">S12E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>地下載具研究與低溫太平間</h3>
+<ul>
+<li>ES 在實驗室解剖過 3000 多個生物樣本,其中有些全身人形外星人送來時被嚴重毆打(後來才知是從監獄或拘留室來、被審訊過的)。他工作處有巨大的「低溫太平間 cryo morgue」,存放數以百計的屍體與樣本。LOC Charlie 有低溫研究設施(cryogenics)把存在放入靜滯儲存。<span class="who">史密斯</span><span class="who">柯里</span><span class="src">S11E13</span></li>
+<li>太平洋海底 ET 基地:海軍意外發現太平洋下一座未獲許可的 ET 基地,於是辦「訓練行動」投放深水炸彈幾乎摧毀該基地;數週後派電磁潛艇偵察,發現數十個存在還活著,帶上來審訊——是水棲存在(aquatics)。<span class="who">柯里</span><span class="src">S11E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>恆星與宜居衛星的科普</h3>
+<ul>
+<li>很多宜居星體不是恆星「適居帶 Goldilocks Zone」中的行星,而是繞氣態巨行星、處於特定密度與大小、特定軌道的衛星;氣態巨行星本身可離其恆星任意距離。月球有可呼吸的大氣(指 GGLN 那顆衛星)。<span class="who">柯里</span><span class="src">S01E08</span></li>
+<li>愈靠銀河中心,時間流動不同、文明發展愈快愈多(內部人 Jacob 去過 200 多個外星地點、見過 400 多種外星人)。水行星是「遍布宇宙的模板」(恆星會產生水、太陽產生讓生命誕生的諧波)。人類位於銀河旋臂末端「不在市中心、是被甩出的 castoff」。<span class="who">湯普金斯</span><span class="who">柯里</span><span class="src">S07E16</span></li>
+</ul>
+</div>
+</section>
+
+</main>
+
+<footer>
+COSMIC DISCLOSURE · 主題重組 T2「各星球與地點」<br>
+素材跨 S01–S12 逐字稿合併 · 出處標於各論點 · 發言人徽章標主述者<br>
+<a href="index.html">◂ 回主頁</a>
+</footer>
+
+</body></html>

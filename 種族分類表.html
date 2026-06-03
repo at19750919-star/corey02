@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>揭露宇宙 · 外星種族分類總表</title>
+<style>
+:root{--bg:#05080f;--panel:#0c1320;--panel2:#111a2b;--line:#1d2b44;--ink:#e6ecf6;--soft:#8593ad;--cyan:#34e2d6;--violet:#b08cff;--amber:#ffcf6b;--pos:#34e2d6;--neg:#ff8a5c;--neu:#8593ad}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;
+ background-image:radial-gradient(900px 520px at 15% -8%,rgba(52,226,214,.12),transparent 60%),radial-gradient(820px 520px at 90% 2%,rgba(176,140,255,.14),transparent 60%),radial-gradient(1px 1px at 20% 30%,rgba(255,255,255,.4),transparent),radial-gradient(1px 1px at 70% 22%,rgba(255,255,255,.3),transparent),radial-gradient(1px 1px at 45% 70%,rgba(255,255,255,.25),transparent);background-attachment:fixed}
+.wrap{max-width:1280px;margin:0 auto;padding:0 24px}
+.mono{font-family:Consolas,"Roboto Mono",monospace}
+header.hero{text-align:center;padding:64px 0 22px}
+header.hero .eyebrow{letter-spacing:.42em;font-size:11.5px;color:var(--cyan);text-transform:uppercase;margin-bottom:18px;font-family:Consolas,monospace}
+header.hero h1{font-size:40px;font-weight:800;letter-spacing:.1em;background:linear-gradient(110deg,var(--cyan),#cfe9ff 50%,var(--violet));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 38px rgba(52,226,214,.16)}
+header.hero .sub{color:var(--soft);font-size:14.5px;margin-top:14px;max-width:760px;margin-left:auto;margin-right:auto}
+header.hero .links{margin-top:22px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+header.hero a.btn{display:inline-block;font-size:12.5px;font-family:Consolas,monospace;letter-spacing:.08em;color:var(--cyan);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 16px;background:rgba(52,226,214,.05)}
+header.hero a.btn:hover{background:var(--cyan);color:#05080f}
+header.hero a.btn.alt{color:var(--violet);background:rgba(176,140,255,.06)}
+header.hero a.btn.alt:hover{background:var(--violet);color:#05080f}
+
+.filterbar{position:sticky;top:0;z-index:9;background:rgba(5,8,15,.9);backdrop-filter:blur(9px);border-bottom:1px solid var(--line);padding:13px 0}
+.fgroup{display:flex;gap:7px;flex-wrap:wrap;align-items:center;margin:5px 0}
+.fgroup .ftag{font-family:Consolas,monospace;font-size:10.5px;letter-spacing:.14em;color:var(--soft);text-transform:uppercase;min-width:64px;opacity:.85}
+.chip{font-size:12.5px;color:var(--soft);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;background:var(--panel);cursor:pointer;user-select:none;transition:.12s;font-family:"Noto Sans TC",sans-serif}
+.chip:hover{color:var(--ink);border-color:var(--soft)}
+.chip.on{color:#05080f;background:var(--cyan);border-color:var(--cyan);font-weight:700;box-shadow:0 0 12px rgba(52,226,214,.35)}
+.chip.cpos.on{background:var(--pos);border-color:var(--pos)}
+.chip.cneg.on{background:var(--neg);border-color:var(--neg);color:#1a0a04}
+.chip.cneu.on{background:var(--neu);border-color:var(--neu)}
+.chip.creset{border-style:dashed;color:var(--amber)}
+.chip.creset:hover{border-color:var(--amber)}
+.fcount{font-family:Consolas,monospace;font-size:12px;color:var(--violet);margin-left:6px}
+
+main{padding:24px 0 0}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,var(--panel2),var(--panel))}
+table{border-collapse:collapse;width:100%;min-width:1080px;font-size:13.5px}
+thead th{position:sticky;top:56px;z-index:5;background:#0a1120;color:#dff6f3;text-align:left;font-weight:700;font-size:12px;letter-spacing:.05em;padding:11px 12px;border-bottom:2px solid var(--line);white-space:nowrap}
+tbody td{padding:11px 12px;border-bottom:1px solid rgba(29,43,68,.6);vertical-align:top;color:#c8d2e2}
+tbody tr:hover{background:rgba(52,226,214,.04)}
+td.name{min-width:188px}
+td.name b{color:#eaf4ff;font-size:14px;display:block;line-height:1.45}
+td.name .en{font-family:Consolas,monospace;font-size:11px;color:var(--soft);display:block;margin-top:2px}
+td.rel{min-width:230px;font-size:12.5px;color:#aeb9cf;line-height:1.6}
+
+.badge{display:inline-block;font-size:10.5px;border-radius:5px;padding:1px 7px;margin:1px 2px 1px 0;white-space:nowrap;font-family:"Noto Sans TC",sans-serif;line-height:1.7}
+.b-type{font-family:Consolas,monospace;color:var(--amber);background:rgba(255,207,107,.1);border:1px solid rgba(255,207,107,.32)}
+.b-src{font-family:"Noto Sans TC",sans-serif;font-size:10.5px;color:var(--cyan);background:rgba(52,226,214,.08);border:1px solid rgba(52,226,214,.28)}
+.b-camp{color:var(--violet);background:rgba(176,140,255,.1);border:1px solid rgba(176,140,255,.32)}
+.pol{font-weight:700;font-size:11.5px;white-space:nowrap}
+.pol.pos{color:var(--pos)}
+.pol.neg{color:var(--neg)}
+.pol.neu{color:var(--neu)}
+.met{font-size:15px;font-weight:700}
+.met.yes{color:var(--cyan)}
+.met.no{color:#42506b}
+
+.legend{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:15px 20px;margin:18px 0 8px;font-size:12.5px;color:var(--soft);line-height:1.95}
+.legend b{color:var(--ink)}
+.legend .badge{margin-right:3px}
+.noresult{text-align:center;color:var(--soft);padding:40px;font-size:14px;display:none}
+footer{text-align:center;color:var(--soft);font-size:12px;padding:46px 0 64px;margin-top:36px;border-top:1px solid var(--line);font-family:Consolas,monospace;letter-spacing:.04em;line-height:1.9}
+footer a{color:var(--cyan);text-decoration:none}
+@media(max-width:600px){header.hero h1{font-size:28px}.wrap{padding:0 12px}}
+</style></head><body>
+
+<header class="hero"><div class="wrap">
+<div class="eyebrow">Cosmic Disclosure · Alien Species Master Table</div>
+<h1>外星種族分類總表</h1>
+<div class="sub">《揭露宇宙》12 季逐字稿中出現的約 65 個外星與非地球種族,依類型、來源、正負、陣營、是否接觸柯里整理成一張可篩選的表。判斷不出的欄位標「?」,一律依素材實際說法,不編造。</div>
+<div class="links">
+<a class="btn" href="index.html">◂ 回主頁</a>
+<a class="btn alt" href="外星種類.html">看完整種族介紹 ▸</a>
+</div>
+</div></header>
+
+<div class="filterbar"><div class="wrap">
+<div class="fgroup"><span class="ftag">類型</span>
+<span class="chip" data-f="type" data-v="類人">類人</span>
+<span class="chip" data-f="type" data-v="灰人">灰人</span>
+<span class="chip" data-f="type" data-v="爬蟲恐龍">爬蟲恐龍</span>
+<span class="chip" data-f="type" data-v="鳥">鳥型</span>
+<span class="chip" data-f="type" data-v="昆蟲動物">昆蟲動物</span>
+<span class="chip" data-f="type" data-v="球體光乙太">球體光乙太</span>
+<span class="chip" data-f="type" data-v="地底內部地球">地底內部地球</span>
+</div>
+<div class="fgroup"><span class="ftag">來源棲地</span>
+<span class="chip" data-f="src" data-v="地下">地下(內部地球)</span>
+<span class="chip" data-f="src" data-v="各星球">各星球(地外)</span>
+<span class="chip" data-f="src" data-v="地球">地球(地表/古地球)</span>
+<span class="chip" data-f="src" data-v="古代">古代(遠古起源)</span>
+</div>
+<div class="fgroup"><span class="ftag">正負</span>
+<span class="chip cpos" data-f="pol" data-v="正向">正向</span>
+<span class="chip cneg" data-f="pol" data-v="負向">負向</span>
+<span class="chip cneu" data-f="pol" data-v="中立">中立/不明</span>
+</div>
+<div class="fgroup"><span class="ftag">陣營</span>
+<span class="chip" data-f="camp" data-v="球體存有聯盟">球體存有聯盟</span>
+<span class="chip" data-f="camp" data-v="邦聯">邦聯(一的法則)</span>
+<span class="chip" data-f="camp" data-v="超級聯邦">超級聯邦</span>
+<span class="chip" data-f="camp" data-v="獵戶集團">獵戶集團</span>
+<span class="chip" data-f="camp" data-v="Anshar內部地球聯盟">Anshar內部地球聯盟</span>
+<span class="chip" data-f="camp" data-v="Draco聯盟">Draco聯盟</span>
+<span class="chip" data-f="camp" data-v="SSP相關">SSP相關</span>
+<span class="chip" data-f="camp" data-v="獨立或不明">獨立/不明</span>
+</div>
+<div class="fgroup"><span class="ftag">其他</span>
+<span class="chip" data-f="met" data-v="1">接觸過柯里 ✓</span>
+<span class="chip creset" id="reset">✕ 清除全部</span>
+<span class="fcount" id="fcount"></span>
+</div>
+</div></div>
+
+<main><div class="wrap">
+
+<div class="tablewrap">
+<table id="tbl">
+<thead><tr>
+<th>種族</th><th>類型</th><th>來源/棲地</th><th>正負</th><th>陣營</th><th>接觸柯里</th><th>主要關係</th>
+</tr></thead>
+<tbody id="tbody"><!--ROWS--></tbody>
+</table>
+</div>
+<div class="noresult" id="noresult">沒有符合所有條件的種族 — 試著放寬篩選。</div>
+
+<div class="legend">
+<b>欄位說明</b> ·
+<b>類型</b> 沿用各種族在素材中所屬檔案的分類。
+<b>來源/棲地</b> 可多選:<span class="badge b-src">地下</span>內部地球/蜂巢地球;<span class="badge b-src">各星球</span>來自其他星系/行星;<span class="badge b-src">地球</span>地表或古地球原生;<span class="badge b-src">古代</span>遠古/古文明起源。
+<b>正負</b> <span class="pol pos">正向</span>=服務他人/善意 · <span class="pol neg">負向</span>=征服/敵對 · <span class="pol neu">中立</span>=無道德立場或素材說法不明。
+<b>陣營</b> 紫色徽章。<b>接觸柯里</b> ✓=柯里本人直接見過/互動過 · —=未直接接觸(僅聽說、讀檔、或他人轉述)。<br>
+本表共收 <b>65</b> 個條目;凡素材判斷不出某欄者標「<b>?</b>」。資料來源:外星種類成品四檔 <span class="mono">_master_part1~4.md</span>(對應完整介紹頁 <a href="外星種類.html">外星種類.html</a>)。
+</div>
+
+</div></main>
+
+<footer>
+COSMIC DISCLOSURE · 外星種族分類總表 · 65 species ·
+依《揭露宇宙》12 季逐字稿整理 · <a href="index.html">回主頁</a> · <a href="外星種類.html">完整種族介紹</a>
+</footer>
+
+<script>
+/* 資料表:每列 = [中文名, 英文名, 類型(逗號可多), 來源(空白分隔多選), 正負, 陣營(逗號可多), 接觸柯里 1/0 或 "?", 主要關係] */
+var DATA = [
+// ── 類人型 ──
+["北歐人","Nordics","類人","各星球 地下 古代 地球","中立","邦聯,超級聯邦,SSP相關","1","通稱(約百種);邦聯兄弟姊妹、內部地球群體、被征服支與 Draco 並肩;與爬蟲人千年戰爭"],
+["藍人 / 藍皮膚類人","The Blues","類人","各星球","正向","邦聯","1","1950 年代接觸者,訊息近藍鳥人;與 Nordics 同調,反核、勸和平"],
+["亞洲面孔存有","Asian-looking ETs","類人","各星球","中立","超級聯邦","1","超級聯邦成員;與昆蟲型群體疏遠對立(疑基因計畫之爭)"],
+["綠皮膚存有","Green-skinned beings","類人","各星球","中立","超級聯邦","1","超級聯邦出席群體之一"],
+["米卡族 / 奧爾梅克","Mica / Micaites / Olmec","類人","各星球 地球 古代","正向","邦聯","1","由藍鳥人引介;宇宙表親(94% 同基因);曾被 Draco 奴役、三代前推翻;待援助過渡"],
+["高白人","Tall Whites","類人","各星球","中立","SSP相關,獨立或不明","?","在地下設施與 Emery 共事;軍方亦以此稱 Anshar(柯里認為非同一群)"],
+["混血白人","Hybrid Whites / Human Hybrid Whites","類人","各星球","中立","獨立或不明","?","與 Tall Whites 區分;部分對人類能量場過敏;Pete 所述高白人疑指此群"],
+["昴宿星人","Pleiadians","類人","各星球 古代","正向","獨立或不明","?","古老善良文明;控制部分灰人;「昴宿星人」為籠統自稱"],
+["大角星人(類人型)","Arcturians","類人","各星球","中立","獨立或不明","?","與 Emery 共事;多型混血(含昴宿星、人類成分);巨人疑來自此"],
+["半人馬","Centaurians","類人","各星球","中立","SSP相關,獨立或不明","?","條約允許混入地表社會;能心靈追蹤識破者"],
+["紅髮巨人","Red-Headed Giants","類人","地下 地球 古代","負向","SSP相關,獨立或不明","?","前亞當人創造來管理人類奴隸;災變後食人、被趕入地下;Cabal 喚醒停滯者囚禁"],
+["各種巨人","Giants (12–80 ft)","類人","各星球 地球 地下 古代","中立","獨立或不明","?","外星人類巨大版;含 Maldek/超級地球居民、停滯巨人;部分為 pre-Adamite 型"],
+["前亞當人","Pre-Adamites","類人","各星球 地球 古代","負向","獨立或不明","?","來自火星/Maldek,墜毀南極;紅髮巨人的創造者;與 Draco 互不喜歡;Cabal 自稱其後裔"],
+["拿非利人 / 阿努納奇","Nephilim / Anunnaki","類人","各星球 古代","負向","Draco聯盟,獨立或不明","?","概括詞(來自天上);常指爬蟲人或前亞當人;Draco 為其任務主"],
+["各星球類人族(Rice 部署)","Planet One/Two/Three humanoids","類人","各星球","中立","獨立或不明","?","Rice 在 SSP 侵略行動中部署的原住類人;Planet Three 有組織犯罪、近強迫勞動"],
+["Maldek / 火星原生類人","Maldek / Mars-native humanoids","類人","各星球 地球 古代","中立","獨立或不明","?","太陽系內毀滅行星難民;與地表人混血成今日人類;好戰來源"],
+["泛稱類人外星人","Human-looking ETs","類人","各星球 古代","中立","超級聯邦,SSP相關","1","超級聯邦約 40–60 名固定出席者;混居地表者(約 10 萬);多帶人類 DNA"],
+["被征服的 Nordic 種族","Conquered Nordic race","類人","各星球","負向","Draco聯盟","?","大前額六指;被 Draco 征服、當砲灰;常與 Draco 並肩作戰"],
+["黑西裝基改人類","Black-suit GM humans","類人","地球","負向","SSP相關","1","逮捕 Emery 的基因改造人類;體型過似、力大;講近納瓦荷語"],
+// ── 灰人型 ──
+["灰人","Greys (Tall/Small)","灰人","各星球 古代","中立","超級聯邦,SSP相關","1","高灰人深入 22 計畫基因面;小灰人多為可程式化生命體;與美影子政府有協議"],
+["埃本人","Ebens","灰人","各星球","中立","獨立或不明","1","常見於綁架敘述;肉感雙足存有;與大型飛碟、洞穴會議有關"],
+["橘子人","Orange beings / Oranges","灰人","各星球","正向","獨立或不明","1","柯里見過活體;胡蘿蔔色皮膚、眼凸;非常正面,來協助管理人類(守望者)"],
+["可程式化生命體","Bio-androids / PLF / Automatons","灰人","各星球 地球","中立","SSP相關,Draco聯盟,超級聯邦","1","半機械半有機;許多群體的「標準硬體」;約九成綁架案實為其代行"],
+// ── 爬蟲 / 恐龍型 ──
+["德拉科(各型)","Draco","爬蟲恐龍","各星球 地球 地下 古代","負向","Draco聯盟,獵戶集團","1","聯盟核心、基因純粹主義者;受 AI 指揮;與獵戶座連結;心智控制地球;太陽閃焰後將被驅逐"],
+["白色皇族德拉科","White Royal Draco","爬蟲恐龍","各星球 地球 古代","負向","Draco聯盟,獵戶集團","1","Draco 統治種姓,14 呎;曾向球體聯盟提議獻出所有追隨者換離開太陽系"],
+["爬蟲人(各支)","Reptilians","爬蟲恐龍","各星球 地球 地下 古代","負向","Draco聯盟,獨立或不明","1","遷徙性征服物種;含善良 Bootes 支(與 Emery 共事)、地底、火星、奴隸貿易各支"],
+["爬蟲型","Reptoids","爬蟲恐龍","各星球 地球 地下 古代","負向","Draco聯盟","?","窄顎長頭大眼;與典型灰人易混;月球傳送門計畫與德國人聯手"],
+["水棲人(各亞型)","Aquifarians / Aquafarians","爬蟲恐龍","各星球 地下 古代","正向","獨立或不明","1","昴宿星起源、遷天狼星;傘形多種(海豚/海牛/魚型);多友善;敵對的海猴型例外"],
+["翼手龍型 / 鳥型爬蟲","Pterodactyl / Avian-Reptilian","爬蟲恐龍","各星球","中立","獨立或不明","?","與 Emery 共事;思想思考者、解謎者;有人類混種版;Oumuamua 古船遺體"],
+["猛禽 / 羽蛇","Raptors","爬蟲恐龍","地下 地球 古代","負向","Anshar內部地球聯盟,獨立或不明","?","恐龍智慧後裔;占據 Anshar 水晶聖地;向 Cabal 索血肉祭;與羽蛇神話相關"],
+["狼人型生物兵","Werewolf-like aliens","爬蟲恐龍","各星球","負向","Draco聯盟","?","Draco 製造的代理兵;機械+生物混合;假旗入侵注定失敗的設計"],
+["蛙型 / 兩棲型","Amphibians","爬蟲恐龍","各星球","負向","Draco聯盟","?","攔截審訊中處理;部分立即移交 Draco;含海馬頭+昆蟲身存有"],
+["有知覺恐龍","Sentient Reptilians","爬蟲恐龍","地球 古代","中立","獨立或不明","?","恐龍時代高智爬蟲;自稱地球管理者;6500 萬年前可能被刻意滅絕"],
+["蜥蜴穴居","Lizard Cavemen","爬蟲恐龍","地下","負向","獨立或不明","?","穴居人智力的小型蜥蜴;成群狩獵、會用粗糙工具;摩門挖洞曾遭遇"],
+["德羅族","Dero / Tero","爬蟲恐龍","地下 古代","負向","獨立或不明","?","象耳垂鼻、鰓裂;Shaver Mysteries 負面群體(Tero 為對抗的正面群體)"],
+// ── 鳥型 ──
+["藍鳥人","Blue Avians","鳥","各星球 古代","正向","球體存有聯盟","1","柯里主要接觸者(Tear-Eir);六至九密度;球體聯盟成員;疑為《一的法則》Ra"],
+["鳥人型人形存有","Avian Humanoids","鳥","各星球","正向","獨立或不明","?","Emery 所見,類似但非藍鳥人;熱帶鳥色彩;喙中有牙、人眼"],
+["泛稱鳥人型(非藍鳥)","Avians (non-Blue)","鳥","各星球 古代","中立","獨立或不明","?","好幾型,部分不友善(四密度科技型);古埃及 Thoth/Horus 形象"],
+// ── 昆蟲 / 動物型 ──
+["螳螂族","Mantids / Mantis","昆蟲動物","各星球","中立","超級聯邦,Draco聯盟","1","本地星團「基因大師」;深度參與 22 計畫;無道德、神經網路溝通;與 Nordics 交戰"],
+["蟻人","Ant People","昆蟲動物","各星球 地下 地球 古代","中立","Draco聯盟,獨立或不明","1","Draco 會議中間人;霍皮傳說螞蟻人;西南/戈壁巨大隧道;被人類沙林毒氣攻擊"],
+["昆蟲型(泛稱)","Insectoid (general)","昆蟲動物","各星球 地下","負向","Draco聯盟,獨立或不明","1","與 Draco 聯盟相關;火星熔岩管蜂巢心智;部分服務他人;Rice 第三行星支敵對"],
+["貓族","Feline","昆蟲動物","各星球","正向","獨立或不明","1","薰衣草色;能瞬移;高度進化;軍方下捕殺令;Emery 稱未聞有惡者"],
+["大腳怪","Bigfoot / Sasquatch","昆蟲動物","地下 地球 古代","正向","Anshar內部地球聯盟,獨立或不明","?","視為外星存有;與內部地球合作;為地球編目 DNA;禁止傷害活物"],
+["猿猴型","Simian / Monkey-Ape","昆蟲動物","各星球","正向","獨立或不明","?","來自大角星/天狼星/角宿一;純人道、無議程;與 Emery 共事"],
+["動物-人類混種","Animal-Human Hybrids","昆蟲動物","地球 地下","中立","SSP相關,獨立或不明","1","虎人/熊人/海牛型/苔蘚人等;多為人造實驗(常失敗);含南極 pre-Adamite 奇美拉"],
+["犬臉商人種族","Merchant Race (Canine)","昆蟲動物","各星球 古代","中立","邦聯,SSP相關","?","第三密度但古老;與 ICC 貿易;無道德、居中傳遞;與正負雙方往來"],
+["河童","Kappa","昆蟲動物","各星球 地球 古代","負向","獨立或不明","?","日本傳說爬蟲水棲存有;Emery 判為水棲人混種出錯;擄殺孩童"],
+["人造戰鬥獸","Created Combat Beast","昆蟲動物","各星球","負向","Draco聯盟","?","Callidus 3 入侵者;四足灰熊大小、脖長刺;多生命系統雜交;為戰鬥而造"],
+// ── 球體 / 光之 / 乙太 ──
+["球體存有聯盟 / 藍色光球","Sphere Being Alliance / Blue Spheres","球體光乙太","各星球","正向","球體存有聯盟","1","九密度非實體球體;緩衝能量海嘯;太陽系外屏障;轉變後將淡出"],
+["探求者球艦","The Seeker","球體光乙太","各星球","中立","獨立或不明","?","DW 吹哨者所述巨型實體球艦;800 哩舷窗;疑與 Tompkins 版觀察艦同類"],
+["電漿存有","Plasma Beings","球體光乙太","各星球","中立","獨立或不明","1","活在木星電場;有知覺但智能如變形蟲;以電磁能為食;繁殖如有絲分裂"],
+["乙太存有(含陰影/附身)","Etheric Beings","球體光乙太","各星球","中立","獨立或不明","1","有感知無肉身;正負皆有;陰影存有吸食恐懼能量;Cabal 用實體附身控制人"],
+["跨維度光之存有","Interdimensional / Light Beings","球體光乙太","各星球","正向","獨立或不明","?","領先人類數億年;能改原子化光體;天使/精靈傳說之源;帶人類 DNA"],
+["半透明光體存有","Translucent Light-Body Being","球體光乙太","各星球","中立","獨立或不明","?","Emery 解剖;水母狀半透明、發光;疑高維光體存有死於形變中"],
+["金色三角頭存有","Golden Triangle-Head Being","球體光乙太","各星球","正向","球體存有聯盟","1","球體聯盟成員;10 呎金色三指三趾;從不溝通;最進階存有之一;將與藍鳥人淡出"],
+["哨兵","The Sentinel","球體光乙太","各星球 古代","中立","獨立或不明","1","古代建造者種族守護者;14 呎全白;疑智能全像;金星/土星站看守"],
+["新守護者","New Guardians","球體光乙太","各星球","正向","球體存有聯盟,邦聯","1","接替藍鳥人;外觀禁談;傳達新超級聯邦的宇宙基本規則"],
+["邦聯(含 Ra)","The Confederation","球體光乙太","各星球 古代","正向","邦聯","1","《一的法則》正面文明聯盟;Ra 等待召喚;與獵戶集團相反;含商人種族"],
+["活體能量引擎存有","Living Sentient Power Plant Being","球體光乙太","各星球 古代","中立","獨立或不明","?","David Adair 所述 Area 51 引擎;宇宙最古老物種(80–90 億年);來自星系間空間;共生社會"],
+// ── 地底 / 內部地球 ──
+["安莎","Anshar","地底內部地球","地下 地球 古代","正向","Anshar內部地球聯盟","1","地球原生最古老群體(1700 萬年);土星徽記;四密度;基因純化主義;假扮神/ET 引導人類"],
+["阿加森網絡","Agartha Network","地底內部地球","地下 地球 古代","中立","Anshar內部地球聯盟,SSP相關","?","喜馬拉雅地底分支文明;銀艦隊;助德國祕密社團;持續假扮 ET"],
+["內部地球七群體","Seven Inner Earth Groups","地底內部地球","地下 地球 古代","中立","Anshar內部地球聯盟","1","七個古地球分支文明組成的空前聯盟;各有徽記外貌;含土星徽記三群(Anshar 系)"],
+["被放逐者","The Banished","地底內部地球","地下 地球","負向","Anshar內部地球聯盟,SSP相關","1","各內部地球群體違規被逐至地表者;與權勢家族通婚、與 Cabal 關聯;在柯里身上植入附身"],
+["地底原生生物群","Inner Earth native creatures","地底內部地球","地下","負向","獨立或不明","?","蜂巢地球生態;含智能蜥蜴、禿頭白化類人、Reptoid、Dero(柯里多由智慧玻璃板得知)"],
+["南極冰下 / 與 Anshar 同處巨人","Antarctic / Anshar-adjacent Giants","地底內部地球","地下 地球 古代","中立","Anshar內部地球聯盟","?","南極冰下長顱遺骸;Anshar 祭司與不同身高巨人共處(疑囚犯或難民)"]
+];
+
+var TYPE_LABEL={"類人":"類人","灰人":"灰人","爬蟲恐龍":"爬蟲恐龍","鳥":"鳥","昆蟲動物":"昆蟲動物","球體光乙太":"球體光乙太","地底內部地球":"地底內部地球"};
+var SRC_LABEL={"地下":"地下","各星球":"各星球","地球":"地球","古代":"古代"};
+var POL_CLASS={"正向":"pos","負向":"neg","中立":"neu"};
+
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");}
+
+function buildRows(){
+  var tb=document.getElementById("tbody"),html="";
+  for(var i=0;i<DATA.length;i++){
+    var d=DATA[i];
+    var cn=d[0],en=d[1],types=d[2].split(","),srcs=d[3].split(" "),pol=d[4],camps=d[5].split(","),met=d[6],rel=d[7];
+    var dtype=d[2], dsrc=d[3], dcamp=d[5];
+    var tBadges=types.map(function(t){return '<span class="badge b-type">'+esc(TYPE_LABEL[t]||t)+'</span>';}).join("");
+    var sBadges=srcs.map(function(s){return '<span class="badge b-src">'+esc(SRC_LABEL[s]||s)+'</span>';}).join("");
+    var cBadges=camps.map(function(c){return '<span class="badge b-camp">'+esc(c)+'</span>';}).join("");
+    var pc=POL_CLASS[pol]||"neu";
+    var metHtml = met==="1" ? '<span class="met yes">✓</span>' : (met==="?" ? '<span class="met no">?</span>' : '<span class="met no">—</span>');
+    html+='<tr data-type="'+esc(dtype)+'" data-src="'+esc(dsrc)+'" data-pol="'+esc(pol)+'" data-camp="'+esc(dcamp)+'" data-met="'+esc(met)+'">'+
+      '<td class="name"><b>'+esc(cn)+'</b><span class="en">'+esc(en)+'</span></td>'+
+      '<td>'+tBadges+'</td>'+
+      '<td>'+sBadges+'</td>'+
+      '<td><span class="pol '+pc+'">'+esc(pol)+'</span></td>'+
+      '<td>'+cBadges+'</td>'+
+      '<td style="text-align:center">'+metHtml+'</td>'+
+      '<td class="rel">'+esc(rel)+'</td>'+
+    '</tr>';
+  }
+  tb.innerHTML=html;
+}
+
+// 篩選:同一篩選維度內 OR,不同維度間 AND;多選欄位(類型/來源/陣營)只要命中任一即可
+var active={type:[],src:[],pol:[],camp:[],met:[]};
+
+function applyFilter(){
+  var rows=document.querySelectorAll("#tbody tr"),shown=0;
+  for(var i=0;i<rows.length;i++){
+    var r=rows[i],ok=true;
+    // type
+    if(active.type.length){ var rt=r.getAttribute("data-type").split(","); ok=ok && active.type.some(function(v){return rt.indexOf(v)>-1;}); }
+    if(ok && active.src.length){ var rs=r.getAttribute("data-src").split(" "); ok = active.src.some(function(v){return rs.indexOf(v)>-1;}); }
+    if(ok && active.pol.length){ ok = active.pol.indexOf(r.getAttribute("data-pol"))>-1; }
+    if(ok && active.camp.length){ var rc=r.getAttribute("data-camp").split(","); ok = active.camp.some(function(v){return rc.indexOf(v)>-1;}); }
+    if(ok && active.met.length){ ok = r.getAttribute("data-met")==="1"; }
+    r.style.display = ok ? "" : "none";
+    if(ok) shown++;
+  }
+  document.getElementById("noresult").style.display = shown? "none":"block";
+  var tot=rows.length;
+  var anyOn = active.type.length||active.src.length||active.pol.length||active.camp.length||active.met.length;
+  document.getElementById("fcount").textContent = anyOn ? ("顯示 "+shown+" / "+tot) : ("共 "+tot+" 個種族");
+}
+
+function bind(){
+  var chips=document.querySelectorAll(".chip[data-f]");
+  for(var i=0;i<chips.length;i++){
+    chips[i].addEventListener("click",function(){
+      var f=this.getAttribute("data-f"),v=this.getAttribute("data-v");
+      var arr=active[f],idx=arr.indexOf(v);
+      if(idx>-1){arr.splice(idx,1);this.classList.remove("on");}
+      else{arr.push(v);this.classList.add("on");}
+      applyFilter();
+    });
+  }
+  document.getElementById("reset").addEventListener("click",function(){
+    active={type:[],src:[],pol:[],camp:[],met:[]};
+    var on=document.querySelectorAll(".chip.on");
+    for(var j=0;j<on.length;j++) on[j].classList.remove("on");
+    applyFilter();
+  });
+}
+
+buildRows();bind();applyFilter();
+</script>
+</body></html>

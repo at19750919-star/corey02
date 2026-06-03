@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>揭露宇宙 · 秘密太空計畫 SSP</title>
+<style>
+:root{--bg:#05080f;--panel:#0c1320;--panel2:#111a2b;--line:#1d2b44;--ink:#e6ecf6;--soft:#8593ad;--cyan:#34e2d6;--violet:#b08cff;--amber:#ffcf6b}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.85;font-size:16.5px;-webkit-font-smoothing:antialiased;
+ background-image:radial-gradient(900px 520px at 15% -8%,rgba(52,226,214,.12),transparent 60%),radial-gradient(820px 520px at 90% 2%,rgba(176,140,255,.14),transparent 60%),radial-gradient(1px 1px at 20% 30%,rgba(255,255,255,.4),transparent),radial-gradient(1px 1px at 70% 22%,rgba(255,255,255,.3),transparent),radial-gradient(1px 1px at 45% 70%,rgba(255,255,255,.25),transparent);background-attachment:fixed}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+.mono{font-family:Consolas,"Roboto Mono",monospace}
+header.hero{text-align:center;padding:70px 0 26px}
+header.hero .eyebrow{letter-spacing:.42em;font-size:11.5px;color:var(--cyan);text-transform:uppercase;margin-bottom:18px;font-family:Consolas,monospace}
+header.hero h1{font-size:42px;font-weight:800;letter-spacing:.12em;background:linear-gradient(110deg,var(--cyan),#cfe9ff 50%,var(--violet));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;text-shadow:0 0 38px rgba(52,226,214,.16)}
+header.hero .sub{color:var(--soft);font-size:14.5px;margin-top:14px}
+header.hero .home{display:inline-block;margin-top:20px;font-size:12.5px;font-family:Consolas,monospace;letter-spacing:.08em;color:var(--cyan);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:5px 15px;background:rgba(52,226,214,.05)}
+header.hero .home:hover{background:var(--cyan);color:#05080f}
+nav.toc{position:sticky;top:0;z-index:8;background:rgba(5,8,15,.86);backdrop-filter:blur(9px);border-bottom:1px solid var(--line);padding:11px 0}
+nav.toc .wrap{display:flex;gap:7px;flex-wrap:wrap;justify-content:center}
+nav.toc a{font-size:12.5px;color:var(--soft);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-family:Consolas,monospace;background:var(--panel)}
+nav.toc a:hover{color:var(--cyan);border-color:var(--cyan);box-shadow:0 0 12px rgba(52,226,214,.3)}
+.cat{padding:30px 0 6px}
+.cat-h{display:flex;align-items:center;gap:13px;margin:14px 0 18px}
+.cat-h .bar{width:24px;height:2px;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+.cat-h h2{font-size:21px;font-weight:800;letter-spacing:.03em}
+.cat-h .cnt{font-family:Consolas,monospace;font-size:12px;color:var(--violet);border:1px solid var(--line);border-radius:6px;padding:1px 9px}
+.sp{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:14px 0;scroll-margin-top:120px}
+.sp h3{font-size:19px;font-weight:800;color:#dff6f3;margin-bottom:10px;letter-spacing:.01em;border-bottom:1px solid var(--line);padding-bottom:9px}
+.narrator{font-size:13px;color:var(--soft);margin:8px 0 12px;line-height:1.7}
+.narrator span{font-family:Consolas,monospace;font-size:10.5px;letter-spacing:.1em;color:var(--violet);border:1px solid var(--line);border-radius:5px;padding:1px 7px;margin-right:9px;text-transform:uppercase}
+.flabel{font-family:Consolas,monospace;font-size:11px;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase;margin:16px 0 6px;opacity:.9}
+.subhead{font-size:14.5px;font-weight:700;color:var(--amber);margin:14px 0 4px}
+.sp ul{margin:4px 0 4px;padding-left:4px;list-style:none}
+.sp li{position:relative;padding-left:18px;margin-bottom:9px;color:#c8d2e2;line-height:1.8}
+.sp li::before{content:"▸";position:absolute;left:0;color:var(--cyan);opacity:.6}
+.sp p{margin:8px 0;color:#c8d2e2}
+.src{font-family:Consolas,monospace;font-size:10.5px;color:var(--cyan);background:rgba(52,226,214,.08);border:1px solid rgba(52,226,214,.28);border-radius:4px;padding:0 5px;margin:0 2px;white-space:nowrap}
+.who{font-family:"Noto Sans TC",sans-serif;font-size:10.5px;color:var(--violet);background:rgba(176,140,255,.1);border:1px solid rgba(176,140,255,.32);border-radius:4px;padding:0 6px;margin:0 2px;white-space:nowrap;font-weight:600}
+blockquote{margin:10px 0 4px;padding:12px 16px;background:rgba(176,140,255,.05);border-left:3px solid var(--violet);border-radius:8px}
+blockquote p{font-size:13px;color:#aeb9cf;font-style:italic;line-height:1.7;margin:5px 0}
+.legend{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin:16px 0 8px;font-size:13px;color:var(--soft);line-height:1.95}
+.legend b{color:var(--ink)}
+footer{text-align:center;color:var(--soft);font-size:12px;padding:50px 0 70px;margin-top:40px;border-top:1px solid var(--line);font-family:Consolas,monospace;letter-spacing:.04em;line-height:1.9}
+footer a{color:var(--cyan);text-decoration:none}
+@media(max-width:560px){header.hero h1{font-size:32px}.sp{padding:17px 16px}}
+</style></head><body>
+<header class="hero"><div class="wrap">
+<div class="eyebrow">Cosmic Disclosure · T7 — Secret Space Program Architecture</div>
+<h1>秘 密 太 空 計 畫 SSP</h1>
+<div class="sub">12 季逐字稿裡關於 SSP 五大派系、20 年又送回、星際奴隸貿易、ICC 企業集團、IDARF 地面部隊、年齡回溯與記憶清除的全部論點 · 跨集合併 · 每點標出處與主述者</div>
+<a class="home" href="index.html">◂ 回主頁</a>
+</div></header>
+<nav class="toc"><div class="wrap">
+<a href="#c1">五大派系</a>
+<a href="#c2">德國分離文明起源</a>
+<a href="#c3">月球 LOC</a>
+<a href="#c4">火星與太陽系基建</a>
+<a href="#c5">ICC 企業集團</a>
+<a href="#c6">暗黑艦隊與 GGLN</a>
+<a href="#c7">招募 · MILAB · 共感人</a>
+<a href="#c8">20 年又送回</a>
+<a href="#c9">記憶清除與隔艙化</a>
+<a href="#c10">星際奴隸貿易</a>
+<a href="#c11">IDARF 地面部隊</a>
+<a href="#c12">作戰科技與武器</a>
+<a href="#c13">MIC-SSP 與部分揭露</a>
+<a href="#c14">湯普金斯與見證者</a>
+</div></nav>
+
+<main class="wrap">
+
+<div class="legend">
+<b>發言人代碼</b>(紫色徽章標的是「提出該說法的人」,通常是受訪者,不是主持 DW):
+CG=柯里·古德(Corey Goode) · ES=Emery Smith · JR=Jason Rice · WT=William Tompkins · PP=Pete Peterson · CM=Clifford Mahooty · DA=David Adair · NI=Niara Isley · BW=Bob Wood · MM=Mark McCandlish · DW=David Wilcock(主持) · 另有來賓 Michael Salla(Salla)、Jay Weidner(Jay)、John Lear(Lear)、Heather Sartain(Heather)。青色徽章為出處集數 SxxEyy。
+</div>
+
+<!-- ============ 1 ============ -->
+<section class="cat" id="c1">
+<div class="cat-h"><span class="bar"></span><h2>一、秘密太空計畫的五大派系</h2><span class="cnt">FIVE FACTIONS</span></div>
+
+<div class="sp">
+<h3>五大派系總覽</h3>
+<div class="narrator"><span>主述</span>CG 在第一集就把整個 SSP 結構拆成五大塊;後續多集反覆複習、補正。</div>
+<ul>
+<li><b>(1) Solar Warden 太陽守望者</b>——最老的計畫,起於 1970 年代末/80 年代雷根前後的 SDI(戰略防禦倡議/星戰計畫)。職責是巡邏太陽系、防範未授權的「闖入者(intruder)」、兼太空交通管制。打不過大規模入侵軍,但多數過境群體只一到數艘船,像幫派守地盤。<span class="who">柯里</span><span class="src">S01E01</span><span class="src">S01E03</span><span class="src">S05E09</span></li>
+<li><b>(2) ICC 行星際企業集團(Interplanetary Corporate Conglomerate)</b>——最大的派系,全球企業在一個超級企業董事會下控制太空中龐大的 SSP 基礎建設,科技遠超曲速/星門/粒子束。<span class="who">柯里</span><span class="src">S01E01</span><span class="src">S03E03</span></li>
+<li><b>(3) Dark Fleet 暗黑艦隊</b>——極機密、完全區隔化,主要在太陽系外圍運作,純攻擊性力量,與德拉科(Draco)並肩作戰。<span class="who">柯里</span><span class="src">S01E01</span><span class="src">S04E06</span></li>
+<li><b>(4) 各種黑色行動軍事 SSP</b>——歸為一組,即後文的「軍工複合體秘密太空計畫(MIC-SSP)」,由空軍/DIA/NSA 掌控。<span class="who">柯里</span><span class="src">S01E01</span></li>
+<li><b>(5) Global Galactic League of Nations 全球銀河國家聯盟(GGLN)</b>——給各國的「胡蘿蔔」,給它們太空計畫與「外部威脅」敘事好維持保密;基地幾乎完全在太陽系外,設施氛圍像《星際之門:亞特蘭提斯》,人員穿著有各國臂章的連身服。<span class="who">柯里</span><span class="src">S01E01</span><span class="src">S01E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>SSP 同盟(SSP Alliance)的成形</h3>
+<ul>
+<li>CG 把「聯盟」定義為兩大派系:(1)<b>地球聯盟(Earth Alliance)</b>,由各種秘密社團與團體鬆散合作,目標推翻現行金融體系與秘密地球政府及其辛迪加;(2)<b>秘密太空計畫聯盟(SSP Alliance)</b>,由各 SSP 團體中脫離領導層的成員組成「秘密太空計畫聯盟議會」。<span class="who">柯里</span><span class="src">S03E03</span></li>
+<li>SSP 同盟以 Solar Warden 為根,加上各艦隊與黑色行動軍事計畫的叛逃者組成(含前 ICC 資產)。約 1990 年代末形成理念、2000 年代初開始行動——刻意在國際太空站直播前飛過引人提問。<span class="who">柯里</span><span class="src">S01E03</span><span class="src">S05E09</span></li>
+<li>共同目標:結束地球暴政、扳倒控制「巴比倫金錢魔法奴隸系統(Babylonian money magic slave system)」的祕密地球政府,把自由能源與各種醫療科技帶回地球,完全揭露菁英對人類的罪行。<span class="who">柯里</span><span class="src">S01E03</span></li>
+<li>太陽守望者現已改名(經數次更名),也經 DOD 控制但在海軍情報那一側。完整脫離文明的是 ICC 與納粹派系(在地球上無任何指揮控制);有地球上指揮控制的就不可能是完整脫離文明。<span class="who">柯里</span><span class="src">S10E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>球體存有對 SSP 同盟的限制</h3>
+<ul>
+<li>球體存有不允許 SSP 同盟再走全面軍事路線(負面生負面)。同盟原期待球體存有來「痛宰敵人、給攻擊性科技、把惡勢力銬走」,結果大失所望——軍事思維的人對這「愛與寬恕、提升意識的嬉皮訊息」無法理解。<span class="who">柯里</span><span class="src">S01E02</span></li>
+<li>同盟獲得的是防禦性而非攻擊性科技,並被告知不要再做造成大量傷亡的打擊、不要再摧毀基礎建設——這些將移交給揭露後的文明,作為「星艦迷航記」式社會的基礎。目標是「完全揭露(full disclosure)」。<span class="who">柯里</span><span class="src">S01E02</span><span class="src">S06E04</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 2 ============ -->
+<section class="cat" id="c2">
+<div class="cat-h"><span class="bar"></span><h2>二、德國分離文明的起源</h2><span class="cnt">GERMAN BREAKAWAY</span></div>
+
+<div class="sp">
+<h3>SSP 真正起源於德國</h3>
+<ul>
+<li>SSP 是一個「完全分離出去的社會(complete breakaway society)」,其科技、社會結構、控制系統都與母社會脫鉤。當代分離文明真正起源於德國,最早可回溯到 1920 年代,尤其 1930 年代。<span class="who">柯里</span><span class="src">S02E01</span></li>
+<li>德國祕密社團(Thule、Vril 等)特別之處在於「不把科學與神祕靈性分開」:有些團體在做「通靈(channeling)」試圖接觸其他世界的種族;同時派人在全球搜羅古代文獻,尤其東方關於古代「Vimana(飛行器)」的記載,用來逆向工程打造太空船。<span class="who">柯里</span><span class="src">S02E01</span><span class="src">S02E05</span></li>
+<li>JR 的版本:1930 年代末德國國家把若干秘密社團(其一為 Vril 社團)併入研發計畫,該年代末他們已在拜訪其他星球、開發出能離開大氣層的反重力/碟形科技。希特勒想用於二戰但不行——反重力飛船在空中開傳統武器會因反作用力位移,他們還沒解決校正。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+<li>瑪麗亞·奧西克(Maria Orsic):一名北歐型少女與約八名女孩被心電感應指導設計太空船、真的造出來;她做自動書寫寫出蘇美語(只有三人能正確讀),被指引去找古文件助發展;德國找到她後接管。<span class="who">湯普金斯</span><span class="src">S05E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>南極與南美的飛地</h3>
+<ul>
+<li>南極冰下有三座城市,其中兩座更內陸的「已被佔用」,德國人抵達時就已有其他群體在住、後與其結盟。亞加森人(Agarthans)依條約協助德國人在南極與南美東部(阿根廷、巴西)定位、建立地下基地與幾乎全德裔的地面城市。<span class="who">柯里</span><span class="src">S02E02</span></li>
+<li>德國人在戰爭明顯要輸之前數年就開始建這些藏身處,因為他們早知道戰爭會打輸;主要靠潛艇或先進飛行器抵達南極以避開空中偵測。<span class="who">柯里</span><span class="src">S02E02</span></li>
+<li>JR 的版本:爬蟲族(Draco)幫德國人開發能量武器,條件是「要你們在南極建基地」;Draco 要求建一座可容納 30~40 萬人的基地(真正目的是要一個代理人幫忙取回南極地下的外星科技,當時沒告訴德國人)。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+<li>「Bell(鐘形機)」其實不是飛行器,而是「引擎/產生電重力場的組件」,人進不去 Bell 本身;美國拿到後稱其為「ARVs(Alien Reproduction Vehicles,外星複製載具)」。德國初期 Bell 艦隊不到 100 台,有三種尺寸,最大約 90 呎寬。<span class="who">柯里</span><span class="src">S02E02</span><span class="src">S02E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>高跳行動(Operation High Jump)的慘敗</h3>
+<ul>
+<li>1947 年美國情報發現德國分離團體在南美與南極建有大型軍事基地,DOD 派 Admiral Byrd(伯德上將)率大艦隊(戰艦、驅逐艦、航母、潛艇)執行高跳行動。艦隊遭遇從水中與南極大陸升起的高科技飛行器以「能量武器」攻擊,擊落其飛機、重創數艘驅逐艦、折損人命,慘敗撤退。<span class="who">柯里</span><span class="src">S02E04</span></li>
+<li>Byrd 的航海日誌至今封存;流出的隻字片語包括「下一場戰爭,我們將被能在數分鐘內極點到極點飛行的飛行器攻擊」。<span class="who">柯里</span><span class="src">S02E04</span></li>
+<li>WT 的版本:本要一週掃平,結果五週後慘敗;100 英尺直徑的碟形飛行器從海中升起把美軍打下來,還有從鄰近大洞穴升起的「無標記 UFO 與雪茄形飛行器」——是住在那裡的外星人與德國的聯合行動。<span class="who">湯普金斯</span><span class="src">S05E10</span></li>
+<li>JR 的版本:「高跳行動變成 Hightail(夾尾巴逃跑)」;此後南極德國人開始與 Cabal 談判。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>迴紋針行動與滲透美國軍工複合體</h3>
+<ul>
+<li>Operation Paperclip(迴紋針行動):美國取得的德國科學家比公開宣稱的多很多,據稱技術上領先美國 20–30 年,被安插進美國的新生太空計畫與基礎建設並獲權力。<span class="who">柯里</span><span class="src">S02E04</span></li>
+<li>德國分離團體透過 Paperclip 科學家得知美國「絕不向人類公開 ET 與某些科技的存在」的最高機密政策,遂在美國上空進行飛行示威,包括 1952 年相隔兩週、飛越華府國會的兩次飛越,逼美方簽約。Truman(杜魯門)與 Eisenhower(艾森豪)兩位總統都簽了與該團體的條約。<span class="who">柯里</span><span class="src">S02E04</span></li>
+<li>德國團體帶著大量黃金與掠奪財富而來,「完全滲透了軍工複合體」:肥貓商人與大公司高層只看到錢、張開雙臂接納並讓他們進董事會;到 1950 年代末、60 年代初也滲透了情報機構,之後基本接管了美國政府——這正是 Eisenhower 告別演說警告「軍工複合體不當權力與影響」的根源。<span class="who">柯里</span><span class="src">S02E04</span></li>
+<li>JR 的版本:南極條約(1954–1959)的非公開條款再次確認南極德國人主權、各大企業董事會 1–5 席給火星德國人、各國行政部門安插一個永久終身的火星德國人職位;掩護行動是「深凍行動(Operation Deep Freeze I、II)」。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>德國人為何沒贏二戰,卻又「贏了」</h3>
+<ul>
+<li>CG:「也許他們只是改了戰術、其實贏了」——從鈍力消耗戰轉向高科技,建立由「早於納粹數百年的祕密社團」組成的分離文明,後滲透西方、接管軍工複合體、政府與銀行;有意維持現狀、保留「巴比倫金錢魔法系統」,同時暗中殖民太陽系,把敵人變成工具(轉移視線的魔術)。<span class="who">柯里</span><span class="src">S02E13</span></li>
+<li>JR 的「火星德國人(Mars Germans)」版本:自獨立後就一直改造自身基因,通常更強更快、反射更佳、IQ 更高,且有令人難以忍受的傲慢;火星德國人約有 300 萬公民(Yohan 說的,可能是假情報)。<span class="who">萊斯</span><span class="src">S12E07</span><span class="src">S12E08</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 3 ============ -->
+<section class="cat" id="c3">
+<div class="cat-h"><span class="bar"></span><h2>三、月球作戰指揮部 LOC</h2><span class="cnt">LUNAR OPERATION COMMAND</span></div>
+
+<div class="sp">
+<h3>LOC 的結構與外交中立性</h3>
+<ul>
+<li>LOC(Lunar Operation Command 月球作戰指揮部):位於月球背面的外交中立設施,所有不同太空計畫都可使用,是個中途站(weigh station),人員不斷往返前往太陽系更外圍的站點、基地或船艦。<span class="who">柯里</span><span class="src">S01E01</span></li>
+<li>蓋在一個 1930、40 年代既有的納粹設施上(原本是「卐字形」建築排列),美國工業力量介入後 1950 年代末大舉擴建、蓋住卐字。地表只露出像鐘形/金字塔尖的一小部分,主體向下擴展;CG 只去過上層,次兩層是醫療與更先進醫療,地板有不同顏色油漆線引導。<span class="who">柯里</span><span class="src">S05E09</span><span class="src">S07E16</span></li>
+<li>船艦/設施內部其實不像《星艦迷航記》那麼科幻——窄走廊、普通的門,拍下來可輕易讓人誤以為是地表建築。VIP 區走廊較寬、有櫻桃木牆板、很高檔。<span class="who">柯里</span><span class="src">S01E01</span><span class="src">S05E09</span></li>
+<li>月球是「像巨大瑞士」的嚴格中立外交區——月球背面像南極一樣被劃分,各區由不同 ET 團體擁有/居住,有些團體彼此世仇卻基地只相距幾公里、和平共存數千年。<span class="who">柯里</span><span class="src">S05E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>三座 LOC:Alpha、Bravo、Charlie</h3>
+<div class="narrator"><span>主述</span>CG 一向自留「三座 LOC」這條訊息當作辨識真假的暗號,直到新聯盟簡報時才被西格蒙(Sigmund)公開。</div>
+<ul>
+<li>其實有「三座 LOC」——LOC Alpha(他一向談的這座,地面)、LOC Bravo、LOC Charlie。導覽從 LOC Bravo 開始,結束時他將造訪全部三座。<span class="who">柯里</span><span class="src">S10E07</span></li>
+<li>LOC Bravo 在熔岩管網下方,較小,有人穿印 NASA 標誌的連身服甚至西裝外套(CG 首次見到與 NASA 相關的東西);LOC Charlie 全不能談,但 CG 後來透露其中有低溫研究設施(cryogenics),其中一層是把存有放入靜滯(stasis)的儲存設施。<span class="who">柯里</span><span class="src">S10E10</span><span class="src">S11E13</span></li>
+<li>飛抵 LOC 時要在隕石坑做兩三次飛越,啟動「遮罩科技(masking technology)」——看起來只是普通隕石坑(連坑底的次級坑洞都被蓋住),取得降落許可、關閉遮罩後才見綠紅白燈光。CG 看到熟悉的「鐘形(bell shape)」往岩石下延伸的部分,建在熔岩管洞穴中。<span class="who">柯里</span><span class="src">S10E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>德國人上月球與 Draco 月球租約</h3>
+<ul>
+<li>德國人飛向月球時遭遇阻力,發現月球是眾多 ET 群在中立區設基地、觀察地球的樞紐;與 Draco 結盟後落在 Draco 控制的月球背面大片區域、受其保護。自建月球基地初期屢敗,後發現「非常古老的建築」、設法加壓使用。<span class="who">柯里</span><span class="src">S02E06</span></li>
+<li>月球上有一座 Draco 與德國分離群體共用、至今仍用的「聯合基地」,外形像「梯形(被截頂的金字塔)」,是重要的暗黑艦隊基地,約建於 1960–70 年代初;僅限 Draco 與其盟友人類群體進入。<span class="who">柯里</span><span class="src">S02E06</span></li>
+<li>JR 的「月球地產交易」版本:Draco 原開價 225 名女性 + 25 年科技優先承購權;德國人拒交 225 名育齡女性,六個月後談成 <b>150 名男性 + 75 名女性 + 25 年科技優先承購權</b>,換月球 20 英畝地建 LOC。後來才知有至少六個其他種族願給兩倍空間、不要任何人、只要一年承購權——德國人被坑慘了。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>月球是人造體</h3>
+<ul>
+<li>月球是人造體、以類似牽引波束鎖定與地球同步軌道、不自轉(科學上不該如此)、約 50 萬年前成為衛星。多數設施在表面下的巨大裂隙與熔岩管內,Luna City 燈火多但建築有偽裝投影(看似隕石坑)。<span class="who">柯里</span><span class="src">S05E09</span><span class="src">S07E16</span></li>
+<li>WT:月球「不是你的月亮、也不是衛星」,而是銀河這一區的指揮中心、不自轉、住約 25–35 個文明(有些彼此世仇卻在一兩公里內共處),有家庭、孩子受教育、結婚生老。<span class="who">湯普金斯</span><span class="src">S07E16</span></li>
+<li>JR:月球是人造衛星構造、非地球原生、是被從別處帶來的「逃生船」、內部被挖空、大部分「地產」已被占用(數十個外星種族各守地盤、不打架但可自衛)。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 4 ============ -->
+<section class="cat" id="c4">
+<div class="cat-h"><span class="bar"></span><h2>四、火星殖民與太陽系基礎建設</h2><span class="cnt">MARS &amp; SOLAR SYSTEM</span></div>
+
+<div class="sp">
+<h3>太陽系基建的規模</h3>
+<ul>
+<li>規模遍布整個太陽系——小行星帶與各衛星、行星的採礦作業,生產科技的工業複合體,以及在其中工作的人類殖民地。設施類型包括:挖空小行星內部的設施、火星地表下各處設施、氣態巨行星各衛星、地球的月球;氣態行星內部因壓力過大無法建基地。<span class="who">柯里</span><span class="src">S01E04</span></li>
+<li>火星上小型安全前哨站約 18~40 人;也有漂浮在各「拉格朗日點(Lagrange point)」(引力平衡可定點停留)的設施,數以百計。較大的「殖民地」最大可達上百萬人,但這種極大型不多,數十萬人規模的相當多。<span class="who">柯里</span><span class="src">S01E04</span></li>
+<li>遠離太陽變冷靠先進科技克服:地板互鎖的「重力鋪板(gravity plating)」通電產生人造重力;把地球的「舒曼共振(Schumann resonance)」管進船艦/設施維持人與植物健康;氣壓、重力都受控。<span class="who">柯里</span><span class="src">S01E04</span><span class="src">S07E15</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>德國人抵達火星</h3>
+<ul>
+<li>德國人 1930 年代末/40 年代初抵火星:先月球(失敗後設基地)再火星(先臨時、再建較大基地)。飛行路線地球→月球→月球→火星,當年約數小時,現在僅數分鐘。靠德國發展的二氧化碳洗滌器與閉式供氧系統(原為超級潛艇研發),加上與 ET 合作後取得的電重力飛行、人工重力、環境控制。<span class="who">柯里</span><span class="src">S02E07</span></li>
+<li>選址失誤:初期在赤道附近建基地,頻繁的高速沙塵暴帶大量靜電,產生像 EMP/CME 的強電場摧毀電子設備;後發現北南極 20 度內最宜居住(有冰即有水、大氣相對較宜呼吸)。<span class="who">柯里</span><span class="src">S02E07</span></li>
+<li>德國首批成功穩定的火星殖民地約在 1950 年代末出現(此前在赤道等錯誤地點屢被攻陷、整座殖民地被毀,當時人數僅數十人);約 1952~54 美國開始簽約時才剛站穩腳跟(死了很多人、做了真正的拓荒)。<span class="who">柯里</span><span class="src">S02E08</span><span class="src">S02E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>傳送門系統(自然門與點對點門)</h3>
+<ul>
+<li>1930–40 年代起就用「自然傳送門系統」運物資,對生物極危險(以「很恐怖的方式」殺死生物),直到 1950 年代才能穩定無傷地傳送人。早期傳送門過去的人會在數日後出現「時間性失智(temporal dementia)」。<span class="who">柯里</span><span class="src">S02E07</span></li>
+<li>自然門是「能量泡泡」,外圍有像熱公路上的「海市蜃樓」效應,可從 360 度走入、另一側 360 度走出;進入時視角全錯亂、無「持續時間」感,會讓人很噁心暈眩(像強磁鐵靠近腦),需打針/藥緩解(DW 引內部人 Henry Deacon 稱該藥為 lorentzil、症狀稱 transdimensional disorder)。<span class="who">柯里</span><span class="src">S02E08</span></li>
+<li>後用數學模型以電磁場與「torsion(扭力場)」在兩點各自反向旋轉,建「點對點扭力場」維持洞口開更久;中東(如伊拉克)有「實際裝置」用點對點協定安全傳送。早期用 IE 預測門何時何地出現,後改用 AI 協助。<span class="who">柯里</span><span class="src">S02E08</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>殘暴的殖民手段</h3>
+<ul>
+<li>火星擴張軍事化:有 ICC 撐腰便先「建軍備」再大舉抵達、打仗、驅逐原佔領群體(insectoid 昆蟲型與 reptilian 爬蟲型),接著派工程師建基地(多在地下或既有洞穴、峽谷,類似地球的 DUMBs 深層地下軍事基地)。<span class="who">柯里</span><span class="src">S02E09</span></li>
+<li>多次發生「廣島、長崎」規模的屠殺,使用核武與一種「核基新武器」——DW 稱「第五代核(Fifth Gen)」:皮秒級完美球形爆、內部全空、可沖洗、近乎無殘留輻射,輻射被集中到中心;既用於開鑿地下洞穴、也用於清除滿是有感存有的區域。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S02E09</span></li>
+<li>ICC 明言「絕不重演十三殖民地獨立」,要把火星殖民地建成最高壓、暴政、零反叛機會的體制。<span class="who">柯里</span><span class="src">S02E09</span></li>
+<li>JR 的版本:1950 年代德國人為火星地產與外星種族開戰,花約 10 年、損失逾 17,000 條人命(按人口比例相當於盟軍二戰全部損失,且是最年輕活躍的人)才奪得能建電子設施的非高能量區。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>火星殖民地的生活</h3>
+<ul>
+<li>居民人力來源(Brain Drain 1950–60s):接洽數千名高學歷者(尤偏好物理/地質學家、配偶是護士/醫師、有已被祕密做過基因檢測的孩子者),給看「你會像 Jetsons 一樣生活」、能「拯救人類」。被招者只能帶極少行李、不准告知家人,然後「突然消失」。<span class="who">柯里</span><span class="src">S02E09</span></li>
+<li>抵火星後現實衝擊:被武裝人員帶到 8×10 房間、發工作表;子女 12–14 歲依基因配對「指婚」、依測驗結果被分派教育與工作。子女教育含 ICC 觀點的扭曲地球史。<span class="who">柯里</span><span class="src">S02E09</span></li>
+<li>內部人 Henry Deacon 說火星某設施當時有 20 萬人(快速擴張),其中只 1 萬是地球出生人類;CG 證實。<span class="who">柯里</span><span class="src">S06E04</span></li>
+<li>ES 印證:火星上有 20 萬人在工作的基地在地下圈是「眾所周知的事」、甚至是個玩笑;他懷疑很多人坐在「輸送帶(conveyor belt)」穿過能量系統,根本不知道自己其實是在火星上工作。<span class="who">史密斯</span><span class="src">S09E12</span></li>
+<li>奧林帕斯山(Olympus Mons)的熔岩管是地球的 10 倍大、易封閉造環境當現成基地,被一個爬蟲型與昆蟲型團體佔據並激烈防守,裡面有數百萬存有「過完生命週期」。<span class="who">柯里</span><span class="src">S05E09</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>火星殖民地視察(NATO 式視察全程)</h3>
+<div class="narrator"><span>主述</span>ICC 為反駁「火星奴隸殖民地」報導,提議讓 SSP 同盟代表(Gonzales 與柯里)做一次視察;CG 親歷全程。</div>
+<ul>
+<li>Gonzales 以心智啟動南半球一個 ICC 不想被看的新圖示:「我們一位近期叛逃者住過這座殖民地,有非常新且詳細的情報,就要這座」;ICC 代表需約一小時清空空域(顯然是讓基地清理、做安排)。<span class="who">柯里</span><span class="src">S01E07</span></li>
+<li>柯里失誤答自己來自「德州(Texas)」——而該基地的殖民者被告知「地球因某種災難已不宜居」;他剛曬傷塗了蘆薈,「散發地球味」,讓對面安保面色一變。<span class="who">柯里</span><span class="src">S01E07</span></li>
+<li>住處導覽像牢房(jail cell):牆內的床、不在房內做飯、無馬桶、無窗;天花板用「聲波照明(sonic lighting)」。主廳「作秀(dog and pony show)」:一名 ICC 代表宣布我們「定期與近 900 個 ET 種族交易」,偶爾還與更多(可能上千)交易。<span class="who">柯里</span><span class="src">S01E07</span></li>
+<li>收尾災難:獲准帶一家四口上船,卻發現殖民者被威脅(要說這裡很好、否則孩子遭殃)。Gonzales 動怒下船去找,被設施安保武裝衝上來；眾人被押到拘留設施——一排排八角孔牢籠關著人，最後 Gonzales 與兩名 IE 被關大牢。藍 orb 穿牆出現包住眾人、穿牆回到 LOC,飛船被留在火星。「我們失去一艘船,但沒失去任何人。」那家人最終下落不明。<span class="who">柯里</span><span class="src">S01E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>採礦、運輸與武器</h3>
+<ul>
+<li>小行星帶有大量金、鉑、銀;地球上「金稀有」是操弄(集團藏了大量金)。有些小行星巨大,僅 3–4 人團隊駐守、多由遠端機器人操作,原料裝入「大型貨運船(freighter craft)」運回火星加工。<span class="who">柯里</span><span class="src">S02E10</span></li>
+<li>保安隊配的步槍是 <b>Gauss guns(高斯槍/類軌道砲)</b>：用 bismuth(鉍)細線繞成的線圈,電磁場脈衝把彈丸以極高速(CG 印象約 5,000 mph)射出,彈丸口徑略小於 .50;底部有榴彈發射器,內含先進塑膠炸藥。<span class="who">柯里</span><span class="src">S02E10</span></li>
+<li>量子電腦/電腦系統遠早於 Bill Gates、IBM 出主機板與積體電路;ICC 總留最先進玩具。<span class="who">柯里</span><span class="src">S02E10</span><span class="src">S05E09</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 5 ============ -->
+<section class="cat" id="c5">
+<div class="cat-h"><span class="bar"></span><h2>五、ICC 行星際企業集團</h2><span class="cnt">INTERPLANETARY CORPORATE CONGLOMERATE</span></div>
+
+<div class="sp">
+<h3>ICC 的形成與超級董事會</h3>
+<ul>
+<li>ICC 最大,擁有太陽系幾乎所有基礎建設;成員企業包括 Lockheed、Boeing、McDonnell Douglas、Hughes Aircraft 等幾乎所有航太與工程公司(不只美國)。德國人把「小行星帶整顆貴金屬小行星」的消息帶給這些美國資本家、他們「眼裡冒出美元符號」就全力支持德國的宏大太空基建計畫。<span class="who">柯里</span><span class="src">S01E03</span><span class="src">S02E09</span></li>
+<li>ICC 運作以「超級董事會(Super Board)」做決策——由各企業成員組成。例:TRW 某服務 20 年、夠資格的高管,會被勸退休後調到超級董事會。知情者極少:進超級董事會才被簡報,普通承包商可能整個生涯都不知自己造的零件(如座椅)會用在超先進飛行器上。<span class="who">柯里</span><span class="src">S06E04</span></li>
+<li>WT 的版本:頂級企業高層用所有太空系統的軍事進展,發展出離開地球、在太陽系行星採礦、並沿最近 12 顆恆星(以南門二 Alpha Centauri 為首)向銀河推進採礦賺錢的能力——與軍方任務平行運作,動機是貪婪。CG 證實這就是 ICC。<span class="who">湯普金斯</span><span class="who">柯里</span><span class="src">S06E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>宇宙資本主義與銀河奴隸貿易</h3>
+<ul>
+<li>ICC 是「宇宙資本主義(cosmic capitalism)」——交易生物與技術資產換科技,是最涉入銀河奴隸交易(galactic slave trade)的團體之一;逆向工程後用於 ICC 或帶回地球散播進我們科技。底層人員不享利益(類比血汗工廠童工)、高層才坐享利潤。<span class="who">柯里</span><span class="src">S06E04</span></li>
+<li>EG&amp;G(Edgerton, Germeshausen, and Grier 國防承包商)是 ICC 旗下到處出現的公司之一,參與逆向工程飛行器零組件。<span class="who">柯里</span><span class="src">S07E13</span></li>
+<li>CG 透過 ICC 就跟約 900 個外星文明維持常態貿易關係;人類已成為許多不同物種採購先進科技(如飛行器)的「首選地」(因我們以勤奮、傑出的工程師聞名)。ES 表示沒聽過此說(太區隔化)。<span class="who">柯里</span><span class="src">S09E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>ICC 的分裂與獨立</h3>
+<ul>
+<li>因高層人士不願接受外星實在、甚至在道格拉斯、TRW、通用動力等公司內阻撓軍方計畫,這群頂級企業高層發展出與軍方任務平行的採礦營運。他們不想被太陽守望者的指揮規則綁手綁腳(走企業途徑就無監督、無問責),且科技遠優於交給軍方的;雖是對手卻不公開撕破臉、會互借資源。<span class="who">柯里</span><span class="src">S06E04</span></li>
+<li>地球上很可能有 51 區式的洛克希德-馬丁聯合測試場;ICC 掌控很多軍工承包公司,會監督並汲取可用科技。<span class="who">柯里</span><span class="src">S07E18</span></li>
+<li>Full Disclosure 後,整個基礎設施(含 ICC 設施)會移交地球人(藍鳥曾叫 SSP 聯盟別再攻擊 ICC 設施)。<span class="who">柯里</span><span class="src">S06E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>北美 300 座地下設施(ES 的見證)</h3>
+<ul>
+<li>光是美國境內就有約 300 座這類地下設施;並非總是政府所有,軍方負責守衛,實際擁有者是大型企業與不知名組織。規模較大的在新墨西哥州、內華達州、科羅拉多州,內部容納整座城市、有完整運作的醫院,專供菁英階層使用。<span class="who">史密斯</span><span class="src">S11E01</span></li>
+<li>ES 去過的基地:德州艾爾帕索 UTEP 大學底下、洛斯阿拉莫斯、柯特蘭空軍基地(Kirtland AFB)、維吉尼亞州夏洛茨維爾、丹佛、達爾西(Dulce)、白沙國家紀念碑底下、克雷斯通沙丘底下;加拿大卑詩省、華盛頓州外海惠德比島附近。柯特蘭基地的入口偽裝成一座消防瞭望塔。<span class="who">史密斯</span><span class="src">S11E01</span></li>
+<li>安檢:出示駕照,三道安檢——磁條卡、掌紋辨識、虹膜掃描;電梯實際上會掃描你的身體(像 X 光/MRI)偵測鈽或武器;全程配戴 X 光徽章監測輻射劑量。下到底層改搭祕密單軌電車(tram)。<b>深度夠深時就不再算美國領土,因此可為所欲為。</b><span class="who">史密斯</span><span class="src">S11E01</span></li>
+<li>Sandia 實驗室基地(在柯特蘭基地內)各子層由軍工複合體不同企業承包,空軍只是該設施的保全;第 5、7、8 層是醫療樓層,每層超過 300 間手術室(光這一基地超過 1,000 間)。<span class="who">史密斯</span><span class="src">S09E12</span><span class="src">S11E05</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 6 ============ -->
+<section class="cat" id="c6">
+<div class="cat-h"><span class="bar"></span><h2>六、暗黑艦隊與全球銀河國家聯盟</h2><span class="cnt">DARK FLEET &amp; GGLN</span></div>
+
+<div class="sp">
+<h3>暗黑艦隊(Dark Fleet)</h3>
+<ul>
+<li>「暗黑」因其為完全區隔化的黑色計畫:其他 SSP 幾乎得不到其任務情報、基地完全自主不准他人進入、艦艇設計不同。是純攻擊性力量,與德拉科並肩在太陽系外做征服/防衛德拉科領地的軍事遠征,幾乎全時間在太陽系外。<span class="who">柯里</span><span class="src">S04E06</span></li>
+<li>艦艇:很大的楔形(wedge-shaped,像《星際大戰》殲星艦但更流線);巨大菱形(diamond-shaped);巨大「南瓜籽形(pumpkin seed-shaped)」(寬逾 600 英尺/183 公尺,但仍小於楔形艦)。<span class="who">柯里</span><span class="src">S04E06</span></li>
+<li>「完全由人類駕駛、指揮控制」,與德拉科艦隊結盟(德拉科有自己的三角形/大型 delta 艦艇)。人員衣著像《星際大戰》黑色衝鋒兵、神情高傲精英、極權味重;多來自德國秘密社團納粹式計畫的後裔或分離文明後代,涵蓋各人種,CG 只見過男性。<span class="who">柯里</span><span class="src">S04E06</span></li>
+<li>招募:從 MILAB 計畫抽人,但多數是「育種而來(bred for it)」,來自光明會/秘密地球政府辛迪加與外星殖民地、完全紮根外世界;依天賦/傾向(可能含高度社會病態)被 grooming 後 draft。外屏障升起時大部分暗黑艦隊被困在外、但指揮控制與通訊在內。<span class="who">柯里</span><span class="src">S04E06</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>南極冰下之戰(地球聯盟取得太空科技)</h3>
+<ul>
+<li>引爆戰鬥的是六艘暗黑艦隊的淚滴形大型巡洋艦,從南極外海離水升空似要前往太陽系內其他基地;當兩艘領頭艦進入高層大氣時,數十架「人字形(Chevron-shaped)」、約一般噴射戰機大小的飛行器來襲,淚滴艦折返潛回海中。<span class="who">柯里</span><span class="src">S06E01</span></li>
+<li>這些人字艦原來是「祕密地球聯盟」取得的、阻止陰謀集團離開地表的飛行器——武器極強、由國防承包商建造,類似 ICC 等級。代表地球上某些聯盟團體現在有了自己的太空計畫。<span class="who">柯里</span><span class="src">S06E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>全球銀河國家聯盟(GGLN)</h3>
+<ul>
+<li>由來:1950 年代末、60 年代初各國已明顯察覺有 SSP 在進行;為安撫各國、讓它們閉嘴並覺得參與保護地球,成立此「NATO 式」群體,獲提供基地與科技,但基地完全在太陽系外。此計畫其實相當晚近(約 80 甚至 90 年代才開始)。<span class="who">柯里</span><span class="src">S01E08</span></li>
+<li>使命:被告知是在研發「能在外星威脅來臨時保護地球」的科學與科技(呼應雷根演說);他們被高度區隔化、知道的比其他計畫少。設施像《星際之門:亞特蘭提斯》,人員穿各國臂章連身服。<span class="who">柯里</span><span class="src">S01E08</span><span class="src">S05E09</span></li>
+<li>CG 被帶去的一個 GGLN 基地在「某氣態巨行星的衛星」上、洞內(火車穿過傳送門停在洞中,有大洞口可看到太空中其他衛星型結構,洞外有發光水池供人 R&amp;R)。<span class="who">柯里</span><span class="src">S02E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>離開太陽系的能力</h3>
+<ul>
+<li>我方早在 1920、30 年代就有離開太陽系的能力,但無政治連結就貿然跳到別的星系不明智、可能被擊落,德國人當時正在開拓這些政治連結。技術上是組合式:早期主要靠傳送門旅行,發展出「扭力驅動(torsion drives)」飛船後就有了超光速(superluminal)旅行。<span class="who">柯里</span><span class="src">S05E01</span></li>
+<li>關於 12 顆鄰星建設:那些星系有居民、有太空計畫,不能沒外交關係就佔人家最後一顆行星建基地;到本地星團其他星系找礦時曾被當地居民趕走(因我方與爬蟲類在宇宙到處惹事、名聲不好)。<span class="who">柯里</span><span class="src">S06E04</span><span class="src">S07E14</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section class="cat" id="c7">
+<div class="cat-h"><span class="bar"></span><h2>七、招募、MILAB 與直覺共感人</h2><span class="cnt">RECRUITMENT · MILAB · IE</span></div>
+
+<div class="sp">
+<h3>MILAB(軍事綁架計畫)</h3>
+<ul>
+<li>MILAB 負責招募、訓練、灌輸、為 SSP 與其他機密計畫準備兒童。鎖定 5 歲到青春期前的孩童,因他們意識更可塑(尚未形成「什麼可能/不可能」的成見),而意識是能力的觸發器,故童年起訓練者的能力會「電爆」成年後才受訓者。<span class="who">柯里</span><span class="src">S01E11</span></li>
+<li>CG 約七歲(1977 年)被帶入 MILAB;Sigmund 的文件說他 1977-1997 是資產(asset)。因被鑑定為直覺共感人(intuitive empath)是完美工具,訓練從七歲到十六歲(進入 SSP 前)。全像訓練(holographic training)室逐步讓他適應與非地球存在介接。<span class="who">柯里</span><span class="src">S09E01</span></li>
+<li>JR 的版本:小時候是「逃脫藝術家」,被送進當地大學的「行為矯正計畫」(其實是 MILAB 招募臂膀)——一起身就被抓進箱子鎖起來,停止尖叫才放出來給一顆 M&amp;M;在此被辨識為直覺共感人。<span class="who">萊斯</span><span class="src">S12E05</span></li>
+<li>JR 的訓練:三到五個孩子一組,在不能說話下用直覺共感能力合作拼拼圖(從少片到上千片單色拼圖、甚至蒙眼);跟不上的孩子「就不再回來了」。用藥物提升能力、促使遺忘、植入假的屏蔽記憶(screen memories)。<span class="who">萊斯</span><span class="src">S12E05</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>創傷訓練</h3>
+<ul>
+<li>找出每個孩子的恐懼再用虛擬/擴增實境淹沒之(1970 年代末,遠早於市面上市)。例如怕溺水者,在分不清真假的虛擬實境中反覆經歷火燒、中槍、毆打、溺斃等各種可怕死法以「減敏」。回家後被洗腦、給屏蔽記憶(把一天被燒死五六次換成「去水族館」),但惡夢仍在。<span class="who">萊斯</span><span class="src">S12E05</span></li>
+<li>夜裡被帶到打烊的商場做小型戰鬥武器、奪旗演練,穿著被紅外線打中會凍結肢體(致命部位則全身凍結=模擬擊殺)的衣服互相對抗。訓練持續約八年到 13 歲。<span class="who">萊斯</span><span class="src">S12E05</span></li>
+<li>SSP 用「極端創傷」誘發人星體投射(心理的解離/保護機制),再訓練用於情報蒐集。<span class="who">柯里</span><span class="src">S07E16</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>心靈能力分級與超級士兵</h3>
+<ul>
+<li>DW 引內部人 Daniel——分「TP 心電感應者」與「TK 念力者」,TK 約千分之一;有「P-scale 心靈能力量表」(P0 無能力,一般優秀通靈僅 P4,訓練最高可達 P8~P10)。任何能力都可透過訓練與化學注射增強;確有用念力訓練年輕人「殺人」(如念力掐頸動脈致死)。<span class="who">柯里</span><span class="src">S01E11</span></li>
+<li>CG 強調自己「不是超級士兵」,雖與之共事,屬同一大傘下的不同類別。超級士兵能進入目標心智、團隊心靈協作、肌肉被增強得極快極致命(是「增強的人類」非超人);靠「神經介面」而非搖桿飛船;增強靠注射(部分純化學、部分奈米科技),因此「易受 AI 感染」;壽命不長、後期身體付出大代價。<span class="who">柯里</span><span class="src">S02E12</span></li>
+<li>有遠端遙視/遠端影響者站在「陽極陰極」站台、手按上去專注於目標,可用多種方式殺害甚至多個目標(常被欺瞞目標身分,如現代無人機操作員);也有人受訓「散射(scatter)」遠端遙視者的思緒以保護設施。<span class="who">柯里</span><span class="src">S02E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>化學匯報:把共感人當「USB 隨身碟」</h3>
+<ul>
+<li>每次接觸後都做化學匯報——他們把共感人當「USB 隨身碟」,讓他聞、聽、嘗、看一切,回來後用訓練用的同款全像椅把資訊下載出來,再經第二道程序抹除。CG 重申被抹除者有 3-5% 會找回記憶。<span class="who">柯里</span><span class="src">S09E01</span></li>
+<li>CG 首次以直覺共感人實戰是十三歲:被帶到木星軌道外的小型太空站(一個肉眼看不見的時間異常),內部是巨大的聯合國式會議廳——這就是超級聯邦(Super Federation)會議。CG 是三名直覺共感支援之一(需三人三角定位偵測欺騙)。CG 一生共參加三次此類會議。<span class="who">柯里</span><span class="src">S09E01</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>SSP 與地球的隔絕</h3>
+<ul>
+<li>SSP 與地球的通訊:某時期前完全封鎖,網路出現後網路也被封鎖;太空中有自己的內部網路與唯讀(read-only)的網際網路存取,只有最受信任者能上傳。柯里在研究船時無任何即時或近即時的新聞、廣播、電視。<span class="who">柯里</span><span class="src">S01E03</span></li>
+<li>「20 年又送回」期間完全與地球斷絕(無新聞、電視、書籍雜誌、連家人照片都沒有),只有報到時發給的東西。<span class="who">柯里</span><span class="src">S01E04</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 8 ============ -->
+<section class="cat" id="c8">
+<div class="cat-h"><span class="bar"></span><h2>八、「20 年又送回」與年齡回溯</h2><span class="cnt">20 AND BACK</span></div>
+
+<div class="sp">
+<h3>「20 and Back」計畫的運作</h3>
+<ul>
+<li>服役 20 年後被「時間回溯(time regressed)」送回出發的原始時間點,並「年齡回溯(age regressed)」回出發時的年紀;數千人(含軍方人員)參與過,有些人以為自己只服了 4 或 8 年常規兵役,其實在絕密計畫服了 20 年再被送回。<span class="who">柯里</span><span class="src">S04E03</span></li>
+<li>CG 親述:在 LOC 簽保密文件→「強化匯報(enhanced debrief,被置於改變的意識狀態、接上監測遙測的電子設備、逐年回顧整個服役)」→驗血等(LOC 共約兩三天)。CG 本人服約 21 年。期滿被鎮靜並近乎癱瘓固定在桌上、貼上像厚紙板的板圍住身形,歷時約兩週「以科技把身體回溯 20 年」——刺青、疤、傷會消失。<span class="who">柯里</span><span class="src">S02E12</span><span class="src">S04E03</span></li>
+<li>整個太空計畫無薪、無金錢、無個人物品,完全供給制;承諾退役後給免費大學、六位數年薪、終身舒適生活,但他們根本不打算履行——計畫抹除記憶後把人放生並監控。<span class="who">柯里</span><span class="src">S04E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>WT 對 20 and Back 的佐證</h3>
+<ul>
+<li>WT:數以千計的男女在美國加入「太空海軍(Space Navy)」、簽 20 年役期;多數先到月球設施做檢查、再送火星、有些到木星衛星,然後分派到海軍巡洋艦、攻擊艇或長 1、2、4 公里級的太空航艦。<b>有八個(8)戰鬥群(battle groups)在外。</b><span class="who">湯普金斯</span><span class="src">S06E04</span></li>
+<li>返回者「年齡回溯」——花數週數月把 20 歲後的年齡逆轉回入役時的 21 歲;返回前的數週其腦被處理、移除過去 20 年太空記憶的 99.99%。此系統自 1980 年起運作。CG 確認:人數確實數千、八個戰鬥群也對(太陽守望者時代),20 and Back 約在 1980 太陽守望者啟用後不久實施。<span class="who">湯普金斯</span><span class="who">柯里</span><span class="src">S06E04</span></li>
+<li>役期間禁止與家人或地球任何人聯繫;有大量乒乓球、休閒區、電影夜(都是入役前的老牛仔片、二戰片,禁放離開後的內容以免擾亂未來、也防有記憶者用來炒股)。<span class="who">湯普金斯</span><span class="src">S06E04</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>CG 的多次 20-and-Back 與健康代價</h3>
+<ul>
+<li>CG 透過 Gonzales 在馬雅載具受檢時得知曾有多次 20-and-Back:他視網膜剝離(astronaut's eye)手術時全憶起三次,幾近自殺,對方移除部分情緒能量並重埋其餘兩次記憶;<b>靈魂年齡約 105</b>。三次是他所知最多。<span class="who">柯里</span><span class="src">S07E28</span></li>
+<li>許多人被用一到三次 20-and-back,但很多人撐不完第三次(開始出現大量神經問題):不是死,而是被提早送回或轉去訓練其他對象。三次是極限,人體生理撐不住——身體會記住各種創傷,被回春也消不掉。<span class="who">柯里</span><span class="src">S08E13</span></li>
+<li>20-and-Back 的健康代價:高電磁場致顳葉失智(temporal dementia)、神經問題、麻木;引擎室人員穿法拉第金屬網衣。回春後不准刺青;若有重大創傷的疤痕被修復遮蓋,回到現實後同位置會出現「幽靈疤(ghost scar)」。<span class="who">柯里</span><span class="src">S07E28</span><span class="src">S08E13</span></li>
+<li>Gonzales 每 7-10 天與 CG 會面監測腦部與腦化學、防時間性失智提早發作:被帶上巨大圓柱石製瑪雅船,Gonzales 取出像黑色八號球的石球掃他的額頭(既診斷也治療)。<span class="who">柯里</span><span class="src">S09E03</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>時間旅行招募與悖論</h3>
+<ul>
+<li>從各時代(如 1950s)抓人須回到過去抓、服役後送回原時點(須被「白板化」以防時間悖論,3-5% 無效須再綁架/賄賂處理);時間有彈性會自我修復——非地球者曾叫我們別再回去修悖論,越修越糟,時間會自己彈回。<span class="who">柯里</span><span class="src">S07E28</span></li>
+<li>20-and-Back 期間死者:軍人受軍禮、平民變失蹤人口(因返回時點無屍可送回,父母隔天發現人不見)。20-and-Back 技術源自一個 Nordic 群(自稱來自另一星系、非內部地球)。<span class="who">柯里</span><span class="src">S07E28</span><span class="src">S08E06</span></li>
+<li>JR 的版本:量子年齡回溯(quantum age regression)回到入伍時的時間點,再用時間旅行送回他原本入伍那刻——但他確實活過並提供了那 20 年服務。回來時的「臨別禮物」含讓他想從軍的程式設定,他一夜之間對軍事產生興趣、獲空軍 ROTC 醫學獎學金與美國陸軍工程獎學金。<span class="who">萊斯</span><span class="src">S12E05</span></li>
+<li>JR:記憶為何 15–20 年後才浮現——他在 33 歲(正好是第一次 20 年又回歸的 20 年後)做門診手術,麻醉退去時護理人員說他一直在講「在太空、是某計畫一份子」。<b>「凡是 SSP 的一份子,我們每一個人都被動過手腳。」</b><span class="who">萊斯</span><span class="src">S12E05</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 9 ============ -->
+<section class="cat" id="c9">
+<div class="cat-h"><span class="bar"></span><h2>九、記憶清除與隔艙化</h2><span class="cnt">BLANK-SLATING · COMPARTMENTALIZATION</span></div>
+
+<div class="sp">
+<h3>記憶清除(blank-slating)技術</h3>
+<ul>
+<li>記憶清除對 3~4% 以外的人是 99.99%,殘存記憶只在夢中浮現、無脈絡。被借調到別計畫、看到不該散布的東西會被擦掉一定記憶,但要服役結束才完全「空白板」。被清空、不記得卻真的做過的人達數萬(tens of thousands)。<span class="who">柯里</span><span class="src">S06E04</span></li>
+<li>「delta 波(delta waving)」技術:在地下基地開發,用於到社區綁架某人時讓周遭所有人進入深睡;深層地下基地則對每天上下班的數千名員工用空白石板——下班時抹除記憶,他們回家後不記得當天做了什麼或被植入螢幕記憶(screen memory)。<span class="who">柯里</span><span class="src">S11E02</span></li>
+<li>ES 印證:離開時走過一種「機場型裝置」(像身體掃描器)就會重設腦波,讓你回家只想休息;早期不完美,有人忘記去托兒所接小孩。最後使用空白石板的年份 ES 記得是 1993 年。進門時有特定符號或提示(cue)會觸發大腦恢復記憶。<span class="who">史密斯</span><span class="src">S11E02</span></li>
+<li>植入的催眠程式:可被設定在存取記憶時昏睡或癲癇發作(DW 提 Pete Peterson 一講核心內容就立刻昏睡打鼾);ES 想講「Project Backscape」就會當機、結巴、說不出口。<span class="who">柯里</span><span class="who">史密斯</span><span class="src">S11E02</span></li>
+<li>JR 的版本:招募簡報時對方建立「基準(baseline)」其實是為了日後記憶清除而記錄一切細節;桌上有「白板化裝置」,外型像珠寶匠的小錘但前端是圓錐水晶配件、單一按鈕。如同「科爾特斯燒船」,他們通知家人「此人陣亡」,提供空棺或「複製人」遺體下葬。<span class="who">萊斯</span><span class="src">S12E06</span><span class="src">S12E16</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>隔艙化(compartmentalization)的核心謊言</h3>
+<ul>
+<li>區隔化的核心:每個區隔/層級的人都被告知「你在金字塔頂端、是地球的矛尖(tip of the spear)、最被信任、知道得比任何人多、非常特別」,每個區隔的人都被講同樣的話而且都信以為真——這是讓反對者閉嘴、用「餅乾/獎賞」把他們安置到別的衛星去的完美方法。<span class="who">柯里</span><span class="src">S01E08</span></li>
+<li>Hoagland 頂級內部人名言「謊言在每一層都不同(The lie is different at every level)」。<span class="who">柯里</span><span class="src">S08E13</span></li>
+<li>「共同犯罪(common criminality)」是任何集團的信條:讓你做不可說之事、深度牽連,一旦發聲就自證其罪。SSP Alliance 中每個人都做過可怕之事,故都「不乾淨」。<span class="who">柯里</span><span class="src">S02E12</span></li>
+<li>連船上都模組化區隔——CG 與某組科學家工作時,完全不知一牆之隔的另一組在做什麼;會給特別存取計畫(SAP)與一般機密計畫「同名」以製造混淆;多數計畫派系不知有其他派系存在(見到別的飛船會被告知是自己計畫的概念機、不准談)。<span class="who">柯里</span><span class="src">S05E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>安全等級、終身控管與處決</h3>
+<ul>
+<li>ES:安全等級的代號舊術語是「umbra」(已不用),現在是數字層級如 Alpha 22、Beta 17(他做到 A22);字母只代表你進來時的專案所在單位,可隨調動改變。等級寫在「臂帶(band)」上不外顯,因為若被人知道你的等級可被誘騙說出機密(發生過,當事人「沒能活下來」)。<span class="who">史密斯</span><span class="src">S11E05</span></li>
+<li>進這些專案的人多半是終身職(簽大量 NDA、受威脅);犯錯的兩大致命項:(1) 走進不該去的區域或房間(全程每秒被追蹤),可能致命;(2) 試圖把不該帶出地表的小物件帶出去——當場處決(instant termination)。ES 沒有女兒兒子,所以他們「弄死了他的狗」當警告。<span class="who">史密斯</span><span class="src">S11E02</span></li>
+<li>安全等級不看軍階——上尉可有與將軍同等的權限,中士可有與上尉/上校同等權限;這些職位用的是知識與教育基礎。<span class="who">史密斯</span><span class="src">S11E06</span></li>
+<li>ES 退役後簽很多文件、被追蹤(退出後 20 年內若需要要回去問話、做手術或去危險地點要通報);Pete Peterson 妻子過世時被帶去做兩個月延長匯報(怕情緒創傷使他開口);ES 母親過世後最近也被接觸。<span class="who">史密斯</span><span class="src">S11E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>柯里被 MIC-SSP 綁架與化學審訊</h3>
+<ul>
+<li>CG 赤腳走向停在他家後方體育場停車場的飛行器,被綁進折疊椅、打點滴;兩名「像空軍」的人取毛髮、刮皮膚、抽血(「若他真去過他說的地方,會有微量證據」——能用微量元素測定地外地點)。後用帶眼動相機的 iPad 翻過一頁頁畢業照,他認出並使其變紅高亮的有三人,其中一個是 Gonzales。<span class="who">柯里</span><span class="src">S05E07</span></li>
+<li>他因同樣使他在 20-and-back 後沒被空白板抹除的能力而沒被抹除——記憶分塊回來、要他自己拼合。<span class="who">柯里</span><span class="src">S05E07</span></li>
+<li>後續 Sigmund(西格蒙,化名)再度綁架審問:約 5'9~5'10"、白山羊鬍白短髮、自稱叫他「Sir」即可;用「bizzZH」聲的科技改變 CG 意識狀態(像東莨菪鹼 scopolamine),讓 CG 再次辨認出同三人。<span class="who">柯里</span><span class="src">S06E12</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 10 ============ -->
+<section class="cat" id="c10">
+<div class="cat-h"><span class="bar"></span><h2>十、星際奴隸貿易與被擄人口</h2><span class="cnt">GALACTIC SLAVE TRADE</span></div>
+
+<div class="sp">
+<h3>Brain Drain 與每年百萬失蹤人口</h3>
+<ul>
+<li>「Brain Drain(智力流失/腦力抽取)」:1950–80 年代,全球頂尖科學家被接洽、招募進這些計畫,大量傑出科學家從地表「消失」。CG 說長期累計有「數百萬人」;DW 引內部人 Pete Peterson 說是「<b>5,000 萬到 6,000 萬人</b>」。這些人被要求「生養眾多」,後代人口可能多達相當於全美人口或更多。<span class="who">柯里</span><span class="who">威爾科克</span><span class="src">S02E04</span><span class="src">S02E13</span></li>
+<li>每年約「一百萬人」在地球失蹤,被用於「星際奴隸貿易系統」(我們自己人有份),極令人不安;軍方(空軍、海軍)仍在招募,部分進 20-and-back 計畫。<span class="who">柯里</span><span class="src">S02E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>外星屍體與「以物易物」付款</h3>
+<ul>
+<li>ES 親身經手約 3,000 具/件:時間從 1992 年 8 月到 1995 年 6 月、約三年(約每年 1,000 件),但更正那是「組織樣本(tissue samples)」,不全是整具屍體。DW 推算單一基地每年可能處理超過「四分之一百萬」個不同外星物種的解剖。<span class="who">史密斯</span><span class="src">S09E12</span></li>
+<li>DW 推測:那些屍體會不會是我們從其他團體換來的「付款(paid in trade)」,用來交換我們製造的高科技?ES 說有可能;其中有些可能是「實驗室培養(lab grown)」的混種,他知道很多是非地球起源。<span class="who">史密斯</span><span class="src">S09E12</span></li>
+<li>「微碟(micro disk)」:比 25 美分小、鍍金、由「銥金(iridium gold)」製成,記錄你做的一切並連接基地主機;之後從你手上取走、放上接駁艇,把所有碟片儲存在「太空」裡(防太空輻射)。<span class="who">史密斯</span><span class="src">S09E12</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>JR 講述的「278 個靈魂」交換</h3>
+<div class="narrator"><span>主述</span>JR 在第二顆星球服役時,從火星德國人軍官好友 Yohan 口中得知。</div>
+<ul>
+<li>南極德國人沒告訴被交易者去向,53 名武裝守衛把人趕進約定的洞穴,Draco 啟動某種昏迷裝置使眾人凍結,並向洞中每個人「以心靈傳送」他們自己家人遭極端凌虐的影像(只因覺得「有趣」)。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+<li>場外兩名守衛逃走(第三名逃跑途中被場域捕獲),此後再也不正常、約五年後雙雙自殺。<b>Draco 共帶走 278 個靈魂</b>,德國人多次詢問下落從未得到回應;德國人自此發誓絕不再交出自己人,改去別處找「棋子」。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>太陽系的人口規模與貿易路線</h3>
+<ul>
+<li>太陽系裡「我們自己的人」(human)有數百萬;非地球生物也有大量。我們發展出星際旅行能力與太空軍力後開始巡守自己的太陽系,很多團體別無選擇(因我們透過貿易取得了他們的科技或更強的)。<span class="who">柯里</span><span class="src">S11E13</span></li>
+<li>我們在「銀河奴隸貿易(galactic slave trade)」中交易人與基因材料,商業活動龐大;發展本地 52 星團(local 52 star clusters)貿易路線時曾與既有路線衝突。現在用雪茄型自動船從星系到星系投放貨櫃、不擔心被劫。<span class="who">柯里</span><span class="src">S11E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>攔截審訊計畫與外星拘留系統</h3>
+<ul>
+<li>CG 曾在「闖入者攔截與審訊(Intruder Intercept and Interrogation)」計畫工作——攔截未經許可進入太陽系或地球大氣層的存有,以 IE 身分在審訊時「介接 interface」溝通或讀取對方情緒、判斷真偽。<span class="who">柯里</span><span class="src">S01E01</span><span class="src">S11E13</span></li>
+<li>該計畫處理的存在中只有約 10-15% 是「外星長相」,大多很像人類(被安置在最能融入的國家如玻里尼西亞長相者);若回收到昆蟲存在或爬蟲存在會被移交給龍族(Draco),其中有些對龍族很不友善、會尖叫抗議被送走。<span class="who">柯里</span><span class="src">S11E12</span></li>
+<li>監獄系統:要再審問的關進監獄;有些監獄是飛船,有些是被開採過的小行星(後來做成部分低溫監獄)。LOC Charlie 有低溫研究設施,其中一層是把存有放入靜滯的儲存設施;ES 證實工作處有巨大的「低溫太平間(cryo morgue)」存放數以百計的屍體與樣本。<span class="who">柯里</span><span class="who">史密斯</span><span class="src">S11E13</span></li>
+<li>太平洋海底 ET 基地:海軍意外發現太平洋下一座未獲許可的 ET 基地,辦「訓練行動」投放深水炸彈幾乎摧毀;數週後派電磁潛艇偵察,發現數十個水棲存在(aquatics)還活著、帶上來審訊(用改變水溫、加化學物等方式施壓)。<span class="who">柯里</span><span class="src">S11E13</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 11 ============ -->
+<section class="cat" id="c11">
+<div class="cat-h"><span class="bar"></span><h2>十一、IDARF 地面部隊與「保衛」騙局</h2><span class="cnt">IDARF</span></div>
+
+<div class="sp">
+<h3>IDARF 的組建與編制</h3>
+<ul>
+<li>IDARF(Interplanetary Defense and Reaction Forces 行星際防衛與反應部隊),作為「邊境巡邏」協助其他星球。1991 年協議後,Cabal 為脫離與 Draco 的月球租約提供兩個師(約 24,000 名士兵)供火星德國人隨時調度——這 24,000 士兵構成了 IDARF 的開端(共四個地面師:兩個全由火星德國人組成、兩個混編含地球士兵)。<span class="who">萊斯</span><span class="src">S12E07</span><span class="src">S12E08</span></li>
+<li>JR 1994 年開始受訓進 IDARF(最早一批)。組織:05 階(中校)以上軍官僅限火星德國人,其他公民/士兵最高只能到少校(major)。火星德國指揮鏈對地球士兵(在他們眼中天生「殘缺」)諸多刁難、把過錯都怪到地球士兵頭上。<span class="who">萊斯</span><span class="src">S12E08</span></li>
+<li>部隊編制:地球提供的士兵總數約 24,000 人,不同種族、男女、不同國家;最小單位是班(squad,8–9 人),往上是排(platoon),每連 4 個排,每營 2–3 個連,與西方軍隊作戰序列非常相似。<span class="who">萊斯</span><span class="src">S12E16</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>德國人為 Draco「征服這些星球」</h3>
+<ul>
+<li>德國人須把 12 個航母戰鬥群中的 10 個交給 Draco 隨時使用(名義是「邊境巡邏」)。Draco 需要這些艦隊與地面兵,因為:人形是宇宙常見藍圖(我們長得比 Draco 更像其他星球居民),且「何必殺自己的兵,當有願意代勞的代理人時」。<span class="who">萊斯</span><span class="src">S12E08</span></li>
+<li>勢力結構:Draco 在這些星球上建立各地的「行星 Cabal」;地球 Cabal 提供地面兵,火星德國人提供海軍艦船與海軍軍官/船員。Draco 用當地 Cabal 當代理,手法類似在地球做的——製造分化、創造「菁英自認高人一等」的社會。<span class="who">萊斯</span><span class="src">S12E14</span></li>
+<li>德國人征服後須撤離,留下「有一定自治」的當地 Cabal 繼續受 Draco 控制(類比越戰)。為何德國人允許 Cabal/美國組建獨立 SSP 而不直接消滅?——他們需要地球的製造能力。<span class="who">萊斯</span><span class="src">S12E08</span><span class="src">S12E14</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>最大的欺瞞:假旗入侵</h3>
+<ul>
+<li>IDARF 名義是去保衛遭外星入侵威脅的星球。但最大欺瞞是——指揮 IDARF 艦隊的同一群人(Draco)也在提供那些「外星入侵」。這是「腳踏進門」手法:要求行星人口宣告單一政府、邀請他們進入、允許建立金融系統(控制與操縱的手段)。<span class="who">萊斯</span><span class="src">S12E09</span></li>
+<li>他們專挑工業時代或更落後、無法自行擊退入侵的星球;政策上「不引進先進科技」其實是刻意綁手——蓄意削減行星人口、讓領導層願意接受最終的控制措施。Draco 想要「大致完整的星球」與「無法反抗、會邀請他們」的人口,不想等 2,000 年讓文明自然演進,故用假旗速成。<span class="who">萊斯</span><span class="src">S12E09</span><span class="src">S12E13</span></li>
+<li>幕後是 Draco、AI、執政官(Archons);JR 相信是 AI 為 Archons 與 Draco 發號施令。整場戰爭約半數行星人口(約 10 億)死亡。<b>JW 總結:JR 等人實為 Cabal 的步兵。</b><span class="who">萊斯</span><span class="src">S12E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>「失火安全鈕」與自毀協定</h3>
+<ul>
+<li>Cabal 在它提供給火星德國人的 24,000 士兵體內植入特殊奈米裝置代碼,按鈕即可使士兵自殺;船上也藏有反物質彈藥。作用距離約 500 光年——船一進入距地球 500 光年範圍,訊號就使帶該奈米裝置的士兵死亡並引爆反物質彈藥。<span class="who">萊斯</span><span class="src">S12E09</span></li>
+<li>地面部隊(「地面碾壓者」)被嚴格隔離於海軍人員之外,原因之一是 Cabal 與火星德國人之間的協議——地面部隊中有些 Cabal 不想讓火星德國海軍知道的東西(特別是為「自毀」策略性放置的彈藥,以及埋在每名士兵奈米機械裡的自毀協定)。<span class="who">萊斯</span><span class="src">S12E18</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>「狼人戰役」與動能武器</h3>
+<ul>
+<li>JR 首次部署(Area 26)任務是偵察該城、了解社會安排,須融入偽裝成市民三到六個月。入侵者是「狼人型外星人」:約八呎高、人形、有毛皮、大耳、短吻多齒;經檢驗發現是「人造存在(created being)」——機械部件比組織器官多,是 Draco 為入侵此星球而造的代理。<span class="who">萊斯</span><span class="src">S12E09</span><span class="src">S12E13</span></li>
+<li>動能武器攻擊(KEW, Kinetic Energy Weapon):用質量驅動器把太空岩石射向地表,無輻射污染但有巨大融合爆炸;撞擊點偏離目標城市 50–75 英里。敵人 MO 還包括轟擊兩極融冰抬高海平面淹沒沿海。整場戰爭持續 47 個月、約半數行星人口(約 10 億)死亡。<span class="who">萊斯</span><span class="src">S12E09</span></li>
+<li>連長(火星德國人)指責 JR「太在乎那些該死的平民」,罰他在無增援下留下做善後清理。這些假旗入侵者「從一開始就被設計成會輸、被植入缺陷」——Draco 要保留人口來統治,不想滅絕被征服者。JW 戲稱這是「戰鬥達爾文主義(Combat Darwinism)」。<span class="who">萊斯</span><span class="src">S12E09</span><span class="src">S12E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>月球與火星訓練、星際移動</h3>
+<ul>
+<li>月球訓練讓他們熟悉艦船操作,多在一艘專用訓練艦上進行;首次集體移動到月球是搭穿梭機,從 Area 51(內華達沙漠)出發到 LOC,停留六個月學微重力;訓練艦呈三角形、楔形、巨大平滑。原 34 人只剩 26 人(但「不是全都死了」)。<span class="who">萊斯</span><span class="src">S12E08</span></li>
+<li>火星訓練(四個月)著重艦對地介面——戰鬥空降、跳出穿梭機、用滑翔翼或反重力背包射出;從不脫頭盔/不呼吸火星空氣。德國人在火星有兩座地下大城市:<b>新柏林(New Berlin)與新符茲堡(New Wurzburg)</b>。JR 所屬為第三裝甲師(3rd Panzer Division,綽號「柏林熊」),火星德國人繼承複製了大量二戰德軍番號、徽章、制服(其中一款禮服酷似黑色 SS 制服)。<span class="who">萊斯</span><span class="src">S12E08</span></li>
+<li>星際移動由穿梭機接駁到母艦:母艦有雪茄型與楔型兩種,裝載大批地面部隊用較大的雪茄型,每艘可載 2,000–3,000 名地面部隊加裝備。第二顆星球名叫「卡利杜斯三號(Callidus Three)」。<span class="who">萊斯</span><span class="src">S12E18</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 12 ============ -->
+<section class="cat" id="c12">
+<div class="cat-h"><span class="bar"></span><h2>十二、作戰科技、戰鬥服與武器</h2><span class="cnt">COMBAT TECH &amp; WEAPONS</span></div>
+
+<div class="sp">
+<h3>飛船推進與「神經介面」</h3>
+<ul>
+<li>不同推進系統來自不同非地球團體:時間驅動(temporal drives,最先進、可瞬間到任何時空)、扭力驅動(torsion drives)、電磁推進;多數飛行器有「返家功能(return-to-home)」。德國飛行器外殼全實心、靠成像系統看 360 度。<span class="who">柯里</span><span class="src">S06E05</span></li>
+<li><b>gel packs(凝膠包)</b>:像滑入儲存區的硬碟模組,顯微鏡下含「與人類神經學相同的神經組織」,用來把人類神經學與科技介接;是系統的弱點——AI 訊號最快會「燒毀」這些 gel pack。神經介面比手動搖桿快太多(身體在被棒球擊中前約 1/10 秒就反應)。<span class="who">柯里</span><span class="src">S02E15</span></li>
+<li>洛克希德深度參與製造「扭力場引擎(torsion field engines)」及其動力源——初期是一般核反應爐,後改用釷反應爐(thorium reactors),再後來用零點能(zero-point energy)技術;反應爐在巨型電容器中累積電力。<span class="who">柯里</span><span class="src">S07E01</span></li>
+<li>意識驅動的飛行:存有戴頭帶或手放面板,想著要去的地方,飛船就出相位、再在該地相位進入(因宇宙是全像的);座椅是對此天生能力的「科技輔助」。<span class="who">柯里</span><span class="src">S01E13</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>JR 的戰鬥服系統</h3>
+<ul>
+<li>標準戰鬥服(combat suit):表面有許多縫線=「摩擦電材料(triboelectric material)」,移動時發電也作感測回饋——你想動手臂,動力裝甲就跟著動。能擋小型武器(角度命中會彈開、近距離正面命中則吸收);回饋系統會追蹤彈道、三角定位射擊來源,可一鍵發射「射後不理」的重力榴彈反擊。<span class="who">萊斯</span><span class="src">S12E10</span></li>
+<li>面罩無玻璃開口(避免彈道弱點),所見全為數位生成,可穿透煙、夜、微重力。整套約 200 磅(空重),因動力驅動而感覺像穿夾克;動力來源是反物質電源組(三重冗餘),滿戰鬥約一週換一次電池;內含類似水肺再呼吸器(rebreather)的呼吸系統。<span class="who">萊斯</span><span class="src">S12E10</span></li>
+<li>全像隱形制服(holographic uniform):製造一個與本維度「略微相位偏移」的場(類比費城實驗),屬部分相位移出、讓光通過,所以人「看似消失」。缺點:同一地點超過兩三個就會被敵人靠電子訊號定位。WT 說若關掉隱形裝置,整個天空都是船。<span class="who">萊斯</span><span class="src">S12E10</span></li>
+<li>奈米機械強化療法(NET):身體每一塊骨頭、淋巴、腺體、器官、組織都被植入奈米機械,可增強視力(變焦、夜視)、聽力、控制腎上腺、抗輻射、加速癒合;不是讓人變快,而是讓你能把高強度表現維持更久。20 年又回歸結束時這些奈米機械會被全部清除。<span class="who">萊斯</span><span class="src">S12E16</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>JR 的武器清單</h3>
+<ul>
+<li><b>反物質武器(anti-matter)</b>:100% 質能轉換(現代核武僅約 10% 效率);約鉛筆橡皮擦大小的半克反物質=15 千噸(等同廣島彈)。需磁性容器收納,他們稱之為「Cheerios」(環面 torus)。第三裝甲師有反物質炸藥;不當投射物用,而做定點爆裝、地雷、迫擊砲、砲彈。<span class="who">萊斯</span><span class="src">S12E10</span></li>
+<li><b>重力武器(gravimetrics)</b>:射出一吋直徑光束,把場域內重力加速到數千 G,使生物從該點向內塌縮(像微型黑洞);士兵不准用,只用於戰略防禦周界。<span class="who">萊斯</span><span class="src">S12E10</span></li>
+<li><b>電漿步槍(plasma rifle)</b>:用磁線圈把一顆小金屬球加熱到發光,出膛即著火高速飛出=「電漿火球」。<b>脈衝/高斯步槍(Pulser / Gauss rifle)</b>:握把內超高安培電池(透明晶體結構、充粉紅液體),發射磁性彈頭至「部分光速」(已被降速管制以免打到海軍);增強彈像迷你雨傘命中時撐開、傷害等同 .50 機槍。<span class="who">萊斯</span><span class="src">S12E10</span></li>
+<li><b>靜態槍(static gun / CONPDDP)</b>:外型像舊電視攝影機、小冰箱大小,在前方約半英里製造一個讓任何東西在原子層失去凝聚的區域;屬師級武器(他的師只有五具),無裝甲能擋,海軍有更大的版本。狼人戰役中這些先進武器都不准用。<span class="who">萊斯</span><span class="src">S12E10</span></li>
+<li>神經操控的重力背包(grav pack)+滑翔翼:用於小單位戰術、潛入(超安靜)、空降;電池滿載只能撐 30–45 分鐘,透過戰鬥頭盔神經驅動。<span class="who">萊斯</span><span class="src">S12E06</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>程式生命體(PLF)與複製人</h3>
+<ul>
+<li>程式生命體(PLF):生物工程的模控(cybernetic)有機體,為各種任務量身打造;用於偵察、單程任務、上太空船收集資訊;會被武器化(炸藥)、依環境量身設計;是遙控、半有機,不是有意識的存在。ES 見過一個像「菲力貓」(約 3.5-4 呎、橡膠乳膠感、膝蓋雙關節)的 PLF。<span class="who">史密斯</span><span class="src">S11E12</span></li>
+<li>複製人 vs 從地表雇人:從地表雇人比較便宜;複製人沒有真正的經驗(沒撿放物件上千次、沒受過傷學習)。CG 被帶到火星某設施時,送設備來的四個人長得跟自己一模一樣、眼神像自動機(automaton)、步伐一致。<span class="who">柯里</span><span class="src">S11E02</span></li>
+<li>SSP 偏好在地球長大、有特定產業經驗的人類,因為幾乎每次只要你造出 AI 並讓它接觸「AI 信號」,它就會被宇宙中那個更大的 AI 存在收編,故多數存在遠離 AI 型機器人。<span class="who">柯里</span><span class="src">S08E06</span></li>
+<li>AI 威脅:程式試圖捕捉某種階級的爬蟲人,造出一種場阻止崩解,驗屍發現體內布滿奈米機械(nanites)、崇拜一個 AI 神。這個 AI 極古老、不來自我們的實相、滲透自另一個實相,在無數星系作亂(像病毒);是龍族幾千年前建的更廣網路的一部分(用龍脈 ley lines、軌道衛星視線、格網廣播)。<span class="who">柯里</span><span class="who">史密斯</span><span class="src">S11E04</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 13 ============ -->
+<section class="cat" id="c13">
+<div class="cat-h"><span class="bar"></span><h2>十三、MIC-SSP 與「部分揭露」</h2><span class="cnt">MIC-SSP · PARTIAL DISCLOSURE</span></div>
+
+<div class="sp">
+<h3>軍工複合體秘密太空計畫(MIC-SSP)</h3>
+<ul>
+<li>主要由空軍與國防情報局(DIA)、NSA 控制,有比國際太空站(ISS)先進約 50 多年、位於 400-500 英里軌道的幾座太空站,由三角形載具(TR-3B 型,大眾稱 locus craft)服務,還有幾顆載人衛星。指揮控制技術上由埃格林空軍基地(Eglin AFB)與麥克迪爾(MacDill)執行,但決策在 DOD 與其內的 DIA。<span class="who">柯里</span><span class="src">S07E17</span><span class="src">S11E14</span></li>
+<li>雷根總統 1985 年親筆回憶錄中曾「說溜嘴」提到當時能把 300 人送上軌道(太空梭根本沒這種運力),指的就是這個計畫。多數活動發生在地球 500 英里(約 800 公里)範圍內。<span class="who">柯里</span><span class="src">S07E17</span></li>
+<li>太空站結構:用 NASA 船體/回收的火箭推進器首尾相接成大圓(像輻條從中心放射)、緩慢旋轉產生約三分之一重力;中軸有不動的港口供 TR-3B 連接。在月球與火星只有很小的據點(月球據點頂多約 30 人)。<span class="who">柯里</span><span class="src">S07E13</span><span class="src">S11E14</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>祕密 NASA(NASA 的軍事分支)</h3>
+<ul>
+<li>有個「空軍太空計畫」與太空人學校(在五大湖 Great Lakes 附近),訓練數十名太空人,他們服務於 MIC 太空站、操作三角飛行器;獲准進 LOC Bravo(以完全不同方式進入),也是他們唯一知道的 LOC。這是 NASA 的「軍事分支」(非公關分支),是 MIC SSP 的一部分。<span class="who">柯里</span><span class="src">S10E13</span></li>
+<li>ES 熟悉這些:他在「太空海岸航太醫學研究所(Space Coast Aeromedical Institute)」工作時被外包當太空人,去這些地方做長期太空旅行的人體測試。ES 說「祕密 NASA」做較平庸的補給工作、發射各種機密衛星;現在 Elon Musk 的公司在做很多(可能不知情)。<span class="who">史密斯</span><span class="src">S11E14</span></li>
+<li>祕密 NASA 在佛州坦帕的麥克迪爾空軍基地(MacDill AFB)有一個飛行中隊,停駐兩三種三角形載具;某颶風前有人拍到他們從 MacDill 撤離這些載具(Michael Salla 博士寫過)。我們看到的 90% 是人造的。<span class="who">史密斯</span><span class="who">柯里</span><span class="src">S11E14</span></li>
+<li>X-37B(像太空梭縮小版的再入載具):CG 與 ES 認為是無人的遙控載具(攜帶酬載,可開門、伸出機械臂修理衛星)。<span class="who">柯里</span><span class="who">史密斯</span><span class="src">S11E14</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>「謊言在每一層都不同」:看不到外星交通的那層 SSP</h3>
+<ul>
+<li>有一層 SSP 不相信我們能離開太陽系:他們相信 ET 存在但只在遠古造訪過。他們明明處於完美的觀測位置卻看不到外星交通——因為看到海軍計畫更先進的祕密太空載具時,飛行員被命令別談、被告知「那是概念載具,你五到十年後會駕」;且衛星位置經過安排(像玩貝殼遊戲 shell game)。<span class="who">柯里</span><span class="src">S11E14</span></li>
+<li>Sigmund 起初不相信有海軍計畫(他知道海軍開發了很多後來判給空軍的 SSP),調查後才發現海軍計畫更先進。他在某次簡報說:<b>「你是說我們被告知自己是矛尖(tip of the spear),其實只是他X的海岸防衛隊(Coast Guard)?」</b><span class="who">柯里</span><span class="src">S08E13</span><span class="src">S07E17</span></li>
+<li>低階 SSP 沒有人工重力(天花板有單槓供移動);德國鐘形機是零重力環境;LOC 有 1G 重力。<span class="who">柯里</span><span class="src">S07E15</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Sigmund 的調查與柯里的角色</h3>
+<ul>
+<li>Sigmund 取了柯里的頭髮樣本、證實他確實去過自稱去過的地方,結果「氣炸了」,認為上級沒給他完整資訊;部分上級也擔心自己沒拿到完整資料,於是授權他調查一個更活躍於外太陽系的「海軍秘密太空計畫(Navy SSP)」。<span class="who">柯里</span><span class="src">S07E17</span></li>
+<li>VIP 簡報事件:柯里對總共約 28 人做簡報,28 人中有 13 人舉手喊「我無法接受」離場(物理工程師問的問題遠超柯里能力時,Ka'Aree「透過柯里說話」回答)。這些工程師知道 MIC 計畫,但不知道外星人、亞特蘭提斯、南極洲、前亞當人——他們沒有知情需要(need to know)。<span class="who">柯里</span><span class="src">S07E17</span></li>
+<li>新聯盟簡報:CG 被帶到 LOC,認出在場都是他見過的 SSP 聯盟官員,還看到 Sigmund(「原來你躲在這?」)。Sigmund 暴怒站起:「你不知道我失去了多少,我失去了一切」「直覺共感人個屁!」——他原是 MIC SSP 高層,查證後脫離、加入 SSP 聯盟。<span class="who">柯里</span><span class="src">S10E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>部分揭露(partial disclosure)的藍圖</h3>
+<ul>
+<li>地球聯盟與秘密地球辛迪加已達共識:人類承受不了全面揭露(會是混亂、很令人不安)。資料傾倒(data dumps)是全資料=全面揭露,但因有網路斷線開關,決定分批「以牙還牙(tit for tat)」釋出。<span class="who">柯里</span><span class="src">S06E14</span></li>
+<li>步驟:先公開低地球軌道的計畫(幾顆衛星/太空站 + 空軍控制的三角飛行器 TR-3B,科技僅比 ISS 先進一點),由三角飛行器每日維修。部分揭露不會揭露「有個有組織的邪教統治世界政治」、不揭露危害人類罪等最壞的事。<span class="who">柯里</span><span class="src">S06E14</span></li>
+<li>他們要抹黑/噤聲任何給出正當 SSP 資訊的人(這樣釋出「真相」時,人們不會問「那 Corey、Tompkins 說的呢」)。已成功的操作:把 SSP 主題「超級士兵化(super soldier)」——讓正當故事被一堆自稱超級士兵者淹沒。<span class="who">柯里</span><span class="src">S06E11</span></li>
+<li>好萊塢電影(如《復仇者聯盟》裡的飛行航空母艦)其實在公開展示這群人實際擁有的硬體,替大眾預作心理準備;DW 引 Benjamin Fulford 說好萊塢 75% 製作經費來自五角大廈後門公司。<span class="who">柯里</span><span class="src">S07E17</span><span class="src">S06E08</span></li>
+<li>分階段揭露藍圖:先放史前動物→古人類文明→秘密太空計畫與太陽系內類似遺址→最後才談非地球面向與三艘 30 英里母船。觸發點是聯盟開始逮捕 Cabal、設立法庭(tribunals,如二戰後紐倫堡)。<span class="who">柯里</span><span class="src">S07E10</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>《一的法則》第 8 場集會對 SSP 的描述</h3>
+<div class="narrator"><span>主述</span>《一的法則》第 8 場集會(1981/1/26)因內容太超出 Don Elkins 認知被刪除,直到 1998 年第五冊才收錄;CG/DW 逐條對照。</div>
+<ul>
+<li>Ra 說「有些降落(UFO)是你們自己人的」——1981 年人類已有能造、能飛 UFO 形狀飛行器的科技,屬「軍事複合體」。基地有:加勒比海/巴哈馬與智利外海海底、月球上(1981 年正在「翻修」)、可移動的陸上基地、天上的軌道平台。<span class="who">威爾科克</span><span class="who">柯里</span><span class="src">S06E09</span></li>
+<li>8.9「美國」當時有 <b>573 架</b>(CG 說若含很早就有的無人機不誇張);8.10 最高速約半光速(因設計缺陷)。8.11 Ra 說我們現有科技足以解決社會記憶複合體的每一個侷限——CG 從親身經驗證實此言為真,以現有科技仍任飢餓缺水能源危機疾病發生是危害人類罪。<span class="who">柯里</span><span class="src">S06E09</span></li>
+<li>SSP 確實知道《一的法則》,某些人被要求讀,但 CG 被告知「那是負面材料、別碰」所以避開。<span class="who">柯里</span><span class="src">S06E09</span></li>
+</ul>
+</div>
+</section>
+
+<!-- ============ 14 ============ -->
+<section class="cat" id="c14">
+<div class="cat-h"><span class="bar"></span><h2>十四、湯普金斯與其他見證者</h2><span class="cnt">TOMPKINS &amp; WITNESSES</span></div>
+
+<div class="sp">
+<h3>William Tompkins:Solar Warden 的奠基</h3>
+<ul>
+<li>WT 9 歲起在加州長灘港邊用素描記下海軍艦艇的機密部位,造出極精準的軍艦模型引起海軍情報注意。被海軍送進道格拉斯(Douglas)當製圖員,主管查其海軍背景後把他放進一個「200 人的智囊團(think tank)」研究外星各層面。<span class="who">湯普金斯</span><span class="src">S05E11</span></li>
+<li>他為海軍設計約 16~18 種「海軍戰鬥群艦艇」——較大的 1 到 6 公里長、能在太空飛的「太空航艦(spacecraft carriers)」,最終 1970 年代末在猶他州地下建成,<b>即 Solar Warden。「Solar Warden 就出自道格拉斯工程部裡的這個智囊團。」</b><span class="who">湯普金斯</span><span class="src">S05E10</span></li>
+<li>CG 評論:WT 完全不認識他、認不出他,這讓 CG 相信他 30 年前讀進智慧玻璃墊的資料正是 WT 簡報的結果(且看的是原始打字文件、極少塗黑)。<span class="who">柯里</span><span class="src">S05E10</span></li>
+<li>「包裹(packages)」:1942 到戰爭結束,海軍在納粹德國全天候安插 23 名間諜(後又得知有 29 名),情報被整理成給全美航太/飛機/生醫公司的「合約」(強制研究),內容遠超「最高機密」卻不蓋密級章(「否認資訊」的手法)。<span class="who">湯普金斯</span><span class="src">S07E07</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>MJ-12 / 「校友(Alumni)」與絕對區隔化</h3>
+<ul>
+<li>WT 說 Forrestal(海軍部長、首任國防部長)領導一個「校友(Alumni)」群、是「校友的頂點」;這個美國海軍太空系統「控制全國一切,連總統、頂級軍方、國會議員都不在內」。上將「講太多話」就被暗殺。<span class="who">湯普金斯</span><span class="src">S05E12</span></li>
+<li>CG 確認:「Alumni」是軍中對他們(光明會 Illuminati)的別稱;WT 在鏡頭前迴避說出的代號就是 MJ-12;Forrestal 在智慧墊上記載是「被除掉」的人之一,他們有「以國安之名做掉」的名單當封口威嚇(總統、參議員都不例外)。<span class="who">柯里</span><span class="src">S05E12</span></li>
+<li>北歐人海軍與阿波羅計畫:WT 說他的祕書是「北歐海軍情報中校」,任務是推動整個阿波羅計畫——第一階段登月,第二階段在所有宜居行星/衛星建海軍站、並在 12 顆最近恆星建基地。北歐人把海軍視為較契合美國憲政價值的機構而支持之;納粹-爬蟲類團體則企圖滲透接管 MIC——軍工複合體陷入外星派系的代理戰。<span class="who">湯普金斯</span><span class="src">S05E12</span><span class="src">S07E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>阿波羅任務的秘密</h3>
+<ul>
+<li>WT 任道格拉斯阿波羅計畫工程組長(173 名工程師,11 名博士),提出全新 NASA 登月計畫;其秘書「心電感應」告訴他「Billy,大門會打開」,他果然無證直接驅車進 Redstone 兵工廠,von Braun 與 Debus 都當場稱他天才。<span class="who">湯普金斯</span><span class="src">S07E14</span></li>
+<li>阿波羅登月的外星攔阻:抵達時月球邊緣已有眾多飛行器,有一艘差點把他們撞出軌道;著陸時有巨大飛行器停在著陸點環緣,有人說「拿幾塊石頭、做兩三個額外任務,別回來。完畢。」靠心智抹除(如 Edgar Mitchell 被催眠 40 小時仍想不起月面經歷)、至少兩分鐘延遲、不對公眾開放的「醫療頻道」掩蓋。<span class="who">湯普金斯</span><span class="src">S07E14</span></li>
+<li>ICC 的商業起源:WT 說 2003 年北美航空已在火星與「第二近恆星的另一行星」兩處採礦商業運作,地球上約有 25–28 家公司在銀河系做商業營運;CG 說實際規模遠大於此,這些公司很可能是 ICC 的核心創始企業。<span class="who">湯普金斯</span><span class="who">柯里</span><span class="src">S07E14</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Bob Wood:文件鑑定與獨立佐證</h3>
+<ul>
+<li>BW 1949 年起在道格拉斯做事,老闆就是後來 Tompkins 的上司 Dr. Wolfgang Klemperer 與 Elmer Wheaton;做過 Thor、Nike-Zeus 飛彈、太空站設計。1995 年起做機密文件鑑定(印刷廠專家依字體與「凸起的 Z」判定 SOM 1-01 手冊是 1954 年代五角大廈印刷機所印)。<span class="who">伍德</span><span class="src">S05E16</span></li>
+<li>BW 花數年把 Tompkins 的話寫成書《Selected by Extraterrestrials(被外星人選中)》;說 Tompkins「至今仍在內部」、仍受邀參加海軍 West 年會、最近一次甚至看到 Solar Warden 的資訊。BW 相信 Tompkins 1954 年畫的一公里長飛船可能是後來 Solar Warden 的開端。<span class="who">伍德</span><span class="src">S05E16</span></li>
+<li>RAND 公司是道格拉斯為研究外星問題而專門成立的(起初分兩組:一組拿到「洛杉磯之戰」墜機回收的真實資料,另一組是懷疑派);打電話來指揮 Tompkins 智囊團的人之一是 Bobby Ray Inman。BW 說他這五年最大的領悟是「政府保密程度高得不可思議」。<span class="who">伍德</span><span class="src">S05E16</span><span class="src">S05E17</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>Michael Salla 的文件佐證</h3>
+<ul>
+<li>Salla 透過 Dr. Robert Wood 證實 Tompkins 在道格拉斯任職 12 年(1950–1963)為真;Tompkins 書中把上將名字誤拼為「Rick Obatta」,後查出真名是「Rico Botta」(出生澳洲、確為上將、曾掌聖地牙哥海軍航空站)。<span class="who">薩拉</span><span class="src">S07E09</span></li>
+<li>Salla 用 FOIA 取得 Botta 1,500 頁文件:1942/2/25(洛杉磯空襲事件隔日)命 Botta 於 3/2 赴萊特機場做「引擎開發」工作——該空襲擊落兩艘飛碟,陸航那艘送萊特機場;Botta 被派去查看陸航取得之物。<span class="who">薩拉</span><span class="src">S07E11</span></li>
+<li>1933 年墨索里尼成立由馬可尼(Marconi)領導的最高機密智庫研究尋獲的飛碟,義大利隨後與德國分享;吹哨者 Kewper 在 S4 見到九艘飛行器,其中四艘來自納粹德國(兩艘 Vril 機、兩艘 SS 武器化的 Haunebu),另五艘是外星飛行器。<span class="who">薩拉</span><span class="src">S07E09</span><span class="src">S07E11</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>其他見證:Niara Isley、John Lear、Mark McCandlish</h3>
+<ul>
+<li><b>NI(Niara Isley)</b>:1979-1983 在空軍當自動追蹤雷達專家,駐內華達 Nellis;每週被巴士載到 Tonopah、Tolicha Peak 雷達站,半夜被帶去用雷達測試「特殊飛行器」(無法追蹤、可在天空一處消失再現於他處)。某次被當「人類貨物」運上月球——船內一個爬蟲人(reptilian,至少 8 英尺高、黃色垂直瞳孔)從光束後走出;降落後被令直走向最近建物、不准左右上下看。<span class="who">伊斯利</span><span class="src">S07E25</span></li>
+<li><b>Lear(John Lear)</b>:述 Bob Lazar 經 Edward Teller 引介、透過 EG&amp;G 到 51 區工作,聲稱觸碰過碟形飛行器,稱 115 號超重元素是動力源。Lear 說其父 Bill Lear 的航空公司是被指派研發反重力的團體之一,約 1956 年我方就有能運作的飛碟。<span class="who">萊爾</span><span class="src">S07E13</span></li>
+<li>Lear 說 Kwajalein(瓜加林環礁)幾乎每隔一天發射、約有 1,000 名合格太空人;太空梭去 ISS 要 48 小時(俄方僅 1 小時),其實是把太空人秘密任務所需帶上去——CG 證實這是 MIC SSP,太空人以為自己在做「星戰計畫」、都是共濟會員。<span class="who">萊爾</span><span class="src">S07E13</span></li>
+<li><b>MM(Mark McCandlish)</b>:轉述一名前太空人駕 Learjet 差點與一架黑色「壓扁橄欖球」飛行器相撞(CG 斷定是軍方傳統噴射的高度先進測試機,非反重力);友人 Arthur Reed 1982 年在加州雪松鎮以北拍到巨大黑色 V 形載具(CG 斷定是洛克希德的可「改變構型 articulate」多面體概念機)。<span class="who">麥坎德利什</span><span class="src">S07E18</span></li>
+</ul>
+</div>
+
+<div class="sp">
+<h3>德國人的反擊與冷戰真相</h3>
+<ul>
+<li>JR/Yohan 版本:1970 年代末 Cabal(三名 CIA、兩名 KGB 幹員主導)潛上一艘南極德國穿梭機,奪得一支洗腦裝置再炸毀穿梭機。花三年逆向工程,成就了 1980 年代初的「太陽守望者行動(Operation Solar Warden)」(雷根日記提到可載 300 人的穿梭機即指此)。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+<li>德國人花八年查出穿梭機爆炸真相與兇手(美、蘇)。1986 年挑戰者號(Challenger)穿梭機爆炸是第一個訊息,車諾比(Chernobyl)冷卻塔被毀是第二個訊息——兩者皆由軌道平台執行。兩國領袖各收到一個牛皮紙箱,內有一支印著南極德國徽章的記憶清除裝置。<span class="who">萊斯</span><span class="src">S12E07</span></li>
+<li>CG 的版本:USSR/俄羅斯領袖自 1980 年代即高層參與 SSP,但兩邊將軍都真信冷戰、徹底執行(上層另在區隔層級密切合作);早期物種延續(continuity of species)計畫為聯合計畫(對應 1970 年代《Alternative 3》)。<span class="who">柯里</span><span class="src">S07E28</span></li>
+<li>1991 年協議:Cabal 接管德國人占用的月球基地;德國人與 Draco 的租約是 100 年、款項已付清。1991 後美國向各國領袖宣布有 SSP,各國紛紛想要——巴西、俄、印、中、南非等也有(規模遠小於美國),多數金磚(BRICs)國家有獨立 SSP 並聯合成不被 Cabal SSP 立即消滅的力量。<span class="who">萊斯</span><span class="src">S12E08</span></li>
+</ul>
+</div>
+</section>
+
+</main>
+
+<footer>
+COSMIC DISCLOSURE · 主題重組 T7「秘密太空計畫 SSP 架構」<br>
+素材跨 S01–S12 逐字稿合併 · 出處標於各論點 · 發言人徽章標主述者<br>
+<a href="index.html">◂ 回主頁</a>
+</footer>
+
+</body></html>
