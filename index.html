@@ -6,85 +6,58 @@
 <title>揭露宇宙 · 主題重整</title>
 <style>
   :root{
-    --bg:#05080f; --panel:#0c1320; --panel2:#111a2b; --line:#1d2b44;
-    --ink:#e6ecf6; --soft:#8593ad; --cyan:#34e2d6; --violet:#b08cff; --amber:#ffcf6b;
-    --ok:#34e2d6;
+    --bg:#05080f; --ink:#e6ecf6; --soft:#9aa7bf; --line:#1d2b44;
+    --cyan:#34e2d6; --violet:#b08cff; --amber:#ffcf6b;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
   body{
-    background:var(--bg); color:var(--ink);
+    color:var(--ink);
     font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;
     line-height:1.85; font-size:17px; -webkit-font-smoothing:antialiased;
-    background-image:
-      radial-gradient(900px 520px at 18% -8%, rgba(52,226,214,.14), transparent 60%),
-      radial-gradient(820px 520px at 88% 4%, rgba(176,140,255,.16), transparent 60%),
-      radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,.45), transparent),
-      radial-gradient(1px 1px at 70% 22%, rgba(255,255,255,.35), transparent),
-      radial-gradient(1px 1px at 45% 60%, rgba(255,255,255,.30), transparent),
-      radial-gradient(1px 1px at 85% 70%, rgba(255,255,255,.30), transparent),
-      radial-gradient(1px 1px at 33% 80%, rgba(255,255,255,.25), transparent);
+    background:
+      linear-gradient(rgba(5,8,15,.55), rgba(5,8,15,.8)),
+      url("images/bg.jpg") center top / cover no-repeat,
+      #05080f;
     background-attachment:fixed;
   }
-  .wrap{max-width:1000px;margin:0 auto;padding:0 24px}
-  .mono{font-family:"SFMono-Regular",Consolas,"Roboto Mono",monospace}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
 
   /* 封面 */
-  header.cover{text-align:center;padding:96px 0 46px;position:relative}
-  header.cover .eyebrow{
-    letter-spacing:.45em;font-size:12px;color:var(--cyan);text-transform:uppercase;
-    margin-bottom:22px;font-family:Consolas,monospace;
-  }
+  header.cover{text-align:center;padding:90px 0 26px;position:relative}
+  header.cover .eyebrow{letter-spacing:.45em;font-size:12px;color:var(--cyan);text-transform:uppercase;margin-bottom:22px;font-family:Consolas,monospace}
   header.cover h1{
     font-size:54px;font-weight:800;letter-spacing:.16em;line-height:1.2;
     background:linear-gradient(110deg,var(--cyan) 5%,#cfe9ff 45%,var(--violet) 95%);
     -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
-    text-shadow:0 0 42px rgba(52,226,214,.18);
+    text-shadow:0 0 42px rgba(52,226,214,.22);
   }
   header.cover .en{font-size:13px;letter-spacing:.42em;color:var(--soft);margin-top:14px;text-transform:uppercase;font-family:Consolas,monospace}
-  header.cover .sub{font-size:16px;color:var(--soft);margin-top:22px}
-  .scanline{width:140px;height:2px;margin:30px auto 0;background:linear-gradient(90deg,transparent,var(--cyan),var(--violet),transparent);box-shadow:0 0 14px rgba(52,226,214,.5)}
+  header.cover .sub{font-size:15.5px;color:#c2cbe0;margin:20px auto 0;max-width:680px;line-height:1.8;text-shadow:0 1px 8px rgba(0,0,0,.5)}
+  .scanline{width:140px;height:2px;margin:28px auto 0;background:linear-gradient(90deg,transparent,var(--cyan),var(--violet),transparent);box-shadow:0 0 14px rgba(52,226,214,.5)}
 
-  /* 說明 */
-  .about{
-    background:linear-gradient(180deg,rgba(17,26,43,.7),rgba(12,19,32,.7));
-    border:1px solid var(--line);border-radius:14px;padding:22px 26px;margin:40px 0 8px;
-    font-size:15px;color:#bcc7da;line-height:1.9;position:relative;overflow:hidden;
-  }
-  .about::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(var(--cyan),var(--violet))}
-  .about b{color:var(--ink)}
-  .about .row{display:flex;gap:12px;margin-top:16px;flex-wrap:wrap}
-  .about .pill{font-size:13.5px;border:1px solid var(--line);border-radius:999px;padding:7px 16px;text-decoration:none;color:var(--cyan);background:rgba(52,226,214,.05);transition:.15s}
-  .about .pill:hover{background:var(--cyan);color:#05080f;border-color:var(--cyan);box-shadow:0 0 18px rgba(52,226,214,.4)}
-
-  /* 主題格 */
-  .sec-h{display:flex;align-items:center;gap:14px;margin:52px 0 4px}
-  .sec-h .bar{width:26px;height:2px;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
-  .sec-h h2{font-size:15px;font-weight:700;letter-spacing:.26em;color:var(--soft);text-transform:uppercase;font-family:Consolas,monospace}
-  .sec-desc{color:var(--soft);font-size:14px;margin:8px 0 20px}
-
-  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  /* 9 卡格子 */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:30px 0 0}
   @media(max-width:820px){.grid{grid-template-columns:repeat(2,1fr)}}
   @media(max-width:540px){.grid{grid-template-columns:1fr}}
   .card{
     position:relative;display:block;text-decoration:none;color:var(--ink);
-    background:linear-gradient(180deg,var(--panel2),var(--panel));
-    border:1px solid var(--line);border-radius:14px;padding:20px 20px 18px;
-    transition:.18s;overflow:hidden;
+    background:rgba(12,19,32,.5);
+    backdrop-filter:blur(7px) saturate(1.1);
+    -webkit-backdrop-filter:blur(7px) saturate(1.1);
+    border:1px solid rgba(120,160,210,.22);
+    border-radius:14px;padding:20px 20px 18px;transition:.18s;overflow:hidden;
+    box-shadow:0 6px 24px -14px rgba(0,0,0,.6);
   }
-  .card .code{font-family:Consolas,monospace;font-size:12px;letter-spacing:.12em;color:var(--violet);opacity:.85}
+  .card .code{font-family:Consolas,monospace;font-size:12px;letter-spacing:.12em;color:var(--violet);opacity:.9}
   .card h3{font-size:18.5px;font-weight:800;margin:7px 0 7px;letter-spacing:.02em}
   .card p{font-size:13px;color:var(--soft);line-height:1.7}
-  .card .badge{display:inline-block;margin-top:14px;font-size:11px;font-family:Consolas,monospace;letter-spacing:.1em;padding:3px 10px;border-radius:6px}
-  .card.live{cursor:pointer}
-  .card.live .badge{background:rgba(52,226,214,.14);color:var(--cyan);border:1px solid rgba(52,226,214,.5)}
-  .card.live:hover{border-color:var(--cyan);box-shadow:0 0 0 1px rgba(52,226,214,.4),0 10px 40px -12px rgba(52,226,214,.5);transform:translateY(-2px)}
-  .card.todo{opacity:.62}
-  .card.todo .badge{background:rgba(133,147,173,.12);color:var(--soft);border:1px solid var(--line)}
+  .card .badge{display:inline-block;margin-top:14px;font-size:11px;font-family:Consolas,monospace;letter-spacing:.1em;padding:3px 10px;border-radius:6px;background:rgba(52,226,214,.16);color:var(--cyan);border:1px solid rgba(52,226,214,.5)}
+  .card:hover{border-color:var(--cyan);background:rgba(16,26,44,.62);box-shadow:0 0 0 1px rgba(52,226,214,.4),0 14px 44px -16px rgba(52,226,214,.55);transform:translateY(-2px)}
   .card .glow{position:absolute;right:-30px;top:-30px;width:90px;height:90px;border-radius:50%;background:radial-gradient(var(--cyan),transparent 70%);opacity:0;transition:.18s}
-  .card.live:hover .glow{opacity:.18}
+  .card:hover .glow{opacity:.2}
 
-  footer{text-align:center;color:var(--soft);font-size:12.5px;padding:60px 0 70px;margin-top:48px;border-top:1px solid var(--line);line-height:1.9;font-family:Consolas,monospace;letter-spacing:.04em}
+  footer{text-align:center;color:var(--soft);font-size:12.5px;padding:56px 0 70px;margin-top:46px;border-top:1px solid var(--line);line-height:1.9;font-family:Consolas,monospace;letter-spacing:.04em}
 </style>
 </head>
 <body>
@@ -94,48 +67,23 @@
     <div class="eyebrow">Cosmic Disclosure · Topic Re-Index</div>
     <h1>揭 露 宇 宙</h1>
     <div class="en">The Cosmic Disclosure Archive</div>
-    <div class="sub">把 12 季 198 集的訪談證詞,按主題重新整理成好查、好讀的檔案庫</div>
+    <div class="sub">Gaia 頻道《揭露宇宙》12 季 198 集的一問一答訪談,按 9 大主題重新收攏,每段標明出處(SxxEyy)與主述者。</div>
     <div class="scanline"></div>
   </div>
 </header>
 
 <div class="wrap">
-
-  <div class="about">
-    《揭露宇宙》是 Gaia 頻道、由 David Wilcock 訪談 Corey Goode(及後期多位內部人)的系列節目,共 <b>12 季 198 集</b>、一問一答的逐字稿。
-    同一個主題往往散落在幾十集裡,難以查找。這個檔案庫把全部內容<b>按 9 大主題重新收攏</b>,每段都標明<b>出處(SxxEyy)與主述者</b>,並保留英文原句可對照。
-    <div class="row">
-      <a class="pill" href="種族分類表.html">▦ 外星種族分類總表(65 種一覽)</a>
-    </div>
-  </div>
-
-  <!-- 證詞主軸 -->
-  <div class="sec-h"><span class="bar"></span><h2>Testimony / 證詞主軸</h2></div>
-  <div class="sec-desc">柯里與內部人親身經歷的核心。</div>
   <div class="grid">
-    <a class="card live" href="個人經歷.html"><span class="glow"></span><div class="code">T1</div><h3>個人經歷</h3><p>各內部人的招募、訓練、任務、20 年又送回、共感能力與心理。</p><span class="badge">▣ 可閱讀</span></a>
-    <a class="card live" href="星球與地點.html"><span class="glow"></span><div class="code">T2</div><h3>各星球與地點經歷</h3><p>火星、月球、金星、土星、南極、地心、地下與海底基地。</p><span class="badge">▣ 可閱讀</span></a>
-    <a class="card live" href="外星種類.html"><span class="glow"></span><div class="code">T3</div><h3>外星種類</h3><p>藍鳥人、Anshar、德拉科、爬蟲、球體存有、高白人、電漿生命等約 58 種。</p><span class="badge">▣ 可閱讀</span></a>
+    <a class="card" href="個人經歷.html"><span class="glow"></span><div class="code">T1</div><h3>個人經歷</h3><p>各內部人的招募、訓練、任務、20 年又送回、共感能力與心理。</p><span class="badge">▣ 可閱讀</span></a>
+    <a class="card" href="星球與地點.html"><span class="glow"></span><div class="code">T2</div><h3>各星球與地點經歷</h3><p>火星、月球、金星、土星、南極、地心、地下與海底基地。</p><span class="badge">▣ 可閱讀</span></a>
+    <a class="card" href="外星種類.html"><span class="glow"></span><div class="code">T3</div><h3>外星種類</h3><p>藍鳥人、Anshar、德拉科、爬蟲、球體存有、高白人、電漿生命等約 65 種。</p><span class="badge">▣ 可閱讀</span></a>
+    <a class="card" href="外星科技.html"><span class="glow"></span><div class="code">T4</div><h3>外星與先進科技</h3><p>傳送門、零點能、回春、療癒科技、智慧玻璃墊、Bioship。</p><span class="badge">▣ 可閱讀</span></a>
+    <a class="card" href="宇宙聯邦與治理.html"><span class="glow"></span><div class="code">T5</div><h3>宇宙聯邦與治理組織</h3><p>超級聯邦、銀河聯盟、球體存有聯盟、地球同盟、Anshar 議會。</p><span class="badge">▣ 可閱讀</span></a>
+    <a class="card" href="靈性與揚升.html"><span class="glow"></span><div class="code">T6</div><h3>靈性與揚升</h3><p>一的法則、揚升、太陽閃焰、松果體、密度、業力、服務他人。</p><span class="badge">▣ 可閱讀</span></a>
+    <a class="card" href="秘密太空計畫.html"><span class="glow"></span><div class="code">T7</div><h3>秘密太空計畫 SSP</h3><p>Solar Warden、暗艦隊、ICC、各分離文明派系、階級與招募。</p><span class="badge">▣ 可閱讀</span></a>
+    <a class="card" href="揭露與深層政府.html"><span class="glow"></span><div class="code">T8</div><h3>揭露與深層政府</h3><p>揭露進程、掩蓋、假消息、網軍、深層政府、媒體操作。</p><span class="badge">▣ 可閱讀</span></a>
+    <a class="card" href="歷史.html"><span class="glow"></span><div class="code">T9</div><h3>歷史(古代與分離文明)</h3><p>古代建造者種族、古火星與超級地球、哨兵、德國分離文明。</p><span class="badge">▣ 可閱讀</span></a>
   </div>
-
-  <!-- 科技與組織 -->
-  <div class="sec-h"><span class="bar"></span><h2>Systems / 科技與組織</h2></div>
-  <div class="sec-desc">先進科技,以及太空中的權力結構。</div>
-  <div class="grid">
-    <a class="card live" href="外星科技.html"><span class="glow"></span><div class="code">T4</div><h3>外星與先進科技</h3><p>傳送門、零點能、回春、療癒科技、智慧玻璃墊、Bioship。</p><span class="badge">▣ 可閱讀</span></a>
-    <a class="card live" href="宇宙聯邦與治理.html"><span class="glow"></span><div class="code">T5</div><h3>宇宙聯邦與治理組織</h3><p>超級聯邦、銀河聯盟、球體存有聯盟、地球同盟、Anshar 議會。</p><span class="badge">▣ 可閱讀</span></a>
-    <a class="card live" href="秘密太空計畫.html"><span class="glow"></span><div class="code">T7</div><h3>秘密太空計畫 SSP</h3><p>Solar Warden、暗艦隊、ICC、各分離文明派系、階級與招募。</p><span class="badge">▣ 可閱讀</span></a>
-  </div>
-
-  <!-- 意識與歷史 -->
-  <div class="sec-h"><span class="bar"></span><h2>Mind &amp; History / 意識與歷史</h2></div>
-  <div class="sec-desc">靈性揚升、地表政治,以及遠古祕史。</div>
-  <div class="grid">
-    <a class="card live" href="靈性與揚升.html"><span class="glow"></span><div class="code">T6</div><h3>靈性與揚升</h3><p>一的法則、揚升、太陽閃焰、松果體、密度、業力、服務他人。</p><span class="badge">▣ 可閱讀</span></a>
-    <a class="card live" href="揭露與深層政府.html"><span class="glow"></span><div class="code">T8</div><h3>揭露與深層政府</h3><p>揭露進程、掩蓋、假消息、網軍、深層政府、媒體操作。</p><span class="badge">▣ 可閱讀</span></a>
-    <a class="card live" href="歷史.html"><span class="glow"></span><div class="code">T9</div><h3>歷史(古代與分離文明)</h3><p>古代建造者種族、古火星與超級地球、哨兵、德國分離文明。</p><span class="badge">▣ 可閱讀</span></a>
-  </div>
-
 </div>
 
 <footer>
